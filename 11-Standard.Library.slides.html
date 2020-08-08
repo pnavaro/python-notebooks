@@ -13409,7 +13409,17 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Command-Line-Arguments">Command Line Arguments<a class="anchor-link" href="#Command-Line-Arguments">&#182;</a></h1><p>These arguments are stored in the sys module’s argv attribute as a list.</p>
+<h2 id="Command-Line-Arguments">Command Line Arguments<a class="anchor-link" href="#Command-Line-Arguments">&#182;</a></h2><p>These arguments are stored in the sys module’s argv attribute as a list.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>writefile magic_args="-a demo.py" slideshow={"slide_type": "fragment"}
+import sys
+print(sys.argv)</code></p>
 
 </div>
 </div>
@@ -13417,38 +13427,6 @@ a.anchor-link {
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[&#39;/usr/share/miniconda3/lib/python3.8/site-packages/ipykernel_launcher.py&#39;, &#39;-f&#39;, &#39;/tmp/tmpbmdhscr6.json&#39;, &#39;--HistoryManager.hist_file=:memory:&#39;]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> demo.py one two three
@@ -13486,7 +13464,7 @@ a.anchor-link {
 During handling of the above exception, another exception occurred:
 
 <span class="ansi-red-fg">Exception</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-8-916df5e5b25f&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-7-916df5e5b25f&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>get_ipython<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>run_line_magic<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;run&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;demo.py one two three&#39;</span><span class="ansi-blue-fg">)</span>
 
 <span class="ansi-green-fg">/usr/share/miniconda3/lib/python3.8/site-packages/IPython/core/interactiveshell.py</span> in <span class="ansi-cyan-fg">run_line_magic</span><span class="ansi-blue-fg">(self, magic_name, line, _stack_depth)</span>
@@ -13523,17 +13501,50 @@ During handling of the above exception, another exception occurred:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Random">Random<a class="anchor-link" href="#Random">&#182;</a></h1>
+<h2 id="Random">Random<a class="anchor-link" href="#Random">&#182;</a></h2>
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;pear&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;pear&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="mi">10</span><span class="p">)</span>   <span class="c1"># sampling without replacement</span>
 </pre></div>
 
     </div>
@@ -13552,7 +13563,7 @@ During handling of the above exception, another exception occurred:
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;pear&#39;</pre>
+<pre>[17, 19, 21, 96, 72, 89, 20, 35, 25, 93]</pre>
 </div>
 
 </div>
@@ -13566,7 +13577,7 @@ During handling of the above exception, another exception occurred:
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="mi">10</span><span class="p">)</span>   <span class="c1"># sampling without replacement</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>    <span class="c1"># random float</span>
 </pre></div>
 
     </div>
@@ -13585,7 +13596,7 @@ During handling of the above exception, another exception occurred:
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[34, 47, 15, 43, 58, 37, 61, 87, 36, 93]</pre>
+<pre>0.6996287194519413</pre>
 </div>
 
 </div>
@@ -13599,7 +13610,7 @@ During handling of the above exception, another exception occurred:
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>    <span class="c1"># random float</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>    <span class="c1"># random integer chosen from range(6)</span>
 </pre></div>
 
     </div>
@@ -13618,7 +13629,7 @@ During handling of the above exception, another exception occurred:
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.5325054958524114</pre>
+<pre>4</pre>
 </div>
 
 </div>
@@ -13626,13 +13637,22 @@ During handling of the above exception, another exception occurred:
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Statistics">Statistics<a class="anchor-link" href="#Statistics">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>    <span class="c1"># random integer chosen from range(6)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">statistics</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.75</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">]</span>
+<span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13651,7 +13671,7 @@ During handling of the above exception, another exception occurred:
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>2</pre>
+<pre>1.6071428571428572</pre>
 </div>
 
 </div>
@@ -13659,22 +13679,13 @@ During handling of the above exception, another exception occurred:
 </div>
 </div>
 
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Statistics">Statistics<a class="anchor-link" href="#Statistics">&#182;</a></h1>
-</div>
-</div>
-</div><div class="fragment">
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">statistics</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.75</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">]</span>
-<span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">statistics</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13693,7 +13704,7 @@ During handling of the above exception, another exception occurred:
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>1.6071428571428572</pre>
+<pre>1.25</pre>
 </div>
 
 </div>
@@ -13707,7 +13718,7 @@ During handling of the above exception, another exception occurred:
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">statistics</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">statistics</span><span class="o">.</span><span class="n">variance</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13726,7 +13737,7 @@ During handling of the above exception, another exception occurred:
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>1.25</pre>
+<pre>1.3720238095238095</pre>
 </div>
 
 </div>
@@ -13734,13 +13745,21 @@ During handling of the above exception, another exception occurred:
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Performance-Measurement">Performance Measurement<a class="anchor-link" href="#Performance-Measurement">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">statistics</span><span class="o">.</span><span class="n">variance</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">timeit</span> <span class="kn">import</span> <span class="n">Timer</span>
+<span class="n">Timer</span><span class="p">(</span><span class="s1">&#39;t=a; a=b; b=t&#39;</span><span class="p">,</span> <span class="s1">&#39;a=1; b=2&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">timeit</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13759,7 +13778,7 @@ During handling of the above exception, another exception occurred:
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>1.3720238095238095</pre>
+<pre>0.020906409000076565</pre>
 </div>
 
 </div>
@@ -13767,21 +13786,13 @@ During handling of the above exception, another exception occurred:
 </div>
 </div>
 
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Performance-Measurement">Performance Measurement<a class="anchor-link" href="#Performance-Measurement">&#182;</a></h1>
-</div>
-</div>
-</div><div class="fragment">
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">timeit</span> <span class="kn">import</span> <span class="n">Timer</span>
-<span class="n">Timer</span><span class="p">(</span><span class="s1">&#39;t=a; a=b; b=t&#39;</span><span class="p">,</span> <span class="s1">&#39;a=1; b=2&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">timeit</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Timer</span><span class="p">(</span><span class="s1">&#39;a,b = b,a&#39;</span><span class="p">,</span> <span class="s1">&#39;a=1; b=2&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">timeit</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13800,7 +13811,7 @@ During handling of the above exception, another exception occurred:
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.024179129999993165</pre>
+<pre>0.017122035000056712</pre>
 </div>
 
 </div>
@@ -13812,39 +13823,6 @@ During handling of the above exception, another exception occurred:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Timer</span><span class="p">(</span><span class="s1">&#39;a,b = b,a&#39;</span><span class="p">,</span> <span class="s1">&#39;a=1; b=2&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">timeit</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[17]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>0.01945925300003637</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it a=1; b=2
@@ -13865,7 +13843,7 @@ During handling of the above exception, another exception occurred:
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>18.5 ns ± 0.35 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+<pre>16.9 ns ± 0.719 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)
 </pre>
 </div>
 </div>
@@ -13885,7 +13863,7 @@ During handling of the above exception, another exception occurred:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Quality-Control">Quality Control<a class="anchor-link" href="#Quality-Control">&#182;</a></h1><p>One approach for developing high quality software is to write tests for each function.</p>
+<h2 id="Quality-Control">Quality Control<a class="anchor-link" href="#Quality-Control">&#182;</a></h2><p>One approach for developing high quality software is to write tests for each function.</p>
 <ul>
 <li>The doctest module provides a tool for scanning a module and validating tests embedded in a program’s docstrings. </li>
 <li>This improves the documentation by providing the user with an example and it allows the doctest module to make sure the code remains true to the documentation:</li>
@@ -13896,7 +13874,7 @@ During handling of the above exception, another exception occurred:
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
@@ -13921,7 +13899,7 @@ During handling of the above exception, another exception occurred:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[19]:</div>
+    <div class="prompt output_prompt">Out[18]:</div>
 
 
 

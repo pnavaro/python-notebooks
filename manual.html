@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" />
+    <title>Manual</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/codehilite/default.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon-notebook.ico">
+    
+</head>
+<body>
+    <div class="container">
+        
+        <p class="menu">
+                <a href="index.html"><img src="img/Home_Icon.svg" width="20px"></a>
+                
+                >
+                <a href="manual.html">Manual</a>
+                
+        </p>
+        
+        
+        <h1>Manual</h1>
+        
+        <div class="toc">
+<ul>
+<li><a href="#execute-the-jupyter-notebooks">Execute the Jupyter notebooks</a><ul>
+<li><a href="#install-jupyter-and-other-dependencies">Install Jupyter and other dependencies</a><ul>
+<li><a href="#first-install-anaconda">First install Anaconda</a></li>
+<li><a href="#finalize-installation-with-conda">Finalize installation with conda</a></li>
+</ul>
+</li>
+<li><a href="#run-a-jupyter-notebook">Run a Jupyter notebook</a><ul>
+<li><a href="#start-a-jupyter-server">Start a Jupyter server</a></li>
+<li><a href="#execute-a-notebook">Execute a notebook</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#optional-build-and-publish">Optional: build and publish</a></li>
+</ul>
+</div>
+
+        
+        <h2 id="execute-the-jupyter-notebooks">
+ Execute the Jupyter notebooks
+</h2>
+<p>
+ This course content is provided as Jupyter notebooks that require to be powered by a Jupyter server with Python3 kernel.
+</p>
+<h3 id="install-jupyter-and-other-dependencies">
+ Install Jupyter and other dependencies
+</h3>
+<h4 id="first-install-anaconda">
+ First install Anaconda
+</h4>
+<p>
+ Anaconda is easy to install but the installer is quite heavy to download because it contains a lot of components.
+In particular, it is shipped with:
+</p>
+<ul>
+ <li>
+  <a href="http://jupyter.org/">
+   Jupyter
+  </a>
+ </li>
+ <li>
+  The
+  <a href="https://github.com/spyder-ide/spyder">
+   Spyder
+  </a>
+  IDE
+ </li>
+ <li>
+  Scipy libraries: Numpy, Pandas, etc.
+ </li>
+</ul>
+<p>
+ For a detailed installation of Anaconda and its extensions on Windows, Mac or Linux, follow the instructions
+ <a href="anaconda.html">
+  <img alt="Anaconda logo" src="fig/anaconda.png" style="display:inline" width="100px"/>
+ </a>
+ .
+</p>
+<h4 id="finalize-installation-with-conda">
+ Finalize installation with conda
+</h4>
+<p>
+ From the project root directory, type:
+</p>
+<div class="codehilite">
+ <pre><span></span><code>conda install --file requirements.txt
+</code></pre>
+</div>
+<h3 id="run-a-jupyter-notebook">
+ Run a Jupyter notebook
+</h3>
+<h4 id="start-a-jupyter-server">
+ Start a Jupyter server
+</h4>
+<ul>
+ <li>
+  Either from Anaconda graphical interface
+ </li>
+ <li>
+  or from the command line interface from the project root directory:
+ </li>
+</ul>
+<div class="codehilite">
+ <pre><span></span><code>jupyter-notebook
+</code></pre>
+</div>
+<h4 id="execute-a-notebook">
+ Execute a notebook
+</h4>
+<ul>
+ <li>
+  Download and extract the archive of the first chapter
+ </li>
+ <li>
+  In the Jupyter, open the
+  <code>
+   .ipynb
+  </code>
+  file
+ </li>
+ <li>
+  Execute the notebook using the menu "Cell &gt; Run All"
+ </li>
+</ul>
+<h2 id="optional-build-and-publish">
+ Optional: build and publish
+</h2>
+<p>
+ If you want be able to build and publish this course material, follow these
+ <a href="build.html">
+  instructions
+ </a>
+ .
+</p>
+        
+    </div>
+</body>
+</html>
