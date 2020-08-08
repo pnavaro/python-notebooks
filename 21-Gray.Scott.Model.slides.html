@@ -13454,7 +13454,7 @@ $$<p>The classic Euler scheme is used to integrate the time derivative.</p>
 <span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
 <span class="ansi-green-fg">&lt;timed exec&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 
-<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;tqdm&#39;</pre>
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;PIL&#39;</pre>
 </div>
 </div>
 
@@ -13609,7 +13609,7 @@ $$<p>The classic Euler scheme is used to integrate the time derivative.</p>
 <span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>get_ipython<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>run_line_magic<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;load_ext&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;cython&#39;</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">      2</span> get_ipython<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>run_line_magic<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;env&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;CC=&#39;gcc-8&#39;&#34;</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/IPython/core/interactiveshell.py</span> in <span class="ansi-cyan-fg">run_line_magic</span><span class="ansi-blue-fg">(self, magic_name, line, _stack_depth)</span>
+<span class="ansi-green-fg">/usr/share/miniconda3/lib/python3.8/site-packages/IPython/core/interactiveshell.py</span> in <span class="ansi-cyan-fg">run_line_magic</span><span class="ansi-blue-fg">(self, magic_name, line, _stack_depth)</span>
 <span class="ansi-green-intense-fg ansi-bold">   2324</span>                 kwargs<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;local_ns&#39;</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>get_local_scope<span class="ansi-blue-fg">(</span>stack_depth<span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">   2325</span>             <span class="ansi-green-fg">with</span> self<span class="ansi-blue-fg">.</span>builtin_trap<span class="ansi-blue-fg">:</span>
 <span class="ansi-green-fg">-&gt; 2326</span><span class="ansi-red-fg">                 </span>result <span class="ansi-blue-fg">=</span> fn<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
@@ -13618,39 +13618,39 @@ $$<p>The classic Euler scheme is used to integrate the time derivative.</p>
 
 <span class="ansi-green-fg">&lt;decorator-gen-64&gt;</span> in <span class="ansi-cyan-fg">load_ext</span><span class="ansi-blue-fg">(self, module_str)</span>
 
-<span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/IPython/core/magic.py</span> in <span class="ansi-cyan-fg">&lt;lambda&gt;</span><span class="ansi-blue-fg">(f, *a, **k)</span>
+<span class="ansi-green-fg">/usr/share/miniconda3/lib/python3.8/site-packages/IPython/core/magic.py</span> in <span class="ansi-cyan-fg">&lt;lambda&gt;</span><span class="ansi-blue-fg">(f, *a, **k)</span>
 <span class="ansi-green-intense-fg ansi-bold">    185</span>     <span class="ansi-red-fg"># but it&#39;s overkill for just that one bit of state.</span>
 <span class="ansi-green-intense-fg ansi-bold">    186</span>     <span class="ansi-green-fg">def</span> magic_deco<span class="ansi-blue-fg">(</span>arg<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-fg">--&gt; 187</span><span class="ansi-red-fg">         </span>call <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">lambda</span> f<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>a<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>k<span class="ansi-blue-fg">:</span> f<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>a<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>k<span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">    188</span> 
 <span class="ansi-green-intense-fg ansi-bold">    189</span>         <span class="ansi-green-fg">if</span> callable<span class="ansi-blue-fg">(</span>arg<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
 
-<span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/IPython/core/magics/extension.py</span> in <span class="ansi-cyan-fg">load_ext</span><span class="ansi-blue-fg">(self, module_str)</span>
+<span class="ansi-green-fg">/usr/share/miniconda3/lib/python3.8/site-packages/IPython/core/magics/extension.py</span> in <span class="ansi-cyan-fg">load_ext</span><span class="ansi-blue-fg">(self, module_str)</span>
 <span class="ansi-green-intense-fg ansi-bold">     31</span>         <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> module_str<span class="ansi-blue-fg">:</span>
 <span class="ansi-green-intense-fg ansi-bold">     32</span>             <span class="ansi-green-fg">raise</span> UsageError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Missing module name.&#39;</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-fg">---&gt; 33</span><span class="ansi-red-fg">         </span>res <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>shell<span class="ansi-blue-fg">.</span>extension_manager<span class="ansi-blue-fg">.</span>load_extension<span class="ansi-blue-fg">(</span>module_str<span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">     34</span> 
 <span class="ansi-green-intense-fg ansi-bold">     35</span>         <span class="ansi-green-fg">if</span> res <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">&#39;already loaded&#39;</span><span class="ansi-blue-fg">:</span>
 
-<span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/IPython/core/extensions.py</span> in <span class="ansi-cyan-fg">load_extension</span><span class="ansi-blue-fg">(self, module_str)</span>
+<span class="ansi-green-fg">/usr/share/miniconda3/lib/python3.8/site-packages/IPython/core/extensions.py</span> in <span class="ansi-cyan-fg">load_extension</span><span class="ansi-blue-fg">(self, module_str)</span>
 <span class="ansi-green-intense-fg ansi-bold">     78</span>             <span class="ansi-green-fg">if</span> module_str <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">in</span> sys<span class="ansi-blue-fg">.</span>modules<span class="ansi-blue-fg">:</span>
 <span class="ansi-green-intense-fg ansi-bold">     79</span>                 <span class="ansi-green-fg">with</span> prepended_to_syspath<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>ipython_extension_dir<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-fg">---&gt; 80</span><span class="ansi-red-fg">                     </span>mod <span class="ansi-blue-fg">=</span> import_module<span class="ansi-blue-fg">(</span>module_str<span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">     81</span>                     <span class="ansi-green-fg">if</span> mod<span class="ansi-blue-fg">.</span>__file__<span class="ansi-blue-fg">.</span>startswith<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>ipython_extension_dir<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-intense-fg ansi-bold">     82</span>                         print((&#34;Loading extensions from {dir} is deprecated. &#34;
 
-<span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/importlib/__init__.py</span> in <span class="ansi-cyan-fg">import_module</span><span class="ansi-blue-fg">(name, package)</span>
+<span class="ansi-green-fg">/usr/share/miniconda3/lib/python3.8/importlib/__init__.py</span> in <span class="ansi-cyan-fg">import_module</span><span class="ansi-blue-fg">(name, package)</span>
 <span class="ansi-green-intense-fg ansi-bold">    125</span>                 <span class="ansi-green-fg">break</span>
 <span class="ansi-green-intense-fg ansi-bold">    126</span>             level <span class="ansi-blue-fg">+=</span> <span class="ansi-cyan-fg">1</span>
 <span class="ansi-green-fg">--&gt; 127</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">return</span> _bootstrap<span class="ansi-blue-fg">.</span>_gcd_import<span class="ansi-blue-fg">(</span>name<span class="ansi-blue-fg">[</span>level<span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> package<span class="ansi-blue-fg">,</span> level<span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">    128</span> 
 <span class="ansi-green-intense-fg ansi-bold">    129</span> 
 
-<span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/importlib/_bootstrap.py</span> in <span class="ansi-cyan-fg">_gcd_import</span><span class="ansi-blue-fg">(name, package, level)</span>
+<span class="ansi-green-fg">/usr/share/miniconda3/lib/python3.8/importlib/_bootstrap.py</span> in <span class="ansi-cyan-fg">_gcd_import</span><span class="ansi-blue-fg">(name, package, level)</span>
 
-<span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/importlib/_bootstrap.py</span> in <span class="ansi-cyan-fg">_find_and_load</span><span class="ansi-blue-fg">(name, import_)</span>
+<span class="ansi-green-fg">/usr/share/miniconda3/lib/python3.8/importlib/_bootstrap.py</span> in <span class="ansi-cyan-fg">_find_and_load</span><span class="ansi-blue-fg">(name, import_)</span>
 
-<span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/importlib/_bootstrap.py</span> in <span class="ansi-cyan-fg">_find_and_load_unlocked</span><span class="ansi-blue-fg">(name, import_)</span>
+<span class="ansi-green-fg">/usr/share/miniconda3/lib/python3.8/importlib/_bootstrap.py</span> in <span class="ansi-cyan-fg">_find_and_load_unlocked</span><span class="ansi-blue-fg">(name, import_)</span>
 
 <span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;cython&#39;</pre>
 </div>
