@@ -13324,12 +13324,12 @@ print(sys.argv)</code></p>
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">OSError</span>                                   Traceback (most recent call last)
-<span class="ansi-green-fg">/usr/share/miniconda3/lib/python3.8/site-packages/IPython/core/magics/execution.py</span> in <span class="ansi-cyan-fg">run</span><span class="ansi-blue-fg">(self, parameter_s, runner, file_finder)</span>
+<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/magics/execution.py</span> in <span class="ansi-cyan-fg">run</span><span class="ansi-blue-fg">(self, parameter_s, runner, file_finder)</span>
 <span class="ansi-green-intense-fg ansi-bold">    702</span>             fpath <span class="ansi-blue-fg">=</span> arg_lst<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span>
 <span class="ansi-green-fg">--&gt; 703</span><span class="ansi-red-fg">             </span>filename <span class="ansi-blue-fg">=</span> file_finder<span class="ansi-blue-fg">(</span>fpath<span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">    704</span>         <span class="ansi-green-fg">except</span> IndexError<span class="ansi-blue-fg">:</span>
 
-<span class="ansi-green-fg">/usr/share/miniconda3/lib/python3.8/site-packages/IPython/utils/path.py</span> in <span class="ansi-cyan-fg">get_py_filename</span><span class="ansi-blue-fg">(name, force_win32)</span>
+<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/utils/path.py</span> in <span class="ansi-cyan-fg">get_py_filename</span><span class="ansi-blue-fg">(name, force_win32)</span>
 <span class="ansi-green-intense-fg ansi-bold">    108</span>     <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-fg">--&gt; 109</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">raise</span> IOError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;File `%r` not found.&#39;</span> <span class="ansi-blue-fg">%</span> name<span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">    110</span> 
@@ -13342,7 +13342,7 @@ During handling of the above exception, another exception occurred:
 <span class="ansi-green-fg">&lt;ipython-input-7-916df5e5b25f&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>get_ipython<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>run_line_magic<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;run&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;demo.py one two three&#39;</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">/usr/share/miniconda3/lib/python3.8/site-packages/IPython/core/interactiveshell.py</span> in <span class="ansi-cyan-fg">run_line_magic</span><span class="ansi-blue-fg">(self, magic_name, line, _stack_depth)</span>
+<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/interactiveshell.py</span> in <span class="ansi-cyan-fg">run_line_magic</span><span class="ansi-blue-fg">(self, magic_name, line, _stack_depth)</span>
 <span class="ansi-green-intense-fg ansi-bold">   2324</span>                 kwargs<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;local_ns&#39;</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>get_local_scope<span class="ansi-blue-fg">(</span>stack_depth<span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">   2325</span>             <span class="ansi-green-fg">with</span> self<span class="ansi-blue-fg">.</span>builtin_trap<span class="ansi-blue-fg">:</span>
 <span class="ansi-green-fg">-&gt; 2326</span><span class="ansi-red-fg">                 </span>result <span class="ansi-blue-fg">=</span> fn<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
@@ -13351,14 +13351,14 @@ During handling of the above exception, another exception occurred:
 
 <span class="ansi-green-fg">&lt;decorator-gen-59&gt;</span> in <span class="ansi-cyan-fg">run</span><span class="ansi-blue-fg">(self, parameter_s, runner, file_finder)</span>
 
-<span class="ansi-green-fg">/usr/share/miniconda3/lib/python3.8/site-packages/IPython/core/magic.py</span> in <span class="ansi-cyan-fg">&lt;lambda&gt;</span><span class="ansi-blue-fg">(f, *a, **k)</span>
+<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/magic.py</span> in <span class="ansi-cyan-fg">&lt;lambda&gt;</span><span class="ansi-blue-fg">(f, *a, **k)</span>
 <span class="ansi-green-intense-fg ansi-bold">    185</span>     <span class="ansi-red-fg"># but it&#39;s overkill for just that one bit of state.</span>
 <span class="ansi-green-intense-fg ansi-bold">    186</span>     <span class="ansi-green-fg">def</span> magic_deco<span class="ansi-blue-fg">(</span>arg<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-fg">--&gt; 187</span><span class="ansi-red-fg">         </span>call <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">lambda</span> f<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>a<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>k<span class="ansi-blue-fg">:</span> f<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>a<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>k<span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">    188</span> 
 <span class="ansi-green-intense-fg ansi-bold">    189</span>         <span class="ansi-green-fg">if</span> callable<span class="ansi-blue-fg">(</span>arg<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
 
-<span class="ansi-green-fg">/usr/share/miniconda3/lib/python3.8/site-packages/IPython/core/magics/execution.py</span> in <span class="ansi-cyan-fg">run</span><span class="ansi-blue-fg">(self, parameter_s, runner, file_finder)</span>
+<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/magics/execution.py</span> in <span class="ansi-cyan-fg">run</span><span class="ansi-blue-fg">(self, parameter_s, runner, file_finder)</span>
 <span class="ansi-green-intense-fg ansi-bold">    712</span>             <span class="ansi-green-fg">if</span> os<span class="ansi-blue-fg">.</span>name <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">&#39;nt&#39;</span> <span class="ansi-green-fg">and</span> re<span class="ansi-blue-fg">.</span>match<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">r&#34;^&#39;.*&#39;$&#34;</span><span class="ansi-blue-fg">,</span>fpath<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-intense-fg ansi-bold">    713</span>                 warn<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;For Windows, use double quotes to wrap a filename: %run &#34;mypath\\myfile.py&#34;&#39;</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-fg">--&gt; 714</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">raise</span> Exception<span class="ansi-blue-fg">(</span>msg<span class="ansi-blue-fg">)</span>
@@ -13438,7 +13438,7 @@ During handling of the above exception, another exception occurred:
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[3, 35, 30, 95, 46, 99, 0, 77, 85, 41]</pre>
+<pre>[95, 79, 52, 4, 76, 41, 88, 83, 94, 69]</pre>
 </div>
 
 </div>
@@ -13471,7 +13471,7 @@ During handling of the above exception, another exception occurred:
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.05360469440271709</pre>
+<pre>0.04629964375046969</pre>
 </div>
 
 </div>
@@ -13653,7 +13653,7 @@ During handling of the above exception, another exception occurred:
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.0207549099999369</pre>
+<pre>0.022302128999967863</pre>
 </div>
 
 </div>
@@ -13686,7 +13686,7 @@ During handling of the above exception, another exception occurred:
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.019247686999960933</pre>
+<pre>0.01876218199993218</pre>
 </div>
 
 </div>
@@ -13718,7 +13718,7 @@ During handling of the above exception, another exception occurred:
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>19.4 ns ± 0.199 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)
+<pre>19 ns ± 0.267 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)
 </pre>
 </div>
 </div>
