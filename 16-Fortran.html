@@ -13107,7 +13107,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="o">%</span><span class="k">env</span> FC=gfortran
 <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s2">&quot;darwin&quot;</span><span class="p">:</span>
-    <span class="o">%</span><span class="k">env</span> CC=gcc-8
+    <span class="o">%</span><span class="k">env</span> CC=gcc-10
 <span class="c1"># change values for your configuration</span>
 </pre></div>
 
@@ -13272,8 +13272,8 @@ running build_src
 build_src
 building extension &#34;vect&#34; sources
 f2py options: []
-f2py:&gt; /tmp/tmpni32gnwc/src.linux-x86_64-3.8/vectmodule.c
-creating /tmp/tmpni32gnwc/src.linux-x86_64-3.8
+f2py:&gt; /tmp/tmp85hgxga_/src.linux-x86_64-3.8/vectmodule.c
+creating /tmp/tmp85hgxga_/src.linux-x86_64-3.8
 Reading fortran codes...
 	Reading file &#39;euclidian_norm.f90&#39; (format:free)
 Post-processing...
@@ -13284,11 +13284,11 @@ Building modules...
 	Building module &#34;vect&#34;...
 		Constructing wrapper function &#34;euclidian_norm&#34;...
 		  c = euclidian_norm(a,b)
-	Wrote C/API module &#34;vect&#34; to file &#34;/tmp/tmpni32gnwc/src.linux-x86_64-3.8/vectmodule.c&#34;
-  adding &#39;/tmp/tmpni32gnwc/src.linux-x86_64-3.8/fortranobject.c&#39; to sources.
-  adding &#39;/tmp/tmpni32gnwc/src.linux-x86_64-3.8&#39; to include_dirs.
-copying /usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/f2py/src/fortranobject.c -&gt; /tmp/tmpni32gnwc/src.linux-x86_64-3.8
-copying /usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/f2py/src/fortranobject.h -&gt; /tmp/tmpni32gnwc/src.linux-x86_64-3.8
+	Wrote C/API module &#34;vect&#34; to file &#34;/tmp/tmp85hgxga_/src.linux-x86_64-3.8/vectmodule.c&#34;
+  adding &#39;/tmp/tmp85hgxga_/src.linux-x86_64-3.8/fortranobject.c&#39; to sources.
+  adding &#39;/tmp/tmp85hgxga_/src.linux-x86_64-3.8&#39; to include_dirs.
+copying /usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/f2py/src/fortranobject.c -&gt; /tmp/tmp85hgxga_/src.linux-x86_64-3.8
+copying /usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/f2py/src/fortranobject.h -&gt; /tmp/tmp85hgxga_/src.linux-x86_64-3.8
 build_src: building npy-pkg config files
 running build_ext
 customize UnixCCompiler
@@ -13300,25 +13300,25 @@ building &#39;vect&#39; extension
 compiling C sources
 C compiler: gcc -pthread -B /usr/share/miniconda3/envs/runenv/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-creating /tmp/tmpni32gnwc/tmp
-creating /tmp/tmpni32gnwc/tmp/tmpni32gnwc
-creating /tmp/tmpni32gnwc/tmp/tmpni32gnwc/src.linux-x86_64-3.8
-compile options: &#39;-I/tmp/tmpni32gnwc/src.linux-x86_64-3.8 -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/include/python3.8 -c&#39;
-gcc: /tmp/tmpni32gnwc/src.linux-x86_64-3.8/vectmodule.c
-gcc: /tmp/tmpni32gnwc/src.linux-x86_64-3.8/fortranobject.c
+creating /tmp/tmp85hgxga_/tmp
+creating /tmp/tmp85hgxga_/tmp/tmp85hgxga_
+creating /tmp/tmp85hgxga_/tmp/tmp85hgxga_/src.linux-x86_64-3.8
+compile options: &#39;-I/tmp/tmp85hgxga_/src.linux-x86_64-3.8 -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/include/python3.8 -c&#39;
+gcc: /tmp/tmp85hgxga_/src.linux-x86_64-3.8/fortranobject.c
+gcc: /tmp/tmp85hgxga_/src.linux-x86_64-3.8/vectmodule.c
 In file included from <span class="ansi-bold">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include/numpy/ndarraytypes.h:1822:0</span>,
                  from <span class="ansi-bold">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include/numpy/ndarrayobject.h:12</span>,
                  from <span class="ansi-bold">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include/numpy/arrayobject.h:4</span>,
-                 from <span class="ansi-bold">/tmp/tmpni32gnwc/src.linux-x86_64-3.8/fortranobject.h:13</span>,
-                 from <span class="ansi-bold">/tmp/tmpni32gnwc/src.linux-x86_64-3.8/fortranobject.c:2</span>:
+                 from <span class="ansi-bold">/tmp/tmp85hgxga_/src.linux-x86_64-3.8/fortranobject.h:13</span>,
+                 from <span class="ansi-bold">/tmp/tmp85hgxga_/src.linux-x86_64-3.8/fortranobject.c:2</span>:
 <span class="ansi-bold">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2:</span> <span class="ansi-magenta-intense-fg ansi-bold">warning: </span>#warning &#34;Using deprecated NumPy API, disable it with &#34; &#34;#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION&#34; [<span class="ansi-magenta-intense-fg ansi-bold">-Wcpp</span>]
  #<span class="ansi-magenta-intense-fg ansi-bold">warning</span> &#34;Using deprecated NumPy API, disable it with &#34; \
   <span class="ansi-magenta-intense-fg ansi-bold">^~~~~~~</span>
 In file included from <span class="ansi-bold">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include/numpy/ndarraytypes.h:1822:0</span>,
                  from <span class="ansi-bold">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include/numpy/ndarrayobject.h:12</span>,
                  from <span class="ansi-bold">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include/numpy/arrayobject.h:4</span>,
-                 from <span class="ansi-bold">/tmp/tmpni32gnwc/src.linux-x86_64-3.8/fortranobject.h:13</span>,
-                 from <span class="ansi-bold">/tmp/tmpni32gnwc/src.linux-x86_64-3.8/vectmodule.c:15</span>:
+                 from <span class="ansi-bold">/tmp/tmp85hgxga_/src.linux-x86_64-3.8/fortranobject.h:13</span>,
+                 from <span class="ansi-bold">/tmp/tmp85hgxga_/src.linux-x86_64-3.8/vectmodule.c:15</span>:
 <span class="ansi-bold">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2:</span> <span class="ansi-magenta-intense-fg ansi-bold">warning: </span>#warning &#34;Using deprecated NumPy API, disable it with &#34; &#34;#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION&#34; [<span class="ansi-magenta-intense-fg ansi-bold">-Wcpp</span>]
  #<span class="ansi-magenta-intense-fg ansi-bold">warning</span> &#34;Using deprecated NumPy API, disable it with &#34; \
   <span class="ansi-magenta-intense-fg ansi-bold">^~~~~~~</span>
@@ -13326,10 +13326,10 @@ compiling Fortran sources
 Fortran f77 compiler: /usr/bin/gfortran -Wall -g -ffixed-form -fno-second-underscore -fPIC -O3 -funroll-loops
 Fortran f90 compiler: /usr/bin/gfortran -O3 -fPIC -O3 -funroll-loops
 Fortran fix compiler: /usr/bin/gfortran -Wall -g -ffixed-form -fno-second-underscore -O3 -fPIC -O3 -funroll-loops
-compile options: &#39;-I/tmp/tmpni32gnwc/src.linux-x86_64-3.8 -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/include/python3.8 -c&#39;
+compile options: &#39;-I/tmp/tmp85hgxga_/src.linux-x86_64-3.8 -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/include/python3.8 -c&#39;
 gfortran:f90: euclidian_norm.f90
-/usr/bin/gfortran -Wall -g -Wall -g -shared /tmp/tmpni32gnwc/tmp/tmpni32gnwc/src.linux-x86_64-3.8/vectmodule.o /tmp/tmpni32gnwc/tmp/tmpni32gnwc/src.linux-x86_64-3.8/fortranobject.o /tmp/tmpni32gnwc/euclidian_norm.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7 -lgfortran -o ./vect.cpython-38-x86_64-linux-gnu.so
-Removing build directory /tmp/tmpni32gnwc
+/usr/bin/gfortran -Wall -g -Wall -g -shared /tmp/tmp85hgxga_/tmp/tmp85hgxga_/src.linux-x86_64-3.8/vectmodule.o /tmp/tmp85hgxga_/tmp/tmp85hgxga_/src.linux-x86_64-3.8/fortranobject.o /tmp/tmp85hgxga_/euclidian_norm.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7 -lgfortran -o ./vect.cpython-38-x86_64-linux-gnu.so
+Removing build directory /tmp/tmp85hgxga_
 </pre>
 </div>
 </div>
@@ -13460,10 +13460,10 @@ c : float
 
 
 
-<div id="a461a3c6-d46f-454e-be20-9f445bd92c14"></div>
+<div id="e53dddfe-ed61-4b69-95dd-b74137a32a57"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a461a3c6-d46f-454e-be20-9f445bd92c14');
+var element = $('#e53dddfe-ed61-4b69-95dd-b74137a32a57');
 new Promise(function(resolve, reject) {
 	var script = document.createElement("script");
 	script.onload = resolve;
@@ -14002,12 +14002,12 @@ end subroutine push
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>--2020-08-09 16:26:13--  http://ftp.mcs.anl.gov/pub/MINPACK-2/blas/dgemm.f
+<pre>--2020-08-09 16:33:55--  http://ftp.mcs.anl.gov/pub/MINPACK-2/blas/dgemm.f
 Resolving ftp.mcs.anl.gov (ftp.mcs.anl.gov)... 140.221.6.23
 Connecting to ftp.mcs.anl.gov (ftp.mcs.anl.gov)|140.221.6.23|:80... connected.
 HTTP request sent, awaiting response... 301 Moved Permanently
 Location: https://ftp.mcs.anl.gov/pub/MINPACK-2/blas/dgemm.f [following]
---2020-08-09 16:26:14--  https://ftp.mcs.anl.gov/pub/MINPACK-2/blas/dgemm.f
+--2020-08-09 16:33:56--  https://ftp.mcs.anl.gov/pub/MINPACK-2/blas/dgemm.f
 Connecting to ftp.mcs.anl.gov (ftp.mcs.anl.gov)|140.221.6.23|:443... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 9851 (9.6K) [text/plain]
@@ -14015,7 +14015,7 @@ Saving to: ‘dgemm.f’
 
 dgemm.f             100%[===================&gt;]   9.62K  --.-KB/s    in 0s      
 
-2020-08-09 16:26:14 (170 MB/s) - ‘dgemm.f’ saved [9851/9851]
+2020-08-09 16:33:56 (228 MB/s) - ‘dgemm.f’ saved [9851/9851]
 
 </pre>
 </div>
@@ -14139,7 +14139,7 @@ unifing config_fc, config, build_clib, build_ext, build commands --fcompiler opt
 running build_src
 build_src
 building extension &#34;mylapack&#34; sources
-creating /tmp/tmpgzmw6pgr/src.linux-x86_64-3.8
+creating /tmp/tmp44thhw01/src.linux-x86_64-3.8
 f2py options: []
 f2py: dgemm.pyf
 Reading fortran codes...
@@ -14155,11 +14155,11 @@ getarrdims:warning: assumed shape array, using 0 instead of &#39;*&#39;
 getarrdims:warning: assumed shape array, using 0 instead of &#39;*&#39;
 getarrdims:warning: assumed shape array, using 0 instead of &#39;*&#39;
 		  dgemm(transa,transb,m,n,k,alpha,a,b,beta,c,[lda,ldb,ldc])
-	Wrote C/API module &#34;mylapack&#34; to file &#34;/tmp/tmpgzmw6pgr/src.linux-x86_64-3.8/mylapackmodule.c&#34;
-  adding &#39;/tmp/tmpgzmw6pgr/src.linux-x86_64-3.8/fortranobject.c&#39; to sources.
-  adding &#39;/tmp/tmpgzmw6pgr/src.linux-x86_64-3.8&#39; to include_dirs.
-copying /usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/f2py/src/fortranobject.c -&gt; /tmp/tmpgzmw6pgr/src.linux-x86_64-3.8
-copying /usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/f2py/src/fortranobject.h -&gt; /tmp/tmpgzmw6pgr/src.linux-x86_64-3.8
+	Wrote C/API module &#34;mylapack&#34; to file &#34;/tmp/tmp44thhw01/src.linux-x86_64-3.8/mylapackmodule.c&#34;
+  adding &#39;/tmp/tmp44thhw01/src.linux-x86_64-3.8/fortranobject.c&#39; to sources.
+  adding &#39;/tmp/tmp44thhw01/src.linux-x86_64-3.8&#39; to include_dirs.
+copying /usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/f2py/src/fortranobject.c -&gt; /tmp/tmp44thhw01/src.linux-x86_64-3.8
+copying /usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/f2py/src/fortranobject.h -&gt; /tmp/tmp44thhw01/src.linux-x86_64-3.8
 build_src: building npy-pkg config files
 running build_ext
 customize UnixCCompiler
@@ -14168,33 +14168,33 @@ building &#39;mylapack&#39; extension
 compiling C sources
 C compiler: gcc -pthread -B /usr/share/miniconda3/envs/runenv/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
 
-creating /tmp/tmpgzmw6pgr/tmp
-creating /tmp/tmpgzmw6pgr/tmp/tmpgzmw6pgr
-creating /tmp/tmpgzmw6pgr/tmp/tmpgzmw6pgr/src.linux-x86_64-3.8
-compile options: &#39;-I/tmp/tmpgzmw6pgr/src.linux-x86_64-3.8 -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/include/python3.8 -c&#39;
-gcc: /tmp/tmpgzmw6pgr/src.linux-x86_64-3.8/mylapackmodule.c
-gcc: /tmp/tmpgzmw6pgr/src.linux-x86_64-3.8/fortranobject.c
+creating /tmp/tmp44thhw01/tmp
+creating /tmp/tmp44thhw01/tmp/tmp44thhw01
+creating /tmp/tmp44thhw01/tmp/tmp44thhw01/src.linux-x86_64-3.8
+compile options: &#39;-I/tmp/tmp44thhw01/src.linux-x86_64-3.8 -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/include/python3.8 -c&#39;
+gcc: /tmp/tmp44thhw01/src.linux-x86_64-3.8/fortranobject.c
+gcc: /tmp/tmp44thhw01/src.linux-x86_64-3.8/mylapackmodule.c
 In file included from <span class="ansi-bold">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include/numpy/ndarraytypes.h:1822:0</span>,
                  from <span class="ansi-bold">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include/numpy/ndarrayobject.h:12</span>,
                  from <span class="ansi-bold">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include/numpy/arrayobject.h:4</span>,
-                 from <span class="ansi-bold">/tmp/tmpgzmw6pgr/src.linux-x86_64-3.8/fortranobject.h:13</span>,
-                 from <span class="ansi-bold">/tmp/tmpgzmw6pgr/src.linux-x86_64-3.8/fortranobject.c:2</span>:
+                 from <span class="ansi-bold">/tmp/tmp44thhw01/src.linux-x86_64-3.8/fortranobject.h:13</span>,
+                 from <span class="ansi-bold">/tmp/tmp44thhw01/src.linux-x86_64-3.8/fortranobject.c:2</span>:
 <span class="ansi-bold">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2:</span> <span class="ansi-magenta-intense-fg ansi-bold">warning: </span>#warning &#34;Using deprecated NumPy API, disable it with &#34; &#34;#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION&#34; [<span class="ansi-magenta-intense-fg ansi-bold">-Wcpp</span>]
  #<span class="ansi-magenta-intense-fg ansi-bold">warning</span> &#34;Using deprecated NumPy API, disable it with &#34; \
   <span class="ansi-magenta-intense-fg ansi-bold">^~~~~~~</span>
 In file included from <span class="ansi-bold">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include/numpy/ndarraytypes.h:1822:0</span>,
                  from <span class="ansi-bold">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include/numpy/ndarrayobject.h:12</span>,
                  from <span class="ansi-bold">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include/numpy/arrayobject.h:4</span>,
-                 from <span class="ansi-bold">/tmp/tmpgzmw6pgr/src.linux-x86_64-3.8/fortranobject.h:13</span>,
-                 from <span class="ansi-bold">/tmp/tmpgzmw6pgr/src.linux-x86_64-3.8/mylapackmodule.c:16</span>:
+                 from <span class="ansi-bold">/tmp/tmp44thhw01/src.linux-x86_64-3.8/fortranobject.h:13</span>,
+                 from <span class="ansi-bold">/tmp/tmp44thhw01/src.linux-x86_64-3.8/mylapackmodule.c:16</span>:
 <span class="ansi-bold">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2:</span> <span class="ansi-magenta-intense-fg ansi-bold">warning: </span>#warning &#34;Using deprecated NumPy API, disable it with &#34; &#34;#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION&#34; [<span class="ansi-magenta-intense-fg ansi-bold">-Wcpp</span>]
  #<span class="ansi-magenta-intense-fg ansi-bold">warning</span> &#34;Using deprecated NumPy API, disable it with &#34; \
   <span class="ansi-magenta-intense-fg ansi-bold">^~~~~~~</span>
-<span class="ansi-bold">/tmp/tmpgzmw6pgr/src.linux-x86_64-3.8/mylapackmodule.c:142:12:</span> <span class="ansi-magenta-intense-fg ansi-bold">warning: </span>‘<span class="ansi-bold">f2py_size</span>’ defined but not used [<span class="ansi-magenta-intense-fg ansi-bold">-Wunused-function</span>]
+<span class="ansi-bold">/tmp/tmp44thhw01/src.linux-x86_64-3.8/mylapackmodule.c:142:12:</span> <span class="ansi-magenta-intense-fg ansi-bold">warning: </span>‘<span class="ansi-bold">f2py_size</span>’ defined but not used [<span class="ansi-magenta-intense-fg ansi-bold">-Wunused-function</span>]
  static int <span class="ansi-magenta-intense-fg ansi-bold">f2py_size</span>(PyArrayObject* var, ...)
             <span class="ansi-magenta-intense-fg ansi-bold">^~~~~~~~~</span>
-gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr/share/miniconda3/envs/runenv/lib -Wl,-rpath=/usr/share/miniconda3/envs/runenv/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpgzmw6pgr/tmp/tmpgzmw6pgr/src.linux-x86_64-3.8/mylapackmodule.o /tmp/tmpgzmw6pgr/tmp/tmpgzmw6pgr/src.linux-x86_64-3.8/fortranobject.o -llapack -o ./mylapack.cpython-38-x86_64-linux-gnu.so
-Removing build directory /tmp/tmpgzmw6pgr
+gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr/share/miniconda3/envs/runenv/lib -Wl,-rpath=/usr/share/miniconda3/envs/runenv/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmp44thhw01/tmp/tmp44thhw01/src.linux-x86_64-3.8/mylapackmodule.o /tmp/tmp44thhw01/tmp/tmp44thhw01/src.linux-x86_64-3.8/fortranobject.o -llapack -o ./mylapack.cpython-38-x86_64-linux-gnu.so
+Removing build directory /tmp/tmp44thhw01
 </pre>
 </div>
 </div>
@@ -14493,7 +14493,7 @@ FileNotFoundError: [Errno 2] No such file or directory: &#39;dgemm2.pyf&#39;
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>633 µs ± 23.3 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<pre>1.39 ms ± 9.24 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre>
 </div>
 </div>
@@ -14644,12 +14644,7 @@ end module f90module
 <div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
-
-<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s1">&#39;darwin&#39;</span><span class="p">:</span> <span class="c1"># for mac users</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CC&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;gcc-8&#39;</span>
-    
-<span class="o">%</span><span class="k">env</span> OMP_NUM_THREADS=4
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">env</span> OMP_NUM_THREADS=4
 </pre></div>
 
     </div>
@@ -14717,7 +14712,7 @@ end subroutine
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 21.7 ms, sys: 20.6 ms, total: 42.3 ms
+<pre>CPU times: user 21.8 ms, sys: 4.54 ms, total: 26.3 ms
 Wall time: 4 s
 </pre>
 </div>
@@ -14774,7 +14769,7 @@ end subroutine
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 7.61 ms, sys: 4.4 ms, total: 12 ms
+<pre>CPU times: user 6.61 ms, sys: 158 µs, total: 6.77 ms
 Wall time: 1 s
 </pre>
 </div>
@@ -14896,8 +14891,8 @@ Wall time: 1 s
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>iterations =  2457
-CPU times: user 25.2 s, sys: 293 ms, total: 25.5 s
-Wall time: 25 s
+CPU times: user 32.2 s, sys: 382 ms, total: 32.6 s
+Wall time: 32.2 s
 </pre>
 </div>
 </div>
@@ -14910,7 +14905,7 @@ Wall time: 25 s
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.colorbar.Colorbar at 0x7f24c3f8d700&gt;</pre>
+<pre>&lt;matplotlib.colorbar.Colorbar at 0x7ff92b009820&gt;</pre>
 </div>
 
 </div>
