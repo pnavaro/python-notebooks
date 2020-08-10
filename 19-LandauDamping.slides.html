@@ -13428,7 +13428,7 @@ we obtain the desired value of $f^{n+1}(x_i)$ by computing $f^n(X(t^n;x_i,t^{n+1
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Timer unit: 1e-06 s
 
-Total time: 0.00074 s
+Total time: 0.000857 s
 File: &lt;ipython-input-3-e4558e235572&gt;
 Function: interpolate_disp at line 38
 
@@ -13438,17 +13438,17 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     39                                                   &#34;&#34;&#34;compute the interpolating spline of degree p of odd degree 
     40                                                   of a function f on a periodic uniform mesh, at
     41                                                   all points xi-alpha&#34;&#34;&#34;
-    42         1          2.0      2.0      0.3          p = self.p
-    43         1          9.0      9.0      1.2          assert (np.size(f) == self.ncells)
+    42         1          1.0      1.0      0.1          p = self.p
+    43         1          6.0      6.0      0.7          assert (np.size(f) == self.ncells)
     44                                                   # compute eigenvalues of cubic splines evaluated at displaced points
-    45         1          7.0      7.0      0.9          ishift = np.floor(-alpha / self.deltax)
+    45         1          5.0      5.0      0.6          ishift = np.floor(-alpha / self.deltax)
     46         1          1.0      1.0      0.1          beta = -ishift - alpha / self.deltax
-    47         1         12.0     12.0      1.6          self.eigalpha.fill(0.)
-    48         5          2.0      0.4      0.3          for j in range(-(p-1)//2, (p+1)//2 + 1):
-    49         4        568.0    142.0     76.8              self.eigalpha += bspline_python(p, j-(p+1)//2, beta) * np.exp((ishift+j)*1j*self.modes)
+    47         1         11.0     11.0      1.3          self.eigalpha.fill(0.)
+    48         5          5.0      1.0      0.6          for j in range(-(p-1)//2, (p+1)//2 + 1):
+    49         4        689.0    172.2     80.4              self.eigalpha += bspline_python(p, j-(p+1)//2, beta) * np.exp((ishift+j)*1j*self.modes)
     50                                                       
     51                                                   # compute interpolating spline using fft and properties of circulant matrices
-    52         1        139.0    139.0     18.8          return np.real(ifft(fft(f) * self.eigalpha / self.eig_bspl))
+    52         1        139.0    139.0     16.2          return np.real(ifft(fft(f) * self.eigalpha / self.eig_bspl))
 
 *** Profile printout saved to text file &#39;lp_results.txt&#39;. 
 </pre>
@@ -13491,10 +13491,10 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 
 
 
-<div id="ac2571e1-8a4e-41e7-8525-12281f647b1d"></div>
+<div id="0988929c-9cbd-4936-8a85-4e6ec7d1f858"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ac2571e1-8a4e-41e7-8525-12281f647b1d');
+var element = $('#0988929c-9cbd-4936-8a85-4e6ec7d1f858');
 new Promise(function(resolve, reject) {
 	var script = document.createElement("script");
 	script.onload = resolve;
@@ -13696,29 +13696,6 @@ IPython.config.cell_magic_highlight['magic_fortran'] = {'reg':[/^%%fortran/]};
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-14-b13d9faa9001&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">import</span> pythran
-
-<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;pythran&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -13729,80 +13706,6 @@ IPython.config.cell_magic_highlight['magic_fortran'] = {'reg':[/^%%fortran/]};
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-15-60954a8043dc&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>get_ipython<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>run_line_magic<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;load_ext&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;pythran.magic&#39;</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/interactiveshell.py</span> in <span class="ansi-cyan-fg">run_line_magic</span><span class="ansi-blue-fg">(self, magic_name, line, _stack_depth)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2324</span>                 kwargs<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;local_ns&#39;</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>get_local_scope<span class="ansi-blue-fg">(</span>stack_depth<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2325</span>             <span class="ansi-green-fg">with</span> self<span class="ansi-blue-fg">.</span>builtin_trap<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">-&gt; 2326</span><span class="ansi-red-fg">                 </span>result <span class="ansi-blue-fg">=</span> fn<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2327</span>             <span class="ansi-green-fg">return</span> result
-<span class="ansi-green-intense-fg ansi-bold">   2328</span> 
-
-<span class="ansi-green-fg">&lt;decorator-gen-64&gt;</span> in <span class="ansi-cyan-fg">load_ext</span><span class="ansi-blue-fg">(self, module_str)</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/magic.py</span> in <span class="ansi-cyan-fg">&lt;lambda&gt;</span><span class="ansi-blue-fg">(f, *a, **k)</span>
-<span class="ansi-green-intense-fg ansi-bold">    185</span>     <span class="ansi-red-fg"># but it&#39;s overkill for just that one bit of state.</span>
-<span class="ansi-green-intense-fg ansi-bold">    186</span>     <span class="ansi-green-fg">def</span> magic_deco<span class="ansi-blue-fg">(</span>arg<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 187</span><span class="ansi-red-fg">         </span>call <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">lambda</span> f<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>a<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>k<span class="ansi-blue-fg">:</span> f<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>a<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>k<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    188</span> 
-<span class="ansi-green-intense-fg ansi-bold">    189</span>         <span class="ansi-green-fg">if</span> callable<span class="ansi-blue-fg">(</span>arg<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/magics/extension.py</span> in <span class="ansi-cyan-fg">load_ext</span><span class="ansi-blue-fg">(self, module_str)</span>
-<span class="ansi-green-intense-fg ansi-bold">     31</span>         <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> module_str<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">     32</span>             <span class="ansi-green-fg">raise</span> UsageError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Missing module name.&#39;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">---&gt; 33</span><span class="ansi-red-fg">         </span>res <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>shell<span class="ansi-blue-fg">.</span>extension_manager<span class="ansi-blue-fg">.</span>load_extension<span class="ansi-blue-fg">(</span>module_str<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     34</span> 
-<span class="ansi-green-intense-fg ansi-bold">     35</span>         <span class="ansi-green-fg">if</span> res <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">&#39;already loaded&#39;</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/extensions.py</span> in <span class="ansi-cyan-fg">load_extension</span><span class="ansi-blue-fg">(self, module_str)</span>
-<span class="ansi-green-intense-fg ansi-bold">     78</span>             <span class="ansi-green-fg">if</span> module_str <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">in</span> sys<span class="ansi-blue-fg">.</span>modules<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">     79</span>                 <span class="ansi-green-fg">with</span> prepended_to_syspath<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>ipython_extension_dir<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 80</span><span class="ansi-red-fg">                     </span>mod <span class="ansi-blue-fg">=</span> import_module<span class="ansi-blue-fg">(</span>module_str<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     81</span>                     <span class="ansi-green-fg">if</span> mod<span class="ansi-blue-fg">.</span>__file__<span class="ansi-blue-fg">.</span>startswith<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>ipython_extension_dir<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">     82</span>                         print((&#34;Loading extensions from {dir} is deprecated. &#34;
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/importlib/__init__.py</span> in <span class="ansi-cyan-fg">import_module</span><span class="ansi-blue-fg">(name, package)</span>
-<span class="ansi-green-intense-fg ansi-bold">    125</span>                 <span class="ansi-green-fg">break</span>
-<span class="ansi-green-intense-fg ansi-bold">    126</span>             level <span class="ansi-blue-fg">+=</span> <span class="ansi-cyan-fg">1</span>
-<span class="ansi-green-fg">--&gt; 127</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">return</span> _bootstrap<span class="ansi-blue-fg">.</span>_gcd_import<span class="ansi-blue-fg">(</span>name<span class="ansi-blue-fg">[</span>level<span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> package<span class="ansi-blue-fg">,</span> level<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    128</span> 
-<span class="ansi-green-intense-fg ansi-bold">    129</span> 
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/importlib/_bootstrap.py</span> in <span class="ansi-cyan-fg">_gcd_import</span><span class="ansi-blue-fg">(name, package, level)</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/importlib/_bootstrap.py</span> in <span class="ansi-cyan-fg">_find_and_load</span><span class="ansi-blue-fg">(name, import_)</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/importlib/_bootstrap.py</span> in <span class="ansi-cyan-fg">_find_and_load_unlocked</span><span class="ansi-blue-fg">(name, import_)</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/importlib/_bootstrap.py</span> in <span class="ansi-cyan-fg">_call_with_frames_removed</span><span class="ansi-blue-fg">(f, *args, **kwds)</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/importlib/_bootstrap.py</span> in <span class="ansi-cyan-fg">_gcd_import</span><span class="ansi-blue-fg">(name, package, level)</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/importlib/_bootstrap.py</span> in <span class="ansi-cyan-fg">_find_and_load</span><span class="ansi-blue-fg">(name, import_)</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/importlib/_bootstrap.py</span> in <span class="ansi-cyan-fg">_find_and_load_unlocked</span><span class="ansi-blue-fg">(name, import_)</span>
-
-<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;pythran&#39;</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -14913,7 +14816,7 @@ $$<ul>
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>100% (600 of 600) |######################| Elapsed Time: 0:00:09 Time:  0:00:09
-  2% (16 of 600) |                       | Elapsed Time: 0:00:00 ETA:   0:00:04</pre>
+  3% (23 of 600) |                       | Elapsed Time: 0:00:00 ETA:   0:00:04</pre>
 </div>
 </div>
 
@@ -14923,7 +14826,7 @@ $$<ul>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre> numpy        : 9.6355 
+<pre> numpy        : 9.2923 
 </pre>
 </div>
 </div>
@@ -14935,7 +14838,7 @@ $$<ul>
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>100% (600 of 600) |######################| Elapsed Time: 0:00:04 Time:  0:00:04
-  2% (16 of 600) |                       | Elapsed Time: 0:00:00 ETA:   0:00:04</pre>
+  3% (23 of 600) |                       | Elapsed Time: 0:00:00 ETA:   0:00:04</pre>
 </div>
 </div>
 
@@ -14945,7 +14848,7 @@ $$<ul>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre> fortran      : 4.2235 
+<pre> fortran      : 4.2313 
 </pre>
 </div>
 </div>
@@ -14967,7 +14870,7 @@ $$<ul>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre> numba        : 4.2899 
+<pre> numba        : 4.6623 
 </pre>
 </div>
 </div>
@@ -14979,7 +14882,7 @@ $$<ul>
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>100% (600 of 600) |######################| Elapsed Time: 0:00:03 Time:  0:00:03
-  1% (8 of 600) |                        | Elapsed Time: 0:00:00 ETA:   0:00:07</pre>
+  1% (7 of 600) |                        | Elapsed Time: 0:00:00 ETA:   0:00:08</pre>
 </div>
 </div>
 
@@ -14989,7 +14892,7 @@ $$<ul>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre> cython       : 3.1286 
+<pre> cython       : 3.2933 
 </pre>
 </div>
 </div>
@@ -15011,7 +14914,7 @@ $$<ul>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre> pythran      : 8.1590 
+<pre> pythran      : 8.3416 
 </pre>
 </div>
 </div>
