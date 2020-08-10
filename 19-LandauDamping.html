@@ -13303,7 +13303,7 @@ we obtain the desired value of $f^{n+1}(x_i)$ by computing $f^n(X(t^n;x_i,t^{n+1
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Timer unit: 1e-06 s
 
-Total time: 0.000874 s
+Total time: 0.001135 s
 File: &lt;ipython-input-3-e4558e235572&gt;
 Function: interpolate_disp at line 38
 
@@ -13314,16 +13314,16 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     40                                                   of a function f on a periodic uniform mesh, at
     41                                                   all points xi-alpha&#34;&#34;&#34;
     42         1          2.0      2.0      0.2          p = self.p
-    43         1         10.0     10.0      1.1          assert (np.size(f) == self.ncells)
+    43         1         30.0     30.0      2.6          assert (np.size(f) == self.ncells)
     44                                                   # compute eigenvalues of cubic splines evaluated at displaced points
-    45         1          6.0      6.0      0.7          ishift = np.floor(-alpha / self.deltax)
+    45         1         25.0     25.0      2.2          ishift = np.floor(-alpha / self.deltax)
     46         1          2.0      2.0      0.2          beta = -ishift - alpha / self.deltax
-    47         1         14.0     14.0      1.6          self.eigalpha.fill(0.)
-    48         5          6.0      1.2      0.7          for j in range(-(p-1)//2, (p+1)//2 + 1):
-    49         4        662.0    165.5     75.7              self.eigalpha += bspline_python(p, j-(p+1)//2, beta) * np.exp((ishift+j)*1j*self.modes)
+    47         1         16.0     16.0      1.4          self.eigalpha.fill(0.)
+    48         5          8.0      1.6      0.7          for j in range(-(p-1)//2, (p+1)//2 + 1):
+    49         4        849.0    212.2     74.8              self.eigalpha += bspline_python(p, j-(p+1)//2, beta) * np.exp((ishift+j)*1j*self.modes)
     50                                                       
     51                                                   # compute interpolating spline using fft and properties of circulant matrices
-    52         1        172.0    172.0     19.7          return np.real(ifft(fft(f) * self.eigalpha / self.eig_bspl))
+    52         1        203.0    203.0     17.9          return np.real(ifft(fft(f) * self.eigalpha / self.eig_bspl))
 
 *** Profile printout saved to text file &#39;lp_results.txt&#39;. 
 </pre>
@@ -13366,10 +13366,10 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 
 
 
-<div id="5cdc2c5f-23d1-4818-b653-801a9b3b93f6"></div>
+<div id="098f22a9-4be4-4402-bf67-02698c32110d"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#5cdc2c5f-23d1-4818-b653-801a9b3b93f6');
+var element = $('#098f22a9-4be4-4402-bf67-02698c32110d');
 new Promise(function(resolve, reject) {
 	var script = document.createElement("script");
 	script.onload = resolve;
@@ -14921,8 +14921,8 @@ $$<ul>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100% (600 of 600) |######################| Elapsed Time: 0:00:11 Time:  0:00:11
-  3% (23 of 600) |                       | Elapsed Time: 0:00:00 ETA:   0:00:04</pre>
+<pre>100% (600 of 600) |######################| Elapsed Time: 0:00:12 Time:  0:00:12
+  2% (16 of 600) |                       | Elapsed Time: 0:00:00 ETA:   0:00:05</pre>
 </div>
 </div>
 
@@ -14932,7 +14932,7 @@ $$<ul>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre> numpy        : 11.3209 
+<pre> numpy        : 12.6601 
 </pre>
 </div>
 </div>
@@ -14954,7 +14954,7 @@ $$<ul>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre> fortran      : 5.1224 
+<pre> fortran      : 5.7670 
 </pre>
 </div>
 </div>
@@ -14965,8 +14965,8 @@ $$<ul>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100% (600 of 600) |######################| Elapsed Time: 0:00:05 Time:  0:00:05
-  5% (31 of 600) |#                      | Elapsed Time: 0:00:00 ETA:   0:00:03</pre>
+<pre>100% (600 of 600) |######################| Elapsed Time: 0:00:06 Time:  0:00:06
+  3% (23 of 600) |                       | Elapsed Time: 0:00:00 ETA:   0:00:04</pre>
 </div>
 </div>
 
@@ -14976,7 +14976,7 @@ $$<ul>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre> numba        : 5.3142 
+<pre> numba        : 6.0324 
 </pre>
 </div>
 </div>
@@ -14987,7 +14987,7 @@ $$<ul>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100% (600 of 600) |######################| Elapsed Time: 0:00:03 Time:  0:00:03
+<pre>100% (600 of 600) |######################| Elapsed Time: 0:00:04 Time:  0:00:04
   1% (6 of 600) |                        | Elapsed Time: 0:00:00 ETA:   0:00:10</pre>
 </div>
 </div>
@@ -14998,7 +14998,7 @@ $$<ul>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre> cython       : 3.8178 
+<pre> cython       : 4.5785 
 </pre>
 </div>
 </div>
@@ -15009,7 +15009,7 @@ $$<ul>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100% (600 of 600) |######################| Elapsed Time: 0:00:09 Time:  0:00:09
+<pre>100% (600 of 600) |######################| Elapsed Time: 0:00:10 Time:  0:00:10
 </pre>
 </div>
 </div>
@@ -15020,7 +15020,7 @@ $$<ul>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre> pythran      : 9.8021 
+<pre> pythran      : 10.9648 
 </pre>
 </div>
 </div>
