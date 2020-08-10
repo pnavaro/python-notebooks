@@ -13428,7 +13428,7 @@ we obtain the desired value of $f^{n+1}(x_i)$ by computing $f^n(X(t^n;x_i,t^{n+1
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Timer unit: 1e-06 s
 
-Total time: 0.001135 s
+Total time: 0.00117 s
 File: &lt;ipython-input-3-e4558e235572&gt;
 Function: interpolate_disp at line 38
 
@@ -13438,17 +13438,17 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     39                                                   &#34;&#34;&#34;compute the interpolating spline of degree p of odd degree 
     40                                                   of a function f on a periodic uniform mesh, at
     41                                                   all points xi-alpha&#34;&#34;&#34;
-    42         1          2.0      2.0      0.2          p = self.p
-    43         1         30.0     30.0      2.6          assert (np.size(f) == self.ncells)
+    42         1          1.0      1.0      0.1          p = self.p
+    43         1          8.0      8.0      0.7          assert (np.size(f) == self.ncells)
     44                                                   # compute eigenvalues of cubic splines evaluated at displaced points
-    45         1         25.0     25.0      2.2          ishift = np.floor(-alpha / self.deltax)
-    46         1          2.0      2.0      0.2          beta = -ishift - alpha / self.deltax
-    47         1         16.0     16.0      1.4          self.eigalpha.fill(0.)
-    48         5          8.0      1.6      0.7          for j in range(-(p-1)//2, (p+1)//2 + 1):
-    49         4        849.0    212.2     74.8              self.eigalpha += bspline_python(p, j-(p+1)//2, beta) * np.exp((ishift+j)*1j*self.modes)
+    45         1          8.0      8.0      0.7          ishift = np.floor(-alpha / self.deltax)
+    46         1         24.0     24.0      2.1          beta = -ishift - alpha / self.deltax
+    47         1         21.0     21.0      1.8          self.eigalpha.fill(0.)
+    48         5          6.0      1.2      0.5          for j in range(-(p-1)//2, (p+1)//2 + 1):
+    49         4        908.0    227.0     77.6              self.eigalpha += bspline_python(p, j-(p+1)//2, beta) * np.exp((ishift+j)*1j*self.modes)
     50                                                       
     51                                                   # compute interpolating spline using fft and properties of circulant matrices
-    52         1        203.0    203.0     17.9          return np.real(ifft(fft(f) * self.eigalpha / self.eig_bspl))
+    52         1        194.0    194.0     16.6          return np.real(ifft(fft(f) * self.eigalpha / self.eig_bspl))
 
 *** Profile printout saved to text file &#39;lp_results.txt&#39;. 
 </pre>
@@ -13491,10 +13491,10 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 
 
 
-<div id="a70c6462-0ada-4252-b60a-a12c18bd1e0a"></div>
+<div id="86fc545d-588d-4f0f-821e-426588018dd5"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a70c6462-0ada-4252-b60a-a12c18bd1e0a');
+var element = $('#86fc545d-588d-4f0f-821e-426588018dd5');
 new Promise(function(resolve, reject) {
 	var script = document.createElement("script");
 	script.onload = resolve;
@@ -14912,7 +14912,7 @@ $$<ul>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100% (600 of 600) |######################| Elapsed Time: 0:00:12 Time:  0:00:12
+<pre>100% (600 of 600) |######################| Elapsed Time: 0:00:10 Time:  0:00:10
   2% (16 of 600) |                       | Elapsed Time: 0:00:00 ETA:   0:00:05</pre>
 </div>
 </div>
@@ -14923,7 +14923,7 @@ $$<ul>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre> numpy        : 12.6601 
+<pre> numpy        : 10.8507 
 </pre>
 </div>
 </div>
@@ -14935,7 +14935,7 @@ $$<ul>
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>100% (600 of 600) |######################| Elapsed Time: 0:00:05 Time:  0:00:05
-  2% (16 of 600) |                       | Elapsed Time: 0:00:00 ETA:   0:00:05</pre>
+  2% (16 of 600) |                       | Elapsed Time: 0:00:00 ETA:   0:00:06</pre>
 </div>
 </div>
 
@@ -14945,7 +14945,7 @@ $$<ul>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre> fortran      : 5.7670 
+<pre> fortran      : 5.2243 
 </pre>
 </div>
 </div>
@@ -14956,8 +14956,8 @@ $$<ul>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100% (600 of 600) |######################| Elapsed Time: 0:00:06 Time:  0:00:06
-  3% (23 of 600) |                       | Elapsed Time: 0:00:00 ETA:   0:00:04</pre>
+<pre>100% (600 of 600) |######################| Elapsed Time: 0:00:05 Time:  0:00:05
+  5% (31 of 600) |#                      | Elapsed Time: 0:00:00 ETA:   0:00:03</pre>
 </div>
 </div>
 
@@ -14967,7 +14967,7 @@ $$<ul>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre> numba        : 6.0324 
+<pre> numba        : 5.3569 
 </pre>
 </div>
 </div>
@@ -14978,8 +14978,8 @@ $$<ul>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100% (600 of 600) |######################| Elapsed Time: 0:00:04 Time:  0:00:04
-  1% (6 of 600) |                        | Elapsed Time: 0:00:00 ETA:   0:00:10</pre>
+<pre>100% (600 of 600) |######################| Elapsed Time: 0:00:03 Time:  0:00:03
+  1% (7 of 600) |                        | Elapsed Time: 0:00:00 ETA:   0:00:08</pre>
 </div>
 </div>
 
@@ -14989,7 +14989,7 @@ $$<ul>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre> cython       : 4.5785 
+<pre> cython       : 3.7185 
 </pre>
 </div>
 </div>
@@ -15000,7 +15000,7 @@ $$<ul>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100% (600 of 600) |######################| Elapsed Time: 0:00:10 Time:  0:00:10
+<pre>100% (600 of 600) |######################| Elapsed Time: 0:00:09 Time:  0:00:09
 </pre>
 </div>
 </div>
@@ -15011,7 +15011,7 @@ $$<ul>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre> pythran      : 10.9648 
+<pre> pythran      : 9.3088 
 </pre>
 </div>
 </div>
