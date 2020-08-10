@@ -13614,7 +13614,7 @@ jupyter notebook</code></pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Multiple-Assignment">Multiple Assignment<a class="anchor-link" href="#Multiple-Assignment">&#182;</a></h1><ul>
+<h2 id="Multiple-Assignment">Multiple Assignment<a class="anchor-link" href="#Multiple-Assignment">&#182;</a></h2><ul>
 <li>Variables can simultaneously get new values. </li>
 <li>Expressions on the right-hand side are all evaluated first before assignments take place. </li>
 <li>The right-hand side expressions are evaluated from the left to the right.</li>
@@ -13756,141 +13756,30 @@ jupyter notebook</code></pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="input-Function"><code>input</code> Function<a class="anchor-link" href="#input-Function">&#182;</a></h1>
+<h1 id="input-Function"><code>input</code> Function<a class="anchor-link" href="#input-Function">&#182;</a></h1><ul>
+<li><p>Value returned by input is a string.</p>
+</li>
+<li><p>You must cast input call to get the type you want.</p>
+<div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter your name: &quot;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter an integer: &quot;</span><span class="p">))</span>
+<span class="n">L</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter 3 integers &quot;</span><span class="p">))</span>
+</pre></div>
+<p>Try to copy-pase code above and print returnet values.</p>
+</li>
+</ul>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter your name: &quot;</span><span class="p">)</span>
-<span class="n">name</span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">StdinNotImplementedError</span>                  Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-14-11981014d572&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>name <span class="ansi-blue-fg">=</span> input<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Please enter your name: &#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> name
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/ipykernel/kernelbase.py</span> in <span class="ansi-cyan-fg">raw_input</span><span class="ansi-blue-fg">(self, prompt)</span>
-<span class="ansi-green-intense-fg ansi-bold">    855</span>         &#34;&#34;&#34;
-<span class="ansi-green-intense-fg ansi-bold">    856</span>         <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> self<span class="ansi-blue-fg">.</span>_allow_stdin<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 857</span><span class="ansi-red-fg">             raise StdinNotImplementedError(
-</span><span class="ansi-green-intense-fg ansi-bold">    858</span>                 <span class="ansi-blue-fg">&#34;raw_input was called, but this frontend does not support input requests.&#34;</span>
-<span class="ansi-green-intense-fg ansi-bold">    859</span>             )
-
-<span class="ansi-red-fg">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter an integer: &quot;</span><span class="p">))</span>
-<span class="n">x</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">StdinNotImplementedError</span>                  Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-15-a09915eb966c&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>x <span class="ansi-blue-fg">=</span> int<span class="ansi-blue-fg">(</span>input<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Please enter an integer: &#34;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> x
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/ipykernel/kernelbase.py</span> in <span class="ansi-cyan-fg">raw_input</span><span class="ansi-blue-fg">(self, prompt)</span>
-<span class="ansi-green-intense-fg ansi-bold">    855</span>         &#34;&#34;&#34;
-<span class="ansi-green-intense-fg ansi-bold">    856</span>         <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> self<span class="ansi-blue-fg">.</span>_allow_stdin<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 857</span><span class="ansi-red-fg">             raise StdinNotImplementedError(
-</span><span class="ansi-green-intense-fg ansi-bold">    858</span>                 <span class="ansi-blue-fg">&#34;raw_input was called, but this frontend does not support input requests.&#34;</span>
-<span class="ansi-green-intense-fg ansi-bold">    859</span>             )
-
-<span class="ansi-red-fg">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter 3 values &quot;</span><span class="p">))</span>
-<span class="n">l</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">StdinNotImplementedError</span>                  Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-16-31fbdd8846a0&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>l <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>input<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Please enter 3 values &#34;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> l
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/ipykernel/kernelbase.py</span> in <span class="ansi-cyan-fg">raw_input</span><span class="ansi-blue-fg">(self, prompt)</span>
-<span class="ansi-green-intense-fg ansi-bold">    855</span>         &#34;&#34;&#34;
-<span class="ansi-green-intense-fg ansi-bold">    856</span>         <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> self<span class="ansi-blue-fg">.</span>_allow_stdin<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 857</span><span class="ansi-red-fg">             raise StdinNotImplementedError(
-</span><span class="ansi-green-intense-fg ansi-bold">    858</span>                 <span class="ansi-blue-fg">&#34;raw_input was called, but this frontend does not support input requests.&#34;</span>
-<span class="ansi-green-intense-fg ansi-bold">    859</span>             )
-
-<span class="ansi-red-fg">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.</pre>
-</div>
-</div>
-
 </div>
 </div>
 

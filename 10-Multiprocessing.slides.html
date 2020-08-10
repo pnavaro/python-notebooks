@@ -13308,7 +13308,7 @@ a.anchor-link {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 0 ns, sys: 2.83 ms, total: 2.83 ms
+<pre>CPU times: user 2.27 ms, sys: 194 µs, total: 2.46 ms
 Wall time: 8.01 s
 </pre>
 </div>
@@ -13353,7 +13353,7 @@ Wall time: 8.01 s
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 2.54 ms, sys: 605 µs, total: 3.15 ms
+<pre>CPU times: user 2.49 ms, sys: 0 ns, total: 2.49 ms
 Wall time: 8.01 s
 </pre>
 </div>
@@ -13540,7 +13540,7 @@ Wall time: 8.01 s
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>result = 140 - Elapsed time 4.025667428970337
+<pre>result = 140 - Elapsed time 4.027230739593506
 </pre>
 </div>
 </div>
@@ -13631,7 +13631,7 @@ Wall time: 8.01 s
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre> result : 140 - elapsed time 4.013125658035278
+<pre> result : 140 - elapsed time 4.013136625289917
 </pre>
 </div>
 </div>
@@ -13667,7 +13667,7 @@ Wall time: 8.01 s
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 1.65 ms, sys: 3.48 ms, total: 5.14 ms
+<pre>CPU times: user 5.32 ms, sys: 167 µs, total: 5.48 ms
 Wall time: 2 s
 </pre>
 </div>
@@ -13739,7 +13739,7 @@ which does not return until the results are available.</p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;Future at 0x7f6e9815f640 state=running&gt;</pre>
+<pre>&lt;Future at 0x7fbc192cf1c0 state=running&gt;</pre>
 </div>
 
 </div>
@@ -13812,7 +13812,7 @@ which does not return until the results are available.</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 3.02 ms, sys: 0 ns, total: 3.02 ms
+<pre>CPU times: user 2.43 ms, sys: 396 µs, total: 2.82 ms
 Wall time: 8.01 s
 </pre>
 </div>
@@ -13846,7 +13846,7 @@ Wall time: 8.01 s
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 2.05 ms, sys: 506 µs, total: 2.56 ms
+<pre>CPU times: user 0 ns, sys: 2.87 ms, total: 2.87 ms
 Wall time: 2 s
 </pre>
 </div>
@@ -13935,7 +13935,7 @@ Wall time: 2 s
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Estimated value of Pi : 3.14118350 time : 13.81696153
+<pre>Estimated value of Pi : 3.14201980 time : 12.73346138
 </pre>
 </div>
 </div>
@@ -13958,58 +13958,24 @@ Wall time: 2 s
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Joblib-(bonus)">Joblib (bonus)<a class="anchor-link" href="#Joblib-(bonus)">&#182;</a></h1><p><a href="http://pythonhosted.org/joblib/">Joblib</a> provides a simple helper class to write parallel for loops using multiprocessing.</p>
+<h2 id="Parallel-tools-for-Python">Parallel tools for Python<a class="anchor-link" href="#Parallel-tools-for-Python">&#182;</a></h2><p>The parallel tools from standard library are very limited. You will have more powerful features with:</p>
+<ul>
+<li><a href="https://joblib.readthedocs.io/en/latest/">Joblib</a> provides a simple helper class to write parallel for loops using multiprocessing.</li>
+<li><a href="https://dask.org">Dask</a></li>
+<li><a href="https://spark.apache.org/docs/latest/api/python/index.html">PySpark</a></li>
+<li><a href="https://mpi4py.readthedocs.io">mpi4py</a></li>
+</ul>
 
 </div>
 </div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
-<span class="kn">from</span> <span class="nn">joblib</span> <span class="kn">import</span> <span class="n">Parallel</span><span class="p">,</span> <span class="n">delayed</span>
-<span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="mi">8</span><span class="p">)(</span><span class="n">delayed</span><span class="p">(</span><span class="n">delayed_square</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span>
-</pre></div>
-
-    </div>
 </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 157 ms, sys: 113 ms, total: 270 ms
-Wall time: 4.4 s
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[16]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[0, 1, 4, 9, 16, 25, 36, 49]</pre>
-</div>
-
-</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 
 </div>
 </div>
-
-</div></div></section></section>
+</div></section></section>
 </div>
 </div>
 

@@ -13478,7 +13478,7 @@ height=372
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>47.2 µs ± 1.02 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<pre>40.9 µs ± 412 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre>
 </div>
 </div>
@@ -13511,7 +13511,7 @@ height=372
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>41.7 µs ± 638 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<pre>38.5 µs ± 614 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre>
 </div>
 </div>
@@ -13784,10 +13784,10 @@ incremental matrix building. The conversion to csc/csr format is efficient.</li>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Matrices-creuses-:-scipy.sparse.linalg">Matrices creuses : <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg">scipy.sparse.linalg</a><a class="anchor-link" href="#Matrices-creuses-:-scipy.sparse.linalg">&#182;</a></h2><ul>
+<h2 id="Sparse-matrices-:-scipy.sparse.linalg">Sparse matrices : <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg">scipy.sparse.linalg</a><a class="anchor-link" href="#Sparse-matrices-:-scipy.sparse.linalg">&#182;</a></h2><ul>
 <li>speigen, speigen_symmetric, lobpcg : (ARPACK).</li>
 <li>svd : (ARPACK).</li>
-<li>Direct methods (UMFPACK or SUPERLU) ou iteratives </li>
+<li>Direct methods (UMFPACK or SUPERLU) or Krylov based methods </li>
 <li>Minimization : lsqr and minres</li>
 </ul>
 <p>For linear algebra:</p>
@@ -13994,7 +13994,7 @@ incremental matrix building. The conversion to csc/csr format is efficient.</li>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;SuperLU at 0x7fa6b77be390&gt;</pre>
+<pre>&lt;SuperLU at 0x7f17d6993d20&gt;</pre>
 </div>
 
 </div>
@@ -14028,7 +14028,7 @@ incremental matrix building. The conversion to csc/csr format is efficient.</li>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>1.5582722720639762e-15</pre>
+<pre>1.0990647210786425e-15</pre>
 </div>
 
 </div>
@@ -14073,33 +14073,32 @@ incremental matrix building. The conversion to csc/csr format is efficient.</li>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>iteration  0 residu =    2.73
-iteration  1 residu =    1.11
-iteration  2 residu =   0.485
-iteration  3 residu =   0.174
-iteration  4 residu =   0.068
-iteration  5 residu =  0.0281
-iteration  6 residu =  0.0108
-iteration  7 residu =   0.004
-iteration  8 residu = 0.00148
-iteration  9 residu = 0.000465
-iteration 10 residu = 0.000194
-iteration 11 residu = 7.56e-05
-iteration 12 residu = 2.94e-05
-iteration 13 residu = 1.01e-05
-iteration 14 residu = 3.83e-06
-iteration 15 residu = 1.12e-06
-iteration 16 residu = 4.28e-07
-iteration 17 residu = 1.98e-07
-iteration 18 residu = 6.04e-08
-iteration 19 residu = 2.26e-08
-iteration 20 residu = 6.34e-09
-iteration 21 residu = 1.63e-09
-iteration 22 residu = 3.64e-10
-iteration 23 residu = 1.1e-10
-iteration 24 residu = 3.21e-11
-iteration 25 residu = 7.73e-12
-iteration 26 residu = 3.14e-12
+<pre>iteration  0 residu =    2.46
+iteration  1 residu =    1.03
+iteration  2 residu =   0.429
+iteration  3 residu =   0.134
+iteration  4 residu =  0.0469
+iteration  5 residu =  0.0188
+iteration  6 residu = 0.00754
+iteration  7 residu = 0.00272
+iteration  8 residu = 0.00101
+iteration  9 residu = 0.000304
+iteration 10 residu = 8.89e-05
+iteration 11 residu = 3.24e-05
+iteration 12 residu = 1.31e-05
+iteration 13 residu = 5.7e-06
+iteration 14 residu = 2.11e-06
+iteration 15 residu = 4.94e-07
+iteration 16 residu = 1.85e-07
+iteration 17 residu = 6.72e-08
+iteration 18 residu = 2.11e-08
+iteration 19 residu = 5.39e-09
+iteration 20 residu = 2.1e-09
+iteration 21 residu = 7.25e-10
+iteration 22 residu = 2.41e-10
+iteration 23 residu = 1.02e-10
+iteration 24 residu = 2.27e-11
+iteration 25 residu = 6.47e-12
 </pre>
 </div>
 </div>
@@ -14153,7 +14152,7 @@ iteration 26 residu = 3.14e-12
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.20968376156946925</pre>
+<pre>0.3113860368041966</pre>
 </div>
 
 </div>
@@ -14188,14 +14187,16 @@ iteration 26 residu = 3.14e-12
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>iteration  0 residu =   0.196
-iteration  1 residu = 0.00465
-iteration  2 residu = 0.000175
-iteration  3 residu = 5.61e-06
-iteration  4 residu = 2.42e-07
-iteration  5 residu = 3.57e-09
-iteration  6 residu = 4.44e-11
-iteration  7 residu = 2.33e-13
+<pre>iteration  0 residu =   0.298
+iteration  1 residu =  0.0165
+iteration  2 residu = 0.000917
+iteration  3 residu = 2.19e-05
+iteration  4 residu = 1.19e-06
+iteration  5 residu = 7.27e-08
+iteration  6 residu = 3.78e-09
+iteration  7 residu = 1.51e-10
+iteration  8 residu = 1.35e-11
+iteration  9 residu = 6.64e-13
 </pre>
 </div>
 </div>
@@ -14461,8 +14462,8 @@ height=357
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 536 ms, sys: 81.1 ms, total: 617 ms
-Wall time: 339 ms
+<pre>CPU times: user 515 ms, sys: 80.4 ms, total: 595 ms
+Wall time: 327 ms
 </pre>
 </div>
 </div>
@@ -14475,7 +14476,7 @@ Wall time: 339 ms
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.colorbar.Colorbar at 0x7fa6b53096d0&gt;</pre>
+<pre>&lt;matplotlib.colorbar.Colorbar at 0x7f17d46721c0&gt;</pre>
 </div>
 
 </div>
@@ -14558,8 +14559,8 @@ height=360
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 616 ms, sys: 181 ms, total: 797 ms
-Wall time: 489 ms
+<pre>CPU times: user 612 ms, sys: 141 ms, total: 753 ms
+Wall time: 463 ms
 </pre>
 </div>
 </div>
@@ -14572,7 +14573,7 @@ Wall time: 489 ms
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.colorbar.Colorbar at 0x7fa6b52ba1c0&gt;</pre>
+<pre>&lt;matplotlib.colorbar.Colorbar at 0x7f17d45b1250&gt;</pre>
 </div>
 
 </div>

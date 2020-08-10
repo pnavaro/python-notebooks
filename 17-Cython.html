@@ -13098,6 +13098,20 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13122,14 +13136,17 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Pure-Python-Function">Pure Python Function<a class="anchor-link" href="#Pure-Python-Function">&#182;</a></h1><p>$f(x)=-2x^3+5x^2+x$,</p>
+<ul>
+<li>Pure Python Function</li>
+</ul>
+<p>$f(x)=-2x^3+5x^2+x$,</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -13180,7 +13197,7 @@ height=357
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">integrate_f_py</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
@@ -13199,7 +13216,7 @@ height=357
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> integrate_f_py(-1,1,10**3)
@@ -13220,7 +13237,7 @@ height=357
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>961 µs ± 13 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<pre>880 µs ± 8.95 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 2.0000040080120174
 </pre>
 </div>
@@ -13232,7 +13249,7 @@ height=357
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> heat
@@ -13242,76 +13259,10 @@ height=357
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-5-7b0de4361b3c&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>get_ipython<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>run_line_magic<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;load_ext&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;heat&#39;</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/interactiveshell.py</span> in <span class="ansi-cyan-fg">run_line_magic</span><span class="ansi-blue-fg">(self, magic_name, line, _stack_depth)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2324</span>                 kwargs<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;local_ns&#39;</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>get_local_scope<span class="ansi-blue-fg">(</span>stack_depth<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2325</span>             <span class="ansi-green-fg">with</span> self<span class="ansi-blue-fg">.</span>builtin_trap<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">-&gt; 2326</span><span class="ansi-red-fg">                 </span>result <span class="ansi-blue-fg">=</span> fn<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2327</span>             <span class="ansi-green-fg">return</span> result
-<span class="ansi-green-intense-fg ansi-bold">   2328</span> 
-
-<span class="ansi-green-fg">&lt;decorator-gen-64&gt;</span> in <span class="ansi-cyan-fg">load_ext</span><span class="ansi-blue-fg">(self, module_str)</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/magic.py</span> in <span class="ansi-cyan-fg">&lt;lambda&gt;</span><span class="ansi-blue-fg">(f, *a, **k)</span>
-<span class="ansi-green-intense-fg ansi-bold">    185</span>     <span class="ansi-red-fg"># but it&#39;s overkill for just that one bit of state.</span>
-<span class="ansi-green-intense-fg ansi-bold">    186</span>     <span class="ansi-green-fg">def</span> magic_deco<span class="ansi-blue-fg">(</span>arg<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 187</span><span class="ansi-red-fg">         </span>call <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">lambda</span> f<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>a<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>k<span class="ansi-blue-fg">:</span> f<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>a<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>k<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    188</span> 
-<span class="ansi-green-intense-fg ansi-bold">    189</span>         <span class="ansi-green-fg">if</span> callable<span class="ansi-blue-fg">(</span>arg<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/magics/extension.py</span> in <span class="ansi-cyan-fg">load_ext</span><span class="ansi-blue-fg">(self, module_str)</span>
-<span class="ansi-green-intense-fg ansi-bold">     31</span>         <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> module_str<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">     32</span>             <span class="ansi-green-fg">raise</span> UsageError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Missing module name.&#39;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">---&gt; 33</span><span class="ansi-red-fg">         </span>res <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>shell<span class="ansi-blue-fg">.</span>extension_manager<span class="ansi-blue-fg">.</span>load_extension<span class="ansi-blue-fg">(</span>module_str<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     34</span> 
-<span class="ansi-green-intense-fg ansi-bold">     35</span>         <span class="ansi-green-fg">if</span> res <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">&#39;already loaded&#39;</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/extensions.py</span> in <span class="ansi-cyan-fg">load_extension</span><span class="ansi-blue-fg">(self, module_str)</span>
-<span class="ansi-green-intense-fg ansi-bold">     78</span>             <span class="ansi-green-fg">if</span> module_str <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">in</span> sys<span class="ansi-blue-fg">.</span>modules<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">     79</span>                 <span class="ansi-green-fg">with</span> prepended_to_syspath<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>ipython_extension_dir<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 80</span><span class="ansi-red-fg">                     </span>mod <span class="ansi-blue-fg">=</span> import_module<span class="ansi-blue-fg">(</span>module_str<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     81</span>                     <span class="ansi-green-fg">if</span> mod<span class="ansi-blue-fg">.</span>__file__<span class="ansi-blue-fg">.</span>startswith<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>ipython_extension_dir<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">     82</span>                         print((&#34;Loading extensions from {dir} is deprecated. &#34;
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/importlib/__init__.py</span> in <span class="ansi-cyan-fg">import_module</span><span class="ansi-blue-fg">(name, package)</span>
-<span class="ansi-green-intense-fg ansi-bold">    125</span>                 <span class="ansi-green-fg">break</span>
-<span class="ansi-green-intense-fg ansi-bold">    126</span>             level <span class="ansi-blue-fg">+=</span> <span class="ansi-cyan-fg">1</span>
-<span class="ansi-green-fg">--&gt; 127</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">return</span> _bootstrap<span class="ansi-blue-fg">.</span>_gcd_import<span class="ansi-blue-fg">(</span>name<span class="ansi-blue-fg">[</span>level<span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> package<span class="ansi-blue-fg">,</span> level<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    128</span> 
-<span class="ansi-green-intense-fg ansi-bold">    129</span> 
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/importlib/_bootstrap.py</span> in <span class="ansi-cyan-fg">_gcd_import</span><span class="ansi-blue-fg">(name, package, level)</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/importlib/_bootstrap.py</span> in <span class="ansi-cyan-fg">_find_and_load</span><span class="ansi-blue-fg">(name, import_)</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/importlib/_bootstrap.py</span> in <span class="ansi-cyan-fg">_find_and_load_unlocked</span><span class="ansi-blue-fg">(name, import_)</span>
-
-<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;heat&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">heat</span>
@@ -13341,10 +13292,16 @@ integrate_f(0, 10, 1000)
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>UsageError: Cell magic `%%heat` not found.
-</pre>
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+width=301
+height=199
+>
 </div>
+
 </div>
 
 </div>
@@ -13354,13 +13311,16 @@ integrate_f(0, 10, 1000)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Pure-C-function">Pure C function<a class="anchor-link" href="#Pure-C-function">&#182;</a></h1>
+<ul>
+<li>Pure C function</li>
+</ul>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> integral_f_c.c
@@ -13432,7 +13392,7 @@ integrate_f(0, 10, 1000)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>gcc -O3 integral_f_c.c<span class="p">;</span> ./a.out -1 <span class="m">1</span> <span class="m">1000</span>
@@ -13453,7 +13413,7 @@ integrate_f(0, 10, 1000)
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>integral_f(-1.0, 1.0, 1000) = 2.000004 
-time = 8.663000e-03 ms 
+time = 4.978000e-03 ms 
 </pre>
 </div>
 </div>
@@ -13465,14 +13425,14 @@ time = 8.663000e-03 ms
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Cython-compilation:-Generating-C-code">Cython compilation: Generating C code<a class="anchor-link" href="#Cython-compilation:-Generating-C-code">&#182;</a></h1><p>Load Cython in jupyter notebook.</p>
+<h2 id="Cython-compilation:-Generating-C-code">Cython compilation: Generating C code<a class="anchor-link" href="#Cython-compilation:-Generating-C-code">&#182;</a></h2><p>Load Cython in jupyter notebook.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> Cython
@@ -13483,26 +13443,10 @@ time = 8.663000e-03 ms
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s2">&quot;darwin&quot;</span><span class="p">:</span>
-    <span class="o">%</span><span class="k">env</span> CC=&quot;gcc-8&quot;
-    <span class="o">%</span><span class="k">env</span> CXX=&quot;g++-8&quot;
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="C-Variable-and-Type-definitions">C Variable and Type definitions<a class="anchor-link" href="#C-Variable-and-Type-definitions">&#182;</a></h2><p>In general, use <code>cdef</code> to declare C variables. 
+<h3 id="C-Variable-and-Type-definitions">C Variable and Type definitions<a class="anchor-link" href="#C-Variable-and-Type-definitions">&#182;</a></h3><p>In general, use <code>cdef</code> to declare C variables. 
 The command :</p>
 <div class="highlight"><pre><span></span>$ cython -a mycode.pyx
 </pre></div>
@@ -14949,7 +14893,7 @@ body.cython { font-family: courier; font-size: 12; }
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Cython-Functions">Cython Functions<a class="anchor-link" href="#Cython-Functions">&#182;</a></h1><p>Use <strong>cdef</strong> to define a Cython function.</p>
+<h2 id="Cython-Functions">Cython Functions<a class="anchor-link" href="#Cython-Functions">&#182;</a></h2><p>Use <strong>cdef</strong> to define a Cython function.</p>
 <ul>
 <li>Cython function can accept either (inclusive) Python and C values as well as return either Python or C values,</li>
 <li><em>Within a Cython module</em> Python and Cython functions can call each other freely. However, only <strong>Python</strong> functions can be called from outside the module by Python code. (i.e. importing/exporting a Cython module into some Python code)</li>
@@ -15010,7 +14954,7 @@ body.cython { font-family: courier; font-size: 12; }
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Cython-Compilation">Cython Compilation<a class="anchor-link" href="#Cython-Compilation">&#182;</a></h1><ul>
+<h2 id="Cython-Compilation">Cython Compilation<a class="anchor-link" href="#Cython-Compilation">&#182;</a></h2><ul>
 <li>The .pyx source file is compiled by Cython to a .c file.</li>
 <li>The .c source file contains the code of a Python extension module.</li>
 <li>The .c file is compiled by a C compiler to a .so (shared object library) file which can be imported directly into a Python session.</li>
@@ -15022,7 +14966,7 @@ body.cython { font-family: courier; font-size: 12; }
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Build-with-CMake">Build with CMake<a class="anchor-link" href="#Build-with-CMake">&#182;</a></h2><div class="highlight"><pre><span></span><span class="nb">project</span><span class="p">(</span><span class="s">cython_f_example</span> <span class="s">CXX</span><span class="p">)</span>
+<h3 id="Build-with-CMake">Build with CMake<a class="anchor-link" href="#Build-with-CMake">&#182;</a></h3><div class="highlight"><pre><span></span><span class="nb">project</span><span class="p">(</span><span class="s">cython_f_example</span> <span class="s">CXX</span><span class="p">)</span>
 <span class="nb">include</span><span class="p">(</span><span class="s">UseCython</span><span class="p">)</span>  <span class="c"># Load Cython functions</span>
 <span class="c"># Set C++ output</span>
 <span class="nb">set_source_file_properties</span><span class="p">(</span><span class="s">cython_f_example.pyx</span> <span class="s">PROPERTIES</span> <span class="s">CYTHON_IS_CXX</span> <span class="s">TRUE</span> <span class="p">)</span>
@@ -15036,7 +14980,7 @@ body.cython { font-family: courier; font-size: 12; }
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="C/C++-generation-with-cython-application">C/C++ generation with cython application<a class="anchor-link" href="#C/C++-generation-with-cython-application">&#182;</a></h2><div class="highlight"><pre><span></span>cython -3 cython_f_example.pyx   <span class="c1"># create the C file for Python 3</span>
+<h3 id="C/C++-generation-with-cython-application">C/C++ generation with cython application<a class="anchor-link" href="#C/C++-generation-with-cython-application">&#182;</a></h3><div class="highlight"><pre><span></span>cython -3 cython_f_example.pyx   <span class="c1"># create the C file for Python 3</span>
 cython -3 --cplus cython_f_example.pyx  <span class="c1"># create the C++ file for Python 3</span>
 </pre></div>
 
@@ -15046,7 +14990,7 @@ cython -3 --cplus cython_f_example.pyx  <span class="c1"># create the C++ file f
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="build-with-a-C/C++-compiler">build with a C/C++ compiler<a class="anchor-link" href="#build-with-a-C/C++-compiler">&#182;</a></h2><p>To build use the Makefile:</p>
+<h3 id="build-with-a-C/C++-compiler">build with a C/C++ compiler<a class="anchor-link" href="#build-with-a-C/C++-compiler">&#182;</a></h3><p>To build use the Makefile:</p>
 <div class="highlight"><pre><span></span><span class="nv">CC</span><span class="o">=</span>gcc
 <span class="nv">CFLAGS</span><span class="o">=</span><span class="sb">`</span>python-config --cflags<span class="sb">`</span> 
 <span class="nv">LDFLAGS</span><span class="o">=</span><span class="sb">`</span>python-config --ldflags<span class="sb">`</span>
@@ -15064,7 +15008,7 @@ cython -3 --cplus cython_f_example.pyx  <span class="c1"># create the C++ file f
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="pyximport">pyximport<a class="anchor-link" href="#pyximport">&#182;</a></h1><p>import Cython .pyx files as if they were .py files:</p>
+<h2 id="pyximport">pyximport<a class="anchor-link" href="#pyximport">&#182;</a></h2><p>import Cython .pyx files as if they were .py files:</p>
 
 </div>
 </div>
@@ -15094,20 +15038,8 @@ cython -3 --cplus cython_f_example.pyx  <span class="c1"># create the C++ file f
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/Cython/Compiler/Main.py:369: FutureWarning: Cython directive &#39;language_level&#39; not set, using 2 for now (Py2). This will change in a later release! File: /home/runner/work/python-notebooks/python-notebooks/notebooks/cython_f_example.pyx
-  tree = Parsing.p_module(s, pxd, full_module_name)
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>764 µs ± 11.5 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<pre>698 µs ± 6.24 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 2.0000040080120174
 </pre>
 </div>
@@ -15120,7 +15052,7 @@ cython -3 --cplus cython_f_example.pyx  <span class="c1"># create the C++ file f
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Building-a-Cython-module-using-distutils">Building a Cython module using distutils<a class="anchor-link" href="#Building-a-Cython-module-using-distutils">&#182;</a></h1><p>Create the setup.py script:</p>
+<h2 id="Building-a-Cython-module-using-distutils">Building a Cython module using distutils<a class="anchor-link" href="#Building-a-Cython-module-using-distutils">&#182;</a></h2><p>Create the setup.py script:</p>
 
 </div>
 </div>
@@ -15168,7 +15100,7 @@ cython -3 --cplus cython_f_example.pyx  <span class="c1"># create the C++ file f
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> setup.py build_ext --inplace
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> setup.py  build_ext --inplace --quiet
 </pre></div>
 
     </div>
@@ -15238,7 +15170,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>757 µs ± 4.88 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<pre>705 µs ± 12.6 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre>
 </div>
 </div>
@@ -15263,7 +15195,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Why-is-it-faster-with-Cython-?">Why is it faster with Cython ?<a class="anchor-link" href="#Why-is-it-faster-with-Cython-?">&#182;</a></h1><ul>
+<h2 id="Why-is-it-faster-with-Cython-?">Why is it faster with Cython ?<a class="anchor-link" href="#Why-is-it-faster-with-Cython-?">&#182;</a></h2><ul>
 <li>Python code is interpreted at every execution to machine code.</li>
 <li>Compiled C code is already in machine code.</li>
 <li>C is a statically-typed language. It gives to the compiler more information which allows it to optimize both computations and memory access.</li>
@@ -15277,7 +15209,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Add-Cython-types">Add Cython types<a class="anchor-link" href="#Add-Cython-types">&#182;</a></h1><p>We coerce Python types to C types when calling the function. Still a "Python function" so callable from the global namespace.</p>
+<h2 id="Add-Cython-types">Add Cython types<a class="anchor-link" href="#Add-Cython-types">&#182;</a></h2><p>We coerce Python types to C types when calling the function. Still a "Python function" so callable from the global namespace.</p>
 
 </div>
 </div>
@@ -15364,7 +15296,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>684 µs ± 4.92 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<pre>633 µs ± 11.3 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 2.0000040080120174
 </pre>
 </div>
@@ -15453,7 +15385,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>156 µs ± 1.95 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<pre>146 µs ± 1.19 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 2.0000040080120174
 </pre>
 </div>
@@ -15466,7 +15398,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Exercise-:-Cythonize-the-trivial-exponential-function.">Exercise : Cythonize the trivial exponential function.<a class="anchor-link" href="#Exercise-:-Cythonize-the-trivial-exponential-function.">&#182;</a></h1>
+<h2 id="Exercise-:-Cythonize-the-trivial-exponential-function.">Exercise : Cythonize the trivial exponential function.<a class="anchor-link" href="#Exercise-:-Cythonize-the-trivial-exponential-function.">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -16098,7 +16030,7 @@ static PyObject *__pyx_pf_46_cython_magic_a96a095f6c3175b142027432bac51f88_exp_p
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>4.39 µs ± 149 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<pre>3.9 µs ± 60.5 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre>
 </div>
 </div>
@@ -16113,7 +16045,23 @@ static PyObject *__pyx_pf_46_cython_magic_a96a095f6c3175b142027432bac51f88_exp_p
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">cython</span>
+
 <span class="c"># %load solutions/cython/exponential.pyx</span>
+<span class="c">#cython: profile=False</span>
+<span class="c">#cython: cdivision=True</span>
+<span class="k">def</span> <span class="nf">exp_cython</span><span class="p">(</span><span class="n">double</span> <span class="n">x</span><span class="p">,</span> <span class="nb">int</span> <span class="n">terms</span> <span class="o">=</span> <span class="mf">50</span><span class="p">):</span>
+   <span class="k">cdef</span> <span class="kt">double</span> <span class="nf">sum</span>
+   <span class="k">cdef</span> <span class="kt">double</span> <span class="nf">power</span>
+   <span class="k">cdef</span> <span class="kt">double</span> <span class="nf">fact</span>
+   <span class="k">cdef</span> <span class="kt">int</span> <span class="nf">i</span>
+   <span class="nb">sum</span> <span class="o">=</span> <span class="mf">0.</span>
+   <span class="n">power</span> <span class="o">=</span> <span class="mf">1.</span>
+   <span class="n">fact</span> <span class="o">=</span> <span class="mf">1.</span>
+   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">terms</span><span class="p">):</span>
+      <span class="nb">sum</span> <span class="o">+=</span> <span class="n">power</span><span class="o">/</span><span class="n">fact</span>
+      <span class="n">power</span> <span class="o">*=</span> <span class="n">x</span>
+      <span class="n">fact</span> <span class="o">*=</span> <span class="n">i</span><span class="o">+</span><span class="mf">1</span>
+   <span class="k">return</span> <span class="nb">sum</span>
 </pre></div>
 
     </div>
@@ -16130,9 +16078,9 @@ static PyObject *__pyx_pf_46_cython_magic_a96a095f6c3175b142027432bac51f88_exp_p
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>building &#39;_cython_magic_eb57b1dfc3f16e554f6b2bfcf272fbe2&#39; extension
-gcc -pthread -B /usr/share/miniconda3/envs/runenv/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/share/miniconda3/envs/runenv/include/python3.8 -c /home/runner/.cache/ipython/cython/_cython_magic_eb57b1dfc3f16e554f6b2bfcf272fbe2.c -o /home/runner/.cache/ipython/cython/home/runner/.cache/ipython/cython/_cython_magic_eb57b1dfc3f16e554f6b2bfcf272fbe2.o
-gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr/share/miniconda3/envs/runenv/lib -Wl,-rpath=/usr/share/miniconda3/envs/runenv/lib -Wl,--no-as-needed -Wl,--sysroot=/ /home/runner/.cache/ipython/cython/home/runner/.cache/ipython/cython/_cython_magic_eb57b1dfc3f16e554f6b2bfcf272fbe2.o -o /home/runner/.cache/ipython/cython/_cython_magic_eb57b1dfc3f16e554f6b2bfcf272fbe2.cpython-38-x86_64-linux-gnu.so
+<pre>building &#39;_cython_magic_f09447b346fe20b620ea715f5b8935ac&#39; extension
+gcc -pthread -B /usr/share/miniconda3/envs/runenv/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/share/miniconda3/envs/runenv/include/python3.8 -c /home/runner/.cache/ipython/cython/_cython_magic_f09447b346fe20b620ea715f5b8935ac.c -o /home/runner/.cache/ipython/cython/home/runner/.cache/ipython/cython/_cython_magic_f09447b346fe20b620ea715f5b8935ac.o
+gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr/share/miniconda3/envs/runenv/lib -Wl,-rpath=/usr/share/miniconda3/envs/runenv/lib -Wl,--no-as-needed -Wl,--sysroot=/ /home/runner/.cache/ipython/cython/home/runner/.cache/ipython/cython/_cython_magic_f09447b346fe20b620ea715f5b8935ac.o -o /home/runner/.cache/ipython/cython/_cython_magic_f09447b346fe20b620ea715f5b8935ac.cpython-38-x86_64-linux-gnu.so
 </pre>
 </div>
 </div>
@@ -16162,46 +16110,9 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-26-e456486158ce&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>get_ipython<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>run_line_magic<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;timeit&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;exp_cython(1.,50)&#39;</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/interactiveshell.py</span> in <span class="ansi-cyan-fg">run_line_magic</span><span class="ansi-blue-fg">(self, magic_name, line, _stack_depth)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2324</span>                 kwargs<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;local_ns&#39;</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>get_local_scope<span class="ansi-blue-fg">(</span>stack_depth<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2325</span>             <span class="ansi-green-fg">with</span> self<span class="ansi-blue-fg">.</span>builtin_trap<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">-&gt; 2326</span><span class="ansi-red-fg">                 </span>result <span class="ansi-blue-fg">=</span> fn<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2327</span>             <span class="ansi-green-fg">return</span> result
-<span class="ansi-green-intense-fg ansi-bold">   2328</span> 
-
-<span class="ansi-green-fg">&lt;decorator-gen-60&gt;</span> in <span class="ansi-cyan-fg">timeit</span><span class="ansi-blue-fg">(self, line, cell, local_ns)</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/magic.py</span> in <span class="ansi-cyan-fg">&lt;lambda&gt;</span><span class="ansi-blue-fg">(f, *a, **k)</span>
-<span class="ansi-green-intense-fg ansi-bold">    185</span>     <span class="ansi-red-fg"># but it&#39;s overkill for just that one bit of state.</span>
-<span class="ansi-green-intense-fg ansi-bold">    186</span>     <span class="ansi-green-fg">def</span> magic_deco<span class="ansi-blue-fg">(</span>arg<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 187</span><span class="ansi-red-fg">         </span>call <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">lambda</span> f<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>a<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>k<span class="ansi-blue-fg">:</span> f<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>a<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>k<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    188</span> 
-<span class="ansi-green-intense-fg ansi-bold">    189</span>         <span class="ansi-green-fg">if</span> callable<span class="ansi-blue-fg">(</span>arg<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/magics/execution.py</span> in <span class="ansi-cyan-fg">timeit</span><span class="ansi-blue-fg">(self, line, cell, local_ns)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1167</span>             <span class="ansi-green-fg">for</span> index <span class="ansi-green-fg">in</span> range<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1168</span>                 number <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">10</span> <span class="ansi-blue-fg">**</span> index
-<span class="ansi-green-fg">-&gt; 1169</span><span class="ansi-red-fg">                 </span>time_number <span class="ansi-blue-fg">=</span> timer<span class="ansi-blue-fg">.</span>timeit<span class="ansi-blue-fg">(</span>number<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1170</span>                 <span class="ansi-green-fg">if</span> time_number <span class="ansi-blue-fg">&gt;=</span> <span class="ansi-cyan-fg">0.2</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1171</span>                     <span class="ansi-green-fg">break</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/magics/execution.py</span> in <span class="ansi-cyan-fg">timeit</span><span class="ansi-blue-fg">(self, number)</span>
-<span class="ansi-green-intense-fg ansi-bold">    167</span>         gc<span class="ansi-blue-fg">.</span>disable<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    168</span>         <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 169</span><span class="ansi-red-fg">             </span>timing <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>inner<span class="ansi-blue-fg">(</span>it<span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">.</span>timer<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    170</span>         <span class="ansi-green-fg">finally</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    171</span>             <span class="ansi-green-fg">if</span> gcold<span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">&lt;magic-timeit&gt;</span> in <span class="ansi-cyan-fg">inner</span><span class="ansi-blue-fg">(_it, _timer)</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;exp_cython&#39; is not defined</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>156 ns ± 1.29 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+</pre>
 </div>
 </div>
 
@@ -16212,7 +16123,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Cython-and-Numpy">Cython and Numpy<a class="anchor-link" href="#Cython-and-Numpy">&#182;</a></h1><p>The Numpy library contains many fast numerics routines. Their speed comes 
+<h2 id="Cython-and-Numpy">Cython and Numpy<a class="anchor-link" href="#Cython-and-Numpy">&#182;</a></h2><p>The Numpy library contains many fast numerics routines. Their speed comes 
 from manipulating the low-level C-arrays that the numpy.array object wraps 
 rather than computing over slow Python lists. Using Cython one can access 
 those low-level arrays and implement their own fast algorithms while allowing 
@@ -16277,7 +16188,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Import-numpy-as-a-Cython-module">Import numpy as a Cython module<a class="anchor-link" href="#Import-numpy-as-a-Cython-module">&#182;</a></h1><p>We now take advantage of the ability to access the underlying C arrays in the <code>numpy.array</code> object from Cython, thanks to a special <code>numpy.pxd</code> file included with Cython. (The Cython developers worked closely with Numpy developers to make this optimal.)</p>
+<h3 id="Import-numpy-as-a-Cython-module">Import numpy as a Cython module<a class="anchor-link" href="#Import-numpy-as-a-Cython-module">&#182;</a></h3><p>We now take advantage of the ability to access the underlying C arrays in the <code>numpy.array</code> object from Cython, thanks to a special <code>numpy.pxd</code> file included with Cython. (The Cython developers worked closely with Numpy developers to make this optimal.)</p>
 <p>To begin with, we have to <code>cimport</code> numpy: that is, import numpy as a <strong>Cython</strong> module rather than a <strong>Python</strong> module. To do so, simply type:</p>
 <div class="highlight"><pre><span></span><span class="n">cimport</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
 </pre></div>
@@ -16374,7 +16285,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>155 ms ± 659 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<pre>147 ms ± 1.8 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre>
 </div>
 </div>
@@ -16405,7 +16316,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>338 µs ± 4.85 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<pre>306 µs ± 2.57 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre>
 </div>
 </div>
@@ -16501,7 +16412,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>292 µs ± 9.72 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<pre>272 µs ± 6.21 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre>
 </div>
 </div>
@@ -16513,7 +16424,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Cython-Build-Options">Cython Build Options<a class="anchor-link" href="#Cython-Build-Options">&#182;</a></h1><ul>
+<h2 id="Cython-Build-Options">Cython Build Options<a class="anchor-link" href="#Cython-Build-Options">&#182;</a></h2><ul>
 <li>boundcheck(True,False) : array bounds checking</li>
 <li>wraparound(True,False) : negative indexing.</li>
 <li>initializedcheck(True,False): checks that a memoryview is initialized </li>
@@ -16530,7 +16441,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Numpy-objects-with-external-C-program.">Numpy objects with external C program.<a class="anchor-link" href="#Numpy-objects-with-external-C-program.">&#182;</a></h1><p>Note that this can actually be slower 
+<h2 id="Numpy-objects-with-external-C-program.">Numpy objects with external C program.<a class="anchor-link" href="#Numpy-objects-with-external-C-program.">&#182;</a></h2><p>Note that this can actually be slower 
 because the C function is not the best implementation of matrix multiplication. Call cblas with same technique is an interesting exercise.</p>
 
 </div>
@@ -16597,9 +16508,24 @@ because the C function is not the best implementation of matrix multiplication. 
 <div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">cython</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pyximport</span> <span class="kn">import</span> <span class="n">install</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">here</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">cython</span> <span class="o">-</span><span class="n">I</span> <span class="p">{</span><span class="n">here</span><span class="p">}</span>
 <span class="c"># do not forget to change the file path</span>
-<span class="k">cdef</span> <span class="kr">extern</span> <span class="k">from</span> <span class="s">&quot;/Users/navaro/PycharmProjects/python-notebooks/mydgemm.c&quot;</span><span class="p">:</span>
+<span class="k">cdef</span> <span class="kr">extern</span> <span class="k">from</span> <span class="s">&quot;mydgemm.c&quot;</span><span class="p">:</span>
     <span class="n">void</span> <span class="n">my_dgemm</span> <span class="p">(</span><span class="nb">int</span> <span class="n">m</span><span class="p">,</span> <span class="nb">int</span> <span class="n">n</span><span class="p">,</span> <span class="nb">int</span> <span class="n">k</span><span class="p">,</span> 
                           <span class="n">double</span> <span class="o">*</span><span class="n">A</span><span class="p">,</span> <span class="n">double</span> <span class="o">*</span><span class="n">B</span><span class="p">,</span> <span class="n">double</span> <span class="o">*</span><span class="n">C</span><span class="p">)</span>
 <span class="k">cimport</span> <span class="nn">cython</span>
@@ -16635,8 +16561,9 @@ because the C function is not the best implementation of matrix multiplication. 
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>building &#39;_cython_magic_ac507ac6e349df671064279adff4ef16&#39; extension
-gcc -pthread -B /usr/share/miniconda3/envs/runenv/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/include/python3.8 -c /home/runner/.cache/ipython/cython/_cython_magic_ac507ac6e349df671064279adff4ef16.c -o /home/runner/.cache/ipython/cython/home/runner/.cache/ipython/cython/_cython_magic_ac507ac6e349df671064279adff4ef16.o
+<pre>building &#39;_cython_magic_3182af7b83c2474db8f1f7bb74b9f4d7&#39; extension
+gcc -pthread -B /usr/share/miniconda3/envs/runenv/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/home/runner/work/python-notebooks/python-notebooks/notebooks -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/include/python3.8 -c /home/runner/.cache/ipython/cython/_cython_magic_3182af7b83c2474db8f1f7bb74b9f4d7.c -o /home/runner/.cache/ipython/cython/home/runner/.cache/ipython/cython/_cython_magic_3182af7b83c2474db8f1f7bb74b9f4d7.o
+gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr/share/miniconda3/envs/runenv/lib -Wl,-rpath=/usr/share/miniconda3/envs/runenv/lib -Wl,--no-as-needed -Wl,--sysroot=/ /home/runner/.cache/ipython/cython/home/runner/.cache/ipython/cython/_cython_magic_3182af7b83c2474db8f1f7bb74b9f4d7.o -o /home/runner/.cache/ipython/cython/_cython_magic_3182af7b83c2474db8f1f7bb74b9f4d7.cpython-38-x86_64-linux-gnu.so
 </pre>
 </div>
 </div>
@@ -16647,7 +16574,7 @@ gcc -pthread -B /usr/share/miniconda3/envs/runenv/compiler_compat -Wl,--sysroot=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> matmul4(A,B,C)
@@ -16666,46 +16593,9 @@ gcc -pthread -B /usr/share/miniconda3/envs/runenv/compiler_compat -Wl,--sysroot=
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-36-edb42162d6ab&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>get_ipython<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>run_line_magic<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;timeit&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;matmul4(A,B,C)&#39;</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/interactiveshell.py</span> in <span class="ansi-cyan-fg">run_line_magic</span><span class="ansi-blue-fg">(self, magic_name, line, _stack_depth)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2324</span>                 kwargs<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;local_ns&#39;</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>get_local_scope<span class="ansi-blue-fg">(</span>stack_depth<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2325</span>             <span class="ansi-green-fg">with</span> self<span class="ansi-blue-fg">.</span>builtin_trap<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">-&gt; 2326</span><span class="ansi-red-fg">                 </span>result <span class="ansi-blue-fg">=</span> fn<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2327</span>             <span class="ansi-green-fg">return</span> result
-<span class="ansi-green-intense-fg ansi-bold">   2328</span> 
-
-<span class="ansi-green-fg">&lt;decorator-gen-60&gt;</span> in <span class="ansi-cyan-fg">timeit</span><span class="ansi-blue-fg">(self, line, cell, local_ns)</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/magic.py</span> in <span class="ansi-cyan-fg">&lt;lambda&gt;</span><span class="ansi-blue-fg">(f, *a, **k)</span>
-<span class="ansi-green-intense-fg ansi-bold">    185</span>     <span class="ansi-red-fg"># but it&#39;s overkill for just that one bit of state.</span>
-<span class="ansi-green-intense-fg ansi-bold">    186</span>     <span class="ansi-green-fg">def</span> magic_deco<span class="ansi-blue-fg">(</span>arg<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 187</span><span class="ansi-red-fg">         </span>call <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">lambda</span> f<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>a<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>k<span class="ansi-blue-fg">:</span> f<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>a<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>k<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    188</span> 
-<span class="ansi-green-intense-fg ansi-bold">    189</span>         <span class="ansi-green-fg">if</span> callable<span class="ansi-blue-fg">(</span>arg<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/magics/execution.py</span> in <span class="ansi-cyan-fg">timeit</span><span class="ansi-blue-fg">(self, line, cell, local_ns)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1167</span>             <span class="ansi-green-fg">for</span> index <span class="ansi-green-fg">in</span> range<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1168</span>                 number <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">10</span> <span class="ansi-blue-fg">**</span> index
-<span class="ansi-green-fg">-&gt; 1169</span><span class="ansi-red-fg">                 </span>time_number <span class="ansi-blue-fg">=</span> timer<span class="ansi-blue-fg">.</span>timeit<span class="ansi-blue-fg">(</span>number<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1170</span>                 <span class="ansi-green-fg">if</span> time_number <span class="ansi-blue-fg">&gt;=</span> <span class="ansi-cyan-fg">0.2</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1171</span>                     <span class="ansi-green-fg">break</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/magics/execution.py</span> in <span class="ansi-cyan-fg">timeit</span><span class="ansi-blue-fg">(self, number)</span>
-<span class="ansi-green-intense-fg ansi-bold">    167</span>         gc<span class="ansi-blue-fg">.</span>disable<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    168</span>         <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 169</span><span class="ansi-red-fg">             </span>timing <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>inner<span class="ansi-blue-fg">(</span>it<span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">.</span>timer<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    170</span>         <span class="ansi-green-fg">finally</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    171</span>             <span class="ansi-green-fg">if</span> gcold<span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">&lt;magic-timeit&gt;</span> in <span class="ansi-cyan-fg">inner</span><span class="ansi-blue-fg">(_it, _timer)</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;matmul4&#39; is not defined</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>257 µs ± 2.62 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+</pre>
 </div>
 </div>
 
@@ -16722,10 +16612,19 @@ gcc -pthread -B /usr/share/miniconda3/envs/runenv/compiler_compat -Wl,--sysroot=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># %load solutions/cython/is_prime0.py</span>
+
+<span class="k">def</span> <span class="nf">is_prime0</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span> <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span> <span class="k">return</span> <span class="kc">False</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="k">while</span> <span class="n">k</span><span class="o">*</span><span class="n">k</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="kc">False</span>
+        <span class="n">k</span> <span class="o">+=</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="kc">True</span>
 </pre></div>
 
     </div>
@@ -16735,7 +16634,7 @@ gcc -pthread -B /usr/share/miniconda3/envs/runenv/compiler_compat -Wl,--sysroot=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span> <span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">if</span> <span class="n">is_prime0</span><span class="p">(</span><span class="n">p</span><span class="p">)]</span>
@@ -16751,21 +16650,15 @@ gcc -pthread -B /usr/share/miniconda3/envs/runenv/compiler_compat -Wl,--sysroot=
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[39]:</div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-38-3839f7983258&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-blue-fg">[</span> p <span class="ansi-green-fg">for</span> p <span class="ansi-green-fg">in</span> range<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">20</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">if</span> is_prime0<span class="ansi-blue-fg">(</span>p<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">]</span>
 
-<span class="ansi-green-fg">&lt;ipython-input-38-3839f7983258&gt;</span> in <span class="ansi-cyan-fg">&lt;listcomp&gt;</span><span class="ansi-blue-fg">(.0)</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-blue-fg">[</span> p <span class="ansi-green-fg">for</span> p <span class="ansi-green-fg">in</span> range<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">20</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">if</span> is_prime0<span class="ansi-blue-fg">(</span>p<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">]</span>
 
-<span class="ansi-red-fg">NameError</span>: name &#39;is_prime0&#39; is not defined</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[0, 1, 2, 3, 5, 7, 11, 13, 17, 19]</pre>
 </div>
+
 </div>
 
 </div>
@@ -16774,7 +16667,7 @@ gcc -pthread -B /usr/share/miniconda3/envs/runenv/compiler_compat -Wl,--sysroot=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">))</span>
@@ -16794,49 +16687,9 @@ gcc -pthread -B /usr/share/miniconda3/envs/runenv/compiler_compat -Wl,--sysroot=
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-39-227d4c8590e5&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> L <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>range<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">10000</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>get_ipython<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>run_line_magic<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;timeit&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;[ p for p in L if is_prime0(p)]&#39;</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/interactiveshell.py</span> in <span class="ansi-cyan-fg">run_line_magic</span><span class="ansi-blue-fg">(self, magic_name, line, _stack_depth)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2324</span>                 kwargs<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;local_ns&#39;</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>get_local_scope<span class="ansi-blue-fg">(</span>stack_depth<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2325</span>             <span class="ansi-green-fg">with</span> self<span class="ansi-blue-fg">.</span>builtin_trap<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">-&gt; 2326</span><span class="ansi-red-fg">                 </span>result <span class="ansi-blue-fg">=</span> fn<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2327</span>             <span class="ansi-green-fg">return</span> result
-<span class="ansi-green-intense-fg ansi-bold">   2328</span> 
-
-<span class="ansi-green-fg">&lt;decorator-gen-60&gt;</span> in <span class="ansi-cyan-fg">timeit</span><span class="ansi-blue-fg">(self, line, cell, local_ns)</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/magic.py</span> in <span class="ansi-cyan-fg">&lt;lambda&gt;</span><span class="ansi-blue-fg">(f, *a, **k)</span>
-<span class="ansi-green-intense-fg ansi-bold">    185</span>     <span class="ansi-red-fg"># but it&#39;s overkill for just that one bit of state.</span>
-<span class="ansi-green-intense-fg ansi-bold">    186</span>     <span class="ansi-green-fg">def</span> magic_deco<span class="ansi-blue-fg">(</span>arg<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 187</span><span class="ansi-red-fg">         </span>call <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">lambda</span> f<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>a<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>k<span class="ansi-blue-fg">:</span> f<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>a<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>k<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    188</span> 
-<span class="ansi-green-intense-fg ansi-bold">    189</span>         <span class="ansi-green-fg">if</span> callable<span class="ansi-blue-fg">(</span>arg<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/magics/execution.py</span> in <span class="ansi-cyan-fg">timeit</span><span class="ansi-blue-fg">(self, line, cell, local_ns)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1167</span>             <span class="ansi-green-fg">for</span> index <span class="ansi-green-fg">in</span> range<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1168</span>                 number <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">10</span> <span class="ansi-blue-fg">**</span> index
-<span class="ansi-green-fg">-&gt; 1169</span><span class="ansi-red-fg">                 </span>time_number <span class="ansi-blue-fg">=</span> timer<span class="ansi-blue-fg">.</span>timeit<span class="ansi-blue-fg">(</span>number<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1170</span>                 <span class="ansi-green-fg">if</span> time_number <span class="ansi-blue-fg">&gt;=</span> <span class="ansi-cyan-fg">0.2</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1171</span>                     <span class="ansi-green-fg">break</span>
-
-<span class="ansi-green-fg">/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/magics/execution.py</span> in <span class="ansi-cyan-fg">timeit</span><span class="ansi-blue-fg">(self, number)</span>
-<span class="ansi-green-intense-fg ansi-bold">    167</span>         gc<span class="ansi-blue-fg">.</span>disable<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    168</span>         <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 169</span><span class="ansi-red-fg">             </span>timing <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>inner<span class="ansi-blue-fg">(</span>it<span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">.</span>timer<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    170</span>         <span class="ansi-green-fg">finally</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    171</span>             <span class="ansi-green-fg">if</span> gcold<span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">&lt;magic-timeit&gt;</span> in <span class="ansi-cyan-fg">inner</span><span class="ansi-blue-fg">(_it, _timer)</span>
-
-<span class="ansi-green-fg">&lt;magic-timeit&gt;</span> in <span class="ansi-cyan-fg">&lt;listcomp&gt;</span><span class="ansi-blue-fg">(.0)</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;is_prime0&#39; is not defined</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>7.7 ms ± 98.6 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+</pre>
 </div>
 </div>
 
@@ -16846,7 +16699,7 @@ gcc -pthread -B /usr/share/miniconda3/envs/runenv/compiler_compat -Wl,--sysroot=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">cython</span>
@@ -16875,7 +16728,7 @@ gcc -pthread -B /usr/share/miniconda3/envs/runenv/compiler_compat -Wl,--sysroot=
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>building &#39;_cython_magic_f81b23461181c5d78ab3700de598d3b5&#39; extension
-gcc -pthread -B /usr/share/miniconda3/envs/runenv/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/include/python3.8 -c /home/runner/.cache/ipython/cython/_cython_magic_f81b23461181c5d78ab3700de598d3b5.c -o /home/runner/.cache/ipython/cython/home/runner/.cache/ipython/cython/_cython_magic_f81b23461181c5d78ab3700de598d3b5.o
+gcc -pthread -B /usr/share/miniconda3/envs/runenv/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/include/python3.8 -c /home/runner/.cache/ipython/cython/_cython_magic_f81b23461181c5d78ab3700de598d3b5.c -o /home/runner/.cache/ipython/cython/home/runner/.cache/ipython/cython/_cython_magic_f81b23461181c5d78ab3700de598d3b5.o
 gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr/share/miniconda3/envs/runenv/lib -Wl,-rpath=/usr/share/miniconda3/envs/runenv/lib -Wl,--no-as-needed -Wl,--sysroot=/ /home/runner/.cache/ipython/cython/home/runner/.cache/ipython/cython/_cython_magic_f81b23461181c5d78ab3700de598d3b5.o -o /home/runner/.cache/ipython/cython/_cython_magic_f81b23461181c5d78ab3700de598d3b5.cpython-38-x86_64-linux-gnu.so
 </pre>
 </div>
@@ -16887,7 +16740,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span> <span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">if</span> <span class="n">is_prime1</span><span class="p">(</span><span class="n">p</span><span class="p">)]</span>
@@ -16903,7 +16756,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[41]:</div>
+    <div class="prompt output_prompt">Out[42]:</div>
 
 
 
@@ -16920,7 +16773,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> [p  for p in L if is_prime1(p)]
@@ -16940,7 +16793,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>4.7 ms ± 103 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<pre>4 ms ± 79.2 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre>
 </div>
 </div>
@@ -16958,7 +16811,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">cython</span>
@@ -16989,7 +16842,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>building &#39;_cython_magic_745b858a4456e55af5f92e69b9968cd3&#39; extension
-gcc -pthread -B /usr/share/miniconda3/envs/runenv/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/include/python3.8 -c /home/runner/.cache/ipython/cython/_cython_magic_745b858a4456e55af5f92e69b9968cd3.c -o /home/runner/.cache/ipython/cython/home/runner/.cache/ipython/cython/_cython_magic_745b858a4456e55af5f92e69b9968cd3.o
+gcc -pthread -B /usr/share/miniconda3/envs/runenv/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/include/python3.8 -c /home/runner/.cache/ipython/cython/_cython_magic_745b858a4456e55af5f92e69b9968cd3.c -o /home/runner/.cache/ipython/cython/home/runner/.cache/ipython/cython/_cython_magic_745b858a4456e55af5f92e69b9968cd3.o
 gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr/share/miniconda3/envs/runenv/lib -Wl,-rpath=/usr/share/miniconda3/envs/runenv/lib -Wl,--no-as-needed -Wl,--sysroot=/ /home/runner/.cache/ipython/cython/home/runner/.cache/ipython/cython/_cython_magic_745b858a4456e55af5f92e69b9968cd3.o -o /home/runner/.cache/ipython/cython/_cython_magic_745b858a4456e55af5f92e69b9968cd3.cpython-38-x86_64-linux-gnu.so
 </pre>
 </div>
@@ -17001,7 +16854,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span> <span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">if</span> <span class="n">is_prime2</span><span class="p">(</span><span class="n">p</span><span class="p">)]</span>
@@ -17017,7 +16870,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[44]:</div>
+    <div class="prompt output_prompt">Out[45]:</div>
 
 
 
@@ -17034,7 +16887,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> [p for p in L if is_prime2(p) ]
@@ -17054,7 +16907,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>680 µs ± 8.78 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<pre>615 µs ± 4.1 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre>
 </div>
 </div>
@@ -17072,7 +16925,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">cython</span>
@@ -17104,7 +16957,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>building &#39;_cython_magic_666b225df8666611ff2af72a85a03e9d&#39; extension
-gcc -pthread -B /usr/share/miniconda3/envs/runenv/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/include/python3.8 -c /home/runner/.cache/ipython/cython/_cython_magic_666b225df8666611ff2af72a85a03e9d.c -o /home/runner/.cache/ipython/cython/home/runner/.cache/ipython/cython/_cython_magic_666b225df8666611ff2af72a85a03e9d.o
+gcc -pthread -B /usr/share/miniconda3/envs/runenv/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/include/python3.8 -c /home/runner/.cache/ipython/cython/_cython_magic_666b225df8666611ff2af72a85a03e9d.c -o /home/runner/.cache/ipython/cython/home/runner/.cache/ipython/cython/_cython_magic_666b225df8666611ff2af72a85a03e9d.o
 gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr/share/miniconda3/envs/runenv/lib -Wl,-rpath=/usr/share/miniconda3/envs/runenv/lib -Wl,--no-as-needed -Wl,--sysroot=/ /home/runner/.cache/ipython/cython/home/runner/.cache/ipython/cython/_cython_magic_666b225df8666611ff2af72a85a03e9d.o -o /home/runner/.cache/ipython/cython/_cython_magic_666b225df8666611ff2af72a85a03e9d.cpython-38-x86_64-linux-gnu.so
 </pre>
 </div>
@@ -17116,7 +16969,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">prime_list</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)))</span>
@@ -17132,7 +16985,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[47]:</div>
+    <div class="prompt output_prompt">Out[48]:</div>
 
 
 
@@ -17149,7 +17002,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> prime_list(L)
@@ -17169,7 +17022,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>369 µs ± 4.2 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<pre>340 µs ± 4.36 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre>
 </div>
 </div>
@@ -17180,7 +17033,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">cython</span>
@@ -17220,7 +17073,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>building &#39;_cython_magic_2a5b09b5e9c574f8e7fa68917eb3edc0&#39; extension
-gcc -pthread -B /usr/share/miniconda3/envs/runenv/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/include/python3.8 -c /home/runner/.cache/ipython/cython/_cython_magic_2a5b09b5e9c574f8e7fa68917eb3edc0.c -o /home/runner/.cache/ipython/cython/home/runner/.cache/ipython/cython/_cython_magic_2a5b09b5e9c574f8e7fa68917eb3edc0.o
+gcc -pthread -B /usr/share/miniconda3/envs/runenv/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/include/python3.8 -c /home/runner/.cache/ipython/cython/_cython_magic_2a5b09b5e9c574f8e7fa68917eb3edc0.c -o /home/runner/.cache/ipython/cython/home/runner/.cache/ipython/cython/_cython_magic_2a5b09b5e9c574f8e7fa68917eb3edc0.o
 gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr/share/miniconda3/envs/runenv/lib -Wl,-rpath=/usr/share/miniconda3/envs/runenv/lib -Wl,--no-as-needed -Wl,--sysroot=/ /home/runner/.cache/ipython/cython/home/runner/.cache/ipython/cython/_cython_magic_2a5b09b5e9c574f8e7fa68917eb3edc0.o -o /home/runner/.cache/ipython/cython/_cython_magic_2a5b09b5e9c574f8e7fa68917eb3edc0.cpython-38-x86_64-linux-gnu.so
 </pre>
 </div>
@@ -17232,7 +17085,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -17249,7 +17102,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[50]:</div>
+    <div class="prompt output_prompt">Out[51]:</div>
 
 
 
@@ -17266,7 +17119,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">npL</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
@@ -17287,7 +17140,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>376 µs ± 2.83 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<pre>347 µs ± 9.4 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre>
 </div>
 </div>
@@ -17299,7 +17152,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Using-Parallelism">Using Parallelism<a class="anchor-link" href="#Using-Parallelism">&#182;</a></h1><ul>
+<h2 id="Using-Parallelism">Using Parallelism<a class="anchor-link" href="#Using-Parallelism">&#182;</a></h2><ul>
 <li>Cython supports native parallelism via OpenMP</li>
 <li>by default, Python’s Global Interpreter Lock (GIL) prevents that several threads use the Python interpreter simultaneously</li>
 <li>to use this kind of parallelism, the GIL must be released</li>
@@ -17314,7 +17167,7 @@ this magic command in your notebook.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> cython_omp.pyx
@@ -17375,7 +17228,7 @@ this magic command in your notebook.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> setup.py
@@ -17385,10 +17238,10 @@ this magic command in your notebook.</p>
 <span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">numpy</span>
 
-<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s2">&quot;darwin&quot;</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;CC&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;gcc-8&quot;</span>  <span class="c1"># Change the compiler to gcc on Mac</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;CXX&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;g++-8&quot;</span>
-    
+<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s2">&quot;darwin&quot;</span><span class="p">:</span> <span class="c1"># for omp, use gcc installed with brew</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;CC&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;gcc-10&quot;</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;CXX&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;g++-10&quot;</span>
+
 <span class="n">ext_modules</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">Extension</span><span class="p">(</span>
         <span class="s2">&quot;cython_omp&quot;</span><span class="p">,</span>
@@ -17431,10 +17284,10 @@ this magic command in your notebook.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> setup.py build_ext --inplace
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> setup.py build_ext --inplace --quiet
 </pre></div>
 
     </div>
@@ -17453,29 +17306,7 @@ this magic command in your notebook.</p>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Compiling cython_omp.pyx because it changed.
 [1/1] Cythonizing cython_omp.pyx
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/Cython/Compiler/Main.py:369: FutureWarning: Cython directive &#39;language_level&#39; not set, using 2 for now (Py2). This will change in a later release! File: /home/runner/work/python-notebooks/python-notebooks/notebooks/cython_omp.pyx
-  tree = Parsing.p_module(s, pxd, full_module_name)
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>running build_ext
+running build_ext
 building &#39;cython_omp&#39; extension
 gcc -pthread -B /usr/share/miniconda3/envs/runenv/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/numpy/core/include -I/usr/share/miniconda3/envs/runenv/include/python3.8 -c cython_omp.c -o build/temp.linux-x86_64-3.8/cython_omp.o -fopenmp
 gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr/share/miniconda3/envs/runenv/lib -Wl,-rpath=/usr/share/miniconda3/envs/runenv/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-x86_64-3.8/cython_omp.o -o /home/runner/work/python-notebooks/python-notebooks/notebooks/cython_omp.cpython-38-x86_64-linux-gnu.so -fopenmp
@@ -17489,7 +17320,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">cython_omp</span> <span class="kn">import</span> <span class="n">prime_array_omp</span>
@@ -17502,7 +17333,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">prime_array_omp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">))</span>
@@ -17518,7 +17349,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[56]:</div>
+    <div class="prompt output_prompt">Out[57]:</div>
 
 
 
@@ -17535,7 +17366,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> prime_array_omp(npL)
@@ -17555,7 +17386,7 @@ gcc -pthread -shared -B /usr/share/miniconda3/envs/runenv/compiler_compat -L/usr
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>311 µs ± 9.38 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<pre>288 µs ± 4.4 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre>
 </div>
 </div>
