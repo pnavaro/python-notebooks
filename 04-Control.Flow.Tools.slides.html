@@ -13225,9 +13225,9 @@ a.anchor-link {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Fibonacci series:</span>
 <span class="c1"># the sum of two elements defines the next</span>
 <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
-<span class="k">while</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
+<span class="k">while</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="mi">500</span><span class="p">:</span>
     <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">b</span><span class="o">/</span><span class="n">a</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">b</span><span class="o">/</span><span class="n">a</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13244,7 +13244,7 @@ a.anchor-link {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1.0,2.0,1.5,1.667,1.6,1.625,1.615,1.619,1.618,1.618,1.618,1.618,1.618,1.618,1.618,1.618,</pre>
+<pre>1.0,2.0,1.5,1.66667,1.6,1.625,1.61538,1.61905,1.61765,1.61818,1.61798,1.61806,1.61803,1.61804,</pre>
 </div>
 </div>
 
@@ -13376,7 +13376,7 @@ n
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="s2">&quot;Python Lille april 10th 2018&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="s2">&quot;Python ENSAI september 7th 2020&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>   
 </pre></div>
 
@@ -13395,10 +13395,10 @@ n
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Python 6
-Lille 5
-april 5
-10th 4
-2018 4
+ENSAI 5
+september 9
+7th 3
+2020 4
 </pre>
 </div>
 </div>
@@ -14954,7 +14954,7 @@ Use <code>zip</code> to loop over upper and lower case alphabets.</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;map object at 0x7f6f58647ac0&gt;
+<pre>&lt;map object at 0x7fe14065a520&gt;
 </pre>
 </div>
 </div>
@@ -15080,7 +15080,7 @@ Display result by using unpacking operator.</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>3.28 ms ± 75.2 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<pre>3.01 ms ± 105 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre>
 </div>
 </div>
@@ -15113,7 +15113,7 @@ Display result by using unpacking operator.</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>3.73 ms ± 81.7 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<pre>3.54 ms ± 108 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre>
 </div>
 </div>
@@ -15197,7 +15197,7 @@ Display result by using unpacking operator.</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>167 ns ± 1.34 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+<pre>170 ns ± 4.33 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
 </pre>
 </div>
 </div>
@@ -15229,7 +15229,7 @@ Display result by using unpacking operator.</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>322 ns ± 3.7 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+<pre>338 ns ± 20.2 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 </pre>
 </div>
 </div>

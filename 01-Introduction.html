@@ -13101,37 +13101,8 @@ div#notebook {
 <li>Bind Python with other languages is easy.</li>
 <li>You can perform a lot of operations with very few lines.</li>
 <li>Available on all platforms Unix, Windows, Mac OS X...</li>
-<li>Very few limits.</li>
 <li>Many libraries offer Python bindings.</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Python-2-and-3-version">Python 2 and 3 version<a class="anchor-link" href="#Python-2-and-3-version">&#182;</a></h2><ul>
-<li>Python 3.x isn't a simple improvement or extension of Python 2.x.</li>
-<li>All libraries exist in version 3  but both versions coexist.</li>
-<li>Every example are written in Python 3.x, it is the default version.</li>
-<li>Changes in official documentation: [<a href="https://docs.python.org/3/whatsnew/3.0.html">https://docs.python.org/3/whatsnew/3.0.html</a>]</li>
-<li><code>print</code> is now a function <code>print()</code> with <code>sep</code> argument.</li>
-<li>Some function return "views" instead of "lists".</li>
-<li>In version 3 division operator isn't pure (7/2 = 3.5).</li>
-<li><code>range</code> function doesn't return list anymore. Use <code>list(range(n))</code>.</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Porting-your-code">Porting your code<a class="anchor-link" href="#Porting-your-code">&#182;</a></h2><ul>
-<li><a href="http://www.diveintopython3.net/porting-code-to-python-3-with-2to3.html">http://www.diveintopython3.net/porting-code-to-python-3-with-2to3.html</a></li>
-<li><a href="http://python-future.org/quickstart.html">Python-Future</a> offers Python 2 compatibility.</li>
-<li><a href="https://github.com/arogozhnikov/python3_with_pleasure?utm_campaign=Data%2BElixir&amp;utm_medium=email&amp;utm_source=Data_Elixir_165">Migrating to Python 3 with pleasure</a></li>
+<li>Python 2 is retired use only Python 3</li>
 </ul>
 
 </div>
@@ -13143,7 +13114,7 @@ div#notebook {
 <h2 id="Python-distributions">Python distributions<a class="anchor-link" href="#Python-distributions">&#182;</a></h2><p>Python packages are available with all linux distributions but you can get standalone bundles:</p>
 <ul>
 <li><a href="https://www.continuum.io/downloads">Anaconda</a></li>
-<li><a href="http://www.enthought.com/products/epd.php">Enthought Python Distribution</a></li>
+<li><a href="https://docs.enthought.com/ets/">Enthought Tools Suite</a></li>
 <li><a href="http://www.astropy.org">Astropy</a></li>
 <li><a href="http://sagemath.org/">SAGEMATH</a></li>
 <li><a href="http://www.pyzo.org">Pyzo</a></li>
@@ -13178,7 +13149,8 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Jupyter---Start-The-Notebook">Jupyter - Start The Notebook<a class="anchor-link" href="#Jupyter---Start-The-Notebook">&#182;</a></h2><p>Open the notebook</p>
 
-<pre><code>cd python-notebooks
+<pre><code>git clone https:://github.com/pnavaro/python-notebooks
+cd python-notebooks/notebooks
 jupyter notebook</code></pre>
 <p>You should see the notebook open in your browser. If not, go to <a href="http://localhost:8888">http://localhost:8888</a></p>
 <p>The Jupyter Notebook is an interactive environment for writing and running code. The notebook is capable of running code in a wide range of languages. However, each notebook is associated with Python3 kernel.</p>
@@ -13243,9 +13215,6 @@ jupyter notebook</code></pre>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Hello World!&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">),</span><span class="n">s</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">6625</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="n">a</span><span class="p">)</span>
-<span class="n">a</span><span class="o">+</span><span class="n">s</span>
 </pre></div>
 
     </div>
@@ -13263,29 +13232,55 @@ jupyter notebook</code></pre>
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>&lt;class &#39;str&#39;&gt; Hello World!
-&lt;class &#39;int&#39;&gt; 6625
 </pre>
 </div>
 </div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">6625</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
 
 <div class="output_area">
 
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-1-4815969b9079&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> a <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">6625</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> print<span class="ansi-blue-fg">(</span>type<span class="ansi-blue-fg">(</span>a<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span>a<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg"> </span>a<span class="ansi-blue-fg">+</span>s
-
-<span class="ansi-red-fg">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;int&#39;&gt; 6625
+</pre>
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># a+s</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
@@ -13299,7 +13294,7 @@ jupyter notebook</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> hello.py
@@ -13362,7 +13357,7 @@ jupyter notebook</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> hello.py
@@ -13405,7 +13400,7 @@ jupyter notebook</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">2010</span><span class="p">);</span> <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
@@ -13453,10 +13448,10 @@ jupyter notebook</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">45</span>      <span class="c1"># This is a comment!</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">45</span>        <span class="c1"># This is a comment!</span>
 <span class="n">x</span> <span class="o">+=</span> <span class="mi">2</span>        <span class="c1"># equivalent to x = x + 2</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">45</span><span class="p">)</span>
 </pre></div>
@@ -13486,7 +13481,7 @@ jupyter notebook</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mf">2.5</span>
@@ -13518,7 +13513,7 @@ jupyter notebook</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">10</span><span class="o">/</span><span class="n">y</span><span class="p">)</span>   <span class="c1"># true division returns a float</span>
@@ -13551,7 +13546,7 @@ jupyter notebook</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">8</span><span class="p">)</span> <span class="c1"># the % operator returns the remainder of the division</span>
@@ -13582,7 +13577,7 @@ jupyter notebook</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot; x = </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">05d</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">)</span> <span class="c1"># You can use C format rules to improve print output</span>
@@ -13626,7 +13621,7 @@ jupyter notebook</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">=</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">1</span>
@@ -13658,7 +13653,7 @@ jupyter notebook</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
@@ -13690,7 +13685,7 @@ jupyter notebook</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="p">,</span> <span class="n">a</span>     <span class="c1"># Nice way to permute values</span>
@@ -13722,7 +13717,7 @@ jupyter notebook</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="n">c</span><span class="p">,</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span>
@@ -13738,7 +13733,7 @@ jupyter notebook</code></pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -13764,7 +13759,7 @@ jupyter notebook</code></pre>
 <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter an integer: &quot;</span><span class="p">))</span>
 <span class="n">L</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter 3 integers &quot;</span><span class="p">))</span>
 </pre></div>
-<p>Try to copy-pase code above and print returnet values.</p>
+<p>Copy-pase code above in three different cells and print returned values.</p>
 </li>
 </ul>
 

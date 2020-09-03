@@ -13642,7 +13642,7 @@ Second line.
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;Python&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;Python @ ENSAI&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># character in position 0</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span> <span class="c1"># character in position 5</span>
 </pre></div>
@@ -13702,8 +13702,8 @@ n
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>n
-o
+<pre>I
+A
 </pre>
 </div>
 </div>
@@ -13750,9 +13750,9 @@ o
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Py
-on
-on
-nohtyP
+on @ ENSAI
+AI
+IASNE @ nohtyP
 </pre>
 </div>
 </div>
@@ -13785,7 +13785,7 @@ nohtyP
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Pto&#39;</pre>
+<pre>&#39;Pto  NA&#39;</pre>
 </div>
 
 </div>
@@ -13870,13 +13870,13 @@ If you need a different string, you should create a new or use Lists.</p>
 </div>
 </div>
 
-</div><div class="fragment">
+</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">_</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">_</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">))</span> <span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">+</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">w</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">))</span> <span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13893,7 +13893,52 @@ If you need a different string, you should create a new or use Lists.</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>capitalize casefold center count encode endswith expandtabs find format format_map index isalnum isalpha isascii isdecimal isdigit isidentifier islower isnumeric isprintable isspace istitle isupper join ljust lower lstrip maketrans partition replace rfind rindex rjust rpartition rsplit rstrip split splitlines startswith strip swapcase title translate upper zfill
+<pre>
+capitalize 
+casefold 
+center 
+count 
+encode 
+endswith 
+expandtabs 
+find 
+format 
+format_map 
+index 
+isalnum 
+isalpha 
+isascii 
+isdecimal 
+isdigit 
+isidentifier 
+islower 
+isnumeric 
+isprintable 
+isspace 
+istitle 
+isupper 
+join 
+ljust 
+lower 
+lstrip 
+maketrans 
+partition 
+replace 
+rfind 
+rindex 
+rjust 
+rpartition 
+rsplit 
+rstrip 
+split 
+splitlines 
+startswith 
+strip 
+swapcase 
+title 
+translate 
+upper 
+zfill
 </pre>
 </div>
 </div>
@@ -13901,7 +13946,7 @@ If you need a different string, you should create a new or use Lists.</p>
 </div>
 </div>
 
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13916,7 +13961,7 @@ If you need a different string, you should create a new or use Lists.</p>
 
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
