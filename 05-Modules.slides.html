@@ -13817,18 +13817,21 @@ FILE
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <pre>
-marseille
-├── __init__.py
-├── calanques
-│   ├── __init__.py
-│   ├── morgiou.py
-│   ├── sorgiou.py
-│   └── sugiton.py
-└── cirm
-    ├── __init__.py
-    ├── annexe.py
-    ├── auditorium.py
-    └── bastide.py
+sklearn
+├── base.py
+├── calibration.py
+├── cluster
+│   ├── __init__.py
+│   ├── _kmeans.py
+│   ├── _mean_shift.py
+├── ensemble
+│   ├── __init__.py
+│   ├── _bagging.py
+│   ├── _forest.py
+</pre><p>cluster <code>__init__.py</code></p>
+<pre>
+from ._mean_shift import mean_shift, MeanShift
+from ._kmeans import k_means, KMeans, MiniBatchKMeans
 </pre>
 </div>
 </div>
@@ -13837,9 +13840,9 @@ marseille
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Relative-imports">Relative imports<a class="anchor-link" href="#Relative-imports">&#182;</a></h2><p>These imports use leading dots to indicate the current and parent packages involved in the relative import. In the sugiton module, you can use:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">morgiou</span> <span class="c1"># import module in the same directory</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">cirm</span>   <span class="c1"># import module in parent directory</span>
-<span class="kn">from</span> <span class="nn">..cirm</span> <span class="kn">import</span> <span class="n">bastide</span> <span class="c1"># import module in another subdirectory of the parent directory</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">cluster</span> <span class="c1"># import module in the same directory</span>
+<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">base</span>   <span class="c1"># import module in parent directory</span>
+<span class="kn">from</span> <span class="nn">..ensemble</span> <span class="kn">import</span> <span class="n">_forest</span> <span class="c1"># import module in another subdirectory of the parent directory</span>
 </pre></div>
 
 </div>
