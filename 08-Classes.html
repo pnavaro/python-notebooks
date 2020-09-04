@@ -13105,15 +13105,15 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
     <span class="k">pass</span>
 
-<span class="n">dog</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">()</span>  <span class="c1"># Create an empty animal record</span>
+<span class="n">mycar</span> <span class="o">=</span> <span class="n">Car</span><span class="p">()</span>  <span class="c1"># Create an empty car record</span>
 
 <span class="c1"># Fill the fields of the record</span>
-<span class="n">dog</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Medor&#39;</span>
-<span class="n">dog</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="mi">18</span>
-<span class="n">dog</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">mycar</span><span class="o">.</span><span class="n">brand</span> <span class="o">=</span> <span class="s1">&#39;Peugeot&#39;</span>
+<span class="n">mycar</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="mi">308</span>
+<span class="n">mycar</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="mi">2015</span>
 </pre></div>
 
     </div>
@@ -13126,7 +13126,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dog</span><span class="o">.</span><span class="vm">__dict__</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mycar</span><span class="o">.</span><span class="vm">__dict__</span>
 </pre></div>
 
     </div>
@@ -13145,7 +13145,7 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;name&#39;: &#39;Medor&#39;, &#39;weight&#39;: 18, &#39;age&#39;: 4}</pre>
+<pre>{&#39;brand&#39;: &#39;Peugeot&#39;, &#39;model&#39;: 308, &#39;year&#39;: 2015}</pre>
 </div>
 
 </div>
@@ -13168,7 +13168,7 @@ div#notebook {
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
 
-<span class="n">Animal</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Animal&#39;</span><span class="p">,</span> <span class="s1">&#39;name, weight, age&#39;</span><span class="p">)</span>
+<span class="n">Car</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Car&#39;</span><span class="p">,</span> <span class="s1">&#39;brand, model, year&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13181,8 +13181,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dog</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;Dog&#39;</span><span class="p">,</span> <span class="mf">18.0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">dog</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mycar</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s1">&#39;Peugeot&#39;</span><span class="p">,</span> <span class="mi">308</span><span class="p">,</span> <span class="mi">2015</span><span class="p">)</span>
+<span class="n">mycar</span>
 </pre></div>
 
     </div>
@@ -13201,7 +13201,7 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Animal(name=&#39;Dog&#39;, weight=18.0, age=4)</pre>
+<pre>Car(brand=&#39;Peugeot&#39;, model=308, year=2015)</pre>
 </div>
 
 </div>
@@ -13215,7 +13215,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dog</span><span class="o">.</span><span class="n">age</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mycar</span><span class="o">.</span><span class="n">year</span>
 </pre></div>
 
     </div>
@@ -13234,7 +13234,7 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>4</pre>
+<pre>2015</pre>
 </div>
 
 </div>
@@ -13249,7 +13249,7 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Like tuples, namedtuples are immutable:</span>
-<span class="n">dog</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="mf">14.5</span>
+<span class="n">mycar</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="mi">3008</span>
 </pre></div>
 
     </div>
@@ -13269,9 +13269,9 @@ div#notebook {
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-6-44ca315d244f&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-6-09089c3eb392&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg"># Like tuples, namedtuples are immutable:</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>dog<span class="ansi-blue-fg">.</span>weight <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">14.5</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>mycar<span class="ansi-blue-fg">.</span>model <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">3008</span>
 
 <span class="ansi-red-fg">AttributeError</span>: can&#39;t set attribute</pre>
 </div>
@@ -13286,19 +13286,19 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
 
     <span class="s2">&quot;A simple example class Animal with its name, weight and age&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>  <span class="c1"># constructor</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>  <span class="c1"># constructor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">brand</span> <span class="o">=</span> <span class="n">brand</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
 
-    <span class="k">def</span> <span class="nf">birthyear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># method</span>
+    <span class="k">def</span> <span class="nf">age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># method</span>
         <span class="kn">import</span> <span class="nn">datetime</span>
         <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">now</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span>
+        <span class="k">return</span> <span class="n">now</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">year</span>
 </pre></div>
 
     </div>
@@ -13311,9 +13311,9 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dog</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;Dog&#39;</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="c1"># Instance</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; </span><span class="si">{</span><span class="n">dog</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">dog</span><span class="o">.</span><span class="n">weight</span><span class="si">}</span><span class="s1"> Kg, </span><span class="si">{</span><span class="n">dog</span><span class="o">.</span><span class="n">age</span><span class="si">}</span><span class="s1"> years&#39;</span><span class="p">)</span>
-<span class="n">dog</span><span class="o">.</span><span class="n">birthyear</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mycar</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s1">&#39;Peugeot&#39;</span><span class="p">,</span> <span class="mi">308</span><span class="p">,</span> <span class="mi">2015</span><span class="p">)</span> <span class="c1"># Instance</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; </span><span class="si">{</span><span class="n">mycar</span><span class="o">.</span><span class="n">brand</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">mycar</span><span class="o">.</span><span class="n">model</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">mycar</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; </span><span class="si">{</span><span class="n">mycar</span><span class="o">.</span><span class="n">age</span><span class="p">()</span><span class="si">}</span><span class="s1"> years old&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13330,22 +13330,10 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre> Dog: 18 Kg, 4 years
+<pre> Peugeot 308 2015
+ 5 years old
 </pre>
 </div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[8]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>2016</pre>
-</div>
-
 </div>
 
 </div>
@@ -13357,8 +13345,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dog</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="n">dog</span><span class="o">.</span><span class="n">birthyear</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mycar</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="mi">2017</span>
+<span class="n">mycar</span><span class="o">.</span><span class="n">age</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13377,7 +13365,7 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>2013</pre>
+<pre>3</pre>
 </div>
 
 </div>
@@ -13390,9 +13378,9 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><code>dog</code> is an <em>instance</em> of Animal Class.</li>
-<li><code>dog.birthdate()</code> is a <em>method</em> of <code>Animal</code> instance <code>dog</code>.</li>
-<li><code>name</code> and <code>weight</code> are attributes of <code>Animal</code> instance <code>dog</code>.</li>
+<li><code>mycar</code> is an <em>instance</em> of Car Class.</li>
+<li><code>mycar.age()</code> is a <em>method</em> of <code>Car</code> instance <code>mycar</code>.</li>
+<li><code>brand</code> and <code>model</code> are attributes of <code>Car</code> instance <code>mycar</code>.</li>
 </ul>
 
 </div>
@@ -13411,20 +13399,20 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
 
-    <span class="s2">&quot;A simple example class Animal with its name, weight and age&quot;</span>
+    <span class="s2">&quot;A simple example class Car with its model, brand and year&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>  <span class="c1"># constructor</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>  <span class="c1"># constructor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">brand</span> <span class="o">=</span> <span class="n">brand</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">birthyear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># method</span>
+    <span class="k">def</span> <span class="nf">age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># method</span>
         <span class="kn">import</span> <span class="nn">datetime</span>
         <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">now</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span>
+        <span class="k">return</span> <span class="n">now</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">year</span>
 </pre></div>
 
     </div>
@@ -13437,8 +13425,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dog</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;Dog&#39;</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">dog</span><span class="o">.</span><span class="n">birthyear</span>  <span class="c1"># birthyear can now be used as an attribute</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mycar</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s1">&#39;Peugeot&#39;</span><span class="p">,</span> <span class="mi">308</span><span class="p">,</span> <span class="mi">2015</span><span class="p">)</span>
+<span class="n">mycar</span><span class="o">.</span><span class="n">age</span>  <span class="c1"># age can now be used as an attribute</span>
 </pre></div>
 
     </div>
@@ -13457,7 +13445,7 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>2016</pre>
+<pre>5</pre>
 </div>
 
 </div>
@@ -13471,7 +13459,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dog</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mycar</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># a protected attribute</span>
 </pre></div>
 
     </div>
@@ -13484,15 +13472,18 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[12]:</div>
+    <div class="prompt"></div>
 
 
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-12-d6fe717cdbfa&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>mycar<span class="ansi-blue-fg">.</span>age <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">3</span> <span class="ansi-red-fg"># a protected attribute</span>
 
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&lt;__main__.Animal at 0x7f3674437a00&gt;</pre>
+<span class="ansi-red-fg">AttributeError</span>: can&#39;t set attribute</pre>
 </div>
-
 </div>
 
 </div>
@@ -13514,17 +13505,17 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
 
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+<span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
 
-    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">weight</span><span class="p">:</span> <span class="nb">float</span>
-    <span class="n">age</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">brand</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">model</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">year</span><span class="p">:</span> <span class="nb">int</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">birthyear</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">age</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="kn">import</span> <span class="nn">datetime</span>
         <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">now</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span>
+        <span class="k">return</span> <span class="n">now</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">year</span>
 </pre></div>
 
     </div>
@@ -13537,8 +13528,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dog</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;Dog&#39;</span><span class="p">,</span> <span class="mf">18.0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">dog</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mycar</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s1">&#39;Peugeot&#39;</span><span class="p">,</span> <span class="mi">308</span><span class="p">,</span> <span class="mi">2015</span><span class="p">)</span>
+<span class="n">mycar</span>
 </pre></div>
 
     </div>
@@ -13557,7 +13548,41 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Animal(name=&#39;Dog&#39;, weight=18.0, age=4)</pre>
+<pre>Car(brand=&#39;Peugeot&#39;, model=308, year=2015)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">myothercar</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s1">&#39;BMW&#39;</span><span class="p">,</span> <span class="s2">&quot;1 Series&quot;</span><span class="p">,</span> <span class="mi">2009</span><span class="p">)</span>
+<span class="n">myothercar</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Car(brand=&#39;BMW&#39;, model=&#39;1 Series&#39;, year=2009)</pre>
 </div>
 
 </div>
@@ -13578,25 +13603,19 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Simple example class with method overriding &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">brand</span> <span class="o">=</span> <span class="n">brand</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="si">}</span><span class="s2">)&quot;</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">birthyear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="kn">import</span> <span class="nn">datetime</span>
-        <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">now</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">brand</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span>
 </pre></div>
 
     </div>
@@ -13606,12 +13625,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dog</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;Dog&#39;</span><span class="p">,</span> <span class="mf">18.0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">dog</span><span class="p">)</span>
-<span class="n">dog</span><span class="o">.</span><span class="n">birthyear</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mycar</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s1">&#39;Peugeot&#39;</span><span class="p">,</span> <span class="mi">308</span><span class="p">,</span> <span class="mi">2015</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mycar</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13628,22 +13646,9 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Animal(Dog, 18.0, 4)
+<pre>2015 Peugeot 308 Car
 </pre>
 </div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[16]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>2016</pre>
-</div>
-
 </div>
 
 </div>
@@ -13659,24 +13664,27 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>  <span class="c1"># Parent class is defined here</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">():</span>  <span class="c1"># Parent class is defined here</span>
 
-    <span class="s2">&quot; Derived from MyClass with k attribute &quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span>
+    
+<span class="k">class</span> <span class="nc">Square</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">edge</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">edge</span><span class="p">,</span> <span class="n">edge</span><span class="p">)</span>  <span class="c1"># Call method in the parent class</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">breed</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>  <span class="c1"># Call method in the parent class</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">breed</span> <span class="o">=</span> <span class="n">breed</span>
 
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">breed</span><span class="si">}</span><span class="s2">)&quot;</span>
-
-
-<span class="n">beagle</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Jack&#39;</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Beagle&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">beagle</span><span class="p">)</span>
-<span class="n">beagle</span><span class="o">.</span><span class="n">birthyear</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">area</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">Square</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">area</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13693,22 +13701,10 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Dog(Jack, 9.0, 1, Beagle)
+<pre>6
+16
 </pre>
 </div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[17]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>2019</pre>
-</div>
-
 </div>
 
 </div>
@@ -13816,7 +13812,7 @@ In this class, add these functions:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">DemoClass</span><span class="p">:</span>
@@ -13839,7 +13835,7 @@ In this class, add these functions:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">object3</span><span class="o">.</span><span class="n">public_method</span><span class="p">()</span>
@@ -13855,7 +13851,7 @@ In this class, add these functions:</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[19]:</div>
+    <div class="prompt output_prompt">Out[20]:</div>
 
 
 
@@ -13872,7 +13868,7 @@ In this class, add these functions:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">object3</span><span class="o">.</span><span class="n">__private_method</span><span class="p">()</span>
@@ -13895,7 +13891,7 @@ In this class, add these functions:</p>
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-20-5a4a6ba27511&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-21-5a4a6ba27511&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>object3<span class="ansi-blue-fg">.</span>__private_method<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
 
 <span class="ansi-red-fg">AttributeError</span>: &#39;DemoClass&#39; object has no attribute &#39;__private_method&#39;</pre>
@@ -13908,43 +13904,10 @@ In this class, add these functions:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span> <span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">object3</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;method&quot;</span> <span class="ow">in</span> <span class="n">s</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[21]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[&#39;_DemoClass__private_method&#39;, &#39;public_method&#39;]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">object3</span><span class="o">.</span><span class="n">_DemoClass__private_method</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span> <span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">object3</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;method&quot;</span> <span class="ow">in</span> <span class="n">s</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -13963,7 +13926,7 @@ In this class, add these functions:</p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;private!&#39;</pre>
+<pre>[&#39;_DemoClass__private_method&#39;, &#39;public_method&#39;]</pre>
 </div>
 
 </div>
@@ -13977,7 +13940,7 @@ In this class, add these functions:</p>
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">object3</span><span class="o">.</span><span class="n">public_method</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">object3</span><span class="o">.</span><span class="n">_DemoClass__private_method</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13996,7 +13959,40 @@ In this class, add these functions:</p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;bound method DemoClass.public_method of &lt;__main__.DemoClass object at 0x7f3674400790&gt;&gt;</pre>
+<pre>&#39;private!&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">object3</span><span class="o">.</span><span class="n">public_method</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[24]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;bound method DemoClass.public_method of &lt;__main__.DemoClass object at 0x7f5dbc320ee0&gt;&gt;</pre>
 </div>
 
 </div>
@@ -14014,7 +14010,7 @@ In this class, add these functions:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Polynomial</span><span class="p">:</span>
@@ -14041,7 +14037,7 @@ In this class, add these functions:</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[24]:</div>
+    <div class="prompt output_prompt">Out[25]:</div>
 
 
 
@@ -14077,7 +14073,7 @@ In this class, add these functions:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">MyComplex</span><span class="p">:</span>
@@ -14118,7 +14114,7 @@ In this class, add these functions:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="n">MyComplex</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -14151,7 +14147,7 @@ In this class, add these functions:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">u</span><span class="o">+</span><span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="o">-</span><span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="o">*</span><span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="o">==</span><span class="n">v</span>
@@ -14167,7 +14163,7 @@ In this class, add these functions:</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[27]:</div>
+    <div class="prompt output_prompt">Out[28]:</div>
 
 
 
@@ -14192,7 +14188,7 @@ In this class, add these functions:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">MyComplex</span><span class="o">.</span><span class="n">precision</span><span class="o">=</span><span class="mi">2</span>
@@ -14226,7 +14222,7 @@ In this class, add these functions:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">v</span><span class="o">.</span><span class="n">precision</span>
@@ -14242,7 +14238,7 @@ In this class, add these functions:</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[29]:</div>
+    <div class="prompt output_prompt">Out[30]:</div>
 
 
 
@@ -14267,7 +14263,7 @@ In this class, add these functions:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">u</span><span class="o">.</span><span class="n">precision</span><span class="o">=</span><span class="mi">1</span>
@@ -14299,7 +14295,7 @@ In this class, add these functions:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
@@ -14330,7 +14326,7 @@ In this class, add these functions:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">MyComplex</span><span class="o">.</span><span class="n">precision</span><span class="o">=</span><span class="mi">5</span>
@@ -14347,7 +14343,7 @@ In this class, add these functions:</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[32]:</div>
+    <div class="prompt output_prompt">Out[33]:</div>
 
 
 
@@ -14364,7 +14360,7 @@ In this class, add these functions:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">v</span> <span class="c1"># unset attribute is set to the new value</span>
@@ -14380,7 +14376,7 @@ In this class, add these functions:</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[33]:</div>
+    <div class="prompt output_prompt">Out[34]:</div>
 
 
 
@@ -14404,7 +14400,7 @@ In this class, add these functions:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Rational</span><span class="p">:</span>
@@ -14451,7 +14447,7 @@ In this class, add these functions:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">r1</span> <span class="o">=</span> <span class="n">Rational</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
@@ -14469,7 +14465,7 @@ In this class, add these functions:</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[35]:</div>
+    <div class="prompt output_prompt">Out[36]:</div>
 
 
 

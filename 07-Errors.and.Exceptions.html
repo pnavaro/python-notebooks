@@ -13279,10 +13279,11 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 
 <span class="k">def</span> <span class="nf">process_file</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+    <span class="s2">&quot; Read the first line of f and convert to int and check if this integer is positive&quot;</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span> <span class="c1"># Read the first line of f and convert to int</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span> 
         <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-        <span class="k">assert</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="c1"># check if i is negative</span>
+        <span class="k">assert</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span>
     <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;OS error: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
@@ -13427,8 +13428,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Insert the value 1 at the top of workfile.txt</span>
-<span class="o">!</span><span class="nb">echo</span> <span class="s2">&quot;1&quot;</span> &gt; workfile.txt
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Insert the value -1 at the top of workfile.txt</span>
+<span class="o">!</span><span class="nb">echo</span> <span class="s2">&quot;-1&quot;</span> &gt; workfile.txt
 <span class="o">%</span><span class="k">cat</span> workfile.txt
 </pre></div>
 
@@ -13446,7 +13447,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1
+<pre>-1
 </pre>
 </div>
 </div>
@@ -13477,7 +13478,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1
+<pre>-1
 Unexpected error: &lt;class &#39;AssertionError&#39;&gt;
 </pre>
 </div>
@@ -13596,24 +13597,6 @@ Unexpected error: &lt;class &#39;AssertionError&#39;&gt;
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h3><ul>
-<li>Write a function <code>check_date</code> that takes a string "DD/MM/YYYY" as argument and
-returns <code>True</code> if the date is valid.</li>
-<li>Use it with a <code>try ... except</code> statement to help the user to enter a valid date.</li>
-<li>raise ValueError "Not a valid date"</li>
-<li>Hints: <ul>
-<li>Use string method <code>split</code></li>
-<li>Year y is a leap year if y%400==0 or (y%4==0 and y%100!=0)</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
