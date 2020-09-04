@@ -14752,13 +14752,11 @@ tuples of length 2 as input arguments and return the tuple (hh,mm). </li>
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h3><p>Code a new version of your cypher function to crypt also upper case character. 
-Use <code>zip</code> to loop over upper and lower case alphabets.</p>
-
+<!-- #endregion -->
 </div>
 </div>
 </div></div></section></section><section><section>
@@ -14967,7 +14965,7 @@ Use <code>zip</code> to loop over upper and lower case alphabets.</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;map object at 0x7f04f024c9d0&gt;
+<pre>&lt;map object at 0x7f35185fdf10&gt;
 </pre>
 </div>
 </div>
@@ -15093,7 +15091,7 @@ Display result by using unpacking operator.</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>3.07 ms ± 36.9 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<pre>3.29 ms ± 164 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre>
 </div>
 </div>
@@ -15126,7 +15124,7 @@ Display result by using unpacking operator.</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>3.44 ms ± 41.6 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<pre>3.44 ms ± 173 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre>
 </div>
 </div>
@@ -15210,7 +15208,7 @@ Display result by using unpacking operator.</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>151 ns ± 0.53 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+<pre>168 ns ± 5.04 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
 </pre>
 </div>
 </div>
@@ -15242,7 +15240,7 @@ Display result by using unpacking operator.</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>309 ns ± 4.84 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+<pre>347 ns ± 20.8 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 </pre>
 </div>
 </div>
@@ -15280,49 +15278,18 @@ $$20 + 25 = 45$$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Recursive-Call">Recursive Call<a class="anchor-link" href="#Recursive-Call">&#182;</a></h2>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> 
-    <span class="sd">&quot;&quot;&quot; returns the greatest common divisor.&quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> 
-        <span class="k">return</span> <span class="n">y</span>
-    <span class="k">else</span> <span class="p">:</span> 
-        <span class="k">return</span> <span class="n">gcd</span><span class="p">(</span><span class="n">y</span> <span class="o">%</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-
-<span class="n">gcd</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[49]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>4</pre>
-</div>
-
-</div>
+<h2 id="Recursive-Call">Recursive Call<a class="anchor-link" href="#Recursive-Call">&#182;</a></h2><p>```python slideshow={"slide_type": "fragment"}
+def gcd(x, y): 
+    """ returns the greatest common divisor."""
+    if x == 0: 
+        return y
+    else : 
+        return gcd(y % x, x)</p>
+<p>gcd(12,16)
+```</p>
 
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -15330,7 +15297,7 @@ $$20 + 25 = 45$$</p>
 <h2 id="Exercises">Exercises<a class="anchor-link" href="#Exercises">&#182;</a></h2>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
