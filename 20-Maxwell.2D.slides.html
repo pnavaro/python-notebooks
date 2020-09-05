@@ -13208,20 +13208,23 @@ a.anchor-link {
 \frac{\partial E_x}{\partial t} = \frac{\partial H_z}{\partial y}
 ;\qquad
 \frac{\partial E_y}{\partial t} = - \frac{\partial H_z}{\partial x} 
-$$<p><a href="https://en.wikipedia.org/wiki/Finite-difference_time-domain_method">Description of the scheme</a></p>
-<p><img src="images/fdtd.png" alt="fdtd"></p>
+$$<p><img src="images/fdtd.png" alt="fdtd">
 $$
-H_z \big|^{n+1/2}_{i+1/2,j+1/2} = H_z \big|^{n-1/2}_{i+1/2,j+1/2} + 
-\frac{dt}{dy} \big(E_x \big|^{n}_{i+1/2,j+1} - E_x \big|^{n}_{i+1/2,j} \big)
-- \frac{dt}{dx} \big( E_y \big|^{n}_{i+1,j+1/2} - E_y \big|^{n}_{i,j+1/2} \big)
-$$$$
+H<em>z \big|^{n+1/2}</em>{i+1/2,j+1/2} = H<em>z \big|^{n-1/2}</em>{i+1/2,j+1/2} + 
+\frac{dt}{dy} \big(E<em>x \big|^{n}</em>{i+1/2,j+1} - E<em>x \big|^{n}</em>{i+1/2,j} \big)</p>
+<ul>
+<li>\frac{dt}{dx} \big( E<em>y \big|^{n}</em>{i+1,j+1/2} - E<em>y \big|^{n}</em>{i,j+1/2} \big)
+$$</li>
+</ul>
+$$
 E_x \big|^{n+1}_{i+1/2,j} = E_x \big|^{n}_{i+1/2,j} + \frac{dt}{dy} \big( H_z \big|^{n+1/2}_{i+1/2,j+1/2} - H_z \big|^{n+1/2}_{i-1/2, j-1/2} \big)
 $$$$
 E_y \big|^{n+1}_{i,j+1/2} = E_y \big|^{n}_{i,j+1/2} - \frac{dt}{dx} \big( H_z \big|^{n+1/2}_{i+1/2,j+1/2} - H_z \big|^{n+1/2}_{i-1/2, j+1/2} \big)
-$$
+$$<p><a href="https://en.wikipedia.org/wiki/Finite-difference_time-domain_method">Description of the scheme</a></p>
+
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
@@ -13236,7 +13239,6 @@ $$
 <span class="kn">import</span> <span class="nn">matplotlib.animation</span> <span class="k">as</span> <span class="nn">animation</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
 
-
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
 </pre></div>
 
@@ -13244,7 +13246,7 @@ $$
 </div>
 </div>
 
-</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
@@ -13270,7 +13272,7 @@ $$
 </div>
 </div>
 
-</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
@@ -13313,14 +13315,14 @@ height=446
 </div>
 </div>
 
-</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="numpy">numpy<a class="anchor-link" href="#numpy">&#182;</a></h2>
 </div>
 </div>
-</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
@@ -13348,7 +13350,7 @@ height=446
 </div>
 </div>
 
-</div>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
@@ -13371,7 +13373,7 @@ height=446
 </div>
 </div>
 
-</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
@@ -13386,7 +13388,7 @@ height=446
 </div>
 </div>
 
-</div>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
@@ -13410,8 +13412,8 @@ height=446
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 28 s, sys: 605 ms, total: 28.6 s
-Wall time: 29 s
+<pre>CPU times: user 28.3 s, sys: 737 ms, total: 29.1 s
+Wall time: 29.5 s
 </pre>
 </div>
 </div>
@@ -26576,7 +26578,7 @@ dAAAACWpdG9vAAAAHWRhdGEAAAABAAAAAExhdmY1Ny44My4xMDA=
 </div>
 </div>
 
-</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
@@ -26584,7 +26586,7 @@ dAAAACWpdG9vAAAAHWRhdGEAAAABAAAAAExhdmY1Ny44My4xMDA=
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
 
-<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm_notebook</span> <span class="k">as</span> <span class="n">tqdm</span>
+<span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
 
 <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span> <span class="o">=</span> <span class="mi">512</span><span class="p">,</span> <span class="mi">512</span>
 <span class="n">vx</span><span class="p">,</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -26619,30 +26621,18 @@ dAAAACWpdG9vAAAAHWRhdGEAAAABAAAAAExhdmY1Ny44My4xMDA=
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>&lt;timed exec&gt;:16: TqdmDeprecationWarning: This function will be removed in tqdm==5.0.0
-Please use `tqdm.notebook.tqdm` instead of `tqdm.tqdm_notebook`
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
 
 
 
  
  
-<div id="afdcff8b-9097-4b3b-bc61-97e60ad4482c"></div>
+<div id="d0ae4de6-dd7a-43ff-9e39-d407e447c0ba"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#afdcff8b-9097-4b3b-bc61-97e60ad4482c');
+var element = $('#d0ae4de6-dd7a-43ff-9e39-d407e447c0ba');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "02348e11e38d430a8729adaa8162b653", "version_major": 2, "version_minor": 0}
+{"model_id": "2c2f600f9c634ae9addd7112bba421d6", "version_major": 2, "version_minor": 0}
 </script>
 </div>
 
@@ -26655,8 +26645,8 @@ var element = $('#afdcff8b-9097-4b3b-bc61-97e60ad4482c');
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-CPU times: user 6.05 s, sys: 24 ms, total: 6.07 s
-Wall time: 6.04 s
+CPU times: user 6.06 s, sys: 40.3 ms, total: 6.1 s
+Wall time: 6.06 s
 </pre>
 </div>
 </div>
@@ -26664,7 +26654,7 @@ Wall time: 6.04 s
 </div>
 </div>
 
-</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
@@ -26689,10 +26679,10 @@ Wall time: 6.04 s
 
 
 
-<div id="66eede1d-c5d7-447b-9421-0c5f9ae97e2c"></div>
+<div id="f2a941c3-959f-4dd1-99d7-419230113765"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#66eede1d-c5d7-447b-9421-0c5f9ae97e2c');
+var element = $('#f2a941c3-959f-4dd1-99d7-419230113765');
 new Promise(function(resolve, reject) {
 	var script = document.createElement("script");
 	script.onload = resolve;
@@ -26710,14 +26700,14 @@ IPython.config.cell_magic_highlight['magic_fortran'] = {'reg':[/^%%fortran/]};
 </div>
 </div>
 
-</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="fortran">fortran<a class="anchor-link" href="#fortran">&#182;</a></h2>
 </div>
 </div>
-</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
@@ -26753,7 +26743,7 @@ end subroutine faraday_fortran
 </div>
 </div>
 
-</div>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
@@ -26762,43 +26752,42 @@ end subroutine faraday_fortran
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">fortran</span>
 
 subroutine amperemaxwell_fortran(ex, ey, bz, dx, dy, dt, nx, ny)
-implicit none
-integer, intent(in):: nx, ny
-real(8), intent(in):: dx, dy, dt
-real(8), dimension(nx-1, ny-1), intent(inout) :: bz
-real(8), dimension(nx-1, ny),   intent(inout) :: ex
-real(8), dimension(nx, ny-1),   intent(inout) :: ey
-integer:: i, j
-real(8):: dbz_dx, dbz_dy
-real(8), parameter:: csq = 1d0
 
-do i = 1, nx-1
-   dbz_dy = (bz(i, 1)-bz(i, ny-1)) / dy ! periodic BC
-   ex(i, 1) = ex(i, 1) + dt*csq*dbz_dy
-   ex(i, ny) = ex(i, 1)
-end do
-
-do j = 1, ny-1
-   dbz_dx = (bz(1,j)-bz(nx-1,j)) / dx  ! periodic BC
-   ey(1,j) = ey(1,j) - dt*csq*dbz_dx
-   ey(nx,j) = ey(1,j)
-end do
-
-do j=2,ny-1
-    do i=1,nx-1
-       dbz_dy = (bz(i,j)-bz(i,j-1)) / dy
-       ex(i,j) = ex(i,j) + dt*csq*dbz_dy 
+    implicit none
+    integer, intent(in):: nx, ny
+    real(8), intent(in):: dx, dy, dt
+    real(8), dimension(nx-1, ny-1), intent(inout) :: bz
+    real(8), dimension(nx-1, ny),   intent(inout) :: ex
+    real(8), dimension(nx, ny-1),   intent(inout) :: ey
+    integer:: i, j
+    real(8):: dbz_dx, dbz_dy
+    real(8), parameter:: csq = 1d0
+    
+    do i = 1, nx-1
+       dbz_dy = (bz(i, 1)-bz(i, ny-1)) / dy ! periodic BC
+       ex(i, 1) = ex(i, 1) + dt*csq*dbz_dy
+       ex(i, ny) = ex(i, 1)
     end do
-end do
-
-do j=1,ny-1
-    do i=2,nx-1
-       dbz_dx = (bz(i,j)-bz(i-1,j)) / dx
-       ey(i,j) = ey(i,j) - dt*csq*dbz_dx 
+    
+    do j = 1, ny-1
+       dbz_dx = (bz(1,j)-bz(nx-1,j)) / dx  ! periodic BC
+       ey(1,j) = ey(1,j) - dt*csq*dbz_dx
+       ey(nx,j) = ey(1,j)
     end do
-end do
-
-
+    
+    do j=2,ny-1
+        do i=1,nx-1
+           dbz_dy = (bz(i,j)-bz(i,j-1)) / dy
+           ex(i,j) = ex(i,j) + dt*csq*dbz_dy 
+        end do
+    end do
+    
+    do j=1,ny-1
+        do i=2,nx-1
+           dbz_dx = (bz(i,j)-bz(i-1,j)) / dx
+           ey(i,j) = ey(i,j) - dt*csq*dbz_dx 
+        end do
+    end do
 
 end subroutine amperemaxwell_fortran
 </pre></div>
@@ -26807,7 +26796,7 @@ end subroutine amperemaxwell_fortran
 </div>
 </div>
 
-</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
@@ -26815,7 +26804,7 @@ end subroutine amperemaxwell_fortran
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
 
-<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm_notebook</span> <span class="k">as</span> <span class="n">tqdm</span>
+<span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
 
 <span class="n">ex</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
 <span class="n">ey</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
@@ -26843,30 +26832,18 @@ end subroutine amperemaxwell_fortran
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>&lt;timed exec&gt;:10: TqdmDeprecationWarning: This function will be removed in tqdm==5.0.0
-Please use `tqdm.notebook.tqdm` instead of `tqdm.tqdm_notebook`
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
 
 
 
  
  
-<div id="e9165d01-361f-4bcc-8f96-5e9258f68a5d"></div>
+<div id="9b5e1473-a782-43f8-adbf-fa6ce2a734c9"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#e9165d01-361f-4bcc-8f96-5e9258f68a5d');
+var element = $('#9b5e1473-a782-43f8-adbf-fa6ce2a734c9');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "ef81454b640b4faf93f6573839db5cb9", "version_major": 2, "version_minor": 0}
+{"model_id": "7cf528d2dbab404cab400276c0c9a20d", "version_major": 2, "version_minor": 0}
 </script>
 </div>
 
@@ -26879,8 +26856,8 @@ var element = $('#e9165d01-361f-4bcc-8f96-5e9258f68a5d');
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-CPU times: user 2.93 s, sys: 23.9 ms, total: 2.95 s
-Wall time: 2.94 s
+CPU times: user 3.01 s, sys: 16.4 ms, total: 3.03 s
+Wall time: 3 s
 </pre>
 </div>
 </div>
