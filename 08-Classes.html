@@ -13682,9 +13682,9 @@ div#notebook {
 
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">area</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rectangle area </span><span class="se">\t</span><span class="s2"> = </span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">area</span><span class="si">:</span><span class="s2">7.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">Square</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">area</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Square area </span><span class="se">\t</span><span class="s2"> = </span><span class="si">{</span><span class="n">s</span><span class="o">.</span><span class="n">area</span><span class="si">:</span><span class="s2">7.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13701,8 +13701,8 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>6
-16
+<pre>Rectangle area 	 =   6.000
+Square area 	 =  16.000
 </pre>
 </div>
 </div>
@@ -13710,98 +13710,6 @@ div#notebook {
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Exercise:-Grocery-list-item">Exercise: Grocery list item<a class="anchor-link" href="#Exercise:-Grocery-list-item">&#182;</a></h3><p>Let's create a class representing a grocery list. First we need a class to represent an item of this grocery list:</p>
-<ul>
-<li><p>The <code>GroceryItem</code> class has seven attributes:</p>
-<ul>
-<li><code>name</code> (string)</li>
-<li><code>price</code> (double)</li>
-<li><code>category</code> (string)</li>
-<li><code>vat_percentage</code> (double)</li>
-<li><code>quantity</code> (integer)</li>
-<li><code>ingredients</code> (list of strings)</li>
-</ul>
-</li>
-<li><p>The item class has two methods</p>
-<ul>
-<li><code>get_total_vat</code> returns the VAT value.</li>
-<li><code>get_total_price</code> returns the total price.</li>
-</ul>
-</li>
-</ul>
-<p>Implement the <code>GroceryItem</code> class and override the <code>__repr__()</code> method by returning the item name and its quantity.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="n">beef</span> <span class="o">=</span> <span class="n">GroceryItem</span><span class="p">(</span><span class="s2">&quot;Beef&quot;</span><span class="p">,</span> <span class="mf">12.3</span><span class="p">,</span> <span class="s2">&quot;Meat&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Beef&quot;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">beef</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total price : </span><span class="si">{</span><span class="n">beef</span><span class="o">.</span><span class="n">get_total_price</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> </span><span class="se">\u20ac</span><span class="s2"> &quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total VAT   : </span><span class="si">{</span><span class="n">beef</span><span class="o">.</span><span class="n">get_total_vat</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> </span><span class="se">\u20ac</span><span class="s2"> &quot;</span><span class="p">)</span>
-</pre></div>
-
-<pre><code>pybt
-Beef x 2
-Total cut   : 0.0 € 
-Total price : 27.060000000000002 € 
-Total VAT   : 2.46 €</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Exercice:-Grocery-list">Exercice: Grocery list<a class="anchor-link" href="#Exercice:-Grocery-list">&#182;</a></h3><p>Now implement the GroceryList containing GroceryItem defined above.
-In this class, add these functions:</p>
-<ul>
-<li><code>items_with_meat()</code> return a list of items of 'Meat' category.</li>
-<li><code>prices_with_vat()</code> return a dict with item names as keys and prices as values.</li>
-<li><code>ingredients_list()</code> return a set of all ingredients contained in items.</li>
-<li><code>total_invoice()</code> return the total price of the shopping list.</li>
-<li><code>total_for(category)</code> return the total price for a category</li>
-<li><code>price_by_category()</code> return a dict with category as key and the price as value.</li>
-<li><code>total_vat()</code> return the total VAT amount.</li>
-<li><code>top_ingredients(n)</code> ranks the <code>n</code> most frequently founded ingredients</li>
-<li><code>all_item_names()</code> return a list of item names</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Articles with meat are : </span><span class="si">{</span><span class="n">shopping_list</span><span class="o">.</span><span class="n">items_with_meat</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Full prices are : </span><span class="si">{</span><span class="n">shopping_list</span><span class="o">.</span><span class="n">prices_with_vat</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ingredients : </span><span class="si">{</span><span class="n">shopping_list</span><span class="o">.</span><span class="n">ingredients_list</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total  : </span><span class="si">{</span><span class="n">shopping_list</span><span class="o">.</span><span class="n">total_invoice</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total for meat category : </span><span class="si">{</span><span class="n">shopping_list</span><span class="o">.</span><span class="n">total_for</span><span class="p">(</span><span class="s1">&#39;Meat&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prices by category : </span><span class="si">{</span><span class="n">shopping_list</span><span class="o">.</span><span class="n">price_by_category</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;VAT amount : </span><span class="si">{</span><span class="n">shopping_list</span><span class="o">.</span><span class="n">total_vat</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;First three ingedients : </span><span class="si">{</span><span class="n">shopping_list</span><span class="o">.</span><span class="n">top_ingredients</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;All articles names : </span><span class="si">{</span><span class="n">shopping_list</span><span class="o">.</span><span class="n">all_item_names</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-<div class="highlight"><pre><span></span><span class="x">Articles with meat are : [Beef x 2, Pork x 1]</span>
-<span class="x">Full prices are : {&#39;Beef&#39;: 27.06, &#39;Pork&#39;: 8.34, &#39;Tomato Sauce&#39;: 6.60, &#39;Beans&#39;: 17.32, &#39;Tuna&#39;: 7.19}</span>
-<span class="x">Ingredients : {&#39;Tomato&#39;, &#39;Preservatives&#39;, &#39;Fish&#39;, &#39;Sugar&#39;, &#39;Water&#39;, &#39;Beef&#39;, &#39;Salt&#39;, &#39;Beans&#39;, &#39;Oil&#39;, &#39;Pork&#39;}</span>
-<span class="x">Total  : 66.53</span>
-<span class="x">Total for meat category : 35.40</span>
-<span class="x">Prices by category : {&#39;Meat&#39;: 35.40, &#39;Can&#39;: 31.125000000000004}</span>
-<span class="x">VAT amount : 6.59</span>
-<span class="x">First three ingedients : [&#39;Water&#39;, &#39;Salt&#39;, &#39;Beef&#39;]</span>
-<span class="x">All articles names : [&#39;Beef&#39;, &#39;Pork&#39;, &#39;Tomato Sauce&#39;, &#39;Beans&#39;, &#39;Tuna&#39;]</span>
-</pre></div>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13992,7 +13900,7 @@ In this class, add these functions:</p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;bound method DemoClass.public_method of &lt;__main__.DemoClass object at 0x7f5dbc320ee0&gt;&gt;</pre>
+<pre>&lt;bound method DemoClass.public_method of &lt;__main__.DemoClass object at 0x7fa3d8639160&gt;&gt;</pre>
 </div>
 
 </div>
@@ -14021,7 +13929,7 @@ In this class, add these functions:</p>
       <span class="bp">self</span><span class="o">.</span><span class="n">coeffs</span> <span class="o">=</span> <span class="n">coeffs</span>
         
    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-      <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="n">coef</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="n">exp</span> <span class="k">for</span> <span class="n">exp</span><span class="p">,</span><span class="n">coef</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coeffs</span><span class="p">)])</span>
+      <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">coef</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="n">exp</span> <span class="k">for</span> <span class="n">exp</span><span class="p">,</span><span class="n">coef</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coeffs</span><span class="p">))</span>
 
 <span class="n">p</span> <span class="o">=</span> <span class="n">Polynomial</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">p</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> 
