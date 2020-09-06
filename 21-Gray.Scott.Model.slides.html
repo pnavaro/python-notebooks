@@ -13394,7 +13394,7 @@ $$<p>The classic Euler scheme is used to integrate the time derivative.</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
-<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm_notebook</span> <span class="k">as</span> <span class="n">tqdm</span>
+<span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
 <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 <span class="n">U</span><span class="p">,</span> <span class="n">V</span> <span class="o">=</span> <span class="n">init</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
 
@@ -13425,30 +13425,18 @@ $$<p>The classic Euler scheme is used to integrate the time derivative.</p>
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>&lt;timed exec&gt;:14: TqdmDeprecationWarning: This function will be removed in tqdm==5.0.0
-Please use `tqdm.notebook.tqdm` instead of `tqdm.tqdm_notebook`
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
 
 
 
  
  
-<div id="144ced55-59d5-4e7c-8bd6-774a2f31258e"></div>
+<div id="c43f670b-d633-438b-bd37-67778ba33c6b"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#144ced55-59d5-4e7c-8bd6-774a2f31258e');
+var element = $('#c43f670b-d633-438b-bd37-67778ba33c6b');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "2a4ad440fe284b88b02043a0b1761bf2", "version_major": 2, "version_minor": 0}
+{"model_id": "6124700b4779474db69f118c3acc951b", "version_major": 2, "version_minor": 0}
 </script>
 </div>
 
@@ -13461,8 +13449,8 @@ var element = $('#144ced55-59d5-4e7c-8bd6-774a2f31258e');
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-CPU times: user 57.3 s, sys: 28.8 s, total: 1min 26s
-Wall time: 1min 25s
+CPU times: user 57.3 s, sys: 29.1 s, total: 1min 26s
+Wall time: 1min 26s
 </pre>
 </div>
 </div>
@@ -13537,7 +13525,7 @@ Wall time: 1min 25s
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">imageio</span>
 <span class="n">frames_scaled</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">(</span><span class="mi">255</span> <span class="o">*</span> <span class="n">frame</span><span class="p">)</span> <span class="k">for</span> <span class="n">frame</span> <span class="ow">in</span> <span class="n">frames</span><span class="p">]</span>
-<span class="n">imageio</span><span class="o">.</span><span class="n">mimsave</span><span class="p">(</span><span class="s1">&#39;movie.gif&#39;</span><span class="p">,</span> <span class="n">frames_scaled</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;gif&#39;</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">imageio</span><span class="o">.</span><span class="n">mimsave</span><span class="p">(</span><span class="s1">&#39;images/movie.gif&#39;</span><span class="p">,</span> <span class="n">frames_scaled</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;gif&#39;</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13551,7 +13539,7 @@ Wall time: 1min 25s
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
-<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;img src=&quot;movie.gif&quot;&gt;&#39;</span><span class="p">)</span>
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;img src=&quot;images/movie.gif&quot;&gt;&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13569,7 +13557,7 @@ Wall time: 1min 25s
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<img src="movie.gif">
+<img src="images/movie.gif">
 </div>
 
 </div>
@@ -13584,115 +13572,6 @@ Wall time: 1min 25s
 <h2 id="References">References<a class="anchor-link" href="#References">&#182;</a></h2><ul>
 <li><a href="https://mrob.com/pub/comp/xmorphia/">Reaction-Diffusion by the Gray-Scott Model: Pearson's Parametrization</a></li>
 </ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Cython">Cython<a class="anchor-link" href="#Cython">&#182;</a></h2><p><a href="https://stackoverflow.com/questions/26823312/numba-or-cython-acceleration-in-reaction-diffusion-algorithm">Program by Hyry</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> cython
-<span class="o">%</span><span class="k">env</span> CC=&#39;gcc-8&#39;
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>env: CC=&#39;gcc-8&#39;
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">cython</span>
-<span class="c">#cython: boundscheck=False</span>
-<span class="c">#cython: wraparound=False</span>
-<span class="k">cimport</span> <span class="nn">cython</span>
-<span class="k">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="k">cimport</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="k">cpdef</span> <span class="nf">cython_grayscott</span><span class="p">(</span><span class="nb">int</span> <span class="n">counts</span><span class="p">,</span> <span class="n">double</span> <span class="n">Du</span><span class="p">,</span> <span class="n">double</span> <span class="n">Dv</span><span class="p">,</span> <span class="n">double</span> <span class="n">F</span><span class="p">,</span> <span class="n">double</span> <span class="n">k</span><span class="p">):</span>
-    <span class="k">cdef</span> <span class="kt">int</span> <span class="nf">n</span> <span class="o">=</span> <span class="mf">300</span>
-    <span class="k">cdef</span> <span class="kt">np</span>.<span class="kt">ndarray</span> <span class="nf">U</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="o">+</span><span class="mf">2</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mf">2</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float_</span><span class="p">)</span>
-    <span class="k">cdef</span> <span class="kt">np</span>.<span class="kt">ndarray</span> <span class="nf">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="o">+</span><span class="mf">2</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mf">2</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float_</span><span class="p">)</span>
-    <span class="k">cdef</span> <span class="kt">np</span>.<span class="kt">ndarray</span> <span class="nf">u</span> <span class="o">=</span> <span class="n">U</span><span class="p">[</span><span class="mf">1</span><span class="p">:</span><span class="o">-</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">:</span><span class="o">-</span><span class="mf">1</span><span class="p">]</span>
-    <span class="k">cdef</span> <span class="kt">np</span>.<span class="kt">ndarray</span> <span class="nf">v</span> <span class="o">=</span> <span class="n">V</span><span class="p">[</span><span class="mf">1</span><span class="p">:</span><span class="o">-</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">:</span><span class="o">-</span><span class="mf">1</span><span class="p">]</span>
-
-    <span class="k">cdef</span> <span class="kt">int</span> <span class="nf">r</span> <span class="o">=</span> <span class="mf">20</span>
-    <span class="n">u</span><span class="p">[:]</span> <span class="o">=</span> <span class="mf">1.0</span>
-    <span class="n">U</span><span class="p">[</span><span class="n">n</span><span class="o">/</span><span class="mf">2</span><span class="o">-</span><span class="n">r</span><span class="p">:</span><span class="n">n</span><span class="o">/</span><span class="mf">2</span><span class="o">+</span><span class="n">r</span><span class="p">,</span><span class="n">n</span><span class="o">/</span><span class="mf">2</span><span class="o">-</span><span class="n">r</span><span class="p">:</span><span class="n">n</span><span class="o">/</span><span class="mf">2</span><span class="o">+</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.50</span>
-    <span class="n">V</span><span class="p">[</span><span class="n">n</span><span class="o">/</span><span class="mf">2</span><span class="o">-</span><span class="n">r</span><span class="p">:</span><span class="n">n</span><span class="o">/</span><span class="mf">2</span><span class="o">+</span><span class="n">r</span><span class="p">,</span><span class="n">n</span><span class="o">/</span><span class="mf">2</span><span class="o">-</span><span class="n">r</span><span class="p">:</span><span class="n">n</span><span class="o">/</span><span class="mf">2</span><span class="o">+</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.25</span>
-    <span class="n">u</span> <span class="o">+=</span> <span class="mf">0.15</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
-    <span class="n">v</span> <span class="o">+=</span> <span class="mf">0.15</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
-
-    <span class="k">cdef</span> <span class="kt">np</span>.<span class="kt">ndarray</span> <span class="nf">Lu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
-    <span class="k">cdef</span> <span class="kt">np</span>.<span class="kt">ndarray</span> <span class="nf">Lv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-    <span class="k">cdef</span> <span class="kt">int</span> <span class="nf">i</span><span class="p">,</span> <span class="nf">c</span><span class="p">,</span> <span class="nf">r1</span><span class="p">,</span> <span class="nf">c1</span><span class="p">,</span> <span class="nf">r2</span><span class="p">,</span> <span class="nf">c2</span>
-    <span class="k">cdef</span> <span class="kt">double</span> <span class="nf">uvv</span>
-
-    <span class="k">cdef</span> <span class="kt">double</span>[<span class="p">:,</span> <span class="p">::</span><span class="mf">1</span><span class="p">]</span> <span class="n">bU</span> <span class="o">=</span> <span class="n">U</span>
-    <span class="k">cdef</span> <span class="kt">double</span>[<span class="p">:,</span> <span class="p">::</span><span class="mf">1</span><span class="p">]</span> <span class="n">bV</span> <span class="o">=</span> <span class="n">V</span>
-    <span class="k">cdef</span> <span class="kt">double</span>[<span class="p">:,</span> <span class="p">::</span><span class="mf">1</span><span class="p">]</span> <span class="n">bLu</span> <span class="o">=</span> <span class="n">Lu</span>
-    <span class="k">cdef</span> <span class="kt">double</span>[<span class="p">:,</span> <span class="p">::</span><span class="mf">1</span><span class="p">]</span> <span class="n">bLv</span> <span class="o">=</span> <span class="n">Lv</span>
-
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">counts</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-            <span class="n">r1</span> <span class="o">=</span> <span class="n">r</span> <span class="o">+</span> <span class="mf">1</span>
-            <span class="n">r2</span> <span class="o">=</span> <span class="n">r</span> <span class="o">+</span> <span class="mf">2</span>
-            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-                <span class="n">c1</span> <span class="o">=</span> <span class="n">c</span> <span class="o">+</span> <span class="mf">1</span>
-                <span class="n">c2</span> <span class="o">=</span> <span class="n">c</span> <span class="o">+</span> <span class="mf">2</span>
-                <span class="n">bLu</span><span class="p">[</span><span class="n">r</span><span class="p">,</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">bU</span><span class="p">[</span><span class="n">r1</span><span class="p">,</span><span class="n">c2</span><span class="p">]</span> <span class="o">+</span> <span class="n">bU</span><span class="p">[</span><span class="n">r1</span><span class="p">,</span><span class="n">c</span><span class="p">]</span> <span class="o">+</span> <span class="n">bU</span><span class="p">[</span><span class="n">r2</span><span class="p">,</span><span class="n">c1</span><span class="p">]</span> <span class="o">+</span> <span class="n">bU</span><span class="p">[</span><span class="n">r</span><span class="p">,</span><span class="n">c1</span><span class="p">]</span> <span class="o">-</span> <span class="mf">4</span><span class="o">*</span><span class="n">bU</span><span class="p">[</span><span class="n">r1</span><span class="p">,</span><span class="n">c1</span><span class="p">]</span>
-                <span class="n">bLv</span><span class="p">[</span><span class="n">r</span><span class="p">,</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">bV</span><span class="p">[</span><span class="n">r1</span><span class="p">,</span><span class="n">c2</span><span class="p">]</span> <span class="o">+</span> <span class="n">bV</span><span class="p">[</span><span class="n">r1</span><span class="p">,</span><span class="n">c</span><span class="p">]</span> <span class="o">+</span> <span class="n">bV</span><span class="p">[</span><span class="n">r2</span><span class="p">,</span><span class="n">c1</span><span class="p">]</span> <span class="o">+</span> <span class="n">bV</span><span class="p">[</span><span class="n">r</span><span class="p">,</span><span class="n">c1</span><span class="p">]</span> <span class="o">-</span> <span class="mf">4</span><span class="o">*</span><span class="n">bV</span><span class="p">[</span><span class="n">r1</span><span class="p">,</span><span class="n">c1</span><span class="p">]</span>
-
-        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-            <span class="n">r1</span> <span class="o">=</span> <span class="n">r</span> <span class="o">+</span> <span class="mf">1</span>
-            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-                <span class="n">c1</span> <span class="o">=</span> <span class="n">c</span> <span class="o">+</span> <span class="mf">1</span>
-                <span class="n">uvv</span> <span class="o">=</span> <span class="n">bU</span><span class="p">[</span><span class="n">r1</span><span class="p">,</span><span class="n">c1</span><span class="p">]</span><span class="o">*</span><span class="n">bV</span><span class="p">[</span><span class="n">r1</span><span class="p">,</span><span class="n">c1</span><span class="p">]</span><span class="o">*</span><span class="n">bV</span><span class="p">[</span><span class="n">r1</span><span class="p">,</span><span class="n">c1</span><span class="p">]</span>
-                <span class="n">bU</span><span class="p">[</span><span class="n">r1</span><span class="p">,</span><span class="n">c1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">Du</span><span class="o">*</span><span class="n">bLu</span><span class="p">[</span><span class="n">r</span><span class="p">,</span><span class="n">c</span><span class="p">]</span> <span class="o">-</span> <span class="n">uvv</span> <span class="o">+</span> <span class="n">F</span><span class="o">*</span><span class="p">(</span><span class="mf">1</span> <span class="o">-</span> <span class="n">bU</span><span class="p">[</span><span class="n">r1</span><span class="p">,</span><span class="n">c1</span><span class="p">])</span>
-                <span class="n">bV</span><span class="p">[</span><span class="n">r1</span><span class="p">,</span><span class="n">c1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">Dv</span><span class="o">*</span><span class="n">bLv</span><span class="p">[</span><span class="n">r</span><span class="p">,</span><span class="n">c</span><span class="p">]</span> <span class="o">+</span> <span class="n">uvv</span> <span class="o">-</span> <span class="p">(</span><span class="n">F</span> <span class="o">+</span> <span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">bV</span><span class="p">[</span><span class="n">r1</span><span class="p">,</span><span class="n">c1</span><span class="p">]</span>
-
-    <span class="k">return</span> <span class="n">V</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 
 </div>
 </div>
