@@ -23,38 +23,29 @@
         
         <div class="toc">
 <ul>
-<li><a href="#execute-the-jupyter-notebooks">Execute the Jupyter notebooks</a><ul>
-<li><a href="#install-jupyter-and-other-dependencies">Install Jupyter and other dependencies</a><ul>
-<li><a href="#first-install-anaconda">First install Anaconda</a></li>
-<li><a href="#finalize-installation-with-conda">Finalize installation with conda</a></li>
-</ul>
-</li>
-<li><a href="#run-a-jupyter-notebook">Run a Jupyter notebook</a><ul>
+<li><a href="#jupyter-notebooks">Jupyter notebooks</a><ul>
+<li><a href="#install-anaconda-or-miniconda">Install Anaconda or Miniconda</a></li>
 <li><a href="#start-a-jupyter-server">Start a Jupyter server</a></li>
-<li><a href="#execute-a-notebook">Execute a notebook</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
 </div>
 
         
-        <h2 id="execute-the-jupyter-notebooks">
- Execute the Jupyter notebooks
+        <h2 id="jupyter-notebooks">
+ Jupyter notebooks
 </h2>
 <p>
  This course content is provided as Jupyter notebooks that require to be powered by a Jupyter server with Python3 kernel.
 </p>
-<h3 id="install-jupyter-and-other-dependencies">
- Install Jupyter and other dependencies
+<h3 id="install-anaconda-or-miniconda">
+ Install Anaconda or Miniconda
 </h3>
-<h4 id="first-install-anaconda">
- First install Anaconda
-</h4>
 <p>
- Anaconda is easy to install but the installer is quite heavy to download because it contains a lot of components.
-In particular, it is shipped with:
+ <a href="https://www.anaconda.com">
+  Anaconda
+ </a>
+ is easy to install but the installer is quite heavy to download because it contains a lot of components.  In particular, it is shipped with:
 </p>
 <ul>
  <li>
@@ -74,28 +65,65 @@ In particular, it is shipped with:
  </li>
 </ul>
 <p>
- For a detailed installation of Anaconda and its extensions on Windows, Mac or Linux, follow the instructions
- <a href="https://www.anaconda.com/download">
-  here
+ <a href="https://docs.conda.io/en/latest/miniconda.html">
+  Miniconda
  </a>
- .
+ is a light version of Anaconda.
 </p>
-<h4 id="finalize-installation-with-conda">
- Finalize installation with conda
-</h4>
+<ul>
+ <li>
+  <a href="https://docs.conda.io/en/latest/miniconda.html#linux-installers">
+   Miniconda installer for Linux
+  </a>
+  .
+ </li>
+ <li>
+  <a href="https://www.anaconda.com/download/">
+   Anaconda installer for Linux
+  </a>
+ </li>
+</ul>
 <p>
- From the project root directory, type:
+ In your terminal window, run:
 </p>
+<ul>
+ <li>
+  Miniconda:
+ </li>
+</ul>
 <div class="codehilite">
- <pre><span></span><code>conda env update -f environment.yml
+ <pre><span></span><code>bash Miniconda3-latest-Linux-x86_64.sh
 </code></pre>
 </div>
-<h3 id="run-a-jupyter-notebook">
- Run a Jupyter notebook
-</h3>
-<h4 id="start-a-jupyter-server">
+<ul>
+ <li>
+  Anaconda:
+ </li>
+</ul>
+<div class="codehilite">
+ <pre><span></span><code>bash Anaconda-latest-Linux-x86_64.sh
+</code></pre>
+</div>
+<p>
+ Follow the prompts on the installer screens.  If you are unsure about any setting, accept the defaults. You can change them later. To make the changes take effect, close and then re-open your terminal window.
+Test your installation by using your terminal window or Anaconda Prompt, run the command
+ <code>
+  conda list
+ </code>
+ . A list of installed packages appears if it has been installed correctly.
+</p>
+<p>
+ Finalize installation with conda from the project root directory, type:
+</p>
+<div class="codehilite">
+ <pre><span></span><code>git clone https://github.com/pnavaro/python-notebooks
+<span class="nb">cd</span> python-notebooks
+conda env update -f environment.yml
+</code></pre>
+</div>
+<h3 id="start-a-jupyter-server">
  Start a Jupyter server
-</h4>
+</h3>
 <ul>
  <li>
   Either from Anaconda graphical interface
@@ -108,24 +136,6 @@ In particular, it is shipped with:
  <pre><span></span><code>jupyter-notebook
 </code></pre>
 </div>
-<h4 id="execute-a-notebook">
- Execute a notebook
-</h4>
-<ul>
- <li>
-  Download and extract the archive of the first chapter
- </li>
- <li>
-  In the Jupyter, open the
-  <code>
-   .ipynb
-  </code>
-  file
- </li>
- <li>
-  Execute the notebook using the menu "Cell &gt; Run All"
- </li>
-</ul>
         
     </div>
 </body>
