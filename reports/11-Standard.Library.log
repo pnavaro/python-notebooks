@@ -1,0 +1,68 @@
+Traceback (most recent call last):
+  File "/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/nbclient/client.py", line 1082, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/share/miniconda3/envs/runenv/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/nbclient/client.py", line 535, in async_execute
+    await self.async_execute_cell(
+  File "/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/nbclient/client.py", line 827, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/nbclient/client.py", line 735, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+%run demo.py one two three
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mOSError[0m                                   Traceback (most recent call last)
+[0;32m/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/magics/execution.py[0m in [0;36mrun[0;34m(self, parameter_s, runner, file_finder)[0m
+[1;32m    702[0m             [0mfpath[0m [0;34m=[0m [0marg_lst[0m[0;34m[[0m[0;36m0[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 703[0;31m             [0mfilename[0m [0;34m=[0m [0mfile_finder[0m[0;34m([0m[0mfpath[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    704[0m         [0;32mexcept[0m [0mIndexError[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/utils/path.py[0m in [0;36mget_py_filename[0;34m(name, force_win32)[0m
+[1;32m    108[0m     [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 109[0;31m         [0;32mraise[0m [0mIOError[0m[0;34m([0m[0;34m'File `%r` not found.'[0m [0;34m%[0m [0mname[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    110[0m [0;34m[0m[0m
+
+[0;31mOSError[0m: File `'demo.py'` not found.
+
+During handling of the above exception, another exception occurred:
+
+[0;31mException[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-7-916df5e5b25f>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0mget_ipython[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0mrun_line_magic[0m[0;34m([0m[0;34m'run'[0m[0;34m,[0m [0;34m'demo.py one two three'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;32m/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/interactiveshell.py[0m in [0;36mrun_line_magic[0;34m(self, magic_name, line, _stack_depth)[0m
+[1;32m   2324[0m                 [0mkwargs[0m[0;34m[[0m[0;34m'local_ns'[0m[0;34m][0m [0;34m=[0m [0mself[0m[0;34m.[0m[0mget_local_scope[0m[0;34m([0m[0mstack_depth[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   2325[0m             [0;32mwith[0m [0mself[0m[0;34m.[0m[0mbuiltin_trap[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 2326[0;31m                 [0mresult[0m [0;34m=[0m [0mfn[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   2327[0m             [0;32mreturn[0m [0mresult[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   2328[0m [0;34m[0m[0m
+
+[0;32m<decorator-gen-52>[0m in [0;36mrun[0;34m(self, parameter_s, runner, file_finder)[0m
+
+[0;32m/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/magic.py[0m in [0;36m<lambda>[0;34m(f, *a, **k)[0m
+[1;32m    185[0m     [0;31m# but it's overkill for just that one bit of state.[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    186[0m     [0;32mdef[0m [0mmagic_deco[0m[0;34m([0m[0marg[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 187[0;31m         [0mcall[0m [0;34m=[0m [0;32mlambda[0m [0mf[0m[0;34m,[0m [0;34m*[0m[0ma[0m[0;34m,[0m [0;34m**[0m[0mk[0m[0;34m:[0m [0mf[0m[0;34m([0m[0;34m*[0m[0ma[0m[0;34m,[0m [0;34m**[0m[0mk[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    188[0m [0;34m[0m[0m
+[1;32m    189[0m         [0;32mif[0m [0mcallable[0m[0;34m([0m[0marg[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/share/miniconda3/envs/runenv/lib/python3.8/site-packages/IPython/core/magics/execution.py[0m in [0;36mrun[0;34m(self, parameter_s, runner, file_finder)[0m
+[1;32m    712[0m             [0;32mif[0m [0mos[0m[0;34m.[0m[0mname[0m [0;34m==[0m [0;34m'nt'[0m [0;32mand[0m [0mre[0m[0;34m.[0m[0mmatch[0m[0;34m([0m[0;34mr"^'.*'$"[0m[0;34m,[0m[0mfpath[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    713[0m                 [0mwarn[0m[0;34m([0m[0;34m'For Windows, use double quotes to wrap a filename: %run "mypath\\myfile.py"'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 714[0;31m             [0;32mraise[0m [0mException[0m[0;34m([0m[0mmsg[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    715[0m         [0;32mexcept[0m [0mTypeError[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    716[0m             [0;32mif[0m [0mfpath[0m [0;32min[0m [0msys[0m[0;34m.[0m[0mmeta_path[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mException[0m: File `'demo.py'` not found.
+Exception: File `'demo.py'` not found.
+
