@@ -569,7 +569,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40.9 µs ± 343 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40.7 µs ± 477 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre></div>
 </div>
 </div>
@@ -583,7 +583,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40.4 µs ± 1.62 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37.7 µs ± 719 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre></div>
 </div>
 </div>
@@ -830,7 +830,7 @@ incremental matrix building. The conversion to csc/csr format is efficient.</p><
   w = sp.rand(N+1)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;SuperLU at 0x7ff1141bdd20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;SuperLU at 0x7ff2e78a3390&gt;
 </pre></div>
 </div>
 </div>
@@ -843,7 +843,7 @@ incremental matrix building. The conversion to csc/csr format is efficient.</p><
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0350724194510405e-15
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0821115497893178e-15
 </pre></div>
 </div>
 </div>
@@ -865,38 +865,33 @@ incremental matrix building. The conversion to csc/csr format is efficient.</p><
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iteration  0 residu =    3.86
-iteration  1 residu =     2.1
-iteration  2 residu =    1.46
-iteration  3 residu =    0.72
-iteration  4 residu =   0.291
-iteration  5 residu =   0.151
-iteration  6 residu =  0.0625
-iteration  7 residu =  0.0281
-iteration  8 residu =  0.0171
-iteration  9 residu = 0.00888
-iteration 10 residu = 0.00501
-iteration 11 residu = 0.00291
-iteration 12 residu = 0.00146
-iteration 13 residu = 0.000575
-iteration 14 residu = 0.000244
-iteration 15 residu = 9.38e-05
-iteration 16 residu = 2.97e-05
-iteration 17 residu = 1.26e-05
-iteration 18 residu = 3.89e-06
-iteration 19 residu = 9.87e-07
-iteration 20 residu = 2.66e-07
-iteration 21 residu = 1.34e-07
-iteration 22 residu = 4.75e-08
-iteration 23 residu = 9.55e-09
-iteration 24 residu = 3.61e-09
-iteration 25 residu = 1.28e-09
-iteration 26 residu = 5.35e-10
-iteration 27 residu = 1.54e-10
-iteration 28 residu = 4.67e-11
-iteration 29 residu = 1.85e-11
-iteration 30 residu = 7.44e-12
-iteration 31 residu = 2.7e-12
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iteration  0 residu =    2.65
+iteration  1 residu =   0.995
+iteration  2 residu =   0.414
+iteration  3 residu =   0.134
+iteration  4 residu =  0.0614
+iteration  5 residu =  0.0199
+iteration  6 residu = 0.00699
+iteration  7 residu = 0.00286
+iteration  8 residu =  0.0011
+iteration  9 residu = 0.000362
+iteration 10 residu = 0.000133
+iteration 11 residu = 5.53e-05
+iteration 12 residu = 2.16e-05
+iteration 13 residu = 8.66e-06
+iteration 14 residu = 3.31e-06
+iteration 15 residu = 1.08e-06
+iteration 16 residu = 4.81e-07
+iteration 17 residu = 1.27e-07
+iteration 18 residu = 4.7e-08
+iteration 19 residu = 1.86e-08
+iteration 20 residu = 6.01e-09
+iteration 21 residu = 2.65e-09
+iteration 22 residu = 6.99e-10
+iteration 23 residu = 2.26e-10
+iteration 24 residu = 5.66e-11
+iteration 25 residu = 1.37e-11
+iteration 26 residu = 6.07e-12
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-20-45fd1a29b4fe&gt;:8: DeprecationWarning: scipy.zeros is deprecated and will be removed in SciPy 2.0.0, use numpy.zeros instead
@@ -917,7 +912,7 @@ iteration 31 residu = 2.7e-12
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.28820433021226594
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3066091141708783
 </pre></div>
 </div>
 </div>
@@ -933,13 +928,15 @@ iteration 31 residu = 2.7e-12
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iteration  0 residu =    0.28
-iteration  1 residu =  0.0148
-iteration  2 residu = 0.000197
-iteration  3 residu = 2.79e-06
-iteration  4 residu = 1.07e-07
-iteration  5 residu = 4.89e-09
-iteration  6 residu = 3.51e-13
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iteration  0 residu =   0.282
+iteration  1 residu =  0.0164
+iteration  2 residu = 0.00107
+iteration  3 residu = 5.56e-05
+iteration  4 residu = 2.36e-06
+iteration  5 residu = 4.24e-08
+iteration  6 residu = 2.08e-09
+iteration  7 residu = 6.07e-11
+iteration  8 residu = 1.12e-12
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-22-dff3da9ff400&gt;:5: DeprecationWarning: scipy.zeros is deprecated and will be removed in SciPy 2.0.0, use numpy.zeros instead
@@ -1089,11 +1086,11 @@ with \)</span>y_1(0) = 2 <span class="math notranslate nohighlight">\( and \)</s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 454 ms, sys: 80.1 ms, total: 534 ms
-Wall time: 297 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 438 ms, sys: 76.4 ms, total: 514 ms
+Wall time: 283 ms
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7ff111eb0520&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7ff2e55be4c0&gt;
 </pre></div>
 </div>
 <img alt="_images/14-SciPy_41_2.png" src="_images/14-SciPy_41_2.png" />
@@ -1141,11 +1138,11 @@ Wall time: 297 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 564 ms, sys: 141 ms, total: 705 ms
-Wall time: 438 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 511 ms, sys: 165 ms, total: 676 ms
+Wall time: 420 ms
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7ff111e60b20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7ff2e556e0a0&gt;
 </pre></div>
 </div>
 <img alt="_images/14-SciPy_42_2.png" src="_images/14-SciPy_42_2.png" />
