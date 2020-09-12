@@ -419,6 +419,8 @@
 <span class="c1"># inline can be replaced by notebook to get interactive plots</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &quot;retina&quot;
 </pre></div>
 </div>
 </div>
@@ -703,7 +705,7 @@ Running the next cell will give you double resolution plot output for Retina scr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f0beccdca00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fc1a6382e80&gt;
 </pre></div>
 </div>
 <img alt="_images/12-Matplotlib_36_1.png" src="_images/12-Matplotlib_36_1.png" />
@@ -750,11 +752,11 @@ Running the next cell will give you double resolution plot output for Retina scr
 <h2>Alternatives<a class="headerlink" href="#alternatives" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/bloomberg/bqplot/blob/master/README.md">bqplot</a> : Jupyter Notebooks, Interactive.</p></li>
-<li><p><a class="reference external" href="https://seaborn.pydata.org">seaborn</a> : Statistics.</p></li>
+<li><p><a class="reference external" href="https://seaborn.pydata.org">seaborn</a> : Statistics build on top of matplotlib.</p></li>
 <li><p><a class="reference external" href="http://toyplot.readthedocs.io/en/stable/">toyplot</a> : Nice graphes.</p></li>
 <li><p><a class="reference external" href="http://bokeh.pydata.org/en/latest/">bokeh</a> : Interactive and Server mode.</p></li>
 <li><p><a class="reference external" href="http://pygal.org/en/stable/">pygal</a> : Charting</p></li>
-<li><p><a class="reference external" href="https://github.com/altair-viz/altair">Altair</a> : Data science</p></li>
+<li><p><a class="reference external" href="https://github.com/altair-viz/altair">Altair</a> : Data science (js backend)</p></li>
 <li><p><a class="reference external" href="https://plot.ly/">plot.ly</a> : Data science and interactive</p></li>
 <li><p><a class="reference external" href="http://code.enthought.com/projects/mayavi/">Mayavi</a>: 3D</p></li>
 <li><p><a class="reference external" href="http://yt-project.org">YT</a>: Astrophysics (volume rendering, contours, particles).</p></li>
@@ -762,6 +764,7 @@ Running the next cell will give you double resolution plot output for Retina scr
 <li><p><a class="reference external" href="http://www.itk.org/Wiki/ParaView/Python_Scripting">Paraview</a>: The most-used visualization application. Need high learning effort.</p></li>
 <li><p><a class="reference external" href="https://docs.pyvista.org">PyVista</a>: 3D plotting and mesh analysis through a streamlined interface for the Visualization Toolkit (VTK)</p></li>
 <li><p><a class="reference external" href="https://www.scikit-yb.org/en/latest/">Yellowbrick</a> : Yellowbrick: Machine Learning Visualization</p></li>
+<li><p><a class="reference external" href="https://scikit-plot.readthedocs.io/en/stable/">scikit-plot</a> : Plot sklearn metrics</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1030,42 +1033,42 @@ input[type=range].anim-slider {
 </style>
 
 <div class="animation">
-  <img id="_anim_img24ff59b3a8b74ac8b35d0f68241ee1e8">
+  <img id="_anim_imgd6f7f25549944bb5bc0472e164ecbadf">
   <div class="anim-controls">
-    <input id="_anim_slider24ff59b3a8b74ac8b35d0f68241ee1e8" type="range" class="anim-slider"
+    <input id="_anim_sliderd6f7f25549944bb5bc0472e164ecbadf" type="range" class="anim-slider"
            name="points" min="0" max="1" step="1" value="0"
-           oninput="anim24ff59b3a8b74ac8b35d0f68241ee1e8.set_frame(parseInt(this.value));"></input>
+           oninput="animd6f7f25549944bb5bc0472e164ecbadf.set_frame(parseInt(this.value));"></input>
     <div class="anim-buttons">
-      <button title="Decrease speed" onclick="anim24ff59b3a8b74ac8b35d0f68241ee1e8.slower()">
+      <button title="Decrease speed" onclick="animd6f7f25549944bb5bc0472e164ecbadf.slower()">
           <i class="fa fa-minus"></i></button>
-      <button title="First frame" onclick="anim24ff59b3a8b74ac8b35d0f68241ee1e8.first_frame()">
+      <button title="First frame" onclick="animd6f7f25549944bb5bc0472e164ecbadf.first_frame()">
         <i class="fa fa-fast-backward"></i></button>
-      <button title="Previous frame" onclick="anim24ff59b3a8b74ac8b35d0f68241ee1e8.previous_frame()">
+      <button title="Previous frame" onclick="animd6f7f25549944bb5bc0472e164ecbadf.previous_frame()">
           <i class="fa fa-step-backward"></i></button>
-      <button title="Play backwards" onclick="anim24ff59b3a8b74ac8b35d0f68241ee1e8.reverse_animation()">
+      <button title="Play backwards" onclick="animd6f7f25549944bb5bc0472e164ecbadf.reverse_animation()">
           <i class="fa fa-play fa-flip-horizontal"></i></button>
-      <button title="Pause" onclick="anim24ff59b3a8b74ac8b35d0f68241ee1e8.pause_animation()">
+      <button title="Pause" onclick="animd6f7f25549944bb5bc0472e164ecbadf.pause_animation()">
           <i class="fa fa-pause"></i></button>
-      <button title="Play" onclick="anim24ff59b3a8b74ac8b35d0f68241ee1e8.play_animation()">
+      <button title="Play" onclick="animd6f7f25549944bb5bc0472e164ecbadf.play_animation()">
           <i class="fa fa-play"></i></button>
-      <button title="Next frame" onclick="anim24ff59b3a8b74ac8b35d0f68241ee1e8.next_frame()">
+      <button title="Next frame" onclick="animd6f7f25549944bb5bc0472e164ecbadf.next_frame()">
           <i class="fa fa-step-forward"></i></button>
-      <button title="Last frame" onclick="anim24ff59b3a8b74ac8b35d0f68241ee1e8.last_frame()">
+      <button title="Last frame" onclick="animd6f7f25549944bb5bc0472e164ecbadf.last_frame()">
           <i class="fa fa-fast-forward"></i></button>
-      <button title="Increase speed" onclick="anim24ff59b3a8b74ac8b35d0f68241ee1e8.faster()">
+      <button title="Increase speed" onclick="animd6f7f25549944bb5bc0472e164ecbadf.faster()">
           <i class="fa fa-plus"></i></button>
     </div>
-    <form title="Repetition mode" action="#n" name="_anim_loop_select24ff59b3a8b74ac8b35d0f68241ee1e8"
+    <form title="Repetition mode" action="#n" name="_anim_loop_selectd6f7f25549944bb5bc0472e164ecbadf"
           class="anim-state">
-      <input type="radio" name="state" value="once" id="_anim_radio1_24ff59b3a8b74ac8b35d0f68241ee1e8"
+      <input type="radio" name="state" value="once" id="_anim_radio1_d6f7f25549944bb5bc0472e164ecbadf"
              >
-      <label for="_anim_radio1_24ff59b3a8b74ac8b35d0f68241ee1e8">Once</label>
-      <input type="radio" name="state" value="loop" id="_anim_radio2_24ff59b3a8b74ac8b35d0f68241ee1e8"
+      <label for="_anim_radio1_d6f7f25549944bb5bc0472e164ecbadf">Once</label>
+      <input type="radio" name="state" value="loop" id="_anim_radio2_d6f7f25549944bb5bc0472e164ecbadf"
              checked>
-      <label for="_anim_radio2_24ff59b3a8b74ac8b35d0f68241ee1e8">Loop</label>
-      <input type="radio" name="state" value="reflect" id="_anim_radio3_24ff59b3a8b74ac8b35d0f68241ee1e8"
+      <label for="_anim_radio2_d6f7f25549944bb5bc0472e164ecbadf">Loop</label>
+      <input type="radio" name="state" value="reflect" id="_anim_radio3_d6f7f25549944bb5bc0472e164ecbadf"
              >
-      <label for="_anim_radio3_24ff59b3a8b74ac8b35d0f68241ee1e8">Reflect</label>
+      <label for="_anim_radio3_d6f7f25549944bb5bc0472e164ecbadf">Reflect</label>
     </form>
   </div>
 </div>
@@ -1075,9 +1078,9 @@ input[type=range].anim-slider {
   /* Instantiate the Animation class. */
   /* The IDs given should match those used in the template above. */
   (function() {
-    var img_id = "_anim_img24ff59b3a8b74ac8b35d0f68241ee1e8";
-    var slider_id = "_anim_slider24ff59b3a8b74ac8b35d0f68241ee1e8";
-    var loop_select_id = "_anim_loop_select24ff59b3a8b74ac8b35d0f68241ee1e8";
+    var img_id = "_anim_imgd6f7f25549944bb5bc0472e164ecbadf";
+    var slider_id = "_anim_sliderd6f7f25549944bb5bc0472e164ecbadf";
+    var loop_select_id = "_anim_loop_selectd6f7f25549944bb5bc0472e164ecbadf";
     var frames = new Array(91);
 
   frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAkAAAAGwCAYAAABB4NqyAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
@@ -46539,7 +46542,7 @@ v/YYHQAAAABJRU5ErkJggg==\
     /* set a timeout to make sure all the above elements are created before
        the object is initialized. */
     setTimeout(function() {
-        anim24ff59b3a8b74ac8b35d0f68241ee1e8 = new Animation(frames, img_id, slider_id, 29.0,
+        animd6f7f25549944bb5bc0472e164ecbadf = new Animation(frames, img_id, slider_id, 29.0,
                                  loop_select_id);
     }, 0);
   })()
