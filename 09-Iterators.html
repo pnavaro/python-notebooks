@@ -466,10 +466,20 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;str_iterator at 0x7f9a26ec26a0&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">),</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">),</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;)
 </pre></div>
 </div>
 </div>
@@ -503,6 +513,11 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>maps
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -511,6 +526,11 @@
     
 <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;bulgroz&#39;</span><span class="p">):</span>
      <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>zorglub
 </pre></div>
 </div>
 </div>
@@ -535,6 +555,11 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;bulgroz&#39;</span><span class="p">):</span>
      <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>zorglub
 </pre></div>
 </div>
 </div>
@@ -566,6 +591,11 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>285
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -580,10 +610,20 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>peak memory: 47.87 MiB, increment: 1.25 MiB
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">memit</span> doubles = (2 * n for n in range(10000))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>peak memory: 47.32 MiB, increment: -0.56 MiB
 </pre></div>
 </div>
 </div>
@@ -597,6 +637,11 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 2 4 6 8 10 12 14 16 18 
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -604,6 +649,11 @@
 <span class="n">doubles</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">doubles</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 2 4 6 8 10 12 14 16 18 
 </pre></div>
 </div>
 </div>
@@ -637,6 +687,11 @@ as arguments and a fillvalue keyword argument that defaults to None.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 3, 4, 5, 6, 7, 8]
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="combinations">
@@ -659,11 +714,21 @@ all combinations of n elements in inputs.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13983816
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">factorial</span>
 <span class="n">factorial</span><span class="p">(</span><span class="mi">49</span><span class="p">)</span><span class="o">/</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="o">/</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">49</span><span class="o">-</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13983816.0
 </pre></div>
 </div>
 </div>
@@ -676,6 +741,11 @@ all combinations of n elements in inputs.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">permutations</span>
 <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">permutations</span><span class="p">(</span><span class="s1">&#39;dsi&#39;</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;, &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dsi, dis, sdi, sid, ids, isd, 
 </pre></div>
 </div>
 </div>
@@ -698,6 +768,11 @@ all combinations of n elements in inputs.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k = 112
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="cycle-islice-dropwhile-takewhile">
@@ -713,11 +788,21 @@ all combinations of n elements in inputs.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">takewhile</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">cycled</span><span class="p">)</span> <span class="c1"># cycled begins to 4</span>
 <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6 7 8 9
 </pre></div>
 </div>
 </div>
@@ -734,6 +819,11 @@ all combinations of n elements in inputs.</p>
 <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">product</span>
 <span class="n">cards</span> <span class="o">=</span> <span class="n">product</span><span class="p">(</span><span class="n">ranks</span><span class="p">,</span> <span class="n">suits</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">cards</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;A&#39;, &#39;♠&#39;) (&#39;A&#39;, &#39;♥&#39;) (&#39;A&#39;, &#39;♣&#39;) (&#39;A&#39;, &#39;♦&#39;) (&#39;K&#39;, &#39;♠&#39;) (&#39;K&#39;, &#39;♥&#39;) (&#39;K&#39;, &#39;♣&#39;) (&#39;K&#39;, &#39;♦&#39;) (&#39;Q&#39;, &#39;♠&#39;) (&#39;Q&#39;, &#39;♥&#39;) (&#39;Q&#39;, &#39;♣&#39;) (&#39;Q&#39;, &#39;♦&#39;) (&#39;J&#39;, &#39;♠&#39;) (&#39;J&#39;, &#39;♥&#39;) (&#39;J&#39;, &#39;♣&#39;) (&#39;J&#39;, &#39;♦&#39;) (&#39;10&#39;, &#39;♠&#39;) (&#39;10&#39;, &#39;♥&#39;) (&#39;10&#39;, &#39;♣&#39;) (&#39;10&#39;, &#39;♦&#39;) (&#39;9&#39;, &#39;♠&#39;) (&#39;9&#39;, &#39;♥&#39;) (&#39;9&#39;, &#39;♣&#39;) (&#39;9&#39;, &#39;♦&#39;) (&#39;8&#39;, &#39;♠&#39;) (&#39;8&#39;, &#39;♥&#39;) (&#39;8&#39;, &#39;♣&#39;) (&#39;8&#39;, &#39;♦&#39;) (&#39;7&#39;, &#39;♠&#39;) (&#39;7&#39;, &#39;♥&#39;) (&#39;7&#39;, &#39;♣&#39;) (&#39;7&#39;, &#39;♦&#39;)
 </pre></div>
 </div>
 </div>
