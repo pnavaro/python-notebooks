@@ -860,11 +860,11 @@ end subroutine push
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading fortran codes...
-	Reading file &#39;dgemm.f&#39; (format:fix,strict)
-rmbadname1: Replacing &quot;max&quot; with &quot;max_bn&quot;.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Post-processing...
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	Reading file &#39;dgemm.f&#39; (format:fix,strict)
+rmbadname1: Replacing &quot;max&quot; with &quot;max_bn&quot;.
+Post-processing...
 	Block: mylapack
 			Block: dgemm
 Post-processing (stage 2)...
@@ -996,7 +996,7 @@ b= [[1 2 3]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.63 ms ± 35.5 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.67 ms ± 43.8 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1008,7 +1008,7 @@ b= [[1 2 3]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.23 ms ± 32.7 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.3 ms ± 20.5 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1111,7 +1111,7 @@ end subroutine
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 7.97 ms, sys: 12.4 ms, total: 20.3 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 18.9 ms, sys: 5.02 ms, total: 23.9 ms
 Wall time: 4 s
 </pre></div>
 </div>
@@ -1143,7 +1143,7 @@ end subroutine
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 3.48 ms, sys: 233 µs, total: 3.71 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 3.03 ms, sys: 4.23 ms, total: 7.25 ms
 Wall time: 1 s
 </pre></div>
 </div>
@@ -1261,10 +1261,10 @@ Wall time: 1 s
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(13, 0.9999999998756399)
 (14, 0.9999999976225641)
 (15, 0.9999999583376037)
-(16, 0.999999326700459)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(17, 0.9999899130081685)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(16, 0.999999326700459)
+(17, 0.9999899130081685)
 (18, 0.9998592998914099)
 (19, 0.9981701345865893)
 (20, 0.9783799284159196)
@@ -1276,15 +1276,15 @@ Wall time: 1 s
 (26, 0.6790691522857905)
 (27, 0.6320458179301557)
 (28, 0.6069386094512461)
+(29, 0.575385356496663)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(29, 0.575385356496663)
-(30, 0.5398414266844065)
-(31, 0.5073489564930949)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(30, 0.5398414266844065)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(31, 0.5073489564930949)
 (32, 0.48297721114570125)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(33, 0.4618345475862288)
+(33, 0.4618345475862288)
 (34, 0.43827557692194496)
 (35, 0.4143357764645196)
 (36, 0.3924382054205373)
@@ -1295,17 +1295,17 @@ Wall time: 1 s
 (41, 0.31152930040701554)
 (42, 0.2967884812685721)
 (43, 0.2841936702538212)
-(44, 0.27229436409349167)
-(45, 0.2606966680515375)
-(46, 0.2505059654694677)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(47, 0.24105086578370669)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(44, 0.27229436409349167)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(45, 0.2606966680515375)
+(46, 0.2505059654694677)
+(47, 0.24105086578370669)
 (48, 0.23174752119627523)
 (49, 0.22268821422383456)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(50, 0.2139321391802263)
+(50, 0.2139321391802263)
 (51, 0.2056789240103906)
 (52, 0.19852000459869076)
 (53, 0.19154016363351395)
@@ -1314,18 +1314,18 @@ Wall time: 1 s
 (56, 0.1719439656938689)
 (57, 0.1661317583468397)
 (58, 0.16080143658541332)
-(59, 0.15562883918080994)
-(60, 0.15062374814273707)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(59, 0.15562883918080994)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(60, 0.15062374814273707)
 (61, 0.14579170278101808)
 (62, 0.14113498009837175)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(63, 0.13701556698519357)
+(63, 0.13701556698519357)
 (64, 0.1330577816617311)
 (65, 0.12921639402527813)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(66, 0.12549428484635763)
+(66, 0.12549428484635763)
 (67, 0.12189269341938404)
 (68, 0.11841156181043053)
 (69, 0.11504981910315674)
@@ -1334,78 +1334,78 @@ Wall time: 1 s
 (72, 0.10565961910779918)
 (73, 0.10277423555972015)
 (74, 0.10011529446941532)
-(75, 0.09753952693641722)
-(76, 0.09504562060680743)
-(77, 0.09264232267884208)
-(78, 0.0904668914161219)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(79, 0.08835029199885054)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(75, 0.09753952693641722)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(76, 0.09504562060680743)
+(77, 0.09264232267884208)
+(78, 0.0904668914161219)
+(79, 0.08835029199885054)
 (80, 0.08629213569569119)
 (81, 0.08429178767300372)
 (82, 0.08234841271209116)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(83, 0.08046101458056627)
+(83, 0.08046101458056627)
 (84, 0.07862846977337559)
 (85, 0.07684955629552748)
 (86, 0.07512297810519541)
 (87, 0.07344738577824392)
 (88, 0.07182139389713012)
 (89, 0.07024359561098874)
-(90, 0.06871257476095718)
-(91, 0.06722691591624932)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(90, 0.06871257476095718)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(91, 0.06722691591624932)
 (92, 0.06578521262245907)
 (93, 0.06438607412411373)
 (94, 0.0630281307884429)
 (95, 0.06171003842639934)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(96, 0.06043048167985572)
+(96, 0.06043048167985572)
 (97, 0.0592152869523178)
 (98, 0.05806095286424927)
 (99, 0.05697757075602701)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(100, 0.055920346653939454)
+(100, 0.055920346653939454)
 (101, 0.05488871668696673)
 (102, 0.053882107696533614)
 (103, 0.05289994070021914)
 (104, 0.0519416339031402)
-(105, 0.0510066053042519)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(105, 0.0510066053042519)
 (106, 0.05009427494092695)
-(107, 0.049204066811402214)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(107, 0.049204066811402214)
 (108, 0.04833541051107197)
 (109, 0.04748774261521061)
 (110, 0.046660507837522555)
 (111, 0.0458531599909676)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(112, 0.04506516277460256)
+(112, 0.04506516277460256)
 (113, 0.04429599040768293)
 (114, 0.043545128130012725)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(115, 0.04281207258546671)
+(115, 0.04281207258546671)
 (116, 0.04209633210375605)
 (117, 0.04139742689381655)
 (118, 0.04071488916070421)
 (119, 0.04004826315651514)
 (120, 0.03939710517463711)
-(121, 0.03876098349555084)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(121, 0.03876098349555084)
 (122, 0.03813947829143378)
-(123, 0.03755177739422651)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(123, 0.03755177739422651)
 (124, 0.03697714917736227)
 (125, 0.03641481589428299)
 (126, 0.035864467615200624)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(127, 0.03532580165895137)
+(127, 0.03532580165895137)
 (128, 0.03479852258503548)
 (129, 0.03428234216279196)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(130, 0.03377697932076092)
+(130, 0.03377697932076092)
 (131, 0.033282160078972826)
 (132, 0.03279761746660941)
 (133, 0.032323091427221125)
@@ -1413,19 +1413,19 @@ Wall time: 1 s
 (135, 0.03140308277297653)
 (136, 0.0309571136272617)
 (137, 0.03052018774439911)
-(138, 0.030092077907334605)
-(139, 0.029672563078483802)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(138, 0.030092077907334605)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(139, 0.029672563078483802)
 (140, 0.02926142826171095)
 (141, 0.028858464362480605)
 (142, 0.028468070612449284)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(143, 0.02808756035762739)
+(143, 0.02808756035762739)
 (144, 0.027714239842811746)
 (145, 0.02734794309866435)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(146, 0.026988508171532363)
+(146, 0.026988508171532363)
 (147, 0.026635777055176644)
 (148, 0.026289595619858604)
 (149, 0.025949813539307552)
@@ -1433,129 +1433,133 @@ Wall time: 1 s
 (151, 0.025288864705315075)
 (152, 0.024967415638481445)
 (153, 0.024651801145389205)
-(154, 0.024341888776803735)
-(155, 0.02403754942669084)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(154, 0.024341888776803735)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(155, 0.02403754942669084)
 (156, 0.02373865725472386)
 (157, 0.023448442558632248)
 (158, 0.023167313848241167)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(159, 0.022890950986996342)
+(159, 0.022890950986996342)
 (160, 0.022619254071911316)
 (161, 0.022352125482355056)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(162, 0.02208946983515546)
+(162, 0.02208946983515546)
 (163, 0.021831193939553087)
 (164, 0.021577206752121974)
 (165, 0.021327419331770053)
 (166, 0.021081744794915463)
 (167, 0.0208400982709233)
 (168, 0.020602396857879606)
-(169, 0.020368559578769898)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(169, 0.020368559578769898)
 (170, 0.020138507338121482)
-(171, 0.019912162879159593)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(171, 0.019912162879159593)
 (172, 0.019689450741525318)
 (173, 0.019470297219589903)
 (174, 0.019254630321401043)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(175, 0.019042379728289205)
+(175, 0.019042379728289205)
 (176, 0.01883347675515447)
 (177, 0.018627854311457605)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(178, 0.0184254468629243)
+(178, 0.0184254468629243)
 (179, 0.018226190393981823)
 (180, 0.018030022370931223)
 (181, 0.01783688170586273)
 (182, 0.017646708721320636)
 (183, 0.017459445115714647)
 (184, 0.017275033929479433)
-(185, 0.017093419511982084)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(185, 0.017093419511982084)
 (186, 0.016914547489169235)
-(187, 0.01673836473195097)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(187, 0.01673836473195097)
 (188, 0.016564819325316015)
 (189, 0.016393860538167694)
 (190, 0.016225438793876196)
 (191, 0.01605950564153134)
 (192, 0.015896013727896497)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(193, 0.01573491677003853)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(194, 0.015576169528637449)
+(193, 0.01573491677003853)
+(194, 0.015576169528637449)
 (195, 0.015419727781954395)
 (196, 0.015265548300447218)
 (197, 0.015113588822027244)
 (198, 0.01496380802793859)
 (199, 0.01481616551924994)
 (200, 0.014670621793945515)
-(201, 0.014527138224605437)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(201, 0.014527138224605437)
 (202, 0.01438736890713093)
 (203, 0.014250539546155195)
-(204, 0.014115571242966198)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(204, 0.014115571242966198)
 (205, 0.01398243147597854)
 (206, 0.013851088398572414)
 (207, 0.013721510823583295)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(208, 0.013593668208150188)
+(208, 0.013593668208150188)
 (209, 0.013467530638913205)
 (210, 0.013343068817564262)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(211, 0.01322025404672726)
+(211, 0.01322025404672726)
 (212, 0.01309905821618063)
 (213, 0.012979453789398838)
 (214, 0.012861413790416843)
 (215, 0.01274491179100515)
 (216, 0.012629921898153361)
-(217, 0.012516418741851219)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(217, 0.012516418741851219)
 (218, 0.012404377463161994)
-(219, 0.012293773702586103)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(219, 0.012293773702586103)
 (220, 0.012184583588700093)
 (221, 0.012076783727073161)
 (222, 0.011970351189449398)
 (223, 0.01186526350319165)
 (224, 0.011761498640982184)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(225, 0.011659035010769501)
+(225, 0.011659035010769501)
 (226, 0.011557851445963312)
 (227, 0.011457927195863356)
 (228, 0.011359241916321566)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(229, 0.011261775660631194)
+(229, 0.011261775660631194)
 (230, 0.011165508870638323)
 (231, 0.011070422368064244)
 (232, 0.010976497346044433)
-(233, 0.010883715360868395)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(233, 0.010883715360868395)
 (234, 0.010792058323921695)
 (235, 0.010701508493823068)
-(236, 0.010612694239553013)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(236, 0.010612694239553013)
 (237, 0.010524939454181407)
 (238, 0.010438219705069775)
 (239, 0.010352519213191077)
 (240, 0.01026782248889201)
 (241, 0.010184114325863348)
 (242, 0.010101379795244225)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(243, 0.010019604239858305)
+(243, 0.010019604239858305)
 (244, 0.009938773268580194)
 (245, 0.00985887275082239)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(246, 0.009779888811153555)
+(246, 0.009779888811153555)
 (247, 0.009701807824029046)
 (248, 0.009624616408643843)
-(249, 0.009548301423900236)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(249, 0.009548301423900236)
 (250, 0.009472849963483927)
 (251, 0.00939824935105715)
-(252, 0.009324487135551228)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(252, 0.009324487135551228)
 (253, 0.009251551086570655)
 (254, 0.009179429189895819)
 (255, 0.009108109643086792)
@@ -1564,18 +1568,18 @@ Wall time: 1 s
 (258, 0.008899260006120815)
 (259, 0.008832115486814068)
 (260, 0.00876568984815935)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(261, 0.008699973143390454)
+(261, 0.008699973143390454)
 (262, 0.008634955591719326)
+(263, 0.008570627575166957)
+(264, 0.008506979635459606)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(263, 0.008570627575166957)
-(264, 0.008506979635459606)
-(265, 0.008444002470989845)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(265, 0.008444002470989845)
 (266, 0.008381686933840626)
 (267, 0.008320024026871264)
-(268, 0.008259004900862737)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(268, 0.008259004900862737)
 (269, 0.008198620851723532)
 (270, 0.008138863317753268)
 (271, 0.008079723876961544)
@@ -1584,17 +1588,17 @@ Wall time: 1 s
 (274, 0.007905931934670499)
 (275, 0.007849183350162926)
 (276, 0.007793012754546299)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(277, 0.007737412510830088)
+(277, 0.007737412510830088)
 (278, 0.007682375104460121)
+(279, 0.007627893141048562)
+(280, 0.007573959344153423)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(279, 0.007627893141048562)
-(280, 0.007573959344153423)
-(281, 0.0075205665530993756)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(281, 0.0075205665530993756)
 (282, 0.007467707720847371)
-(283, 0.0074153759119058565)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(283, 0.0074153759119058565)
 (284, 0.007363564300283826)
 (285, 0.007312266167487155)
 (286, 0.007261474900556202)
@@ -1604,17 +1608,17 @@ Wall time: 1 s
 (290, 0.007063249819323086)
 (291, 0.007014897248506528)
 (292, 0.006967013976969338)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(293, 0.006919594078757657)
+(293, 0.006919594078757657)
 (294, 0.006872631719110772)
 (295, 0.006826121152827085)
+(296, 0.006780056722665108)
+(297, 0.0067344328577718035)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(296, 0.006780056722665108)
-(297, 0.0067344328577718035)
-(298, 0.006689244072147366)
-(299, 0.006644484963137547)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(298, 0.006689244072147366)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(299, 0.006644484963137547)
 (300, 0.006600150209957581)
 (301, 0.006556234572243802)
 (302, 0.006512732888636181)
@@ -1625,16 +1629,14 @@ Wall time: 1 s
 (307, 0.006301258491930171)
 (308, 0.006260136396817446)
 (309, 0.006219394224986803)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(310, 0.0061790273992908306)
+(310, 0.0061790273992908306)
 (311, 0.006139031410014316)
 (312, 0.0060994018137132495)
+(313, 0.006060134232072762)
+(314, 0.006021224350790561)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(313, 0.006060134232072762)
-(314, 0.006021224350790561)
-(315, 0.00598266791847936)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(315, 0.00598266791847936)
 (316, 0.005944460745593443)
 (317, 0.005906598703372343)
 (318, 0.005869077722809564)
@@ -1646,15 +1648,13 @@ Wall time: 1 s
 (324, 0.005650893547187218)
 (325, 0.005616054318304152)
 (326, 0.005581589574170559)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(327, 0.0055474224523471725)
+(327, 0.0055474224523471725)
 (328, 0.005513549607624099)
+(329, 0.005479967740687844)
+(330, 0.005446673597385247)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(329, 0.005479967740687844)
-(330, 0.005446673597385247)
-(331, 0.005413663968000699)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(331, 0.005413663968000699)
 (332, 0.005380935686544988)
 (333, 0.0053484856300591846)
 (334, 0.005316310717930253)
@@ -1666,16 +1666,14 @@ Wall time: 1 s
 (340, 0.005128871930907377)
 (341, 0.005098540190931737)
 (342, 0.0050684603966477315)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(343, 0.005038629819700358)
+(343, 0.005038629819700358)
 (344, 0.0050090457678744925)
 (345, 0.0049797055845321415)
+(346, 0.004950606648062111)
+(347, 0.004921746371335842)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(346, 0.004950606648062111)
-(347, 0.004921746371335842)
-(348, 0.004893122201178207)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(348, 0.004893122201178207)
 (349, 0.004864731617842708)
 (350, 0.00483657213449592)
 (351, 0.004808641296717055)
@@ -1687,15 +1685,13 @@ Wall time: 1 s
 (357, 0.00464572433976995)
 (358, 0.00461932791755577)
 (359, 0.004593141614539014)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(360, 0.004567163246668083)
+(360, 0.004567163246668083)
 (361, 0.004541390657709962)
 (362, 0.004515821718834098)
+(363, 0.004490454328202991)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(363, 0.004490454328202991)
-(364, 0.004465286410568562)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(364, 0.004465286410568562)
 (365, 0.004440315916877363)
 (366, 0.004415540823880705)
 (367, 0.00439095913375361)
@@ -1707,9 +1703,7 @@ Wall time: 1 s
 (373, 0.004247421684846847)
 (374, 0.004224139933817786)
 (375, 0.004201036474458886)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(376, 0.00417810952156812)
+(376, 0.00417810952156812)
 (377, 0.004155357311878501)
 (378, 0.004132778103740006)
 (379, 0.00411037017680847)
@@ -1728,15 +1722,13 @@ Wall time: 1 s
 (390, 0.003874715950571315)
 (391, 0.003854236561849206)
 (392, 0.00383390789552609)
+(393, 0.003813728499464874)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(393, 0.003813728499464874)
-(394, 0.0037936969387189394)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(394, 0.0037936969387189394)
 (395, 0.003773811795292294)
 (396, 0.0037540716679027295)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(397, 0.003734475171749043)
+(397, 0.003734475171749043)
 (398, 0.0037150209382838936)
 (399, 0.00369570761498618)
 (400, 0.0036765338651425943)
@@ -1755,9 +1747,7 @@ Wall time: 1 s
 (411, 0.0034766447023669295)
 (412, 0.003459236051140558)
 (413, 0.0034419478281555987)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(414, 0.0034247789437395577)
+(414, 0.0034247789437395577)
 (415, 0.0034077283203201554)
 (416, 0.0033907948922663974)
 (417, 0.0033739776057322883)
@@ -1770,14 +1760,12 @@ Wall time: 1 s
 (424, 0.003259422444601864)
 (425, 0.0032434977164318753)
 (426, 0.003227680150930895)
+(427, 0.0032119688040317595)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(427, 0.0032119688040317595)
-(428, 0.0031963627418849167)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(428, 0.0031963627418849167)
 (429, 0.003180861040726662)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(430, 0.003165462786752087)
+(430, 0.003165462786752087)
 (431, 0.003150167075987455)
 (432, 0.003134973014167704)
 (433, 0.0031198797166104796)
@@ -1790,15 +1778,13 @@ Wall time: 1 s
 (440, 0.0030169756773801874)
 (441, 0.0030026577563496294)
 (442, 0.0029884330493314478)
+(443, 0.002974300761109875)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(443, 0.002974300761109875)
-(444, 0.0029602601048135434)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(444, 0.0029602601048135434)
 (445, 0.002946310301811584)
 (446, 0.002932450581613523)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(447, 0.0029186801817676455)
+(447, 0.0029186801817676455)
 (448, 0.0029049983477629506)
 (449, 0.0028914043329316217)
 (450, 0.0028778973983524755)
@@ -1811,16 +1797,14 @@ Wall time: 1 s
 (457, 0.0027857266175801074)
 (458, 0.0027728906227798638)
 (459, 0.002760135391333096)
+(460, 0.0027474602567852014)
+(461, 0.002734864559457011)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(460, 0.0027474602567852014)
-(461, 0.002734864559457011)
-(462, 0.0027223476463606464)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(462, 0.0027223476463606464)
 (463, 0.0027099088711219537)
 (464, 0.0026975475939004074)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(465, 0.0026852631813110896)
+(465, 0.0026852631813110896)
 (466, 0.002673055006347956)
 (467, 0.0026609224483083605)
 (468, 0.002648864892717162)
@@ -1832,15 +1816,13 @@ Wall time: 1 s
 (474, 0.002578060966435661)
 (475, 0.002566511730651644)
 (476, 0.0025550327971009634)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(477, 0.002543623604163094)
+(477, 0.002543623604163094)
 (478, 0.002532283595752315)
-(479, 0.0025210122212527947)
-(480, 0.0025098089354553175)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(481, 0.002498673198493582)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(479, 0.0025210122212527947)
+(480, 0.0025098089354553175)
+(481, 0.002498673198493582)
 (482, 0.002487604475784448)
 (483, 0.0024766022379647985)
 (484, 0.0024656659608331983)
@@ -1852,16 +1834,14 @@ Wall time: 1 s
 (490, 0.0024017158455573117)
 (491, 0.0023913328449470853)
 (492, 0.00238101031950193)
+(493, 0.0023707478074820963)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(493, 0.0023707478074820963)
-(494, 0.0023605448514967507)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(494, 0.0023605448514967507)
 (495, 0.0023504009984552827)
 (496, 0.002340315799520673)
 (497, 0.002330288810061297)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(498, 0.0023203195896049195)
+(498, 0.0023203195896049195)
 (499, 0.002310407701793127)
 (500, 0.0023005527143359046)
 (501, 0.002290754198966925)
@@ -1873,15 +1853,13 @@ Wall time: 1 s
 (507, 0.0022331255336493355)
 (508, 0.002223710660289936)
 (509, 0.0022143489725565107)
-(510, 0.002205040076472872)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(511, 0.0021957835816715167)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(510, 0.002205040076472872)
+(511, 0.0021957835816715167)
 (512, 0.0021865791013510874)
 (513, 0.0021774262522396186)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(514, 0.0021683246545560085)
+(514, 0.0021683246545560085)
 (515, 0.002159273931972634)
 (516, 0.0021502737115785494)
 (517, 0.00214132362384298)
@@ -1893,16 +1871,14 @@ Wall time: 1 s
 (523, 0.0020886556063691307)
 (524, 0.0020800463768076293)
 (525, 0.0020714844410891138)
-(526, 0.00206296945852788)
-(527, 0.0020545010914763285)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(528, 0.00204607900529199)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(526, 0.00206296945852788)
+(527, 0.0020545010914763285)
+(528, 0.00204607900529199)
 (529, 0.0020377028683080094)
 (530, 0.002029372351799533)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(531, 0.00202108712995461)
+(531, 0.00202108712995461)
 (532, 0.0020128468798430144)
 (533, 0.0020046512813862013)
 (534, 0.001996500017327591)
@@ -1914,16 +1890,14 @@ Wall time: 1 s
 (540, 0.0019485060372322486)
 (541, 0.0019406564617543954)
 (542, 0.0019328487807653415)
-(543, 0.001925083921408157)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(543, 0.001925083921408157)
 (544, 0.001917372495987318)
 (545, 0.0019097019015876335)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(546, 0.001902071855157633)
+(546, 0.001902071855157633)
 (547, 0.0018944820760752484)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(548, 0.0018869322861252648)
+(548, 0.0018869322861252648)
 (549, 0.0018794222094737586)
 (550, 0.0018719515726440734)
 (551, 0.0018645201044945668)
@@ -1935,18 +1909,16 @@ Wall time: 1 s
 (557, 0.0018207389420923695)
 (558, 0.001813574253888958)
 (559, 0.0018064466464811323)
-(560, 0.0017993558687060358)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(560, 0.0017993558687060358)
 (561, 0.0017923016715107089)
 (562, 0.0017852838079328278)
 (563, 0.001778302033079093)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(564, 0.0017713561041044327)
+(564, 0.0017713561041044327)
 (565, 0.0017644457801920148)
 (566, 0.0017575708225341742)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(567, 0.0017507309943111263)
+(567, 0.0017507309943111263)
 (568, 0.001743926060672731)
 (569, 0.0017371557887181604)
 (570, 0.0017304199474771041)
@@ -1954,27 +1926,27 @@ Wall time: 1 s
 (572, 0.0017170506427962723)
 (573, 0.0017104167269001587)
 (574, 0.0017038163367689575)
-(575, 0.0016972492508063692)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(575, 0.0016972492508063692)
 (576, 0.001690715249236198)
 (577, 0.0016842141140857958)
 (578, 0.0016777456291664384)
 (579, 0.0016713095800581419)
 (580, 0.001664905754092013)
 (581, 0.0016585339403323673)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(582, 0.0016521939295609262)
+(582, 0.0016521939295609262)
 (583, 0.0016458855142606357)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(584, 0.0016396084885981418)
+(584, 0.0016396084885981418)
 (585, 0.0016333626484086939)
 (586, 0.0016271477911796934)
 (587, 0.0016209637160347209)
 (588, 0.0016148102237180289)
 (589, 0.0016086871165799789)
 (590, 0.0016026278920003398)
-(591, 0.0015966163547597018)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(591, 0.0015966163547597018)
 (592, 0.0015906339894855021)
 (593, 0.001584680611609038)
 (594, 0.0015787560380146224)
@@ -1982,20 +1954,18 @@ Wall time: 1 s
 (596, 0.001566992578396255)
 (597, 0.0015611533332872557)
 (598, 0.0015553421742637704)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(599, 0.001549558925277841)
+(599, 0.001549558925277841)
 (600, 0.0015438034116554316)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(601, 0.0015380754600840241)
+(601, 0.0015380754600840241)
 (602, 0.0015323748986006283)
 (603, 0.0015267015565786335)
 (604, 0.001521055264716523)
 (605, 0.0015154358550239846)
 (606, 0.0015098431608118062)
 (607, 0.00150427701667892)
-(608, 0.0014987372585006985)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(608, 0.0014987372585006985)
 (609, 0.0014932237234166956)
 (610, 0.0014877362498214135)
 (611, 0.0014822746773498468)
@@ -2003,18 +1973,16 @@ Wall time: 1 s
 (613, 0.0014714286004612169)
 (614, 0.001466043781423608)
 (615, 0.0014606842342464103)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(616, 0.0014553498046070857)
+(616, 0.0014553498046070857)
 (617, 0.0014500403393595622)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(618, 0.0014447556865225212)
+(618, 0.0014447556865225212)
 (619, 0.0014394956952693656)
 (620, 0.001434260215917978)
 (621, 0.0014290490999204954)
 (622, 0.0014238621998522874)
-(623, 0.0014186993694030679)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(623, 0.0014186993694030679)
 (624, 0.0014135604633656771)
 (625, 0.0014084453376275764)
 (626, 0.0014033538491594337)
@@ -2023,19 +1991,17 @@ Wall time: 1 s
 (629, 0.0013882197931507116)
 (630, 0.0013832214448230053)
 (631, 0.001378246034548716)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(632, 0.0013732934256043086)
+(632, 0.0013732934256043086)
 (633, 0.0013683634822840162)
 (634, 0.0013634560698924554)
 (635, 0.0013585710547337774)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(636, 0.0013537083041056676)
+(636, 0.0013537083041056676)
 (637, 0.0013488676862858599)
 (638, 0.001344049070529126)
 (639, 0.0013392523270544848)
-(640, 0.0013344773270387322)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(640, 0.0013344773270387322)
 (641, 0.0013297239426081264)
 (642, 0.0013249920468280155)
 (643, 0.0013202815136972611)
@@ -2044,18 +2010,16 @@ Wall time: 1 s
 (646, 0.001306276844003869)
 (647, 0.0013016505198218415)
 (648, 0.001297044941985919)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(649, 0.0012924599899212883)
+(649, 0.0012924599899212883)
 (650, 0.0012878955439289625)
 (651, 0.0012833514851813414)
 (652, 0.0012788276957108608)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(653, 0.0012743240584059715)
+(653, 0.0012743240584059715)
 (654, 0.0012698404570015652)
 (655, 0.0012653767760725482)
-(656, 0.0012609329010263757)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(656, 0.0012609329010263757)
 (657, 0.0012565087180966934)
 (658, 0.0012521041143343783)
 (659, 0.0012477189776031517)
@@ -2065,17 +2029,15 @@ Wall time: 1 s
 (663, 0.0012303708862577893)
 (664, 0.001226081430542893)
 (665, 0.0012218107856930632)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(666, 0.0012175588450599832)
+(666, 0.0012175588450599832)
 (667, 0.0012133255027548353)
 (668, 0.0012091106536387844)
 (669, 0.0012049141933184225)
+(670, 0.0012007360181384133)
+(671, 0.0011965760251775243)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(670, 0.0012007360181384133)
-(671, 0.0011965760251775243)
-(672, 0.001192434112239448)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(672, 0.001192434112239448)
 (673, 0.0011883101778485503)
 (674, 0.0011842041212428334)
 (675, 0.001180115842369827)
@@ -2086,16 +2048,14 @@ Wall time: 1 s
 (680, 0.0011599376609423837)
 (681, 0.001155953986255873)
 (682, 0.0011519874082639087)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(683, 0.0011480378323696036)
+(683, 0.0011480378323696036)
 (684, 0.0011441051646330412)
 (685, 0.001140189311764611)
 (686, 0.0011362901811205778)
+(687, 0.0011324076806995746)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(687, 0.0011324076806995746)
-(688, 0.0011285417191324637)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(688, 0.0011285417191324637)
 (689, 0.001124692205683284)
 (690, 0.0011208590502385972)
 (691, 0.0011170421633057502)
@@ -2107,9 +2067,7 @@ Wall time: 1 s
 (697, 0.0010944775456651684)
 (698, 0.0010907720835117186)
 (699, 0.001087082195634598)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(700, 0.0010834077978955183)
+(700, 0.0010834077978955183)
 (701, 0.0010797488067252113)
 (702, 0.0010761051391229397)
 (703, 0.0010724767126467003)
@@ -2127,17 +2085,15 @@ Wall time: 1 s
 (713, 0.0010370129655858905)
 (714, 0.0010335469066040115)
 (715, 0.0010300951416594103)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(716, 0.0010266575952142104)
+(716, 0.0010266575952142104)
 (717, 0.00102323419223232)
 (718, 0.001019824858175091)
 (719, 0.0010164295189976546)
-(720, 0.001013048101145926)
-(721, 0.0010096952660362363)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(722, 0.001006361947680366)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(720, 0.001013048101145926)
+(721, 0.0010096952660362363)
+(722, 0.001006361947680366)
 (723, 0.0010030421054945705)
 (724, 0.0009997356700089577)
 (725, 0.0009964425722030258)
@@ -2149,17 +2105,15 @@ Wall time: 1 s
 (731, 0.0009769602673152897)
 (732, 0.0009737586377610329)
 (733, 0.0009705698095055905)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(734, 0.0009673937174233978)
+(734, 0.0009673937174233978)
 (735, 0.0009642302968051856)
 (736, 0.0009610794833554659)
 (737, 0.0009579412131869047)
-(738, 0.0009548154228212396)
-(739, 0.0009517020491812098)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(740, 0.0009486010295925868)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(738, 0.0009548154228212396)
+(739, 0.0009517020491812098)
+(740, 0.0009486010295925868)
 (741, 0.0009455123017770181)
 (742, 0.0009424358038511914)
 (743, 0.0009393714743226837)
@@ -2171,15 +2125,13 @@ Wall time: 1 s
 (749, 0.0009212376385312673)
 (750, 0.0009182567982736642)
 (751, 0.0009152876482185788)
+(752, 0.000912330130265049)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(752, 0.000912330130265049)
-(753, 0.0009093841866766629)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(753, 0.0009093841866766629)
 (754, 0.0009064497600765291)
 (755, 0.0009035267934443539)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(756, 0.0009006152301160203)
+(756, 0.0009006152301160203)
 (757, 0.0008977150137780386)
 (758, 0.0008948260884671845)
 (759, 0.0008919483985670701)
@@ -2198,9 +2150,7 @@ Wall time: 1 s
 (770, 0.0008610197798717941)
 (771, 0.0008582726995641639)
 (772, 0.0008555361620612772)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(773, 0.000852810116338716)
+(773, 0.000852810116338716)
 (774, 0.0008500945116841755)
 (775, 0.0008473892976918352)
 (776, 0.0008446944242624422)
@@ -2211,16 +2161,14 @@ Wall time: 1 s
 (781, 0.000831373433183325)
 (782, 0.0008287395678757443)
 (783, 0.0008261157008064916)
-(784, 0.0008235017842427357)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(785, 0.0008208977707372894)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(784, 0.0008235017842427357)
+(785, 0.0008208977707372894)
 (786, 0.0008183036131274978)
 (787, 0.0008157192645327354)
 (788, 0.0008131446783517294)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(789, 0.0008105798082621107)
+(789, 0.0008105798082621107)
 (790, 0.0008080246082173754)
 (791, 0.0008054790324448735)
 (792, 0.0008029430354434187)
@@ -2231,17 +2179,15 @@ Wall time: 1 s
 (797, 0.0007904051582878085)
 (798, 0.0007879256933937688)
 (799, 0.0007854554962222945)
-(800, 0.0007829945233810661)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(800, 0.0007829945233810661)
 (801, 0.0007805427317308304)
 (802, 0.0007781000783873825)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(803, 0.0007756665207168134)
+(803, 0.0007756665207168134)
 (804, 0.0007732420163355408)
 (805, 0.0007708265231075808)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(806, 0.0007684199991432258)
+(806, 0.0007684199991432258)
 (807, 0.0007660224027971463)
 (808, 0.0007636336926655241)
 (809, 0.0007612538275879422)
@@ -2251,17 +2197,15 @@ Wall time: 1 s
 (813, 0.0007518220029107871)
 (814, 0.0007494857539863511)
 (815, 0.0007471581081096773)
-(816, 0.0007448390257590579)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(816, 0.0007448390257590579)
 (817, 0.0007425284676395468)
 (818, 0.0007402263946832123)
 (819, 0.0007379327680466593)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(820, 0.0007356475491093531)
+(820, 0.0007356475491093531)
 (821, 0.0007333706994713732)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(822, 0.0007311021809547017)
+(822, 0.0007311021809547017)
 (823, 0.0007288419555976835)
 (824, 0.0007265899856569306)
 (825, 0.0007243462336033807)
@@ -2270,26 +2214,26 @@ Wall time: 1 s
 (828, 0.000717663912680686)
 (829, 0.0007154526611466017)
 (830, 0.0007132494430360664)
-(831, 0.0007110542220816373)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(831, 0.0007110542220816373)
 (832, 0.0007088669622215688)
 (833, 0.000706687627597361)
 (834, 0.0007045161825532636)
 (835, 0.0007023525916348209)
 (836, 0.0007001968195860791)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(837, 0.0006980488313508697)
+(837, 0.0006980488313508697)
 (838, 0.0006959085920684959)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(839, 0.0006937760670750412)
+(839, 0.0006937760670750412)
 (840, 0.0006916512218994725)
 (841, 0.0006895340222653567)
 (842, 0.0006874244340862218)
 (843, 0.0006853224234672959)
 (844, 0.0006832279567014761)
 (845, 0.0006811410002703199)
-(846, 0.0006790615208419644)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(846, 0.0006790615208419644)
 (847, 0.0006769894852688717)
 (848, 0.0006749248605882739)
 (849, 0.0006728676140195582)
@@ -2297,18 +2241,16 @@ Wall time: 1 s
 (851, 0.0006687751250025857)
 (852, 0.0006667398178964431)
 (853, 0.00066471175958357)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(854, 0.0006626909181785515)
+(854, 0.0006626909181785515)
 (855, 0.0006606772619719)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(856, 0.0006586707594284842)
+(856, 0.0006586707594284842)
 (857, 0.0006566713791863496)
 (858, 0.0006546790900546011)
 (859, 0.0006526938610145348)
 (860, 0.0006507156612162058)
-(861, 0.0006487444599784393)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(861, 0.0006487444599784393)
 (862, 0.0006467802267877072)
 (863, 0.0006448229312968254)
 (864, 0.0006428725433234734)
@@ -2319,15 +2261,13 @@ Wall time: 1 s
 (869, 0.0006332231712776501)
 (870, 0.0006313136037024226)
 (871, 0.0006294107369059222)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(872, 0.0006275145419897482)
+(872, 0.0006275145419897482)
 (873, 0.0006256249902099705)
+(874, 0.0006237420529780194)
+(875, 0.0006218657018595033)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(874, 0.0006237420529780194)
-(875, 0.0006218657018595033)
-(876, 0.0006199959085719082)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(876, 0.0006199959085719082)
 (877, 0.0006181326449845681)
 (878, 0.0006162758831175148)
 (879, 0.0006144255951407114)
@@ -2339,15 +2279,13 @@ Wall time: 1 s
 (885, 0.0006034582790929308)
 (886, 0.0006016525414701024)
 (887, 0.0005998530603679269)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(888, 0.0005980598092609465)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(889, 0.0005962727617627173)
+(888, 0.0005980598092609465)
+(889, 0.0005962727617627173)
 (890, 0.0005944918916273841)
 (891, 0.0005927171727460281)
-(892, 0.000590948579148815)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(892, 0.000590948579148815)
 (893, 0.0005891860850019209)
 (894, 0.0005874296646070819)
 (895, 0.0005856792924013378)
@@ -2361,11 +2299,11 @@ Wall time: 1 s
 (903, 0.0005718910258498764)
 (904, 0.0005701939588517845)
 (905, 0.0005685026916472507)
+(906, 0.0005668172001019647)
+(907, 0.0005651374602069736)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(906, 0.0005668172001019647)
-(907, 0.0005651374602069736)
-(908, 0.000563463448076482)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(908, 0.000563463448076482)
 (909, 0.000561795139949545)
 (910, 0.0005601325121867745)
 (911, 0.0005584755412713044)
@@ -2380,9 +2318,7 @@ Wall time: 1 s
 (920, 0.0005438135401809575)
 (921, 0.0005422118705674735)
 (922, 0.0005406156069415833)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(923, 0.00053902472719047)
+(923, 0.00053902472719047)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(924, 0.0005374392093133421)
@@ -2400,13 +2336,11 @@ Wall time: 1 s
 (936, 0.0005188410787590711)
 (937, 0.000517328013756951)
 (938, 0.0005158199664259947)
-(939, 0.000514316916771217)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(940, 0.0005128188448950659)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(941, 0.00051132573099879)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(939, 0.000514316916771217)
+(940, 0.0005128188448950659)
+(941, 0.00051132573099879)
 (942, 0.0005098375553800943)
 (943, 0.000508354298434329)
 (944, 0.0005068759406517861)
@@ -2419,16 +2353,14 @@ Wall time: 1 s
 (951, 0.000496662993917065)
 (952, 0.000495223138464911)
 (953, 0.000493788010826868)
-(954, 0.0004923575924249146)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(954, 0.0004923575924249146)
 (955, 0.0004909318647697532)
 (956, 0.0004895108094622368)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(957, 0.0004880944081925814)
+(957, 0.0004880944081925814)
 (958, 0.00048668264273848136)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(959, 0.00048527549496654417)
+(959, 0.00048527549496654417)
 (960, 0.00048387294682986185)
 (961, 0.0004824749803690852)
 (962, 0.00048108157771129244)
@@ -2441,14 +2373,12 @@ Wall time: 1 s
 (969, 0.00047145406213755194)
 (970, 0.0004700965366650948)
 (971, 0.0004687434179415078)
-(972, 0.00046739468892929246)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(972, 0.00046739468892929246)
 (973, 0.00046605033267294217)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(974, 0.00046471033229767995)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(975, 0.0004633746710074718)
+(974, 0.00046471033229767995)
+(975, 0.0004633746710074718)
 (976, 0.00046204333208779523)
 (977, 0.0004607162989012847)
 (978, 0.0004593935548910539)
@@ -2461,13 +2391,13 @@ Wall time: 1 s
 (985, 0.0004502530692043151)
 (986, 0.000448964051814582)
 (987, 0.000447679178047472)
-(988, 0.00044639843210757057)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(988, 0.00044639843210757057)
 (989, 0.00044512179827325705)
 (990, 0.00044384926089641554)
 (991, 0.0004425808044023309)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(992, 0.0004413164132875935)
+(992, 0.0004413164132875935)
 (993, 0.0004400560721225408)
 (994, 0.00043879976554826185)
 (995, 0.0004375474782775946)
@@ -2479,15 +2409,15 @@ Wall time: 1 s
 (1001, 0.00043011731283573295)
 (1002, 0.00042889273855853844)
 (1003, 0.0004276720638089429)
-(1004, 0.00042645527392276106)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1004, 0.00042645527392276106)
 (1005, 0.0004252423543060855)
 (1006, 0.0004240332904296369)
 (1007, 0.0004228280678321362)
 (1008, 0.00042162667211880867)
 (1009, 0.00042042908895971454)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1010, 0.00041923530409078414)
+(1010, 0.00041923530409078414)
 (1011, 0.000418045303314312)
 (1012, 0.00041685907249621747)
 (1013, 0.0004156765975667274)
@@ -2497,16 +2427,16 @@ Wall time: 1 s
 (1017, 0.0004109839775939108)
 (1018, 0.000409820073303667)
 (1019, 0.0004086598418216033)
-(1020, 0.00040750326952024063)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1020, 0.00040750326952024063)
 (1021, 0.0004063503428329668)
 (1022, 0.0004052010482550967)
 (1023, 0.0004040553723431429)
 (1024, 0.0004029133017140899)
 (1025, 0.00040177482304520787)
 (1026, 0.00040063992307351183)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1027, 0.00039950858859629505)
+(1027, 0.00039950858859629505)
 (1028, 0.00039838080646987763)
 (1029, 0.00039725656360943085)
 (1030, 0.00039613584698916017)
@@ -2515,7 +2445,9 @@ Wall time: 1 s
 (1033, 0.0003927947251832134)
 (1034, 0.0003916879844266906)
 (1035, 0.00039058470564954506)
-(1036, 0.0003894848761716737)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1036, 0.0003894848761716737)
 (1037, 0.00038838848336925205)
 (1038, 0.00038729551467440196)
 (1039, 0.000386205957575039)
@@ -2523,16 +2455,16 @@ Wall time: 1 s
 (1041, 0.0003840370283937485)
 (1042, 0.0003829576315645654)
 (1043, 0.0003818815968366016)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1044, 0.0003808089119725725)
+(1044, 0.0003808089119725725)
 (1045, 0.0003797395647899391)
 (1046, 0.00037867354315952793)
 (1047, 0.00037761083500592845)
 (1048, 0.00037655142830665054)
 (1049, 0.00037549531109252543)
 (1050, 0.0003744424714466906)
-(1051, 0.0003733928975049946)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1051, 0.0003733928975049946)
 (1052, 0.00037234657745551734)
 (1053, 0.0003713034995370326)
 (1054, 0.0003702636520418944)
@@ -2542,15 +2474,15 @@ Wall time: 1 s
 (1058, 0.00036613633389775404)
 (1059, 0.0003651124646675864)
 (1060, 0.0003640917566743114)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1061, 0.00036307419856179376)
+(1061, 0.00036307419856179376)
 (1062, 0.0003620597790241064)
 (1063, 0.000361048486804545)
 (1064, 0.00036004031069358837)
 (1065, 0.00035903523953285217)
 (1066, 0.00035803326221058555)
-(1067, 0.00035703436766351416)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1067, 0.00035703436766351416)
 (1068, 0.00035603854487621753)
 (1069, 0.0003550457828812126)
 (1070, 0.000354056070757632)
@@ -2561,13 +2493,13 @@ Wall time: 1 s
 (1075, 0.0003491528792853955)
 (1076, 0.00034818123968403855)
 (1077, 0.00034721257481642884)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1078, 0.0003462468741321108)
+(1078, 0.0003462468741321108)
 (1079, 0.00034528412712633285)
 (1080, 0.0003443243233375207)
 (1081, 0.00034336745235088567)
-(1082, 0.00034241350379537495)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1082, 0.00034241350379537495)
 (1083, 0.00034146246734325465)
 (1084, 0.00034051433271214314)
 (1085, 0.00033956908966249527)
@@ -2580,12 +2512,12 @@ Wall time: 1 s
 (1092, 0.000333032501592908)
 (1093, 0.0003321100277625288)
 (1094, 0.0003311903552937565)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1095, 0.00033027347437287455)
+(1095, 0.00033027347437287455)
 (1096, 0.0003293593752273408)
 (1097, 0.00032844804812626297)
-(1098, 0.00032753948337913344)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1098, 0.00032753948337913344)
 (1099, 0.0003266336713361337)
 (1100, 0.00032573060238861337)
 (1101, 0.0003248302669681779)
@@ -2616,12 +2548,12 @@ Wall time: 1 s
 (1124, 0.0003048555840883223)
 (1125, 0.0003040180840023943)
 (1126, 0.0003031830907476432)
-(1127, 0.0003023505957345415)
-(1128, 0.0003015205904092066)
-(1129, 0.0003006930662528763)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1130, 0.00029986801478138625)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1127, 0.0003023505957345415)
+(1128, 0.0003015205904092066)
+(1129, 0.0003006930662528763)
+(1130, 0.00029986801478138625)
 (1131, 0.0002990454275451669)
 (1132, 0.0002982252961292403)
 (1133, 0.0002974076121527019)
@@ -2633,14 +2565,14 @@ Wall time: 1 s
 (1139, 0.00029255243948845503)
 (1140, 0.0002917516557770454)
 (1141, 0.00029095325367546376)
-(1142, 0.00029015722510354814)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1142, 0.00029015722510354814)
 (1143, 0.0002893635620150793)
 (1144, 0.0002885722563962438)
 (1145, 0.00028778330026444407)
 (1146, 0.00028699668567088495)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1147, 0.00028621240469698295)
+(1147, 0.00028621240469698295)
 (1148, 0.0002854304494581549)
 (1149, 0.0002846508120995442)
 (1150, 0.0002838734847991243)
@@ -2652,14 +2584,14 @@ Wall time: 1 s
 (1156, 0.00027925759810017923)
 (1157, 0.0002784962247982412)
 (1158, 0.0002777371000933019)
-(1159, 0.0002769802164401401)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1159, 0.0002769802164401401)
 (1160, 0.0002762255663236639)
 (1161, 0.0002754731422589368)
 (1162, 0.0002747229367901796)
 (1163, 0.000273974942492165)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1164, 0.0002732291519685385)
+(1164, 0.0002732291519685385)
 (1165, 0.0002724855578525312)
 (1166, 0.0002717441528063079)
 (1167, 0.0002710049295215104)
@@ -2671,15 +2603,15 @@ Wall time: 1 s
 (1173, 0.0002666150011500713)
 (1174, 0.00026589084796821563)
 (1175, 0.00026516881910964874)
-(1176, 0.00026444890752075524)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1176, 0.00026444890752075524)
 (1177, 0.0002637311061767338)
 (1178, 0.00026301540807993504)
 (1179, 0.0002623018062592237)
 (1180, 0.00026159029377257156)
 (1181, 0.00026088086370403896)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1182, 0.00026017350916432956)
+(1182, 0.00026017350916432956)
 (1183, 0.00025946822329253393)
 (1184, 0.00025876499925277664)
 (1185, 0.00025806383023765965)
@@ -2690,14 +2622,14 @@ Wall time: 1 s
 (1190, 0.0002545885740897088)
 (1191, 0.00025389959372580884)
 (1192, 0.00025321262146550064)
-(1193, 0.00025252765070887643)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1193, 0.00025252765070887643)
 (1194, 0.0002518446748830831)
 (1195, 0.0002511636874394947)
 (1196, 0.0002504846818552919)
 (1197, 0.0002498076516330078)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1198, 0.00024913259030007575)
+(1198, 0.00024913259030007575)
 (1199, 0.0002484594914093928)
 (1200, 0.00024778834853768464)
 (1201, 0.00024711915528708594)
@@ -2709,14 +2641,14 @@ Wall time: 1 s
 (1207, 0.0002431445826456894)
 (1208, 0.00024248885966084326)
 (1209, 0.00024183503599202664)
-(1210, 0.00024118310545938456)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1210, 0.00024118310545938456)
 (1211, 0.0002405330619065455)
 (1212, 0.00023988489919984292)
 (1213, 0.0002392386112304042)
 (1214, 0.0002385941919116865)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1215, 0.0002379516351808922)
+(1215, 0.0002379516351808922)
 (1216, 0.00023731093499802425)
 (1217, 0.0002366720853459541)
 (1218, 0.00023603508023116326)
@@ -2728,13 +2660,13 @@ Wall time: 1 s
 (1224, 0.00023225145200945663)
 (1225, 0.00023162719272108875)
 (1226, 0.00023100473082932944)
-(1227, 0.00023038406054116058)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1227, 0.00023038406054116058)
 (1228, 0.00022976517608586734)
 (1229, 0.00022914807171410425)
 (1230, 0.00022853274169931374)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1231, 0.00022791918033511437)
+(1231, 0.00022791918033511437)
 (1232, 0.0002273073819370568)
 (1233, 0.0002266973408430353)
 (1234, 0.00022608905141051174)
@@ -2748,12 +2680,12 @@ Wall time: 1 s
 (1242, 0.0002212851257283604)
 (1243, 0.00022069235084333356)
 (1244, 0.00022010127235346522)
-(1245, 0.00021951188484459994)
-(1246, 0.0002189241829237871)
-(1247, 0.00021833816121735584)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1248, 0.00021775381437150193)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1245, 0.00021951188484459994)
+(1246, 0.0002189241829237871)
+(1247, 0.00021833816121735584)
+(1248, 0.00021775381437150193)
 (1249, 0.00021717113705270696)
 (1250, 0.00021659012394732136)
 (1251, 0.00021601076976081424)
@@ -2765,15 +2697,15 @@ Wall time: 1 s
 (1257, 0.0002125691879372746)
 (1258, 0.00021200129958815048)
 (1259, 0.00021143502850454865)
-(1260, 0.00021087036956626877)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1260, 0.00021087036956626877)
 (1261, 0.00021030731767160855)
 (1262, 0.00020974586773745457)
 (1263, 0.00020918601470004054)
 (1264, 0.000208627753513371)
 (1265, 0.00020807107915064746)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1266, 0.00020751598660336007)
+(1266, 0.00020751598660336007)
 (1267, 0.00020696247088104755)
 (1268, 0.00020641052701189015)
 (1269, 0.0002058601500424698)
@@ -2783,16 +2715,16 @@ Wall time: 1 s
 (1273, 0.00020367421271815943)
 (1274, 0.00020313159657250963)
 (1275, 0.00020259051798183602)
-(1276, 0.00020205097211869357)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1276, 0.00020205097211869357)
 (1277, 0.00020151295417097638)
 (1278, 0.00020097645934600628)
 (1279, 0.00020044148286763703)
 (1280, 0.00019990801997784864)
 (1281, 0.00019937606593468542)
 (1282, 0.00019884561601434894)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1283, 0.0001983166655102998)
+(1283, 0.0001983166655102998)
 (1284, 0.00019778920973202892)
 (1285, 0.0001972632440071501)
 (1286, 0.00019673876367950794)
@@ -2802,7 +2734,9 @@ Wall time: 1 s
 (1290, 0.0001946556038091896)
 (1291, 0.00019413848121432677)
 (1292, 0.0001936228164324227)
-(1293, 0.00019310860492344727)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1293, 0.00019310860492344727)
 (1294, 0.00019259584216358824)
 (1295, 0.00019208452364684564)
 (1296, 0.000191574644881656)
@@ -2810,9 +2744,7 @@ Wall time: 1 s
 (1298, 0.00019055918872375733)
 (1299, 0.0001900536024296602)
 (1300, 0.00018954943808471557)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1301, 0.00018904669127823816)
+(1301, 0.00018904669127823816)
 (1302, 0.00018854535761494209)
 (1303, 0.0001880454327155435)
 (1304, 0.00018754691221604017)
@@ -2820,7 +2752,9 @@ Wall time: 1 s
 (1306, 0.00018655406704106643)
 (1307, 0.00018605973371595423)
 (1308, 0.00018556678749100827)
-(1309, 0.00018507522408040846)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1309, 0.00018507522408040846)
 (1310, 0.00018458503921293972)
 (1311, 0.00018409622863292715)
 (1312, 0.00018360878809885867)
@@ -2829,9 +2763,7 @@ Wall time: 1 s
 (1315, 0.00018215464459192329)
 (1316, 0.00018167264213540314)
 (1317, 0.00018119198874544084)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1318, 0.00018071268027144258)
+(1318, 0.00018071268027144258)
 (1319, 0.00018023471257610013)
 (1320, 0.00017975808153781174)
 (1321, 0.00017928278304848498)
@@ -2839,7 +2771,9 @@ Wall time: 1 s
 (1323, 0.00017833616736064617)
 (1324, 0.00017786484201961797)
 (1325, 0.00017739483294208593)
-(1326, 0.0001769261360933137)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1326, 0.0001769261360933137)
 (1327, 0.00017645874745077477)
 (1328, 0.0001759926630083844)
 (1329, 0.0001755278787731541)
@@ -2849,16 +2783,16 @@ Wall time: 1 s
 (1333, 0.00017368166452353675)
 (1334, 0.00017322332191332197)
 (1335, 0.00017276625584318687)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1336, 0.00017231046241767464)
+(1336, 0.00017231046241767464)
 (1337, 0.00017185593775419662)
 (1338, 0.00017140267798298507)
 (1339, 0.00017095067924951125)
 (1340, 0.00017049993771180725)
 (1341, 0.00017005044954074855)
 (1342, 0.00016960221092148577)
-(1343, 0.00016915521805175513)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1343, 0.00016915521805175513)
 (1344, 0.00016870946714331043)
 (1345, 0.00016826495442056312)
 (1346, 0.00016782167612053694)
@@ -2867,16 +2801,16 @@ Wall time: 1 s
 (1349, 0.00016649921033216232)
 (1350, 0.000166060832361647)
 (1351, 0.00016562367019757197)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1352, 0.00016518772015497237)
+(1352, 0.00016518772015497237)
 (1353, 0.00016475297856167564)
 (1354, 0.00016431944175907738)
 (1355, 0.00016388710609963877)
 (1356, 0.00016345596795012247)
 (1357, 0.00016302602368843496)
 (1358, 0.00016259726970587892)
-(1359, 0.00016216970240563584)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1359, 0.00016216970240563584)
 (1360, 0.00016174331820436208)
 (1361, 0.00016131811352919885)
 (1362, 0.00016089408482117018)
@@ -2886,15 +2820,15 @@ Wall time: 1 s
 (1366, 0.00015920965889748358)
 (1367, 0.0001587914570589752)
 (1368, 0.00015837441008597123)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1369, 0.00015795851450373894)
+(1369, 0.00015795851450373894)
 (1370, 0.0001575437668491395)
 (1371, 0.00015713016367107938)
 (1372, 0.0001567177015303075)
 (1373, 0.00015630637699953962)
 (1374, 0.00015589618666260254)
-(1375, 0.00015548712711553958)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1375, 0.00015548712711553958)
 (1376, 0.00015507919496608196)
 (1377, 0.0001546723868331205)
 (1378, 0.0001542666993468317)
@@ -2906,12 +2840,12 @@ Wall time: 1 s
 (1384, 0.0001518559207712463)
 (1385, 0.00015145798442907566)
 (1386, 0.0001510611421877401)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1387, 0.00015066539078009458)
+(1387, 0.00015066539078009458)
 (1388, 0.00015027072694860871)
 (1389, 0.00014987714744859294)
-(1390, 0.0001494846490444129)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1390, 0.0001494846490444129)
 (1391, 0.00014909322851287853)
 (1392, 0.0001487028826412523)
 (1393, 0.0001483136082273782)
@@ -2925,11 +2859,11 @@ Wall time: 1 s
 (1401, 0.00014523760470352612)
 (1402, 0.00014485783108951817)
 (1403, 0.00014447909750119504)
+(1404, 0.00014410140085268676)
+(1405, 0.00014372473806944394)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1404, 0.00014410140085268676)
-(1405, 0.00014372473806944394)
-(1406, 0.00014334910608641588)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1406, 0.00014334910608641588)
 (1407, 0.00014297450184899512)
 (1408, 0.00014260092231379817)
 (1409, 0.00014222836444570755)
@@ -2959,12 +2893,12 @@ Wall time: 1 s
 (1431, 0.0001342845586197905)
 (1432, 0.00013393468455544333)
 (1433, 0.00013358576229710053)
-(1434, 0.0001332377890522552)
-(1435, 0.00013289076203850663)
-(1436, 0.0001325446784822368)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1437, 0.00013219953561987942)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1434, 0.0001332377890522552)
+(1435, 0.00013289076203850663)
+(1436, 0.0001325446784822368)
+(1437, 0.00013219953561987942)
 (1438, 0.0001318553306951402)
 (1439, 0.00013151206096253314)
 (1440, 0.00013116972368476307)
@@ -2977,15 +2911,15 @@ Wall time: 1 s
 (1447, 0.00012879924343325722)
 (1448, 0.0001284642683283999)
 (1449, 0.0001281302014452584)
-(1450, 0.00012779704013448078)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1450, 0.00012779704013448078)
 (1451, 0.0001274647817560826)
 (1452, 0.00012713342367845216)
 (1453, 0.0001268029632794573)
 (1454, 0.00012647339794448172)
 (1455, 0.00012614472506720914)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1456, 0.00012581694205137655)
+(1456, 0.00012581694205137655)
 (1457, 0.0001254900463076802)
 (1458, 0.00012516403525552952)
 (1459, 0.00012483890632350767)
@@ -2995,7 +2929,9 @@ Wall time: 1 s
 (1463, 0.0001235471606471181)
 (1464, 0.00012322640402743124)
 (1465, 0.00012290651426988123)
-(1466, 0.00012258748886144854)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1466, 0.00012258748886144854)
 (1467, 0.00012226932529600453)
 (1468, 0.00012195202107541912)
 (1469, 0.00012163557371050617)
@@ -3003,9 +2939,7 @@ Wall time: 1 s
 (1471, 0.00012100523962876424)
 (1472, 0.00012069134797276019)
 (1473, 0.00012037830329355095)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1474, 0.00012006610314182293)
+(1474, 0.00012006610314182293)
 (1475, 0.00011975474507546262)
 (1476, 0.00011944422666098595)
 (1477, 0.00011913454547238857)
@@ -3013,7 +2947,9 @@ Wall time: 1 s
 (1479, 0.00011851768510608783)
 (1480, 0.0001182105011158417)
 (1481, 0.00011790414472473639)
-(1482, 0.00011759861354578569)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1482, 0.00011759861354578569)
 (1483, 0.00011729390519935822)
 (1484, 0.00011699001731347909)
 (1485, 0.00011668694752364855)
@@ -3023,15 +2959,15 @@ Wall time: 1 s
 (1489, 0.00011548280230610324)
 (1490, 0.00011518378779761032)
 (1491, 0.00011488557735788372)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1492, 0.0001145881686751553)
+(1492, 0.0001145881686751553)
 (1493, 0.00011429155944513423)
 (1494, 0.00011399574737066603)
 (1495, 0.00011370073016171347)
 (1496, 0.00011340650553678444)
 (1497, 0.00011311307122034025)
-(1498, 0.00011282042494454557)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1498, 0.00011282042494454557)
 (1499, 0.00011252856444860648)
 (1500, 0.00011223748747939474)
 (1501, 0.00011194719179110747)
@@ -3042,14 +2978,14 @@ Wall time: 1 s
 (1506, 0.00011050735443796635)
 (1507, 0.00011022169966103485)
 (1508, 0.00010993681063978913)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1509, 0.00010965268518508825)
+(1509, 0.00010965268518508825)
 (1510, 0.00010936932111350898)
 (1511, 0.00010908671624973661)
 (1512, 0.0001088048684244604)
 (1513, 0.00010852377547564051)
-(1514, 0.00010824343524865095)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1514, 0.00010824343524865095)
 (1515, 0.00010796384559401596)
 (1516, 0.00010768500437092316)
 (1517, 0.0001074069094443182)
@@ -3062,12 +2998,12 @@ Wall time: 1 s
 (1524, 0.00010548096333966142)
 (1525, 0.00010520876273392578)
 (1526, 0.00010493728951144015)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1527, 0.00010466654160392679)
+(1527, 0.00010466654160392679)
 (1528, 0.00010439651694916754)
 (1529, 0.00010412721349162889)
-(1530, 0.00010385862918244618)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1530, 0.00010385862918244618)
 (1531, 0.00010359076197908736)
 (1532, 0.00010332360984501722)
 (1533, 0.00010305717075080298)
@@ -3081,12 +3017,12 @@ Wall time: 1 s
 (1541, 0.00010095108593341738)
 (1542, 0.00010069097389634379)
 (1543, 0.00010043155494691569)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1544, 0.00010017282712433891)
+(1544, 0.00010017282712433891)
 (1545, 9.991478847314159e-05)
 (1546, 9.965743704491936e-05)
-(1547, 9.940077089736099e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1547, 9.940077089736099e-05)
 (1548, 9.914478809247535e-05)
 (1549, 9.888948670025527e-05)
 (1550, 9.86348647965842e-05)
@@ -3101,10 +3037,10 @@ Wall time: 1 s
 (1559, 9.637352999740522e-05)
 (1560, 9.612559842322141e-05)
 (1561, 9.587832555619029e-05)
+(1562, 9.563170954181482e-05)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1562, 9.563170954181482e-05)
-(1563, 9.538574853211103e-05)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1563, 9.538574853211103e-05)
 (1564, 9.514044068399804e-05)
 (1565, 9.489578416056266e-05)
 (1566, 9.465177713024808e-05)
@@ -3139,12 +3075,12 @@ Wall time: 1 s
 (1593, 8.830255608183475e-05)
 (1594, 8.807601374921135e-05)
 (1595, 8.785007018104483e-05)
-(1596, 8.762472370752078e-05)
-(1597, 8.739997266461115e-05)
-(1598, 8.717581539088024e-05)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1599, 8.695225023240827e-05)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1596, 8.762472370752078e-05)
+(1597, 8.739997266461115e-05)
+(1598, 8.717581539088024e-05)
+(1599, 8.695225023240827e-05)
 (1600, 8.672927553943796e-05)
 (1601, 8.650688966700081e-05)
 (1602, 8.628509097538385e-05)
@@ -3157,13 +3093,13 @@ Wall time: 1 s
 (1609, 8.474880449982924e-05)
 (1610, 8.453164481843791e-05)
 (1611, 8.431505778202783e-05)
-(1612, 8.409904180080366e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1612, 8.409904180080366e-05)
 (1613, 8.38835952880462e-05)
 (1614, 8.366871666344087e-05)
 (1615, 8.34544043503655e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1616, 8.324065677731127e-05)
+(1616, 8.324065677731127e-05)
 (1617, 8.302747237771381e-05)
 (1618, 8.281484958962582e-05)
 (1619, 8.260278685554851e-05)
@@ -3174,7 +3110,9 @@ Wall time: 1 s
 (1624, 8.155081982150291e-05)
 (1625, 8.134208497163722e-05)
 (1626, 8.11338994061094e-05)
-(1627, 8.0926261604417e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1627, 8.0926261604417e-05)
 (1628, 8.071917005137471e-05)
 (1629, 8.051262323535883e-05)
 (1630, 8.030661965083825e-05)
@@ -3182,9 +3120,7 @@ Wall time: 1 s
 (1632, 7.989623617186742e-05)
 (1633, 7.969185328705341e-05)
 (1634, 7.948800765283049e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1635, 7.928469778558243e-05)
+(1635, 7.928469778558243e-05)
 (1636, 7.908192220535148e-05)
 (1637, 7.887967943725762e-05)
 (1638, 7.867796801117249e-05)
@@ -3192,7 +3128,9 @@ Wall time: 1 s
 (1640, 7.827613332266933e-05)
 (1641, 7.807600714129612e-05)
 (1642, 7.787640646352802e-05)
-(1643, 7.767732984001139e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1643, 7.767732984001139e-05)
 (1644, 7.747877582656894e-05)
 (1645, 7.728074298292267e-05)
 (1646, 7.708322987379549e-05)
@@ -3201,9 +3139,7 @@ Wall time: 1 s
 (1649, 7.649379465863353e-05)
 (1650, 7.629834621504052e-05)
 (1651, 7.610341039083099e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1652, 7.590898577580526e-05)
+(1652, 7.590898577580526e-05)
 (1653, 7.571507096470714e-05)
 (1654, 7.552166455483942e-05)
 (1655, 7.532876514890805e-05)
@@ -3211,16 +3147,16 @@ Wall time: 1 s
 (1657, 7.494448177935798e-05)
 (1658, 7.475309504080779e-05)
 (1659, 7.456220975758268e-05)
-(1660, 7.437182455184058e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1660, 7.437182455184058e-05)
 (1661, 7.418193805125387e-05)
 (1662, 7.399254888694293e-05)
 (1663, 7.380365569394366e-05)
 (1664, 7.361525711167508e-05)
 (1665, 7.342735178393168e-05)
 (1666, 7.323993835745118e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1667, 7.30530154839653e-05)
+(1667, 7.30530154839653e-05)
 (1668, 7.286658181876747e-05)
 (1669, 7.268063602133883e-05)
 (1670, 7.249517675486605e-05)
@@ -3228,7 +3164,9 @@ Wall time: 1 s
 (1672, 7.212571248839312e-05)
 (1673, 7.194170483481181e-05)
 (1674, 7.1758178405168e-05)
-(1675, 7.157513188233455e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1675, 7.157513188233455e-05)
 (1676, 7.139256395332177e-05)
 (1677, 7.121047330911207e-05)
 (1678, 7.102885864417857e-05)
@@ -3237,15 +3175,15 @@ Wall time: 1 s
 (1681, 7.048685752862553e-05)
 (1682, 7.030713380459085e-05)
 (1683, 7.012787959001186e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1684, 6.994909360332483e-05)
+(1684, 6.994909360332483e-05)
 (1685, 6.977077456546054e-05)
 (1686, 6.959292120220895e-05)
 (1687, 6.941553224199952e-05)
 (1688, 6.923860641747542e-05)
 (1689, 6.906214246485458e-05)
-(1690, 6.88861391243974e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1690, 6.88861391243974e-05)
 (1691, 6.871059514024207e-05)
 (1692, 6.853550925913399e-05)
 (1693, 6.836088023278967e-05)
@@ -3256,15 +3194,15 @@ Wall time: 1 s
 (1698, 6.749454446600471e-05)
 (1699, 6.732263054606685e-05)
 (1700, 6.715116484048228e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1701, 6.69801461300796e-05)
+(1701, 6.69801461300796e-05)
 (1702, 6.680957319791677e-05)
 (1703, 6.66394448319596e-05)
 (1704, 6.646975982270701e-05)
 (1705, 6.630051696460627e-05)
 (1706, 6.613171505525746e-05)
-(1707, 6.596335289667051e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1707, 6.596335289667051e-05)
 (1708, 6.579542929320705e-05)
 (1709, 6.562794305410012e-05)
 (1710, 6.546089298997599e-05)
@@ -3274,15 +3212,15 @@ Wall time: 1 s
 (1714, 6.479703085159166e-05)
 (1715, 6.463214396593275e-05)
 (1716, 6.44676862000305e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1717, 6.430365638956951e-05)
+(1717, 6.430365638956951e-05)
 (1718, 6.414005337394909e-05)
 (1719, 6.397687599596224e-05)
 (1720, 6.381412310178995e-05)
 (1721, 6.36517935409958e-05)
 (1722, 6.348988616541663e-05)
-(1723, 6.332839983231088e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1723, 6.332839983231088e-05)
 (1724, 6.316733340088391e-05)
 (1725, 6.300668573370186e-05)
 (1726, 6.284645569668633e-05)
@@ -3293,13 +3231,13 @@ Wall time: 1 s
 (1731, 6.205153051061262e-05)
 (1732, 6.189378262728454e-05)
 (1733, 6.173644452844874e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1734, 6.157951510620685e-05)
+(1734, 6.157951510620685e-05)
 (1735, 6.142299325581121e-05)
 (1736, 6.126687787628996e-05)
 (1737, 6.111116786902392e-05)
-(1738, 6.095586213852948e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1738, 6.095586213852948e-05)
 (1739, 6.080095959324123e-05)
 (1740, 6.064645914487665e-05)
 (1741, 6.0492359706698594e-05)
@@ -3312,11 +3250,11 @@ Wall time: 1 s
 (1748, 5.94248014075744e-05)
 (1749, 5.927387134813941e-05)
 (1750, 5.9123332668586664e-05)
+(1751, 5.897318431437748e-05)
+(1752, 5.882342523435563e-05)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1751, 5.897318431437748e-05)
-(1752, 5.882342523435563e-05)
-(1753, 5.8674054379168656e-05)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1753, 5.8674054379168656e-05)
 (1754, 5.852507070346701e-05)
 (1755, 5.8376473164954895e-05)
 (1756, 5.822826072359884e-05)
@@ -3331,11 +3269,11 @@ Wall time: 1 s
 (1765, 5.6911508069142114e-05)
 (1766, 5.676709007597632e-05)
 (1767, 5.662304593956448e-05)
+(1768, 5.647937465595834e-05)
+(1769, 5.633607522357244e-05)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1768, 5.647937465595834e-05)
-(1769, 5.633607522357244e-05)
-(1770, 5.619314664365169e-05)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1770, 5.619314664365169e-05)
 (1771, 5.605058792058169e-05)
 (1772, 5.590839806125551e-05)
 (1773, 5.576657607585567e-05)
@@ -3352,10 +3290,10 @@ Wall time: 1 s
 (1784, 5.423053357800409e-05)
 (1785, 5.4093049877984005e-05)
 (1786, 5.395592143567556e-05)
-(1787, 5.38191473002835e-05)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1788, 5.3682726522984784e-05)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1787, 5.38191473002835e-05)
+(1788, 5.3682726522984784e-05)
 (1789, 5.3546658158024444e-05)
 (1790, 5.3410941262554605e-05)
 (1791, 5.327557489584537e-05)
@@ -3371,10 +3309,10 @@ Wall time: 1 s
 (1801, 5.19409853363886e-05)
 (1802, 5.180941348144424e-05)
 (1803, 5.1678181076684695e-05)
-(1804, 5.1547287216273524e-05)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1805, 5.141673099675541e-05)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1804, 5.1547287216273524e-05)
+(1805, 5.141673099675541e-05)
 (1806, 5.1286511516581896e-05)
 (1807, 5.115662787720656e-05)
 (1808, 5.102707918276762e-05)
@@ -3389,11 +3327,11 @@ Wall time: 1 s
 (1817, 4.987606685976679e-05)
 (1818, 4.9749818887783965e-05)
 (1819, 4.9623896169915846e-05)
-(1820, 4.9498297840212304e-05)
-(1821, 4.937302303552104e-05)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1822, 4.9248070894229845e-05)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1820, 4.9498297840212304e-05)
+(1821, 4.937302303552104e-05)
+(1822, 4.9248070894229845e-05)
 (1823, 4.9123440557518035e-05)
 (1824, 4.899913116950994e-05)
 (1825, 4.8875141875546984e-05)
@@ -3445,11 +3383,11 @@ Wall time: 1 s
 (1867, 4.394567699963852e-05)
 (1868, 4.3834677018998176e-05)
 (1869, 4.372396184070236e-05)
-(1870, 4.361353071170437e-05)
-(1871, 4.350338288223842e-05)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1872, 4.339351760331374e-05)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1870, 4.361353071170437e-05)
+(1871, 4.350338288223842e-05)
+(1872, 4.339351760331374e-05)
 (1873, 4.328393412858972e-05)
 (1874, 4.3174631713904e-05)
 (1875, 4.306560961727008e-05)
@@ -3463,12 +3401,12 @@ Wall time: 1 s
 (1883, 4.220343589640373e-05)
 (1884, 4.209690359875667e-05)
 (1885, 4.199064430936837e-05)
-(1886, 4.18846573084653e-05)
-(1887, 4.177894187826511e-05)
-(1888, 4.167349730250536e-05)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1889, 4.1568322867692027e-05)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1886, 4.18846573084653e-05)
+(1887, 4.177894187826511e-05)
+(1888, 4.167349730250536e-05)
+(1889, 4.1568322867692027e-05)
 (1890, 4.1463417861533806e-05)
 (1891, 4.13587815746596e-05)
 (1892, 4.125441329889657e-05)
@@ -3482,13 +3420,13 @@ Wall time: 1 s
 (1900, 4.04290311815271e-05)
 (1901, 4.0327043469537196e-05)
 (1902, 4.0225316795972805e-05)
-(1903, 4.012385047398467e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1903, 4.012385047398467e-05)
 (1904, 4.002264381961515e-05)
 (1905, 3.992169614913995e-05)
 (1906, 3.9821006781566035e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1907, 3.9720575038316964e-05)
+(1907, 3.9720575038316964e-05)
 (1908, 3.962040024166857e-05)
 (1909, 3.952048171646545e-05)
 (1910, 3.942081878886917e-05)
@@ -3500,14 +3438,14 @@ Wall time: 1 s
 (1916, 3.8828171294118445e-05)
 (1917, 3.8730278848266685e-05)
 (1918, 3.863263667804319e-05)
-(1919, 3.8535244126840253e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1919, 3.8535244126840253e-05)
 (1920, 3.843810053981604e-05)
 (1921, 3.834120526311205e-05)
 (1922, 3.8244557645256525e-05)
 (1923, 3.814815703669408e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1924, 3.8052002788690985e-05)
+(1924, 3.8052002788690985e-05)
 (1925, 3.7956094255987354e-05)
 (1926, 3.786043079367285e-05)
 (1927, 3.776501175859002e-05)
@@ -3519,15 +3457,15 @@ Wall time: 1 s
 (1933, 3.719759476364976e-05)
 (1934, 3.7103868875738584e-05)
 (1935, 3.701038233689611e-05)
-(1936, 3.691713452043882e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1936, 3.691713452043882e-05)
 (1937, 3.6824124801573994e-05)
 (1938, 3.673135255599359e-05)
 (1939, 3.663881716252532e-05)
 (1940, 3.654651800047814e-05)
 (1941, 3.645445445182511e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1942, 3.6362625899797304e-05)
+(1942, 3.6362625899797304e-05)
 (1943, 3.6271031729350266e-05)
 (1944, 3.617967132700629e-05)
 (1945, 3.6088544081008746e-05)
@@ -3537,16 +3475,16 @@ Wall time: 1 s
 (1949, 3.572635448736579e-05)
 (1950, 3.5636383907027264e-05)
 (1951, 3.554664284854432e-05)
-(1952, 3.5457130710913525e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1952, 3.5457130710913525e-05)
 (1953, 3.5367846896554914e-05)
 (1954, 3.52787908083471e-05)
 (1955, 3.518996185102935e-05)
 (1956, 3.510135943119995e-05)
 (1957, 3.501298295731455e-05)
 (1958, 3.492483183828128e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1959, 3.4836905485954076e-05)
+(1959, 3.4836905485954076e-05)
 (1960, 3.4749203313259886e-05)
 (1961, 3.466172473482089e-05)
 (1962, 3.45744691661734e-05)
@@ -3556,15 +3494,15 @@ Wall time: 1 s
 (1966, 3.422766537282579e-05)
 (1967, 3.414151615299164e-05)
 (1968, 3.405558647305191e-05)
-(1969, 3.396987576113542e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1969, 3.396987576113542e-05)
 (1970, 3.388438344502624e-05)
 (1971, 3.379910895527972e-05)
 (1972, 3.3714051724285604e-05)
 (1973, 3.3629211184708155e-05)
 (1974, 3.354458677182251e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1975, 3.346017792179885e-05)
+(1975, 3.346017792179885e-05)
 (1976, 3.3375984073259395e-05)
 (1977, 3.329200466540689e-05)
 (1978, 3.320823913895831e-05)
@@ -3574,7 +3512,9 @@ Wall time: 1 s
 (1982, 3.287530472489967e-05)
 (1983, 3.279260027629036e-05)
 (1984, 3.271010638728719e-05)
-(1985, 3.262782250932304e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1985, 3.262782250932304e-05)
 (1986, 3.254574809626856e-05)
 (1987, 3.246388260209403e-05)
 (1988, 3.238222548304901e-05)
@@ -3582,16 +3522,16 @@ Wall time: 1 s
 (1990, 3.22195342020607e-05)
 (1991, 3.2138498959483244e-05)
 (1992, 3.2057669931231605e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1993, 3.1977046580102665e-05)
+(1993, 3.1977046580102665e-05)
 (1994, 3.189662837147596e-05)
 (1995, 3.18164147712877e-05)
 (1996, 3.173640524774258e-05)
 (1997, 3.165659926928802e-05)
 (1998, 3.157699630726023e-05)
 (1999, 3.149759583323562e-05)
-(2000, 3.141839732120963e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2000, 3.141839732120963e-05)
 (2001, 3.133940024541545e-05)
 (2002, 3.126060408281416e-05)
 (2003, 3.118200831075785e-05)
@@ -3601,16 +3541,16 @@ Wall time: 1 s
 (2007, 3.0869618733794884e-05)
 (2008, 3.079201713100708e-05)
 (2009, 3.071461281437508e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2010, 3.063740527205032e-05)
+(2010, 3.063740527205032e-05)
 (2011, 3.056039399303269e-05)
 (2012, 3.0483578467792103e-05)
 (2013, 3.0406958187644653e-05)
 (2014, 3.0330532645529777e-05)
 (2015, 3.0254301336164658e-05)
 (2016, 3.0178263755420453e-05)
-(2017, 3.01024194003212e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2017, 3.01024194003212e-05)
 (2018, 3.0026767769198278e-05)
 (2019, 2.9951308362311795e-05)
 (2020, 2.9876040680760006e-05)
@@ -3620,15 +3560,15 @@ Wall time: 1 s
 (2024, 2.957687727828022e-05)
 (2025, 2.950256078811959e-05)
 (2026, 2.9428433058938187e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2027, 2.9354493600782718e-05)
+(2027, 2.9354493600782718e-05)
 (2028, 2.9280741925618433e-05)
 (2029, 2.920717754701675e-05)
 (2030, 2.9133799979220766e-05)
 (2031, 2.906060873792206e-05)
 (2032, 2.8987603340570723e-05)
-(2033, 2.891478330512981e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2033, 2.891478330512981e-05)
 (2034, 2.884214815131876e-05)
 (2035, 2.8769697400767854e-05)
 (2036, 2.8697430574839458e-05)
@@ -3638,15 +3578,15 @@ Wall time: 1 s
 (2040, 2.8410193014182234e-05)
 (2041, 2.8338838693127357e-05)
 (2042, 2.8267665457916845e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2043, 2.8196672839208468e-05)
+(2043, 2.8196672839208468e-05)
 (2044, 2.8125860369872486e-05)
 (2045, 2.8055227583746456e-05)
 (2046, 2.7984774015634323e-05)
 (2047, 2.791449920161642e-05)
 (2048, 2.7844402679359468e-05)
-(2049, 2.7774483987338138e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2049, 2.7774483987338138e-05)
 (2050, 2.7704742665456023e-05)
 (2051, 2.763517825504467e-05)
 (2052, 2.7565790298862547e-05)
@@ -3658,13 +3598,13 @@ Wall time: 1 s
 (2058, 2.7153142619577768e-05)
 (2059, 2.7084977129895927e-05)
 (2060, 2.7016984477350813e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2061, 2.6949164214857948e-05)
+(2061, 2.6949164214857948e-05)
 (2062, 2.6881515896905828e-05)
 (2063, 2.6814039079865816e-05)
 (2064, 2.6746733319970646e-05)
-(2065, 2.667959817548957e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2065, 2.667959817548957e-05)
 (2066, 2.661263320579483e-05)
 (2067, 2.6545837971205403e-05)
 (2068, 2.647921203345231e-05)
@@ -3677,13 +3617,13 @@ Wall time: 1 s
 (2075, 2.6017534199345558e-05)
 (2076, 2.595224699418916e-05)
 (2077, 2.5887125192413874e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2078, 2.5822168367492184e-05)
+(2078, 2.5822168367492184e-05)
 (2079, 2.575737609352225e-05)
 (2080, 2.5692747946780656e-05)
 (2081, 2.5628283502925135e-05)
-(2082, 2.5563982340256274e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2082, 2.5563982340256274e-05)
 (2083, 2.549984403738632e-05)
 (2084, 2.5435868174325856e-05)
 (2085, 2.5372054332327608e-05)
@@ -3696,13 +3636,13 @@ Wall time: 1 s
 (2092, 2.4929859069984428e-05)
 (2093, 2.4867326448782246e-05)
 (2094, 2.480495212760365e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2095, 2.4742735699767997e-05)
+(2095, 2.4742735699767997e-05)
 (2096, 2.4680676757809112e-05)
 (2097, 2.4618774896425266e-05)
 (2098, 2.455702971077014e-05)
-(2099, 2.449544079722854e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2099, 2.449544079722854e-05)
 (2100, 2.4434007753415636e-05)
 (2101, 2.437273017802091e-05)
 (2102, 2.4311607670496867e-05)
@@ -3715,12 +3655,12 @@ Wall time: 1 s
 (2109, 2.3888058617978197e-05)
 (2110, 2.382816236974821e-05)
 (2111, 2.376841763404834e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2112, 2.370882402149228e-05)
+(2112, 2.370882402149228e-05)
 (2113, 2.3649381142672663e-05)
 (2114, 2.3590088610023215e-05)
-(2115, 2.3530946036731395e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2115, 2.3530946036731395e-05)
 (2116, 2.347195303766903e-05)
 (2117, 2.3413109227218546e-05)
 (2118, 2.3354414222531913e-05)
@@ -3734,10 +3674,10 @@ Wall time: 1 s
 (2126, 2.289016547826431e-05)
 (2127, 2.2832792625637875e-05)
 (2128, 2.27755647970763e-05)
+(2129, 2.2718481620749316e-05)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2129, 2.2718481620749316e-05)
-(2130, 2.266154272479451e-05)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2130, 2.266154272479451e-05)
 (2131, 2.2604747737937468e-05)
 (2132, 2.2548096291353104e-05)
 (2133, 2.2491588016027165e-05)
@@ -3772,11 +3712,11 @@ Wall time: 1 s
 (2160, 2.101866251927021e-05)
 (2161, 2.096601724361977e-05)
 (2162, 2.091350486157767e-05)
-(2163, 2.0861125031691305e-05)
-(2164, 2.0808877414937548e-05)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2165, 2.075676167270634e-05)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2163, 2.0861125031691305e-05)
+(2164, 2.0808877414937548e-05)
+(2165, 2.075676167270634e-05)
 (2166, 2.0704777466955273e-05)
 (2167, 2.0652924460054052e-05)
 (2168, 2.060120231695458e-05)
@@ -3790,12 +3730,12 @@ Wall time: 1 s
 (2176, 2.019209621073741e-05)
 (2177, 2.014153685869257e-05)
 (2178, 2.009110505706291e-05)
-(2179, 2.0040800479944273e-05)
-(2180, 1.999062280137293e-05)
-(2181, 1.994057169656519e-05)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2182, 1.9890646841916863e-05)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2179, 2.0040800479944273e-05)
+(2180, 1.999062280137293e-05)
+(2181, 1.994057169656519e-05)
+(2182, 1.9890646841916863e-05)
 (2183, 1.984084791376279e-05)
 (2184, 1.979117459008135e-05)
 (2185, 1.9741626550338887e-05)
@@ -3808,12 +3748,12 @@ Wall time: 1 s
 (2192, 1.939827138264674e-05)
 (2193, 1.9349714140307352e-05)
 (2194, 1.9301279326322103e-05)
-(2195, 1.925296662850127e-05)
-(2196, 1.9204775733813385e-05)
-(2197, 1.915670633117407e-05)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2198, 1.9108758110205875e-05)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2195, 1.925296662850127e-05)
+(2196, 1.9204775733813385e-05)
+(2197, 1.915670633117407e-05)
+(2198, 1.9108758110205875e-05)
 (2199, 1.9060930760927946e-05)
 (2200, 1.901322397437539e-05)
 (2201, 1.8965637442598786e-05)
@@ -3825,14 +3765,14 @@ Wall time: 1 s
 (2207, 1.8682626446170394e-05)
 (2208, 1.8635873137362857e-05)
 (2209, 1.858923764663388e-05)
-(2210, 1.8542719674068802e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2210, 1.8542719674068802e-05)
 (2211, 1.8496318918285373e-05)
 (2212, 1.8450035081080803e-05)
 (2213, 1.840386786324864e-05)
 (2214, 1.835781696736678e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2215, 1.831188209578327e-05)
+(2215, 1.831188209578327e-05)
 (2216, 1.8266062953094307e-05)
 (2217, 1.8220359243355615e-05)
 (2218, 1.817477067178595e-05)
@@ -3844,16 +3784,16 @@ Wall time: 1 s
 (2224, 1.790364074264045e-05)
 (2225, 1.7858849953020493e-05)
 (2226, 1.7814171971353417e-05)
-(2227, 1.7769606510828345e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2227, 1.7769606510828345e-05)
 (2228, 1.7725153283470278e-05)
 (2229, 1.7680812003701688e-05)
 (2230, 1.7636582385399677e-05)
 (2231, 1.7592464143599118e-05)
 (2232, 1.7548456994956792e-05)
 (2233, 1.7504560655737867e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2234, 1.7460774843364105e-05)
+(2234, 1.7460774843364105e-05)
 (2235, 1.741709927548437e-05)
 (2236, 1.737353367198727e-05)
 (2237, 1.733007775159412e-05)
@@ -3862,7 +3802,9 @@ Wall time: 1 s
 (2240, 1.7200365298530365e-05)
 (2241, 1.7157345323029705e-05)
 (2242, 1.7114433639854794e-05)
-(2243, 1.7071629973103312e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2243, 1.7071629973103312e-05)
 (2244, 1.702893404740643e-05)
 (2245, 1.698634558823811e-05)
 (2246, 1.694386432175993e-05)
@@ -3870,9 +3812,7 @@ Wall time: 1 s
 (2248, 1.685922227495619e-05)
 (2249, 1.681706095054346e-05)
 (2250, 1.677500573049099e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2251, 1.6733056344238324e-05)
+(2251, 1.6733056344238324e-05)
 (2252, 1.669121252268452e-05)
 (2253, 1.664947399633018e-05)
 (2254, 1.660784049728954e-05)
@@ -3880,7 +3820,9 @@ Wall time: 1 s
 (2256, 1.652488751209949e-05)
 (2257, 1.6483567492670777e-05)
 (2258, 1.644235143508001e-05)
-(2259, 1.640123907362211e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2259, 1.640123907362211e-05)
 (2260, 1.6360230145132226e-05)
 (2261, 1.6319324385889678e-05)
 (2262, 1.6278521533320283e-05)
@@ -3890,9 +3832,7 @@ Wall time: 1 s
 (2266, 1.611633395997995e-05)
 (2267, 1.6076041724931856e-05)
 (2268, 1.60358508341802e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2269, 1.5995761030845227e-05)
+(2269, 1.5995761030845227e-05)
 (2270, 1.595577205686959e-05)
 (2271, 1.5915883656422773e-05)
 (2272, 1.587609557326988e-05)
@@ -3900,7 +3840,9 @@ Wall time: 1 s
 (2274, 1.5796819338691907e-05)
 (2275, 1.5757330678188945e-05)
 (2276, 1.5717941318370987e-05)
-(2277, 1.5678651006393156e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2277, 1.5678651006393156e-05)
 (2278, 1.563945948993294e-05)
 (2279, 1.560036651811829e-05)
 (2280, 1.5561371839979965e-05)
@@ -3909,16 +3851,16 @@ Wall time: 1 s
 (2283, 1.5444975072249153e-05)
 (2284, 1.540637107604691e-05)
 (2285, 1.5367864130513544e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2286, 1.5329453988577734e-05)
+(2286, 1.5329453988577734e-05)
 (2287, 1.5291140403842584e-05)
 (2288, 1.5252923131668326e-05)
 (2289, 1.521480192654187e-05)
 (2290, 1.5176776544087842e-05)
 (2291, 1.5138846741687076e-05)
 (2292, 1.510101227569159e-05)
-(2293, 1.506327290359025e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2293, 1.506327290359025e-05)
 (2294, 1.502562838447254e-05)
 (2295, 1.498807847670776e-05)
 (2296, 1.4950622939955891e-05)
@@ -3929,14 +3871,14 @@ Wall time: 1 s
 (2301, 1.4764752452462391e-05)
 (2302, 1.472785812821473e-05)
 (2303, 1.469105650999649e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2304, 1.4654347361440526e-05)
+(2304, 1.4654347361440526e-05)
 (2305, 1.4617730448550572e-05)
 (2306, 1.4581205536143413e-05)
 (2307, 1.4544772391096798e-05)
 (2308, 1.4508430780647735e-05)
-(2309, 1.4472180471928264e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2309, 1.4472180471928264e-05)
 (2310, 1.4436021233511872e-05)
 (2311, 1.4399952832938617e-05)
 (2312, 1.4363975041200055e-05)
@@ -3948,13 +3890,13 @@ Wall time: 1 s
 (2318, 1.4149998219417722e-05)
 (2319, 1.4114648276395213e-05)
 (2320, 1.40793871179036e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2321, 1.4044214518456953e-05)
+(2321, 1.4044214518456953e-05)
 (2322, 1.4009130253543715e-05)
 (2323, 1.3974134098389379e-05)
 (2324, 1.3939225830275763e-05)
-(2325, 1.3904405225602713e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2325, 1.3904405225602713e-05)
 (2326, 1.3869672062362012e-05)
 (2327, 1.3835026118126935e-05)
 (2328, 1.3800467172371434e-05)
@@ -3967,14 +3909,14 @@ Wall time: 1 s
 (2335, 1.3560972031807903e-05)
 (2336, 1.3527101173537619e-05)
 (2337, 1.3493315347860352e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2338, 1.3459614338554641e-05)
+(2338, 1.3459614338554641e-05)
 (2339, 1.3425997930833186e-05)
 (2340, 1.3392465910414978e-05)
 (2341, 1.335901806321589e-05)
 (2342, 1.3325654176121451e-05)
-(2343, 1.3292374035286099e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2343, 1.3292374035286099e-05)
 (2344, 1.325917742953401e-05)
 (2345, 1.3226064146494057e-05)
 (2346, 1.3193033975382243e-05)
@@ -3986,13 +3928,13 @@ Wall time: 1 s
 (2352, 1.2996586536459908e-05)
 (2353, 1.2964132279684287e-05)
 (2354, 1.2931759464709824e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2355, 1.2899467884515196e-05)
+(2355, 1.2899467884515196e-05)
 (2356, 1.2867257334436812e-05)
 (2357, 1.2835127608304413e-05)
 (2358, 1.2803078501841347e-05)
-(2359, 1.2771109810809571e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2359, 1.2771109810809571e-05)
 (2360, 1.2739221331009477e-05)
 (2361, 1.2707412859979842e-05)
 (2362, 1.267568419467924e-05)
@@ -4005,13 +3947,13 @@ Wall time: 1 s
 (2369, 1.2455801187652997e-05)
 (2370, 1.242470373614461e-05)
 (2371, 1.2393684290019408e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2372, 1.2362742652015152e-05)
+(2372, 1.2362742652015152e-05)
 (2373, 1.2331878624751057e-05)
 (2374, 1.2301092011809363e-05)
 (2375, 1.2270382617580591e-05)
-(2376, 1.2239750246490698e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2376, 1.2239750246490698e-05)
 (2377, 1.220919470315546e-05)
 (2378, 1.2178715794234577e-05)
 (2379, 1.2148313324568366e-05)
@@ -4026,10 +3968,10 @@ Wall time: 1 s
 (2388, 1.1878099131722691e-05)
 (2389, 1.1848450501905492e-05)
 (2390, 1.1818876211033962e-05)
+(2391, 1.1789376070998143e-05)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2391, 1.1789376070998143e-05)
-(2392, 1.1759949894802278e-05)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2392, 1.1759949894802278e-05)
 (2393, 1.1730597494401663e-05)
 (2394, 1.170131868425593e-05)
 (2395, 1.1672113277620947e-05)
@@ -4064,11 +4006,11 @@ Wall time: 1 s
 (2422, 1.0910646770768245e-05)
 (2423, 1.0883423014587716e-05)
 (2424, 1.085626746773237e-05)
-(2425, 1.0829179958563924e-05)
-(2426, 1.0802160314390561e-05)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2427, 1.0775208364864487e-05)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2425, 1.0829179958563924e-05)
+(2426, 1.0802160314390561e-05)
+(2427, 1.0775208364864487e-05)
 (2428, 1.0748323937966369e-05)
 (2429, 1.0721506863402849e-05)
 (2430, 1.0694756971834161e-05)
@@ -4082,13 +4024,13 @@ Wall time: 1 s
 (2438, 1.0483156137525499e-05)
 (2439, 1.0457003305271397e-05)
 (2440, 1.0430915978123459e-05)
-(2441, 1.0404893991354085e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2441, 1.0404893991354085e-05)
 (2442, 1.0378937179180206e-05)
 (2443, 1.0353045377697026e-05)
 (2444, 1.0327218423024906e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2445, 1.030145615022841e-05)
+(2445, 1.030145615022841e-05)
 (2446, 1.027575839779401e-05)
 (2447, 1.025012500160804e-05)
 (2448, 1.022455579989761e-05)
@@ -4104,14 +4046,14 @@ Wall time: 1 s
 iterations =  2457
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 31.9 s, sys: 374 ms, total: 32.2 s
-Wall time: 32 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 33.8 s, sys: 395 ms, total: 34.2 s
+Wall time: 33.9 s
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fbb26224430&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f22aa548250&gt;
 </pre></div>
 </div>
-<img alt="_images/16-Fortran_64_203.png" src="_images/16-Fortran_64_203.png" />
+<img alt="_images/16-Fortran_64_174.png" src="_images/16-Fortran_64_174.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -5599,9 +5541,7 @@ end subroutine laplace_fortran
 (1417, 0.00013928432077796283)
 (1418, 0.00013892082304739272)
 (1419, 0.00013855831719552616)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1420, 0.0001381968002972796)
+(1420, 0.0001381968002972796)
 (1421, 0.00013783626943872043)
 (1422, 0.00013747672171411608)
 (1423, 0.00013711815422817739)
@@ -5747,7 +5687,9 @@ end subroutine laplace_fortran
 (1563, 9.538574853211103e-05)
 (1564, 9.514044068399804e-05)
 (1565, 9.489578416056266e-05)
-(1566, 9.465177713024808e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1566, 9.465177713024808e-05)
 (1567, 9.440841776716045e-05)
 (1568, 9.416570425169444e-05)
 (1569, 9.392363476924365e-05)
@@ -6640,11 +6582,11 @@ end subroutine laplace_fortran
 (2456, 1.0022293826789268e-05)
 (2457, 9.997295133247811e-06)
 iterations =  2457
-CPU times: user 457 ms, sys: 97.3 ms, total: 555 ms
-Wall time: 408 ms
+CPU times: user 444 ms, sys: 130 ms, total: 573 ms
+Wall time: 418 ms
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fbb1c6b8400&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f22a09d92b0&gt;
 </pre></div>
 </div>
 <img alt="_images/16-Fortran_66_3.png" src="_images/16-Fortran_66_3.png" />
