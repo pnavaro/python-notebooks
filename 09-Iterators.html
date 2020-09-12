@@ -430,19 +430,46 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;environment.yml&quot;</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../environment.yml&quot;</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="n">e8ea7e33e965</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;environment.yml&quot;</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;environment.yml&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>channels:
+   - sympy
+   - conda-forge
+   - defaults
+ dependencies:
+   - cython
+   - fortran-magic
+   - h5py
+   - imageio
+   - ipykernel
+   - ipywidgets
+   - joblib
+   - jupytext
+   - line_profiler
+   - lorem
+   - matplotlib
+   - memory_profiler
+   - numba
+   - numexpr
+   - numpy
+   - pillow
+   - progressbar2
+   - pythran
+   - scipy
+   - seaborn
+   - setuptools
+   - sympy
+   - tqdm
+   - ujson
+   - pip
+   - pip:
+     - py-heat-magic
+     - jupyter-book
+ 
 </pre></div>
 </div>
 </div>
@@ -467,7 +494,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;str_iterator at 0x7f9a26ec26a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;str_iterator at 0x7f9d70aeeac0&gt;
 </pre></div>
 </div>
 </div>
@@ -611,7 +638,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>peak memory: 47.87 MiB, increment: 1.25 MiB
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>peak memory: 48.73 MiB, increment: 1.11 MiB
 </pre></div>
 </div>
 </div>
@@ -623,7 +650,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>peak memory: 47.32 MiB, increment: -0.56 MiB
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>peak memory: 48.73 MiB, increment: 0.00 MiB
 </pre></div>
 </div>
 </div>
