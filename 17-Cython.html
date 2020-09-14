@@ -510,7 +510,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>953 µs ± 7.77 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>862 µs ± 20.5 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 2.0000040080120174
 </pre></div>
 </div>
@@ -608,7 +608,7 @@ integrate_f(0, 10, 1000)
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>integral_f(-1.0, 1.0, 1000) = 2.000004 
-time = 5.453000e-03 ms 
+time = 5.018000e-03 ms 
 </pre></div>
 </div>
 </div>
@@ -941,8 +941,13 @@ body.cython { font-family: courier; font-size: 12; }
 .cython.score-252 {background-color: #FFFF09;}
 .cython.score-253 {background-color: #FFFF09;}
 .cython.score-254 {background-color: #FFFF09;}
+pre { line-height: 125%; margin: 0; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding: 0 5px 0 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding: 0 5px 0 5px; }
 .cython .hll { background-color: #ffffcc }
-.cython  { background: #f8f8f8; }
+.cython { background: #f8f8f8; }
 .cython .c { color: #408080; font-style: italic } /* Comment */
 .cython .err { border: 1px solid #FF0000 } /* Error */
 .cython .k { color: #008000; font-weight: bold } /* Keyword */
@@ -1382,8 +1387,13 @@ body.cython { font-family: courier; font-size: 12; }
 .cython.score-252 {background-color: #FFFF09;}
 .cython.score-253 {background-color: #FFFF09;}
 .cython.score-254 {background-color: #FFFF09;}
+pre { line-height: 125%; margin: 0; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding: 0 5px 0 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding: 0 5px 0 5px; }
 .cython .hll { background-color: #ffffcc }
-.cython  { background: #f8f8f8; }
+.cython { background: #f8f8f8; }
 .cython .c { color: #408080; font-style: italic } /* Comment */
 .cython .err { border: 1px solid #FF0000 } /* Error */
 .cython .k { color: #008000; font-weight: bold } /* Keyword */
@@ -1841,8 +1851,13 @@ body.cython { font-family: courier; font-size: 12; }
 .cython.score-252 {background-color: #FFFF09;}
 .cython.score-253 {background-color: #FFFF09;}
 .cython.score-254 {background-color: #FFFF09;}
+pre { line-height: 125%; margin: 0; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding: 0 5px 0 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding: 0 5px 0 5px; }
 .cython .hll { background-color: #ffffcc }
-.cython  { background: #f8f8f8; }
+.cython { background: #f8f8f8; }
 .cython .c { color: #408080; font-style: italic } /* Comment */
 .cython .err { border: 1px solid #FF0000 } /* Error */
 .cython .k { color: #008000; font-weight: bold } /* Keyword */
@@ -2058,7 +2073,7 @@ cython -3 --cplus cython_f_example.pyx  <span class="c1"># create the C++ file f
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>738 µs ± 7.17 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>678 µs ± 28.6 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 2.0000040080120174
 </pre></div>
 </div>
@@ -2136,7 +2151,7 @@ cython -3 --cplus cython_f_example.pyx  <span class="c1"># create the C++ file f
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>742 µs ± 7.76 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>714 µs ± 18.5 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0000040080120174
@@ -2207,7 +2222,7 @@ def cy_integrate_f(double a, double b, int N):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>662 µs ± 9.36 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>675 µs ± 13.5 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 2.0000040080120174
 </pre></div>
 </div>
@@ -2261,7 +2276,7 @@ def cycy_integrate_f(double a, double b, int N):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>164 µs ± 487 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>146 µs ± 5.36 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 2.0000040080120174
 </pre></div>
 </div>
@@ -2589,8 +2604,13 @@ body.cython { font-family: courier; font-size: 12; }
 .cython.score-252 {background-color: #FFFF09;}
 .cython.score-253 {background-color: #FFFF09;}
 .cython.score-254 {background-color: #FFFF09;}
+pre { line-height: 125%; margin: 0; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding: 0 5px 0 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding: 0 5px 0 5px; }
 .cython .hll { background-color: #ffffcc }
-.cython  { background: #f8f8f8; }
+.cython { background: #f8f8f8; }
 .cython .c { color: #408080; font-style: italic } /* Comment */
 .cython .err { border: 1px solid #FF0000 } /* Error */
 .cython .k { color: #008000; font-weight: bold } /* Keyword */
@@ -2862,7 +2882,7 @@ static PyObject *__pyx_pf_46_cython_magic_a96a095f6c3175b142027432bac51f88_exp_p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.94 µs ± 58.6 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.7 µs ± 169 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre></div>
 </div>
 </div>
@@ -2915,7 +2935,7 @@ def exp_cython(double x, int terms = 50):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>336 ns ± 2.96 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>150 ns ± 4.93 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
 </pre></div>
 </div>
 </div>
@@ -3034,7 +3054,7 @@ def matmul2(np.ndarray[dtype_t, ndim=2] A,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>159 ms ± 2.54 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>150 ms ± 4.25 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -3046,7 +3066,7 @@ def matmul2(np.ndarray[dtype_t, ndim=2] A,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>329 µs ± 6.33 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>320 µs ± 3.48 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre></div>
 </div>
 </div>
@@ -3110,7 +3130,7 @@ def matmul3(np.ndarray[dtype_t, ndim=2] A,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>273 µs ± 2.18 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>279 µs ± 9.18 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre></div>
 </div>
 </div>
@@ -3225,7 +3245,7 @@ def matmul4(np.ndarray[dtype_t, ndim=2, mode=&quot;c&quot;] A,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>239 µs ± 4.34 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>226 µs ± 13.8 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre></div>
 </div>
 </div>
@@ -3268,7 +3288,7 @@ def matmul4(np.ndarray[dtype_t, ndim=2, mode=&quot;c&quot;] A,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.01 ms ± 62.1 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.84 ms ± 107 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -3324,7 +3344,7 @@ def is_prime1(n):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.89 ms ± 88.1 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.74 ms ± 105 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -3385,7 +3405,7 @@ def is_prime2(n):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>646 µs ± 5.33 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>618 µs ± 16.7 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre></div>
 </div>
 </div>
@@ -3447,7 +3467,7 @@ def prime_list(L):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>357 µs ± 1.91 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>345 µs ± 24.3 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre></div>
 </div>
 </div>
@@ -3516,7 +3536,7 @@ def prime_array(ndarray[int, ndim=1] L):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>356 µs ± 4.64 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>349 µs ± 14.6 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre></div>
 </div>
 </div>
@@ -3665,7 +3685,7 @@ extra options: &#39;-fopenmp&#39;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>259 µs ± 5.72 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>278 µs ± 13.3 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre></div>
 </div>
 </div>
