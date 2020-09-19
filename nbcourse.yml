@@ -1,0 +1,39 @@
+title: Scientific computing with Python for beginners
+slug_title: python-notebooks
+subtitle: Jupyter notebooks
+favicon: img/favicon.ico
+book:
+  file: python-notebooks.pdf
+picture:
+    path: img/python-logo_full.png
+    width: 300px
+    alt: Logo Python
+authors:
+  - name: Pierre Navaro
+    email: pierre.navaro@math.cnrs.fr
+links:
+  manual:
+    title: Manual
+    target: manual.html
+  binder:
+    title: Execute online
+    target: https://mybinder.org/v2/gh/pnavaro/python-notebooks/master
+  book:
+    title: pdf
+  gitlab:
+    title: Sources
+    target: https://github.com/pnavaro/python-notebooks
+  archive:
+    title: Full archive
+license:
+  text: licence
+  target: https://creativecommons.org/licenses/by-sa/4.0/
+  icon:
+    path: img/by-sa.svg
+    width: 70px
+local_reveal: True
+nb:
+  dir: notebooks
+  timeout: 300
+  material: 
+    - images

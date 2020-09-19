@@ -1,0 +1,33 @@
+name: book
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install pandoc
+      run: |
+        sudo apt-get -yq update
+        sudo apt-get install -yq pandoc texlive-xetex texlive-fonts-extra gfortran ffmpeg
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Install Miniconda
+      uses: goanpeca/setup-miniconda@v1
+      with:
+        miniconda-version: "latest"
+    - name: Install dependencies
+      shell: bash -l {0}
+      run: |
+        conda env create -f environment.yml -n runenv
+        conda run -n runenv python -m ipykernel install --user --name python3
+        conda run -n runenv jupytext --sync *.py
+    - name: Build the book
+      shell: bash -l {0}
+      run: conda run -n runenv jupyter-book build notebooks
+    - name: GitHub Pages action
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./notebooks/_build/html
