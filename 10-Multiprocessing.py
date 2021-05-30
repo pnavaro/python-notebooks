@@ -8,7 +8,7 @@
 #       extension: .py
 #       format_name: light
 #       format_version: '1.5'
-#       jupytext_version: 1.6.0
+#       jupytext_version: 1.8.2
 #   kernelspec:
 #     display_name: Python 3
 #     language: python
@@ -18,7 +18,7 @@
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # # Multiprocessing
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:18.951632Z", "iopub.execute_input": "2020-09-12T14:00:18.953819Z", "iopub.status.idle": "2020-09-12T14:00:18.957722Z", "shell.execute_reply": "2020-09-12T14:00:18.958270Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 from multiprocessing import cpu_count
 
 cpu_count()
@@ -26,7 +26,7 @@ cpu_count()
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Map reduce example
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:18.964025Z", "iopub.execute_input": "2020-09-12T14:00:18.964908Z", "shell.execute_reply": "2020-09-12T14:00:18.967311Z", "iopub.status.idle": "2020-09-12T14:00:18.967841Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 from time import sleep
 def delayed_square(x):
     sleep(1)
@@ -34,10 +34,10 @@ def delayed_square(x):
 data = list(range(8))
 data
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:18.972191Z", "iopub.execute_input": "2020-09-12T14:00:18.972938Z", "iopub.status.idle": "2020-09-12T14:00:27.011091Z", "shell.execute_reply": "2020-09-12T14:00:27.011676Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 %time sum(delayed_square(x) for x in data)
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:27.016032Z", "iopub.execute_input": "2020-09-12T14:00:27.016783Z", "shell.execute_reply": "2020-09-12T14:00:35.051096Z", "iopub.status.idle": "2020-09-12T14:00:35.051765Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 %time sum(map(delayed_square,data))
 
 # + [markdown] {"slideshow": {"slide_type": "fragment"}}
@@ -112,7 +112,7 @@ data
 # python3 pool.py
 # ```
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:35.056974Z", "iopub.execute_input": "2020-09-12T14:00:35.058212Z", "iopub.status.idle": "2020-09-12T14:00:35.060786Z", "shell.execute_reply": "2020-09-12T14:00:35.061358Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 %%file pool.py
 
 from time import time, sleep
@@ -130,8 +130,8 @@ if __name__ == '__main__': # Executed only on main process.
         result = sum(p.map(delayed_square, data))
     stop = time()
     print(f"result = {result} - Elapsed time {stop - start}")
+# -
 
-# + {"execution": {"iopub.status.busy": "2020-09-12T14:00:35.065862Z", "iopub.execute_input": "2020-09-12T14:00:35.067034Z", "iopub.status.idle": "2020-09-12T14:00:37.354115Z", "shell.execute_reply": "2020-09-12T14:00:37.354706Z"}}
 import sys
 !{sys.executable} pool.py
 
@@ -142,7 +142,7 @@ import sys
 #
 # The asynchronous execution can be performed with threads, using ThreadPoolExecutor, or separate processes, using ProcessPoolExecutor. Both implement the same interface, which is defined by the abstract Executor class.
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:37.359908Z", "iopub.execute_input": "2020-09-12T14:00:37.360930Z", "iopub.status.idle": "2020-09-12T14:00:37.363397Z", "shell.execute_reply": "2020-09-12T14:00:37.364052Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 %%file process_pool.py
 import os
 from time import time, sleep
@@ -165,10 +165,10 @@ if __name__ == "__main__":
     stop = time()
     print(f" result : {result} - elapsed time {stop - start}")
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:37.368389Z", "iopub.execute_input": "2020-09-12T14:00:37.369466Z", "iopub.status.idle": "2020-09-12T14:00:39.614789Z", "shell.execute_reply": "2020-09-12T14:00:39.615379Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 !{sys.executable} process_pool.py
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:39.620798Z", "iopub.execute_input": "2020-09-12T14:00:39.621801Z", "iopub.status.idle": "2020-09-12T14:00:40.633249Z", "shell.execute_reply": "2020-09-12T14:00:40.634198Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 %%time
 from concurrent.futures import ThreadPoolExecutor
 
@@ -189,7 +189,7 @@ results = list(e.map(delayed_square, range(8)))
 # We collect the result of the task with the `.result()` method,
 # which does not return until the results are available.
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:40.639327Z", "iopub.execute_input": "2020-09-12T14:00:40.640320Z", "iopub.status.idle": "2020-09-12T14:00:40.642032Z", "shell.execute_reply": "2020-09-12T14:00:40.642728Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 from time import sleep
 
 def slowadd(a, b, delay=1):
@@ -197,23 +197,23 @@ def slowadd(a, b, delay=1):
     return a + b
 
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:40.650795Z", "iopub.execute_input": "2020-09-12T14:00:40.651924Z", "iopub.status.idle": "2020-09-12T14:00:40.654265Z", "shell.execute_reply": "2020-09-12T14:00:40.654828Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 from concurrent.futures import ThreadPoolExecutor
 e = ThreadPoolExecutor(4)
 future = e.submit(slowadd, 1, 2)
 future
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:40.658819Z", "iopub.execute_input": "2020-09-12T14:00:40.659582Z", "iopub.status.idle": "2020-09-12T14:00:41.655950Z", "shell.execute_reply": "2020-09-12T14:00:41.656512Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 future.result()
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # Submit many tasks all at once and they be will executed in parallel.
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:41.660798Z", "iopub.execute_input": "2020-09-12T14:00:41.661553Z", "shell.execute_reply": "2020-09-12T14:00:49.683871Z", "iopub.status.idle": "2020-09-12T14:00:49.684457Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 %%time
 results = [slowadd(i, i, delay=1) for i in range(8)]
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:49.691017Z", "iopub.execute_input": "2020-09-12T14:00:49.691871Z", "iopub.status.idle": "2020-09-12T14:00:51.702264Z", "shell.execute_reply": "2020-09-12T14:00:51.702861Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 %%time
 futures = [e.submit(slowadd, 1, 1, delay=1) for i in range(8)]
 results = [f.result() for f in futures]
@@ -242,7 +242,7 @@ results = [f.result() for f in futures]
 #
 # Parallelize this computation with a ProcessPoolExecutor. ThreadPoolExecutor is not usable because of `random` function calls.
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:51.746931Z", "iopub.execute_input": "2020-09-12T14:00:51.789213Z", "iopub.status.idle": "2020-09-12T14:01:09.629723Z", "shell.execute_reply": "2020-09-12T14:01:09.630334Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 import time
 import random
 

@@ -9,7 +9,7 @@
 #       extension: .py
 #       format_name: light
 #       format_version: '1.5'
-#       jupytext_version: 1.6.0
+#       jupytext_version: 1.8.2
 #   kernelspec:
 #     display_name: Python 3
 #     language: python
@@ -20,23 +20,23 @@
 # # Iterators
 # Most container objects can be looped over using a for statement:
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:01.229808Z", "iopub.execute_input": "2020-09-12T14:00:01.231861Z", "shell.execute_reply": "2020-09-12T14:00:01.234743Z", "iopub.status.idle": "2020-09-12T14:00:01.235347Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 for element in [1, 2, 3]:
     print(element, end=' ')
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:01.239599Z", "iopub.execute_input": "2020-09-12T14:00:01.240524Z", "iopub.status.idle": "2020-09-12T14:00:01.242852Z", "shell.execute_reply": "2020-09-12T14:00:01.243426Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 for element in (1, 2, 3):
     print(element, end=' ')
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:01.247851Z", "iopub.execute_input": "2020-09-12T14:00:01.248718Z", "iopub.status.idle": "2020-09-12T14:00:01.250913Z", "shell.execute_reply": "2020-09-12T14:00:01.251475Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 for key in {'one': 1, 'two': 2}:
     print(key, end=' ')
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:01.255572Z", "iopub.execute_input": "2020-09-12T14:00:01.256381Z", "iopub.status.idle": "2020-09-12T14:00:01.258449Z", "shell.execute_reply": "2020-09-12T14:00:01.259032Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 for char in "123":
     print(char, end=' ')
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:01.263330Z", "iopub.execute_input": "2020-09-12T14:00:01.264205Z", "iopub.status.idle": "2020-09-12T14:00:01.266965Z", "shell.execute_reply": "2020-09-12T14:00:01.267547Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 for line in open("../environment.yml"):
     print(line, end= ' ')
 
@@ -48,16 +48,16 @@ for line in open("../environment.yml"):
 #     - If the class defines `__next__()`, then `__iter__()` can just return self.
 #     - The **StopIteration** exception indicates the end of the loop.
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:01.280461Z", "iopub.execute_input": "2020-09-12T14:00:01.281505Z", "iopub.status.idle": "2020-09-12T14:00:01.285011Z", "shell.execute_reply": "2020-09-12T14:00:01.285587Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 s = 'abc'
 it = iter(s)
 it
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:01.290652Z", "iopub.execute_input": "2020-09-12T14:00:01.291631Z", "iopub.status.idle": "2020-09-12T14:00:01.294202Z", "shell.execute_reply": "2020-09-12T14:00:01.294776Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 next(it), next(it), next(it)
 
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:01.301316Z", "iopub.execute_input": "2020-09-12T14:00:01.302273Z", "iopub.status.idle": "2020-09-12T14:00:01.303519Z", "shell.execute_reply": "2020-09-12T14:00:01.304316Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 class Reverse:
     """Iterator for looping over a sequence backwards."""
 
@@ -75,13 +75,13 @@ class Reverse:
         return self.data[self.index]
 
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:01.308328Z", "iopub.execute_input": "2020-09-12T14:00:01.309270Z", "iopub.status.idle": "2020-09-12T14:00:01.311597Z", "shell.execute_reply": "2020-09-12T14:00:01.312173Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 rev = Reverse('spam')
 for char in rev:
     print(char, end='')
 
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:01.317364Z", "iopub.execute_input": "2020-09-12T14:00:01.318250Z", "iopub.status.idle": "2020-09-12T14:00:01.320548Z", "shell.execute_reply": "2020-09-12T14:00:01.321123Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 def reverse(data): # Python 3.6
     yield from data[::-1]
     
@@ -96,13 +96,13 @@ for char in reverse('bulgroz'):
 # - the `__iter__()` and `__next__()` methods are created automatically.
 #
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:01.325694Z", "iopub.execute_input": "2020-09-12T14:00:01.326496Z", "iopub.status.idle": "2020-09-12T14:00:01.328060Z", "shell.execute_reply": "2020-09-12T14:00:01.328721Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 def reverse(data):
     for index in range(len(data)-1, -1, -1):
         yield data[index]
 
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:01.332867Z", "iopub.execute_input": "2020-09-12T14:00:01.333750Z", "iopub.status.idle": "2020-09-12T14:00:01.335915Z", "shell.execute_reply": "2020-09-12T14:00:01.336509Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 for char in reverse('bulgroz'):
      print(char, end='')
 # -
@@ -128,25 +128,25 @@ for char in reverse('bulgroz'):
 # - Use a syntax similar to list comprehensions but with parentheses instead of brackets.
 # - Tend to be more memory friendly than equivalent list comprehensions.
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:01.340870Z", "iopub.execute_input": "2020-09-12T14:00:01.341775Z", "iopub.status.idle": "2020-09-12T14:00:01.344138Z", "shell.execute_reply": "2020-09-12T14:00:01.344710Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 sum(i*i for i in range(10))                 # sum of squares
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:01.349086Z", "iopub.execute_input": "2020-09-12T14:00:01.349916Z", "iopub.status.idle": "2020-09-12T14:00:01.881615Z", "shell.execute_reply": "2020-09-12T14:00:01.882538Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 %load_ext memory_profiler
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:01.911881Z", "iopub.execute_input": "2020-09-12T14:00:01.912654Z", "iopub.status.idle": "2020-09-12T14:00:02.099114Z", "shell.execute_reply": "2020-09-12T14:00:02.099705Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 %memit doubles = [2 * n for n in range(10000)]
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:02.133082Z", "iopub.execute_input": "2020-09-12T14:00:02.133855Z", "iopub.status.idle": "2020-09-12T14:00:02.307287Z", "shell.execute_reply": "2020-09-12T14:00:02.307891Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 %memit doubles = (2 * n for n in range(10000))
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:02.313384Z", "iopub.execute_input": "2020-09-12T14:00:02.314318Z", "shell.execute_reply": "2020-09-12T14:00:02.316635Z", "iopub.status.idle": "2020-09-12T14:00:02.317286Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 # list comprehension
 doubles = [2 * n for n in range(10)]
 for x in doubles:
     print(x, end=' ')
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:02.322430Z", "iopub.execute_input": "2020-09-12T14:00:02.323362Z", "iopub.status.idle": "2020-09-12T14:00:02.325630Z", "shell.execute_reply": "2020-09-12T14:00:02.326203Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 # generator expression
 doubles = (2 * n for n in range(10))
 for x in doubles:
@@ -174,7 +174,7 @@ for x in doubles:
 # as arguments and a fillvalue keyword argument that defaults to None.
 #     
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:02.332731Z", "iopub.execute_input": "2020-09-12T14:00:02.333626Z", "iopub.status.idle": "2020-09-12T14:00:02.336113Z", "shell.execute_reply": "2020-09-12T14:00:02.336685Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 x = [1, 1, 1, 1, 1]
 y = [1, 2, 3, 4, 5, 6, 7]
 list(zip(x, y))
@@ -184,7 +184,7 @@ list(map(sum,zip_longest(x, y, fillvalue=1)))
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ### combinations
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:02.340533Z", "iopub.execute_input": "2020-09-12T14:00:02.341429Z", "iopub.status.idle": "2020-09-12T14:00:02.342916Z", "shell.execute_reply": "2020-09-12T14:00:02.343486Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 loto_numbers = list(range(1,50))
 
 # + [markdown] {"slideshow": {"slide_type": "fragment"}}
@@ -193,18 +193,18 @@ loto_numbers = list(range(1,50))
 # inputs and a positive integer n—and produces an iterator over tuples of 
 # all combinations of n elements in inputs.
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:05.337335Z", "iopub.execute_input": "2020-09-12T14:00:05.338237Z", "iopub.status.idle": "2020-09-12T14:00:05.340647Z", "shell.execute_reply": "2020-09-12T14:00:05.341222Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 from itertools import combinations
 len(list(combinations(loto_numbers, 6)))
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:05.345919Z", "iopub.execute_input": "2020-09-12T14:00:05.346879Z", "iopub.status.idle": "2020-09-12T14:00:05.349205Z", "shell.execute_reply": "2020-09-12T14:00:05.349768Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 from math import factorial
 factorial(49)/ factorial(6) / factorial(49-6)
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ### permutations
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:05.353904Z", "iopub.execute_input": "2020-09-12T14:00:05.354737Z", "iopub.status.idle": "2020-09-12T14:00:05.357111Z", "shell.execute_reply": "2020-09-12T14:00:05.357706Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 from itertools import permutations
 for s in permutations('dsi'):
     print( "".join(s), end=", ")
@@ -212,7 +212,7 @@ for s in permutations('dsi'):
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ### count
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:05.363006Z", "iopub.execute_input": "2020-09-12T14:00:05.363820Z", "iopub.status.idle": "2020-09-12T14:00:05.365945Z", "shell.execute_reply": "2020-09-12T14:00:05.366514Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 from itertools import count
 n = 2024
 for k in count(): # replace  k = 0; while(True) : k += 1
@@ -228,7 +228,7 @@ for k in count(): # replace  k = 0; while(True) : k += 1
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ### cycle, islice, dropwhile, takewhile
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:05.372223Z", "iopub.execute_input": "2020-09-12T14:00:05.373125Z", "iopub.status.idle": "2020-09-12T14:00:05.375339Z", "shell.execute_reply": "2020-09-12T14:00:05.375919Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 from itertools import cycle, islice, dropwhile, takewhile
 L = list(range(10))
 cycled = cycle(L)  # cycle through the list 'L'
@@ -236,14 +236,14 @@ skipped = dropwhile(lambda x: x < 6 , cycled)  # drop the values until x==4
 sliced = islice(skipped, None, 20)  # take the first 20 values
 print(*sliced)
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:05.380312Z", "iopub.execute_input": "2020-09-12T14:00:05.381246Z", "iopub.status.idle": "2020-09-12T14:00:05.383417Z", "shell.execute_reply": "2020-09-12T14:00:05.383992Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 result = takewhile(lambda x: x > 0, cycled) # cycled begins to 4
 print(*result)
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ### product
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:00:05.390668Z", "iopub.execute_input": "2020-09-12T14:00:05.391591Z", "iopub.status.idle": "2020-09-12T14:00:05.394021Z", "shell.execute_reply": "2020-09-12T14:00:05.394598Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 ranks = ['A', 'K', 'Q', 'J', '10', '9', '8', '7']
 suits = [ '\u2660', '\u2665', '\u2663', '\u2666']
 cards = [(rank, suit) for rank in ranks for suit in suits]

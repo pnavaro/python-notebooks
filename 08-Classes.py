@@ -9,7 +9,7 @@
 #       extension: .py
 #       format_name: light
 #       format_version: '1.5'
-#       jupytext_version: 1.6.0
+#       jupytext_version: 1.8.2
 #   kernelspec:
 #     display_name: Python 3
 #     language: python
@@ -32,7 +32,7 @@
 # - A empty class can be used to bundle together a few named data items. 
 # - You can easily save this class containing your data in JSON file.
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:08.785644Z", "iopub.execute_input": "2020-09-12T13:51:08.786614Z", "iopub.status.idle": "2020-09-12T13:51:08.788267Z", "shell.execute_reply": "2020-09-12T13:51:08.788888Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 class Car:
     pass
 
@@ -43,25 +43,25 @@ mycar.brand = 'Peugeot'
 mycar.model = 308
 mycar.year = 2015
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:08.800837Z", "iopub.execute_input": "2020-09-12T13:51:08.801882Z", "iopub.status.idle": "2020-09-12T13:51:08.805281Z", "shell.execute_reply": "2020-09-12T13:51:08.805872Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 mycar.__dict__
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## namedtuple
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:08.810030Z", "iopub.execute_input": "2020-09-12T13:51:08.811021Z", "iopub.status.idle": "2020-09-12T13:51:08.812590Z", "shell.execute_reply": "2020-09-12T13:51:08.813205Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 from collections import namedtuple
 
 Car = namedtuple('Car', 'brand, model, year')
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:08.817696Z", "iopub.execute_input": "2020-09-12T13:51:08.818621Z", "iopub.status.idle": "2020-09-12T13:51:08.821193Z", "shell.execute_reply": "2020-09-12T13:51:08.821813Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 mycar = Car('Peugeot', 308, 2015)
 mycar
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:08.825856Z", "iopub.execute_input": "2020-09-12T13:51:08.826836Z", "iopub.status.idle": "2020-09-12T13:51:08.829418Z", "shell.execute_reply": "2020-09-12T13:51:08.830029Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 mycar.year
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:08.834648Z", "iopub.execute_input": "2020-09-12T13:51:08.835618Z", "iopub.status.idle": "2020-09-12T13:51:08.838217Z", "shell.execute_reply": "2020-09-12T13:51:08.838808Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 # Like tuples, namedtuples are immutable:
 import sys
 try:
@@ -70,7 +70,7 @@ except:
     print(sys.exc_info()[0])
 
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:08.844169Z", "iopub.execute_input": "2020-09-12T13:51:08.845057Z", "shell.execute_reply": "2020-09-12T13:51:08.846634Z", "iopub.status.idle": "2020-09-12T13:51:08.847290Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 class Car:
 
     "A simple example class Animal with its name, weight and age"
@@ -86,12 +86,12 @@ class Car:
         return now.year - self.year
 
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:08.851791Z", "iopub.execute_input": "2020-09-12T13:51:08.852654Z", "iopub.status.idle": "2020-09-12T13:51:08.855155Z", "shell.execute_reply": "2020-09-12T13:51:08.855770Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 mycar = Car('Peugeot', 308, 2015) # Instance
 print(f' {mycar.brand} {mycar.model} {mycar.year}')
 print(f' {mycar.age()} years old')
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:08.860331Z", "iopub.execute_input": "2020-09-12T13:51:08.861290Z", "iopub.status.idle": "2020-09-12T13:51:08.863674Z", "shell.execute_reply": "2020-09-12T13:51:08.864368Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 mycar.year = 2017
 mycar.age()
 
@@ -100,13 +100,57 @@ mycar.age()
 # - `mycar` is an *instance* of Car Class.
 # - `mycar.age()` is a *method* of `Car` instance `mycar`.
 # - `brand` and `model` are attributes of `Car` instance `mycar`.
+# -
+
+# ### Exercise 
+# - Create the class `TennisPlaye`
+# - Add 6 attributes that represent skills of this player : `agility`, `stamina`, `serve`, `volley`, `forehand`, `backhand`. Each quality is quantified by an integer.
+# - Add the method `total_power`that computes the sum of all skills. You can use the `__dict__` method.
+#
+# ```py
+# jonah = TennisPlayer( 16, 9, 2, 9, 15, 12)
+# jonah.total_power() # must be 63
+# ```
+
+class TennisPlayer:
+
+    def __init__(self, agility, stamina, serve, volley, forehand, backhand):
+        self.agility = agility
+        self.stamina = stamina
+        self.serve = serve
+        self.volley = volley
+        self.forehand = forehand
+        self.backhand = backhand
+
+    def total_power(self):
+        return sum(self.__dict__.values())
+    def __repr__(self):
+        s = f"AGILITY  \t {self.agility} \n"
+        s += f"STAMINA  \t {self.stamina} \n"
+        s += f"SERVE    \t {self.serve} \n"
+        s += f"VOLLEY   \t {self.volley} \n"
+        s += f"FOREHAND \t {self.forehand} \n"
+        s += f"BACKHAND \t {self.backhand} \n"
+        s += "------------------- \n"
+        s += f" \t \t {self.total_power()} "
+        return s
+
+
+jonah = TennisPlayer( 16, 9, 2, 9, 15, 12)
+jonah.total_power() # must be 63
+
+sum(jonah.__dict__.values())
+
+
+jonah
+
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Convert method to attribute
 #
 # Use the `property` decorator 
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:08.869716Z", "iopub.execute_input": "2020-09-12T13:51:08.870718Z", "iopub.status.idle": "2020-09-12T13:51:08.872104Z", "shell.execute_reply": "2020-09-12T13:51:08.872718Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 class Car:
 
     "A simple example class Car with its model, brand and year"
@@ -123,11 +167,11 @@ class Car:
         return now.year - self.year
 
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:08.876970Z", "iopub.execute_input": "2020-09-12T13:51:08.877938Z", "iopub.status.idle": "2020-09-12T13:51:08.880569Z", "shell.execute_reply": "2020-09-12T13:51:08.881171Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 mycar = Car('Peugeot', 308, 2015)
 mycar.age  # age can now be used as an attribute
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:08.885659Z", "iopub.execute_input": "2020-09-12T13:51:08.886635Z", "iopub.status.idle": "2020-09-12T13:51:08.889041Z", "shell.execute_reply": "2020-09-12T13:51:08.889636Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 try:
     mycar.age = 3 # a protected attribute
 except:
@@ -136,7 +180,7 @@ except:
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## The new Python 3.7 DataClass
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:08.894662Z", "iopub.execute_input": "2020-09-12T13:51:08.895529Z", "iopub.status.idle": "2020-09-12T13:51:08.899673Z", "shell.execute_reply": "2020-09-12T13:51:08.900288Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 from dataclasses import dataclass
 
 @dataclass
@@ -153,20 +197,26 @@ class Car:
         return now.year - self.year
 
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:08.904661Z", "iopub.execute_input": "2020-09-12T13:51:08.905537Z", "iopub.status.idle": "2020-09-12T13:51:08.908195Z", "shell.execute_reply": "2020-09-12T13:51:08.908809Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 mycar = Car('Peugeot', 308, 2015)
 mycar
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:08.913290Z", "iopub.execute_input": "2020-09-12T13:51:08.914287Z", "shell.execute_reply": "2020-09-12T13:51:08.916981Z", "iopub.status.idle": "2020-09-12T13:51:08.917574Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 myothercar = Car('BMW', "1 Series", 2009)
 myothercar
 
+
+# -
+
+# ### Exercise
+#
+# Simplify the `TennisPlayer` class by using `dataclass`.
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Method Overriding
 # - Every Python classes has a `__repr__()` method used when you call `print()` function.
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:08.923067Z", "iopub.execute_input": "2020-09-12T13:51:08.924068Z", "iopub.status.idle": "2020-09-12T13:51:08.925485Z", "shell.execute_reply": "2020-09-12T13:51:08.926095Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 class Car:
     """Simple example class with method overriding """
 
@@ -179,15 +229,32 @@ class Car:
         return f"{self.year} {self.brand} {self.model} {self.__class__.__name__}"
 
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:08.930248Z", "iopub.execute_input": "2020-09-12T13:51:08.931177Z", "iopub.status.idle": "2020-09-12T13:51:08.933589Z", "shell.execute_reply": "2020-09-12T13:51:08.934192Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 mycar = Car('Peugeot', 308, 2015)
 print(mycar)
 
 
+# -
+
+# ### Exercise
+#
+# - Add a representation method to your `TennisPlayer` class 
+# ```py
+# print(jonah)
+# ```
+# ~~~
+# AGILITY  	 16 
+# STAMINA  	 9 
+# SERVE    	 2 
+# VOLLEY   	 9 
+# FOREHAND 	 15 
+# BACKHAND 	 12
+# ~~~
+
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Inheritance
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:08.941271Z", "iopub.execute_input": "2020-09-12T13:51:08.942264Z", "iopub.status.idle": "2020-09-12T13:51:08.944691Z", "shell.execute_reply": "2020-09-12T13:51:08.945271Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 class Rectangle():  # Parent class is defined here
 
     def __init__(self, width, height):
@@ -211,7 +278,7 @@ print(f"Square area \t = {s.area:7.3f}")
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Private Variables and Methods
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:08.949970Z", "iopub.execute_input": "2020-09-12T13:51:08.950830Z", "iopub.status.idle": "2020-09-12T13:51:08.952487Z", "shell.execute_reply": "2020-09-12T13:51:08.953140Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 class DemoClass:
     " Demo class for name mangling "
 
@@ -224,29 +291,29 @@ class DemoClass:
 
 object3 = DemoClass()
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:08.957241Z", "iopub.execute_input": "2020-09-12T13:51:08.958219Z", "iopub.status.idle": "2020-09-12T13:51:08.960789Z", "shell.execute_reply": "2020-09-12T13:51:08.961388Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 object3.public_method()
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:08.965615Z", "iopub.execute_input": "2020-09-12T13:51:08.966464Z", "iopub.status.idle": "2020-09-12T13:51:08.968701Z", "shell.execute_reply": "2020-09-12T13:51:08.969316Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 try:
     object3.__private_method()
 except:
     print(sys.exc_info()[0])
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:08.973812Z", "iopub.execute_input": "2020-09-12T13:51:08.974819Z", "iopub.status.idle": "2020-09-12T13:51:08.977314Z", "shell.execute_reply": "2020-09-12T13:51:08.978031Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 [ s for s in dir(object3) if "method" in s]
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:08.982303Z", "iopub.execute_input": "2020-09-12T13:51:08.983268Z", "iopub.status.idle": "2020-09-12T13:51:08.985636Z", "shell.execute_reply": "2020-09-12T13:51:08.986486Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 object3._DemoClass__private_method()
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:08.990527Z", "iopub.execute_input": "2020-09-12T13:51:08.991673Z", "iopub.status.idle": "2020-09-12T13:51:08.994231Z", "shell.execute_reply": "2020-09-12T13:51:08.994828Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 object3.public_method
 
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Use `class` as a Function.
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:09.001329Z", "iopub.execute_input": "2020-09-12T13:51:09.002688Z", "iopub.status.idle": "2020-09-12T13:51:09.005389Z", "shell.execute_reply": "2020-09-12T13:51:09.005979Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 class Polynomial:
     
    " Class representing a polynom P(x) -> c_0+c_1*x+c_2*x^2+..."
@@ -272,7 +339,7 @@ p(2)
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Operators Overriding 
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:09.016501Z", "iopub.execute_input": "2020-09-12T13:51:09.017415Z", "iopub.status.idle": "2020-09-12T13:51:09.019171Z", "shell.execute_reply": "2020-09-12T13:51:09.019827Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 class MyComplex:
     " Simple class representing a complex"
     width = 7
@@ -304,47 +371,47 @@ class MyComplex:
             return MyComplex(other*self.real, other*self.imag)
 
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:09.024309Z", "iopub.execute_input": "2020-09-12T13:51:09.025290Z", "iopub.status.idle": "2020-09-12T13:51:09.027854Z", "shell.execute_reply": "2020-09-12T13:51:09.028530Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 u = MyComplex(0, 1)
 v = MyComplex(1, 0)
 print('u=', u, "; v=", v)
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:09.033254Z", "iopub.execute_input": "2020-09-12T13:51:09.034193Z", "iopub.status.idle": "2020-09-12T13:51:09.036716Z", "shell.execute_reply": "2020-09-12T13:51:09.037300Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 u+v, u-v, u*v, u==v
 
 # + [markdown] {"slideshow": {"slide_type": "fragment"}}
 # We can change the *class* attribute precision.
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:09.041555Z", "iopub.execute_input": "2020-09-12T13:51:09.042409Z", "iopub.status.idle": "2020-09-12T13:51:09.044973Z", "shell.execute_reply": "2020-09-12T13:51:09.045586Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 MyComplex.precision=2
 print(u.precision)
 print(u)
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:09.049791Z", "iopub.execute_input": "2020-09-12T13:51:09.050862Z", "iopub.status.idle": "2020-09-12T13:51:09.053410Z", "shell.execute_reply": "2020-09-12T13:51:09.054051Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 v.precision
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # We can change the *instance* attribute precision.
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:09.058144Z", "iopub.execute_input": "2020-09-12T13:51:09.059063Z", "iopub.status.idle": "2020-09-12T13:51:09.061352Z", "shell.execute_reply": "2020-09-12T13:51:09.061952Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 u.precision=1
 print(u)
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:09.065739Z", "iopub.execute_input": "2020-09-12T13:51:09.066740Z", "iopub.status.idle": "2020-09-12T13:51:09.069169Z", "shell.execute_reply": "2020-09-12T13:51:09.069934Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 print(v)
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:09.074115Z", "iopub.execute_input": "2020-09-12T13:51:09.075066Z", "iopub.status.idle": "2020-09-12T13:51:09.077687Z", "shell.execute_reply": "2020-09-12T13:51:09.078367Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 MyComplex.precision=5
 u # set attribute keeps its value
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:09.082453Z", "iopub.execute_input": "2020-09-12T13:51:09.083449Z", "iopub.status.idle": "2020-09-12T13:51:09.086044Z", "shell.execute_reply": "2020-09-12T13:51:09.086631Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 v # unset attribute is set to the new value
 
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Rational example
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:09.096857Z", "iopub.execute_input": "2020-09-12T13:51:09.097866Z", "iopub.status.idle": "2020-09-12T13:51:09.099409Z", "shell.execute_reply": "2020-09-12T13:51:09.100023Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 class Rational:
     " Class representing a rational number"
 
@@ -382,7 +449,7 @@ class Rational:
         return f"{self.numer:d}/{self.denom:d}"
 
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T13:51:09.105230Z", "iopub.execute_input": "2020-09-12T13:51:09.106156Z", "iopub.status.idle": "2020-09-12T13:51:09.108659Z", "shell.execute_reply": "2020-09-12T13:51:09.109276Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 r1 = Rational(2,3)
 r2 = Rational(3,4)
 r1+r2, r1-r2, r1*r2, r1/r2

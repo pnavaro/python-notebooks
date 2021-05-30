@@ -9,7 +9,7 @@
 #       extension: .py
 #       format_name: light
 #       format_version: '1.5'
-#       jupytext_version: 1.6.0
+#       jupytext_version: 1.8.2
 #   kernelspec:
 #     display_name: Python 3
 #     language: python
@@ -22,22 +22,22 @@
 # ## Operating System Interface
 #
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:17.842551Z", "iopub.execute_input": "2020-09-12T14:02:17.844712Z", "iopub.status.idle": "2020-09-12T14:02:17.848828Z", "shell.execute_reply": "2020-09-12T14:02:17.849382Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 import os
 os.getcwd()      # Return the current working directory
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:17.854967Z", "iopub.execute_input": "2020-09-12T14:02:17.855828Z", "iopub.status.idle": "2020-09-12T14:02:17.870318Z", "shell.execute_reply": "2020-09-12T14:02:17.870905Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 import sys
 if sys.platform == "darwin":
     os.environ['CC']='gcc-10' # Change the default C compiler to gcc on macos
     
 os.system('mkdir today') # Run the command mkdir in the system shell
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:17.875000Z", "iopub.execute_input": "2020-09-12T14:02:17.875852Z", "iopub.status.idle": "2020-09-12T14:02:17.888747Z", "shell.execute_reply": "2020-09-12T14:02:17.889316Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 os.chdir('today')   # Change current working directory
 os.system('touch data.db') # Create the empty file data.db
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:17.894544Z", "iopub.execute_input": "2020-09-12T14:02:17.895458Z", "iopub.status.idle": "2020-09-12T14:02:17.897685Z", "shell.execute_reply": "2020-09-12T14:02:17.898263Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 import shutil
 shutil.copyfile('data.db', 'archive.db')
 if os.path.exists('backup.db'):  # If file backup.db exists
@@ -50,12 +50,12 @@ shutil.os.chdir('..')
 #
 # The glob module provides a function for making file lists from directory wildcard searches:
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:17.902089Z", "iopub.execute_input": "2020-09-12T14:02:17.902980Z", "iopub.status.idle": "2020-09-12T14:02:17.906801Z", "shell.execute_reply": "2020-09-12T14:02:17.907454Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 import glob
 glob.glob('*.py')
 
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:17.914517Z", "iopub.execute_input": "2020-09-12T14:02:17.915689Z", "iopub.status.idle": "2020-09-12T14:02:17.916779Z", "shell.execute_reply": "2020-09-12T14:02:17.917343Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 def recursive_replace( root, pattern, replace ) :
     """
     Function to replace a string inside a directory
@@ -83,51 +83,51 @@ def recursive_replace( root, pattern, replace ) :
 import sys
 print(sys.argv)
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:17.921694Z", "iopub.execute_input": "2020-09-12T14:02:17.922596Z", "iopub.status.idle": "2020-09-12T14:02:17.925132Z", "shell.execute_reply": "2020-09-12T14:02:17.925709Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 %run demo.py one two three
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Random
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:17.930206Z", "iopub.execute_input": "2020-09-12T14:02:17.931060Z", "iopub.status.idle": "2020-09-12T14:02:17.933445Z", "shell.execute_reply": "2020-09-12T14:02:17.933981Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 import random
 random.choice(['apple', 'pear', 'banana'])
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:17.938947Z", "iopub.execute_input": "2020-09-12T14:02:17.939786Z", "shell.execute_reply": "2020-09-12T14:02:17.942082Z", "iopub.status.idle": "2020-09-12T14:02:17.942743Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 random.sample(range(100), 10)   # sampling without replacement
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:17.946792Z", "iopub.execute_input": "2020-09-12T14:02:17.947753Z", "iopub.status.idle": "2020-09-12T14:02:17.950209Z", "shell.execute_reply": "2020-09-12T14:02:17.950776Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 random.random()    # random float
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:17.954929Z", "iopub.execute_input": "2020-09-12T14:02:17.955873Z", "iopub.status.idle": "2020-09-12T14:02:17.958018Z", "shell.execute_reply": "2020-09-12T14:02:17.958675Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 random.randrange(6)    # random integer chosen from range(6)
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Statistics
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:17.962926Z", "iopub.execute_input": "2020-09-12T14:02:17.963785Z", "iopub.status.idle": "2020-09-12T14:02:17.972337Z", "shell.execute_reply": "2020-09-12T14:02:17.972920Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 import statistics
 data = [2.75, 1.75, 1.25, 0.25, 0.5, 1.25, 3.5]
 statistics.mean(data)
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:17.977233Z", "iopub.execute_input": "2020-09-12T14:02:17.978111Z", "shell.execute_reply": "2020-09-12T14:02:17.980379Z", "iopub.status.idle": "2020-09-12T14:02:17.980993Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 statistics.median(data)
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:17.985304Z", "iopub.execute_input": "2020-09-12T14:02:17.986182Z", "iopub.status.idle": "2020-09-12T14:02:17.988582Z", "shell.execute_reply": "2020-09-12T14:02:17.989155Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 statistics.variance(data)
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Performance Measurement
 #
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:18.032171Z", "iopub.execute_input": "2020-09-12T14:02:18.033085Z", "shell.execute_reply": "2020-09-12T14:02:18.035551Z", "iopub.status.idle": "2020-09-12T14:02:18.036082Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 from timeit import Timer
 Timer('t=a; a=b; b=t', 'a=1; b=2').timeit()
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:18.071011Z", "iopub.execute_input": "2020-09-12T14:02:18.072000Z", "iopub.status.idle": "2020-09-12T14:02:18.074375Z", "shell.execute_reply": "2020-09-12T14:02:18.074934Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 Timer('a,b = b,a', 'a=1; b=2').timeit()
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:18.121691Z", "iopub.execute_input": "2020-09-12T14:02:18.164035Z", "iopub.status.idle": "2020-09-12T14:02:20.296945Z", "shell.execute_reply": "2020-09-12T14:02:20.297597Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 %%timeit a=1; b=2
 a,b = b,a
 
@@ -143,7 +143,7 @@ a,b = b,a
 # - The doctest module provides a tool for scanning a module and validating tests embedded in a program’s docstrings. 
 # - This improves the documentation by providing the user with an example and it allows the doctest module to make sure the code remains true to the documentation:
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:20.302066Z", "iopub.execute_input": "2020-09-12T14:02:20.302923Z", "iopub.status.idle": "2020-09-12T14:02:21.696140Z", "shell.execute_reply": "2020-09-12T14:02:21.696741Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 def average(values):
     """Computes the arithmetic mean of a list of numbers.
 

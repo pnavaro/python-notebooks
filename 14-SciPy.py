@@ -8,7 +8,7 @@
 #       extension: .py
 #       format_name: light
 #       format_version: '1.5'
-#       jupytext_version: 1.6.0
+#       jupytext_version: 1.8.2
 #   kernelspec:
 #     display_name: Python 3
 #     language: python
@@ -25,7 +25,7 @@
 # - scipy contains numpy, it can be considered as an extension of numpy.
 # - the add-on toolkits [Scikits](https://scikits.appspot.com/scikits) complements scipy.
 
-# + {"slideshow": {"slide_type": "skip"}, "execution": {"iopub.status.busy": "2020-09-12T14:17:15.936486Z", "iopub.execute_input": "2020-09-12T14:17:15.938394Z", "iopub.status.idle": "2020-09-12T14:17:16.429133Z", "shell.execute_reply": "2020-09-12T14:17:16.429710Z"}}
+# + {"slideshow": {"slide_type": "skip"}}
 %matplotlib inline
 %config InlineBackend.figure_format = 'retina'
 import numpy as np
@@ -45,7 +45,7 @@ plt.rcParams['figure.figsize'] = (10,6)
 # - `sparse` : Sparse matrices and associated routines 
 #
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T14:17:16.506164Z", "iopub.execute_input": "2020-09-12T14:17:16.507121Z", "iopub.status.idle": "2020-09-12T14:17:16.656919Z", "shell.execute_reply": "2020-09-12T14:17:16.657548Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 from scipy.interpolate import interp1d 
 x = np.linspace(-1, 1, num=5)  # 5 points evenly spaced in [-1,1].
 y = (x-1.)*(x-0.5)*(x+0.5)     # x and y are numpy arrays
@@ -55,7 +55,7 @@ f2 = interp1d(x,y, kind='quadratic')
 f3 = interp1d(x,y, kind='cubic') 
 f4 = interp1d(x,y, kind='nearest') 
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T14:17:16.665449Z", "iopub.execute_input": "2020-09-12T14:17:16.698435Z", "iopub.status.idle": "2020-09-12T14:17:17.100571Z", "shell.execute_reply": "2020-09-12T14:17:17.101112Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 xnew = np.linspace(-1, 1, num=40) 
 ynew = (xnew-1.)*(xnew-0.5)*(xnew+0.5) 
 plt.plot(x,y,'D',xnew,f0(xnew),':', xnew, f1(xnew),'-.',
@@ -64,7 +64,7 @@ plt.plot(x,y,'D',xnew,f0(xnew),':', xnew, f1(xnew),'-.',
 plt.legend(['data','zero','linear','quadratic','cubic','nearest','exact'],
           loc='best');
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T14:17:17.243719Z", "iopub.execute_input": "2020-09-12T14:17:17.244691Z", "iopub.status.idle": "2020-09-12T14:17:17.246852Z", "shell.execute_reply": "2020-09-12T14:17:17.247393Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 from scipy.interpolate import interp2d
 x,y = sp.mgrid[0:1:20j,0:1:20j]  #create the grid 20x20
 z = np.cos(4*sp.pi*x)*np.sin(4*sp.pi*y) #initialize the field
@@ -72,7 +72,7 @@ T1=interp2d(x,y,z,kind='linear')
 T2=interp2d(x,y,z,kind='cubic') 
 T3=interp2d(x,y,z,kind='quintic')
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T14:17:17.255498Z", "iopub.execute_input": "2020-09-12T14:17:17.256326Z", "iopub.status.idle": "2020-09-12T14:17:17.974877Z", "shell.execute_reply": "2020-09-12T14:17:17.975517Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 X,Y=sp.mgrid[0:1:100j,0:1:100j] #create the interpolation grid 100x100 
 # complex -> number of points, float -> step size
 plt.figure(1) 
@@ -95,12 +95,12 @@ plt.title('100x100 quintic')
 # - Discrete cosinus transform : dct
 # - Convolution product : convolve
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:17:17.982603Z", "iopub.execute_input": "2020-09-12T14:17:17.983607Z", "iopub.status.idle": "2020-09-12T14:17:22.623113Z", "shell.execute_reply": "2020-09-12T14:17:22.623685Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 from numpy.fft import fft, ifft
 x = np.random.random(2048)
 %timeit ifft(fft(x))
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:17:22.628695Z", "iopub.execute_input": "2020-09-12T14:17:22.629465Z", "iopub.status.idle": "2020-09-12T14:17:26.723442Z", "shell.execute_reply": "2020-09-12T14:17:26.724035Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 from scipy.fftpack import fft, ifft
 x = np.random.random(2048)
 %timeit ifft(fft(x))
@@ -111,7 +111,7 @@ x = np.random.random(2048)
 # - Matrix functions : expm, sinm, sinhm,...  
 # - Block matrices diagonal, triangular, periodic,...
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:17:26.732815Z", "iopub.execute_input": "2020-09-12T14:17:26.733727Z", "iopub.status.idle": "2020-09-12T14:17:26.737386Z", "shell.execute_reply": "2020-09-12T14:17:26.737956Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 import scipy.linalg as spl 
 b=np.ones(5)
 A=np.array([[1.,3.,0., 0.,0.],
@@ -127,7 +127,7 @@ AB=np.array([[0.,3.,-4.,-3.,-3.],
 print("x=",spl.solve_banded((2,1),AB,b)) # LAPACK ( gbsv )
 
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T14:17:26.744189Z", "iopub.execute_input": "2020-09-12T14:17:26.746272Z", "shell.execute_reply": "2020-09-12T14:17:26.749814Z", "iopub.status.idle": "2020-09-12T14:17:26.750732Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 P,L,U = spl.lu(A) #  P A = L U
 np.set_printoptions(precision=3)
 for M in (P,L,U):
@@ -141,7 +141,7 @@ for M in (P,L,U):
 # - Fast Matrix-vector product.
 # - Conversion to other format could be costly.
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:17:26.809145Z", "iopub.execute_input": "2020-09-12T14:17:26.810468Z", "iopub.status.idle": "2020-09-12T14:17:26.814990Z", "shell.execute_reply": "2020-09-12T14:17:26.815744Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 import scipy.sparse as spsp
 row = np.array([0,2,2,0,1,2]) 
 col = np.array([0,0,1,2,2,2])
@@ -149,7 +149,7 @@ data  = np.array([1,2,3,4,5,6])
 Mcsc1 = spsp.csc_matrix((data,(row,col)),shape=(3,3)) 
 Mcsc1.todense()
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:17:26.826295Z", "iopub.execute_input": "2020-09-12T14:17:26.827566Z", "iopub.status.idle": "2020-09-12T14:17:26.832313Z", "shell.execute_reply": "2020-09-12T14:17:26.833136Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 indptr  = np.array([0,2,3,6]) 
 indices = np.array([0,2,2,0,1,2]) 
 data    = np.array([1,2,3,4,5,6]) 
@@ -185,7 +185,7 @@ Mcsc2.todense()
 #
 # The LinearOperator is used for matrix-free numerical methods.
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:17:26.840147Z", "iopub.execute_input": "2020-09-12T14:17:26.841279Z", "iopub.status.idle": "2020-09-12T14:17:26.875505Z", "shell.execute_reply": "2020-09-12T14:17:26.876473Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 import scipy.sparse.linalg as spspl
 def mv(v):
    return np.array([2*v[0],3*v[1]])
@@ -193,16 +193,16 @@ def mv(v):
 A=spspl.LinearOperator((2 ,2),matvec=mv,dtype=float )
 A
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T14:17:26.882818Z", "iopub.execute_input": "2020-09-12T14:17:26.884155Z", "iopub.status.idle": "2020-09-12T14:17:26.888584Z", "shell.execute_reply": "2020-09-12T14:17:26.889395Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 A*np.ones(2)
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:17:26.896480Z", "iopub.execute_input": "2020-09-12T14:17:26.897764Z", "iopub.status.idle": "2020-09-12T14:17:26.902265Z", "shell.execute_reply": "2020-09-12T14:17:26.903078Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 A.matmat(np.array([[1,-2],[3,6]]))
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## LU decomposition
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:17:26.912563Z", "iopub.execute_input": "2020-09-12T14:17:26.913782Z", "iopub.status.idle": "2020-09-12T14:17:26.920074Z", "shell.execute_reply": "2020-09-12T14:17:26.920886Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 N = 50
 un = np.ones(N)
 w = np.random.rand(N+1)
@@ -212,14 +212,14 @@ b = un
 op = spspl.splu(A)
 op
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:17:26.926070Z", "iopub.execute_input": "2020-09-12T14:17:26.927415Z", "iopub.status.idle": "2020-09-12T14:17:26.931809Z", "shell.execute_reply": "2020-09-12T14:17:26.932624Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 x=op.solve(b)
 spl.norm(A*x-b)
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Conjugate Gradient
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:17:26.941001Z", "iopub.execute_input": "2020-09-12T14:17:26.946217Z", "iopub.status.idle": "2020-09-12T14:17:26.949574Z", "shell.execute_reply": "2020-09-12T14:17:26.950147Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 global k
 k=0
 def f(xk): # function called at every iterations
@@ -232,13 +232,13 @@ x,info=spspl.cg(A,b,x0=np.zeros(N),tol=1.0e-12,maxiter=N,M=None,callback=f)
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Preconditioned conjugate gradient
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:17:26.954769Z", "iopub.execute_input": "2020-09-12T14:17:26.955871Z", "iopub.status.idle": "2020-09-12T14:17:26.959314Z", "shell.execute_reply": "2020-09-12T14:17:26.959905Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 pc=spspl.spilu(A,drop_tol=0.1)  # pc is an ILU decomposition
 xp=pc.solve(b)
 spl.norm(A*xp-b)
 
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:17:26.966049Z", "iopub.execute_input": "2020-09-12T14:17:26.966944Z", "iopub.status.idle": "2020-09-12T14:17:26.973399Z", "shell.execute_reply": "2020-09-12T14:17:26.973984Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 def mv(v):
     return pc.solve(v)
 lo = spspl.LinearOperator((N,N),matvec=mv)
@@ -251,13 +251,13 @@ x,info=spspl.cg(A,b,x0=np.zeros(N),tol=1.e-12,maxiter=N,M=lo,callback=f)
 # - quad, dblquad, tplquad,... Fortran library QUADPACK.
 #
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:17:26.978341Z", "iopub.execute_input": "2020-09-12T14:17:26.979147Z", "iopub.status.idle": "2020-09-12T14:17:27.082255Z", "shell.execute_reply": "2020-09-12T14:17:27.082829Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 import scipy.integrate as spi
 
 x2=lambda x: x**2
 4.**3/3  # int(x2) in [0,4]
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:17:27.087471Z", "iopub.execute_input": "2020-09-12T14:17:27.088374Z", "iopub.status.idle": "2020-09-12T14:17:27.090667Z", "shell.execute_reply": "2020-09-12T14:17:27.091224Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 spi.quad(x2,0.,4.)
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
@@ -273,7 +273,7 @@ spi.quad(x2,0.,4.)
 # $$
 # with $y_1(0) = 2 $ and $ y_2(0) = 0. $.
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:17:27.096802Z", "iopub.execute_input": "2020-09-12T14:17:27.097666Z", "iopub.status.idle": "2020-09-12T14:17:27.099006Z", "shell.execute_reply": "2020-09-12T14:17:27.099559Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 import numpy as np
 import scipy.integrate as spi
 
@@ -284,12 +284,12 @@ def vdp1000(y,t):
      return dy 
 
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T14:17:27.103955Z", "iopub.execute_input": "2020-09-12T14:17:27.104850Z", "iopub.status.idle": "2020-09-12T14:17:27.107325Z", "shell.execute_reply": "2020-09-12T14:17:27.107893Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 t0, tf =0,  3000
 N = 300000
 t, dt = np.linspace(t0,tf,N, retstep=True)
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:17:27.112488Z", "iopub.execute_input": "2020-09-12T14:17:27.113396Z", "iopub.status.idle": "2020-09-12T14:17:27.424693Z", "shell.execute_reply": "2020-09-12T14:17:27.425407Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 y=spi.odeint(vdp1000,[2.,0.],t)
 plt.plot(t,y[:,0]);
 # -
@@ -299,7 +299,7 @@ plt.plot(t,y[:,0]);
 # The following code solve the Laplace equation using a dense matrix.
 # - Modified the code to use a sparse matrix
 
-# + {"execution": {"iopub.status.busy": "2020-09-12T14:17:27.462080Z", "iopub.execute_input": "2020-09-12T14:17:27.462973Z", "iopub.status.idle": "2020-09-12T14:17:28.327353Z", "shell.execute_reply": "2020-09-12T14:17:28.328125Z"}}
+# +
 %matplotlib inline
 %config InlineBackend.figure_format = "retina"
 import numpy as np
@@ -341,18 +341,17 @@ for j in range(n):
          A[ii,jj] = -1
       A[ii,ii] = 4
       ii = ii+1
+# -
 
 
-# + {"execution": {"iopub.status.busy": "2020-09-12T14:17:27.462080Z", "iopub.execute_input": "2020-09-12T14:17:27.462973Z", "iopub.status.idle": "2020-09-12T14:17:28.327353Z", "shell.execute_reply": "2020-09-12T14:17:28.328125Z"}}
 %%time
 U = np.linalg.solve(A,np.ravel(h**2*T))
 
-# + {"execution": {"iopub.status.busy": "2020-09-12T14:17:27.462080Z", "iopub.execute_input": "2020-09-12T14:17:27.462973Z", "iopub.status.idle": "2020-09-12T14:17:28.327353Z", "shell.execute_reply": "2020-09-12T14:17:28.328125Z"}}
 T = U.reshape(n,n)
 plt.contourf(X,Y,T)
 plt.colorbar()
 
-# + {"execution": {"iopub.status.busy": "2020-09-12T14:17:28.336444Z", "iopub.execute_input": "2020-09-12T14:17:28.337307Z", "iopub.status.idle": "2020-09-12T14:17:29.339935Z", "shell.execute_reply": "2020-09-12T14:17:29.340588Z"}}
+# +
 import scipy.sparse as spsp
 import scipy.sparse.linalg as spspl
 
@@ -384,11 +383,10 @@ upper = np.diag(np.ones(n * (n - 1)), n)
 # Lower diagonal array offset by -n
 lower = np.diag(np.ones(n * (n - 1)), -n)
 S += upper + lower
+# -
 
-# + {"execution": {"iopub.status.busy": "2020-09-12T14:17:28.336444Z", "iopub.execute_input": "2020-09-12T14:17:28.337307Z", "iopub.status.idle": "2020-09-12T14:17:29.339935Z", "shell.execute_reply": "2020-09-12T14:17:29.340588Z"}}
 %%time
 U = sp.linalg.solve(S,np.ravel(h**2*T))
 
-# + {"execution": {"iopub.status.busy": "2020-09-12T14:17:28.336444Z", "iopub.execute_input": "2020-09-12T14:17:28.337307Z", "iopub.status.idle": "2020-09-12T14:17:29.339935Z", "shell.execute_reply": "2020-09-12T14:17:29.340588Z"}}
 plt.contourf(X,Y,U.reshape(n,n))
 plt.colorbar();

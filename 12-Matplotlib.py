@@ -9,7 +9,7 @@
 #       extension: .py
 #       format_name: light
 #       format_version: '1.5'
-#       jupytext_version: 1.6.0
+#       jupytext_version: 1.8.2
 #   kernelspec:
 #     display_name: Python 3
 #     language: python
@@ -32,7 +32,7 @@
 # ## Line Plots
 #  - `np.linspace(0,1,10)` return 10 evenly spaced values over $[0,1]$.
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:32.536296Z", "iopub.execute_input": "2020-09-12T14:02:32.538280Z", "iopub.status.idle": "2020-09-12T14:02:35.259111Z", "shell.execute_reply": "2020-09-12T14:02:35.259753Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 %matplotlib inline
 # inline can be replaced by notebook to get interactive plots
 import numpy as np
@@ -40,12 +40,12 @@ import matplotlib.pyplot as plt
 
 %config InlineBackend.figure_format = "retina"
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:35.304606Z", "iopub.execute_input": "2020-09-12T14:02:35.305430Z", "iopub.status.idle": "2020-09-12T14:02:35.654122Z", "shell.execute_reply": "2020-09-12T14:02:35.654661Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 plt.rcParams['figure.figsize'] = (10.0, 6.0) # set figures display bigger
 x = np.linspace(- 5*np.pi,5*np.pi,100) 
 plt.plot(x,np.sin(x)/x);
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:35.836298Z", "iopub.execute_input": "2020-09-12T14:02:35.837250Z", "iopub.status.idle": "2020-09-12T14:02:35.840434Z", "shell.execute_reply": "2020-09-12T14:02:35.840998Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 plt.plot(x,np.sin(x)/x,x,np.sin(2*x)/x);
 
 # + [markdown] {"slideshow": {"slide_type": "skip"}}
@@ -54,17 +54,17 @@ plt.plot(x,np.sin(x)/x,x,np.sin(2*x)/x);
 #
 # *Note: the example below won’t render on non-retina screens*
 
-# + {"slideshow": {"slide_type": "skip"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:35.853483Z", "iopub.execute_input": "2020-09-12T14:02:35.854410Z", "iopub.status.idle": "2020-09-12T14:02:35.855817Z", "shell.execute_reply": "2020-09-12T14:02:35.856379Z"}}
+# + {"slideshow": {"slide_type": "skip"}}
 %config InlineBackend.figure_format = 'retina'
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:36.017894Z", "iopub.execute_input": "2020-09-12T14:02:36.084223Z", "iopub.status.idle": "2020-09-12T14:02:36.089005Z", "shell.execute_reply": "2020-09-12T14:02:36.089548Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 # red, dot-dash, triangles and blue, dot-dash, bullet
 plt.plot(x,np.sin(x)/x, 'r-^',x,np.sin(2*x)/x, 'b-o');
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Simple Scatter Plot
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:36.119099Z", "iopub.execute_input": "2020-09-12T14:02:36.178526Z", "iopub.status.idle": "2020-09-12T14:02:36.379593Z", "shell.execute_reply": "2020-09-12T14:02:36.380160Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 x = np.linspace(-1,1,50)
 y = np.sqrt(1-x**2)
 plt.scatter(x,y);
@@ -72,7 +72,7 @@ plt.scatter(x,y);
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Colormapped Scatter Plot
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:36.435959Z", "iopub.execute_input": "2020-09-12T14:02:36.440138Z", "iopub.status.idle": "2020-09-12T14:02:36.738293Z", "shell.execute_reply": "2020-09-12T14:02:36.738842Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 theta = np.linspace(0,6*np.pi,50) # 50 steps from 0 to 6 PI
 size = 30*np.ones(50) # array with 50 values set to 30
 z = np.random.rand(50) # array with 50 random values in [0,1]
@@ -84,7 +84,7 @@ plt.colorbar();
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Change Colormap
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:36.791969Z", "iopub.execute_input": "2020-09-12T14:02:36.796047Z", "iopub.status.idle": "2020-09-12T14:02:37.021532Z", "shell.execute_reply": "2020-09-12T14:02:37.022106Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 fig = plt.figure() # create a figure
 ax = fig.add_subplot(1, 1, 1) # add a single plot
 ax.scatter(x,y,size,z,cmap='jet');
@@ -96,7 +96,7 @@ ax.set_aspect('equal', 'datalim')
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Multiple Figures
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:37.058305Z", "iopub.execute_input": "2020-09-12T14:02:37.060037Z", "iopub.status.idle": "2020-09-12T14:02:37.436792Z", "shell.execute_reply": "2020-09-12T14:02:37.437436Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 plt.figure()
 plt.plot(x)
 plt.figure()
@@ -105,7 +105,7 @@ plt.plot(z,'ro');
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Multiple Plots Using `subplot`
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:37.629536Z", "iopub.execute_input": "2020-09-12T14:02:37.630416Z", "iopub.status.idle": "2020-09-12T14:02:37.837065Z", "shell.execute_reply": "2020-09-12T14:02:37.837703Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 plt.subplot(1,2,1) # 1 row 1, 2 columns, active plot number 1
 plt.plot(x,'b-*')
 plt.subplot(1,2,2) # 1 row 1, 2 columns, active plot number 2
@@ -115,7 +115,7 @@ plt.plot(z,'ro');
 # ## Legends
 #  - Legends labels with plot
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:37.861619Z", "iopub.execute_input": "2020-09-12T14:02:37.946933Z", "iopub.status.idle": "2020-09-12T14:02:38.163293Z", "shell.execute_reply": "2020-09-12T14:02:38.163865Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 theta =np.linspace(0,4*np.pi,200)
 plt.plot(np.sin(theta), label='sin')
 plt.plot(np.cos(theta), label='cos')
@@ -124,7 +124,7 @@ plt.legend();
 # + [markdown] {"slideshow": {"slide_type": "subslide"}}
 # - Labelling with `legend`
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:38.273004Z", "iopub.execute_input": "2020-09-12T14:02:38.281005Z", "iopub.status.idle": "2020-09-12T14:02:38.818425Z", "shell.execute_reply": "2020-09-12T14:02:38.818996Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 plt.plot(np.sin(theta))
 plt.plot(np.cos(theta)**2)
 plt.legend(['sin','$\cos^2$']);
@@ -132,12 +132,12 @@ plt.legend(['sin','$\cos^2$']);
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Titles and Axis Labels
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:38.880285Z", "iopub.execute_input": "2020-09-12T14:02:38.886240Z", "iopub.status.idle": "2020-09-12T14:02:39.095155Z", "shell.execute_reply": "2020-09-12T14:02:39.095693Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 plt.plot(theta,np.sin(theta))
 plt.xlabel('radians from 0 to $4\pi$')
 plt.ylabel('amplitude');
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:39.135696Z", "iopub.execute_input": "2020-09-12T14:02:39.136506Z", "iopub.status.idle": "2020-09-12T14:02:39.916533Z", "shell.execute_reply": "2020-09-12T14:02:39.917070Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 t = np.arange(0.01, 20.0, 0.01)
 
 plt.subplot(121) 
@@ -154,20 +154,20 @@ plt.grid(True)
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Plot Grid and Save to File
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:40.013088Z", "iopub.execute_input": "2020-09-12T14:02:40.182917Z", "iopub.status.idle": "2020-09-12T14:02:40.187991Z", "shell.execute_reply": "2020-09-12T14:02:40.188577Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 theta = np.linspace(0,2*np.pi,100)
 plt.plot(np.cos(theta),np.sin(theta))
 plt.grid();
 
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:40.194998Z", "iopub.execute_input": "2020-09-12T14:02:40.195881Z", "iopub.status.idle": "2020-09-12T14:02:40.349860Z", "shell.execute_reply": "2020-09-12T14:02:40.350653Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 plt.savefig('circle.png');
 %ls *.png
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Histogram 
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:40.355486Z", "iopub.execute_input": "2020-09-12T14:02:40.436059Z", "iopub.status.idle": "2020-09-12T14:02:40.645397Z", "shell.execute_reply": "2020-09-12T14:02:40.645959Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 from numpy.random import randn
 plt.hist(randn(1000));
 
@@ -175,13 +175,13 @@ plt.hist(randn(1000));
 # Change the number of bins and supress display of returned array with ;
 #
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:40.650193Z", "iopub.execute_input": "2020-09-12T14:02:40.665470Z", "iopub.status.idle": "2020-09-12T14:02:40.903216Z", "shell.execute_reply": "2020-09-12T14:02:40.903864Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 plt.hist(randn(1000), 30);
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Contour Plot
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:40.909342Z", "iopub.execute_input": "2020-09-12T14:02:40.910187Z", "shell.execute_reply": "2020-09-12T14:02:41.764479Z", "iopub.status.idle": "2020-09-12T14:02:41.765069Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 x = y = np.arange(-2.0*np.pi, 2.0*np.pi+0.01, 0.01)
 X, Y = np.meshgrid(x, y)
 Z = np.sin(X)*np.cos(Y)
@@ -191,7 +191,7 @@ plt.contourf(X, Y, Z,cmap=plt.cm.hot);
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Image Display
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:41.769470Z", "iopub.execute_input": "2020-09-12T14:02:41.770263Z", "iopub.status.idle": "2020-09-12T14:02:44.119395Z", "shell.execute_reply": "2020-09-12T14:02:44.119938Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 img = plt.imread("https://hackage.haskell.org/package/JuicyPixels-extra-0.1.0/src/data-examples/lenna.png")
 plt.imshow(img)
 
@@ -200,7 +200,7 @@ plt.imshow(img)
 #
 # Best method to create a plot with many components
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:44.151023Z", "iopub.execute_input": "2020-09-12T14:02:44.151894Z", "iopub.status.idle": "2020-09-12T14:02:44.370852Z", "shell.execute_reply": "2020-09-12T14:02:44.371455Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 fig = plt.figure()
 axis = fig.add_subplot(111, aspect='equal',
                      xlim=(-2, 2), ylim=(-2, 2))
@@ -242,7 +242,7 @@ axis.text(-0.5,1.1,"BOX")
 # - [Yellowbrick](https://www.scikit-yb.org/en/latest/) : Yellowbrick: Machine Learning Visualization
 # - [scikit-plot](https://scikit-plot.readthedocs.io/en/stable/) : Plot sklearn metrics
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:44.394119Z", "iopub.execute_input": "2020-09-12T14:02:44.394916Z", "iopub.status.idle": "2020-09-12T14:02:44.404167Z", "shell.execute_reply": "2020-09-12T14:02:44.404736Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 #example from Filipe Fernandes
 #http://nbviewer.jupyter.org/gist/ocefpaf/9730c697819e91b99f1d694983e39a8f
 import numpy as np
@@ -312,7 +312,7 @@ def basic_animation(frames=91, interval=30, dt=0.3):
                                    frames=frames, interval=interval)
 
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T14:02:44.427659Z", "iopub.execute_input": "2020-09-12T14:02:44.428474Z", "iopub.status.idle": "2020-09-12T14:02:55.921948Z", "shell.execute_reply": "2020-09-12T14:02:55.922766Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 from IPython.display import HTML
 
 HTML(basic_animation(dt=0.3).to_jshtml())

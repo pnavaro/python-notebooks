@@ -9,7 +9,7 @@
 #       extension: .py
 #       format_name: light
 #       format_version: '1.5'
-#       jupytext_version: 1.6.0
+#       jupytext_version: 1.8.2
 #   kernelspec:
 #     display_name: Python 3
 #     language: python
@@ -25,7 +25,7 @@
 # - Don't forget the ':' character.
 # - The body of the loop is indented
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.467648Z", "iopub.execute_input": "2020-09-12T13:29:14.468588Z", "iopub.status.idle": "2020-09-12T13:29:14.471122Z", "shell.execute_reply": "2020-09-12T13:29:14.471838Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 # Fibonacci series:
 # the sum of two elements defines the next
 a, b = 0, 1
@@ -42,7 +42,7 @@ while b < 500:
 #
 #
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.477066Z", "iopub.execute_input": "2020-09-12T13:29:14.477934Z", "iopub.status.idle": "2020-09-12T13:29:14.480455Z", "shell.execute_reply": "2020-09-12T13:29:14.481074Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 x = 42
 if x < 0:
     x = 0
@@ -75,11 +75,11 @@ else:
 # We use for statement for looping over an iterable object. If we use it with a string, it loops over its characters.
 #
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.485077Z", "iopub.execute_input": "2020-09-12T13:29:14.485939Z", "iopub.status.idle": "2020-09-12T13:29:14.489057Z", "shell.execute_reply": "2020-09-12T13:29:14.488446Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 for c in "python":
     print(c)
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.493411Z", "iopub.execute_input": "2020-09-12T13:29:14.494295Z", "iopub.status.idle": "2020-09-12T13:29:14.497306Z", "shell.execute_reply": "2020-09-12T13:29:14.496704Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 for word in "Python ENSAI september 7th 2020".split(" "):
     print(word, len(word))   
 
@@ -109,16 +109,16 @@ for word in "Python ENSAI september 7th 2020".split(" "):
 # - Since Python 3, the object returned by `range()` doesn’t return a list to save memory space. `xrange` no longer exists.
 # - Use function list() to creates it.
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.509656Z", "iopub.execute_input": "2020-09-12T13:29:14.510931Z", "iopub.status.idle": "2020-09-12T13:29:14.513497Z", "shell.execute_reply": "2020-09-12T13:29:14.514125Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 list(range(5))
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.518878Z", "iopub.execute_input": "2020-09-12T13:29:14.519873Z", "iopub.status.idle": "2020-09-12T13:29:14.522334Z", "shell.execute_reply": "2020-09-12T13:29:14.523025Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 list(range(2, 5))
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.527604Z", "iopub.execute_input": "2020-09-12T13:29:14.528555Z", "iopub.status.idle": "2020-09-12T13:29:14.531825Z", "shell.execute_reply": "2020-09-12T13:29:14.531192Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 list(range(-1, -5, -1))
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.535974Z", "iopub.execute_input": "2020-09-12T13:29:14.536885Z", "iopub.status.idle": "2020-09-12T13:29:14.539202Z", "shell.execute_reply": "2020-09-12T13:29:14.539818Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 for i in range(5):
     print(i, end=' ')
 
@@ -132,7 +132,7 @@ for i in range(5):
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## `break` Statement.
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.545429Z", "iopub.execute_input": "2020-09-12T13:29:14.546406Z", "iopub.status.idle": "2020-09-12T13:29:14.548856Z", "shell.execute_reply": "2020-09-12T13:29:14.549479Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 for n in range(2, 10):     # n = 2,3,4,5,6,7,8,9
     for x in range(2, n):  # x = 2, ..., n-1
         if n % x == 0:     # Return the division remain (mod)
@@ -145,22 +145,22 @@ for n in range(2, 10):     # n = 2,3,4,5,6,7,8,9
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ###  `iter` Function
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.554190Z", "iopub.execute_input": "2020-09-12T13:29:14.555184Z", "iopub.status.idle": "2020-09-12T13:29:14.557597Z", "shell.execute_reply": "2020-09-12T13:29:14.558257Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 course = """ Python september 7, 14 2020 ENSAI Rennes """.split()
 print(course)
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.562257Z", "iopub.execute_input": "2020-09-12T13:29:14.563108Z", "iopub.status.idle": "2020-09-12T13:29:14.565344Z", "shell.execute_reply": "2020-09-12T13:29:14.565966Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 iterator = iter(course)
 print(iterator.__next__())
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.569788Z", "iopub.execute_input": "2020-09-12T13:29:14.570761Z", "iopub.status.idle": "2020-09-12T13:29:14.573163Z", "shell.execute_reply": "2020-09-12T13:29:14.573749Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 print(iterator.__next__())
 
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Defining Function: `def` statement
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.578850Z", "iopub.execute_input": "2020-09-12T13:29:14.579774Z", "shell.execute_reply": "2020-09-12T13:29:14.582794Z", "iopub.status.idle": "2020-09-12T13:29:14.582210Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 def is_palindromic(s):
     "Return True if the input sequence is a palindrome"
     return s == s[::-1]
@@ -174,7 +174,7 @@ is_palindromic("kayak")
 # - Functions without a return statement do return a value called `None`.
 #
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.588088Z", "iopub.execute_input": "2020-09-12T13:29:14.589109Z", "iopub.status.idle": "2020-09-12T13:29:14.591652Z", "shell.execute_reply": "2020-09-12T13:29:14.592388Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 def fib(n):
     """Print a Fibonacci series up to n."""
     a, b = 0, 1
@@ -191,7 +191,7 @@ print(result) # is None
 # ## Documentation string
 # - It’s good practice to include docstrings in code that you write, so make a habit of it.
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.596784Z", "iopub.execute_input": "2020-09-12T13:29:14.597757Z", "iopub.status.idle": "2020-09-12T13:29:14.599998Z", "shell.execute_reply": "2020-09-12T13:29:14.600637Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 def my_function( foo):
      """Do nothing, but document it.
 
@@ -201,14 +201,14 @@ def my_function( foo):
 
 print(my_function.__doc__)
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.605214Z", "iopub.execute_input": "2020-09-12T13:29:14.606173Z", "iopub.status.idle": "2020-09-12T13:29:14.608580Z", "shell.execute_reply": "2020-09-12T13:29:14.609204Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 help(my_function)
 
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Default Argument Values
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.613940Z", "iopub.execute_input": "2020-09-12T13:29:14.614923Z", "iopub.status.idle": "2020-09-12T13:29:14.617292Z", "shell.execute_reply": "2020-09-12T13:29:14.617924Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 def f(a,b=5):
     return a+b
 
@@ -219,17 +219,17 @@ print(f(b="a",a="bc"))
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # **Important warning**: The default value is evaluated only once. 
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.622234Z", "iopub.execute_input": "2020-09-12T13:29:14.623182Z", "iopub.status.idle": "2020-09-12T13:29:14.625560Z", "shell.execute_reply": "2020-09-12T13:29:14.626220Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 def f(a, L=[]):
     L.append(a)
     return L
 
 print(f(1))
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.630218Z", "iopub.execute_input": "2020-09-12T13:29:14.631229Z", "iopub.status.idle": "2020-09-12T13:29:14.633463Z", "shell.execute_reply": "2020-09-12T13:29:14.634043Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 print(f(2)) # L = [1]
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.637811Z", "iopub.execute_input": "2020-09-12T13:29:14.638655Z", "iopub.status.idle": "2020-09-12T13:29:14.640777Z", "shell.execute_reply": "2020-09-12T13:29:14.641393Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 print(f(3)) # L = [1,2]
 
 
@@ -239,7 +239,7 @@ print(f(3)) # L = [1,2]
 # Completely optional metadata information about the types used by user-defined functions.
 # These type annotations conforming to [PEP 484](https://www.python.org/dev/peps/pep-0484/) could be statically used by [MyPy](http://mypy-lang.org).
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.646839Z", "iopub.execute_input": "2020-09-12T13:29:14.647791Z", "iopub.status.idle": "2020-09-12T13:29:14.650180Z", "shell.execute_reply": "2020-09-12T13:29:14.650799Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 def f(ham: str, eggs: str = 'eggs') -> str:
      print("Annotations:", f.__annotations__)
      print("Arguments:", ham, eggs)
@@ -255,7 +255,7 @@ print(f.__doc__)
 #
 # Arguments can be wrapped up in a tuple or a list with form *args
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.655363Z", "iopub.execute_input": "2020-09-12T13:29:14.656254Z", "iopub.status.idle": "2020-09-12T13:29:14.658745Z", "shell.execute_reply": "2020-09-12T13:29:14.659364Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 def f(*args, sep=" "):
     print (args)
     return sep.join(args)
@@ -272,7 +272,7 @@ print(f("big","data"))
 #
 # A final formal parameter of the form **name receives a dictionary.
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.664054Z", "iopub.execute_input": "2020-09-12T13:29:14.664908Z", "iopub.status.idle": "2020-09-12T13:29:14.666369Z", "shell.execute_reply": "2020-09-12T13:29:14.667195Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 def add_contact(kind, *args, **kwargs):
     print(args)
     print("-" * 40)
@@ -283,7 +283,7 @@ def add_contact(kind, *args, **kwargs):
 # + [markdown] {"slideshow": {"slide_type": "fragment"}}
 # \*name must occur before \*\*name
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.671191Z", "iopub.execute_input": "2020-09-12T13:29:14.672042Z", "iopub.status.idle": "2020-09-12T13:29:14.674474Z", "shell.execute_reply": "2020-09-12T13:29:14.675093Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 add_contact("John", "Smith",
            phone="555 8765",
            email="john.smith@python.org")
@@ -293,11 +293,11 @@ add_contact("John", "Smith",
 #
 # Lambda functions can be used wherever function objects are required.
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.679524Z", "iopub.execute_input": "2020-09-12T13:29:14.680542Z", "iopub.status.idle": "2020-09-12T13:29:14.683173Z", "shell.execute_reply": "2020-09-12T13:29:14.683772Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 f = lambda x : 2 * x + 2
 f(3)
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.688394Z", "iopub.execute_input": "2020-09-12T13:29:14.689403Z", "shell.execute_reply": "2020-09-12T13:29:14.692349Z", "iopub.status.idle": "2020-09-12T13:29:14.691761Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 taxicab_distance = lambda x_a,y_a,x_b,y_b: abs(x_b-x_a)+abs(y_b-y_a)
 print(taxicab_distance(3,4,7,2))
 
@@ -307,7 +307,7 @@ print(taxicab_distance(3,4,7,2))
 #
 #
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.697370Z", "iopub.execute_input": "2020-09-12T13:29:14.698323Z", "shell.execute_reply": "2020-09-12T13:29:14.701575Z", "iopub.status.idle": "2020-09-12T13:29:14.700970Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 def make_incrementor(n):
     return lambda x: x + n
 
@@ -320,7 +320,7 @@ f(0),f(1)
 # Arguments are already in a list or tuple. They can be unpacked for a function call. 
 # For instance, the built-in range() function is called with the *-operator to unpack the arguments out of a list:
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.707192Z", "iopub.execute_input": "2020-09-12T13:29:14.708137Z", "iopub.status.idle": "2020-09-12T13:29:14.710778Z", "shell.execute_reply": "2020-09-12T13:29:14.711390Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 def chessboard_distance(x_a, y_a, x_b, y_b):
     """
     Compute the rectilinear distance between 
@@ -335,7 +335,7 @@ chessboard_distance(*coordinates)
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # In the same fashion, dictionaries can deliver keyword arguments with the **-operator:
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.716736Z", "iopub.execute_input": "2020-09-12T13:29:14.717694Z", "iopub.status.idle": "2020-09-12T13:29:14.720051Z", "shell.execute_reply": "2020-09-12T13:29:14.720709Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 def parrot(voltage, state='a stiff', action='voom'):
      print("-- This parrot wouldn't", action, end=' ')
      print("if you put", voltage, "volts through it.", end=' ')
@@ -365,7 +365,7 @@ parrot(**d)
 # - Global variables cannot be directly assigned a value within a function (unless named in a global statement).
 # - The value of the function can be assigned to another name which can then also be used as a function.
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.725492Z", "iopub.execute_input": "2020-09-12T13:29:14.726483Z", "iopub.status.idle": "2020-09-12T13:29:14.728852Z", "shell.execute_reply": "2020-09-12T13:29:14.729458Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 pi = 1.
 def deg2rad(theta):
     pi = 3.14
@@ -375,7 +375,7 @@ print(deg2rad(45))
 print(pi)
 
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.734168Z", "iopub.execute_input": "2020-09-12T13:29:14.735141Z", "iopub.status.idle": "2020-09-12T13:29:14.737497Z", "shell.execute_reply": "2020-09-12T13:29:14.738084Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 def rad2deg(theta):
     return theta*180./pi
 
@@ -384,7 +384,7 @@ pi = 3.14
 print(rad2deg(0.785))
 
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.742711Z", "iopub.execute_input": "2020-09-12T13:29:14.743727Z", "iopub.status.idle": "2020-09-12T13:29:14.746090Z", "shell.execute_reply": "2020-09-12T13:29:14.746694Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 def deg2rad(theta):
     global pi
     pi = 3.14
@@ -393,13 +393,13 @@ def deg2rad(theta):
 pi = 1
 print(deg2rad(45))
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.750485Z", "iopub.execute_input": "2020-09-12T13:29:14.751346Z", "iopub.status.idle": "2020-09-12T13:29:14.753722Z", "shell.execute_reply": "2020-09-12T13:29:14.754333Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 print(pi)
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## `enumerate` Function
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.759337Z", "iopub.execute_input": "2020-09-12T13:29:14.760310Z", "iopub.status.idle": "2020-09-12T13:29:14.762770Z", "shell.execute_reply": "2020-09-12T13:29:14.763400Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 primes =  [1,2,3,5,7,11,13]
 for idx, ele in enumerate (primes):
     print(idx, " --- ", ele) 
@@ -418,7 +418,7 @@ for idx, ele in enumerate (primes):
 #
 # Loop over sequences simultaneously.
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.768763Z", "iopub.execute_input": "2020-09-12T13:29:14.769720Z", "shell.execute_reply": "2020-09-12T13:29:14.772732Z", "iopub.status.idle": "2020-09-12T13:29:14.772110Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 L1 = [1, 2, 3]
 L2 = [4, 5, 6]
 
@@ -434,23 +434,23 @@ for (x, y) in zip(L1, L2):
 # - Set or change values inside a list
 # - Create list from function
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.778120Z", "iopub.execute_input": "2020-09-12T13:29:14.779126Z", "iopub.status.idle": "2020-09-12T13:29:14.781794Z", "shell.execute_reply": "2020-09-12T13:29:14.782541Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 lsingle = [1, 3, 9, 4]
 ldouble = []
 for k in lsingle:
     ldouble.append(2*k)
 ldouble
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.786849Z", "iopub.execute_input": "2020-09-12T13:29:14.787771Z", "iopub.status.idle": "2020-09-12T13:29:14.789666Z", "shell.execute_reply": "2020-09-12T13:29:14.790297Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 ldouble = [k*2 for k in lsingle]
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.795048Z", "iopub.execute_input": "2020-09-12T13:29:14.796013Z", "iopub.status.idle": "2020-09-12T13:29:14.798669Z", "shell.execute_reply": "2020-09-12T13:29:14.799275Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 [n*n for n in range(1,10)]
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.803997Z", "iopub.execute_input": "2020-09-12T13:29:14.804899Z", "iopub.status.idle": "2020-09-12T13:29:14.807474Z", "shell.execute_reply": "2020-09-12T13:29:14.808076Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 [n*n for n in range(1,10) if n&1]
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.813010Z", "iopub.execute_input": "2020-09-12T13:29:14.814006Z", "iopub.status.idle": "2020-09-12T13:29:14.816599Z", "shell.execute_reply": "2020-09-12T13:29:14.817212Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 [n+1 if n&1 else n//2 for n in range(1,10) ]
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
@@ -469,7 +469,7 @@ ldouble = [k*2 for k in lsingle]
 # Apply a function over a sequence.
 #
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.821299Z", "iopub.execute_input": "2020-09-12T13:29:14.822218Z", "iopub.status.idle": "2020-09-12T13:29:14.824322Z", "shell.execute_reply": "2020-09-12T13:29:14.825007Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 res = map(hex,range(16))
 print(res)
 
@@ -477,14 +477,14 @@ print(res)
 # Since Python 3.x, `map` process return an iterator. Save memory, and should make things go faster.
 # Display result by using unpacking operator.
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.829095Z", "iopub.execute_input": "2020-09-12T13:29:14.830042Z", "iopub.status.idle": "2020-09-12T13:29:14.832336Z", "shell.execute_reply": "2020-09-12T13:29:14.832957Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 print(*res)
 
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## `map` with user-defined function
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.838098Z", "iopub.execute_input": "2020-09-12T13:29:14.838992Z", "iopub.status.idle": "2020-09-12T13:29:14.841455Z", "shell.execute_reply": "2020-09-12T13:29:14.842072Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 def add(x,y):
     return x+y
 
@@ -495,12 +495,12 @@ print(*map(add,L1,L2))
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # - `map` is often faster than `for` loop
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:14.884017Z", "iopub.execute_input": "2020-09-12T13:29:14.931326Z", "iopub.status.idle": "2020-09-12T13:29:19.210242Z", "shell.execute_reply": "2020-09-12T13:29:19.210943Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 M = range(10000)
 f = lambda x: x**2
 %timeit lmap = list(map(f,M))
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:19.257945Z", "iopub.execute_input": "2020-09-12T13:29:19.300896Z", "iopub.status.idle": "2020-09-12T13:29:23.898271Z", "shell.execute_reply": "2020-09-12T13:29:23.898900Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 M = range(10000)
 f = lambda x: x**2
 %timeit lfor = [f(m) for m in M]
@@ -509,7 +509,7 @@ f = lambda x: x**2
 # ## filter
 # creates a iterator of elements for which a function returns `True`. 
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:23.903570Z", "iopub.execute_input": "2020-09-12T13:29:23.904580Z", "iopub.status.idle": "2020-09-12T13:29:23.907100Z", "shell.execute_reply": "2020-09-12T13:29:23.907718Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 number_list = range(-5, 5)
 odd_numbers = filter(lambda x: x & 1 , number_list)
 print(*odd_numbers)
@@ -517,12 +517,12 @@ print(*odd_numbers)
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # - As `map`, `filter` is often faster than `for` loop
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:23.954183Z", "iopub.execute_input": "2020-09-12T13:29:23.996941Z", "iopub.status.idle": "2020-09-12T13:29:26.399288Z", "shell.execute_reply": "2020-09-12T13:29:26.399922Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 M = range(1000)
 f = lambda x: x % 3 == 0
 %timeit lmap = filter(f,M)
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:29:26.446338Z", "iopub.execute_input": "2020-09-12T13:29:26.490172Z", "iopub.status.idle": "2020-09-12T13:29:30.541223Z", "shell.execute_reply": "2020-09-12T13:29:30.541897Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 M = range(1000)
 %timeit lfor = (m for m in M if m % 3 == 0)
 

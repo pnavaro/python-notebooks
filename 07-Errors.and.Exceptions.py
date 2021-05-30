@@ -8,7 +8,7 @@
 #       extension: .py
 #       format_name: light
 #       format_version: '1.5'
-#       jupytext_version: 1.6.0
+#       jupytext_version: 1.8.2
 #   kernelspec:
 #     display_name: Python 3
 #     language: python
@@ -25,20 +25,20 @@
 #
 # [Exceptions in Python documentation](https://docs.python.org/3/library/exceptions.html)
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T13:47:17.252398Z", "iopub.execute_input": "2020-09-12T13:47:17.253376Z", "iopub.status.idle": "2020-09-12T13:47:17.256301Z", "shell.execute_reply": "2020-09-12T13:47:17.256911Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 import sys
 try:
     10 * (1/0)
 except:
     print(sys.exc_info()[0])
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T13:47:17.261483Z", "iopub.execute_input": "2020-09-12T13:47:17.262395Z", "iopub.status.idle": "2020-09-12T13:47:17.264636Z", "shell.execute_reply": "2020-09-12T13:47:17.265243Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 try:
     4 + spam*3
 except:
     print(sys.exc_info()[0])
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T13:47:17.269419Z", "iopub.execute_input": "2020-09-12T13:47:17.270471Z", "iopub.status.idle": "2020-09-12T13:47:17.272891Z", "shell.execute_reply": "2020-09-12T13:47:17.273509Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 try:
     '2' + 2
 except:
@@ -51,7 +51,7 @@ except:
 # - Note that a user-generated interruption is signalled by raising the **KeyboardInterrupt** exception.
 #
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:47:17.278224Z", "iopub.execute_input": "2020-09-12T13:47:17.279110Z", "shell.execute_reply": "2020-09-12T13:47:17.281442Z", "iopub.status.idle": "2020-09-12T13:47:17.282055Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 for s in ("0.1", "foo", "1000"):
    try:
      x = int(s)
@@ -64,7 +64,7 @@ for s in ("0.1", "foo", "1000"):
 # - A try statement may have more than one except clause
 # - The optional `else` clause must follow all except clauses.
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:47:17.288636Z", "iopub.execute_input": "2020-09-12T13:47:17.289767Z", "iopub.status.idle": "2020-09-12T13:47:17.291519Z", "shell.execute_reply": "2020-09-12T13:47:17.292147Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 import sys
 
 def process_file(file):
@@ -85,29 +85,29 @@ with open('workfile.txt','w') as f:
     f.write("foo")
     f.write("bar")
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T13:47:17.296591Z", "iopub.execute_input": "2020-09-12T13:47:17.297608Z", "iopub.status.idle": "2020-09-12T13:47:17.299994Z", "shell.execute_reply": "2020-09-12T13:47:17.300586Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 process_file('workfile.txt') # catch exception return by int() call
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T13:47:17.304772Z", "iopub.execute_input": "2020-09-12T13:47:17.305828Z", "iopub.status.idle": "2020-09-12T13:47:17.426916Z", "shell.execute_reply": "2020-09-12T13:47:17.427877Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 # Change permission of the file, workfile.txt cannot be read
 !chmod u-r workfile.txt
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:47:17.432284Z", "iopub.execute_input": "2020-09-12T13:47:17.433291Z", "iopub.status.idle": "2020-09-12T13:47:17.435847Z", "shell.execute_reply": "2020-09-12T13:47:17.436464Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 process_file('workfile.txt') # catch exception return by open() call
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T13:47:17.440670Z", "iopub.execute_input": "2020-09-12T13:47:17.441594Z", "iopub.status.idle": "2020-09-12T13:47:17.560453Z", "shell.execute_reply": "2020-09-12T13:47:17.561111Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 # Let's delete the file workfile.txt
 !rm -f workfile.txt
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:47:17.565628Z", "iopub.execute_input": "2020-09-12T13:47:17.566570Z", "iopub.status.idle": "2020-09-12T13:47:17.568858Z", "shell.execute_reply": "2020-09-12T13:47:17.569496Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 process_file('workfile.txt') # catch another exception return by open() call
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T13:47:17.574381Z", "iopub.execute_input": "2020-09-12T13:47:17.575264Z", "iopub.status.idle": "2020-09-12T13:47:17.811039Z", "shell.execute_reply": "2020-09-12T13:47:17.811762Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 # Insert the value -1 at the top of workfile.txt
 !echo "-1" > workfile.txt
 %cat workfile.txt
 
-# + {"slideshow": {"slide_type": "slide"}, "execution": {"iopub.status.busy": "2020-09-12T13:47:17.816258Z", "iopub.execute_input": "2020-09-12T13:47:17.817261Z", "iopub.status.idle": "2020-09-12T13:47:17.819768Z", "shell.execute_reply": "2020-09-12T13:47:17.820525Z"}}
+# + {"slideshow": {"slide_type": "slide"}}
 process_file('workfile.txt') # catch exception return by assert()
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
@@ -116,7 +116,7 @@ process_file('workfile.txt') # catch exception return by assert()
 # The raise statement allows the programmer to force a specified exception to occur.
 #
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:47:17.825097Z", "iopub.execute_input": "2020-09-12T13:47:17.826112Z", "iopub.status.idle": "2020-09-12T13:47:17.828438Z", "shell.execute_reply": "2020-09-12T13:47:17.829044Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 try:
     raise NameError('HiThere')
 except:
@@ -129,7 +129,7 @@ except:
 #
 # - A finally clause is always executed before leaving the try statement
 
-# + {"slideshow": {"slide_type": "fragment"}, "execution": {"iopub.status.busy": "2020-09-12T13:47:17.833605Z", "iopub.execute_input": "2020-09-12T13:47:17.834598Z", "iopub.status.idle": "2020-09-12T13:47:17.837110Z", "shell.execute_reply": "2020-09-12T13:47:17.837708Z"}}
+# + {"slideshow": {"slide_type": "fragment"}}
 try:
      raise KeyboardInterrupt
 except:

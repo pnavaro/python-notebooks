@@ -9,7 +9,7 @@
 #       extension: .py
 #       format_name: light
 #       format_version: '1.5'
-#       jupytext_version: 1.6.0
+#       jupytext_version: 1.8.2
 #   kernelspec:
 #     display_name: Python 3
 #     language: python
@@ -160,55 +160,52 @@ int main(int argc, char **argv)
 # ```
 # outputs an html file. It shows what parts of your code are C, which parts are Python, and where C-Python conversion occurs.
 
-# + {"slideshow": {"slide_type": "slide"}}
-%%cython -a
-cdef int i, j = 2, k = 3      # assigning values at declaration
-i = 1                         # assigning values afterwards
-# avoid Python-C conversion! It's expensive:
-a = 5
-i = a
-# same with C-Python conversion:
-b = j
-print("a = %d" % a)
-print("i = %d" % i)
-print("b = %d" % b)
+# + {"slideshow": {"slide_type": "slide"}, "magic_args": "-a", "language": "cython"}
+# cdef int i, j = 2, k = 3      # assigning values at declaration
+# i = 1                         # assigning values afterwards
+# # avoid Python-C conversion! It's expensive:
+# a = 5
+# i = a
+# # same with C-Python conversion:
+# b = j
+# print("a = %d" % a)
+# print("i = %d" % i)
+# print("b = %d" % b)
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ### Another Python vs. Cython coloring guide
 
-# + {"slideshow": {"slide_type": "fragment"}}
-%%cython -a
-cdef int m, n
-cdef double cy_total = 0.0
-for m in range(10):
-    n = 2*m
-    cy_total += n
-a, b = 0, 0
-py_total = 0.0
-for a in range(10):
-    b = 2*a
-    py_total += b
-print(cy_total, py_total)
+# + {"slideshow": {"slide_type": "fragment"}, "magic_args": "-a", "language": "cython"}
+# cdef int m, n
+# cdef double cy_total = 0.0
+# for m in range(10):
+#     n = 2*m
+#     cy_total += n
+# a, b = 0, 0
+# py_total = 0.0
+# for a in range(10):
+#     b = 2*a
+#     py_total += b
+# print(cy_total, py_total)
 
-# + {"slideshow": {"slide_type": "slide"}}
-%%cython -a
-cdef struct Grail:
-    int age
-    float volume
-cdef union Food:
-    char *spam
-    float *eggs
-cdef enum CheeseType:
-    cheddar, edam,
-    camembert
-cdef enum CheeseState:
-    hard = 1
-    soft = 2
-    runny = 3
-cdef Grail holy
-holy.age    = 500
-holy.volume = 10.0
-print (holy.age, holy.volume)
+# + {"slideshow": {"slide_type": "slide"}, "magic_args": "-a", "language": "cython"}
+# cdef struct Grail:
+#     int age
+#     float volume
+# cdef union Food:
+#     char *spam
+#     float *eggs
+# cdef enum CheeseType:
+#     cheddar, edam,
+#     camembert
+# cdef enum CheeseState:
+#     hard = 1
+#     soft = 2
+#     runny = 3
+# cdef Grail holy
+# holy.age    = 500
+# holy.volume = 10.0
+# print (holy.age, holy.volume)
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Cython Functions
@@ -328,20 +325,18 @@ integrate_f(-1,1,10**3)
 # ## Add Cython types 
 # We coerce Python types to C types when calling the function. Still a "Python function" so callable from the global namespace.
 
-# + {"slideshow": {"slide_type": "fragment"}}
-%%cython
-def f(x):
-    return -4*x**3 +3*x**2 +2*x
-def cy_integrate_f(double a, double b, int N):
-    cdef int i
-    cdef double s, x, dx
-    s  = 0
-    dx = (b - a) / (N-1)
-    for i in range(N-1):
-        x = a + i*dx
-        s += (f(x)+f(x+dx))/2
-    return s*dx
-
+# + {"slideshow": {"slide_type": "fragment"}, "language": "cython"}
+# def f(x):
+#     return -4*x**3 +3*x**2 +2*x
+# def cy_integrate_f(double a, double b, int N):
+#     cdef int i
+#     cdef double s, x, dx
+#     s  = 0
+#     dx = (b - a) / (N-1)
+#     for i in range(N-1):
+#         x = a + i*dx
+#         s += (f(x)+f(x+dx))/2
+#     return s*dx
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # * typing the iterator variable i with C semantics, tells Cython to compile the for-loop to pure C code.
@@ -362,20 +357,18 @@ print(cy_integrate_f(-1,1,1000))
 # The primary downside is not being allowed to call
 # the function `cy_f`, from Python unless `cpdef` is used. 
 
-# + {"slideshow": {"slide_type": "fragment"}}
-%%cython
-cdef double cy_f(double x):
-    return -4*x**3 +3*x**2 +2*x
-def cycy_integrate_f(double a, double b, int N):
-    cdef int i
-    cdef double s, x, dx
-    s  = 0
-    dx = (b - a) / (N-1)
-    for i in range(N-1):
-        x = a + i*dx
-        s += (cy_f(x)+cy_f(x+dx))/2
-    return s*dx
-
+# + {"slideshow": {"slide_type": "fragment"}, "language": "cython"}
+# cdef double cy_f(double x):
+#     return -4*x**3 +3*x**2 +2*x
+# def cycy_integrate_f(double a, double b, int N):
+#     cdef int i
+#     cdef double s, x, dx
+#     s  = 0
+#     dx = (b - a) / (N-1)
+#     for i in range(N-1):
+#         x = a + i*dx
+#         s += (cy_f(x)+cy_f(x+dx))/2
+#     return s*dx
 
 # + {"slideshow": {"slide_type": "fragment"}}
 %timeit cycy_integrate_f(-1,1,10**3)
@@ -384,43 +377,39 @@ print(cycy_integrate_f(-1,1,1000))
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Exercise : Cythonize the trivial exponential function.
 
-# + {"slideshow": {"slide_type": "fragment"}}
-%%cython -a
-def exp_python(x,terms=50):
-    sum = 0.
-    power = 1.
-    fact = 1.
-    for i in range(terms):
-        sum += power/fact
-        power *= x
-        fact *= i+1
-    return sum
-
+# + {"slideshow": {"slide_type": "fragment"}, "magic_args": "-a", "language": "cython"}
+# def exp_python(x,terms=50):
+#     sum = 0.
+#     power = 1.
+#     fact = 1.
+#     for i in range(terms):
+#         sum += power/fact
+#         power *= x
+#         fact *= i+1
+#     return sum
 
 # + {"slideshow": {"slide_type": "fragment"}}
 %timeit exp_python(1.,50)
 
-# + {"slideshow": {"slide_type": "skip"}}
-%%cython
-
-# %load solutions/cython/exponential.pyx
-#cython: profile=False
-#cython: cdivision=True
-def exp_cython(double x, int terms = 50):
-   cdef double sum
-   cdef double power
-   cdef double fact
-   cdef int i
-   sum = 0.
-   power = 1.
-   fact = 1.
-   for i in range(terms):
-      sum += power/fact
-      power *= x
-      fact *= i+1
-   return sum
-
-
+# + {"slideshow": {"slide_type": "skip"}, "language": "cython"}
+#
+# # %load solutions/cython/exponential.pyx
+# #cython: profile=False
+# #cython: cdivision=True
+# def exp_cython(double x, int terms = 50):
+#    cdef double sum
+#    cdef double power
+#    cdef double fact
+#    cdef int i
+#    sum = 0.
+#    power = 1.
+#    fact = 1.
+#    for i in range(terms):
+#       sum += power/fact
+#       power *= x
+#       fact *= i+1
+#    return sum
+#
 
 # + {"slideshow": {"slide_type": "skip"}}
 %timeit exp_cython(1.,50)
@@ -442,18 +431,16 @@ def exp_cython(double x, int terms = 50):
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ### Pure Python implementation compiled in Cython without specific optimizations.
 
-# + {"slideshow": {"slide_type": "fragment"}}
-%%cython
-def matmul1(A, B, out=None):
-    assert A.shape[1] == B.shape[0]
-    for i in range(A.shape[0]):
-        for j in range(B.shape[1]):
-            s = 0
-            for k in range(A.shape[1]):
-                s += A[i,k] * B[k,j]
-            out[i,j] = s
-    return out
-
+# + {"slideshow": {"slide_type": "fragment"}, "language": "cython"}
+# def matmul1(A, B, out=None):
+#     assert A.shape[1] == B.shape[0]
+#     for i in range(A.shape[0]):
+#         for j in range(B.shape[1]):
+#             s = 0
+#             for k in range(A.shape[1]):
+#                 s += A[i,k] * B[k,j]
+#             out[i,j] = s
+#     return out
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ### Import numpy as a Cython module
@@ -468,25 +455,23 @@ def matmul1(A, B, out=None):
 # Another important thing to note is the type of Numpy indexers. There is a special Numpy variable type used for `numpy.array` indices called `Py_ssize_t`. To take full advantage of the speedups that Cython can provide we should make sure to type the variables used for indexing as such.
 #
 
-# + {"slideshow": {"slide_type": "slide"}}
-%%cython
-import numpy as np
-cimport numpy as np
-ctypedef np.float64_t dtype_t      # shorthand type. easy to change
-def matmul2(np.ndarray[dtype_t, ndim=2] A,
-            np.ndarray[dtype_t, ndim=2] B,
-            np.ndarray[dtype_t, ndim=2] out=None):
-    cdef Py_ssize_t i, j, k
-    cdef dtype_t s
-    assert A.shape[1] == B.shape[0]
-    for i in range(A.shape[0]):
-        for j in range(B.shape[1]):
-            s = 0
-            for k in range(A.shape[1]):
-                s += A[i,k] * B[k,j]
-            out[i,j] = s
-    return out
-
+# + {"slideshow": {"slide_type": "slide"}, "language": "cython"}
+# import numpy as np
+# cimport numpy as np
+# ctypedef np.float64_t dtype_t      # shorthand type. easy to change
+# def matmul2(np.ndarray[dtype_t, ndim=2] A,
+#             np.ndarray[dtype_t, ndim=2] B,
+#             np.ndarray[dtype_t, ndim=2] out=None):
+#     cdef Py_ssize_t i, j, k
+#     cdef dtype_t s
+#     assert A.shape[1] == B.shape[0]
+#     for i in range(A.shape[0]):
+#         for j in range(B.shape[1]):
+#             s = 0
+#             for k in range(A.shape[1]):
+#                 s += A[i,k] * B[k,j]
+#             out[i,j] = s
+#     return out
 
 # + {"slideshow": {"slide_type": "slide"}}
 import numpy as np
@@ -509,28 +494,26 @@ C = np.zeros((64,64))
 #   
 # The code doesn’t use negative indices, and always access to arrays within bounds. We can add a decorator to disable bounds checking:
 
-# + {"slideshow": {"slide_type": "slide"}}
-%%cython
-cimport cython                                       # cython tools
-import numpy as np
-cimport numpy as np
-ctypedef np.float64_t dtype_t
-@cython.boundscheck(False) # turn off bounds-checking for entire function
-@cython.wraparound(False)  # turn off negative index wrapping for entire function
-def matmul3(np.ndarray[dtype_t, ndim=2] A,
-            np.ndarray[dtype_t, ndim=2] B,
-            np.ndarray[dtype_t, ndim=2] out=None):
-    cdef Py_ssize_t i, j, k
-    cdef dtype_t s
-    assert A.shape[1] == B.shape[0]
-    for i in range(A.shape[0]):
-        for j in range(B.shape[1]):
-            s = 0
-            for k in range(A.shape[1]):
-                s += A[i,k] * B[k,j]
-            out[i,j] = s
-    return out
-
+# + {"slideshow": {"slide_type": "slide"}, "language": "cython"}
+# cimport cython                                       # cython tools
+# import numpy as np
+# cimport numpy as np
+# ctypedef np.float64_t dtype_t
+# @cython.boundscheck(False) # turn off bounds-checking for entire function
+# @cython.wraparound(False)  # turn off negative index wrapping for entire function
+# def matmul3(np.ndarray[dtype_t, ndim=2] A,
+#             np.ndarray[dtype_t, ndim=2] B,
+#             np.ndarray[dtype_t, ndim=2] out=None):
+#     cdef Py_ssize_t i, j, k
+#     cdef dtype_t s
+#     assert A.shape[1] == B.shape[0]
+#     for i in range(A.shape[0]):
+#         for j in range(B.shape[1]):
+#             s = 0
+#             for k in range(A.shape[1]):
+#                 s += A[i,k] * B[k,j]
+#             out[i,j] = s
+#     return out
 
 # + {"slideshow": {"slide_type": "fragment"}}
 %timeit matmul3(A,B,C)
@@ -580,31 +563,28 @@ from pyximport import install
 import os
 here = os.getcwd()
 
-# + {"slideshow": {"slide_type": "fragment"}}
-%%cython -I {here}
-# do not forget to change the file path
-cdef extern from "mydgemm.c":
-    void my_dgemm (int m, int n, int k, 
-                          double *A, double *B, double *C)
-cimport cython
-import numpy as np
-cimport numpy as np
-ctypedef np.float64_t dtype_t
-@cython.boundscheck(False)
-@cython.wraparound(False) 
-def matmul4(np.ndarray[dtype_t, ndim=2, mode="c"] A,
-            np.ndarray[dtype_t, ndim=2, mode="c"] B,
-            np.ndarray[dtype_t, ndim=2, mode="c"] C=None):
-    cdef int m = A.shape[0]
-    cdef int n = A.shape[1]
-    cdef int k = B.shape[1]
-    cdef dtype_t s
-    
-    my_dgemm(m, n, k, &A[0,0], &B[0,0], &C[0,0])
-                                                  
-    return C
-
-
+# + {"slideshow": {"slide_type": "fragment"}, "magic_args": "-I {here}", "language": "cython"}
+# # do not forget to change the file path
+# cdef extern from "mydgemm.c":
+#     void my_dgemm (int m, int n, int k, 
+#                           double *A, double *B, double *C)
+# cimport cython
+# import numpy as np
+# cimport numpy as np
+# ctypedef np.float64_t dtype_t
+# @cython.boundscheck(False)
+# @cython.wraparound(False) 
+# def matmul4(np.ndarray[dtype_t, ndim=2, mode="c"] A,
+#             np.ndarray[dtype_t, ndim=2, mode="c"] B,
+#             np.ndarray[dtype_t, ndim=2, mode="c"] C=None):
+#     cdef int m = A.shape[0]
+#     cdef int n = A.shape[1]
+#     cdef int k = B.shape[1]
+#     cdef dtype_t s
+#     
+#     my_dgemm(m, n, k, &A[0,0], &B[0,0], &C[0,0])
+#                                                   
+#     return C
 # -
 
 %timeit matmul4(A,B,C)
@@ -633,17 +613,15 @@ def is_prime0(n):
 L = list(range(10000))
 %timeit [ p for p in L if is_prime0(p)]
 
-# + {"slideshow": {"slide_type": "slide"}}
-%%cython
-def is_prime1(n):
-    if n < 4: return True
-    if n % 2 == 0 : return False
-    k = 3
-    while k*k <= n:
-        if n % k == 0: return False
-        k += 2
-    return True
-
+# + {"slideshow": {"slide_type": "slide"}, "language": "cython"}
+# def is_prime1(n):
+#     if n < 4: return True
+#     if n % 2 == 0 : return False
+#     k = 3
+#     while k*k <= n:
+#         if n % k == 0: return False
+#         k += 2
+#     return True
 
 # + {"slideshow": {"slide_type": "fragment"}}
 [ p for p in range(20) if is_prime1(p)]
@@ -654,19 +632,17 @@ def is_prime1(n):
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ### Add Cython types without modifying the Python Code
 
-# + {"slideshow": {"slide_type": "fragment"}}
-%%cython
-import cython
-@cython.locals(n=int, k=int)
-def is_prime2(n):
-    if n < 4: return True
-    if n % 2 == 0 : return False
-    k = 3
-    while k*k <= n:
-        if n % k == 0: return False
-        k += 2
-    return True
-
+# + {"slideshow": {"slide_type": "fragment"}, "language": "cython"}
+# import cython
+# @cython.locals(n=int, k=int)
+# def is_prime2(n):
+#     if n < 4: return True
+#     if n % 2 == 0 : return False
+#     k = 3
+#     while k*k <= n:
+#         if n % k == 0: return False
+#         k += 2
+#     return True
 
 # + {"slideshow": {"slide_type": "fragment"}}
 [ p for p in range(20) if is_prime2(p)]
@@ -677,20 +653,18 @@ def is_prime2(n):
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ### Cython function 
 
-# + {"slideshow": {"slide_type": "fragment"}}
-%%cython
-import cython
-cdef bint is_prime3(int n):
-    if n < 4: return True
-    if n % 2 == 0: return False
-    cdef int k = 3
-    while k*k <= n:
-        if n % k == 0: return False
-        k += 2
-    return True
-def prime_list(L):
-    return [p for p in L if is_prime3(p)]
-
+# + {"slideshow": {"slide_type": "fragment"}, "language": "cython"}
+# import cython
+# cdef bint is_prime3(int n):
+#     if n < 4: return True
+#     if n % 2 == 0: return False
+#     cdef int k = 3
+#     while k*k <= n:
+#         if n % k == 0: return False
+#         k += 2
+#     return True
+# def prime_list(L):
+#     return [p for p in L if is_prime3(p)]
 
 # + {"slideshow": {"slide_type": "fragment"}}
 prime_list(list(range(20)))
@@ -698,28 +672,26 @@ prime_list(list(range(20)))
 # + {"slideshow": {"slide_type": "fragment"}}
 %timeit prime_list(L)
 
-# + {"slideshow": {"slide_type": "slide"}}
-%%cython
-import cython
-from numpy cimport ndarray
-import numpy
-
-cdef bint is_prime3(int n):
-    if n < 4: return True
-    if n % 2 == 0: return False
-    cdef int k = 3
-    while k*k <= n:
-        if n % k == 0: return False
-        k += 2
-    return True
-
-def prime_array(ndarray[int, ndim=1] L):
-    cdef ndarray[int, ndim=1] res = ndarray(shape=(L.shape[0]),dtype=numpy.int32)
-    cdef int i
-    for i in range(L.shape[0]):
-        res[i] = is_prime3(L[i])
-    return L[res==1]
-
+# + {"slideshow": {"slide_type": "slide"}, "language": "cython"}
+# import cython
+# from numpy cimport ndarray
+# import numpy
+#
+# cdef bint is_prime3(int n):
+#     if n < 4: return True
+#     if n % 2 == 0: return False
+#     cdef int k = 3
+#     while k*k <= n:
+#         if n % k == 0: return False
+#         k += 2
+#     return True
+#
+# def prime_array(ndarray[int, ndim=1] L):
+#     cdef ndarray[int, ndim=1] res = ndarray(shape=(L.shape[0]),dtype=numpy.int32)
+#     cdef int i
+#     for i in range(L.shape[0]):
+#         res[i] = is_prime3(L[i])
+#     return L[res==1]
 
 # + {"slideshow": {"slide_type": "fragment"}}
 import numpy as np
