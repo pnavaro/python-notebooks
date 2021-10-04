@@ -22,7 +22,6 @@ jobs:
       run: |
         conda env create -f environment.yml -n runenv
         conda run -n runenv python -m ipykernel install --user --name python3
-        conda run -n runenv jupytext --sync *.py
     - name: Build the book
       shell: bash -l {0}
       run: conda run -n runenv jupyter-book build notebooks
