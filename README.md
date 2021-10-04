@@ -7,7 +7,7 @@ Python is a general programming language with many scientific libraries.
 It is optimized to be easy to develop in. The same is not true for Matlab which is 
 a domain-specific language.
 
-1. Install [Anaconda](https://www.anaconda.com/downloads) (large) or [Miniconda](https://conda.io/miniconda.html) (small)
+1. Install [Miniforge](https://github.com/conda-forge/miniforge) 
 
 2.  Download this repository:
 
@@ -34,7 +34,7 @@ conda run -n python-navaro python -m ipykernel install --user --name python-nava
 5. Open notebooks with:
 
 ```
-cd python-navaro
+cd python-notebooks
 jupyter notebook
 ```
 
