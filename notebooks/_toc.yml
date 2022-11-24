@@ -1,4 +1,6 @@
-- file: 01-Introduction
+format: jb-article
+root: 01-Introduction
+sections:
 - file: 02-Strings
 - file: 03-Lists
 - file: 04-Control.Flow.Tools
