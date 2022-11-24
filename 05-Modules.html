@@ -1,89 +1,112 @@
 
-
 <!DOCTYPE html>
 
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Modules &#8212; Python notebooks</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://pnavaro.github.io/python-notebooks/05-Modules.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Input and Output" href="06-Input.And.Output.html" />
     <link rel="prev" title="Control Flow Tools" href="04-Control.Flow.Tools.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://pnavaro.github.io/python-notebooks/05-Modules.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Modules" />
-<meta property="og:description" content="Modules  If your Python program gets longer, you may want to split it into several files for easier maintenance. To support this, Python has a way to put defini" />
-<meta property="og:image"       content="https://pnavaro.github.io/python-notebooks/_static/logo.png" />
-
-<meta name="twitter:card" content="summary" />
-
-
+    <!-- Google Analytics -->
+    
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Python notebooks</h1>
-  
-</a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python notebooks</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="current nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="02-Strings.html">
    Strings
@@ -191,117 +214,263 @@
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
     </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/05-Modules.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-    
-</div>
-        <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/pnavaro/python-notebooks"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/pnavaro/python-notebooks/issues/new?title=Issue%20on%20page%20%2F05-Modules.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/pnavaro/python-notebooks/edit/master/notebooks/05-Modules.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
-
-        <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/pnavaro/python-notebooks/master?urlpath=tree/notebooks/05-Modules.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/pnavaro/python-notebooks/blob/master/notebooks/05-Modules.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
-    </div>
-</div>
-
-    </div>
-
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/pnavaro/python-notebooks/master?urlpath=tree/notebooks/05-Modules.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/pnavaro/python-notebooks/blob/master/notebooks/05-Modules.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/pnavaro/python-notebooks"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/pnavaro/python-notebooks/issues/new?title=Issue%20on%20page%20%2F05-Modules.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/pnavaro/python-notebooks/edit/master/notebooks/05-Modules.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/05-Modules.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#executing-modules-as-scripts">
    Executing modules as scripts
@@ -334,18 +503,67 @@
  </li>
 </ul>
 
-        </nav>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Modules</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#executing-modules-as-scripts">
+   Executing modules as scripts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#different-ways-to-import-a-module">
+   Different ways to import a module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-module-search-path">
+   The Module Search Path
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#packages">
+   Packages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#relative-imports">
+   Relative imports
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reminder">
+   Reminder
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="modules">
-<h1>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="modules">
+<h1>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">#</a></h1>
 <p>If your Python program gets longer, you may want to split it into several files for easier maintenance. To support this, Python has a way to put definitions in a file and use them in a script or in an interactive instance of the interpreter. Such a file is called a module.</p>
-<p>Run the cell below to create a file named fibo.py with several functions inside:</p>
+<p>Run the cell below to create a file named <a class="reference external" href="http://fibo.py">fibo.py</a> with several functions inside:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%file</span> fibo.py
@@ -439,8 +657,8 @@ FILE
 </div>
 </div>
 </div>
-<div class="section" id="executing-modules-as-scripts">
-<h2>Executing modules as scripts<a class="headerlink" href="#executing-modules-as-scripts" title="Permalink to this headline">¶</a></h2>
+<section id="executing-modules-as-scripts">
+<h2>Executing modules as scripts<a class="headerlink" href="#executing-modules-as-scripts" title="Permalink to this headline">#</a></h2>
 <p>When you run a Python module with</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python fibo.py &lt;arguments&gt;
 </pre></div>
@@ -451,7 +669,7 @@ FILE
     <span class="n">fib</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 </pre></div>
 </div>
-<p>In Jupyter notebook, you can run the fibo.py python script using magic command.</p>
+<p>In Jupyter notebook, you can run the <a class="reference external" href="http://fibo.py">fibo.py</a> python script using magic command.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> fibo.py 1000
@@ -477,9 +695,9 @@ FILE
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="different-ways-to-import-a-module">
-<h2>Different ways to import a module<a class="headerlink" href="#different-ways-to-import-a-module" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="different-ways-to-import-a-module">
+<h2>Different ways to import a module<a class="headerlink" href="#different-ways-to-import-a-module" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fibo</span>
 <span class="kn">import</span> <span class="nn">fibo</span> <span class="k">as</span> <span class="nn">f</span>
 <span class="kn">from</span> <span class="nn">fibo</span> <span class="kn">import</span> <span class="n">fib1</span><span class="p">,</span> <span class="n">fib2</span>
@@ -555,10 +773,10 @@ FILE
 <span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">modulename</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="the-module-search-path">
-<h2>The Module Search Path<a class="headerlink" href="#the-module-search-path" title="Permalink to this headline">¶</a></h2>
-<p>When a module is imported, the interpreter searches for a file named module.py in a list of directories given by the variable sys.path.</p>
+</section>
+<section id="the-module-search-path">
+<h2>The Module Search Path<a class="headerlink" href="#the-module-search-path" title="Permalink to this headline">#</a></h2>
+<p>When a module is imported, the interpreter searches for a file named <a class="reference external" href="http://module.py">module.py</a> in a list of directories given by the variable sys.path.</p>
 <ul class="simple">
 <li><p>Python programs can modify sys.path</p></li>
 <li><p>export the PYTHONPATH environment variable to change it on your system.</p></li>
@@ -612,14 +830,14 @@ FILE
 </div>
 <p>When you import a module <code class="docutils literal notranslate"><span class="pre">foo</span></code>, following files are searched in this order:</p>
 <ul class="simple">
-<li><p><strong>foo.dll</strong>, <strong>foo.dylib</strong> or <strong>foo.so</strong></p></li>
-<li><p><strong>foo.py</strong></p></li>
+<li><p><strong>foo.dll</strong>, <strong>foo.dylib</strong> or <strong><a class="reference external" href="http://foo.so">foo.so</a></strong></p></li>
+<li><p><strong><a class="reference external" href="http://foo.py">foo.py</a></strong></p></li>
 <li><p><strong>foo.pyc</strong></p></li>
 <li><p><strong>foo/__init__.py</strong></p></li>
 </ul>
-</div>
-<div class="section" id="packages">
-<h2>Packages<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="packages">
+<h2>Packages<a class="headerlink" href="#packages" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>A package is a directory containing Python module files.</p></li>
 <li><p>This directory always contains a file name __init__.py</p></li>
@@ -641,18 +859,18 @@ sklearn
 <pre>
 from ._mean_shift import mean_shift, MeanShift
 from ._kmeans import k_means, KMeans, MiniBatchKMeans
-</pre></div>
-<div class="section" id="relative-imports">
-<h2>Relative imports<a class="headerlink" href="#relative-imports" title="Permalink to this headline">¶</a></h2>
+</pre></section>
+<section id="relative-imports">
+<h2>Relative imports<a class="headerlink" href="#relative-imports" title="Permalink to this headline">#</a></h2>
 <p>These imports use leading dots to indicate the current and parent packages involved in the relative import. In the sugiton module, you can use:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">cluster</span> <span class="c1"># import module in the same directory</span>
 <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">base</span>   <span class="c1"># import module in parent directory</span>
 <span class="kn">from</span> <span class="nn">..ensemble</span> <span class="kn">import</span> <span class="n">_forest</span> <span class="c1"># import module in another subdirectory of the parent directory</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="reminder">
-<h2>Reminder<a class="headerlink" href="#reminder" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="reminder">
+<h2>Reminder<a class="headerlink" href="#reminder" title="Permalink to this headline">#</a></h2>
 <p>Don’t forget that importing * is not recommended</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -832,8 +1050,8 @@ sum(a, axis=None, dtype=None, out=None, keepdims=&lt;no value&gt;, initial=&lt;n
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -857,33 +1075,48 @@ sum(a, axis=None, dtype=None, out=None, keepdims=&lt;no value&gt;, initial=&lt;n
 
               </div>
               
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="04-Control.Flow.Tools.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Control Flow Tools</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="06-Input.And.Output.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Input and Output</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
         </div>
     </div>
-    
-    
-    <div class='prev-next-bottom'>
-        
-    <a class='left-prev' id="prev-link" href="04-Control.Flow.Tools.html" title="previous page">Control Flow Tools</a>
-    <a class='right-next' id="next-link" href="06-Input.And.Output.html" title="next page">Input and Output</a>
-
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Pierre Navaro<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Pierre Navaro<br/>
-        
-            &copy; Copyright 2020.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-    <script src="_static/js/index.js"></script>
-    
+
   </body>
 </html>

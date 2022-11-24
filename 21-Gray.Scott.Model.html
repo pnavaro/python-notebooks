@@ -1,89 +1,114 @@
 
-
 <!DOCTYPE html>
 
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Gray-Scott Model &#8212; Python notebooks</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://pnavaro.github.io/python-notebooks/21-Gray.Scott.Model.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Animation with matplotlib" href="22-Matplotlib.Animation.html" />
     <link rel="prev" title="Maxwell solver in two dimensions with FDTD scheme" href="20-Maxwell.2D.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://pnavaro.github.io/python-notebooks/21-Gray.Scott.Model.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Gray-Scott Model" />
-<meta property="og:description" content="Gray-Scott Model  import numpy as np  %config InlineBackend.figure_format = &#39;retina&#39;  The reaction-diffusion system described here involves two generic chemical" />
-<meta property="og:image"       content="https://pnavaro.github.io/python-notebooks/_static/logo.png" />
-
-<meta name="twitter:card" content="summary" />
-
-
+    <!-- Google Analytics -->
+    
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Python notebooks</h1>
-  
-</a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python notebooks</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="current nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="02-Strings.html">
    Strings
@@ -191,117 +216,263 @@
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
     </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/21-Gray.Scott.Model.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-    
-</div>
-        <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/pnavaro/python-notebooks"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/pnavaro/python-notebooks/issues/new?title=Issue%20on%20page%20%2F21-Gray.Scott.Model.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/pnavaro/python-notebooks/edit/master/notebooks/21-Gray.Scott.Model.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
-
-        <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/pnavaro/python-notebooks/master?urlpath=tree/notebooks/21-Gray.Scott.Model.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/pnavaro/python-notebooks/blob/master/notebooks/21-Gray.Scott.Model.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
-    </div>
-</div>
-
-    </div>
-
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/pnavaro/python-notebooks/master?urlpath=tree/notebooks/21-Gray.Scott.Model.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/pnavaro/python-notebooks/blob/master/notebooks/21-Gray.Scott.Model.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/pnavaro/python-notebooks"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/pnavaro/python-notebooks/issues/new?title=Issue%20on%20page%20%2F21-Gray.Scott.Model.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/pnavaro/python-notebooks/edit/master/notebooks/21-Gray.Scott.Model.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/21-Gray.Scott.Model.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#initialization">
    Initialization
@@ -334,16 +505,65 @@
  </li>
 </ul>
 
-        </nav>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Gray-Scott Model</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initialization">
+   Initialization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boundary-conditions">
+   Boundary conditions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laplacian">
+   Laplacian
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Gray-Scott model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualization">
+   Visualization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="gray-scott-model">
-<h1>Gray-Scott Model<a class="headerlink" href="#gray-scott-model" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="gray-scott-model">
+<h1>Gray-Scott Model<a class="headerlink" href="#gray-scott-model" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -354,6 +574,44 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">,</span> <span class="s2">&quot;InlineBackend.figure_format = &#39;retina&#39;&quot;</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2364,</span> in <span class="ni">InteractiveShell.run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2362</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2363</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2364</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2365</span> <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/magics/config.py:163,</span> in <span class="ni">ConfigMagics.config</span><span class="nt">(self, s)</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span> <span class="kn">from</span> <span class="nn">traitlets.config.loader</span> <span class="kn">import</span> <span class="n">Config</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span> <span class="c1"># some IPython objects are Configurable, but do not yet have</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="c1"># any configurable traits.  Exclude them from the effects of</span>
+<span class="g g-Whitespace">    </span><span class="mi">162</span> <span class="c1"># this magic, as their presence is just noise:</span>
+<span class="ne">--&gt; </span><span class="mi">163</span> <span class="n">configurables</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span> <span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">configurables</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span>                              <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">class_traits</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">165</span>                              <span class="p">]),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">166</span> <span class="n">classnames</span> <span class="o">=</span> <span class="p">[</span> <span class="n">c</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">configurables</span> <span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">168</span> <span class="n">line</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/magics/config.py:164,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span> <span class="kn">from</span> <span class="nn">traitlets.config.loader</span> <span class="kn">import</span> <span class="n">Config</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span> <span class="c1"># some IPython objects are Configurable, but do not yet have</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="c1"># any configurable traits.  Exclude them from the effects of</span>
+<span class="g g-Whitespace">    </span><span class="mi">162</span> <span class="c1"># this magic, as their presence is just noise:</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span> <span class="n">configurables</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span> <span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">configurables</span>
+<span class="ne">--&gt; </span><span class="mi">164</span>                              <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">class_traits</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">165</span>                              <span class="p">]),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">166</span> <span class="n">classnames</span> <span class="o">=</span> <span class="p">[</span> <span class="n">c</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">configurables</span> <span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">168</span> <span class="n">line</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="ne">AttributeError</span>: type object &#39;CommManager&#39; has no attribute &#39;class_traits&#39;
 </pre></div>
 </div>
 </div>
@@ -373,8 +631,8 @@
 \Delta u_{i,j} \approx u_{i,j-1} + u_{i-1,j} -4u_{i,j} + u_{i+1, j} + u_{i, j+1}
 \]</div>
 <p>The classic Euler scheme is used to integrate the time derivative.</p>
-<div class="section" id="initialization">
-<h2>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h2>
+<section id="initialization">
+<h2>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">#</a></h2>
 <p><span class="math notranslate nohighlight">\(u\)</span> is <span class="math notranslate nohighlight">\(1\)</span> everywhere et <span class="math notranslate nohighlight">\(v\)</span> is <span class="math notranslate nohighlight">\(0\)</span> in the domain except in a square zone where <span class="math notranslate nohighlight">\(v = 0.25\)</span> and <span class="math notranslate nohighlight">\( u = 0.5\)</span>. This square located in the center of the domain is  <span class="math notranslate nohighlight">\([0, 1]\times[0,1]\)</span> with a size of <span class="math notranslate nohighlight">\(0.2\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -395,9 +653,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="boundary-conditions">
-<h2>Boundary conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="boundary-conditions">
+<h2>Boundary conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this headline">#</a></h2>
 <p>We assume that the domain is periodic.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -410,9 +668,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="laplacian">
-<h2>Laplacian<a class="headerlink" href="#laplacian" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="laplacian">
+<h2>Laplacian<a class="headerlink" href="#laplacian" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">laplacian</span><span class="p">(</span><span class="n">u</span><span class="p">):</span>
@@ -426,9 +684,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id1">
-<h2>Gray-Scott model<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="id1">
+<h2>Gray-Scott model<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">grayscott</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">Du</span><span class="p">,</span> <span class="n">Dv</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
@@ -448,13 +706,13 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="visualization">
-<h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="visualization">
+<h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">#</a></h2>
 <p>Nous utiliserons les données suivantes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Du</span><span class="p">,</span> <span class="n">Dv</span> <span class="o">=</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">05</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Du</span><span class="p">,</span> <span class="n">Dv</span> <span class="o">=</span> <span class="mf">.1</span><span class="p">,</span> <span class="mf">.05</span>
 <span class="n">F</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mf">0.0545</span><span class="p">,</span> <span class="mf">0.062</span>
 </pre></div>
 </div>
@@ -482,14 +740,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "a7a49afa2a9d4783b599044be804fe27"}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1min 8s, sys: 24.4 s, total: 1min 33s
-Wall time: 1min 32s
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -505,13 +755,6 @@ Wall time: 1min 32s
                           <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                           <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
                           <span class="n">continuous_update</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "3c0a808b9e5f4c0381434973adeb3eef"}
-</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.display_sequence(iframe)&gt;
 </pre></div>
 </div>
 </div>
@@ -532,23 +775,15 @@ Wall time: 1min 32s
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><img src="images/movie.gif"></div></div>
 </div>
-</div>
-<div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://mrob.com/pub/comp/xmorphia/">Reaction-Diffusion by the Gray-Scott Model: Pearson’s Parametrization</a></p></li>
 </ul>
-</div>
-</div>
-
-
-<script type="application/vnd.jupyter.widget-state+json">
-{"state": {"9dd2e36b19c0412392c2c5e31f08d0bf": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ccac6a86495a452bb99de72e535de79e": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": "initial"}}, "d3372633a9a941ada11f633d532bda72": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "100%", "description_tooltip": null, "layout": "IPY_MODEL_9dd2e36b19c0412392c2c5e31f08d0bf", "max": 500.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_ccac6a86495a452bb99de72e535de79e", "value": 500.0}}, "81476ad329004ee6bc86f486e3542c8f": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "5420e41eeb784fb9b0735b4a4e267022": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "75613945187d488ea766bbba7d51b5c1": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_81476ad329004ee6bc86f486e3542c8f", "placeholder": "\u200b", "style": "IPY_MODEL_5420e41eeb784fb9b0735b4a4e267022", "value": " 500/500 [01:32&lt;00:00,  5.38it/s]"}}, "874783f74afb46c895355362bedbf933": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "a7a49afa2a9d4783b599044be804fe27": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_d3372633a9a941ada11f633d532bda72", "IPY_MODEL_75613945187d488ea766bbba7d51b5c1"], "layout": "IPY_MODEL_874783f74afb46c895355362bedbf933"}}, "e097792f63e44481bdc4d3d896aaf33f": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "676787a0756146cca2c5e89eb5943204": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "9e5e8efdbc814d9da8ec5dd982b6a81c": {"model_name": "IntSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "IntSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "IntSliderView", "continuous_update": true, "description": "iframe", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_e097792f63e44481bdc4d3d896aaf33f", "max": 499, "min": 0, "orientation": "horizontal", "readout": true, "readout_format": "d", "step": 1, "style": "IPY_MODEL_676787a0756146cca2c5e89eb5943204", "value": 0}}, "c3c165f9fbf04781a527bbd63ec0af56": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3c0a808b9e5f4c0381434973adeb3eef": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_9e5e8efdbc814d9da8ec5dd982b6a81c", "IPY_MODEL_b4cee60d25f8468d9b080b5a6b97226f"], "layout": "IPY_MODEL_c3c165f9fbf04781a527bbd63ec0af56"}}, "e465d91c67f9440ab93e86ef3f7445d8": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "b4cee60d25f8468d9b080b5a6b97226f": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_e465d91c67f9440ab93e86ef3f7445d8", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {}, "data": {"text/plain": "<PIL.Image.Image image mode=L size=302x302 at 0x7F3BB96FC880>", "image/png": "iVBORw0KGgoAAAANSUhEUgAAAS4AAAEuCAAAAAAVK6CfAAACOUlEQVR4nO3cS2ocMRRAUUmUy39MFmDoidfgjWUZWVcga/DEkLEHiX/p6kLKJHPz2jbPJufMG6kuQvTkqRQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+Ihq4sr7rj3KeNOdBKTlqm1q+y0++tqzemXlqtPRxekUPye11PXx1581qdeUs2xtR5fXV4fr2kPBamnTtL358fMp6Xwl5SrTxfXXzfPDEvzs2uaz49tvv5flnfb1grTTdXq1Od7WWoO3Qa3tZHP1/a7+X6erTofP27v7XQ/+rh0spR9OWVduVq4y1od6/7CEc81lHlkXfWKusi51t+zCd1fZLWN9py29LO909V5779Fcpfc+0v52lZa1cCmjlDKCHz7Gvx8mycv1io/O65V4uj4juULkCpErRK4QuULkCpErRK4QuULkCpErRK4QuULkCpErRK4QuULkCpErRK4QuULkCpErRK4QuULkCpErRK4QuULkCpErRK4QuULkCpErRK4QuULkCpErRK4QuULkCsnL9YoJzrzXHBJPVy2lxGeLS2atvHnG2lptrQWnx2prrY09H6B4A3nTstNcD+YSHy4+mEfiprMWrtNZW8oeo+vn5z1tcj0t11i3xydl3mN0/fzL0zZtdj0p1+iPN7ebPkZwuriO0Z9ubx6zprGTjnVtJ5/yURdPBgWXT+JBqujKn/C5MwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4mP4C+l+ZgdAL/OcAAAAASUVORK5CYII=\n"}}]}}}, "version_major": 2, "version_minor": 0}
-</script>
-
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -572,33 +807,48 @@ Wall time: 1min 32s
 
               </div>
               
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="20-Maxwell.2D.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Maxwell solver in two dimensions with FDTD scheme</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="22-Matplotlib.Animation.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Animation with matplotlib</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
         </div>
     </div>
-    
-    
-    <div class='prev-next-bottom'>
-        
-    <a class='left-prev' id="prev-link" href="20-Maxwell.2D.html" title="previous page">Maxwell solver in two dimensions with FDTD scheme</a>
-    <a class='right-next' id="next-link" href="22-Matplotlib.Animation.html" title="next page">Animation with matplotlib</a>
-
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Pierre Navaro<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Pierre Navaro<br/>
-        
-            &copy; Copyright 2020.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-    <script src="_static/js/index.js"></script>
-    
+
   </body>
 </html>

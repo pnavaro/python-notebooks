@@ -1,89 +1,114 @@
 
-
 <!DOCTYPE html>
 
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Semi-Lagrangian method &#8212; Python notebooks</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://pnavaro.github.io/python-notebooks/19-LandauDamping.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Maxwell solver in two dimensions with FDTD scheme" href="20-Maxwell.2D.html" />
     <link rel="prev" title="Numba" href="18-Numba.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://pnavaro.github.io/python-notebooks/19-LandauDamping.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Semi-Lagrangian method" />
-<meta property="og:description" content="Semi-Lagrangian method  Let us consider an abstract scalar advection equation of the form   \frac{\partial f}{\partial t}+ a(x, t) \cdot \nabla f = 0.    The ch" />
-<meta property="og:image"       content="https://pnavaro.github.io/python-notebooks/_static/logo.png" />
-
-<meta name="twitter:card" content="summary" />
-
-
+    <!-- Google Analytics -->
+    
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Python notebooks</h1>
-  
-</a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python notebooks</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="current nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="02-Strings.html">
    Strings
@@ -191,117 +216,263 @@
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
     </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/19-LandauDamping.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-    
-</div>
-        <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/pnavaro/python-notebooks"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/pnavaro/python-notebooks/issues/new?title=Issue%20on%20page%20%2F19-LandauDamping.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/pnavaro/python-notebooks/edit/master/notebooks/19-LandauDamping.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
-
-        <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/pnavaro/python-notebooks/master?urlpath=tree/notebooks/19-LandauDamping.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/pnavaro/python-notebooks/blob/master/notebooks/19-LandauDamping.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
-    </div>
-</div>
-
-    </div>
-
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/pnavaro/python-notebooks/master?urlpath=tree/notebooks/19-LandauDamping.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/pnavaro/python-notebooks/blob/master/notebooks/19-LandauDamping.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/pnavaro/python-notebooks"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/pnavaro/python-notebooks/issues/new?title=Issue%20on%20page%20%2F19-LandauDamping.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/pnavaro/python-notebooks/edit/master/notebooks/19-LandauDamping.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/19-LandauDamping.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bspline-interpolator">
    Bspline interpolator
@@ -361,16 +532,92 @@
  </li>
 </ul>
 
-        </nav>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Semi-Lagrangian method</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bspline-interpolator">
+   Bspline interpolator
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numpy">
+     Numpy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interpolation-test">
+     Interpolation test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#profiling-the-code">
+     Profiling the code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fortran">
+     Fortran
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numba">
+     Numba
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pythran">
+     Pythran
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cython">
+     Cython
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vlasov-poisson-equation">
+   Vlasov-Poisson equation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#landau-damping">
+   Landau Damping
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="semi-lagrangian-method">
-<h1>Semi-Lagrangian method<a class="headerlink" href="#semi-lagrangian-method" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="semi-lagrangian-method">
+<h1>Semi-Lagrangian method<a class="headerlink" href="#semi-lagrangian-method" title="Permalink to this headline">#</a></h1>
 <p>Let us consider an abstract scalar advection equation of the form</p>
 <div class="math notranslate nohighlight">
 \[
@@ -400,6 +647,47 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">,</span> <span class="s2">&quot;InlineBackend.figure_format = &#39;retina&#39;&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2364,</span> in <span class="ni">InteractiveShell.run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2362</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2363</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2364</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2365</span> <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/magics/config.py:163,</span> in <span class="ni">ConfigMagics.config</span><span class="nt">(self, s)</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span> <span class="kn">from</span> <span class="nn">traitlets.config.loader</span> <span class="kn">import</span> <span class="n">Config</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span> <span class="c1"># some IPython objects are Configurable, but do not yet have</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="c1"># any configurable traits.  Exclude them from the effects of</span>
+<span class="g g-Whitespace">    </span><span class="mi">162</span> <span class="c1"># this magic, as their presence is just noise:</span>
+<span class="ne">--&gt; </span><span class="mi">163</span> <span class="n">configurables</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span> <span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">configurables</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span>                              <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">class_traits</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">165</span>                              <span class="p">]),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">166</span> <span class="n">classnames</span> <span class="o">=</span> <span class="p">[</span> <span class="n">c</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">configurables</span> <span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">168</span> <span class="n">line</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/magics/config.py:164,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span> <span class="kn">from</span> <span class="nn">traitlets.config.loader</span> <span class="kn">import</span> <span class="n">Config</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span> <span class="c1"># some IPython objects are Configurable, but do not yet have</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="c1"># any configurable traits.  Exclude them from the effects of</span>
+<span class="g g-Whitespace">    </span><span class="mi">162</span> <span class="c1"># this magic, as their presence is just noise:</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span> <span class="n">configurables</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span> <span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">configurables</span>
+<span class="ne">--&gt; </span><span class="mi">164</span>                              <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">class_traits</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">165</span>                              <span class="p">]),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">166</span> <span class="n">classnames</span> <span class="o">=</span> <span class="p">[</span> <span class="n">c</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">configurables</span> <span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">168</span> <span class="n">line</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="ne">AttributeError</span>: type object &#39;CommManager&#39; has no attribute &#39;class_traits&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -410,13 +698,13 @@
 </div>
 </div>
 </div>
-<div class="section" id="bspline-interpolator">
-<h2>Bspline interpolator<a class="headerlink" href="#bspline-interpolator" title="Permalink to this headline">¶</a></h2>
+<section id="bspline-interpolator">
+<h2>Bspline interpolator<a class="headerlink" href="#bspline-interpolator" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/De_Boor%27s_algorithm">De Boor’s Algorithm - Wikipedia</a></p></li>
 </ul>
-<div class="section" id="numpy">
-<h3>Numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h3>
+<section id="numpy">
+<h3>Numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bspline_python</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
@@ -480,9 +768,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="interpolation-test">
-<h3>Interpolation test<a class="headerlink" href="#interpolation-test" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="interpolation-test">
+<h3>Interpolation test<a class="headerlink" href="#interpolation-test" title="Permalink to this headline">#</a></h3>
 <p><span class="math notranslate nohighlight">\(\sin\)</span> function after a displacement of alpha</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -500,15 +788,10 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="profiling-the-code">
-<h3>Profiling the code<a class="headerlink" href="#profiling-the-code" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="profiling-the-code">
+<h3>Profiling the code<a class="headerlink" href="#profiling-the-code" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> line_profiler
@@ -533,39 +816,10 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timer unit: 1e-06 s
-
-Total time: 0.001162 s
-File: &lt;ipython-input-4-c5af2f880bfd&gt;
-Function: interpolate_disp at line 22
-
-Line #      Hits         Time  Per Hit   % Time  Line Contents
-==============================================================
-    22                                               def interpolate_disp(self, f, alpha):
-    23                                                   &quot;&quot;&quot;compute the interpolating spline of degree p of odd degree 
-    24                                                   of a function f on a periodic uniform mesh, at
-    25                                                   all points xi-alpha&quot;&quot;&quot;
-    26         1          2.0      2.0      0.2          p = self.p
-    27         1         10.0     10.0      0.9          assert (np.size(f) == self.ncells)
-    28                                                   # compute eigenvalues of cubic splines evaluated at displaced points
-    29         1         10.0     10.0      0.9          ishift = np.floor(-alpha / self.deltax)
-    30         1         22.0     22.0      1.9          beta = -ishift - alpha / self.deltax
-    31         1         17.0     17.0      1.5          self.eigalpha.fill(0.)
-    32         5          8.0      1.6      0.7          for j in range(-(p-1)//2, (p+1)//2 + 1):
-    33         4        919.0    229.8     79.1              self.eigalpha += bspline_python(p, j-(p+1)//2, beta) * np.exp((ishift+j)*1j*self.modes)
-    34                                                       
-    35                                                   # compute interpolating spline using fft and properties of circulant matrices
-    36         1        174.0    174.0     15.0          return np.real(ifft(fft(f) * self.eigalpha / self.eig_bspl))
-
-*** Profile printout saved to text file &#39;lp_results.txt&#39;. 
-</pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="fortran">
-<h3>Fortran<a class="headerlink" href="#fortran" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="fortran">
+<h3>Fortran<a class="headerlink" href="#fortran" title="Permalink to this headline">#</a></h3>
 <p>Replace the bspline computation by a fortran function, call it <strong>bspline_fortran</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -573,16 +827,6 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/javascript">new Promise(function(resolve, reject) {
-	var script = document.createElement("script");
-	script.onload = resolve;
-	script.onerror = reject;
-	script.src = "https://raw.github.com/marijnh/CodeMirror/master/mode/fortran/fortran.js";
-	document.head.appendChild(script);
-}).then(() => {
-IPython.config.cell_magic_highlight['magic_fortran'] = {'reg':[/^%%fortran/]};
-});</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -659,15 +903,10 @@ end function bspline_fortran
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="numba">
-<h3>Numba<a class="headerlink" href="#numba" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="numba">
+<h3>Numba<a class="headerlink" href="#numba" title="Permalink to this headline">#</a></h3>
 <p>Create a optimized function of bspline python function with Numba. Call it bspline_numba.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -740,15 +979,10 @@ end function bspline_fortran
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="pythran">
-<h3>Pythran<a class="headerlink" href="#pythran" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="pythran">
+<h3>Pythran<a class="headerlink" href="#pythran" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pythran</span>
@@ -826,15 +1060,10 @@ end function bspline_fortran
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="cython">
-<h3>Cython<a class="headerlink" href="#cython" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="cython">
+<h3>Cython<a class="headerlink" href="#cython" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Create <strong>bspline_cython</strong> function.</p></li>
 </ul>
@@ -866,709 +1095,6 @@ def bspline_cython(p, j, x):
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><!DOCTYPE html>
-<!-- Generated by Cython 0.29.21 -->
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Cython: _cython_magic_b3017fe8f3a23cdf5cfff93cd31a656c.pyx</title>
-    <style type="text/css">
-
-body.cython { font-family: courier; font-size: 12; }
-
-.cython.tag  {  }
-.cython.line { margin: 0em }
-.cython.code { font-size: 9; color: #444444; display: none; margin: 0px 0px 0px 8px; border-left: 8px none; }
-
-.cython.line .run { background-color: #B0FFB0; }
-.cython.line .mis { background-color: #FFB0B0; }
-.cython.code.run  { border-left: 8px solid #B0FFB0; }
-.cython.code.mis  { border-left: 8px solid #FFB0B0; }
-
-.cython.code .py_c_api  { color: red; }
-.cython.code .py_macro_api  { color: #FF7000; }
-.cython.code .pyx_c_api  { color: #FF3000; }
-.cython.code .pyx_macro_api  { color: #FF7000; }
-.cython.code .refnanny  { color: #FFA000; }
-.cython.code .trace  { color: #FFA000; }
-.cython.code .error_goto  { color: #FFA000; }
-
-.cython.code .coerce  { color: #008000; border: 1px dotted #008000 }
-.cython.code .py_attr { color: #FF0000; font-weight: bold; }
-.cython.code .c_attr  { color: #0000FF; }
-.cython.code .py_call { color: #FF0000; font-weight: bold; }
-.cython.code .c_call  { color: #0000FF; }
-
-.cython.score-0 {background-color: #FFFFff;}
-.cython.score-1 {background-color: #FFFFe7;}
-.cython.score-2 {background-color: #FFFFd4;}
-.cython.score-3 {background-color: #FFFFc4;}
-.cython.score-4 {background-color: #FFFFb6;}
-.cython.score-5 {background-color: #FFFFaa;}
-.cython.score-6 {background-color: #FFFF9f;}
-.cython.score-7 {background-color: #FFFF96;}
-.cython.score-8 {background-color: #FFFF8d;}
-.cython.score-9 {background-color: #FFFF86;}
-.cython.score-10 {background-color: #FFFF7f;}
-.cython.score-11 {background-color: #FFFF79;}
-.cython.score-12 {background-color: #FFFF73;}
-.cython.score-13 {background-color: #FFFF6e;}
-.cython.score-14 {background-color: #FFFF6a;}
-.cython.score-15 {background-color: #FFFF66;}
-.cython.score-16 {background-color: #FFFF62;}
-.cython.score-17 {background-color: #FFFF5e;}
-.cython.score-18 {background-color: #FFFF5b;}
-.cython.score-19 {background-color: #FFFF57;}
-.cython.score-20 {background-color: #FFFF55;}
-.cython.score-21 {background-color: #FFFF52;}
-.cython.score-22 {background-color: #FFFF4f;}
-.cython.score-23 {background-color: #FFFF4d;}
-.cython.score-24 {background-color: #FFFF4b;}
-.cython.score-25 {background-color: #FFFF48;}
-.cython.score-26 {background-color: #FFFF46;}
-.cython.score-27 {background-color: #FFFF44;}
-.cython.score-28 {background-color: #FFFF43;}
-.cython.score-29 {background-color: #FFFF41;}
-.cython.score-30 {background-color: #FFFF3f;}
-.cython.score-31 {background-color: #FFFF3e;}
-.cython.score-32 {background-color: #FFFF3c;}
-.cython.score-33 {background-color: #FFFF3b;}
-.cython.score-34 {background-color: #FFFF39;}
-.cython.score-35 {background-color: #FFFF38;}
-.cython.score-36 {background-color: #FFFF37;}
-.cython.score-37 {background-color: #FFFF36;}
-.cython.score-38 {background-color: #FFFF35;}
-.cython.score-39 {background-color: #FFFF34;}
-.cython.score-40 {background-color: #FFFF33;}
-.cython.score-41 {background-color: #FFFF32;}
-.cython.score-42 {background-color: #FFFF31;}
-.cython.score-43 {background-color: #FFFF30;}
-.cython.score-44 {background-color: #FFFF2f;}
-.cython.score-45 {background-color: #FFFF2e;}
-.cython.score-46 {background-color: #FFFF2d;}
-.cython.score-47 {background-color: #FFFF2c;}
-.cython.score-48 {background-color: #FFFF2b;}
-.cython.score-49 {background-color: #FFFF2b;}
-.cython.score-50 {background-color: #FFFF2a;}
-.cython.score-51 {background-color: #FFFF29;}
-.cython.score-52 {background-color: #FFFF29;}
-.cython.score-53 {background-color: #FFFF28;}
-.cython.score-54 {background-color: #FFFF27;}
-.cython.score-55 {background-color: #FFFF27;}
-.cython.score-56 {background-color: #FFFF26;}
-.cython.score-57 {background-color: #FFFF26;}
-.cython.score-58 {background-color: #FFFF25;}
-.cython.score-59 {background-color: #FFFF24;}
-.cython.score-60 {background-color: #FFFF24;}
-.cython.score-61 {background-color: #FFFF23;}
-.cython.score-62 {background-color: #FFFF23;}
-.cython.score-63 {background-color: #FFFF22;}
-.cython.score-64 {background-color: #FFFF22;}
-.cython.score-65 {background-color: #FFFF22;}
-.cython.score-66 {background-color: #FFFF21;}
-.cython.score-67 {background-color: #FFFF21;}
-.cython.score-68 {background-color: #FFFF20;}
-.cython.score-69 {background-color: #FFFF20;}
-.cython.score-70 {background-color: #FFFF1f;}
-.cython.score-71 {background-color: #FFFF1f;}
-.cython.score-72 {background-color: #FFFF1f;}
-.cython.score-73 {background-color: #FFFF1e;}
-.cython.score-74 {background-color: #FFFF1e;}
-.cython.score-75 {background-color: #FFFF1e;}
-.cython.score-76 {background-color: #FFFF1d;}
-.cython.score-77 {background-color: #FFFF1d;}
-.cython.score-78 {background-color: #FFFF1c;}
-.cython.score-79 {background-color: #FFFF1c;}
-.cython.score-80 {background-color: #FFFF1c;}
-.cython.score-81 {background-color: #FFFF1c;}
-.cython.score-82 {background-color: #FFFF1b;}
-.cython.score-83 {background-color: #FFFF1b;}
-.cython.score-84 {background-color: #FFFF1b;}
-.cython.score-85 {background-color: #FFFF1a;}
-.cython.score-86 {background-color: #FFFF1a;}
-.cython.score-87 {background-color: #FFFF1a;}
-.cython.score-88 {background-color: #FFFF1a;}
-.cython.score-89 {background-color: #FFFF19;}
-.cython.score-90 {background-color: #FFFF19;}
-.cython.score-91 {background-color: #FFFF19;}
-.cython.score-92 {background-color: #FFFF19;}
-.cython.score-93 {background-color: #FFFF18;}
-.cython.score-94 {background-color: #FFFF18;}
-.cython.score-95 {background-color: #FFFF18;}
-.cython.score-96 {background-color: #FFFF18;}
-.cython.score-97 {background-color: #FFFF17;}
-.cython.score-98 {background-color: #FFFF17;}
-.cython.score-99 {background-color: #FFFF17;}
-.cython.score-100 {background-color: #FFFF17;}
-.cython.score-101 {background-color: #FFFF16;}
-.cython.score-102 {background-color: #FFFF16;}
-.cython.score-103 {background-color: #FFFF16;}
-.cython.score-104 {background-color: #FFFF16;}
-.cython.score-105 {background-color: #FFFF16;}
-.cython.score-106 {background-color: #FFFF15;}
-.cython.score-107 {background-color: #FFFF15;}
-.cython.score-108 {background-color: #FFFF15;}
-.cython.score-109 {background-color: #FFFF15;}
-.cython.score-110 {background-color: #FFFF15;}
-.cython.score-111 {background-color: #FFFF15;}
-.cython.score-112 {background-color: #FFFF14;}
-.cython.score-113 {background-color: #FFFF14;}
-.cython.score-114 {background-color: #FFFF14;}
-.cython.score-115 {background-color: #FFFF14;}
-.cython.score-116 {background-color: #FFFF14;}
-.cython.score-117 {background-color: #FFFF14;}
-.cython.score-118 {background-color: #FFFF13;}
-.cython.score-119 {background-color: #FFFF13;}
-.cython.score-120 {background-color: #FFFF13;}
-.cython.score-121 {background-color: #FFFF13;}
-.cython.score-122 {background-color: #FFFF13;}
-.cython.score-123 {background-color: #FFFF13;}
-.cython.score-124 {background-color: #FFFF13;}
-.cython.score-125 {background-color: #FFFF12;}
-.cython.score-126 {background-color: #FFFF12;}
-.cython.score-127 {background-color: #FFFF12;}
-.cython.score-128 {background-color: #FFFF12;}
-.cython.score-129 {background-color: #FFFF12;}
-.cython.score-130 {background-color: #FFFF12;}
-.cython.score-131 {background-color: #FFFF12;}
-.cython.score-132 {background-color: #FFFF11;}
-.cython.score-133 {background-color: #FFFF11;}
-.cython.score-134 {background-color: #FFFF11;}
-.cython.score-135 {background-color: #FFFF11;}
-.cython.score-136 {background-color: #FFFF11;}
-.cython.score-137 {background-color: #FFFF11;}
-.cython.score-138 {background-color: #FFFF11;}
-.cython.score-139 {background-color: #FFFF11;}
-.cython.score-140 {background-color: #FFFF11;}
-.cython.score-141 {background-color: #FFFF10;}
-.cython.score-142 {background-color: #FFFF10;}
-.cython.score-143 {background-color: #FFFF10;}
-.cython.score-144 {background-color: #FFFF10;}
-.cython.score-145 {background-color: #FFFF10;}
-.cython.score-146 {background-color: #FFFF10;}
-.cython.score-147 {background-color: #FFFF10;}
-.cython.score-148 {background-color: #FFFF10;}
-.cython.score-149 {background-color: #FFFF10;}
-.cython.score-150 {background-color: #FFFF0f;}
-.cython.score-151 {background-color: #FFFF0f;}
-.cython.score-152 {background-color: #FFFF0f;}
-.cython.score-153 {background-color: #FFFF0f;}
-.cython.score-154 {background-color: #FFFF0f;}
-.cython.score-155 {background-color: #FFFF0f;}
-.cython.score-156 {background-color: #FFFF0f;}
-.cython.score-157 {background-color: #FFFF0f;}
-.cython.score-158 {background-color: #FFFF0f;}
-.cython.score-159 {background-color: #FFFF0f;}
-.cython.score-160 {background-color: #FFFF0f;}
-.cython.score-161 {background-color: #FFFF0e;}
-.cython.score-162 {background-color: #FFFF0e;}
-.cython.score-163 {background-color: #FFFF0e;}
-.cython.score-164 {background-color: #FFFF0e;}
-.cython.score-165 {background-color: #FFFF0e;}
-.cython.score-166 {background-color: #FFFF0e;}
-.cython.score-167 {background-color: #FFFF0e;}
-.cython.score-168 {background-color: #FFFF0e;}
-.cython.score-169 {background-color: #FFFF0e;}
-.cython.score-170 {background-color: #FFFF0e;}
-.cython.score-171 {background-color: #FFFF0e;}
-.cython.score-172 {background-color: #FFFF0e;}
-.cython.score-173 {background-color: #FFFF0d;}
-.cython.score-174 {background-color: #FFFF0d;}
-.cython.score-175 {background-color: #FFFF0d;}
-.cython.score-176 {background-color: #FFFF0d;}
-.cython.score-177 {background-color: #FFFF0d;}
-.cython.score-178 {background-color: #FFFF0d;}
-.cython.score-179 {background-color: #FFFF0d;}
-.cython.score-180 {background-color: #FFFF0d;}
-.cython.score-181 {background-color: #FFFF0d;}
-.cython.score-182 {background-color: #FFFF0d;}
-.cython.score-183 {background-color: #FFFF0d;}
-.cython.score-184 {background-color: #FFFF0d;}
-.cython.score-185 {background-color: #FFFF0d;}
-.cython.score-186 {background-color: #FFFF0d;}
-.cython.score-187 {background-color: #FFFF0c;}
-.cython.score-188 {background-color: #FFFF0c;}
-.cython.score-189 {background-color: #FFFF0c;}
-.cython.score-190 {background-color: #FFFF0c;}
-.cython.score-191 {background-color: #FFFF0c;}
-.cython.score-192 {background-color: #FFFF0c;}
-.cython.score-193 {background-color: #FFFF0c;}
-.cython.score-194 {background-color: #FFFF0c;}
-.cython.score-195 {background-color: #FFFF0c;}
-.cython.score-196 {background-color: #FFFF0c;}
-.cython.score-197 {background-color: #FFFF0c;}
-.cython.score-198 {background-color: #FFFF0c;}
-.cython.score-199 {background-color: #FFFF0c;}
-.cython.score-200 {background-color: #FFFF0c;}
-.cython.score-201 {background-color: #FFFF0c;}
-.cython.score-202 {background-color: #FFFF0c;}
-.cython.score-203 {background-color: #FFFF0b;}
-.cython.score-204 {background-color: #FFFF0b;}
-.cython.score-205 {background-color: #FFFF0b;}
-.cython.score-206 {background-color: #FFFF0b;}
-.cython.score-207 {background-color: #FFFF0b;}
-.cython.score-208 {background-color: #FFFF0b;}
-.cython.score-209 {background-color: #FFFF0b;}
-.cython.score-210 {background-color: #FFFF0b;}
-.cython.score-211 {background-color: #FFFF0b;}
-.cython.score-212 {background-color: #FFFF0b;}
-.cython.score-213 {background-color: #FFFF0b;}
-.cython.score-214 {background-color: #FFFF0b;}
-.cython.score-215 {background-color: #FFFF0b;}
-.cython.score-216 {background-color: #FFFF0b;}
-.cython.score-217 {background-color: #FFFF0b;}
-.cython.score-218 {background-color: #FFFF0b;}
-.cython.score-219 {background-color: #FFFF0b;}
-.cython.score-220 {background-color: #FFFF0b;}
-.cython.score-221 {background-color: #FFFF0b;}
-.cython.score-222 {background-color: #FFFF0a;}
-.cython.score-223 {background-color: #FFFF0a;}
-.cython.score-224 {background-color: #FFFF0a;}
-.cython.score-225 {background-color: #FFFF0a;}
-.cython.score-226 {background-color: #FFFF0a;}
-.cython.score-227 {background-color: #FFFF0a;}
-.cython.score-228 {background-color: #FFFF0a;}
-.cython.score-229 {background-color: #FFFF0a;}
-.cython.score-230 {background-color: #FFFF0a;}
-.cython.score-231 {background-color: #FFFF0a;}
-.cython.score-232 {background-color: #FFFF0a;}
-.cython.score-233 {background-color: #FFFF0a;}
-.cython.score-234 {background-color: #FFFF0a;}
-.cython.score-235 {background-color: #FFFF0a;}
-.cython.score-236 {background-color: #FFFF0a;}
-.cython.score-237 {background-color: #FFFF0a;}
-.cython.score-238 {background-color: #FFFF0a;}
-.cython.score-239 {background-color: #FFFF0a;}
-.cython.score-240 {background-color: #FFFF0a;}
-.cython.score-241 {background-color: #FFFF0a;}
-.cython.score-242 {background-color: #FFFF0a;}
-.cython.score-243 {background-color: #FFFF0a;}
-.cython.score-244 {background-color: #FFFF0a;}
-.cython.score-245 {background-color: #FFFF0a;}
-.cython.score-246 {background-color: #FFFF09;}
-.cython.score-247 {background-color: #FFFF09;}
-.cython.score-248 {background-color: #FFFF09;}
-.cython.score-249 {background-color: #FFFF09;}
-.cython.score-250 {background-color: #FFFF09;}
-.cython.score-251 {background-color: #FFFF09;}
-.cython.score-252 {background-color: #FFFF09;}
-.cython.score-253 {background-color: #FFFF09;}
-.cython.score-254 {background-color: #FFFF09;}
-pre { line-height: 125%; margin: 0; }
-td.linenos pre { color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px; }
-span.linenos { color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px; }
-td.linenos pre.special { color: #000000; background-color: #ffffc0; padding: 0 5px 0 5px; }
-span.linenos.special { color: #000000; background-color: #ffffc0; padding: 0 5px 0 5px; }
-.cython .hll { background-color: #ffffcc }
-.cython { background: #f8f8f8; }
-.cython .c { color: #408080; font-style: italic } /* Comment */
-.cython .err { border: 1px solid #FF0000 } /* Error */
-.cython .k { color: #008000; font-weight: bold } /* Keyword */
-.cython .o { color: #666666 } /* Operator */
-.cython .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.cython .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.cython .cp { color: #BC7A00 } /* Comment.Preproc */
-.cython .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.cython .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.cython .cs { color: #408080; font-style: italic } /* Comment.Special */
-.cython .gd { color: #A00000 } /* Generic.Deleted */
-.cython .ge { font-style: italic } /* Generic.Emph */
-.cython .gr { color: #FF0000 } /* Generic.Error */
-.cython .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.cython .gi { color: #00A000 } /* Generic.Inserted */
-.cython .go { color: #888888 } /* Generic.Output */
-.cython .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.cython .gs { font-weight: bold } /* Generic.Strong */
-.cython .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.cython .gt { color: #0044DD } /* Generic.Traceback */
-.cython .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.cython .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.cython .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.cython .kp { color: #008000 } /* Keyword.Pseudo */
-.cython .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.cython .kt { color: #B00040 } /* Keyword.Type */
-.cython .m { color: #666666 } /* Literal.Number */
-.cython .s { color: #BA2121 } /* Literal.String */
-.cython .na { color: #7D9029 } /* Name.Attribute */
-.cython .nb { color: #008000 } /* Name.Builtin */
-.cython .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.cython .no { color: #880000 } /* Name.Constant */
-.cython .nd { color: #AA22FF } /* Name.Decorator */
-.cython .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.cython .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.cython .nf { color: #0000FF } /* Name.Function */
-.cython .nl { color: #A0A000 } /* Name.Label */
-.cython .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.cython .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.cython .nv { color: #19177C } /* Name.Variable */
-.cython .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.cython .w { color: #bbbbbb } /* Text.Whitespace */
-.cython .mb { color: #666666 } /* Literal.Number.Bin */
-.cython .mf { color: #666666 } /* Literal.Number.Float */
-.cython .mh { color: #666666 } /* Literal.Number.Hex */
-.cython .mi { color: #666666 } /* Literal.Number.Integer */
-.cython .mo { color: #666666 } /* Literal.Number.Oct */
-.cython .sa { color: #BA2121 } /* Literal.String.Affix */
-.cython .sb { color: #BA2121 } /* Literal.String.Backtick */
-.cython .sc { color: #BA2121 } /* Literal.String.Char */
-.cython .dl { color: #BA2121 } /* Literal.String.Delimiter */
-.cython .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.cython .s2 { color: #BA2121 } /* Literal.String.Double */
-.cython .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.cython .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.cython .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.cython .sx { color: #008000 } /* Literal.String.Other */
-.cython .sr { color: #BB6688 } /* Literal.String.Regex */
-.cython .s1 { color: #BA2121 } /* Literal.String.Single */
-.cython .ss { color: #19177C } /* Literal.String.Symbol */
-.cython .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.cython .fm { color: #0000FF } /* Name.Function.Magic */
-.cython .vc { color: #19177C } /* Name.Variable.Class */
-.cython .vg { color: #19177C } /* Name.Variable.Global */
-.cython .vi { color: #19177C } /* Name.Variable.Instance */
-.cython .vm { color: #19177C } /* Name.Variable.Magic */
-.cython .il { color: #666666 } /* Literal.Number.Integer.Long */
-    </style>
-</head>
-<body class="cython">
-<p><span style="border-bottom: solid 1px grey;">Generated by Cython 0.29.21</span></p>
-<p>
-    <span style="background-color: #FFFF00">Yellow lines</span> hint at Python interaction.<br />
-    Click on a line that starts with a "<code>+</code>" to see the C code that Cython generated for it.
-</p>
-<div class="cython"><pre class="cython line score-53" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">01</span>: <span class="k">def</span> <span class="nf">bspline_cython</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span></pre>
-<pre class='cython code score-53 '>/* Python wrapper */
-static PyObject *__pyx_pw_46_cython_magic_b3017fe8f3a23cdf5cfff93cd31a656c_1bspline_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_46_cython_magic_b3017fe8f3a23cdf5cfff93cd31a656c_bspline_cython[] = "Return the value at x in [0,1[ of the B-spline with \n        integer nodes of degree p with support starting at j.\n        Implemented recursively using the de Boor's recursion formula";
-static PyMethodDef __pyx_mdef_46_cython_magic_b3017fe8f3a23cdf5cfff93cd31a656c_1bspline_cython = {"bspline_cython", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_46_cython_magic_b3017fe8f3a23cdf5cfff93cd31a656c_1bspline_cython, METH_VARARGS|METH_KEYWORDS, __pyx_doc_46_cython_magic_b3017fe8f3a23cdf5cfff93cd31a656c_bspline_cython};
-static PyObject *__pyx_pw_46_cython_magic_b3017fe8f3a23cdf5cfff93cd31a656c_1bspline_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  PyObject *__pyx_v_p = 0;
-  PyObject *__pyx_v_j = 0;
-  PyObject *__pyx_v_x = 0;
-  PyObject *__pyx_r = 0;
-  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
-  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("bspline_cython (wrapper)", 0);
-  {
-    static PyObject **__pyx_pyargnames[] = {&amp;__pyx_n_s_p,&amp;__pyx_n_s_j,&amp;__pyx_n_s_x,0};
-    PyObject* values[3] = {0,0,0};
-    if (unlikely(__pyx_kwds)) {
-      Py_ssize_t kw_args;
-      const Py_ssize_t pos_args = <span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args);
-      switch (pos_args) {
-        case  3: values[2] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 2);
-        CYTHON_FALLTHROUGH;
-        case  2: values[1] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 1);
-        CYTHON_FALLTHROUGH;
-        case  1: values[0] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 0);
-        CYTHON_FALLTHROUGH;
-        case  0: break;
-        default: goto __pyx_L5_argtuple_error;
-      }
-      kw_args = <span class='py_c_api'>PyDict_Size</span>(__pyx_kwds);
-      switch (pos_args) {
-        case  0:
-        if (likely((values[0] = <span class='pyx_c_api'>__Pyx_PyDict_GetItemStr</span>(__pyx_kwds, __pyx_n_s_p)) != 0)) kw_args--;
-        else goto __pyx_L5_argtuple_error;
-        CYTHON_FALLTHROUGH;
-        case  1:
-        if (likely((values[1] = <span class='pyx_c_api'>__Pyx_PyDict_GetItemStr</span>(__pyx_kwds, __pyx_n_s_j)) != 0)) kw_args--;
-        else {
-          <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("bspline_cython", 1, 3, 3, 1); <span class='error_goto'>__PYX_ERR(0, 1, __pyx_L3_error)</span>
-        }
-        CYTHON_FALLTHROUGH;
-        case  2:
-        if (likely((values[2] = <span class='pyx_c_api'>__Pyx_PyDict_GetItemStr</span>(__pyx_kwds, __pyx_n_s_x)) != 0)) kw_args--;
-        else {
-          <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("bspline_cython", 1, 3, 3, 2); <span class='error_goto'>__PYX_ERR(0, 1, __pyx_L3_error)</span>
-        }
-      }
-      if (unlikely(kw_args &gt; 0)) {
-        if (unlikely(<span class='pyx_c_api'>__Pyx_ParseOptionalKeywords</span>(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "bspline_cython") &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 1, __pyx_L3_error)</span>
-      }
-    } else if (<span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args) != 3) {
-      goto __pyx_L5_argtuple_error;
-    } else {
-      values[0] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 0);
-      values[1] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 1);
-      values[2] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 2);
-    }
-    __pyx_v_p = values[0];
-    __pyx_v_j = values[1];
-    __pyx_v_x = values[2];
-  }
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L5_argtuple_error:;
-  <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("bspline_cython", 1, 3, 3, <span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args)); <span class='error_goto'>__PYX_ERR(0, 1, __pyx_L3_error)</span>
-  __pyx_L3_error:;
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("_cython_magic_b3017fe8f3a23cdf5cfff93cd31a656c.bspline_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
-  return NULL;
-  __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_46_cython_magic_b3017fe8f3a23cdf5cfff93cd31a656c_bspline_cython(__pyx_self, __pyx_v_p, __pyx_v_j, __pyx_v_x);
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-
-  /* function exit code */
-  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_46_cython_magic_b3017fe8f3a23cdf5cfff93cd31a656c_bspline_cython(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_p, PyObject *__pyx_v_j, PyObject *__pyx_v_x) {
-  PyObject *__pyx_v_w = NULL;
-  PyObject *__pyx_v_w1 = NULL;
-  PyObject *__pyx_r = NULL;
-  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
-  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("bspline_cython", 0);
-/* … */
-  /* function exit code */
-  __pyx_L1_error:;
-  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_1);
-  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
-  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_3);
-  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_5);
-  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_7);
-  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_8);
-  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_9);
-  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_10);
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("_cython_magic_b3017fe8f3a23cdf5cfff93cd31a656c.bspline_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_v_w);
-  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_v_w1);
-  <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
-  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
-  return __pyx_r;
-}
-/* … */
-  __pyx_tuple_ = <span class='py_c_api'>PyTuple_Pack</span>(5, __pyx_n_s_p, __pyx_n_s_j, __pyx_n_s_x, __pyx_n_s_w, __pyx_n_s_w1);<span class='error_goto'> if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 1, __pyx_L1_error)</span>
-  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_tuple_);
-  <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_tuple_);
-/* … */
-  __pyx_t_1 = PyCFunction_NewEx(&amp;__pyx_mdef_46_cython_magic_b3017fe8f3a23cdf5cfff93cd31a656c_1bspline_cython, NULL, __pyx_n_s_cython_magic_b3017fe8f3a23cdf5c);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)</span>
-  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
-  if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_bspline_cython, __pyx_t_1) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 1, __pyx_L1_error)</span>
-  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
-</pre><pre class="cython line score-0">&#xA0;<span class="">02</span>:         <span class="sd">&quot;&quot;&quot;Return the value at x in [0,1[ of the B-spline with </span></pre>
-<pre class="cython line score-0">&#xA0;<span class="">03</span>: <span class="sd">        integer nodes of degree p with support starting at j.</span></pre>
-<pre class="cython line score-0">&#xA0;<span class="">04</span>: <span class="sd">        Implemented recursively using the de Boor&#39;s recursion formula&quot;&quot;&quot;</span></pre>
-<pre class="cython line score-25" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">05</span>:         <span class="k">assert</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mf">0.0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="mf">1.0</span><span class="p">)</span></pre>
-<pre class='cython code score-25 '>  #ifndef CYTHON_WITHOUT_ASSERTIONS
-  if (unlikely(!Py_OptimizeFlag)) {
-    __pyx_t_1 = <span class='py_c_api'>PyObject_RichCompare</span>(__pyx_v_x, __pyx_float_0_0, Py_GE); <span class='refnanny'>__Pyx_XGOTREF</span>(__pyx_t_1);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 5, __pyx_L1_error)</span>
-    __pyx_t_2 = <span class='py_c_api'>PyObject_RichCompare</span>(__pyx_v_x, __pyx_float_1_0, Py_LE); <span class='refnanny'>__Pyx_XGOTREF</span>(__pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 5, __pyx_L1_error)</span>
-    __pyx_t_3 = <span class='py_c_api'>PyNumber_And</span>(__pyx_t_1, __pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 5, __pyx_L1_error)</span>
-    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
-    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
-    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_4 = <span class='pyx_c_api'>__Pyx_PyObject_IsTrue</span>(__pyx_t_3); if (unlikely(__pyx_t_4 &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 5, __pyx_L1_error)</span>
-    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_4)) {
-      <span class='py_c_api'>PyErr_SetNone</span>(PyExc_AssertionError);
-      <span class='error_goto'>__PYX_ERR(0, 5, __pyx_L1_error)</span>
-    }
-  }
-  #endif
-</pre><pre class="cython line score-25" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">06</span>:         <span class="k">assert</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">)</span></pre>
-<pre class='cython code score-25 '>  #ifndef CYTHON_WITHOUT_ASSERTIONS
-  if (unlikely(!Py_OptimizeFlag)) {
-    __pyx_t_3 = <span class='py_c_api'>PyObject_RichCompare</span>(((PyObject *)Py_TYPE(__pyx_v_p)), ((PyObject *)(&amp;PyInt_Type)), Py_EQ); <span class='refnanny'>__Pyx_XGOTREF</span>(__pyx_t_3);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 6, __pyx_L1_error)</span>
-    __pyx_t_2 = <span class='py_c_api'>PyObject_RichCompare</span>(((PyObject *)Py_TYPE(__pyx_v_j)), ((PyObject *)(&amp;PyInt_Type)), Py_EQ); <span class='refnanny'>__Pyx_XGOTREF</span>(__pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 6, __pyx_L1_error)</span>
-    __pyx_t_1 = <span class='py_c_api'>PyNumber_And</span>(__pyx_t_3, __pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 6, __pyx_L1_error)</span>
-    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
-    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
-    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_4 = <span class='pyx_c_api'>__Pyx_PyObject_IsTrue</span>(__pyx_t_1); if (unlikely(__pyx_t_4 &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 6, __pyx_L1_error)</span>
-    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_4)) {
-      <span class='py_c_api'>PyErr_SetNone</span>(PyExc_AssertionError);
-      <span class='error_goto'>__PYX_ERR(0, 6, __pyx_L1_error)</span>
-    }
-  }
-  #endif
-</pre><pre class="cython line score-5" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">07</span>:         <span class="k">if</span> <span class="n">p</span> <span class="o">==</span> <span class="mf">0</span><span class="p">:</span></pre>
-<pre class='cython code score-5 '>  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyInt_EqObjC</span>(__pyx_v_p, __pyx_int_0, 0, 0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 7, __pyx_L1_error)</span>
-  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
-  __pyx_t_4 = <span class='pyx_c_api'>__Pyx_PyObject_IsTrue</span>(__pyx_t_1); if (unlikely(__pyx_t_4 &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 7, __pyx_L1_error)</span>
-  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
-  if (__pyx_t_4) {
-/* … */
-  }
-</pre><pre class="cython line score-5" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">08</span>:             <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mf">0</span><span class="p">:</span></pre>
-<pre class='cython code score-5 '>    __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyInt_EqObjC</span>(__pyx_v_j, __pyx_int_0, 0, 0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 8, __pyx_L1_error)</span>
-    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
-    __pyx_t_4 = <span class='pyx_c_api'>__Pyx_PyObject_IsTrue</span>(__pyx_t_1); if (unlikely(__pyx_t_4 &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 8, __pyx_L1_error)</span>
-    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
-    if (__pyx_t_4) {
-/* … */
-    }
-</pre><pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">09</span>:                 <span class="k">return</span> <span class="mf">1.0</span></pre>
-<pre class='cython code score-2 '>      <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
-      <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_float_1_0);
-      __pyx_r = __pyx_float_1_0;
-      goto __pyx_L0;
-</pre><pre class="cython line score-0">&#xA0;<span class="">10</span>:             <span class="k">else</span><span class="p">:</span></pre>
-<pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">11</span>:                 <span class="k">return</span> <span class="mf">0.0</span></pre>
-<pre class='cython code score-2 '>    /*else*/ {
-      <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
-      <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_float_0_0);
-      __pyx_r = __pyx_float_0_0;
-      goto __pyx_L0;
-    }
-</pre><pre class="cython line score-0">&#xA0;<span class="">12</span>:         <span class="k">else</span><span class="p">:</span></pre>
-<pre class="cython line score-8" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">13</span>:             <span class="n">w</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">j</span><span class="p">)</span> <span class="o">/</span> <span class="n">p</span></pre>
-<pre class='cython code score-8 '>  /*else*/ {
-    __pyx_t_1 = <span class='py_c_api'>PyNumber_Subtract</span>(__pyx_v_x, __pyx_v_j);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L1_error)</span>
-    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
-    __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyNumber_Divide</span>(__pyx_t_1, __pyx_v_p);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 13, __pyx_L1_error)</span>
-    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
-    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_v_w = __pyx_t_2;
-    __pyx_t_2 = 0;
-</pre><pre class="cython line score-11" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">14</span>:             <span class="n">w1</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">j</span> <span class="o">-</span> <span class="mf">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">p</span></pre>
-<pre class='cython code score-11 '>    __pyx_t_2 = <span class='py_c_api'>PyNumber_Subtract</span>(__pyx_v_x, __pyx_v_j);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 14, __pyx_L1_error)</span>
-    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
-    __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyInt_SubtractObjC</span>(__pyx_t_2, __pyx_int_1, 1, 0, 0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 14, __pyx_L1_error)</span>
-    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
-    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyNumber_Divide</span>(__pyx_t_1, __pyx_v_p);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 14, __pyx_L1_error)</span>
-    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
-    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_v_w1 = __pyx_t_2;
-    __pyx_t_2 = 0;
-  }
-</pre><pre class="cython line score-114" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">15</span>:         <span class="k">return</span> <span class="n">w</span> <span class="o">*</span> <span class="n">bspline_cython</span><span class="p">(</span><span class="n">p</span> <span class="o">-</span> <span class="mf">1</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1</span> <span class="o">-</span> <span class="n">w1</span><span class="p">)</span> <span class="o">*</span> <span class="n">bspline_cython</span><span class="p">(</span><span class="n">p</span> <span class="o">-</span> <span class="mf">1</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mf">1</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span></pre>
-<pre class='cython code score-114 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
-  <span class='pyx_c_api'>__Pyx_GetModuleGlobalName</span>(__pyx_t_1, __pyx_n_s_bspline_cython);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 15, __pyx_L1_error)</span>
-  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
-  __pyx_t_3 = <span class='pyx_c_api'>__Pyx_PyInt_SubtractObjC</span>(__pyx_v_p, __pyx_int_1, 1, 0, 0);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 15, __pyx_L1_error)</span>
-  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
-  __pyx_t_5 = NULL;
-  __pyx_t_6 = 0;
-  if (CYTHON_UNPACK_METHODS &amp;&amp; unlikely(<span class='py_c_api'>PyMethod_Check</span>(__pyx_t_1))) {
-    __pyx_t_5 = <span class='py_macro_api'>PyMethod_GET_SELF</span>(__pyx_t_1);
-    if (likely(__pyx_t_5)) {
-      PyObject* function = <span class='py_macro_api'>PyMethod_GET_FUNCTION</span>(__pyx_t_1);
-      <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_5);
-      <span class='pyx_macro_api'>__Pyx_INCREF</span>(function);
-      <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_t_1, function);
-      __pyx_t_6 = 1;
-    }
-  }
-  #if CYTHON_FAST_PYCALL
-  if (<span class='py_c_api'>PyFunction_Check</span>(__pyx_t_1)) {
-    PyObject *__pyx_temp[4] = {__pyx_t_5, __pyx_t_3, __pyx_v_j, __pyx_v_x};
-    __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyFunction_FastCall</span>(__pyx_t_1, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 15, __pyx_L1_error)</span>
-    <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
-    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
-    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
-  } else
-  #endif
-  #if CYTHON_FAST_PYCCALL
-  if (<span class='pyx_c_api'>__Pyx_PyFastCFunction_Check</span>(__pyx_t_1)) {
-    PyObject *__pyx_temp[4] = {__pyx_t_5, __pyx_t_3, __pyx_v_j, __pyx_v_x};
-    __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyCFunction_FastCall</span>(__pyx_t_1, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 15, __pyx_L1_error)</span>
-    <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
-    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
-    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
-  } else
-  #endif
-  {
-    __pyx_t_7 = <span class='py_c_api'>PyTuple_New</span>(3+__pyx_t_6);<span class='error_goto'> if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 15, __pyx_L1_error)</span>
-    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_7);
-    if (__pyx_t_5) {
-      <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_5); <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_7, 0, __pyx_t_5); __pyx_t_5 = NULL;
-    }
-    <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_3);
-    <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_7, 0+__pyx_t_6, __pyx_t_3);
-    <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_v_j);
-    <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_v_j);
-    <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_7, 1+__pyx_t_6, __pyx_v_j);
-    <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_v_x);
-    <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_v_x);
-    <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_7, 2+__pyx_t_6, __pyx_v_x);
-    __pyx_t_3 = 0;
-    __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyObject_Call</span>(__pyx_t_1, __pyx_t_7, NULL);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 15, __pyx_L1_error)</span>
-    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
-    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_7); __pyx_t_7 = 0;
-  }
-  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = <span class='py_c_api'>PyNumber_Multiply</span>(__pyx_v_w, __pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 15, __pyx_L1_error)</span>
-  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
-  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyInt_SubtractCObj</span>(__pyx_int_1, __pyx_v_w1, 1, 0, 0);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 15, __pyx_L1_error)</span>
-  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
-  <span class='pyx_c_api'>__Pyx_GetModuleGlobalName</span>(__pyx_t_3, __pyx_n_s_bspline_cython);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 15, __pyx_L1_error)</span>
-  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
-  __pyx_t_5 = <span class='pyx_c_api'>__Pyx_PyInt_SubtractObjC</span>(__pyx_v_p, __pyx_int_1, 1, 0, 0);<span class='error_goto'> if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 15, __pyx_L1_error)</span>
-  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_5);
-  __pyx_t_8 = <span class='pyx_c_api'>__Pyx_PyInt_AddObjC</span>(__pyx_v_j, __pyx_int_1, 1, 0, 0);<span class='error_goto'> if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 15, __pyx_L1_error)</span>
-  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_8);
-  __pyx_t_9 = NULL;
-  __pyx_t_6 = 0;
-  if (CYTHON_UNPACK_METHODS &amp;&amp; unlikely(<span class='py_c_api'>PyMethod_Check</span>(__pyx_t_3))) {
-    __pyx_t_9 = <span class='py_macro_api'>PyMethod_GET_SELF</span>(__pyx_t_3);
-    if (likely(__pyx_t_9)) {
-      PyObject* function = <span class='py_macro_api'>PyMethod_GET_FUNCTION</span>(__pyx_t_3);
-      <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_9);
-      <span class='pyx_macro_api'>__Pyx_INCREF</span>(function);
-      <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_t_3, function);
-      __pyx_t_6 = 1;
-    }
-  }
-  #if CYTHON_FAST_PYCALL
-  if (<span class='py_c_api'>PyFunction_Check</span>(__pyx_t_3)) {
-    PyObject *__pyx_temp[4] = {__pyx_t_9, __pyx_t_5, __pyx_t_8, __pyx_v_x};
-    __pyx_t_7 = <span class='pyx_c_api'>__Pyx_PyFunction_FastCall</span>(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6);<span class='error_goto'> if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 15, __pyx_L1_error)</span>
-    <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_9); __pyx_t_9 = 0;
-    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_7);
-    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
-    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_8); __pyx_t_8 = 0;
-  } else
-  #endif
-  #if CYTHON_FAST_PYCCALL
-  if (<span class='pyx_c_api'>__Pyx_PyFastCFunction_Check</span>(__pyx_t_3)) {
-    PyObject *__pyx_temp[4] = {__pyx_t_9, __pyx_t_5, __pyx_t_8, __pyx_v_x};
-    __pyx_t_7 = <span class='pyx_c_api'>__Pyx_PyCFunction_FastCall</span>(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6);<span class='error_goto'> if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 15, __pyx_L1_error)</span>
-    <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_9); __pyx_t_9 = 0;
-    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_7);
-    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
-    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_8); __pyx_t_8 = 0;
-  } else
-  #endif
-  {
-    __pyx_t_10 = <span class='py_c_api'>PyTuple_New</span>(3+__pyx_t_6);<span class='error_goto'> if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 15, __pyx_L1_error)</span>
-    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_10);
-    if (__pyx_t_9) {
-      <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_9); <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_10, 0, __pyx_t_9); __pyx_t_9 = NULL;
-    }
-    <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_5);
-    <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_10, 0+__pyx_t_6, __pyx_t_5);
-    <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_8);
-    <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_10, 1+__pyx_t_6, __pyx_t_8);
-    <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_v_x);
-    <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_v_x);
-    <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_10, 2+__pyx_t_6, __pyx_v_x);
-    __pyx_t_5 = 0;
-    __pyx_t_8 = 0;
-    __pyx_t_7 = <span class='pyx_c_api'>__Pyx_PyObject_Call</span>(__pyx_t_3, __pyx_t_10, NULL);<span class='error_goto'> if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 15, __pyx_L1_error)</span>
-    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_7);
-    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_10); __pyx_t_10 = 0;
-  }
-  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = <span class='py_c_api'>PyNumber_Multiply</span>(__pyx_t_2, __pyx_t_7);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 15, __pyx_L1_error)</span>
-  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
-  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
-  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_7 = <span class='py_c_api'>PyNumber_Add</span>(__pyx_t_1, __pyx_t_3);<span class='error_goto'> if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 15, __pyx_L1_error)</span>
-  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_7);
-  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
-  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_r = __pyx_t_7;
-  __pyx_t_7 = 0;
-  goto __pyx_L0;
-</pre></div></body></html></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1636,11 +1162,6 @@ class BSplineCython:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1687,19 +1208,11 @@ class BSplineCython:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "7e0ff3e53b5a499199a653b2d9ae12eb"}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
-<img alt="_images/19-LandauDamping_32_2.png" src="_images/19-LandauDamping_32_2.png" />
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="vlasov-poisson-equation">
-<h2>Vlasov-Poisson equation<a class="headerlink" href="#vlasov-poisson-equation" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="vlasov-poisson-equation">
+<h2>Vlasov-Poisson equation<a class="headerlink" href="#vlasov-poisson-equation" title="Permalink to this headline">#</a></h2>
 <p>We consider the dimensionless Vlasov-Poisson equation for one species
 with a neutralizing background.</p>
 <div class="math notranslate nohighlight">
@@ -1779,9 +1292,9 @@ with a neutralizing background.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="landau-damping">
-<h2>Landau Damping<a class="headerlink" href="#landau-damping" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="landau-damping">
+<h2>Landau Damping<a class="headerlink" href="#landau-damping" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Landau_damping">Landau damping - Wikipedia</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1822,49 +1335,15 @@ with a neutralizing background.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "072a55557a6645c9a0d5e6fb910537f9"}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> numpy        : 15.6568 
-</pre></div>
 </div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "2f3367b0c9914ca1ac0a7de0b319ae32"}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> fortran      : 6.3600 
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "e0ab805b1d50425d94366020c03e2d29"}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> numba        : 8.0670 
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "935227a079fc447582904d4c43f256da"}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> cython       : 4.7611 
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "d85ea76041ff48e7890bacd35cf61506"}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> pythran      : 13.1515 
-</pre></div>
-</div>
-<img alt="_images/19-LandauDamping_36_10.png" src="_images/19-LandauDamping_36_10.png" />
-</div>
-</div>
-</div>
-<div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://jakevdp.github.io/blog/2015/02/24/optimizing-python-with-numpy-and-numba/">Optimizing Python with NumPy and Numba</a></p></li>
 </ul>
-</div>
-</div>
-
-
-<script type="application/vnd.jupyter.widget-state+json">
-{"state": {"e49fec69a7c6424a828157a90f42c970": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "684c9bfce41c4744870dcd1be27587c3": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": "initial"}}, "af9a865877d14419a6329904c3997870": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "100%", "description_tooltip": null, "layout": "IPY_MODEL_e49fec69a7c6424a828157a90f42c970", "max": 5.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_684c9bfce41c4744870dcd1be27587c3", "value": 5.0}}, "8b6d835867a94691823fd513de740afe": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "b7fb8e8cf05447dc9a2e6a95e39d942b": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "719b564bc7654614b671a53c3df19b60": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_8b6d835867a94691823fd513de740afe", "placeholder": "\u200b", "style": "IPY_MODEL_b7fb8e8cf05447dc9a2e6a95e39d942b", "value": " 5/5 [03:10&lt;00:00, 38.11s/it]"}}, "9e81668bf9b44eb480e27958c0038aa1": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "7e0ff3e53b5a499199a653b2d9ae12eb": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_af9a865877d14419a6329904c3997870", "IPY_MODEL_719b564bc7654614b671a53c3df19b60"], "layout": "IPY_MODEL_9e81668bf9b44eb480e27958c0038aa1"}}, "ed1600efdf4b417cb7db1f1853cfc62a": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "1620b7aba820461182d079a5caa8733d": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": "initial"}}, "74821fd4e1ff4381ae416dd941870f57": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "100%", "description_tooltip": null, "layout": "IPY_MODEL_ed1600efdf4b417cb7db1f1853cfc62a", "max": 600.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_1620b7aba820461182d079a5caa8733d", "value": 600.0}}, "ceaba83de77644f3a4aba0454eeea4aa": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "dc5b5445461f4ae3bfcabcf8a3c4c339": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "3811daf2375e4fbaa83396d972e0c501": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_ceaba83de77644f3a4aba0454eeea4aa", "placeholder": "\u200b", "style": "IPY_MODEL_dc5b5445461f4ae3bfcabcf8a3c4c339", "value": " 600/600 [00:48&lt;00:00, 12.43it/s]"}}, "64c65f435ded472e8a17d9df4788dfd4": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "072a55557a6645c9a0d5e6fb910537f9": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_74821fd4e1ff4381ae416dd941870f57", "IPY_MODEL_3811daf2375e4fbaa83396d972e0c501"], "layout": "IPY_MODEL_64c65f435ded472e8a17d9df4788dfd4"}}, "74f9c5e65c804e939cea556fedf3d450": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "65ddbc993bd14fea81f601ef04c7f78b": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": "initial"}}, "b432b58f8a4f43a6a2df10428414b368": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "100%", "description_tooltip": null, "layout": "IPY_MODEL_74f9c5e65c804e939cea556fedf3d450", "max": 600.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_65ddbc993bd14fea81f601ef04c7f78b", "value": 600.0}}, "89e85c92527842fbac74aab50d413bc6": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "519c902d27fd4276a8ecac75575cb04d": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "e427d419e4c94c77b94217ee75baec5b": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_89e85c92527842fbac74aab50d413bc6", "placeholder": "\u200b", "style": "IPY_MODEL_519c902d27fd4276a8ecac75575cb04d", "value": " 600/600 [00:06&lt;00:00, 94.18it/s]"}}, "4843c7ba25354cec9e3065aabe91ca5d": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2f3367b0c9914ca1ac0a7de0b319ae32": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_b432b58f8a4f43a6a2df10428414b368", "IPY_MODEL_e427d419e4c94c77b94217ee75baec5b"], "layout": "IPY_MODEL_4843c7ba25354cec9e3065aabe91ca5d"}}, "61fee5a0d3f1465dbba30e5ebc811797": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "93d583d8f365469090a29b5651883c4d": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": "initial"}}, "49daf1411c1d42e89d4d7b7abc8705a4": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "100%", "description_tooltip": null, "layout": "IPY_MODEL_61fee5a0d3f1465dbba30e5ebc811797", "max": 600.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_93d583d8f365469090a29b5651883c4d", "value": 600.0}}, "2dc714c2ad96426bbee28c173350b5b6": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "be30c3c5ab6449a59855000699f8861b": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "f3d40e93858c4a3cb4ceff6feb09d8ad": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_2dc714c2ad96426bbee28c173350b5b6", "placeholder": "\u200b", "style": "IPY_MODEL_be30c3c5ab6449a59855000699f8861b", "value": " 600/600 [00:26&lt;00:00, 22.85it/s]"}}, "1a3f44c8c84945b9a8974c31ca4bfecc": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e0ab805b1d50425d94366020c03e2d29": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_49daf1411c1d42e89d4d7b7abc8705a4", "IPY_MODEL_f3d40e93858c4a3cb4ceff6feb09d8ad"], "layout": "IPY_MODEL_1a3f44c8c84945b9a8974c31ca4bfecc"}}, "d28b90054f2843da8b0f3a360a9c824a": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "10b0253e918d4f60ab4392700d7adaa7": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": "initial"}}, "5b8971ca5afa4b3aa52a49ad03e99047": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "100%", "description_tooltip": null, "layout": "IPY_MODEL_d28b90054f2843da8b0f3a360a9c824a", "max": 600.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_10b0253e918d4f60ab4392700d7adaa7", "value": 600.0}}, "fda046248dd54ed58ed53b0608a12db0": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "46efb7d2b8134a128b50631710ca6ee6": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "933d81064c1f452e8400a30c01878d17": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_fda046248dd54ed58ed53b0608a12db0", "placeholder": "\u200b", "style": "IPY_MODEL_46efb7d2b8134a128b50631710ca6ee6", "value": " 600/600 [00:17&lt;00:00, 33.51it/s]"}}, "b8007c463ddb406e888f03ab13598a39": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "935227a079fc447582904d4c43f256da": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_5b8971ca5afa4b3aa52a49ad03e99047", "IPY_MODEL_933d81064c1f452e8400a30c01878d17"], "layout": "IPY_MODEL_b8007c463ddb406e888f03ab13598a39"}}, "9e34458031854411bfb7b2826c1068c9": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "af9af1094a67499bb4a10f81e564c4ff": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": "initial"}}, "a7dfed473d5244bc8c2172c95f81bb0b": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "100%", "description_tooltip": null, "layout": "IPY_MODEL_9e34458031854411bfb7b2826c1068c9", "max": 600.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_af9af1094a67499bb4a10f81e564c4ff", "value": 600.0}}, "0664acd69f7b4b118207e29b5b4c481d": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "9227b3d8dc13446fbaf5fdacb75af61e": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "e10de1ec9c9b430687d0a09afd58b118": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_0664acd69f7b4b118207e29b5b4c481d", "placeholder": "\u200b", "style": "IPY_MODEL_9227b3d8dc13446fbaf5fdacb75af61e", "value": " 600/600 [00:13&lt;00:00, 45.68it/s]"}}, "11a35ecccc054707a8eb3b8eb037a546": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d85ea76041ff48e7890bacd35cf61506": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_a7dfed473d5244bc8c2172c95f81bb0b", "IPY_MODEL_e10de1ec9c9b430687d0a09afd58b118"], "layout": "IPY_MODEL_11a35ecccc054707a8eb3b8eb037a546"}}}, "version_major": 2, "version_minor": 0}
-</script>
-
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1888,33 +1367,48 @@ with a neutralizing background.</p>
 
               </div>
               
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="18-Numba.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Numba</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="20-Maxwell.2D.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Maxwell solver in two dimensions with FDTD scheme</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
         </div>
     </div>
-    
-    
-    <div class='prev-next-bottom'>
-        
-    <a class='left-prev' id="prev-link" href="18-Numba.html" title="previous page">Numba</a>
-    <a class='right-next' id="next-link" href="20-Maxwell.2D.html" title="next page">Maxwell solver in two dimensions with FDTD scheme</a>
-
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Pierre Navaro<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Pierre Navaro<br/>
-        
-            &copy; Copyright 2020.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-    <script src="_static/js/index.js"></script>
-    
+
   </body>
 </html>

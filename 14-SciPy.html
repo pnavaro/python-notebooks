@@ -1,89 +1,114 @@
 
-
 <!DOCTYPE html>
 
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Scipy &#8212; Python notebooks</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://pnavaro.github.io/python-notebooks/14-SciPy.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Sympy" href="15-Sympy.html" />
     <link rel="prev" title="What provide Numpy to Python ?" href="13-Numpy.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://pnavaro.github.io/python-notebooks/14-SciPy.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Scipy" />
-<meta property="og:description" content="Scipy  scipy  Scipy is the scientific Python ecosystem :  fft, linear algebra, scientific computation,…  scipy contains numpy, it can be considered as an extens" />
-<meta property="og:image"       content="https://pnavaro.github.io/python-notebooks/_static/logo.png" />
-
-<meta name="twitter:card" content="summary" />
-
-
+    <!-- Google Analytics -->
+    
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Python notebooks</h1>
-  
-</a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python notebooks</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="current nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="02-Strings.html">
    Strings
@@ -191,117 +216,263 @@
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
     </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/14-SciPy.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-    
-</div>
-        <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/pnavaro/python-notebooks"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/pnavaro/python-notebooks/issues/new?title=Issue%20on%20page%20%2F14-SciPy.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/pnavaro/python-notebooks/edit/master/notebooks/14-SciPy.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
-
-        <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/pnavaro/python-notebooks/master?urlpath=tree/notebooks/14-SciPy.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/pnavaro/python-notebooks/blob/master/notebooks/14-SciPy.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
-    </div>
-</div>
-
-    </div>
-
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/pnavaro/python-notebooks/master?urlpath=tree/notebooks/14-SciPy.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/pnavaro/python-notebooks/blob/master/notebooks/14-SciPy.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/pnavaro/python-notebooks"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/pnavaro/python-notebooks/issues/new?title=Issue%20on%20page%20%2F14-SciPy.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/pnavaro/python-notebooks/edit/master/notebooks/14-SciPy.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/14-SciPy.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#scipy-main-packages">
    SciPy main packages
@@ -376,16 +547,107 @@
  </li>
 </ul>
 
-        </nav>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Scipy</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scipy-main-packages">
+   SciPy main packages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fft-scipy-fftpack">
+   FFT : scipy.fftpack
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-algebra-scipy-linalg">
+   Linear algebra : scipy.linalg
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#csc-compressed-sparse-column">
+   CSC (Compressed Sparse Column)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dedicated-format-for-assembling">
+   Dedicated format for assembling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sparse-matrices-scipy-sparse-linalg">
+   Sparse matrices : scipy.sparse.linalg
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linearoperator">
+   LinearOperator
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lu-decomposition">
+   LU decomposition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conjugate-gradient">
+   Conjugate Gradient
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preconditioned-conjugate-gradient">
+   Preconditioned conjugate gradient
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numerical-integration">
+   Numerical integration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scipy-ode-solver">
+   Scipy ODE solver
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#van-der-pol-oscillator">
+     Van der Pol Oscillator
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="scipy">
-<h1>Scipy<a class="headerlink" href="#scipy" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="scipy">
+<h1>Scipy<a class="headerlink" href="#scipy" title="Permalink to this headline">#</a></h1>
 <p><img alt="scipy" src="_images/scipyshiny_small.png" /></p>
 <p>Scipy is the scientific Python ecosystem :</p>
 <ul class="simple">
@@ -404,9 +666,50 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">,</span> <span class="s2">&quot;InlineBackend.figure_format = &#39;retina&#39;&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2364,</span> in <span class="ni">InteractiveShell.run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2362</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2363</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2364</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2365</span> <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/magics/config.py:163,</span> in <span class="ni">ConfigMagics.config</span><span class="nt">(self, s)</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span> <span class="kn">from</span> <span class="nn">traitlets.config.loader</span> <span class="kn">import</span> <span class="n">Config</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span> <span class="c1"># some IPython objects are Configurable, but do not yet have</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="c1"># any configurable traits.  Exclude them from the effects of</span>
+<span class="g g-Whitespace">    </span><span class="mi">162</span> <span class="c1"># this magic, as their presence is just noise:</span>
+<span class="ne">--&gt; </span><span class="mi">163</span> <span class="n">configurables</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span> <span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">configurables</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span>                              <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">class_traits</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">165</span>                              <span class="p">]),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">166</span> <span class="n">classnames</span> <span class="o">=</span> <span class="p">[</span> <span class="n">c</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">configurables</span> <span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">168</span> <span class="n">line</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/magics/config.py:164,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span> <span class="kn">from</span> <span class="nn">traitlets.config.loader</span> <span class="kn">import</span> <span class="n">Config</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span> <span class="c1"># some IPython objects are Configurable, but do not yet have</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="c1"># any configurable traits.  Exclude them from the effects of</span>
+<span class="g g-Whitespace">    </span><span class="mi">162</span> <span class="c1"># this magic, as their presence is just noise:</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span> <span class="n">configurables</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span> <span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">configurables</span>
+<span class="ne">--&gt; </span><span class="mi">164</span>                              <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">class_traits</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">165</span>                              <span class="p">]),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">166</span> <span class="n">classnames</span> <span class="o">=</span> <span class="p">[</span> <span class="n">c</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">configurables</span> <span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">168</span> <span class="n">line</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="ne">AttributeError</span>: type object &#39;CommManager&#39; has no attribute &#39;class_traits&#39;
+</pre></div>
 </div>
-<div class="section" id="scipy-main-packages">
-<h2>SciPy main packages<a class="headerlink" href="#scipy-main-packages" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<section id="scipy-main-packages">
+<h2>SciPy main packages<a class="headerlink" href="#scipy-main-packages" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">constants</span></code> : Physical and mathematical constants</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">fftpack</span></code> : Fast Fourier Transform routines</p></li>
@@ -486,9 +789,9 @@
 <img alt="_images/14-SciPy_6_1.png" src="_images/14-SciPy_6_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="fft-scipy-fftpack">
-<h2>FFT : scipy.fftpack<a class="headerlink" href="#fft-scipy-fftpack" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="fft-scipy-fftpack">
+<h2>FFT : scipy.fftpack<a class="headerlink" href="#fft-scipy-fftpack" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>FFT dimension 1, 2 and n : fft, ifft (inverse), rfft (real), irfft, fft2 (dimension 2), ifft2, fftn (dimension n), ifftn.</p></li>
 <li><p>Discrete cosinus transform : dct</p></li>
@@ -503,7 +806,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>86.2 µs ± 1.01 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>102 µs ± 2.08 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre></div>
 </div>
 </div>
@@ -517,14 +820,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>72 µs ± 1.24 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>90 µs ± 567 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="linear-algebra-scipy-linalg">
-<h2>Linear algebra : scipy.linalg<a class="headerlink" href="#linear-algebra-scipy-linalg" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="linear-algebra-scipy-linalg">
+<h2>Linear algebra : scipy.linalg<a class="headerlink" href="#linear-algebra-scipy-linalg" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Sovers, decompositions, eigen values. (same as numpy).</p></li>
 <li><p>Matrix functions : expm, sinm, sinhm,…</p></li>
@@ -587,9 +890,9 @@ x= [-0.24074074  0.41358025 -0.26697531 -0.85493827  0.01851852]
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="csc-compressed-sparse-column">
-<h2>CSC (Compressed Sparse Column)<a class="headerlink" href="#csc-compressed-sparse-column" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="csc-compressed-sparse-column">
+<h2>CSC (Compressed Sparse Column)<a class="headerlink" href="#csc-compressed-sparse-column" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>All operations are optimized</p></li>
 <li><p>Efficient “slicing” along axis=1.</p></li>
@@ -633,9 +936,9 @@ x= [-0.24074074  0.41358025 -0.26697531 -0.85493827  0.01851852]
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="dedicated-format-for-assembling">
-<h2>Dedicated format for assembling<a class="headerlink" href="#dedicated-format-for-assembling" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="dedicated-format-for-assembling">
+<h2>Dedicated format for assembling<a class="headerlink" href="#dedicated-format-for-assembling" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">lil_matrix</span></code> : Row-based linked list matrix. Easy format to build your matrix and convert to other format before solving.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">dok_matrix</span></code> : A dictionary of keys based matrix. Ideal format for
@@ -643,9 +946,9 @@ incremental matrix building. The conversion to csc/csr format is efficient.</p><
 <li><p><code class="docutils literal notranslate"><span class="pre">coo_matrix</span></code>  : coordinate list format. Fast conversion to formats CSC/CSR.</p></li>
 </ul>
 <p><a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/sparse.html">Lien vers la documentation scipy</a></p>
-</div>
-<div class="section" id="sparse-matrices-scipy-sparse-linalg">
-<h2>Sparse matrices : <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg">scipy.sparse.linalg</a><a class="headerlink" href="#sparse-matrices-scipy-sparse-linalg" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="sparse-matrices-scipy-sparse-linalg">
+<h2>Sparse matrices : <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg">scipy.sparse.linalg</a><a class="headerlink" href="#sparse-matrices-scipy-sparse-linalg" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>speigen, speigen_symmetric, lobpcg : (ARPACK).</p></li>
 <li><p>svd : (ARPACK).</p></li>
@@ -659,9 +962,9 @@ incremental matrix building. The conversion to csc/csr format is efficient.</p><
 <li><p>Advanced: splu, spilu (direct); cg, cgs, bicg, bicgstab, gmres, lgmres et qmr (iterative)</p></li>
 <li><p>Boss: petsc4py et slepc4py.</p></li>
 </ul>
-</div>
-<div class="section" id="linearoperator">
-<h2>LinearOperator<a class="headerlink" href="#linearoperator" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="linearoperator">
+<h2>LinearOperator<a class="headerlink" href="#linearoperator" title="Permalink to this headline">#</a></h2>
 <p>The LinearOperator is used for matrix-free numerical methods.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -705,9 +1008,9 @@ incremental matrix building. The conversion to csc/csr format is efficient.</p><
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="lu-decomposition">
-<h2>LU decomposition<a class="headerlink" href="#lu-decomposition" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="lu-decomposition">
+<h2>LU decomposition<a class="headerlink" href="#lu-decomposition" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">50</span>
@@ -722,7 +1025,7 @@ incremental matrix building. The conversion to csc/csr format is efficient.</p><
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;SuperLU at 0x7f2c3a534e40&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;SuperLU at 0x11d8bd1e0&gt;
 </pre></div>
 </div>
 </div>
@@ -735,14 +1038,14 @@ incremental matrix building. The conversion to csc/csr format is efficient.</p><
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.472877282518059e-15
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.3208707134311084e-15
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="conjugate-gradient">
-<h2>Conjugate Gradient<a class="headerlink" href="#conjugate-gradient" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="conjugate-gradient">
+<h2>Conjugate Gradient<a class="headerlink" href="#conjugate-gradient" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">global</span> <span class="n">k</span>
@@ -757,41 +1060,43 @@ incremental matrix building. The conversion to csc/csr format is efficient.</p><
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iteration  0 residu =    2.84
-iteration  1 residu =    1.63
-iteration  2 residu =   0.772
-iteration  3 residu =   0.313
-iteration  4 residu =   0.161
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iteration  0 residu =    3.29
+iteration  1 residu =    1.81
+iteration  2 residu =   0.801
+iteration  3 residu =   0.288
+iteration  4 residu =   0.155
 iteration  5 residu =  0.0755
-iteration  6 residu =  0.0433
-iteration  7 residu =  0.0159
-iteration  8 residu = 0.00735
-iteration  9 residu = 0.00235
-iteration 10 residu = 0.00091
-iteration 11 residu = 0.000374
-iteration 12 residu = 0.000181
-iteration 13 residu = 8.22e-05
-iteration 14 residu = 3.02e-05
-iteration 15 residu = 9.95e-06
-iteration 16 residu = 3.3e-06
-iteration 17 residu = 1.09e-06
-iteration 18 residu = 2.97e-07
-iteration 19 residu = 8.11e-08
-iteration 20 residu = 2.39e-08
-iteration 21 residu = 6.71e-09
-iteration 22 residu = 2.29e-09
-iteration 23 residu = 5.04e-10
-iteration 24 residu = 1.65e-10
-iteration 25 residu = 3.83e-11
-iteration 26 residu = 1.11e-11
-iteration 27 residu = 2.63e-12
+iteration  6 residu =  0.0329
+iteration  7 residu =  0.0126
+iteration  8 residu = 0.00509
+iteration  9 residu = 0.00211
+iteration 10 residu = 0.00121
+iteration 11 residu = 0.000495
+iteration 12 residu = 0.00028
+iteration 13 residu = 0.000105
+iteration 14 residu = 4.49e-05
+iteration 15 residu = 1.23e-05
+iteration 16 residu = 5.31e-06
+iteration 17 residu = 1.86e-06
+iteration 18 residu = 9.85e-07
+iteration 19 residu = 3.9e-07
+iteration 20 residu = 1.78e-07
+iteration 21 residu = 7.37e-08
+iteration 22 residu = 2.27e-08
+iteration 23 residu = 8.5e-09
+iteration 24 residu = 2.04e-09
+iteration 25 residu = 5.94e-10
+iteration 26 residu = 1.11e-10
+iteration 27 residu = 4.25e-11
+iteration 28 residu = 7.55e-12
+iteration 29 residu = 1.48e-12
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="preconditioned-conjugate-gradient">
-<h2>Preconditioned conjugate gradient<a class="headerlink" href="#preconditioned-conjugate-gradient" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="preconditioned-conjugate-gradient">
+<h2>Preconditioned conjugate gradient<a class="headerlink" href="#preconditioned-conjugate-gradient" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pc</span><span class="o">=</span><span class="n">spspl</span><span class="o">.</span><span class="n">spilu</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">drop_tol</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>  <span class="c1"># pc is an ILU decomposition</span>
@@ -801,7 +1106,7 @@ iteration 27 residu = 2.63e-12
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4949819346705916
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.40994379196249386
 </pre></div>
 </div>
 </div>
@@ -817,25 +1122,26 @@ iteration 27 residu = 2.63e-12
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iteration  0 residu =   0.442
-iteration  1 residu =  0.0238
-iteration  2 residu = 0.00193
-iteration  3 residu = 9.29e-05
-iteration  4 residu = 8.27e-06
-iteration  5 residu = 6.08e-07
-iteration  6 residu = 7.4e-08
-iteration  7 residu = 7.52e-09
-iteration  8 residu = 1.13e-09
-iteration  9 residu = 1.63e-10
-iteration 10 residu = 2.74e-11
-iteration 11 residu = 5.4e-12
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iteration  0 residu =   0.392
+iteration  1 residu =  0.0151
+iteration  2 residu = 0.00122
+iteration  3 residu = 6.61e-05
+iteration  4 residu = 9.23e-06
+iteration  5 residu = 6.8e-07
+iteration  6 residu = 1.37e-07
+iteration  7 residu = 1.39e-08
+iteration  8 residu = 3.24e-09
+iteration  9 residu = 4.84e-10
+iteration 10 residu = 1.07e-10
+iteration 11 residu = 2.49e-11
+iteration 12 residu = 4.67e-12
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="numerical-integration">
-<h2>Numerical integration<a class="headerlink" href="#numerical-integration" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="numerical-integration">
+<h2>Numerical integration<a class="headerlink" href="#numerical-integration" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>quad, dblquad, tplquad,… Fortran library QUADPACK.</p></li>
 </ul>
@@ -866,12 +1172,12 @@ iteration 11 residu = 5.4e-12
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="scipy-ode-solver">
-<h2>Scipy ODE solver<a class="headerlink" href="#scipy-ode-solver" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="scipy-ode-solver">
+<h2>Scipy ODE solver<a class="headerlink" href="#scipy-ode-solver" title="Permalink to this headline">#</a></h2>
 <p>It uses the Fortran ODEPACK library.</p>
-<div class="section" id="van-der-pol-oscillator">
-<h3>Van der Pol Oscillator<a class="headerlink" href="#van-der-pol-oscillator" title="Permalink to this headline">¶</a></h3>
+<section id="van-der-pol-oscillator">
+<h3>Van der Pol Oscillator<a class="headerlink" href="#van-der-pol-oscillator" title="Permalink to this headline">#</a></h3>
 <p>\begin{align}
 y_1’(t)	&amp; = y_2(t), \nonumber \
 y_2’(t)	&amp; = 1000(1 - y_1^2(t))y_2(t) - y_1(t) \nonumber
@@ -912,10 +1218,10 @@ with \)</span>y_1(0) = 2 <span class="math notranslate nohighlight">\( and \)</s
 <img alt="_images/14-SciPy_36_0.png" src="_images/14-SciPy_36_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="exercise">
-<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
 <p>The following code solve the Laplace equation using a dense matrix.</p>
 <ul class="simple">
 <li><p>Modified the code to use a sparse matrix</p></li>
@@ -975,8 +1281,8 @@ with \)</span>y_1(0) = 2 <span class="math notranslate nohighlight">\( and \)</s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 399 ms, sys: 12.3 ms, total: 412 ms
-Wall time: 221 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 662 ms, sys: 32 ms, total: 694 ms
+Wall time: 405 ms
 </pre></div>
 </div>
 </div>
@@ -990,7 +1296,7 @@ Wall time: 221 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f2c38c4c130&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x1240d80d0&gt;
 </pre></div>
 </div>
 <img alt="_images/14-SciPy_40_1.png" src="_images/14-SciPy_40_1.png" />
@@ -1041,8 +1347,8 @@ Wall time: 221 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 435 ms, sys: 60.1 ms, total: 495 ms
-Wall time: 284 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 822 ms, sys: 25.1 ms, total: 847 ms
+Wall time: 529 ms
 </pre></div>
 </div>
 </div>
@@ -1058,8 +1364,8 @@ Wall time: 284 ms
 <img alt="_images/14-SciPy_43_0.png" src="_images/14-SciPy_43_0.png" />
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1083,33 +1389,48 @@ Wall time: 284 ms
 
               </div>
               
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="13-Numpy.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">What provide Numpy to Python ?</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="15-Sympy.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Sympy</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
         </div>
     </div>
-    
-    
-    <div class='prev-next-bottom'>
-        
-    <a class='left-prev' id="prev-link" href="13-Numpy.html" title="previous page">What provide Numpy to Python ?</a>
-    <a class='right-next' id="next-link" href="15-Sympy.html" title="next page">Sympy</a>
-
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Pierre Navaro<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Pierre Navaro<br/>
-        
-            &copy; Copyright 2020.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-    <script src="_static/js/index.js"></script>
-    
+
   </body>
 </html>
