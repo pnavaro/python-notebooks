@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://pnavaro.github.io/python-notebooks/20-Maxwell.2D.html" />
@@ -166,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="13-Numpy.html">
-   What provide Numpy to Python ?
+   Numpy
   </a>
  </li>
  <li class="toctree-l1">
@@ -564,47 +566,6 @@ E_y \big|^{n+1}_{i,j+1/2} = E_y \big|^{n}_{i,j+1/2} - \frac{dt}{dx} \big( H_z \b
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">,</span> <span class="s2">&quot;InlineBackend.figure_format = &#39;retina&#39;&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2364,</span> in <span class="ni">InteractiveShell.run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2362</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2363</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2364</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2365</span> <span class="k">return</span> <span class="n">result</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/magics/config.py:163,</span> in <span class="ni">ConfigMagics.config</span><span class="nt">(self, s)</span>
-<span class="g g-Whitespace">    </span><span class="mi">159</span> <span class="kn">from</span> <span class="nn">traitlets.config.loader</span> <span class="kn">import</span> <span class="n">Config</span>
-<span class="g g-Whitespace">    </span><span class="mi">160</span> <span class="c1"># some IPython objects are Configurable, but do not yet have</span>
-<span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="c1"># any configurable traits.  Exclude them from the effects of</span>
-<span class="g g-Whitespace">    </span><span class="mi">162</span> <span class="c1"># this magic, as their presence is just noise:</span>
-<span class="ne">--&gt; </span><span class="mi">163</span> <span class="n">configurables</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span> <span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">configurables</span>
-<span class="g g-Whitespace">    </span><span class="mi">164</span>                              <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">class_traits</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">165</span>                              <span class="p">]),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">166</span> <span class="n">classnames</span> <span class="o">=</span> <span class="p">[</span> <span class="n">c</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">configurables</span> <span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">168</span> <span class="n">line</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/magics/config.py:164,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">    </span><span class="mi">159</span> <span class="kn">from</span> <span class="nn">traitlets.config.loader</span> <span class="kn">import</span> <span class="n">Config</span>
-<span class="g g-Whitespace">    </span><span class="mi">160</span> <span class="c1"># some IPython objects are Configurable, but do not yet have</span>
-<span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="c1"># any configurable traits.  Exclude them from the effects of</span>
-<span class="g g-Whitespace">    </span><span class="mi">162</span> <span class="c1"># this magic, as their presence is just noise:</span>
-<span class="g g-Whitespace">    </span><span class="mi">163</span> <span class="n">configurables</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span> <span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">configurables</span>
-<span class="ne">--&gt; </span><span class="mi">164</span>                              <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">class_traits</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">165</span>                              <span class="p">]),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">166</span> <span class="n">classnames</span> <span class="o">=</span> <span class="p">[</span> <span class="n">c</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">configurables</span> <span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">168</span> <span class="n">line</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-
-<span class="ne">AttributeError</span>: type object &#39;CommManager&#39; has no attribute &#39;class_traits&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -635,6 +596,11 @@ E_y \big|^{n+1}_{i,j+1/2} = E_y \big|^{n}_{i,j+1/2} - \frac{dt}{dx} \big( H_z \b
 <span class="n">hz</span> <span class="o">=</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">dt</span><span class="p">))</span>
 <span class="n">wframe</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot_wireframe</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">hz</span><span class="p">,</span> <span class="n">rstride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cstride</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x600 with 0 Axes&gt;
 </pre></div>
 </div>
 </div>
@@ -696,6 +662,196 @@ E_y \big|^{n+1}_{i,j+1/2} = E_y \big|^{n}_{i,j+1/2} - \frac{dt}{dx} \big( H_z \b
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 3.53 s, sys: 184 ms, total: 3.72 s
+Wall time: 4.42 s
+</pre></div>
+</div>
+<div class="output text_html"><video width="1000" height="600" controls autoplay loop>
+  <source type="video/mp4" src="data:video/mp4;base64,AAAAIGZ0eXBNNFYgAAACAE00ViBpc29taXNvMmF2YzEAAAAIZnJlZQAAG25tZGF0AAACrgYF//+q
+3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE2MyByMzA2MCA1ZGI2YWE2IC0gSC4yNjQvTVBF
+Ry00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAyMSAtIGh0dHA6Ly93d3cudmlkZW9sYW4u
+b3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFs
+eXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVk
+X3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBk
+ZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMg
+bG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRl
+cmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJf
+cHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9
+MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTEwIHNjZW5lY3V0PTQwIGludHJhX3Jl
+ZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAu
+NjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAA
+nmWIhAAR//73iB8yy2n5OtdyEeetLq0fUO5GcV6kvf4gAAADAAADAAADAACbm+OrZzhjPMtiAAAD
+AABiAARsAG8AFiAEoAEaAF4AJYAPEAXwA2ABigEAAAMAAAMAAAMAAAMAAAMAAAMAAAMAAAMAAAMA
+AAMAAAMAAAMAAAMAAAMAAAMAAAMAAAMAAAMAAAMAAAMAAAMAAAMAAAMAABsxAAAAHEGaJGxBH/61
+KoAAAAMAAAMAAAMAAAMAAAMATsAAAAAYQZ5CeId/AAADAAADAAADAAADAAADAAEzAAAAGAGeYXRD
+fwAAAwAAAwAAAwAAAwAAAwABswAAABgBnmNqQ38AAAMAAAMAAAMAAAMAAAMAAbMAAAAiQZpoSahB
+aJlMCCP//rUqgAAAAwAAAwAAAwAAAwAAAwBOwQAAABpBnoZFESw7/wAAAwAAAwAAAwAAAwAAAwAB
+MwAAABgBnqV0Q38AAAMAAAMAAAMAAAMAAAMAAbMAAAAYAZ6nakN/AAADAAADAAADAAADAAADAAGz
+AAAAIkGarEmoQWyZTAgj//61KoAAAAMAAAMAAAMAAAMAAAMATsAAAAAaQZ7KRRUsO/8AAAMAAAMA
+AAMAAAMAAAMAATMAAAAYAZ7pdEN/AAADAAADAAADAAADAAADAAGzAAAAGAGe62pDfwAAAwAAAwAA
+AwAAAwAAAwABswAAACJBmvBJqEFsmUwII//+tSqAAAADAAADAAADAAADAAADAE7BAAAAGkGfDkUV
+LDv/AAADAAADAAADAAADAAADAAEzAAAAGAGfLXRDfwAAAwAAAwAAAwAAAwAAAwABswAAABgBny9q
+Q38AAAMAAAMAAAMAAAMAAAMAAbMAAAAiQZs0SahBbJlMCCP//rUqgAAAAwAAAwAAAwAAAwAAAwBO
+wAAAABpBn1JFFSw7/wAAAwAAAwAAAwAAAwAAAwABMwAAABgBn3F0Q38AAAMAAAMAAAMAAAMAAAMA
+AbMAAAAYAZ9zakN/AAADAAADAAADAAADAAADAAGzAAAAIkGbeEmoQWyZTAgj//61KoAAAAMAAAMA
+AAMAAAMAAAMATsEAAAAaQZ+WRRUsO/8AAAMAAAMAAAMAAAMAAAMAATMAAAAYAZ+1dEN/AAADAAAD
+AAADAAADAAADAAGzAAAAGAGft2pDfwAAAwAAAwAAAwAAAwAAAwABswAAACJBm7xJqEFsmUwII//+
+tSqAAAADAAADAAADAAADAAADAE7AAAAAGkGf2kUVLDv/AAADAAADAAADAAADAAADAAEzAAAAGAGf
++XRDfwAAAwAAAwAAAwAAAwAAAwABswAAABgBn/tqQ38AAAMAAAMAAAMAAAMAAAMAAbMAAAAiQZvg
+SahBbJlMCCP//rUqgAAAAwAAAwAAAwAAAwAAAwBOwQAAABpBnh5FFSw7/wAAAwAAAwAAAwAAAwAA
+AwABMwAAABgBnj10Q38AAAMAAAMAAAMAAAMAAAMAAbMAAAAYAZ4/akN/AAADAAADAAADAAADAAAD
+AAGzAAAAIkGaJEmoQWyZTAgj//61KoAAAAMAAAMAAAMAAAMAAAMATsAAAAAaQZ5CRRUsO/8AAAMA
+AAMAAAMAAAMAAAMAATMAAAAYAZ5hdEN/AAADAAADAAADAAADAAADAAGzAAAAGAGeY2pDfwAAAwAA
+AwAAAwAAAwAAAwABswAAACJBmmhJqEFsmUwII//+tSqAAAADAAADAAADAAADAAADAE7BAAAAGkGe
+hkUVLDv/AAADAAADAAADAAADAAADAAEzAAAAGAGepXRDfwAAAwAAAwAAAwAAAwAAAwABswAAABgB
+nqdqQ38AAAMAAAMAAAMAAAMAAAMAAbMAAAAiQZqsSahBbJlMCCP//rUqgAAAAwAAAwAAAwAAAwAA
+AwBOwAAAABpBnspFFSw7/wAAAwAAAwAAAwAAAwAAAwABMwAAABgBnul0Q38AAAMAAAMAAAMAAAMA
+AAMAAbMAAAAYAZ7rakN/AAADAAADAAADAAADAAADAAGzAAAAIkGa8EmoQWyZTAgj//61KoAAAAMA
+AAMAAAMAAAMAAAMATsEAAAAaQZ8ORRUsO/8AAAMAAAMAAAMAAAMAAAMAATMAAAAYAZ8tdEN/AAAD
+AAADAAADAAADAAADAAGzAAAAGAGfL2pDfwAAAwAAAwAAAwAAAwAAAwABswAAACJBmzRJqEFsmUwI
+I//+tSqAAAADAAADAAADAAADAAADAE7AAAAAGkGfUkUVLDv/AAADAAADAAADAAADAAADAAEzAAAA
+GAGfcXRDfwAAAwAAAwAAAwAAAwAAAwABswAAABgBn3NqQ38AAAMAAAMAAAMAAAMAAAMAAbMAAAAi
+QZt4SahBbJlMCCP//rUqgAAAAwAAAwAAAwAAAwAAAwBOwQAAABpBn5ZFFSw7/wAAAwAAAwAAAwAA
+AwAAAwABMwAAABgBn7V0Q38AAAMAAAMAAAMAAAMAAAMAAbMAAAAYAZ+3akN/AAADAAADAAADAAAD
+AAADAAGzAAAAIkGbvEmoQWyZTAgj//61KoAAAAMAAAMAAAMAAAMAAAMATsAAAAAaQZ/aRRUsO/8A
+AAMAAAMAAAMAAAMAAAMAATMAAAAYAZ/5dEN/AAADAAADAAADAAADAAADAAGzAAAAGAGf+2pDfwAA
+AwAAAwAAAwAAAwAAAwABswAAACJBm+BJqEFsmUwII//+tSqAAAADAAADAAADAAADAAADAE7BAAAA
+GkGeHkUVLDv/AAADAAADAAADAAADAAADAAEzAAAAGAGePXRDfwAAAwAAAwAAAwAAAwAAAwABswAA
+ABgBnj9qQ38AAAMAAAMAAAMAAAMAAAMAAbMAAAAiQZokSahBbJlMCCP//rUqgAAAAwAAAwAAAwAA
+AwAAAwBOwAAAABpBnkJFFSw7/wAAAwAAAwAAAwAAAwAAAwABMwAAABgBnmF0Q38AAAMAAAMAAAMA
+AAMAAAMAAbMAAAAYAZ5jakN/AAADAAADAAADAAADAAADAAGzAAAAIkGaaEmoQWyZTAgj//61KoAA
+AAMAAAMAAAMAAAMAAAMATsEAAAAaQZ6GRRUsO/8AAAMAAAMAAAMAAAMAAAMAATMAAAAYAZ6ldEN/
+AAADAAADAAADAAADAAADAAGzAAAAGAGep2pDfwAAAwAAAwAAAwAAAwAAAwABswAAACJBmqxJqEFs
+mUwII//+tSqAAAADAAADAAADAAADAAADAE7AAAAAGkGeykUVLDv/AAADAAADAAADAAADAAADAAEz
+AAAAGAGe6XRDfwAAAwAAAwAAAwAAAwAAAwABswAAABgBnutqQ38AAAMAAAMAAAMAAAMAAAMAAbMA
+AAAiQZrwSahBbJlMCCP//rUqgAAAAwAAAwAAAwAAAwAAAwBOwQAAABpBnw5FFSw7/wAAAwAAAwAA
+AwAAAwAAAwABMwAAABgBny10Q38AAAMAAAMAAAMAAAMAAAMAAbMAAAAYAZ8vakN/AAADAAADAAAD
+AAADAAADAAGzAAAAIkGbNEmoQWyZTAgj//61KoAAAAMAAAMAAAMAAAMAAAMATsAAAAAaQZ9SRRUs
+O/8AAAMAAAMAAAMAAAMAAAMAATMAAAAYAZ9xdEN/AAADAAADAAADAAADAAADAAGzAAAAGAGfc2pD
+fwAAAwAAAwAAAwAAAwAAAwABswAAACJBm3hJqEFsmUwII//+tSqAAAADAAADAAADAAADAAADAE7B
+AAAAGkGflkUVLDv/AAADAAADAAADAAADAAADAAEzAAAAGAGftXRDfwAAAwAAAwAAAwAAAwAAAwAB
+swAAABgBn7dqQ38AAAMAAAMAAAMAAAMAAAMAAbMAAAAiQZu8SahBbJlMCCP//rUqgAAAAwAAAwAA
+AwAAAwAAAwBOwAAAABpBn9pFFSw7/wAAAwAAAwAAAwAAAwAAAwABMwAAABgBn/l0Q38AAAMAAAMA
+AAMAAAMAAAMAAbMAAAAYAZ/7akN/AAADAAADAAADAAADAAADAAGzAAAAIkGb4EmoQWyZTAgj//61
+KoAAAAMAAAMAAAMAAAMAAAMATsEAAAAaQZ4eRRUsO/8AAAMAAAMAAAMAAAMAAAMAATMAAAAYAZ49
+dEN/AAADAAADAAADAAADAAADAAGzAAAAGAGeP2pDfwAAAwAAAwAAAwAAAwAAAwABswAAACJBmiRJ
+qEFsmUwII//+tSqAAAADAAADAAADAAADAAADAE7AAAAAGkGeQkUVLDv/AAADAAADAAADAAADAAAD
+AAEzAAAAGAGeYXRDfwAAAwAAAwAAAwAAAwAAAwABswAAABgBnmNqQ38AAAMAAAMAAAMAAAMAAAMA
+AbMAAAAiQZpoSahBbJlMCCP//rUqgAAAAwAAAwAAAwAAAwAAAwBOwQAAABpBnoZFFSw7/wAAAwAA
+AwAAAwAAAwAAAwABMwAAABgBnqV0Q38AAAMAAAMAAAMAAAMAAAMAAbMAAAAYAZ6nakN/AAADAAAD
+AAADAAADAAADAAGzAAAAIkGarEmoQWyZTAgj//61KoAAAAMAAAMAAAMAAAMAAAMATsAAAAAaQZ7K
+RRUsO/8AAAMAAAMAAAMAAAMAAAMAATMAAAAYAZ7pdEN/AAADAAADAAADAAADAAADAAGzAAAAGAGe
+62pDfwAAAwAAAwAAAwAAAwAAAwABswAAACJBmvBJqEFsmUwII//+tSqAAAADAAADAAADAAADAAAD
+AE7BAAAAGkGfDkUVLDv/AAADAAADAAADAAADAAADAAEzAAAAGAGfLXRDfwAAAwAAAwAAAwAAAwAA
+AwABswAAABgBny9qQ38AAAMAAAMAAAMAAAMAAAMAAbMAAAAiQZs0SahBbJlMCCP//rUqgAAAAwAA
+AwAAAwAAAwAAAwBOwAAAABpBn1JFFSw7/wAAAwAAAwAAAwAAAwAAAwABMwAAABgBn3F0Q38AAAMA
+AAMAAAMAAAMAAAMAAbMAAAAYAZ9zakN/AAADAAADAAADAAADAAADAAGzAAAAIkGbeEmoQWyZTAgj
+//61KoAAAAMAAAMAAAMAAAMAAAMATsEAAAAaQZ+WRRUsO/8AAAMAAAMAAAMAAAMAAAMAATMAAAAY
+AZ+1dEN/AAADAAADAAADAAADAAADAAGzAAAAGAGft2pDfwAAAwAAAwAAAwAAAwAAAwABswAAACJB
+m7xJqEFsmUwII//+tSqAAAADAAADAAADAAADAAADAE7AAAAAGkGf2kUVLDv/AAADAAADAAADAAAD
+AAADAAEzAAAAGAGf+XRDfwAAAwAAAwAAAwAAAwAAAwABswAAABgBn/tqQ38AAAMAAAMAAAMAAAMA
+AAMAAbMAAAAiQZvgSahBbJlMCCP//rUqgAAAAwAAAwAAAwAAAwAAAwBOwQAAABpBnh5FFSw7/wAA
+AwAAAwAAAwAAAwAAAwABMwAAABgBnj10Q38AAAMAAAMAAAMAAAMAAAMAAbMAAAAYAZ4/akN/AAAD
+AAADAAADAAADAAADAAGzAAAAIkGaJEmoQWyZTAgj//61KoAAAAMAAAMAAAMAAAMAAAMATsAAAAAa
+QZ5CRRUsO/8AAAMAAAMAAAMAAAMAAAMAATMAAAAYAZ5hdEN/AAADAAADAAADAAADAAADAAGzAAAA
+GAGeY2pDfwAAAwAAAwAAAwAAAwAAAwABswAAACJBmmhJqEFsmUwII//+tSqAAAADAAADAAADAAAD
+AAADAE7BAAAAGkGehkUVLDv/AAADAAADAAADAAADAAADAAEzAAAAGAGepXRDfwAAAwAAAwAAAwAA
+AwAAAwABswAAABgBnqdqQ38AAAMAAAMAAAMAAAMAAAMAAbMAAAAiQZqsSahBbJlMCCP//rUqgAAA
+AwAAAwAAAwAAAwAAAwBOwAAAABpBnspFFSw7/wAAAwAAAwAAAwAAAwAAAwABMwAAABgBnul0Q38A
+AAMAAAMAAAMAAAMAAAMAAbMAAAAYAZ7rakN/AAADAAADAAADAAADAAADAAGzAAAAIkGa8EmoQWyZ
+TAgj//61KoAAAAMAAAMAAAMAAAMAAAMATsEAAAAaQZ8ORRUsO/8AAAMAAAMAAAMAAAMAAAMAATMA
+AAAYAZ8tdEN/AAADAAADAAADAAADAAADAAGzAAAAGAGfL2pDfwAAAwAAAwAAAwAAAwAAAwABswAA
+ACJBmzRJqEFsmUwII//+tSqAAAADAAADAAADAAADAAADAE7AAAAAGkGfUkUVLDv/AAADAAADAAAD
+AAADAAADAAEzAAAAGAGfcXRDfwAAAwAAAwAAAwAAAwAAAwABswAAABgBn3NqQ38AAAMAAAMAAAMA
+AAMAAAMAAbMAAAAiQZt4SahBbJlMCCP//rUqgAAAAwAAAwAAAwAAAwAAAwBOwQAAABpBn5ZFFSw7
+/wAAAwAAAwAAAwAAAwAAAwABMwAAABgBn7V0Q38AAAMAAAMAAAMAAAMAAAMAAbMAAAAYAZ+3akN/
+AAADAAADAAADAAADAAADAAGzAAAAIkGbvEmoQWyZTAgj//61KoAAAAMAAAMAAAMAAAMAAAMATsAA
+AAAaQZ/aRRUsO/8AAAMAAAMAAAMAAAMAAAMAATMAAAAYAZ/5dEN/AAADAAADAAADAAADAAADAAGz
+AAAAGAGf+2pDfwAAAwAAAwAAAwAAAwAAAwABswAAACJBm+BJqEFsmUwII//+tSqAAAADAAADAAAD
+AAADAAADAE7BAAAAGkGeHkUVLDv/AAADAAADAAADAAADAAADAAEzAAAAGAGePXRDfwAAAwAAAwAA
+AwAAAwAAAwABswAAABgBnj9qQ38AAAMAAAMAAAMAAAMAAAMAAbMAAAAiQZokSahBbJlMCCP//rUq
+gAAAAwAAAwAAAwAAAwAAAwBOwAAAABpBnkJFFSw7/wAAAwAAAwAAAwAAAwAAAwABMwAAABgBnmF0
+Q38AAAMAAAMAAAMAAAMAAAMAAbMAAAAYAZ5jakN/AAADAAADAAADAAADAAADAAGzAAAAIkGaaEmo
+QWyZTAgj//61KoAAAAMAAAMAAAMAAAMAAAMATsEAAAAaQZ6GRRUsO/8AAAMAAAMAAAMAAAMAAAMA
+ATMAAAAYAZ6ldEN/AAADAAADAAADAAADAAADAAGzAAAAGAGep2pDfwAAAwAAAwAAAwAAAwAAAwAB
+swAAACJBmqxJqEFsmUwII//+tSqAAAADAAADAAADAAADAAADAE7AAAAAGkGeykUVLDv/AAADAAAD
+AAADAAADAAADAAEzAAAAGAGe6XRDfwAAAwAAAwAAAwAAAwAAAwABswAAABgBnutqQ38AAAMAAAMA
+AAMAAAMAAAMAAbMAAAAiQZrwSahBbJlMCCP//rUqgAAAAwAAAwAAAwAAAwAAAwBOwQAAABpBnw5F
+FSw7/wAAAwAAAwAAAwAAAwAAAwABMwAAABgBny10Q38AAAMAAAMAAAMAAAMAAAMAAbMAAAAYAZ8v
+akN/AAADAAADAAADAAADAAADAAGzAAAAIkGbNEmoQWyZTAgj//61KoAAAAMAAAMAAAMAAAMAAAMA
+TsAAAAAaQZ9SRRUsO/8AAAMAAAMAAAMAAAMAAAMAATMAAAAYAZ9xdEN/AAADAAADAAADAAADAAAD
+AAGzAAAAGAGfc2pDfwAAAwAAAwAAAwAAAwAAAwABswAAACJBm3hJqEFsmUwII//+tSqAAAADAAAD
+AAADAAADAAADAE7BAAAAGkGflkUVLDv/AAADAAADAAADAAADAAADAAEzAAAAGAGftXRDfwAAAwAA
+AwAAAwAAAwAAAwABswAAABgBn7dqQ38AAAMAAAMAAAMAAAMAAAMAAbMAAAAiQZu8SahBbJlMCCP/
+/rUqgAAAAwAAAwAAAwAAAwAAAwBOwAAAABpBn9pFFSw7/wAAAwAAAwAAAwAAAwAAAwABMwAAABgB
+n/l0Q38AAAMAAAMAAAMAAAMAAAMAAbMAAAAYAZ/7akN/AAADAAADAAADAAADAAADAAGzAAAAIkGb
+4EmoQWyZTAgh//6qVQAAAwAAAwAAAwAAAwAAAwAAnYEAAAAaQZ4eRRUsO/8AAAMAAAMAAAMAAAMA
+AAMAATMAAAAYAZ49dEN/AAADAAADAAADAAADAAADAAGzAAAAGAGeP2pDfwAAAwAAAwAAAwAAAwAA
+AwABswAAACFBmiRJqEFsmUwIf//+qZYAAAMAAAMAAAMAAAMAAAMAAmYAAAAaQZ5CRRUsO/8AAAMA
+AAMAAAMAAAMAAAMAATMAAAAYAZ5hdEN/AAADAAADAAADAAADAAADAAGzAAAAGAGeY2pDfwAAAwAA
+AwAAAwAAAwAAAwABswAAACFBmmdJqEFsmUwIb//+p4QAAAMAAAMAAAMAAAMAAAMABL0AAAAaQZ6F
+RRUsN/8AAAMAAAMAAAMAAAMAAAMAAbMAAAAYAZ6makN/AAADAAADAAADAAADAAADAAGzAAAMjG1v
+b3YAAABsbXZoZAAAAAAAAAAAAAAAAAAAA+gAAE4gAAEAAAEAAAAAAAAAAAAAAAABAAAAAAAAAAAA
+AAAAAAAAAQAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAu2
+dHJhawAAAFx0a2hkAAAAAwAAAAAAAAAAAAAAAQAAAAAAAE4gAAAAAAAAAAAAAAAAAAAAAAABAAAA
+AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAQAAAAAPoAAACWAAAAAAAJGVkdHMAAAAcZWxzdAAA
+AAAAAAABAABOIAAACAAAAQAAAAALLm1kaWEAAAAgbWRoZAAAAAAAAAAAAAAAAAAAKAAAAyAAVcQA
+AAAAAC1oZGxyAAAAAAAAAAB2aWRlAAAAAAAAAAAAAAAAVmlkZW9IYW5kbGVyAAAACtltaW5mAAAA
+FHZtaGQAAAABAAAAAAAAAAAAAAAkZGluZgAAABxkcmVmAAAAAAAAAAEAAAAMdXJsIAAAAAEAAAqZ
+c3RibAAAALlzdHNkAAAAAAAAAAEAAACpYXZjMQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAPoAlgA
+SAAAAEgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABj//wAAADdhdmND
+AWQAH//hABpnZAAfrNlA/BN5ZYQAAAMABAAAAwBQPGDGWAEABmjr48siwP34+AAAAAAcdXVpZGto
+QPJfJE/FujmlG88DI/MAAAAAAAAAGHN0dHMAAAAAAAAAAQAAAMgAAAQAAAAAFHN0c3MAAAAAAAAA
+AQAAAAEAAAZIY3R0cwAAAAAAAADHAAAAAQAACAAAAAABAAAUAAAAAAEAAAgAAAAAAQAAAAAAAAAB
+AAAEAAAAAAEAABQAAAAAAQAACAAAAAABAAAAAAAAAAEAAAQAAAAAAQAAFAAAAAABAAAIAAAAAAEA
+AAAAAAAAAQAABAAAAAABAAAUAAAAAAEAAAgAAAAAAQAAAAAAAAABAAAEAAAAAAEAABQAAAAAAQAA
+CAAAAAABAAAAAAAAAAEAAAQAAAAAAQAAFAAAAAABAAAIAAAAAAEAAAAAAAAAAQAABAAAAAABAAAU
+AAAAAAEAAAgAAAAAAQAAAAAAAAABAAAEAAAAAAEAABQAAAAAAQAACAAAAAABAAAAAAAAAAEAAAQA
+AAAAAQAAFAAAAAABAAAIAAAAAAEAAAAAAAAAAQAABAAAAAABAAAUAAAAAAEAAAgAAAAAAQAAAAAA
+AAABAAAEAAAAAAEAABQAAAAAAQAACAAAAAABAAAAAAAAAAEAAAQAAAAAAQAAFAAAAAABAAAIAAAA
+AAEAAAAAAAAAAQAABAAAAAABAAAUAAAAAAEAAAgAAAAAAQAAAAAAAAABAAAEAAAAAAEAABQAAAAA
+AQAACAAAAAABAAAAAAAAAAEAAAQAAAAAAQAAFAAAAAABAAAIAAAAAAEAAAAAAAAAAQAABAAAAAAB
+AAAUAAAAAAEAAAgAAAAAAQAAAAAAAAABAAAEAAAAAAEAABQAAAAAAQAACAAAAAABAAAAAAAAAAEA
+AAQAAAAAAQAAFAAAAAABAAAIAAAAAAEAAAAAAAAAAQAABAAAAAABAAAUAAAAAAEAAAgAAAAAAQAA
+AAAAAAABAAAEAAAAAAEAABQAAAAAAQAACAAAAAABAAAAAAAAAAEAAAQAAAAAAQAAFAAAAAABAAAI
+AAAAAAEAAAAAAAAAAQAABAAAAAABAAAUAAAAAAEAAAgAAAAAAQAAAAAAAAABAAAEAAAAAAEAABQA
+AAAAAQAACAAAAAABAAAAAAAAAAEAAAQAAAAAAQAAFAAAAAABAAAIAAAAAAEAAAAAAAAAAQAABAAA
+AAABAAAUAAAAAAEAAAgAAAAAAQAAAAAAAAABAAAEAAAAAAEAABQAAAAAAQAACAAAAAABAAAAAAAA
+AAEAAAQAAAAAAQAAFAAAAAABAAAIAAAAAAEAAAAAAAAAAQAABAAAAAABAAAUAAAAAAEAAAgAAAAA
+AQAAAAAAAAABAAAEAAAAAAEAABQAAAAAAQAACAAAAAABAAAAAAAAAAEAAAQAAAAAAQAAFAAAAAAB
+AAAIAAAAAAEAAAAAAAAAAQAABAAAAAABAAAUAAAAAAEAAAgAAAAAAQAAAAAAAAABAAAEAAAAAAEA
+ABQAAAAAAQAACAAAAAABAAAAAAAAAAEAAAQAAAAAAQAAFAAAAAABAAAIAAAAAAEAAAAAAAAAAQAA
+BAAAAAABAAAUAAAAAAEAAAgAAAAAAQAAAAAAAAABAAAEAAAAAAEAABQAAAAAAQAACAAAAAABAAAA
+AAAAAAEAAAQAAAAAAQAAFAAAAAABAAAIAAAAAAEAAAAAAAAAAQAABAAAAAABAAAUAAAAAAEAAAgA
+AAAAAQAAAAAAAAABAAAEAAAAAAEAABQAAAAAAQAACAAAAAABAAAAAAAAAAEAAAQAAAAAAQAAFAAA
+AAABAAAIAAAAAAEAAAAAAAAAAQAABAAAAAABAAAUAAAAAAEAAAgAAAAAAQAAAAAAAAABAAAEAAAA
+AAEAABQAAAAAAQAACAAAAAABAAAAAAAAAAEAAAQAAAAAAQAAFAAAAAABAAAIAAAAAAEAAAAAAAAA
+AQAABAAAAAABAAAUAAAAAAEAAAgAAAAAAQAAAAAAAAABAAAEAAAAAAEAABQAAAAAAQAACAAAAAAB
+AAAAAAAAAAEAAAQAAAAAAQAAFAAAAAABAAAIAAAAAAEAAAAAAAAAAQAABAAAAAABAAAUAAAAAAEA
+AAgAAAAAAQAAAAAAAAABAAAEAAAAAAEAABQAAAAAAQAACAAAAAABAAAAAAAAAAEAAAQAAAAAAQAA
+FAAAAAABAAAIAAAAAAEAAAAAAAAAAQAABAAAAAABAAAUAAAAAAEAAAgAAAAAAQAAAAAAAAABAAAE
+AAAAAAEAABAAAAAAAgAABAAAAAAcc3RzYwAAAAAAAAABAAAAAQAAAMgAAAABAAADNHN0c3oAAAAA
+AAAAAAAAAMgAAANUAAAAIAAAABwAAAAcAAAAHAAAACYAAAAeAAAAHAAAABwAAAAmAAAAHgAAABwA
+AAAcAAAAJgAAAB4AAAAcAAAAHAAAACYAAAAeAAAAHAAAABwAAAAmAAAAHgAAABwAAAAcAAAAJgAA
+AB4AAAAcAAAAHAAAACYAAAAeAAAAHAAAABwAAAAmAAAAHgAAABwAAAAcAAAAJgAAAB4AAAAcAAAA
+HAAAACYAAAAeAAAAHAAAABwAAAAmAAAAHgAAABwAAAAcAAAAJgAAAB4AAAAcAAAAHAAAACYAAAAe
+AAAAHAAAABwAAAAmAAAAHgAAABwAAAAcAAAAJgAAAB4AAAAcAAAAHAAAACYAAAAeAAAAHAAAABwA
+AAAmAAAAHgAAABwAAAAcAAAAJgAAAB4AAAAcAAAAHAAAACYAAAAeAAAAHAAAABwAAAAmAAAAHgAA
+ABwAAAAcAAAAJgAAAB4AAAAcAAAAHAAAACYAAAAeAAAAHAAAABwAAAAmAAAAHgAAABwAAAAcAAAA
+JgAAAB4AAAAcAAAAHAAAACYAAAAeAAAAHAAAABwAAAAmAAAAHgAAABwAAAAcAAAAJgAAAB4AAAAc
+AAAAHAAAACYAAAAeAAAAHAAAABwAAAAmAAAAHgAAABwAAAAcAAAAJgAAAB4AAAAcAAAAHAAAACYA
+AAAeAAAAHAAAABwAAAAmAAAAHgAAABwAAAAcAAAAJgAAAB4AAAAcAAAAHAAAACYAAAAeAAAAHAAA
+ABwAAAAmAAAAHgAAABwAAAAcAAAAJgAAAB4AAAAcAAAAHAAAACYAAAAeAAAAHAAAABwAAAAmAAAA
+HgAAABwAAAAcAAAAJgAAAB4AAAAcAAAAHAAAACYAAAAeAAAAHAAAABwAAAAmAAAAHgAAABwAAAAc
+AAAAJgAAAB4AAAAcAAAAHAAAACYAAAAeAAAAHAAAABwAAAAmAAAAHgAAABwAAAAcAAAAJgAAAB4A
+AAAcAAAAHAAAACYAAAAeAAAAHAAAABwAAAAmAAAAHgAAABwAAAAcAAAAJQAAAB4AAAAcAAAAHAAA
+ACUAAAAeAAAAHAAAABRzdGNvAAAAAAAAAAEAAAAwAAAAYnVkdGEAAABabWV0YQAAAAAAAAAhaGRs
+cgAAAAAAAAAAbWRpcmFwcGwAAAAAAAAAAAAAAAAtaWxzdAAAACWpdG9vAAAAHWRhdGEAAAABAAAA
+AExhdmY1OC43Ni4xMDA=
+">
+  Your browser does not support the video tag.
+</video></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -724,10 +880,84 @@ E_y \big|^{n+1}_{i,j+1/2} = E_y \big|^{n}_{i,j+1/2} - \frac{dt}{dx} \big( H_z \b
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "33b8d38db83d49ab998357b04639f1f8"}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 3.15 s, sys: 601 ms, total: 3.75 s
+Wall time: 3.74 s
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> fortranmagic
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;load_ext&#39;</span><span class="p">,</span> <span class="s1">&#39;fortranmagic&#39;</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2369,</span> in <span class="ni">InteractiveShell.run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2367</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2368</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2369</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2370</span> <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/magics/extension.py:33,</span> in <span class="ni">ExtensionMagics.load_ext</span><span class="nt">(self, module_str)</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">module_str</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span>     <span class="k">raise</span> <span class="n">UsageError</span><span class="p">(</span><span class="s1">&#39;Missing module name.&#39;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">33</span> <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">extension_manager</span><span class="o">.</span><span class="n">load_extension</span><span class="p">(</span><span class="n">module_str</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="k">if</span> <span class="n">res</span> <span class="o">==</span> <span class="s1">&#39;already loaded&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The </span><span class="si">%s</span><span class="s2"> extension is already loaded. To reload it, use:&quot;</span> <span class="o">%</span> <span class="n">module_str</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/extensions.py:76,</span> in <span class="ni">ExtensionManager.load_extension</span><span class="nt">(self, module_str)</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Load an IPython extension by its module name.</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span><span class="sd"> Returns the string &quot;already loaded&quot; if the extension is already loaded,</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span><span class="sd"> &quot;no load function&quot; if the module doesn&#39;t have a load_ipython_extension</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span><span class="sd"> function, or None if it succeeded.</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">76</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_extension</span><span class="p">(</span><span class="n">module_str</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">77</span> <span class="k">except</span> <span class="ne">ModuleNotFoundError</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span>     <span class="k">if</span> <span class="n">module_str</span> <span class="ow">in</span> <span class="n">BUILTINS_EXTS</span><span class="p">:</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/extensions.py:91,</span> in <span class="ni">ExtensionManager._load_extension</span><span class="nt">(self, module_str)</span>
+<span class="g g-Whitespace">     </span><span class="mi">89</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">90</span>     <span class="k">if</span> <span class="n">module_str</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">91</span>         <span class="n">mod</span> <span class="o">=</span> <span class="n">import_module</span><span class="p">(</span><span class="n">module_str</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">92</span>     <span class="n">mod</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="n">module_str</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_load_ipython_extension</span><span class="p">(</span><span class="n">mod</span><span class="p">):</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/importlib/__init__.py:126,</span> in <span class="ni">import_module</span><span class="nt">(name, package)</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span>             <span class="k">break</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span>         <span class="n">level</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="ne">--&gt; </span><span class="mi">126</span> <span class="k">return</span> <span class="n">_bootstrap</span><span class="o">.</span><span class="n">_gcd_import</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="n">level</span><span class="p">:],</span> <span class="n">package</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:1050,</span> in <span class="ni">_gcd_import</span><span class="nt">(name, package, level)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:1027,</span> in <span class="ni">_find_and_load</span><span class="nt">(name, import_)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:1006,</span> in <span class="ni">_find_and_load_unlocked</span><span class="nt">(name, import_)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:688,</span> in <span class="ni">_load_unlocked</span><span class="nt">(spec)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap_external&gt;:883,</span> in <span class="ni">exec_module</span><span class="nt">(self, module)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:241,</span> in <span class="ni">_call_with_frames_removed</span><span class="nt">(f, *args, **kwds)</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">runenv</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">fortranmagic</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">36</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="kn">from</span> <span class="nn">IPython.utils</span> <span class="kn">import</span> <span class="n">py3compat</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="kn">from</span> <span class="nn">IPython.utils.io</span> <span class="kn">import</span> <span class="n">capture_output</span>
+<span class="ne">---&gt; </span><span class="mi">36</span> <span class="kn">from</span> <span class="nn">IPython.utils.path</span> <span class="kn">import</span> <span class="n">get_ipython_cache_dir</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span> <span class="kn">from</span> <span class="nn">numpy.f2py</span> <span class="kn">import</span> <span class="n">f2py2e</span>
+
+<span class="ne">ImportError</span>: cannot import name &#39;get_ipython_cache_dir&#39; from &#39;IPython.utils.path&#39; (/usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/utils/path.py)
 </pre></div>
 </div>
 </div>

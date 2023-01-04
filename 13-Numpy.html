@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>What provide Numpy to Python ? &#8212; Python notebooks</title>
+    <title>Numpy &#8212; Python notebooks</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://pnavaro.github.io/python-notebooks/13-Numpy.html" />
@@ -166,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   What provide Numpy to Python ?
+   Numpy
   </a>
  </li>
  <li class="toctree-l1">
@@ -474,6 +476,11 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-provide-numpy-to-python">
+   What provide Numpy to Python ?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#routines-for-fast-operations-on-arrays">
    Routines for fast operations on arrays.
   </a>
@@ -672,7 +679,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>What provide Numpy to Python ?</h1>
+                <h1>Numpy</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -682,6 +689,11 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-provide-numpy-to-python">
+   What provide Numpy to Python ?
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#routines-for-fast-operations-on-arrays">
    Routines for fast operations on arrays.
@@ -882,8 +894,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="what-provide-numpy-to-python">
-<h1>What provide Numpy to Python ?<a class="headerlink" href="#what-provide-numpy-to-python" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="numpy">
+<h1>Numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h1>
+<section id="what-provide-numpy-to-python">
+<h2>What provide Numpy to Python ?<a class="headerlink" href="#what-provide-numpy-to-python" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ndarray</span></code> multi-dimensional array object</p></li>
 <li><p>derived objects such as masked arrays and matrices</p></li>
@@ -894,6 +908,7 @@ title="Print to PDF"
 <li><p>The <a class="reference external" href="https://docs.scipy.org/doc/numpy">SciPy.org website</a> is very helpful.</p></li>
 <li><p>NumPy fully supports an object-oriented approach.</p></li>
 </ul>
+</section>
 <section id="routines-for-fast-operations-on-arrays">
 <h2>Routines for fast operations on arrays.<a class="headerlink" href="#routines-for-fast-operations-on-arrays" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
@@ -961,7 +976,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37.7 µs ± 1.08 µs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>27.7 µs ± 121 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -975,7 +990,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.41 µs ± 216 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.52 µs ± 29.8 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1492,50 +1507,46 @@ $<span class="math notranslate nohighlight">\(
 (18, 0.9999899130081685)
 (19, 0.9998592998914099)
 (20, 0.9981701345865893)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(21, 0.9783799284159196)
+(21, 0.9783799284159196)
 (22, 0.8955847401702681)
 (23, 0.86986471833438)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(24, 0.8098852631390057)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(25, 0.7527529110760323)
+(24, 0.8098852631390057)
+(25, 0.7527529110760323)
 (26, 0.7272346882718936)
 (27, 0.6790691522857905)
 (28, 0.6320458179301557)
 (29, 0.6069386094512461)
 (30, 0.575385356496663)
 (31, 0.5398414266844065)
-(32, 0.5073489564930949)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(32, 0.5073489564930949)
 (33, 0.48297721114570125)
 (34, 0.4618345475862288)
-(35, 0.43827557692194496)
-(36, 0.4143357764645196)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(35, 0.43827557692194496)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(36, 0.4143357764645196)
 (37, 0.3924382054205373)
 (38, 0.3733812863051147)
 (39, 0.35710865017565735)
 (40, 0.3420793814531387)
-(41, 0.326723185934865)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(41, 0.326723185934865)
 (42, 0.31152930040701554)
 (43, 0.2967884812685721)
 (44, 0.2841936702538212)
 (45, 0.27229436409349167)
 (46, 0.2606966680515375)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(47, 0.2505059654694677)
+(47, 0.2505059654694677)
 (48, 0.24105086578370669)
 (49, 0.23174752119627523)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(50, 0.22268821422383456)
+(50, 0.22268821422383456)
 (51, 0.2139321391802263)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(52, 0.2056789240103906)
+(52, 0.2056789240103906)
 (53, 0.19852000459869076)
 (54, 0.19154016363351395)
 (55, 0.1847719042022457)
@@ -1555,10 +1566,10 @@ $<span class="math notranslate nohighlight">\(
 (69, 0.11841156181043053)
 (70, 0.11504981910315674)
 (71, 0.11180561442912781)
+(72, 0.10867650683346695)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(72, 0.10867650683346695)
-(73, 0.10565961910779918)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(73, 0.10565961910779918)
 (74, 0.10277423555972015)
 (75, 0.10011529446941532)
 (76, 0.09753952693641722)
@@ -1566,13 +1577,15 @@ $<span class="math notranslate nohighlight">\(
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(77, 0.09504562060680743)
 (78, 0.09264232267884208)
+(79, 0.0904668914161219)
+(80, 0.08835029199885054)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(79, 0.0904668914161219)
-(80, 0.08835029199885054)
-(81, 0.08629213569569119)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(81, 0.08629213569569119)
 (82, 0.08429178767300372)
-(83, 0.08234841271209116)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(83, 0.08234841271209116)
 (84, 0.08046101458056627)
 (85, 0.07862846977337559)
 (86, 0.07684955629552748)
@@ -1588,38 +1601,38 @@ $<span class="math notranslate nohighlight">\(
 (96, 0.06171003842639934)
 (97, 0.06043048167985572)
 (98, 0.0592152869523178)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(99, 0.05806095286424927)
+(99, 0.05806095286424927)
 (100, 0.05697757075602701)
 (101, 0.055920346653939454)
 (102, 0.05488871668696673)
 (103, 0.053882107696533614)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(104, 0.05289994070021914)
+(104, 0.05289994070021914)
 (105, 0.0519416339031402)
 (106, 0.0510066053042519)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(107, 0.05009427494092695)
+(107, 0.05009427494092695)
 (108, 0.049204066811402214)
 (109, 0.04833541051107197)
 (110, 0.04748774261521061)
 (111, 0.046660507837522555)
 (112, 0.0458531599909676)
 (113, 0.04506516277460256)
-(114, 0.04429599040768293)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(114, 0.04429599040768293)
 (115, 0.043545128130012725)
 (116, 0.04281207258546671)
 (117, 0.04209633210375605)
-(118, 0.04139742689381655)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(118, 0.04139742689381655)
 (119, 0.04071488916070421)
 (120, 0.04004826315651514)
 (121, 0.03939710517463711)
 (122, 0.03876098349555084)
 (123, 0.03813947829143378)
-(124, 0.03755177739422651)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(124, 0.03755177739422651)
 (125, 0.03697714917736227)
 </pre></div>
 </div>
@@ -1631,13 +1644,9 @@ $<span class="math notranslate nohighlight">\(
 (131, 0.03377697932076092)
 (132, 0.033282160078972826)
 (133, 0.03279761746660941)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(134, 0.032323091427221125)
+(134, 0.032323091427221125)
 (135, 0.031858328713448805)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(136, 0.03140308277297653)
+(136, 0.03140308277297653)
 (137, 0.0309571136272617)
 (138, 0.03052018774439911)
 (139, 0.030092077907334605)
@@ -1653,28 +1662,30 @@ $<span class="math notranslate nohighlight">\(
 (149, 0.026289595619858604)
 (150, 0.025949813539307552)
 (151, 0.02561628421602147)
+(152, 0.025288864705315075)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(152, 0.025288864705315075)
-(153, 0.024967415638481445)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(153, 0.024967415638481445)
 (154, 0.024651801145389205)
 (155, 0.024341888776803735)
 (156, 0.02403754942669084)
 (157, 0.02373865725472386)
 (158, 0.023448442558632248)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(159, 0.023167313848241167)
+(159, 0.023167313848241167)
 (160, 0.022890950986996342)
-(161, 0.022619254071911316)
-(162, 0.022352125482355056)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(163, 0.02208946983515546)
-(164, 0.021831193939553087)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(161, 0.022619254071911316)
+(162, 0.022352125482355056)
+(163, 0.02208946983515546)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(164, 0.021831193939553087)
 (165, 0.021577206752121974)
 (166, 0.021327419331770053)
-(167, 0.021081744794915463)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(167, 0.021081744794915463)
 (168, 0.0208400982709233)
 (169, 0.020602396857879606)
 (170, 0.020368559578769898)
@@ -1688,26 +1699,22 @@ $<span class="math notranslate nohighlight">\(
 (178, 0.018627854311457605)
 (179, 0.0184254468629243)
 (180, 0.018226190393981823)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(181, 0.018030022370931223)
+(181, 0.018030022370931223)
 (182, 0.01783688170586273)
 (183, 0.017646708721320636)
 (184, 0.017459445115714647)
 (185, 0.017275033929479433)
 (186, 0.017093419511982084)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(187, 0.016914547489169235)
+(187, 0.016914547489169235)
 (188, 0.01673836473195097)
 (189, 0.016564819325316015)
 (190, 0.016393860538167694)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(191, 0.016225438793876196)
+(191, 0.016225438793876196)
 (192, 0.01605950564153134)
 (193, 0.015896013727896497)
-(194, 0.01573491677003853)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(194, 0.01573491677003853)
 (195, 0.015576169528637449)
 (196, 0.015419727781954395)
 (197, 0.015265548300447218)
@@ -1715,29 +1722,29 @@ $<span class="math notranslate nohighlight">\(
 (199, 0.01496380802793859)
 (200, 0.01481616551924994)
 (201, 0.014670621793945515)
-(202, 0.014527138224605437)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(202, 0.014527138224605437)
 (203, 0.01438736890713093)
-(204, 0.014250539546155195)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(204, 0.014250539546155195)
 (205, 0.014115571242966198)
 (206, 0.01398243147597854)
 (207, 0.013851088398572414)
 (208, 0.013721510823583295)
 (209, 0.013593668208150188)
+(210, 0.013467530638913205)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(210, 0.013467530638913205)
-(211, 0.013343068817564262)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(211, 0.013343068817564262)
 (212, 0.01322025404672726)
 (213, 0.01309905821618063)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(214, 0.012979453789398838)
+(214, 0.012979453789398838)
 (215, 0.012861413790416843)
 (216, 0.01274491179100515)
 (217, 0.012629921898153361)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(218, 0.012516418741851219)
+(218, 0.012516418741851219)
 (219, 0.012404377463161994)
 (220, 0.012293773702586103)
 (221, 0.012184583588700093)
@@ -1755,31 +1762,33 @@ $<span class="math notranslate nohighlight">\(
 (233, 0.010976497346044433)
 (234, 0.010883715360868395)
 (235, 0.010792058323921695)
-(236, 0.010701508493823068)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(237, 0.010612694239553013)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(236, 0.010701508493823068)
+(237, 0.010612694239553013)
 (238, 0.010524939454181407)
 (239, 0.010438219705069775)
+(240, 0.010352519213191077)
+(241, 0.01026782248889201)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(240, 0.010352519213191077)
-(241, 0.01026782248889201)
-(242, 0.010184114325863348)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(242, 0.010184114325863348)
 (243, 0.010101379795244225)
 (244, 0.010019604239858305)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(245, 0.009938773268580194)
+(245, 0.009938773268580194)
 (246, 0.00985887275082239)
 (247, 0.009779888811153555)
 (248, 0.009701807824029046)
-(249, 0.009624616408643843)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(249, 0.009624616408643843)
 (250, 0.009548301423900236)
 (251, 0.009472849963483927)
 (252, 0.00939824935105715)
 (253, 0.009324487135551228)
-(254, 0.009251551086570655)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(254, 0.009251551086570655)
 (255, 0.009179429189895819)
 (256, 0.009108109643086792)
 (257, 0.009037580851186371)
@@ -1789,54 +1798,50 @@ $<span class="math notranslate nohighlight">\(
 (261, 0.00876568984815935)
 (262, 0.008699973143390454)
 (263, 0.008634955591719326)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(264, 0.008570627575166957)
+(264, 0.008570627575166957)
 (265, 0.008506979635459606)
 (266, 0.008444002470989845)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(267, 0.008381686933840626)
+(267, 0.008381686933840626)
 (268, 0.008320024026871264)
 (269, 0.008259004900862737)
 (270, 0.008198620851723532)
 (271, 0.008138863317753268)
 (272, 0.008079723876961544)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(273, 0.008021194244443794)
+(273, 0.008021194244443794)
 (274, 0.007963266269810535)
 (275, 0.007905931934670499)
 (276, 0.007849183350162926)
 (277, 0.007793012754546299)
-(278, 0.007737412510830088)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(278, 0.007737412510830088)
 (279, 0.007682375104460121)
 (280, 0.007627893141048562)
 (281, 0.007573959344153423)
 (282, 0.0075205665530993756)
 (283, 0.007467707720847371)
-(284, 0.0074153759119058565)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(284, 0.0074153759119058565)
 (285, 0.007363564300283826)
 (286, 0.007312266167487155)
 (287, 0.007261474900556202)
 (288, 0.007211183990140087)
 (289, 0.007161387028614339)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(290, 0.007112077708233471)
+(290, 0.007112077708233471)
 (291, 0.007063249819323086)
-(292, 0.007014897248506528)
-(293, 0.006967013976969338)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(294, 0.006919594078757657)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(292, 0.007014897248506528)
+(293, 0.006967013976969338)
+(294, 0.006919594078757657)
 (295, 0.006872631719110772)
 (296, 0.006826121152827085)
-(297, 0.006780056722665108)
-(298, 0.0067344328577718035)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(299, 0.006689244072147366)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(297, 0.006780056722665108)
+(298, 0.0067344328577718035)
+(299, 0.006689244072147366)
 (300, 0.006644484963137547)
 (301, 0.006600150209957581)
 (302, 0.006556234572243802)
@@ -1854,9 +1859,7 @@ $<span class="math notranslate nohighlight">\(
 (314, 0.006060134232072762)
 (315, 0.006021224350790561)
 (316, 0.00598266791847936)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(317, 0.005944460745593443)
+(317, 0.005944460745593443)
 (318, 0.005906598703372343)
 (319, 0.005869077722809564)
 </pre></div>
@@ -1866,11 +1869,11 @@ $<span class="math notranslate nohighlight">\(
 (322, 0.005758521336127336)
 (323, 0.005722325072091993)
 (324, 0.0056864503861510235)
-(325, 0.005650893547187218)
-(326, 0.005616054318304152)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(327, 0.005581589574170559)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(325, 0.005650893547187218)
+(326, 0.005616054318304152)
+(327, 0.005581589574170559)
 (328, 0.0055474224523471725)
 (329, 0.005513549607624099)
 (330, 0.005479967740687844)
@@ -1878,37 +1881,37 @@ $<span class="math notranslate nohighlight">\(
 (332, 0.005413663968000699)
 (333, 0.005380935686544988)
 (334, 0.0053484856300591846)
-(335, 0.005316310717930253)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(335, 0.005316310717930253)
 (336, 0.005284407911217323)
 (337, 0.005252774211993267)
 (338, 0.005221406662694877)
 (339, 0.005190302345487994)
-(340, 0.005159458381639975)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(340, 0.005159458381639975)
 (341, 0.005128871930907377)
 (342, 0.005098540190931737)
 (343, 0.0050684603966477315)
 (344, 0.005038629819700358)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(345, 0.0050090457678744925)
+(345, 0.0050090457678744925)
 (346, 0.0049797055845321415)
 (347, 0.004950606648062111)
 (348, 0.004921746371335842)
 (349, 0.004893122201178207)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(350, 0.004864731617842708)
+(350, 0.004864731617842708)
 (351, 0.00483657213449592)
 (352, 0.004808641296717055)
 (353, 0.004780936681997224)
 (354, 0.004753455899254801)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(355, 0.00472619658835662)
+(355, 0.00472619658835662)
 (356, 0.004699156419644417)
 (357, 0.004672333093476402)
 (358, 0.00464572433976995)
-(359, 0.00461932791755577)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(359, 0.00461932791755577)
 (360, 0.004593141614539014)
 (361, 0.004567163246668083)
 (362, 0.004541390657709962)
@@ -1916,29 +1919,29 @@ $<span class="math notranslate nohighlight">\(
 (364, 0.004490454328202991)
 (365, 0.004465286410568562)
 (366, 0.004440315916877363)
-(367, 0.004415540823880705)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(367, 0.004415540823880705)
 (368, 0.00439095913375361)
 (369, 0.004366568873716622)
 (370, 0.004342368095667897)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(371, 0.004318354875820218)
+(371, 0.004318354875820218)
 (372, 0.004294527314341681)
 (373, 0.004270883535005693)
 (374, 0.004247421684846847)
 (375, 0.004224139933817786)
 (376, 0.004201036474458886)
+(377, 0.00417810952156812)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(377, 0.00417810952156812)
-(378, 0.004155357311878501)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(378, 0.004155357311878501)
 (379, 0.004132778103740006)
 (380, 0.00411037017680847)
 (381, 0.004088131831736608)
+(382, 0.004066061389874597)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(382, 0.004066061389874597)
-(383, 0.004044157192970289)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(383, 0.004044157192970289)
 (384, 0.0040224176028789815)
 (385, 0.004000841001274278)
 (386, 0.003979425789367132)
@@ -1952,24 +1955,22 @@ $<span class="math notranslate nohighlight">\(
 (394, 0.003813728499464874)
 (395, 0.0037936969387189394)
 (396, 0.003773811795292294)
+(397, 0.0037540716679027295)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(397, 0.0037540716679027295)
-(398, 0.003734475171749043)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(398, 0.003734475171749043)
 (399, 0.0037150209382838936)
 (400, 0.00369570761498618)
 (401, 0.0036765338651425943)
 (402, 0.003657603476017653)
 (403, 0.0036389278304378974)
 (404, 0.003620384211880416)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(405, 0.003601971400424073)
+(405, 0.003601971400424073)
 (406, 0.0035836881899704662)
-(407, 0.003565533388056064)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(408, 0.0035475058156754545)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(407, 0.003565533388056064)
+(408, 0.0035475058156754545)
 (409, 0.0035296043070984417)
 (410, 0.003511827709695778)
 (411, 0.003494174883766871)
@@ -1982,31 +1983,31 @@ $<span class="math notranslate nohighlight">\(
 (418, 0.0033739776057322883)
 (419, 0.003357275418504187)
 (420, 0.0033406872998498166)
-(421, 0.0033242122303675206)
-(422, 0.003307849201841667)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(423, 0.0032915972170971587)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(421, 0.0033242122303675206)
+(422, 0.003307849201841667)
+(423, 0.0032915972170971587)
 (424, 0.0032754552898570533)
-(425, 0.003259422444601864)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(425, 0.003259422444601864)
 (426, 0.0032434977164318753)
 (427, 0.003227680150930895)
 (428, 0.0032119688040317595)
 (429, 0.0031963627418849167)
 (430, 0.003180861040726662)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(431, 0.003165462786752087)
+(431, 0.003165462786752087)
 (432, 0.003150167075987455)
 (433, 0.003134973014167704)
 (434, 0.0031198797166104796)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(435, 0.0031048863080975894)
+(435, 0.0031048863080975894)
 (436, 0.003089991922754272)
 (437, 0.0030751957039326255)
 (438, 0.003060496804094991)
-(439, 0.0030458943847000946)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(439, 0.0030458943847000946)
 (440, 0.0030313876160901008)
 (441, 0.0030169756773801874)
 (442, 0.0030026577563496294)
@@ -2015,11 +2016,11 @@ $<span class="math notranslate nohighlight">\(
 (445, 0.0029602601048135434)
 (446, 0.002946310301811584)
 (447, 0.002932450581613523)
-(448, 0.0029186801817676455)
-(449, 0.0029049983477629506)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(450, 0.0028914043329316217)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(448, 0.0029186801817676455)
+(449, 0.0029049983477629506)
+(450, 0.0028914043329316217)
 (451, 0.0028778973983524755)
 (452, 0.0028644768127550646)
 (453, 0.002851141852429146)
@@ -2027,21 +2028,21 @@ $<span class="math notranslate nohighlight">\(
 (455, 0.0028247259499885502)
 (456, 0.0028116435974216993)
 (457, 0.002798644049043969)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(458, 0.0027857266175801074)
+(458, 0.0027857266175801074)
 (459, 0.0027728906227798638)
 (460, 0.002760135391333096)
 (461, 0.0027474602567852014)
+(462, 0.002734864559457011)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(462, 0.002734864559457011)
-(463, 0.0027223476463606464)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(463, 0.0027223476463606464)
 (464, 0.0027099088711219537)
 (465, 0.0026975475939004074)
 (466, 0.0026852631813110896)
 (467, 0.002673055006347956)
-(468, 0.0026609224483083605)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(468, 0.0026609224483083605)
 (469, 0.002648864892717162)
 (470, 0.002636881731255837)
 (471, 0.002624972361685407)
@@ -2051,9 +2052,7 @@ $<span class="math notranslate nohighlight">\(
 (475, 0.002578060966435661)
 (476, 0.002566511730651644)
 (477, 0.0025550327971009634)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(478, 0.002543623604163094)
+(478, 0.002543623604163094)
 (479, 0.002532283595752315)
 (480, 0.0025210122212527947)
 (481, 0.0025098089354553175)
@@ -2090,18 +2089,16 @@ $<span class="math notranslate nohighlight">\(
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(506, 0.0022521164314124654)
 (507, 0.002242593990254754)
 (508, 0.0022331255336493355)
-(509, 0.002223710660289936)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(509, 0.002223710660289936)
 (510, 0.0022143489725565107)
 (511, 0.002205040076472872)
 (512, 0.0021957835816715167)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(513, 0.0021865791013510874)
+(513, 0.0021865791013510874)
 (514, 0.0021774262522396186)
 (515, 0.0021683246545560085)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(516, 0.002159273931972634)
+(516, 0.002159273931972634)
 (517, 0.0021502737115785494)
 (518, 0.00214132362384298)
 (519, 0.0021324233025782832)
@@ -2112,14 +2109,16 @@ $<span class="math notranslate nohighlight">\(
 (524, 0.0020886556063691307)
 (525, 0.0020800463768076293)
 (526, 0.0020714844410891138)
-(527, 0.00206296945852788)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(527, 0.00206296945852788)
 (528, 0.0020545010914763285)
 (529, 0.00204607900529199)
 (530, 0.0020377028683080094)
-(531, 0.002029372351799533)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(532, 0.00202108712995461)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(531, 0.002029372351799533)
+(532, 0.00202108712995461)
 (533, 0.0020128468798430144)
 (534, 0.0020046512813862013)
 (535, 0.001996500017327591)
@@ -2130,14 +2129,16 @@ $<span class="math notranslate nohighlight">\(
 (540, 0.0019563978029076955)
 (541, 0.0019485060372322486)
 (542, 0.0019406564617543954)
+(543, 0.0019328487807653415)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(543, 0.0019328487807653415)
-(544, 0.001925083921408157)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(544, 0.001925083921408157)
 (545, 0.001917372495987318)
 (546, 0.0019097019015876335)
 (547, 0.001902071855157633)
-(548, 0.0018944820760752484)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(548, 0.0018944820760752484)
 (549, 0.0018869322861252648)
 (550, 0.0018794222094737586)
 (551, 0.0018719515726440734)
@@ -2150,9 +2151,7 @@ $<span class="math notranslate nohighlight">\(
 (558, 0.0018207389420923695)
 (559, 0.001813574253888958)
 (560, 0.0018064466464811323)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(561, 0.0017993558687060358)
+(561, 0.0017993558687060358)
 (562, 0.0017923016715107089)
 (563, 0.0017852838079328278)
 (564, 0.001778302033079093)
@@ -2160,13 +2159,15 @@ $<span class="math notranslate nohighlight">\(
 (566, 0.0017644457801920148)
 (567, 0.0017575708225341742)
 (568, 0.0017507309943111263)
-(569, 0.001743926060672731)
-(570, 0.0017371557887181604)
-(571, 0.0017304199474771041)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(572, 0.0017237183078916204)
-(573, 0.0017170506427962723)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(569, 0.001743926060672731)
+(570, 0.0017371557887181604)
+(571, 0.0017304199474771041)
+(572, 0.0017237183078916204)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(573, 0.0017170506427962723)
 (574, 0.0017104167269001587)
 (575, 0.0017038163367689575)
 (576, 0.0016972492508063692)
@@ -2179,11 +2180,13 @@ $<span class="math notranslate nohighlight">\(
 (583, 0.0016521939295609262)
 (584, 0.0016458855142606357)
 (585, 0.0016396084885981418)
-(586, 0.0016333626484086939)
-(587, 0.0016271477911796934)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(588, 0.0016209637160347209)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(586, 0.0016333626484086939)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(587, 0.0016271477911796934)
+(588, 0.0016209637160347209)
 (589, 0.0016148102237180289)
 (590, 0.0016086871165799789)
 (591, 0.0016026278920003398)
@@ -2193,9 +2196,7 @@ $<span class="math notranslate nohighlight">\(
 (595, 0.0015787560380146224)
 (596, 0.0015728600870269379)
 (597, 0.001566992578396255)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(598, 0.0015611533332872557)
+(598, 0.0015611533332872557)
 (599, 0.0015553421742637704)
 (600, 0.001549558925277841)
 (601, 0.0015438034116554316)
@@ -2205,7 +2206,9 @@ $<span class="math notranslate nohighlight">\(
 (605, 0.001521055264716523)
 (606, 0.0015154358550239846)
 (607, 0.0015098431608118062)
-(608, 0.00150427701667892)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(608, 0.00150427701667892)
 (609, 0.0014987372585006985)
 (610, 0.0014932237234166956)
 (611, 0.0014877362498214135)
@@ -2224,16 +2227,18 @@ $<span class="math notranslate nohighlight">\(
 (622, 0.0014290490999204954)
 (623, 0.0014238621998522874)
 (624, 0.0014186993694030679)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(625, 0.0014135604633656771)
+(625, 0.0014135604633656771)
 (626, 0.0014084453376275764)
 (627, 0.0014033538491594337)
 (628, 0.0013982858560080424)
-(629, 0.001393241217283072)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(629, 0.001393241217283072)
 (630, 0.0013882197931507116)
 (631, 0.0013832214448230053)
-(632, 0.001378246034548716)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(632, 0.001378246034548716)
 (633, 0.0013732934256043086)
 (634, 0.0013683634822840162)
 (635, 0.0013634560698924554)
@@ -2243,27 +2248,27 @@ $<span class="math notranslate nohighlight">\(
 (639, 0.001344049070529126)
 (640, 0.0013392523270544848)
 (641, 0.0013344773270387322)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(642, 0.0013297239426081264)
+(642, 0.0013297239426081264)
 (643, 0.0013249920468280155)
 (644, 0.0013202815136972611)
 (645, 0.001315592218138992)
 (646, 0.001310924035992044)
 (647, 0.001306276844003869)
 (648, 0.0013016505198218415)
-(649, 0.001297044941985919)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(649, 0.001297044941985919)
 (650, 0.0012924599899212883)
 (651, 0.0012878955439289625)
 (652, 0.0012833514851813414)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(653, 0.0012788276957108608)
+(653, 0.0012788276957108608)
 (654, 0.0012743240584059715)
 (655, 0.0012698404570015652)
 (656, 0.0012653767760725482)
 (657, 0.0012609329010263757)
-(658, 0.0012565087180966934)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(658, 0.0012565087180966934)
 (659, 0.0012521041143343783)
 (660, 0.0012477189776031517)
 (661, 0.0012433531965699105)
@@ -2275,12 +2280,14 @@ $<span class="math notranslate nohighlight">\(
 (667, 0.0012175588450599832)
 (668, 0.0012133255027548353)
 (669, 0.0012091106536387844)
-(670, 0.0012049141933184225)
-(671, 0.0012007360181384133)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(672, 0.0011965760251775243)
-(673, 0.001192434112239448)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(670, 0.0012049141933184225)
+(671, 0.0012007360181384133)
+(672, 0.0011965760251775243)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(673, 0.001192434112239448)
 (674, 0.0011883101778485503)
 (675, 0.0011842041212428334)
 (676, 0.001180115842369827)
@@ -2288,9 +2295,7 @@ $<span class="math notranslate nohighlight">\(
 (678, 0.0011719922211105816)
 (679, 0.0011679566821061096)
 (680, 0.001163938527583392)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(681, 0.0011599376609423837)
+(681, 0.0011599376609423837)
 (682, 0.001155953986255873)
 (683, 0.0011519874082639087)
 (684, 0.0011480378323696036)
@@ -2299,7 +2304,9 @@ $<span class="math notranslate nohighlight">\(
 (687, 0.0011362901811205778)
 (688, 0.0011324076806995746)
 (689, 0.0011285417191324637)
-(690, 0.001124692205683284)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(690, 0.001124692205683284)
 (691, 0.0011208590502385972)
 (692, 0.0011170421633057502)
 (693, 0.0011132414560066672)
@@ -2309,23 +2316,25 @@ $<span class="math notranslate nohighlight">\(
 (697, 0.001098198666810043)
 (698, 0.0010944775456651684)
 (699, 0.0010907720835117186)
+(700, 0.001087082195634598)
+(701, 0.0010834077978955183)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(700, 0.001087082195634598)
-(701, 0.0010834077978955183)
-(702, 0.0010797488067252113)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(702, 0.0010797488067252113)
 (703, 0.0010761051391229397)
 (704, 0.0010724767126467003)
 (705, 0.0010688634454145394)
 (706, 0.001065265256095296)
 (707, 0.0010616820639064108)
 (708, 0.00105811378860924)
+(709, 0.0010545603505035769)
+(710, 0.00105102167042624)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(709, 0.0010545603505035769)
-(710, 0.00105102167042624)
-(711, 0.0010474976697423216)
-(712, 0.001043988270344725)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(711, 0.0010474976697423216)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(712, 0.001043988270344725)
 (713, 0.0010404933946482576)
 (714, 0.0010370129655858905)
 (715, 0.0010335469066040115)
@@ -2341,9 +2350,7 @@ $<span class="math notranslate nohighlight">\(
 (725, 0.0009997356700089577)
 (726, 0.0009964425722030258)
 (727, 0.0009931627435031969)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(728, 0.0009898961157780541)
+(728, 0.0009898961157780541)
 (729, 0.0009866426213363786)
 (730, 0.000983402192922679)
 (731, 0.0009801747637134017)
@@ -2361,7 +2368,9 @@ $<span class="math notranslate nohighlight">\(
 (741, 0.0009486010295925868)
 (742, 0.0009455123017770181)
 (743, 0.0009424358038511914)
-(744, 0.0009393714743226837)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(744, 0.0009393714743226837)
 (745, 0.0009363192520889754)
 (746, 0.0009332790764310753)
 (747, 0.0009302508870138532)
@@ -2371,21 +2380,21 @@ $<span class="math notranslate nohighlight">\(
 (751, 0.0009182567982736642)
 (752, 0.0009152876482185788)
 (753, 0.000912330130265049)
-(754, 0.0009093841866766629)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(755, 0.0009064497600765291)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(754, 0.0009093841866766629)
+(755, 0.0009064497600765291)
 (756, 0.0009035267934443539)
-(757, 0.0009006152301160203)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(757, 0.0009006152301160203)
 (758, 0.0008977150137780386)
 (759, 0.0008948260884671845)
 (760, 0.0008919483985670701)
 (761, 0.0008890818888047503)
 (762, 0.0008862265042496163)
 (763, 0.0008833821903100566)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(764, 0.0008805488927311725)
+(764, 0.0008805488927311725)
 (765, 0.0008777265575910901)
 (766, 0.0008749151313013914)
 (767, 0.0008721145606008203)
@@ -2399,32 +2408,36 @@ $<span class="math notranslate nohighlight">\(
 (775, 0.0008500945116841755)
 (776, 0.0008473892976918352)
 (777, 0.0008446944242624422)
-(778, 0.0008420098415989554)
-(779, 0.0008393355002072776)
-(780, 0.0008366713508909385)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(781, 0.0008340173447514659)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(778, 0.0008420098415989554)
+(779, 0.0008393355002072776)
+(780, 0.0008366713508909385)
+(781, 0.0008340173447514659)
 (782, 0.000831373433183325)
 (783, 0.0008287395678757443)
 (784, 0.0008261157008064916)
 (785, 0.0008235017842427357)
 (786, 0.0008208977707372894)
-(787, 0.0008183036131274978)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(787, 0.0008183036131274978)
 (788, 0.0008157192645327354)
 (789, 0.0008131446783517294)
 (790, 0.0008105798082621107)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(791, 0.0008080246082173754)
+(791, 0.0008080246082173754)
 (792, 0.0008054790324448735)
 (793, 0.0008029430354434187)
 (794, 0.0008004165719833176)
-(795, 0.0007978995971016201)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(795, 0.0007978995971016201)
 (796, 0.0007953920661025891)
 (797, 0.0007928939345545906)
 (798, 0.0007904051582878085)
-(799, 0.0007879256933937688)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(799, 0.0007879256933937688)
 (800, 0.0007854554962222945)
 (801, 0.0007829945233810661)
 (802, 0.0007805427317308304)
@@ -2434,9 +2447,7 @@ $<span class="math notranslate nohighlight">\(
 (806, 0.0007708265231075808)
 (807, 0.0007684199991432258)
 (808, 0.0007660224027971463)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(809, 0.0007636336926655241)
+(809, 0.0007636336926655241)
 (810, 0.0007612538275879422)
 (811, 0.0007588827666406041)
 (812, 0.0007565204691394404)
@@ -2444,9 +2455,7 @@ $<span class="math notranslate nohighlight">\(
 (814, 0.0007518220029107871)
 (815, 0.0007494857539863511)
 (816, 0.0007471581081096773)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(817, 0.0007448390257590579)
+(817, 0.0007448390257590579)
 (818, 0.0007425284676395468)
 (819, 0.0007402263946832123)
 (820, 0.0007379327680466593)
@@ -2454,7 +2463,9 @@ $<span class="math notranslate nohighlight">\(
 (822, 0.0007333706994713732)
 (823, 0.0007311021809547017)
 (824, 0.0007288419555976835)
-(825, 0.0007265899856569306)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(825, 0.0007265899856569306)
 (826, 0.0007243462336033807)
 (827, 0.000722110662122471)
 (828, 0.0007198832341119832)
@@ -2462,21 +2473,23 @@ $<span class="math notranslate nohighlight">\(
 (830, 0.0007154526611466017)
 (831, 0.0007132494430360664)
 (832, 0.0007110542220816373)
-(833, 0.0007088669622215688)
-(834, 0.000706687627597361)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(835, 0.0007045161825532636)
-(836, 0.0007023525916348209)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(833, 0.0007088669622215688)
+(834, 0.000706687627597361)
+(835, 0.0007045161825532636)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(836, 0.0007023525916348209)
 (837, 0.0007001968195860791)
 (838, 0.0006980488313508697)
 (839, 0.0006959085920684959)
 (840, 0.0006937760670750412)
-(841, 0.0006916512218994725)
-(842, 0.0006895340222653567)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(843, 0.0006874244340862218)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(841, 0.0006916512218994725)
+(842, 0.0006895340222653567)
+(843, 0.0006874244340862218)
 (844, 0.0006853224234672959)
 (845, 0.0006832279567014761)
 (846, 0.0006811410002703199)
@@ -2497,9 +2510,7 @@ $<span class="math notranslate nohighlight">\(
 (861, 0.0006507156612162058)
 (862, 0.0006487444599784393)
 (863, 0.0006467802267877072)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(864, 0.0006448229312968254)
+(864, 0.0006448229312968254)
 (865, 0.0006428725433234734)
 (866, 0.0006409290328500528)
 (867, 0.0006389923700208991)
@@ -2518,27 +2529,29 @@ $<span class="math notranslate nohighlight">\(
 (878, 0.0006181326449845681)
 (879, 0.0006162758831175148)
 (880, 0.0006144255951407114)
-(881, 0.0006125817533723562)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(881, 0.0006125817533723562)
 (882, 0.0006107443302788876)
 (883, 0.0006089132984731181)
-(884, 0.0006070886307136931)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(884, 0.0006070886307136931)
 (885, 0.0006052702999045576)
-(886, 0.0006034582790929308)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(886, 0.0006034582790929308)
 (887, 0.0006016525414701024)
 (888, 0.0005998530603679269)
 (889, 0.0005980598092609465)
 (890, 0.0005962727617627173)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(891, 0.0005944918916273841)
+(891, 0.0005944918916273841)
 (892, 0.0005927171727460281)
 (893, 0.000590948579148815)
 (894, 0.0005891860850019209)
 (895, 0.0005874296646070819)
 (896, 0.0005856792924013378)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(897, 0.0005839349429556636)
+(897, 0.0005839349429556636)
 (898, 0.0005821965909745406)
 (899, 0.0005804642112944197)
 (900, 0.0005787377788833086)
@@ -2565,16 +2578,20 @@ $<span class="math notranslate nohighlight">\(
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(919, 0.0005470331863876204)
 (920, 0.0005454206380078575)
 (921, 0.0005438135401809575)
-(922, 0.0005422118705674735)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(923, 0.0005406156069415833)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(922, 0.0005422118705674735)
+(923, 0.0005406156069415833)
 (924, 0.00053902472719047)
 (925, 0.0005374392093133421)
-(926, 0.0005358590314221085)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(926, 0.0005358590314221085)
 (927, 0.0005342841717383956)
 (928, 0.0005327146085947842)
-(929, 0.0005311503204334868)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(929, 0.0005311503204334868)
 (930, 0.0005295912858050338)
 (931, 0.0005280374833693401)
 (932, 0.0005264888918922105)
@@ -2592,15 +2609,11 @@ $<span class="math notranslate nohighlight">\(
 (944, 0.000508354298434329)
 (945, 0.0005068759406517861)
 (946, 0.0005054024626194541)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(947, 0.0005039338450185104)
+(947, 0.0005039338450185104)
 (948, 0.0005024700686251572)
 (949, 0.0005010111143088673)
 (950, 0.0004995569630328574)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(951, 0.0004981075958529001)
+(951, 0.0004981075958529001)
 (952, 0.000496662993917065)
 (953, 0.000495223138464911)
 (954, 0.000493788010826868)
@@ -2609,29 +2622,33 @@ $<span class="math notranslate nohighlight">\(
 (957, 0.0004895108094622368)
 (958, 0.0004880944081925814)
 (959, 0.00048668264273848136)
-(960, 0.00048527549496654417)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(960, 0.00048527549496654417)
 (961, 0.00048387294682986185)
 (962, 0.0004824749803690852)
 (963, 0.00048108157771129244)
 (964, 0.0004796927210683133)
 (965, 0.00047830839273891587)
 (966, 0.00047692857510621867)
-(967, 0.0004755532506365803)
-(968, 0.0004741824018816123)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(967, 0.0004755532506365803)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(968, 0.0004741824018816123)
 (969, 0.0004728160114761561)
 (970, 0.00047145406213755194)
 (971, 0.0004700965366650948)
 (972, 0.0004687434179415078)
-(973, 0.00046739468892929246)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(974, 0.00046605033267294217)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(973, 0.00046739468892929246)
+(974, 0.00046605033267294217)
 (975, 0.00046471033229767995)
 (976, 0.0004633746710074718)
 (977, 0.00046204333208779523)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(978, 0.0004607162989012847)
+(978, 0.0004607162989012847)
 (979, 0.0004593935548910539)
 (980, 0.00045807508357689953)
 (981, 0.0004567608685571685)
@@ -2653,26 +2670,28 @@ $<span class="math notranslate nohighlight">\(
 (997, 0.0004362991950943132)
 (998, 0.00043505490085268107)
 (999, 0.0004338145804770081)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1000, 0.00043257821896175235)
+(1000, 0.00043257821896175235)
 (1001, 0.0004313458013707208)
 (1002, 0.00043011731283573295)
 (1003, 0.00042889273855853844)
+(1004, 0.0004276720638089429)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1004, 0.0004276720638089429)
-(1005, 0.00042645527392276106)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1005, 0.00042645527392276106)
 (1006, 0.0004252423543060855)
 (1007, 0.0004240332904296369)
 (1008, 0.0004228280678321362)
 (1009, 0.00042162667211880867)
-(1010, 0.00042042908895971454)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1010, 0.00042042908895971454)
 (1011, 0.00041923530409078414)
 (1012, 0.000418045303314312)
 (1013, 0.00041685907249621747)
 (1014, 0.0004156765975667274)
-(1015, 0.0004144978645217771)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1015, 0.0004144978645217771)
 (1016, 0.000413322859419204)
 (1017, 0.00041215156838141304)
 (1018, 0.0004109839775939108)
@@ -2685,13 +2704,9 @@ $<span class="math notranslate nohighlight">\(
 (1025, 0.0004029133017140899)
 (1026, 0.00040177482304520787)
 (1027, 0.00040063992307351183)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1028, 0.00039950858859629505)
+(1028, 0.00039950858859629505)
 (1029, 0.00039838080646987763)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1030, 0.00039725656360943085)
+(1030, 0.00039725656360943085)
 (1031, 0.00039613584698916017)
 (1032, 0.0003950186436414197)
 (1033, 0.0003939049406569)
@@ -2709,20 +2724,22 @@ $<span class="math notranslate nohighlight">\(
 (1045, 0.0003808089119725725)
 (1046, 0.0003797395647899391)
 (1047, 0.00037867354315952793)
-(1048, 0.00037761083500592845)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1048, 0.00037761083500592845)
 (1049, 0.00037655142830665054)
 (1050, 0.00037549531109252543)
 (1051, 0.0003744424714466906)
 (1052, 0.0003733928975049946)
-(1053, 0.00037234657745551734)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1053, 0.00037234657745551734)
 (1054, 0.0003713034995370326)
+(1055, 0.0003702636520418944)
+(1056, 0.00036922702331114286)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1055, 0.0003702636520418944)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1056, 0.00036922702331114286)
-(1057, 0.00036819360173916203)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1057, 0.00036819360173916203)
 (1058, 0.0003671633757700286)
 (1059, 0.00036613633389775404)
 (1060, 0.0003651124646675864)
@@ -2745,13 +2762,9 @@ $<span class="math notranslate nohighlight">\(
 (1077, 0.00034818123968403855)
 (1078, 0.00034721257481642884)
 (1079, 0.0003462468741321108)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1080, 0.00034528412712633285)
+(1080, 0.00034528412712633285)
 (1081, 0.0003443243233375207)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1082, 0.00034336745235088567)
+(1082, 0.00034336745235088567)
 (1083, 0.00034241350379537495)
 (1084, 0.00034146246734325465)
 (1085, 0.00034051433271214314)
@@ -2760,14 +2773,20 @@ $<span class="math notranslate nohighlight">\(
 (1088, 0.00033768723756846315)
 (1089, 0.00033675060826263175)
 (1090, 0.00033581683001455135)
-(1091, 0.00033488589280073703)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1091, 0.00033488589280073703)
 (1092, 0.0003339577866398331)
 (1093, 0.000333032501592908)
 (1094, 0.0003321100277625288)
-(1095, 0.0003311903552937565)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1095, 0.0003311903552937565)
 (1096, 0.00033027347437287455)
 (1097, 0.0003293593752273408)
-(1098, 0.00032844804812626297)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1098, 0.00032844804812626297)
 (1099, 0.00032753948337913344)
 (1100, 0.0003266336713361337)
 (1101, 0.00032573060238861337)
@@ -2775,15 +2794,11 @@ $<span class="math notranslate nohighlight">\(
 (1103, 0.00032393265554577904)
 (1104, 0.0003230377586325467)
 (1105, 0.00032214556677992434)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1106, 0.0003212560705780691)
+(1106, 0.0003212560705780691)
 (1107, 0.0003203692606568598)
 (1108, 0.0003194851276855159)
 (1109, 0.00031860366237152377)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1110, 0.00031772485546112763)
+(1110, 0.00031772485546112763)
 (1111, 0.0003168486977399936)
 (1112, 0.0003159751800309264)
 (1113, 0.0003151042931955775)
@@ -2806,20 +2821,22 @@ $<span class="math notranslate nohighlight">\(
 (1130, 0.0003006930662528763)
 (1131, 0.00029986801478138625)
 (1132, 0.0002990454275451669)
-(1133, 0.0002982252961292403)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1133, 0.0002982252961292403)
 (1134, 0.0002974076121527019)
 (1135, 0.00029659236726940866)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1136, 0.0002957795531662575)
+(1136, 0.0002957795531662575)
 (1137, 0.0002949691615652533)
-(1138, 0.00029416118422075695)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1139, 0.0002933556129210389)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1138, 0.00029416118422075695)
+(1139, 0.0002933556129210389)
 (1140, 0.00029255243948845503)
 (1141, 0.0002917516557770454)
-(1142, 0.00029095325367546376)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1142, 0.00029095325367546376)
 (1143, 0.00029015722510354814)
 (1144, 0.0002893635620150793)
 (1145, 0.0002885722563962438)
@@ -2838,13 +2855,9 @@ $<span class="math notranslate nohighlight">\(
 (1158, 0.0002784962247982412)
 (1159, 0.0002777371000933019)
 (1160, 0.0002769802164401401)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1161, 0.0002762255663236639)
+(1161, 0.0002762255663236639)
 (1162, 0.0002754731422589368)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1163, 0.0002747229367901796)
+(1163, 0.0002747229367901796)
 (1164, 0.000273974942492165)
 (1165, 0.0002732291519685385)
 (1166, 0.0002724855578525312)
@@ -2857,28 +2870,30 @@ $<span class="math notranslate nohighlight">\(
 (1173, 0.00026734128573573264)
 (1174, 0.0002666150011500713)
 (1175, 0.00026589084796821563)
-(1176, 0.00026516881910964874)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1176, 0.00026516881910964874)
 (1177, 0.00026444890752075524)
 (1178, 0.0002637311061767338)
 (1179, 0.00026301540807993504)
-(1180, 0.0002623018062592237)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1180, 0.0002623018062592237)
 (1181, 0.00026159029377257156)
 (1182, 0.00026088086370403896)
 (1183, 0.00026017350916432956)
 (1184, 0.00025946822329253393)
-(1185, 0.00025876499925277664)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1185, 0.00025876499925277664)
 (1186, 0.00025806383023765965)
 (1187, 0.00025736470946508206)
 (1188, 0.0002566676301798161)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1189, 0.0002559725856532155)
+(1189, 0.0002559725856532155)
 (1190, 0.0002552795691820772)
 (1191, 0.0002545885740897088)
 (1192, 0.00025389959372580884)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1193, 0.00025321262146550064)
+(1193, 0.00025321262146550064)
 (1194, 0.00025252765070887643)
 (1195, 0.0002518446748830831)
 (1196, 0.0002511636874394947)
@@ -2907,14 +2922,16 @@ $<span class="math notranslate nohighlight">\(
 (1217, 0.00023731093499802425)
 (1218, 0.0002366720853459541)
 (1219, 0.00023603508023116326)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1220, 0.00023539991368179113)
+(1220, 0.00023539991368179113)
 (1221, 0.0002347665797495568)
 (1222, 0.0002341350725086499)
-(1223, 0.00023350538605529657)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1223, 0.00023350538605529657)
 (1224, 0.00023287751450850352)
-(1225, 0.00023225145200945663)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1225, 0.00023225145200945663)
 (1226, 0.00023162719272108875)
 (1227, 0.00023100473082932944)
 (1228, 0.00023038406054116058)
@@ -2932,15 +2949,11 @@ $<span class="math notranslate nohighlight">\(
 (1240, 0.00022307368319620594)
 (1241, 0.00022247578644034576)
 (1242, 0.00022187960244248367)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1243, 0.0002212851257283604)
+(1243, 0.0002212851257283604)
 (1244, 0.00022069235084333356)
 (1245, 0.00022010127235346522)
 (1246, 0.00021951188484459994)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1247, 0.0002189241829237871)
+(1247, 0.0002189241829237871)
 (1248, 0.00021833816121735584)
 (1249, 0.00021775381437150193)
 (1250, 0.00021717113705270696)
@@ -2951,28 +2964,30 @@ $<span class="math notranslate nohighlight">\(
 (1255, 0.00021428260806954976)
 (1256, 0.00021370983701001427)
 (1257, 0.0002131386986916974)
-(1258, 0.0002125691879372746)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1258, 0.0002125691879372746)
 (1259, 0.00021200129958815048)
 (1260, 0.00021143502850454865)
 (1261, 0.00021087036956626877)
 (1262, 0.00021030731767160855)
 (1263, 0.00020974586773745457)
 (1264, 0.00020918601470004054)
-(1265, 0.000208627753513371)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1265, 0.000208627753513371)
 (1266, 0.00020807107915064746)
 (1267, 0.00020751598660336007)
 (1268, 0.00020696247088104755)
-(1269, 0.00020641052701189015)
-(1270, 0.0002058601500424698)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1271, 0.00020531133503703158)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1269, 0.00020641052701189015)
+(1270, 0.0002058601500424698)
+(1271, 0.00020531133503703158)
 (1272, 0.00020476407707741207)
 (1273, 0.00020421837126546424)
 (1274, 0.00020367421271815943)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1275, 0.00020313159657250963)
+(1275, 0.00020313159657250963)
 (1276, 0.00020259051798183602)
 (1277, 0.00020205097211869357)
 (1278, 0.00020151295417097638)
@@ -2996,9 +3011,7 @@ $<span class="math notranslate nohighlight">\(
 (1296, 0.00019208452364684564)
 (1297, 0.000191574644881656)
 (1298, 0.00019106620139315084)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1299, 0.00019055918872375733)
+(1299, 0.00019055918872375733)
 (1300, 0.0001900536024296602)
 (1301, 0.00018954943808471557)
 (1302, 0.00018904669127823816)
@@ -3007,11 +3020,15 @@ $<span class="math notranslate nohighlight">\(
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1303, 0.00018854535761494209)
 (1304, 0.0001880454327155435)
 (1305, 0.00018754691221604017)
-(1306, 0.00018704979176897575)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1306, 0.00018704979176897575)
 (1307, 0.00018655406704106643)
 (1308, 0.00018605973371595423)
 (1309, 0.00018556678749100827)
-(1310, 0.00018507522408040846)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1310, 0.00018507522408040846)
 (1311, 0.00018458503921293972)
 (1312, 0.00018409622863292715)
 (1313, 0.00018360878809885867)
@@ -3028,15 +3045,11 @@ $<span class="math notranslate nohighlight">\(
 (1324, 0.00017833616736064617)
 (1325, 0.00017786484201961797)
 (1326, 0.00017739483294208593)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1327, 0.0001769261360933137)
+(1327, 0.0001769261360933137)
 (1328, 0.00017645874745077477)
 (1329, 0.0001759926630083844)
 (1330, 0.0001755278787731541)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1331, 0.00017506439076448422)
+(1331, 0.00017506439076448422)
 (1332, 0.00017460219501905217)
 (1333, 0.00017414128758417818)
 (1334, 0.00017368166452353675)
@@ -3049,27 +3062,29 @@ $<span class="math notranslate nohighlight">\(
 (1341, 0.00017049993771180725)
 (1342, 0.00017005044954074855)
 (1343, 0.00016960221092148577)
-(1344, 0.00016915521805175513)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1344, 0.00016915521805175513)
 (1345, 0.00016870946714331043)
 (1346, 0.00016826495442056312)
 (1347, 0.00016782167612053694)
 (1348, 0.00016737962849462827)
 (1349, 0.00016693880780626247)
-(1350, 0.00016649921033216232)
-(1351, 0.000166060832361647)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1350, 0.00016649921033216232)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1351, 0.000166060832361647)
 (1352, 0.00016562367019757197)
 (1353, 0.00016518772015497237)
 (1354, 0.00016475297856167564)
 (1355, 0.00016431944175907738)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1356, 0.00016388710609963877)
+(1356, 0.00016388710609963877)
 (1357, 0.00016345596795012247)
 (1358, 0.00016302602368843496)
 (1359, 0.00016259726970587892)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1360, 0.00016216970240563584)
+(1360, 0.00016216970240563584)
 (1361, 0.00016174331820436208)
 (1362, 0.00016131811352919885)
 (1363, 0.00016089408482117018)
@@ -3093,9 +3108,7 @@ $<span class="math notranslate nohighlight">\(
 (1381, 0.00015345867289558892)
 (1382, 0.0001530563272485474)
 (1383, 0.00015265508888539895)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1384, 0.0001522549544933308)
+(1384, 0.0001522549544933308)
 (1385, 0.0001518559207712463)
 (1386, 0.00015145798442907566)
 (1387, 0.0001510611421877401)
@@ -3105,13 +3118,17 @@ $<span class="math notranslate nohighlight">\(
 (1389, 0.00015027072694860871)
 (1390, 0.00014987714744859294)
 (1391, 0.0001494846490444129)
-(1392, 0.00014909322851287853)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1392, 0.00014909322851287853)
 (1393, 0.0001487028826412523)
 (1394, 0.0001483136082273782)
 (1395, 0.00014792540207981012)
 (1396, 0.0001475382610184295)
 (1397, 0.0001471521818737593)
-(1398, 0.00014676716148627882)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1398, 0.00014676716148627882)
 (1399, 0.00014638319670801894)
 (1400, 0.00014600028440138826)
 (1401, 0.0001456184214388146)
@@ -3124,15 +3141,11 @@ $<span class="math notranslate nohighlight">\(
 (1408, 0.00014297450184899512)
 (1409, 0.00014260092231379817)
 (1410, 0.00014222836444570755)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1411, 0.00014185682522125485)
+(1411, 0.00014185682522125485)
 (1412, 0.00014148630162663835)
 (1413, 0.00014111679065866736)
 (1414, 0.00014074828932245643)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1415, 0.00014038079463529458)
+(1415, 0.00014038079463529458)
 (1416, 0.00014001430362320253)
 (1417, 0.00013964881332204)
 (1418, 0.00013928432077796283)
@@ -3147,7 +3160,9 @@ $<span class="math notranslate nohighlight">\(
 (1427, 0.00013604830439057654)
 (1428, 0.00013569362909511673)
 (1429, 0.00013533991970421272)
-(1430, 0.00013498717337895446)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1430, 0.00013498717337895446)
 (1431, 0.00013463538729083764)
 (1432, 0.0001342845586197905)
 (1433, 0.00013393468455544333)
@@ -3155,16 +3170,16 @@ $<span class="math notranslate nohighlight">\(
 (1435, 0.0001332377890522552)
 (1436, 0.00013289076203850663)
 (1437, 0.0001325446784822368)
-(1438, 0.00013219953561987942)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1438, 0.00013219953561987942)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1439, 0.0001318553306951402)
 (1440, 0.00013151206096253314)
 (1441, 0.00013116972368476307)
 (1442, 0.00013082831613334752)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1443, 0.0001304878355895616)
+(1443, 0.0001304878355895616)
 (1444, 0.00013014827934279373)
 (1445, 0.00012980964469197623)
 (1446, 0.0001294719289441037)
@@ -3189,27 +3204,29 @@ $<span class="math notranslate nohighlight">\(
 (1465, 0.00012322640402743124)
 (1466, 0.00012290651426988123)
 (1467, 0.00012258748886144854)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1468, 0.00012226932529600453)
+(1468, 0.00012226932529600453)
 (1469, 0.00012195202107541912)
 (1470, 0.00012163557371050617)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1471, 0.00012131998071954935)
+(1471, 0.00012131998071954935)
 (1472, 0.00012100523962876424)
 (1473, 0.00012069134797276019)
 (1474, 0.00012037830329355095)
 (1475, 0.00012006610314182293)
-(1476, 0.00011975474507546262)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1476, 0.00011975474507546262)
 (1477, 0.00011944422666098595)
 (1478, 0.00011913454547238857)
 (1479, 0.0001188256990908028)
-(1480, 0.00011851768510608783)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1480, 0.00011851768510608783)
 (1481, 0.0001182105011158417)
 (1482, 0.00011790414472473639)
 (1483, 0.00011759861354578569)
-(1484, 0.00011729390519935822)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1484, 0.00011729390519935822)
 (1485, 0.00011699001731347909)
 (1486, 0.00011668694752364855)
 (1487, 0.00011638469347362668)
@@ -3222,13 +3239,9 @@ $<span class="math notranslate nohighlight">\(
 (1494, 0.00011429155944513423)
 (1495, 0.00011399574737066603)
 (1496, 0.00011370073016171347)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1497, 0.00011340650553678444)
+(1497, 0.00011340650553678444)
 (1498, 0.00011311307122034025)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1499, 0.00011282042494454557)
+(1499, 0.00011282042494454557)
 (1500, 0.00011252856444860648)
 (1501, 0.00011223748747939474)
 (1502, 0.00011194719179110747)
@@ -3247,21 +3260,23 @@ $<span class="math notranslate nohighlight">\(
 (1515, 0.00010824343524865095)
 (1516, 0.00010796384559401596)
 (1517, 0.00010768500437092316)
-(1518, 0.0001074069094443182)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1518, 0.0001074069094443182)
 (1519, 0.00010712955868585081)
 (1520, 0.00010685294997433911)
 (1521, 0.00010657708119527162)
-(1522, 0.00010630195024014935)
-(1523, 0.0001060275550079125)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1524, 0.00010575389340396179)
-(1525, 0.00010548096333966142)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1522, 0.00010630195024014935)
+(1523, 0.0001060275550079125)
+(1524, 0.00010575389340396179)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1525, 0.00010548096333966142)
 (1526, 0.00010520876273392578)
 (1527, 0.00010493728951144015)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1528, 0.00010466654160392679)
+(1528, 0.00010466654160392679)
 (1529, 0.00010439651694916754)
 (1530, 0.00010412721349162889)
 (1531, 0.00010385862918244618)
@@ -3284,27 +3299,29 @@ $<span class="math notranslate nohighlight">\(
 (1548, 9.940077089736099e-05)
 (1549, 9.914478809247535e-05)
 (1550, 9.888948670025527e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1551, 9.86348647965842e-05)
+(1551, 9.86348647965842e-05)
 (1552, 9.83809204619435e-05)
 (1553, 9.812765178395648e-05)
 (1554, 9.787505685577582e-05)
 (1555, 9.762313377654931e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1556, 9.737188065156593e-05)
+(1556, 9.737188065156593e-05)
 (1557, 9.71212955911237e-05)
 (1558, 9.687137671275312e-05)
 (1559, 9.662212213864711e-05)
-(1560, 9.637352999740522e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1560, 9.637352999740522e-05)
 (1561, 9.612559842322141e-05)
 (1562, 9.587832555619029e-05)
 (1563, 9.563170954181482e-05)
 (1564, 9.538574853211103e-05)
 (1565, 9.514044068399804e-05)
-(1566, 9.489578416056266e-05)
-(1567, 9.465177713024808e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1566, 9.489578416056266e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1567, 9.465177713024808e-05)
 (1568, 9.440841776716045e-05)
 (1569, 9.416570425169444e-05)
 (1570, 9.392363476924365e-05)
@@ -3316,15 +3333,11 @@ $<span class="math notranslate nohighlight">\(
 (1576, 9.248464165689662e-05)
 (1577, 9.224703006684944e-05)
 (1578, 9.201004819409567e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1579, 9.177369427308995e-05)
+(1579, 9.177369427308995e-05)
 (1580, 9.153796654539578e-05)
 (1581, 9.130286325600632e-05)
 (1582, 9.106838265699958e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1583, 9.083452300449753e-05)
+(1583, 9.083452300449753e-05)
 (1584, 9.060128256168295e-05)
 (1585, 9.036865959496255e-05)
 (1586, 9.013665237809907e-05)
@@ -3344,23 +3357,25 @@ $<span class="math notranslate nohighlight">\(
 (1600, 8.695225023240827e-05)
 (1601, 8.672927553943796e-05)
 (1602, 8.650688966700081e-05)
-(1603, 8.628509097538385e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1603, 8.628509097538385e-05)
 (1604, 8.606387782980091e-05)
 (1605, 8.584324860022311e-05)
 (1606, 8.562320166232293e-05)
 (1607, 8.540373539571394e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1608, 8.518484818584951e-05)
+(1608, 8.518484818584951e-05)
 (1609, 8.496653842226283e-05)
 (1610, 8.474880449982924e-05)
 (1611, 8.453164481843791e-05)
-(1612, 8.431505778202783e-05)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1613, 8.409904180080366e-05)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1612, 8.431505778202783e-05)
+(1613, 8.409904180080366e-05)
 (1614, 8.38835952880462e-05)
-(1615, 8.366871666344087e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1615, 8.366871666344087e-05)
 (1616, 8.34544043503655e-05)
 (1617, 8.324065677731127e-05)
 (1618, 8.302747237771381e-05)
@@ -3383,15 +3398,11 @@ $<span class="math notranslate nohighlight">\(
 (1635, 7.948800765283049e-05)
 (1636, 7.928469778558243e-05)
 (1637, 7.908192220535148e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1638, 7.887967943725762e-05)
+(1638, 7.887967943725762e-05)
 (1639, 7.867796801117249e-05)
 (1640, 7.847678645996577e-05)
 (1641, 7.827613332266933e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1642, 7.807600714129612e-05)
+(1642, 7.807600714129612e-05)
 (1643, 7.787640646352802e-05)
 (1644, 7.767732984001139e-05)
 (1645, 7.747877582656894e-05)
@@ -3399,7 +3410,9 @@ $<span class="math notranslate nohighlight">\(
 (1647, 7.708322987379549e-05)
 (1648, 7.6886235067476e-05)
 (1649, 7.668975713692019e-05)
-(1650, 7.649379465863353e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1650, 7.649379465863353e-05)
 (1651, 7.629834621504052e-05)
 (1652, 7.610341039083099e-05)
 (1653, 7.590898577580526e-05)
@@ -3408,20 +3421,20 @@ $<span class="math notranslate nohighlight">\(
 (1656, 7.532876514890805e-05)
 (1657, 7.513637135342978e-05)
 (1658, 7.494448177935798e-05)
-(1659, 7.475309504080779e-05)
-(1660, 7.456220975758268e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1659, 7.475309504080779e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1660, 7.456220975758268e-05)
 (1661, 7.437182455184058e-05)
 (1662, 7.418193805125387e-05)
 (1663, 7.399254888694293e-05)
 (1664, 7.380365569394366e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1665, 7.361525711167508e-05)
+(1665, 7.361525711167508e-05)
 (1666, 7.342735178393168e-05)
 (1667, 7.323993835745118e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1668, 7.30530154839653e-05)
+(1668, 7.30530154839653e-05)
 (1669, 7.286658181876747e-05)
 (1670, 7.268063602133883e-05)
 (1671, 7.249517675486605e-05)
@@ -3445,21 +3458,23 @@ $<span class="math notranslate nohighlight">\(
 (1689, 6.923860641747542e-05)
 (1690, 6.906214246485458e-05)
 (1691, 6.88861391243974e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1692, 6.871059514024207e-05)
+(1692, 6.871059514024207e-05)
 (1693, 6.853550925913399e-05)
+(1694, 6.836088023278967e-05)
+(1695, 6.818670681583613e-05)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1694, 6.836088023278967e-05)
-(1695, 6.818670681583613e-05)
-(1696, 6.801298776675257e-05)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1696, 6.801298776675257e-05)
 (1697, 6.783972184754815e-05)
 (1698, 6.766690782407156e-05)
-(1699, 6.749454446600471e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1699, 6.749454446600471e-05)
 (1700, 6.732263054606685e-05)
 (1701, 6.715116484048228e-05)
-(1702, 6.69801461300796e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1702, 6.69801461300796e-05)
 (1703, 6.680957319791677e-05)
 (1704, 6.66394448319596e-05)
 (1705, 6.646975982270701e-05)
@@ -3477,13 +3492,9 @@ $<span class="math notranslate nohighlight">\(
 (1717, 6.44676862000305e-05)
 (1718, 6.430365638956951e-05)
 (1719, 6.414005337394909e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1720, 6.397687599596224e-05)
+(1720, 6.397687599596224e-05)
 (1721, 6.381412310178995e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1722, 6.36517935409958e-05)
+(1722, 6.36517935409958e-05)
 (1723, 6.348988616541663e-05)
 (1724, 6.332839983231088e-05)
 (1725, 6.316733340088391e-05)
@@ -3498,21 +3509,25 @@ $<span class="math notranslate nohighlight">\(
 (1734, 6.173644452844874e-05)
 (1735, 6.157951510620685e-05)
 (1736, 6.142299325581121e-05)
-(1737, 6.126687787628996e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1737, 6.126687787628996e-05)
 (1738, 6.111116786902392e-05)
 (1739, 6.095586213852948e-05)
 (1740, 6.080095959324123e-05)
-(1741, 6.064645914487665e-05)
-(1742, 6.0492359706698594e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1741, 6.064645914487665e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1742, 6.0492359706698594e-05)
 (1743, 6.0338660197448214e-05)
 (1744, 6.0185359536614775e-05)
 (1745, 6.003245664868335e-05)
 (1746, 5.987995046029498e-05)
 (1747, 5.972783990165929e-05)
 (1748, 5.957612390513247e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1749, 5.94248014075744e-05)
+(1749, 5.94248014075744e-05)
 (1750, 5.927387134813941e-05)
 (1751, 5.9123332668586664e-05)
 (1752, 5.897318431437748e-05)
@@ -3538,20 +3553,24 @@ $<span class="math notranslate nohighlight">\(
 (1772, 5.605058792058169e-05)
 (1773, 5.590839806125551e-05)
 (1774, 5.576657607585567e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1775, 5.5625120977378265e-05)
+(1775, 5.5625120977378265e-05)
 (1776, 5.548403178068568e-05)
 (1777, 5.534330750517487e-05)
 (1778, 5.5202947171157754e-05)
-(1779, 5.5062949803472514e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1779, 5.5062949803472514e-05)
 (1780, 5.49233144286502e-05)
 (1781, 5.4784040075853954e-05)
-(1782, 5.4645125777974986e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1782, 5.4645125777974986e-05)
 (1783, 5.450657057005703e-05)
 (1784, 5.436837348992103e-05)
 (1785, 5.423053357800409e-05)
-(1786, 5.4093049877984005e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1786, 5.4093049877984005e-05)
 (1787, 5.395592143567556e-05)
 (1788, 5.38191473002835e-05)
 (1789, 5.3682726522984784e-05)
@@ -3566,9 +3585,7 @@ $<span class="math notranslate nohighlight">\(
 (1798, 5.247068547743259e-05)
 (1799, 5.2337746706219023e-05)
 (1800, 5.220515103602885e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1801, 5.2072897550994694e-05)
+(1801, 5.2072897550994694e-05)
 (1802, 5.19409853363886e-05)
 (1803, 5.180941348144424e-05)
 (1804, 5.1678181076684695e-05)
@@ -3587,18 +3604,22 @@ $<span class="math notranslate nohighlight">\(
 (1817, 5.000264095508623e-05)
 (1818, 4.987606685976679e-05)
 (1819, 4.9749818887783965e-05)
-(1820, 4.9623896169915846e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1820, 4.9623896169915846e-05)
 (1821, 4.9498297840212304e-05)
 (1822, 4.937302303552104e-05)
 (1823, 4.9248070894229845e-05)
-(1824, 4.9123440557518035e-05)
-(1825, 4.899913116950994e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1824, 4.9123440557518035e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1825, 4.899913116950994e-05)
 (1826, 4.8875141875546984e-05)
 (1827, 4.8751471824693276e-05)
 (1828, 4.8628120167694124e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1829, 4.850508605728663e-05)
+(1829, 4.850508605728663e-05)
 (1830, 4.8382368650077775e-05)
 (1831, 4.8259967103092426e-05)
 (1832, 4.813788057753264e-05)
@@ -3625,12 +3646,12 @@ $<span class="math notranslate nohighlight">\(
 (1853, 4.564537126592923e-05)
 (1854, 4.5530007489426843e-05)
 (1855, 4.541494006057698e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1856, 4.5300168195120094e-05)
+(1856, 4.5300168195120094e-05)
 (1857, 4.518569110945536e-05)
 (1858, 4.507150802392588e-05)
-(1859, 4.495761815952823e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1859, 4.495761815952823e-05)
 (1860, 4.484402074072779e-05)
 (1861, 4.473071499295139e-05)
 (1862, 4.461770014508927e-05)
@@ -3639,8 +3660,12 @@ $<span class="math notranslate nohighlight">\(
 (1865, 4.428039331361147e-05)
 (1866, 4.416853438904892e-05)
 (1867, 4.4056962537545375e-05)
-(1868, 4.394567699963852e-05)
-(1869, 4.3834677018998176e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1868, 4.394567699963852e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1869, 4.3834677018998176e-05)
 (1870, 4.372396184070236e-05)
 (1871, 4.361353071170437e-05)
 (1872, 4.350338288223842e-05)
@@ -3656,9 +3681,7 @@ $<span class="math notranslate nohighlight">\(
 (1882, 4.2417322405381605e-05)
 (1883, 4.23102419239202e-05)
 (1884, 4.220343589640373e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1885, 4.209690359875667e-05)
+(1885, 4.209690359875667e-05)
 (1886, 4.199064430936837e-05)
 (1887, 4.18846573084653e-05)
 (1888, 4.177894187826511e-05)
@@ -3678,14 +3701,18 @@ $<span class="math notranslate nohighlight">\(
 (1902, 4.0327043469537196e-05)
 (1903, 4.0225316795972805e-05)
 (1904, 4.012385047398467e-05)
-(1905, 4.002264381961515e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1905, 4.002264381961515e-05)
 (1906, 3.992169614913995e-05)
 (1907, 3.9821006781566035e-05)
 (1908, 3.9720575038316964e-05)
 (1909, 3.962040024166857e-05)
 (1910, 3.952048171646545e-05)
 (1911, 3.942081878886917e-05)
-(1912, 3.932141078744973e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1912, 3.932141078744973e-05)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1913, 3.92222570425587e-05)
@@ -3717,9 +3744,7 @@ $<span class="math notranslate nohighlight">\(
 (1939, 3.673135255599359e-05)
 (1940, 3.663881716252532e-05)
 (1941, 3.654651800047814e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1942, 3.645445445182511e-05)
+(1942, 3.645445445182511e-05)
 (1943, 3.6362625899797304e-05)
 (1944, 3.6271031729350266e-05)
 (1945, 3.617967132700629e-05)
@@ -3727,7 +3752,9 @@ $<span class="math notranslate nohighlight">\(
 (1947, 3.599764938163239e-05)
 (1948, 3.5906986620245705e-05)
 (1949, 3.581655519040121e-05)
-(1950, 3.572635448736579e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1950, 3.572635448736579e-05)
 (1951, 3.5636383907027264e-05)
 (1952, 3.554664284854432e-05)
 (1953, 3.5457130710913525e-05)
@@ -3735,10 +3762,14 @@ $<span class="math notranslate nohighlight">\(
 (1955, 3.52787908083471e-05)
 (1956, 3.518996185102935e-05)
 (1957, 3.510135943119995e-05)
-(1958, 3.501298295731455e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1958, 3.501298295731455e-05)
 (1959, 3.492483183828128e-05)
 (1960, 3.4836905485954076e-05)
-(1961, 3.4749203313259886e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1961, 3.4749203313259886e-05)
 (1962, 3.466172473482089e-05)
 (1963, 3.45744691661734e-05)
 (1964, 3.448743602579313e-05)
@@ -3747,9 +3778,7 @@ $<span class="math notranslate nohighlight">\(
 (1967, 3.422766537282579e-05)
 (1968, 3.414151615299164e-05)
 (1969, 3.405558647305191e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1970, 3.396987576113542e-05)
+(1970, 3.396987576113542e-05)
 (1971, 3.388438344502624e-05)
 (1972, 3.379910895527972e-05)
 (1973, 3.3714051724285604e-05)
@@ -3770,21 +3799,25 @@ $<span class="math notranslate nohighlight">\(
 (1988, 3.246388260209403e-05)
 (1989, 3.238222548304901e-05)
 (1990, 3.230077619688209e-05)
-(1991, 3.22195342020607e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1991, 3.22195342020607e-05)
 (1992, 3.2138498959483244e-05)
 (1993, 3.2057669931231605e-05)
 (1994, 3.1977046580102665e-05)
 (1995, 3.189662837147596e-05)
 (1996, 3.18164147712877e-05)
-(1997, 3.173640524774258e-05)
-(1998, 3.165659926928802e-05)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1999, 3.157699630726023e-05)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1997, 3.173640524774258e-05)
+(1998, 3.165659926928802e-05)
+(1999, 3.157699630726023e-05)
 (2000, 3.149759583323562e-05)
 (2001, 3.141839732120963e-05)
 (2002, 3.133940024541545e-05)
-(2003, 3.126060408281416e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2003, 3.126060408281416e-05)
 (2004, 3.118200831075785e-05)
 (2005, 3.1103612408701106e-05)
 (2006, 3.1025415857109926e-05)
@@ -3809,13 +3842,13 @@ $<span class="math notranslate nohighlight">\(
 (2025, 2.957687727828022e-05)
 (2026, 2.950256078811959e-05)
 (2027, 2.9428433058938187e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2028, 2.9354493600782718e-05)
+(2028, 2.9354493600782718e-05)
 (2029, 2.9280741925618433e-05)
 (2030, 2.920717754701675e-05)
 (2031, 2.9133799979220766e-05)
-(2032, 2.906060873792206e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2032, 2.906060873792206e-05)
 (2033, 2.8987603340570723e-05)
 (2034, 2.891478330512981e-05)
 (2035, 2.884214815131876e-05)
@@ -3824,10 +3857,14 @@ $<span class="math notranslate nohighlight">\(
 (2038, 2.8625347198204582e-05)
 (2039, 2.8553446794642156e-05)
 (2040, 2.848172889092652e-05)
-(2041, 2.8410193014182234e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2041, 2.8410193014182234e-05)
 (2042, 2.8338838693127357e-05)
 (2043, 2.8267665457916845e-05)
-(2044, 2.8196672839208468e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2044, 2.8196672839208468e-05)
 (2045, 2.8125860369872486e-05)
 (2046, 2.8055227583746456e-05)
 (2047, 2.7984774015634323e-05)
@@ -3835,9 +3872,7 @@ $<span class="math notranslate nohighlight">\(
 (2049, 2.7844402679359468e-05)
 (2050, 2.7774483987338138e-05)
 (2051, 2.7704742665456023e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2052, 2.763517825504467e-05)
+(2052, 2.763517825504467e-05)
 (2053, 2.7565790298862547e-05)
 (2054, 2.7496578339694896e-05)
 (2055, 2.742754192315124e-05)
@@ -3859,21 +3894,25 @@ $<span class="math notranslate nohighlight">\(
 (2071, 2.634646630056936e-05)
 (2072, 2.6280345634399847e-05)
 (2073, 2.6214392523296395e-05)
-(2074, 2.614860653448309e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2074, 2.614860653448309e-05)
 (2075, 2.6082987236746185e-05)
 (2076, 2.6017534199345558e-05)
 (2077, 2.595224699418916e-05)
 (2078, 2.5887125192413874e-05)
 (2079, 2.5822168367492184e-05)
 (2080, 2.575737609352225e-05)
+(2081, 2.5692747946780656e-05)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2081, 2.5692747946780656e-05)
-(2082, 2.5628283502925135e-05)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2082, 2.5628283502925135e-05)
 (2083, 2.5563982340256274e-05)
 (2084, 2.549984403738632e-05)
 (2085, 2.5435868174325856e-05)
-(2086, 2.5372054332327608e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2086, 2.5372054332327608e-05)
 (2087, 2.5308402093264296e-05)
 (2088, 2.524491104087051e-05)
 (2089, 2.5181580759188575e-05)
@@ -3896,9 +3935,7 @@ $<span class="math notranslate nohighlight">\(
 (2106, 2.412916656917789e-05)
 (2107, 2.4068660351281032e-05)
 (2108, 2.4008307216458295e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2109, 2.3948106769656615e-05)
+(2109, 2.3948106769656615e-05)
 (2110, 2.3888058617978197e-05)
 (2111, 2.382816236974821e-05)
 (2112, 2.376841763404834e-05)
@@ -3907,16 +3944,22 @@ $<span class="math notranslate nohighlight">\(
 (2115, 2.3590088610023215e-05)
 (2116, 2.3530946036731395e-05)
 (2117, 2.347195303766903e-05)
-(2118, 2.3413109227218546e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2118, 2.3413109227218546e-05)
 (2119, 2.3354414222531913e-05)
 (2120, 2.3295867640735984e-05)
 (2121, 2.3237469100018383e-05)
 (2122, 2.3179218220092424e-05)
-(2123, 2.3121114620954795e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2123, 2.3121114620954795e-05)
 (2124, 2.30631579245921e-05)
 (2125, 2.300534775249705e-05)
 (2126, 2.294768372939242e-05)
-(2127, 2.289016547826431e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2127, 2.289016547826431e-05)
 (2128, 2.2832792625637875e-05)
 (2129, 2.27755647970763e-05)
 (2130, 2.2718481620749316e-05)
@@ -3926,9 +3969,7 @@ $<span class="math notranslate nohighlight">\(
 (2134, 2.2491588016027165e-05)
 (2135, 2.2435222543841832e-05)
 (2136, 2.237899950912659e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2137, 2.232291854493389e-05)
+(2137, 2.232291854493389e-05)
 (2138, 2.2266979287227695e-05)
 (2139, 2.2211181371779792e-05)
 (2140, 2.2155524436341254e-05)
@@ -3952,11 +3993,15 @@ $<span class="math notranslate nohighlight">\(
 (2158, 2.1177399124271943e-05)
 (2159, 2.1124353116952077e-05)
 (2160, 2.1071441029465398e-05)
-(2161, 2.101866251927021e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2161, 2.101866251927021e-05)
 (2162, 2.096601724361977e-05)
 (2163, 2.091350486157767e-05)
 (2164, 2.0861125031691305e-05)
-(2165, 2.0808877414937548e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2165, 2.0808877414937548e-05)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2166, 2.075676167270634e-05)
@@ -3989,20 +4034,24 @@ $<span class="math notranslate nohighlight">\(
 (2193, 1.939827138264674e-05)
 (2194, 1.9349714140307352e-05)
 (2195, 1.9301279326322103e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2196, 1.925296662850127e-05)
+(2196, 1.925296662850127e-05)
 (2197, 1.9204775733813385e-05)
 (2198, 1.915670633117407e-05)
 (2199, 1.9108758110205875e-05)
 (2200, 1.9060930760927946e-05)
 (2201, 1.901322397437539e-05)
 (2202, 1.8965637442598786e-05)
-(2203, 1.8918170858198935e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2203, 1.8918170858198935e-05)
 (2204, 1.887082391463628e-05)
-(2205, 1.8823596306075545e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2205, 1.8823596306075545e-05)
 (2206, 1.8776487727695153e-05)
-(2207, 1.8729497875686773e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2207, 1.8729497875686773e-05)
 (2208, 1.8682626446170394e-05)
 (2209, 1.8635873137362857e-05)
 (2210, 1.858923764663388e-05)
@@ -4019,9 +4068,7 @@ $<span class="math notranslate nohighlight">\(
 (2221, 1.8083937769221674e-05)
 (2222, 1.803869285199763e-05)
 (2223, 1.7993561902651353e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2224, 1.794854462942247e-05)
+(2224, 1.794854462942247e-05)
 (2225, 1.790364074264045e-05)
 (2226, 1.7858849953020493e-05)
 (2227, 1.7814171971353417e-05)
@@ -4040,18 +4087,20 @@ $<span class="math notranslate nohighlight">\(
 (2240, 1.724349384372196e-05)
 (2241, 1.7200365298530365e-05)
 (2242, 1.7157345323029705e-05)
-(2243, 1.7114433639854794e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2243, 1.7114433639854794e-05)
 (2244, 1.7071629973103312e-05)
 (2245, 1.702893404740643e-05)
 (2246, 1.698634558823811e-05)
-(2247, 1.694386432175993e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2247, 1.694386432175993e-05)
 (2248, 1.6901489974820712e-05)
 (2249, 1.685922227495619e-05)
 (2250, 1.681706095054346e-05)
 (2251, 1.677500573049099e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2252, 1.6733056344238324e-05)
+(2252, 1.6733056344238324e-05)
 (2253, 1.669121252268452e-05)
 (2254, 1.664947399633018e-05)
 (2255, 1.660784049728954e-05)
@@ -4079,20 +4128,22 @@ $<span class="math notranslate nohighlight">\(
 (2277, 1.5717941318370987e-05)
 (2278, 1.5678651006393156e-05)
 (2279, 1.563945948993294e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2280, 1.560036651811829e-05)
+(2280, 1.560036651811829e-05)
 (2281, 1.5561371839979965e-05)
 (2282, 1.5522475205843827e-05)
 (2283, 1.5483676365937966e-05)
-(2284, 1.5444975072249153e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2284, 1.5444975072249153e-05)
 (2285, 1.540637107604691e-05)
 (2286, 1.5367864130513544e-05)
 (2287, 1.5329453988577734e-05)
 (2288, 1.5291140403842584e-05)
 (2289, 1.5252923131668326e-05)
 (2290, 1.521480192654187e-05)
-(2291, 1.5176776544087842e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2291, 1.5176776544087842e-05)
 (2292, 1.5138846741687076e-05)
 (2293, 1.510101227569159e-05)
 (2294, 1.506327290359025e-05)
@@ -4109,9 +4160,7 @@ $<span class="math notranslate nohighlight">\(
 (2305, 1.4654347361440526e-05)
 (2306, 1.4617730448550572e-05)
 (2307, 1.4581205536143413e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2308, 1.4544772391096798e-05)
+(2308, 1.4544772391096798e-05)
 (2309, 1.4508430780647735e-05)
 (2310, 1.4472180471928264e-05)
 (2311, 1.4436021233511872e-05)
@@ -4133,17 +4182,19 @@ $<span class="math notranslate nohighlight">\(
 (2327, 1.3869672062362012e-05)
 (2328, 1.3835026118126935e-05)
 (2329, 1.3800467172371434e-05)
-(2330, 1.3765995003686631e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2330, 1.3765995003686631e-05)
 (2331, 1.3731609392563825e-05)
-(2332, 1.3697310119384152e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2332, 1.3697310119384152e-05)
 (2333, 1.3663096964573016e-05)
 (2334, 1.3628969710300635e-05)
 (2335, 1.3594928138317174e-05)
 (2336, 1.3560972031807903e-05)
 (2337, 1.3527101173537619e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2338, 1.3493315347860352e-05)
+(2338, 1.3493315347860352e-05)
 (2339, 1.3459614338554641e-05)
 (2340, 1.3425997930833186e-05)
 (2341, 1.3392465910414978e-05)
@@ -4172,15 +4223,17 @@ $<span class="math notranslate nohighlight">\(
 (2364, 1.2644035133185985e-05)
 (2365, 1.261246547346151e-05)
 (2366, 1.2580975014895671e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2367, 1.2549563557224688e-05)
+(2367, 1.2549563557224688e-05)
 (2368, 1.2518230899140065e-05)
 (2369, 1.2486976842615667e-05)
 (2370, 1.2455801187652997e-05)
-(2371, 1.242470373614461e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2371, 1.242470373614461e-05)
 (2372, 1.2393684290019408e-05)
-(2373, 1.2362742652015152e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2373, 1.2362742652015152e-05)
 (2374, 1.2331878624751057e-05)
 (2375, 1.2301092011809363e-05)
 (2376, 1.2270382617580591e-05)
@@ -4205,9 +4258,7 @@ $<span class="math notranslate nohighlight">\(
 (2395, 1.170131868425593e-05)
 (2396, 1.1672113277620947e-05)
 (2397, 1.1642981089020593e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2398, 1.1613921933319624e-05)
+(2398, 1.1613921933319624e-05)
 (2399, 1.1584935625723503e-05)
 (2400, 1.1556021981932743e-05)
 (2401, 1.1527180819069617e-05)
@@ -4220,7 +4271,9 @@ $<span class="math notranslate nohighlight">\(
 (2408, 1.1327306788560796e-05)
 (2409, 1.1299038909458812e-05)
 (2410, 1.1270841878204128e-05)
-(2411, 1.124271551562307e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2411, 1.124271551562307e-05)
 (2412, 1.1214659643189553e-05)
 (2413, 1.1186674082715996e-05)
 (2414, 1.1158758656662093e-05)
@@ -4228,16 +4281,16 @@ $<span class="math notranslate nohighlight">\(
 (2416, 1.1103137498570577e-05)
 (2417, 1.1075431413915046e-05)
 (2418, 1.1047794757052913e-05)
-(2419, 1.1020227353060114e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2419, 1.1020227353060114e-05)
 (2420, 1.0992729026423322e-05)
 (2421, 1.0965299603356577e-05)
 (2422, 1.0937938909484374e-05)
 (2423, 1.0910646770768245e-05)
 (2424, 1.0883423014587716e-05)
 (2425, 1.085626746773237e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2426, 1.0829179958563924e-05)
+(2426, 1.0829179958563924e-05)
 (2427, 1.0802160314390561e-05)
 (2428, 1.0775208364864487e-05)
 (2429, 1.0748323937966369e-05)
@@ -4262,24 +4315,26 @@ $<span class="math notranslate nohighlight">\(
 (2448, 1.025012500160804e-05)
 (2449, 1.022455579989761e-05)
 (2450, 1.0199050630296766e-05)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2451, 1.017360933154479e-05)
+(2451, 1.017360933154479e-05)
 (2452, 1.0148231742405273e-05)
 (2453, 1.0122917701665996e-05)
 (2454, 1.0097667049682778e-05)
 (2455, 1.0072479626217783e-05)
-(2456, 1.0047355271365809e-05)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2456, 1.0047355271365809e-05)
 (2457, 1.0022293826789268e-05)
 iterations =  2457
-CPU times: user 19.4 s, sys: 60.1 ms, total: 19.4 s
-Wall time: 19.4 s
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f55d424ac50&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 13.5 s, sys: 60 ms, total: 13.6 s
+Wall time: 13.5 s
 </pre></div>
 </div>
-<img alt="_images/13-Numpy_53_173.png" src="_images/13-Numpy_53_173.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f8f0c143580&gt;
+</pre></div>
+</div>
+<img alt="_images/13-Numpy_53_193.png" src="_images/13-Numpy_53_193.png" />
 </div>
 </div>
 </section>
@@ -4456,14 +4511,14 @@ z: [0. 1. 2. 3. 4.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_10644/865241466.py:1: UserWarning: you are shuffling a &#39;flatiter&#39; object which is not a subclass of &#39;Sequence&#39;; `shuffle` is not guaranteed to behave correctly. E.g., non-numpy array/tensor objects with view semantics may contain duplicates after shuffling.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_11100/865241466.py:1: UserWarning: you are shuffling a &#39;flatiter&#39; object which is not a subclass of &#39;Sequence&#39;; `shuffle` is not guaranteed to behave correctly. E.g., non-numpy array/tensor objects with view semantics may contain duplicates after shuffling.
   np.random.shuffle(a.flat) # shuffle modify only the first axis
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[13, 30, 12, 41, 32],
-       [42, 34, 24, 20, 14],
-       [10, 43, 11, 21, 22],
-       [44, 23, 40, 33, 31]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[12, 44, 30, 24, 13],
+       [20, 14, 33, 31, 43],
+       [23, 10, 21, 40, 11],
+       [34, 41, 22, 42, 32]])
 </pre></div>
 </div>
 </div>
@@ -4477,10 +4532,10 @@ z: [0. 1. 2. 3. 4.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[13,  0,  0, 41, 32],
-       [ 0, 34,  0, 20, 14],
-       [10, 43, 11,  0, 22],
-       [44, 23, 40,  0, 31]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0, 44,  0,  0, 13],
+       [20, 14,  0, 31, 43],
+       [23, 10,  0, 40, 11],
+       [34, 41, 22,  0, 32]])
 </pre></div>
 </div>
 </div>
@@ -4493,10 +4548,10 @@ z: [0. 1. 2. 3. 4.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[13,  1,  1, 41, 32],
-       [ 1, 34,  1, 20, 14],
-       [10, 43, 11,  1, 22],
-       [44, 23, 40,  1, 31]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1, 44,  1,  1, 13],
+       [20, 14,  1, 31, 43],
+       [23, 10,  1, 40, 11],
+       [34, 41, 22,  1, 32]])
 </pre></div>
 </div>
 </div>
@@ -4510,8 +4565,8 @@ z: [0. 1. 2. 3. 4.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1, 20, 14],
-       [11,  1, 22]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1, 31, 43],
+       [ 1, 40, 11]])
 </pre></div>
 </div>
 </div>
@@ -4523,8 +4578,8 @@ z: [0. 1. 2. 3. 4.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[34,  1],
-       [10, 43]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[14,  1],
+       [23, 10]])
 </pre></div>
 </div>
 </div>
@@ -4602,7 +4657,7 @@ z: [0. 1. 2. 3. 4.]
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
-<span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1">#. Return a view</span>
+<span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># Return a copy</span>
 </pre></div>
 </div>
 </div>
@@ -4745,14 +4800,14 @@ z: [0. 1. 2. 3. 4.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_10644/2362774682.py:2: UserWarning: you are shuffling a &#39;flatiter&#39; object which is not a subclass of &#39;Sequence&#39;; `shuffle` is not guaranteed to behave correctly. E.g., non-numpy array/tensor objects with view semantics may contain duplicates after shuffling.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_11100/2362774682.py:2: UserWarning: you are shuffling a &#39;flatiter&#39; object which is not a subclass of &#39;Sequence&#39;; `shuffle` is not guaranteed to behave correctly. E.g., non-numpy array/tensor objects with view semantics may contain duplicates after shuffling.
   np.random.shuffle(a.flat)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[15, 18,  6,  9, 10],
-       [14, 12,  2,  8,  5],
-       [17, 19,  4, 11, 13],
-       [ 7, 16,  0,  3,  1]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 7, 14, 16, 10,  3],
+       [15, 13,  1,  9,  2],
+       [ 4,  6, 18, 12,  8],
+       [ 0, 11,  5, 17, 19]])
 </pre></div>
 </div>
 </div>
@@ -4769,7 +4824,7 @@ z: [0. 1. 2. 3. 4.]
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">UFuncTypeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">69</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">69</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">a</span> <span class="o">-=</span> <span class="n">a</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">a</span> <span class="o">/=</span> <span class="n">a</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="c1"># Standardize the matrix</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">a</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span> <span class="n">a</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>

@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="canonical" href="https://pnavaro.github.io/python-notebooks/07-Errors.and.Exceptions.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -164,7 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="13-Numpy.html">
-   What provide Numpy to Python ?
+   Numpy
   </a>
  </li>
  <li class="toctree-l1">
@@ -669,7 +671,7 @@ Oops!  That was no valid number.  Try again...
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change permission of the file, workfile.txt cannot be read</span>
-<span class="o">!</span>chmod u-r workfile.txt
+<span class="o">!</span>chmod<span class="w"> </span>u-r<span class="w"> </span>workfile.txt
 </pre></div>
 </div>
 </div>
@@ -689,7 +691,7 @@ Oops!  That was no valid number.  Try again...
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s delete the file workfile.txt</span>
-<span class="o">!</span>rm -f workfile.txt
+<span class="o">!</span>rm<span class="w"> </span>-f<span class="w"> </span>workfile.txt
 </pre></div>
 </div>
 </div>
@@ -709,7 +711,7 @@ Oops!  That was no valid number.  Try again...
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Insert the value -1 at the top of workfile.txt</span>
-<span class="o">!</span><span class="nb">echo</span> <span class="s2">&quot;-1&quot;</span> &gt; workfile.txt
+<span class="o">!</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;-1&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>workfile.txt
 <span class="o">%</span><span class="k">cat</span> workfile.txt
 </pre></div>
 </div>

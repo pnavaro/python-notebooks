@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="canonical" href="https://pnavaro.github.io/python-notebooks/10-Multiprocessing.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -164,7 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="13-Numpy.html">
-   What provide Numpy to Python ?
+   Numpy
   </a>
  </li>
  <li class="toctree-l1">
@@ -734,7 +736,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1.45 ms, sys: 1.4 ms, total: 2.85 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2.26 ms, sys: 196 µs, total: 2.45 ms
 Wall time: 8.01 s
 </pre></div>
 </div>
@@ -750,7 +752,7 @@ Wall time: 8.01 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 580 µs, sys: 2.15 ms, total: 2.73 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1.72 ms, sys: 850 µs, total: 2.57 ms
 Wall time: 8.01 s
 </pre></div>
 </div>
@@ -841,7 +843,7 @@ Wall time: 8.01 s
 <li><p>The if <code class="docutils literal notranslate"><span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__'</span></code> part is necessary.</p></li>
 </ul>
 <p><font color=red> The next program does not work in a cell you need to save it and run with python in a terminal </font></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3 pool.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>pool.py
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -862,7 +864,7 @@ Wall time: 8.01 s
     <span class="k">with</span> <span class="n">Pool</span><span class="p">()</span> <span class="k">as</span> <span class="n">p</span><span class="p">:</span>
         <span class="n">result</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">delayed_square</span><span class="p">,</span> <span class="n">data</span><span class="p">))</span>
     <span class="n">stop</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;result = </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2"> - Elapsed time </span><span class="si">{</span><span class="n">stop</span> <span class="o">-</span> <span class="n">start</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;result = </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2"> - Elapsed time </span><span class="si">{</span><span class="n">stop</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -875,12 +877,12 @@ Wall time: 8.01 s
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="o">!{</span>sys.executable<span class="o">}</span> pool.py
+<span class="o">!{</span>sys.executable<span class="o">}</span><span class="w"> </span>pool.py
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>result = 140 - Elapsed time 4.032943248748779
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>result = 140 - Elapsed time 4.024878740310669
 </pre></div>
 </div>
 </div>
@@ -912,7 +914,7 @@ Wall time: 8.01 s
     <span class="k">with</span> <span class="n">ProcessPoolExecutor</span><span class="p">()</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
         <span class="n">result</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">delayed_square</span><span class="p">,</span> <span class="n">data</span><span class="p">))</span>
     <span class="n">stop</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; result : </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2"> - elapsed time </span><span class="si">{</span><span class="n">stop</span> <span class="o">-</span> <span class="n">start</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; result : </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2"> - elapsed time </span><span class="si">{</span><span class="n">stop</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -924,12 +926,12 @@ Wall time: 8.01 s
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!{</span>sys.executable<span class="o">}</span> process_pool.py
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!{</span>sys.executable<span class="o">}</span><span class="w"> </span>process_pool.py
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> result : 140 - elapsed time 4.016056776046753
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> result : 140 - elapsed time 4.012605428695679
 </pre></div>
 </div>
 </div>
@@ -946,7 +948,7 @@ Wall time: 8.01 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 6.31 ms, sys: 1.29 ms, total: 7.61 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4.18 ms, sys: 4 µs, total: 4.18 ms
 Wall time: 2 s
 </pre></div>
 </div>
@@ -982,7 +984,7 @@ which does not return until the results are available.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Future at 0x7f74af227c40 state=running&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Future at 0x7f6fac2d7f70 state=running&gt;
 </pre></div>
 </div>
 </div>
@@ -1008,7 +1010,7 @@ which does not return until the results are available.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2.73 ms, sys: 250 µs, total: 2.98 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2.63 ms, sys: 0 ns, total: 2.63 ms
 Wall time: 8.01 s
 </pre></div>
 </div>
@@ -1023,7 +1025,7 @@ Wall time: 8.01 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 3.47 ms, sys: 687 µs, total: 4.15 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 3.08 ms, sys: 0 ns, total: 3.08 ms
 Wall time: 2.01 s
 </pre></div>
 </div>
@@ -1075,7 +1077,7 @@ Wall time: 2.01 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Estimated value of Pi : 3.14151120 time : 14.35125279
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Estimated value of Pi : 3.14187140 time : 10.45578384
 </pre></div>
 </div>
 </div>

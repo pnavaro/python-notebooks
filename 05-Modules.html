@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="canonical" href="https://pnavaro.github.io/python-notebooks/05-Modules.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -164,7 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="13-Numpy.html">
-   What provide Numpy to Python ?
+   Numpy
   </a>
  </li>
  <li class="toctree-l1">
@@ -571,14 +573,14 @@ title="Print to PDF"
 <span class="sd">    two functions to compute Fibonacci series &quot;&quot;&quot;</span>
 
 <span class="k">def</span> <span class="nf">fib1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-   <span class="sd">&quot;&quot;&quot; write Fibonacci series up to n &quot;&quot;&quot;</span>
+<span class="w">   </span><span class="sd">&quot;&quot;&quot; write Fibonacci series up to n &quot;&quot;&quot;</span>
    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
    <span class="k">while</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
       <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
       <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
 
 <span class="k">def</span> <span class="nf">fib2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>   
-    <span class="sd">&quot;&quot;&quot; return Fibonacci series up to n &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; return Fibonacci series up to n &quot;&quot;&quot;</span>
     <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
     <span class="k">while</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
@@ -660,7 +662,7 @@ FILE
 <section id="executing-modules-as-scripts">
 <h2>Executing modules as scripts<a class="headerlink" href="#executing-modules-as-scripts" title="Permalink to this headline">#</a></h2>
 <p>When you run a Python module with</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python fibo.py &lt;arguments&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>fibo.py<span class="w"> </span>&lt;arguments&gt;
 </pre></div>
 </div>
 <p>the code in the module will be executed, just as if you imported it, but with the <strong>name</strong> set to “<strong>main</strong>”. The following code will be executed only in this case and not when it is imported.</p>

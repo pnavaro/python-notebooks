@@ -17,52 +17,70 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-%matplotlib inline
-%config InlineBackend.figure_format = 'retina'
-import matplotlib.pyplot as plt
-import scipy.fftpack as sf
-import scipy.linalg as sl
-import numpy as np
-import warnings
-warnings.filterwarnings('ignore')
+%load_ext fortranmagic
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mAttributeError[0m                            Traceback (most recent call last)
-Cell [0;32mIn [1], line 2[0m
-[1;32m      1[0m get_ipython()[38;5;241m.[39mrun_line_magic([38;5;124m'[39m[38;5;124mmatplotlib[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124minline[39m[38;5;124m'[39m)
-[0;32m----> 2[0m [43mget_ipython[49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mrun_line_magic[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mconfig[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mInlineBackend.figure_format = [39;49m[38;5;124;43m'[39;49m[38;5;124;43mretina[39;49m[38;5;124;43m'[39;49m[38;5;124;43m"[39;49m[43m)[49m
-[1;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
-[1;32m      4[0m [38;5;28;01mimport[39;00m [38;5;21;01mscipy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mfftpack[39;00m [38;5;28;01mas[39;00m [38;5;21;01msf[39;00m
+[0;31mImportError[0m                               Traceback (most recent call last)
+Cell [0;32mIn[7], line 1[0m
+[0;32m----> 1[0m [43mget_ipython[49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mrun_line_magic[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mload_ext[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mfortranmagic[39;49m[38;5;124;43m'[39;49m[43m)[49m
 
-File [0;32m/usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2364[0m, in [0;36mInteractiveShell.run_line_magic[0;34m(self, magic_name, line, _stack_depth)[0m
-[1;32m   2362[0m     kwargs[[38;5;124m'[39m[38;5;124mlocal_ns[39m[38;5;124m'[39m] [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mget_local_scope(stack_depth)
-[1;32m   2363[0m [38;5;28;01mwith[39;00m [38;5;28mself[39m[38;5;241m.[39mbuiltin_trap:
-[0;32m-> 2364[0m     result [38;5;241m=[39m [43mfn[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
-[1;32m   2365[0m [38;5;28;01mreturn[39;00m result
+File [0;32m/usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2369[0m, in [0;36mInteractiveShell.run_line_magic[0;34m(self, magic_name, line, _stack_depth)[0m
+[1;32m   2367[0m     kwargs[[38;5;124m'[39m[38;5;124mlocal_ns[39m[38;5;124m'[39m] [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mget_local_scope(stack_depth)
+[1;32m   2368[0m [38;5;28;01mwith[39;00m [38;5;28mself[39m[38;5;241m.[39mbuiltin_trap:
+[0;32m-> 2369[0m     result [38;5;241m=[39m [43mfn[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[1;32m   2370[0m [38;5;28;01mreturn[39;00m result
 
-File [0;32m/usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/magics/config.py:163[0m, in [0;36mConfigMagics.config[0;34m(self, s)[0m
-[1;32m    159[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtraitlets[39;00m[38;5;21;01m.[39;00m[38;5;21;01mconfig[39;00m[38;5;21;01m.[39;00m[38;5;21;01mloader[39;00m [38;5;28;01mimport[39;00m Config
-[1;32m    160[0m [38;5;66;03m# some IPython objects are Configurable, but do not yet have[39;00m
-[1;32m    161[0m [38;5;66;03m# any configurable traits.  Exclude them from the effects of[39;00m
-[1;32m    162[0m [38;5;66;03m# this magic, as their presence is just noise:[39;00m
-[0;32m--> 163[0m configurables [38;5;241m=[39m [38;5;28msorted[39m([38;5;28mset[39m([ c [38;5;28;01mfor[39;00m c [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39mshell[38;5;241m.[39mconfigurables
-[1;32m    164[0m                              [38;5;28;01mif[39;00m c[38;5;241m.[39m[38;5;18m__class__[39m[38;5;241m.[39mclass_traits(config[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
-[1;32m    165[0m                              ]), key[38;5;241m=[39m[38;5;28;01mlambda[39;00m x: x[38;5;241m.[39m[38;5;18m__class__[39m[38;5;241m.[39m[38;5;18m__name__[39m)
-[1;32m    166[0m classnames [38;5;241m=[39m [ c[38;5;241m.[39m[38;5;18m__class__[39m[38;5;241m.[39m[38;5;18m__name__[39m [38;5;28;01mfor[39;00m c [38;5;129;01min[39;00m configurables ]
-[1;32m    168[0m line [38;5;241m=[39m s[38;5;241m.[39mstrip()
+File [0;32m/usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/magics/extension.py:33[0m, in [0;36mExtensionMagics.load_ext[0;34m(self, module_str)[0m
+[1;32m     31[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m module_str:
+[1;32m     32[0m     [38;5;28;01mraise[39;00m UsageError([38;5;124m'[39m[38;5;124mMissing module name.[39m[38;5;124m'[39m)
+[0;32m---> 33[0m res [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mshell[49m[38;5;241;43m.[39;49m[43mextension_manager[49m[38;5;241;43m.[39;49m[43mload_extension[49m[43m([49m[43mmodule_str[49m[43m)[49m
+[1;32m     35[0m [38;5;28;01mif[39;00m res [38;5;241m==[39m [38;5;124m'[39m[38;5;124malready loaded[39m[38;5;124m'[39m:
+[1;32m     36[0m     [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mThe [39m[38;5;132;01m%s[39;00m[38;5;124m extension is already loaded. To reload it, use:[39m[38;5;124m"[39m [38;5;241m%[39m module_str)
 
-File [0;32m/usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/magics/config.py:164[0m, in [0;36m<listcomp>[0;34m(.0)[0m
-[1;32m    159[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtraitlets[39;00m[38;5;21;01m.[39;00m[38;5;21;01mconfig[39;00m[38;5;21;01m.[39;00m[38;5;21;01mloader[39;00m [38;5;28;01mimport[39;00m Config
-[1;32m    160[0m [38;5;66;03m# some IPython objects are Configurable, but do not yet have[39;00m
-[1;32m    161[0m [38;5;66;03m# any configurable traits.  Exclude them from the effects of[39;00m
-[1;32m    162[0m [38;5;66;03m# this magic, as their presence is just noise:[39;00m
-[1;32m    163[0m configurables [38;5;241m=[39m [38;5;28msorted[39m([38;5;28mset[39m([ c [38;5;28;01mfor[39;00m c [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39mshell[38;5;241m.[39mconfigurables
-[0;32m--> 164[0m                              [38;5;28;01mif[39;00m [43mc[49m[38;5;241;43m.[39;49m[38;5;18;43m__class__[39;49m[38;5;241;43m.[39;49m[43mclass_traits[49m(config[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
-[1;32m    165[0m                              ]), key[38;5;241m=[39m[38;5;28;01mlambda[39;00m x: x[38;5;241m.[39m[38;5;18m__class__[39m[38;5;241m.[39m[38;5;18m__name__[39m)
-[1;32m    166[0m classnames [38;5;241m=[39m [ c[38;5;241m.[39m[38;5;18m__class__[39m[38;5;241m.[39m[38;5;18m__name__[39m [38;5;28;01mfor[39;00m c [38;5;129;01min[39;00m configurables ]
-[1;32m    168[0m line [38;5;241m=[39m s[38;5;241m.[39mstrip()
+File [0;32m/usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/extensions.py:76[0m, in [0;36mExtensionManager.load_extension[0;34m(self, module_str)[0m
+[1;32m     69[0m [38;5;250m[39m[38;5;124;03m"""Load an IPython extension by its module name.[39;00m
+[1;32m     70[0m 
+[1;32m     71[0m [38;5;124;03mReturns the string "already loaded" if the extension is already loaded,[39;00m
+[1;32m     72[0m [38;5;124;03m"no load function" if the module doesn't have a load_ipython_extension[39;00m
+[1;32m     73[0m [38;5;124;03mfunction, or None if it succeeded.[39;00m
+[1;32m     74[0m [38;5;124;03m"""[39;00m
+[1;32m     75[0m [38;5;28;01mtry[39;00m:
+[0;32m---> 76[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_load_extension[49m[43m([49m[43mmodule_str[49m[43m)[49m
+[1;32m     77[0m [38;5;28;01mexcept[39;00m [38;5;167;01mModuleNotFoundError[39;00m:
+[1;32m     78[0m     [38;5;28;01mif[39;00m module_str [38;5;129;01min[39;00m BUILTINS_EXTS:
 
-[0;31mAttributeError[0m: type object 'CommManager' has no attribute 'class_traits'
-AttributeError: type object 'CommManager' has no attribute 'class_traits'
+File [0;32m/usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/extensions.py:91[0m, in [0;36mExtensionManager._load_extension[0;34m(self, module_str)[0m
+[1;32m     89[0m [38;5;28;01mwith[39;00m [38;5;28mself[39m[38;5;241m.[39mshell[38;5;241m.[39mbuiltin_trap:
+[1;32m     90[0m     [38;5;28;01mif[39;00m module_str [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m sys[38;5;241m.[39mmodules:
+[0;32m---> 91[0m         mod [38;5;241m=[39m [43mimport_module[49m[43m([49m[43mmodule_str[49m[43m)[49m
+[1;32m     92[0m     mod [38;5;241m=[39m sys[38;5;241m.[39mmodules[module_str]
+[1;32m     93[0m     [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39m_call_load_ipython_extension(mod):
+
+File [0;32m/usr/share/miniconda3/envs/runenv/lib/python3.10/importlib/__init__.py:126[0m, in [0;36mimport_module[0;34m(name, package)[0m
+[1;32m    124[0m             [38;5;28;01mbreak[39;00m
+[1;32m    125[0m         level [38;5;241m+[39m[38;5;241m=[39m [38;5;241m1[39m
+[0;32m--> 126[0m [38;5;28;01mreturn[39;00m [43m_bootstrap[49m[38;5;241;43m.[39;49m[43m_gcd_import[49m[43m([49m[43mname[49m[43m[[49m[43mlevel[49m[43m:[49m[43m][49m[43m,[49m[43m [49m[43mpackage[49m[43m,[49m[43m [49m[43mlevel[49m[43m)[49m
+
+File [0;32m<frozen importlib._bootstrap>:1050[0m, in [0;36m_gcd_import[0;34m(name, package, level)[0m
+
+File [0;32m<frozen importlib._bootstrap>:1027[0m, in [0;36m_find_and_load[0;34m(name, import_)[0m
+
+File [0;32m<frozen importlib._bootstrap>:1006[0m, in [0;36m_find_and_load_unlocked[0;34m(name, import_)[0m
+
+File [0;32m<frozen importlib._bootstrap>:688[0m, in [0;36m_load_unlocked[0;34m(spec)[0m
+
+File [0;32m<frozen importlib._bootstrap_external>:883[0m, in [0;36mexec_module[0;34m(self, module)[0m
+
+File [0;32m<frozen importlib._bootstrap>:241[0m, in [0;36m_call_with_frames_removed[0;34m(f, *args, **kwds)[0m
+
+File [0;32m/usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/fortranmagic.py:36[0m
+[1;32m     34[0m [38;5;28;01mfrom[39;00m [38;5;21;01mIPython[39;00m[38;5;21;01m.[39;00m[38;5;21;01mutils[39;00m [38;5;28;01mimport[39;00m py3compat
+[1;32m     35[0m [38;5;28;01mfrom[39;00m [38;5;21;01mIPython[39;00m[38;5;21;01m.[39;00m[38;5;21;01mutils[39;00m[38;5;21;01m.[39;00m[38;5;21;01mio[39;00m [38;5;28;01mimport[39;00m capture_output
+[0;32m---> 36[0m [38;5;28;01mfrom[39;00m [38;5;21;01mIPython[39;00m[38;5;21;01m.[39;00m[38;5;21;01mutils[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpath[39;00m [38;5;28;01mimport[39;00m get_ipython_cache_dir
+[1;32m     37[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[1;32m     38[0m [38;5;28;01mfrom[39;00m [38;5;21;01mnumpy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mf2py[39;00m [38;5;28;01mimport[39;00m f2py2e
+
+[0;31mImportError[0m: cannot import name 'get_ipython_cache_dir' from 'IPython.utils.path' (/usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/utils/path.py)
+ImportError: cannot import name 'get_ipython_cache_dir' from 'IPython.utils.path' (/usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/utils/path.py)
 

@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="canonical" href="https://pnavaro.github.io/python-notebooks/06-Input.And.Output.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -164,7 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="13-Numpy.html">
-   What provide Numpy to Python ?
+   Numpy
   </a>
  </li>
  <li class="toctree-l1">
@@ -838,7 +840,7 @@ He said his name is &#39;Fred&#39;.
 <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;1. This is a txt file.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;2. </span><span class="se">\\</span><span class="s2">n is used to begin a new line&quot;</span><span class="p">)</span>
 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="o">!</span>cat workfile.txt
+<span class="o">!</span>cat<span class="w"> </span>workfile.txt
 </pre></div>
 </div>
 </div>
@@ -933,7 +935,7 @@ He said his name is &#39;Fred&#39;.
 <code class="docutils literal notranslate"><span class="pre">{word1:occurences1,</span> <span class="pre">word2:occurences2}</span></code>.</p></li>
 <li><p>You can check the results using piped shell commands:</p></li>
 </ul>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cat sample.txt <span class="p">|</span> fmt -1 <span class="p">|</span> tr <span class="o">[</span>:upper:<span class="o">]</span> <span class="o">[</span>:lower:<span class="o">]</span> <span class="p">|</span> tr -d <span class="s1">&#39;.&#39;</span> <span class="p">|</span> sort <span class="p">|</span> uniq -c 
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>sample.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>fmt<span class="w"> </span>-1<span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="o">[</span>:upper:<span class="o">]</span><span class="w"> </span><span class="o">[</span>:lower:<span class="o">]</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;.&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span>-c<span class="w"> </span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -945,7 +947,7 @@ He said his name is &#39;Fred&#39;.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Modi etincidunt quisquam adipisci tempora velit quiquia. Neque dolor dolor ipsum dolorem magnam eius voluptatem. Dolorem labore etincidunt modi dolorem etincidunt est. Dolorem tempora est amet. Non ipsum amet porro dolore aliquam. Tempora aliquam ut aliquam dolorem sit quaerat consectetur. Labore dolore modi quisquam consectetur est. Voluptatem labore modi etincidunt dolorem. Amet consectetur numquam numquam ut labore ut. Quaerat dolore adipisci ut amet quisquam dolorem.\n\nDolorem porro ut non quaerat consectetur. Quaerat amet neque aliquam ipsum quaerat magnam. Dolorem quiquia labore aliquam quisquam. Dolore non porro sed dolore. Velit etincidunt consectetur quisquam ut ut.\n\nQuiquia est neque non consectetur. Ut dolor amet voluptatem velit ut. Est magnam quaerat labore sed. Sit est dolor adipisci ipsum quiquia est magnam. Non tempora quaerat dolor numquam. Dolore ut quaerat magnam quaerat numquam porro. Modi ut sed quaerat. Sed labore voluptatem quisquam porro voluptatem porro. Quiquia dolorem modi quisquam quisquam.\n\nAliquam voluptatem etincidunt labore modi ut magnam. Aliquam quiquia dolor neque. Non porro sed dolorem quisquam quiquia. Numquam aliquam magnam tempora numquam magnam. Est eius eius sed numquam. Porro porro numquam labore sit neque. Ipsum est ipsum eius. Est sed neque porro etincidunt dolorem.\n\nEst dolor porro numquam aliquam. Velit dolor numquam voluptatem. Non velit ipsum labore sed ipsum. Ipsum quisquam sit est est amet. Sed quaerat modi non quaerat dolor neque. Dolor quiquia porro porro quisquam magnam numquam. Sed tempora non amet consectetur dolor neque numquam. Neque consectetur quaerat quisquam est. Modi adipisci ipsum consectetur quisquam. Dolore dolore quaerat sed.\n\nSit est labore modi non sed. Quaerat eius modi ipsum. Dolore sed dolorem dolor tempora ipsum sit amet. Non quaerat porro tempora porro ipsum aliquam aliquam. Ut neque velit velit non ipsum dolor. Etincidunt amet adipisci tempora neque. Etincidunt modi magnam numquam tempora.&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Voluptatem consectetur consectetur voluptatem quisquam amet consectetur. Dolore quiquia magnam sit eius labore dolor quisquam. Sit porro labore sed porro labore quisquam aliquam. Etincidunt dolorem consectetur quaerat ut dolore eius. Consectetur etincidunt aliquam non neque eius eius modi. Est velit dolorem est sit ipsum. Adipisci magnam voluptatem dolor non ipsum voluptatem quiquia.\n\nDolorem numquam quiquia dolor tempora dolore. Quaerat quiquia ipsum adipisci. Est quiquia aliquam quiquia. Aliquam tempora dolor ipsum quiquia etincidunt dolorem porro. Ipsum voluptatem sed eius sed sed numquam voluptatem. Dolor consectetur quisquam ut ut etincidunt magnam.\n\nQuiquia dolorem amet ipsum velit sed tempora. Dolorem voluptatem amet ut est ipsum eius magnam. Dolore magnam dolorem magnam non ipsum. Velit voluptatem quiquia quaerat. Aliquam est est sit eius amet. Aliquam sit sit est. Numquam quisquam amet numquam numquam ipsum. Est etincidunt modi etincidunt non.\n\nMagnam ut dolore neque voluptatem. Ipsum numquam tempora velit eius dolorem amet. Quiquia porro sit aliquam aliquam porro neque. Dolore dolore quaerat sed tempora tempora dolorem eius. Eius aliquam labore ut modi sit. Labore ipsum aliquam est dolor aliquam. Aliquam non ut amet aliquam adipisci. Amet quiquia tempora velit sed quisquam quaerat dolor. Adipisci non est dolore sit voluptatem. Quiquia labore tempora labore dolore porro.\n\nQuisquam ipsum velit modi modi quiquia. Dolorem numquam porro consectetur. Dolorem neque adipisci dolor eius ut dolorem. Ut est est tempora ipsum adipisci. Velit est est adipisci ut. Quisquam ut numquam amet dolore voluptatem. Est tempora aliquam numquam porro quaerat neque. Amet quisquam magnam quaerat.&#39;
 </pre></div>
 </div>
 </div>
@@ -953,7 +955,7 @@ He said his name is &#39;Fred&#39;.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">words</span><span class="p">(</span> <span class="n">file</span> <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Parse a file and returns a sorted list of words &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Parse a file and returns a sorted list of words &quot;&quot;&quot;</span>
     <span class="k">pass</span>
 
 <span class="n">words</span><span class="p">(</span><span class="s1">&#39;sample.txt&#39;</span><span class="p">)</span>
@@ -984,7 +986,7 @@ He said his name is &#39;Fred&#39;.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">reduce</span> <span class="p">(</span> <span class="n">words</span> <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Count the number of occurences of a word in list</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Count the number of occurences of a word in list</span>
 <span class="sd">    and return a dictionary &quot;&quot;&quot;</span>
     <span class="k">pass</span>
 

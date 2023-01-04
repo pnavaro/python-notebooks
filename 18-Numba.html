@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="canonical" href="https://pnavaro.github.io/python-notebooks/18-Numba.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -164,7 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="13-Numpy.html">
-   What provide Numpy to Python ?
+   Numpy
   </a>
  </li>
  <li class="toctree-l1">
@@ -738,7 +740,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>execution time 1.1920928955078125e-06
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>execution time 4.291534423828125e-06
 3
 </pre></div>
 </div>
@@ -782,8 +784,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.25972473, 1.23794455, 1.38533718, 0.8061112 , 1.28430097,
-       0.5411454 , 1.09688001, 0.39275798, 1.67116171, 1.50052198])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.84043566, 1.07497518, 1.17091315, 0.4757794 , 0.7694619 ,
+       0.87243944, 1.25750911, 0.96845666, 1.32771031, 1.2076243 ])
 </pre></div>
 </div>
 </div>
@@ -805,7 +807,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 ms ± 170 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.63 ms ± 84.6 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -829,7 +831,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14.5 ms ± 207 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.8 ms ± 65.7 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -863,7 +865,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jit_sum (int64, int64)
 --------------------------------------------------------------------------------
-# File: /tmp/ipykernel_10759/2799832006.py
+# File: /tmp/ipykernel_11492/2799832006.py
 # --- LINE 1 --- 
 
 @jit
@@ -901,7 +903,7 @@ def jit_sum(a, b):
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jit_sum (int64, int64)
 --------------------------------------------------------------------------------
-# File: /tmp/ipykernel_10759/2799832006.py
+# File: /tmp/ipykernel_11492/2799832006.py
 # --- LINE 1 --- 
 
 @jit
@@ -927,7 +929,7 @@ def jit_sum(a, b):
 ================================================================================
 jit_sum (float64, float64)
 --------------------------------------------------------------------------------
-# File: /tmp/ipykernel_10759/2799832006.py
+# File: /tmp/ipykernel_11492/2799832006.py
 # --- LINE 1 --- 
 
 @jit
@@ -1033,18 +1035,18 @@ def jit_sum(a, b):
 </section>
 <section id="numba-types">
 <h2>Numba types<a class="headerlink" href="#numba-types" title="Permalink to this headline">#</a></h2>
-<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="p">,</span><span class="w"></span>
-<span class="n">intp</span><span class="p">,</span><span class="w"> </span><span class="n">uintp</span><span class="p">,</span><span class="w"></span>
-<span class="n">intc</span><span class="p">,</span><span class="w"> </span><span class="n">uintc</span><span class="p">,</span><span class="w"></span>
-<span class="n">int8</span><span class="p">,</span><span class="w"> </span><span class="n">uint8</span><span class="p">,</span><span class="w"> </span><span class="n">int16</span><span class="p">,</span><span class="w"> </span><span class="n">uint16</span><span class="p">,</span><span class="w"> </span><span class="n">int32</span><span class="p">,</span><span class="w"> </span><span class="n">uint32</span><span class="p">,</span><span class="w"> </span><span class="n">int64</span><span class="p">,</span><span class="w"> </span><span class="n">uint64</span><span class="p">,</span><span class="w"></span>
-<span class="n">float32</span><span class="p">,</span><span class="w"> </span><span class="n">float64</span><span class="p">,</span><span class="w"></span>
-<span class="n">complex64</span><span class="p">,</span><span class="w"> </span><span class="n">complex128</span><span class="p">.</span><span class="w"></span>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="p">,</span>
+<span class="n">intp</span><span class="p">,</span><span class="w"> </span><span class="n">uintp</span><span class="p">,</span>
+<span class="n">intc</span><span class="p">,</span><span class="w"> </span><span class="n">uintc</span><span class="p">,</span>
+<span class="n">int8</span><span class="p">,</span><span class="w"> </span><span class="n">uint8</span><span class="p">,</span><span class="w"> </span><span class="n">int16</span><span class="p">,</span><span class="w"> </span><span class="n">uint16</span><span class="p">,</span><span class="w"> </span><span class="n">int32</span><span class="p">,</span><span class="w"> </span><span class="n">uint32</span><span class="p">,</span><span class="w"> </span><span class="n">int64</span><span class="p">,</span><span class="w"> </span><span class="n">uint64</span><span class="p">,</span>
+<span class="n">float32</span><span class="p">,</span><span class="w"> </span><span class="n">float64</span><span class="p">,</span>
+<span class="n">complex64</span><span class="p">,</span><span class="w"> </span><span class="n">complex128</span><span class="p">.</span>
 </pre></div>
 </div>
 <section id="arrays">
 <h3>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">#</a></h3>
 <div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="n">float32</span><span class="p">[</span><span class="o">:</span><span class="p">]</span><span class="w"> </span>
-<span class="n">float64</span><span class="p">[</span><span class="o">:</span><span class="p">,</span><span class="w"> </span><span class="o">:</span><span class="p">]</span><span class="w"></span>
+<span class="n">float64</span><span class="p">[</span><span class="o">:</span><span class="p">,</span><span class="w"> </span><span class="o">:</span><span class="p">]</span>
 </pre></div>
 </div>
 </section>
@@ -1162,7 +1164,7 @@ def jit_sum(a, b):
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">25</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">25</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="n">j</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
 

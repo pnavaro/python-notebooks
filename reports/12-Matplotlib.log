@@ -17,49 +17,36 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-%matplotlib inline
-# inline can be replaced by notebook to get interactive plots
-import numpy as np
-import matplotlib.pyplot as plt
-
-%config InlineBackend.figure_format = "retina"
+img = plt.imread("https://hackage.haskell.org/package/JuicyPixels-extra-0.1.0/src/data-examples/lenna.png")
+plt.imshow(img)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mAttributeError[0m                            Traceback (most recent call last)
-Cell [0;32mIn [1], line 6[0m
-[1;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
-[1;32m      4[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
-[0;32m----> 6[0m [43mget_ipython[49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mrun_line_magic[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mconfig[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mInlineBackend.figure_format = [39;49m[38;5;124;43m"[39;49m[38;5;124;43mretina[39;49m[38;5;124;43m"[39;49m[38;5;124;43m'[39;49m[43m)[49m
+[0;31mValueError[0m                                Traceback (most recent call last)
+Cell [0;32mIn[20], line 1[0m
+[0;32m----> 1[0m img [38;5;241m=[39m [43mplt[49m[38;5;241;43m.[39;49m[43mimread[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mhttps://hackage.haskell.org/package/JuicyPixels-extra-0.1.0/src/data-examples/lenna.png[39;49m[38;5;124;43m"[39;49m[43m)[49m
+[1;32m      2[0m plt[38;5;241m.[39mimshow(img)
 
-File [0;32m/usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2364[0m, in [0;36mInteractiveShell.run_line_magic[0;34m(self, magic_name, line, _stack_depth)[0m
-[1;32m   2362[0m     kwargs[[38;5;124m'[39m[38;5;124mlocal_ns[39m[38;5;124m'[39m] [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mget_local_scope(stack_depth)
-[1;32m   2363[0m [38;5;28;01mwith[39;00m [38;5;28mself[39m[38;5;241m.[39mbuiltin_trap:
-[0;32m-> 2364[0m     result [38;5;241m=[39m [43mfn[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
-[1;32m   2365[0m [38;5;28;01mreturn[39;00m result
+File [0;32m/usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/matplotlib/pyplot.py:2123[0m, in [0;36mimread[0;34m(fname, format)[0m
+[1;32m   2121[0m [38;5;129m@_copy_docstring_and_deprecators[39m(matplotlib[38;5;241m.[39mimage[38;5;241m.[39mimread)
+[1;32m   2122[0m [38;5;28;01mdef[39;00m [38;5;21mimread[39m(fname, [38;5;28mformat[39m[38;5;241m=[39m[38;5;28;01mNone[39;00m):
+[0;32m-> 2123[0m     [38;5;28;01mreturn[39;00m [43mmatplotlib[49m[38;5;241;43m.[39;49m[43mimage[49m[38;5;241;43m.[39;49m[43mimread[49m[43m([49m[43mfname[49m[43m,[49m[43m [49m[38;5;28;43mformat[39;49m[43m)[49m
 
-File [0;32m/usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/magics/config.py:163[0m, in [0;36mConfigMagics.config[0;34m(self, s)[0m
-[1;32m    159[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtraitlets[39;00m[38;5;21;01m.[39;00m[38;5;21;01mconfig[39;00m[38;5;21;01m.[39;00m[38;5;21;01mloader[39;00m [38;5;28;01mimport[39;00m Config
-[1;32m    160[0m [38;5;66;03m# some IPython objects are Configurable, but do not yet have[39;00m
-[1;32m    161[0m [38;5;66;03m# any configurable traits.  Exclude them from the effects of[39;00m
-[1;32m    162[0m [38;5;66;03m# this magic, as their presence is just noise:[39;00m
-[0;32m--> 163[0m configurables [38;5;241m=[39m [38;5;28msorted[39m([38;5;28mset[39m([ c [38;5;28;01mfor[39;00m c [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39mshell[38;5;241m.[39mconfigurables
-[1;32m    164[0m                              [38;5;28;01mif[39;00m c[38;5;241m.[39m[38;5;18m__class__[39m[38;5;241m.[39mclass_traits(config[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
-[1;32m    165[0m                              ]), key[38;5;241m=[39m[38;5;28;01mlambda[39;00m x: x[38;5;241m.[39m[38;5;18m__class__[39m[38;5;241m.[39m[38;5;18m__name__[39m)
-[1;32m    166[0m classnames [38;5;241m=[39m [ c[38;5;241m.[39m[38;5;18m__class__[39m[38;5;241m.[39m[38;5;18m__name__[39m [38;5;28;01mfor[39;00m c [38;5;129;01min[39;00m configurables ]
-[1;32m    168[0m line [38;5;241m=[39m s[38;5;241m.[39mstrip()
+File [0;32m/usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/matplotlib/image.py:1536[0m, in [0;36mimread[0;34m(fname, format)[0m
+[1;32m   1532[0m img_open [38;5;241m=[39m (
+[1;32m   1533[0m     PIL[38;5;241m.[39mPngImagePlugin[38;5;241m.[39mPngImageFile [38;5;28;01mif[39;00m ext [38;5;241m==[39m [38;5;124m'[39m[38;5;124mpng[39m[38;5;124m'[39m [38;5;28;01melse[39;00m PIL[38;5;241m.[39mImage[38;5;241m.[39mopen)
+[1;32m   1534[0m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(fname, [38;5;28mstr[39m) [38;5;129;01mand[39;00m [38;5;28mlen[39m(parse[38;5;241m.[39murlparse(fname)[38;5;241m.[39mscheme) [38;5;241m>[39m [38;5;241m1[39m:
+[1;32m   1535[0m     [38;5;66;03m# Pillow doesn't handle URLs directly.[39;00m
+[0;32m-> 1536[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[1;32m   1537[0m         [38;5;124m"[39m[38;5;124mPlease open the URL for reading and pass the [39m[38;5;124m"[39m
+[1;32m   1538[0m         [38;5;124m"[39m[38;5;124mresult to Pillow, e.g. with [39m[38;5;124m"[39m
+[1;32m   1539[0m         [38;5;124m"[39m[38;5;124m``np.array(PIL.Image.open(urllib.request.urlopen(url)))``.[39m[38;5;124m"[39m
+[1;32m   1540[0m         )
+[1;32m   1541[0m [38;5;28;01mwith[39;00m img_open(fname) [38;5;28;01mas[39;00m image:
+[1;32m   1542[0m     [38;5;28;01mreturn[39;00m (_pil_png_to_float_array(image)
+[1;32m   1543[0m             [38;5;28;01mif[39;00m [38;5;28misinstance[39m(image, PIL[38;5;241m.[39mPngImagePlugin[38;5;241m.[39mPngImageFile) [38;5;28;01melse[39;00m
+[1;32m   1544[0m             pil_to_array(image))
 
-File [0;32m/usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/magics/config.py:164[0m, in [0;36m<listcomp>[0;34m(.0)[0m
-[1;32m    159[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtraitlets[39;00m[38;5;21;01m.[39;00m[38;5;21;01mconfig[39;00m[38;5;21;01m.[39;00m[38;5;21;01mloader[39;00m [38;5;28;01mimport[39;00m Config
-[1;32m    160[0m [38;5;66;03m# some IPython objects are Configurable, but do not yet have[39;00m
-[1;32m    161[0m [38;5;66;03m# any configurable traits.  Exclude them from the effects of[39;00m
-[1;32m    162[0m [38;5;66;03m# this magic, as their presence is just noise:[39;00m
-[1;32m    163[0m configurables [38;5;241m=[39m [38;5;28msorted[39m([38;5;28mset[39m([ c [38;5;28;01mfor[39;00m c [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39mshell[38;5;241m.[39mconfigurables
-[0;32m--> 164[0m                              [38;5;28;01mif[39;00m [43mc[49m[38;5;241;43m.[39;49m[38;5;18;43m__class__[39;49m[38;5;241;43m.[39;49m[43mclass_traits[49m(config[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
-[1;32m    165[0m                              ]), key[38;5;241m=[39m[38;5;28;01mlambda[39;00m x: x[38;5;241m.[39m[38;5;18m__class__[39m[38;5;241m.[39m[38;5;18m__name__[39m)
-[1;32m    166[0m classnames [38;5;241m=[39m [ c[38;5;241m.[39m[38;5;18m__class__[39m[38;5;241m.[39m[38;5;18m__name__[39m [38;5;28;01mfor[39;00m c [38;5;129;01min[39;00m configurables ]
-[1;32m    168[0m line [38;5;241m=[39m s[38;5;241m.[39mstrip()
-
-[0;31mAttributeError[0m: type object 'CommManager' has no attribute 'class_traits'
-AttributeError: type object 'CommManager' has no attribute 'class_traits'
+[0;31mValueError[0m: Please open the URL for reading and pass the result to Pillow, e.g. with ``np.array(PIL.Image.open(urllib.request.urlopen(url)))``.
+ValueError: Please open the URL for reading and pass the result to Pillow, e.g. with ``np.array(PIL.Image.open(urllib.request.urlopen(url)))``.
 

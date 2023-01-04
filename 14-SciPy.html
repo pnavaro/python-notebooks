@@ -50,13 +50,15 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://pnavaro.github.io/python-notebooks/14-SciPy.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Sympy" href="15-Sympy.html" />
-    <link rel="prev" title="What provide Numpy to Python ?" href="13-Numpy.html" />
+    <link rel="prev" title="Numpy" href="13-Numpy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -166,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="13-Numpy.html">
-   What provide Numpy to Python ?
+   Numpy
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -666,47 +668,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">,</span> <span class="s2">&quot;InlineBackend.figure_format = &#39;retina&#39;&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2364,</span> in <span class="ni">InteractiveShell.run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2362</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2363</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2364</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2365</span> <span class="k">return</span> <span class="n">result</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/magics/config.py:163,</span> in <span class="ni">ConfigMagics.config</span><span class="nt">(self, s)</span>
-<span class="g g-Whitespace">    </span><span class="mi">159</span> <span class="kn">from</span> <span class="nn">traitlets.config.loader</span> <span class="kn">import</span> <span class="n">Config</span>
-<span class="g g-Whitespace">    </span><span class="mi">160</span> <span class="c1"># some IPython objects are Configurable, but do not yet have</span>
-<span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="c1"># any configurable traits.  Exclude them from the effects of</span>
-<span class="g g-Whitespace">    </span><span class="mi">162</span> <span class="c1"># this magic, as their presence is just noise:</span>
-<span class="ne">--&gt; </span><span class="mi">163</span> <span class="n">configurables</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span> <span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">configurables</span>
-<span class="g g-Whitespace">    </span><span class="mi">164</span>                              <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">class_traits</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">165</span>                              <span class="p">]),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">166</span> <span class="n">classnames</span> <span class="o">=</span> <span class="p">[</span> <span class="n">c</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">configurables</span> <span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">168</span> <span class="n">line</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/magics/config.py:164,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">    </span><span class="mi">159</span> <span class="kn">from</span> <span class="nn">traitlets.config.loader</span> <span class="kn">import</span> <span class="n">Config</span>
-<span class="g g-Whitespace">    </span><span class="mi">160</span> <span class="c1"># some IPython objects are Configurable, but do not yet have</span>
-<span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="c1"># any configurable traits.  Exclude them from the effects of</span>
-<span class="g g-Whitespace">    </span><span class="mi">162</span> <span class="c1"># this magic, as their presence is just noise:</span>
-<span class="g g-Whitespace">    </span><span class="mi">163</span> <span class="n">configurables</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span> <span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">configurables</span>
-<span class="ne">--&gt; </span><span class="mi">164</span>                              <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">class_traits</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">165</span>                              <span class="p">]),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">166</span> <span class="n">classnames</span> <span class="o">=</span> <span class="p">[</span> <span class="n">c</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">configurables</span> <span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">168</span> <span class="n">line</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-
-<span class="ne">AttributeError</span>: type object &#39;CommManager&#39; has no attribute &#39;class_traits&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <section id="scipy-main-packages">
 <h2>SciPy main packages<a class="headerlink" href="#scipy-main-packages" title="Permalink to this headline">#</a></h2>
@@ -761,6 +722,55 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_11140/3016852277.py:4: DeprecationWarning: `interp2d` is deprecated!
+`interp2d` is deprecated in SciPy 1.10 and will be removed in SciPy 1.12.0.
+
+For legacy code, nearly bug-for-bug compatible replacements are
+`RectBivariateSpline` on regular grids, and `bisplrep`/`bisplev` for
+scattered 2D data.
+
+In new code, for regular grids use `RegularGridInterpolator` instead.
+For scattered data, prefer `LinearNDInterpolator` or
+`CloughTocher2DInterpolator`.
+
+For more details see
+`https://gist.github.com/ev-br/8544371b40f414b7eaf3fe6217209bff`
+
+  T1=interp2d(x,y,z,kind=&#39;linear&#39;)
+/tmp/ipykernel_11140/3016852277.py:5: DeprecationWarning: `interp2d` is deprecated!
+`interp2d` is deprecated in SciPy 1.10 and will be removed in SciPy 1.12.0.
+
+For legacy code, nearly bug-for-bug compatible replacements are
+`RectBivariateSpline` on regular grids, and `bisplrep`/`bisplev` for
+scattered 2D data.
+
+In new code, for regular grids use `RegularGridInterpolator` instead.
+For scattered data, prefer `LinearNDInterpolator` or
+`CloughTocher2DInterpolator`.
+
+For more details see
+`https://gist.github.com/ev-br/8544371b40f414b7eaf3fe6217209bff`
+
+  T2=interp2d(x,y,z,kind=&#39;cubic&#39;)
+/tmp/ipykernel_11140/3016852277.py:6: DeprecationWarning: `interp2d` is deprecated!
+`interp2d` is deprecated in SciPy 1.10 and will be removed in SciPy 1.12.0.
+
+For legacy code, nearly bug-for-bug compatible replacements are
+`RectBivariateSpline` on regular grids, and `bisplrep`/`bisplev` for
+scattered 2D data.
+
+In new code, for regular grids use `RegularGridInterpolator` instead.
+For scattered data, prefer `LinearNDInterpolator` or
+`CloughTocher2DInterpolator`.
+
+For more details see
+`https://gist.github.com/ev-br/8544371b40f414b7eaf3fe6217209bff`
+
+  T3=interp2d(x,y,z,kind=&#39;quintic&#39;)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -783,10 +793,57 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_11140/2191985395.py:8: DeprecationWarning:         `interp2d` is deprecated!
+        `interp2d` is deprecated in SciPy 1.10 and will be removed in SciPy 1.12.0.
+
+        For legacy code, nearly bug-for-bug compatible replacements are
+        `RectBivariateSpline` on regular grids, and `bisplrep`/`bisplev` for
+        scattered 2D data.
+
+        In new code, for regular grids use `RegularGridInterpolator` instead.
+        For scattered data, prefer `LinearNDInterpolator` or
+        `CloughTocher2DInterpolator`.
+
+        For more details see
+        `https://gist.github.com/ev-br/8544371b40f414b7eaf3fe6217209bff`
+
+  plt.contourf(X,Y,T1(X[:,0],Y[0,:]))
+/tmp/ipykernel_11140/2191985395.py:11: DeprecationWarning:         `interp2d` is deprecated!
+        `interp2d` is deprecated in SciPy 1.10 and will be removed in SciPy 1.12.0.
+
+        For legacy code, nearly bug-for-bug compatible replacements are
+        `RectBivariateSpline` on regular grids, and `bisplrep`/`bisplev` for
+        scattered 2D data.
+
+        In new code, for regular grids use `RegularGridInterpolator` instead.
+        For scattered data, prefer `LinearNDInterpolator` or
+        `CloughTocher2DInterpolator`.
+
+        For more details see
+        `https://gist.github.com/ev-br/8544371b40f414b7eaf3fe6217209bff`
+
+  plt.contourf(X,Y,T2(X[:,0],Y[0,:]))
+/tmp/ipykernel_11140/2191985395.py:14: DeprecationWarning:         `interp2d` is deprecated!
+        `interp2d` is deprecated in SciPy 1.10 and will be removed in SciPy 1.12.0.
+
+        For legacy code, nearly bug-for-bug compatible replacements are
+        `RectBivariateSpline` on regular grids, and `bisplrep`/`bisplev` for
+        scattered 2D data.
+
+        In new code, for regular grids use `RegularGridInterpolator` instead.
+        For scattered data, prefer `LinearNDInterpolator` or
+        `CloughTocher2DInterpolator`.
+
+        For more details see
+        `https://gist.github.com/ev-br/8544371b40f414b7eaf3fe6217209bff`
+
+  plt.contourf(X,Y,T3(X[:,0],Y[0,:]))
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;100x100 quintic&#39;)
 </pre></div>
 </div>
-<img alt="_images/14-SciPy_6_1.png" src="_images/14-SciPy_6_1.png" />
+<img alt="_images/14-SciPy_6_2.png" src="_images/14-SciPy_6_2.png" />
 </div>
 </div>
 </section>
@@ -806,7 +863,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>102 µs ± 2.08 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47.1 µs ± 28.7 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -820,7 +877,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>90 µs ± 567 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>45.8 µs ± 55.9 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1025,7 +1082,7 @@ incremental matrix building. The conversion to csc/csr format is efficient.</p><
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;SuperLU at 0x11d8bd1e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;SuperLU at 0x7f7f0068a160&gt;
 </pre></div>
 </div>
 </div>
@@ -1038,7 +1095,7 @@ incremental matrix building. The conversion to csc/csr format is efficient.</p><
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.3208707134311084e-15
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.456043846448818e-15
 </pre></div>
 </div>
 </div>
@@ -1060,36 +1117,33 @@ incremental matrix building. The conversion to csc/csr format is efficient.</p><
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iteration  0 residu =    3.29
-iteration  1 residu =    1.81
-iteration  2 residu =   0.801
-iteration  3 residu =   0.288
-iteration  4 residu =   0.155
-iteration  5 residu =  0.0755
-iteration  6 residu =  0.0329
-iteration  7 residu =  0.0126
-iteration  8 residu = 0.00509
-iteration  9 residu = 0.00211
-iteration 10 residu = 0.00121
-iteration 11 residu = 0.000495
-iteration 12 residu = 0.00028
-iteration 13 residu = 0.000105
-iteration 14 residu = 4.49e-05
-iteration 15 residu = 1.23e-05
-iteration 16 residu = 5.31e-06
-iteration 17 residu = 1.86e-06
-iteration 18 residu = 9.85e-07
-iteration 19 residu = 3.9e-07
-iteration 20 residu = 1.78e-07
-iteration 21 residu = 7.37e-08
-iteration 22 residu = 2.27e-08
-iteration 23 residu = 8.5e-09
-iteration 24 residu = 2.04e-09
-iteration 25 residu = 5.94e-10
-iteration 26 residu = 1.11e-10
-iteration 27 residu = 4.25e-11
-iteration 28 residu = 7.55e-12
-iteration 29 residu = 1.48e-12
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iteration  0 residu =    2.54
+iteration  1 residu =   0.925
+iteration  2 residu =   0.431
+iteration  3 residu =   0.157
+iteration  4 residu =  0.0666
+iteration  5 residu =  0.0241
+iteration  6 residu = 0.00982
+iteration  7 residu = 0.00392
+iteration  8 residu = 0.00132
+iteration  9 residu = 0.000454
+iteration 10 residu = 0.000173
+iteration 11 residu = 6.04e-05
+iteration 12 residu = 2.05e-05
+iteration 13 residu = 6.08e-06
+iteration 14 residu = 2.06e-06
+iteration 15 residu = 6.83e-07
+iteration 16 residu = 2.59e-07
+iteration 17 residu = 8.2e-08
+iteration 18 residu = 3.47e-08
+iteration 19 residu = 1.01e-08
+iteration 20 residu = 3.21e-09
+iteration 21 residu = 9.91e-10
+iteration 22 residu = 3.21e-10
+iteration 23 residu = 1.03e-10
+iteration 24 residu = 3.77e-11
+iteration 25 residu = 1.16e-11
+iteration 26 residu = 3.12e-12
 </pre></div>
 </div>
 </div>
@@ -1106,7 +1160,7 @@ iteration 29 residu = 1.48e-12
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.40994379196249386
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.29015179575537214
 </pre></div>
 </div>
 </div>
@@ -1122,19 +1176,16 @@ iteration 29 residu = 1.48e-12
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iteration  0 residu =   0.392
-iteration  1 residu =  0.0151
-iteration  2 residu = 0.00122
-iteration  3 residu = 6.61e-05
-iteration  4 residu = 9.23e-06
-iteration  5 residu = 6.8e-07
-iteration  6 residu = 1.37e-07
-iteration  7 residu = 1.39e-08
-iteration  8 residu = 3.24e-09
-iteration  9 residu = 4.84e-10
-iteration 10 residu = 1.07e-10
-iteration 11 residu = 2.49e-11
-iteration 12 residu = 4.67e-12
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iteration  0 residu =   0.272
+iteration  1 residu =  0.0124
+iteration  2 residu = 0.00073
+iteration  3 residu = 2.51e-05
+iteration  4 residu = 9.88e-07
+iteration  5 residu = 4.47e-08
+iteration  6 residu = 3.29e-09
+iteration  7 residu = 1.42e-10
+iteration  8 residu = 1.04e-11
+iteration  9 residu = 6.41e-13
 </pre></div>
 </div>
 </div>
@@ -1281,8 +1332,8 @@ with \)</span>y_1(0) = 2 <span class="math notranslate nohighlight">\( and \)</s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 662 ms, sys: 32 ms, total: 694 ms
-Wall time: 405 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 210 ms, sys: 40.1 ms, total: 250 ms
+Wall time: 140 ms
 </pre></div>
 </div>
 </div>
@@ -1296,7 +1347,7 @@ Wall time: 405 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x1240d80d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f7f0019c370&gt;
 </pre></div>
 </div>
 <img alt="_images/14-SciPy_40_1.png" src="_images/14-SciPy_40_1.png" />
@@ -1347,8 +1398,8 @@ Wall time: 405 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 822 ms, sys: 25.1 ms, total: 847 ms
-Wall time: 529 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 395 ms, sys: 32 ms, total: 427 ms
+Wall time: 289 ms
 </pre></div>
 </div>
 </div>
@@ -1398,7 +1449,7 @@ Wall time: 529 ms
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">What provide Numpy to Python ?</p>
+            <p class="prev-next-title">Numpy</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="15-Sympy.html" title="next page">
