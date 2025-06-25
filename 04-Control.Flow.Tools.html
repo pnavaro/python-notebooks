@@ -1,1003 +1,547 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="./" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Control Flow Tools &#8212; Python notebooks</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '04-Control.Flow.Tools';</script>
     <link rel="canonical" href="https://pnavaro.github.io/python-notebooks/04-Control.Flow.Tools.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Modules" href="05-Modules.html" />
     <link rel="prev" title="Python lists and tuples" href="03-Lists.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="01-Introduction.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Python notebooks</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Python notebooks - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python notebooks - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="02-Strings.html">
-   Strings
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03-Lists.html">
-   Python lists and tuples
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Control Flow Tools
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="05-Modules.html">
-   Modules
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06-Input.And.Output.html">
-   Input and Output
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="07-Errors.and.Exceptions.html">
-   Errors and Exceptions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="08-Classes.html">
-   Classes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="09-Iterators.html">
-   Iterators
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="10-Multiprocessing.html">
-   Multiprocessing
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="11-Standard.Library.html">
-   Standard Library
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="12-Matplotlib.html">
-   Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="13-Numpy.html">
-   Numpy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="14-SciPy.html">
-   Scipy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="15-Sympy.html">
-   Sympy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="16-Fortran.html">
-   Call fortran from Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="17-Cython.html">
-   Cython
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="18-Numba.html">
-   Numba
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="19-LandauDamping.html">
-   Semi-Lagrangian method
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="20-Maxwell.2D.html">
-   Maxwell solver in two dimensions with FDTD scheme
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="21-Gray.Scott.Model.html">
-   Gray-Scott Model
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="22-Matplotlib.Animation.html">
-   Animation with matplotlib
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="02-Strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-Lists.html">Python lists and tuples</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Control Flow Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-Modules.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-Input.And.Output.html">Input and Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-Errors.and.Exceptions.html">Errors and Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-Classes.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-Iterators.html">Iterators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-Multiprocessing.html">Multiprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-Standard.Library.html">Standard Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-Matplotlib.html">Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13-Numpy.html">Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14-SciPy.html">Scipy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15-Sympy.html">Sympy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16-Fortran.html">Call fortran from Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17-Cython.html">Cython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18-Numba.html">Numba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19-LandauDamping.html">Semi-Lagrangian method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20-Maxwell.2D.html">Maxwell solver in two dimensions with FDTD scheme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21-Gray.Scott.Model.html">Gray-Scott Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22-Matplotlib.Animation.html">Animation with matplotlib</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/pnavaro/python-notebooks/master?urlpath=tree/notebooks/04-Control.Flow.Tools.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/pnavaro/python-notebooks/master?urlpath=tree/notebooks/04-Control.Flow.Tools.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
-    <img src="_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-      <li>
-        <a href="https://colab.research.google.com/github/pnavaro/python-notebooks/blob/master/notebooks/04-Control.Flow.Tools.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/pnavaro/python-notebooks/blob/master/notebooks/04-Control.Flow.Tools.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
 <button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-play"></i>
   </span>
-<span class="headerbtn__text-container">Live Code</span>
+<span class="btn__text-container">Live Code</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/pnavaro/python-notebooks" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/pnavaro/python-notebooks/edit/master/notebooks/04-Control.Flow.Tools.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/pnavaro/python-notebooks/issues/new?title=Issue%20on%20page%20%2F04-Control.Flow.Tools.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/04-Control.Flow.Tools.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/pnavaro/python-notebooks"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/pnavaro/python-notebooks/issues/new?title=Issue%20on%20page%20%2F04-Control.Flow.Tools.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/pnavaro/python-notebooks/edit/master/notebooks/04-Control.Flow.Tools.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/04-Control.Flow.Tools.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </button>
-
-      </li>
+</div></div>
       
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
+    </div>
   
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#while-loop">
-   While loop
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#if-statements">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     if
-    </span>
-   </code>
-   Statements
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-collatz-conjecture">
-     Exercise Collatz conjecture
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#loop-over-an-iterable-object">
-   Loop over an iterable object
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-anagram">
-     Exercise: Anagram
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#loop-with-range-function">
-   Loop with range function
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-exponential">
-     Exercise Exponential
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#break-statement">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     break
-    </span>
-   </code>
-   Statement.
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iter-function">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       iter
-      </span>
-     </code>
-     Function
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#defining-function-def-statement">
-   Defining Function:
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     def
-    </span>
-   </code>
-   statement
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#documentation-string">
-   Documentation string
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#default-argument-values">
-   Default Argument Values
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#function-annotations">
-   Function Annotations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#arbitrary-argument-lists">
-   Arbitrary Argument Lists
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#keyword-arguments-dictionary">
-   Keyword Arguments Dictionary
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lambda-expressions">
-   Lambda Expressions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#unpacking-argument-lists">
-   Unpacking Argument Lists
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-time-converter">
-   Exercise: Time converter
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#functions-scope">
-   Functions Scope
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#enumerate-function">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     enumerate
-    </span>
-   </code>
-   Function
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-caesar-cipher">
-     Exercise: Caesar cipher
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zip-builtin-function">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     zip
-    </span>
-   </code>
-   Builtin Function
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#list-comprehension">
-   List comprehension
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise">
-     Exercise
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#map-built-in-function">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     map
-    </span>
-   </code>
-   built-in function
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#map-with-user-defined-function">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     map
-    </span>
-   </code>
-   with user-defined function
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#filter">
-   filter
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-with-map">
-   Exercise with map:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-with-filter">
-   Exercise with filter:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#recursive-call">
-   Recursive Call
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#factorial">
-     Factorial
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#minimum-number-of-rooms-required-for-lectures">
-     Minimum number of rooms required for lectures.
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#non-palindromic-skinny-numbers">
-     Non-palindromic skinny numbers
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#narcissistic-number">
-     Narcissistic number
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#happy-number">
-     Happy number
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#longuest-increasing-subsequence">
-     Longuest increasing subsequence
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#polynomial-derivative">
-     Polynomial derivative
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Control Flow Tools</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#while-loop">
-   While loop
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#if-statements">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     if
-    </span>
-   </code>
-   Statements
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-collatz-conjecture">
-     Exercise Collatz conjecture
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#loop-over-an-iterable-object">
-   Loop over an iterable object
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-anagram">
-     Exercise: Anagram
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#loop-with-range-function">
-   Loop with range function
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-exponential">
-     Exercise Exponential
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#break-statement">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     break
-    </span>
-   </code>
-   Statement.
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iter-function">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       iter
-      </span>
-     </code>
-     Function
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#defining-function-def-statement">
-   Defining Function:
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     def
-    </span>
-   </code>
-   statement
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#documentation-string">
-   Documentation string
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#default-argument-values">
-   Default Argument Values
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#function-annotations">
-   Function Annotations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#arbitrary-argument-lists">
-   Arbitrary Argument Lists
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#keyword-arguments-dictionary">
-   Keyword Arguments Dictionary
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lambda-expressions">
-   Lambda Expressions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#unpacking-argument-lists">
-   Unpacking Argument Lists
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-time-converter">
-   Exercise: Time converter
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#functions-scope">
-   Functions Scope
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#enumerate-function">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     enumerate
-    </span>
-   </code>
-   Function
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-caesar-cipher">
-     Exercise: Caesar cipher
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zip-builtin-function">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     zip
-    </span>
-   </code>
-   Builtin Function
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#list-comprehension">
-   List comprehension
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise">
-     Exercise
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#map-built-in-function">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     map
-    </span>
-   </code>
-   built-in function
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#map-with-user-defined-function">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     map
-    </span>
-   </code>
-   with user-defined function
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#filter">
-   filter
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-with-map">
-   Exercise with map:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-with-filter">
-   Exercise with filter:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#recursive-call">
-   Recursive Call
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#factorial">
-     Factorial
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#minimum-number-of-rooms-required-for-lectures">
-     Minimum number of rooms required for lectures.
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#non-palindromic-skinny-numbers">
-     Non-palindromic skinny numbers
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#narcissistic-number">
-     Narcissistic number
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#happy-number">
-     Happy number
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#longuest-increasing-subsequence">
-     Longuest increasing subsequence
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#polynomial-derivative">
-     Polynomial derivative
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Control Flow Tools</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop">While loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statements"><code class="docutils literal notranslate"><span class="pre">if</span></code> Statements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-collatz-conjecture">Exercise Collatz conjecture</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-over-an-iterable-object">Loop over an iterable object</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-anagram">Exercise: Anagram</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-with-range-function">Loop with range function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-exponential">Exercise Exponential</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break-statement"><code class="docutils literal notranslate"><span class="pre">break</span></code> Statement.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iter-function"><code class="docutils literal notranslate"><span class="pre">iter</span></code> Function</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-function-def-statement">Defining Function: <code class="docutils literal notranslate"><span class="pre">def</span></code> statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-string">Documentation string</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#default-argument-values">Default Argument Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-annotations">Function Annotations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arbitrary-argument-lists">Arbitrary Argument Lists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keyword-arguments-dictionary">Keyword Arguments Dictionary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-expressions">Lambda Expressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unpacking-argument-lists">Unpacking Argument Lists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-time-converter">Exercise: Time converter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-scope">Functions Scope</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enumerate-function"><code class="docutils literal notranslate"><span class="pre">enumerate</span></code> Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-caesar-cipher">Exercise: Caesar cipher</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zip-builtin-function"><code class="docutils literal notranslate"><span class="pre">zip</span></code> Builtin Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehension">List comprehension</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#map-built-in-function"><code class="docutils literal notranslate"><span class="pre">map</span></code> built-in function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#map-with-user-defined-function"><code class="docutils literal notranslate"><span class="pre">map</span></code> with user-defined function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filter">filter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-with-map">Exercise with map:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-with-filter">Exercise with filter:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursive-call">Recursive Call</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factorial">Factorial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-number-of-rooms-required-for-lectures">Minimum number of rooms required for lectures.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-palindromic-skinny-numbers">Non-palindromic skinny numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#narcissistic-number">Narcissistic number</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#happy-number">Happy number</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#longuest-increasing-subsequence">Longuest increasing subsequence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-derivative">Polynomial derivative</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="control-flow-tools">
-<h1>Control Flow Tools<a class="headerlink" href="#control-flow-tools" title="Permalink to this headline">#</a></h1>
+<h1>Control Flow Tools<a class="headerlink" href="#control-flow-tools" title="Link to this heading">#</a></h1>
 <section id="while-loop">
-<h2>While loop<a class="headerlink" href="#while-loop" title="Permalink to this headline">#</a></h2>
+<h2>While loop<a class="headerlink" href="#while-loop" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Don’t forget the ‘:’ character.</p></li>
 <li><p>The body of the loop is indented</p></li>
@@ -1021,7 +565,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="if-statements">
-<h2><code class="docutils literal notranslate"><span class="pre">if</span></code> Statements<a class="headerlink" href="#if-statements" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">if</span></code> Statements<a class="headerlink" href="#if-statements" title="Link to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="ow">and</span><span class="p">,</span> <span class="ow">or</span><span class="p">,</span> <span class="ow">not</span><span class="p">,</span> <span class="o">==</span><span class="p">,</span> <span class="ow">is</span><span class="p">,</span> <span class="o">!=</span><span class="p">,</span> <span class="ow">is</span> <span class="ow">not</span><span class="p">,</span> <span class="o">&gt;</span><span class="p">,</span> <span class="o">&gt;=</span><span class="p">,</span> <span class="o">&lt;</span><span class="p">,</span> <span class="o">&lt;=</span>
 </pre></div>
 </div>
@@ -1048,7 +592,7 @@ title="Print to PDF"
 </div>
 <p>switch or case statements don’t exist in Python.</p>
 <section id="exercise-collatz-conjecture">
-<h3>Exercise <a class="reference external" href="https://en.wikipedia.org/wiki/Collatz_conjecture">Collatz conjecture</a><a class="headerlink" href="#exercise-collatz-conjecture" title="Permalink to this headline">#</a></h3>
+<h3>Exercise <a class="reference external" href="https://en.wikipedia.org/wiki/Collatz_conjecture">Collatz conjecture</a><a class="headerlink" href="#exercise-collatz-conjecture" title="Link to this heading">#</a></h3>
 <p>Consider the following operation on an arbitrary positive integer:</p>
 <ul class="simple">
 <li><p>If the number is even, divide it by two.</p></li>
@@ -1062,7 +606,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="loop-over-an-iterable-object">
-<h2>Loop over an iterable object<a class="headerlink" href="#loop-over-an-iterable-object" title="Permalink to this headline">#</a></h2>
+<h2>Loop over an iterable object<a class="headerlink" href="#loop-over-an-iterable-object" title="Link to this heading">#</a></h2>
 <p>We use for statement for looping over an iterable object. If we use it with a string, it loops over its characters.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1100,7 +644,7 @@ september 9
 </div>
 </div>
 <section id="exercise-anagram">
-<h3>Exercise: Anagram<a class="headerlink" href="#exercise-anagram" title="Permalink to this headline">#</a></h3>
+<h3>Exercise: Anagram<a class="headerlink" href="#exercise-anagram" title="Link to this heading">#</a></h3>
 <p>An anagram is word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.</p>
 <p>Write a code that print True if s1 is an anagram of s2.
 To do it, remove every character present in both strings. Check
@@ -1115,7 +659,7 @@ you obtain two empty strings.</p>
 </section>
 </section>
 <section id="loop-with-range-function">
-<h2>Loop with range function<a class="headerlink" href="#loop-with-range-function" title="Permalink to this headline">#</a></h2>
+<h2>Loop with range function<a class="headerlink" href="#loop-with-range-function" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>It generates arithmetic progressions</p></li>
 <li><p>It is possible to let the range start at another number, or to specify a different increment.</p></li>
@@ -1172,7 +716,7 @@ you obtain two empty strings.</p>
 </div>
 </div>
 <section id="exercise-exponential">
-<h3>Exercise Exponential<a class="headerlink" href="#exercise-exponential" title="Permalink to this headline">#</a></h3>
+<h3>Exercise Exponential<a class="headerlink" href="#exercise-exponential" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Write some code to compute the exponential mathematical constant <span class="math notranslate nohighlight">\(e \simeq 2.718281828459045\)</span> using the taylor series developed at 0 and without any import of external modules:</p></li>
 </ul>
@@ -1181,7 +725,7 @@ you obtain two empty strings.</p>
 </section>
 </section>
 <section id="break-statement">
-<h2><code class="docutils literal notranslate"><span class="pre">break</span></code> Statement.<a class="headerlink" href="#break-statement" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">break</span></code> Statement.<a class="headerlink" href="#break-statement" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>     <span class="c1"># n = 2,3,4,5,6,7,8,9</span>
@@ -1208,7 +752,7 @@ you obtain two empty strings.</p>
 </div>
 </div>
 <section id="iter-function">
-<h3><code class="docutils literal notranslate"><span class="pre">iter</span></code> Function<a class="headerlink" href="#iter-function" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">iter</span></code> Function<a class="headerlink" href="#iter-function" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">course</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot; Python september 7, 14 2020 ENSAI Rennes &quot;&quot;&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
@@ -1250,10 +794,10 @@ you obtain two empty strings.</p>
 </section>
 </section>
 <section id="defining-function-def-statement">
-<h2>Defining Function: <code class="docutils literal notranslate"><span class="pre">def</span></code> statement<a class="headerlink" href="#defining-function-def-statement" title="Permalink to this headline">#</a></h2>
+<h2>Defining Function: <code class="docutils literal notranslate"><span class="pre">def</span></code> statement<a class="headerlink" href="#defining-function-def-statement" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_palindromic</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">is_palindromic</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="s2">&quot;Return True if the input sequence is a palindrome&quot;</span>
     <span class="k">return</span> <span class="n">s</span> <span class="o">==</span> <span class="n">s</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
@@ -1274,7 +818,7 @@ you obtain two empty strings.</p>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Print a Fibonacci series up to n.&quot;&quot;&quot;</span>
     <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
     <span class="k">while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
@@ -1297,13 +841,13 @@ None
 </div>
 </section>
 <section id="documentation-string">
-<h2>Documentation string<a class="headerlink" href="#documentation-string" title="Permalink to this headline">#</a></h2>
+<h2>Documentation string<a class="headerlink" href="#documentation-string" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>It’s good practice to include docstrings in code that you write, so make a habit of it.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_function</span><span class="p">(</span> <span class="n">foo</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">my_function</span><span class="p">(</span> <span class="n">foo</span><span class="p">):</span>
 <span class="w">     </span><span class="sd">&quot;&quot;&quot;Do nothing, but document it.</span>
 
 <span class="sd">     No, really, it doesn&#39;t do anything.</span>
@@ -1317,8 +861,7 @@ None
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Do nothing, but document it.
 
-     No, really, it doesn&#39;t do anything.
-     
+No, really, it doesn&#39;t do anything.
 </pre></div>
 </div>
 </div>
@@ -1334,7 +877,7 @@ None
 
 my_function(foo)
     Do nothing, but document it.
-    
+
     No, really, it doesn&#39;t do anything.
 </pre></div>
 </div>
@@ -1342,10 +885,10 @@ my_function(foo)
 </div>
 </section>
 <section id="default-argument-values">
-<h2>Default Argument Values<a class="headerlink" href="#default-argument-values" title="Permalink to this headline">#</a></h2>
+<h2>Default Argument Values<a class="headerlink" href="#default-argument-values" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
@@ -1363,7 +906,7 @@ bca
 <p><strong>Important warning</strong>: The default value is evaluated only once.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="p">[]):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="p">[]):</span>
     <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">L</span>
 
@@ -1403,12 +946,12 @@ bca
 </div>
 </section>
 <section id="function-annotations">
-<h2>Function Annotations<a class="headerlink" href="#function-annotations" title="Permalink to this headline">#</a></h2>
+<h2>Function Annotations<a class="headerlink" href="#function-annotations" title="Link to this heading">#</a></h2>
 <p>Completely optional metadata information about the types used by user-defined functions.
 These type annotations conforming to <a class="reference external" href="https://www.python.org/dev/peps/pep-0484/">PEP 484</a> could be statically used by <a class="reference external" href="http://mypy-lang.org">MyPy</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">ham</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">eggs</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;eggs&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">ham</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">eggs</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;eggs&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Annotations:&quot;</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="vm">__annotations__</span><span class="p">)</span>
      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Arguments:&quot;</span><span class="p">,</span> <span class="n">ham</span><span class="p">,</span> <span class="n">eggs</span><span class="p">)</span>
      <span class="k">return</span> <span class="n">ham</span> <span class="o">+</span> <span class="s1">&#39; and &#39;</span> <span class="o">+</span> <span class="n">eggs</span>
@@ -1433,11 +976,11 @@ None
 </div>
 </section>
 <section id="arbitrary-argument-lists">
-<h2>Arbitrary Argument Lists<a class="headerlink" href="#arbitrary-argument-lists" title="Permalink to this headline">#</a></h2>
+<h2>Arbitrary Argument Lists<a class="headerlink" href="#arbitrary-argument-lists" title="Link to this heading">#</a></h2>
 <p>Arguments can be wrapped up in a tuple or a list with form *args</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">):</span>
     <span class="nb">print</span> <span class="p">(</span><span class="n">args</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">sep</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
 
@@ -1458,11 +1001,11 @@ big data
 </ul>
 </section>
 <section id="keyword-arguments-dictionary">
-<h2>Keyword Arguments Dictionary<a class="headerlink" href="#keyword-arguments-dictionary" title="Permalink to this headline">#</a></h2>
+<h2>Keyword Arguments Dictionary<a class="headerlink" href="#keyword-arguments-dictionary" title="Link to this heading">#</a></h2>
 <p>A final formal parameter of the form **name receives a dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_contact</span><span class="p">(</span><span class="n">kind</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_contact</span><span class="p">(</span><span class="n">kind</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">40</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -1491,7 +1034,7 @@ email : john.smith@python.org
 </div>
 </section>
 <section id="lambda-expressions">
-<h2>Lambda Expressions<a class="headerlink" href="#lambda-expressions" title="Permalink to this headline">#</a></h2>
+<h2>Lambda Expressions<a class="headerlink" href="#lambda-expressions" title="Link to this heading">#</a></h2>
 <p>Lambda functions can be used wherever function objects are required.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1522,7 +1065,7 @@ email : john.smith@python.org
 <p>lambda functions can reference variables from the containing scope:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_incrementor</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_incrementor</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">return</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">n</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="n">make_incrementor</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
@@ -1538,12 +1081,12 @@ email : john.smith@python.org
 </div>
 </section>
 <section id="unpacking-argument-lists">
-<h2>Unpacking Argument Lists<a class="headerlink" href="#unpacking-argument-lists" title="Permalink to this headline">#</a></h2>
+<h2>Unpacking Argument Lists<a class="headerlink" href="#unpacking-argument-lists" title="Link to this heading">#</a></h2>
 <p>Arguments are already in a list or tuple. They can be unpacked for a function call.
 For instance, the built-in range() function is called with the *-operator to unpack the arguments out of a list:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">chessboard_distance</span><span class="p">(</span><span class="n">x_a</span><span class="p">,</span> <span class="n">y_a</span><span class="p">,</span> <span class="n">x_b</span><span class="p">,</span> <span class="n">y_b</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">chessboard_distance</span><span class="p">(</span><span class="n">x_a</span><span class="p">,</span> <span class="n">y_a</span><span class="p">,</span> <span class="n">x_b</span><span class="p">,</span> <span class="n">y_b</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Compute the rectilinear distance between </span>
 <span class="sd">    point (x_a,y_a) and (x_b, y_b)</span>
@@ -1564,7 +1107,7 @@ For instance, the built-in range() function is called with the *-operator to unp
 <p>In the same fashion, dictionaries can deliver keyword arguments with the **-operator:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parrot</span><span class="p">(</span><span class="n">voltage</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="s1">&#39;a stiff&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;voom&#39;</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">parrot</span><span class="p">(</span><span class="n">voltage</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="s1">&#39;a stiff&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;voom&#39;</span><span class="p">):</span>
      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-- This parrot wouldn&#39;t&quot;</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;if you put&quot;</span><span class="p">,</span> <span class="n">voltage</span><span class="p">,</span> <span class="s2">&quot;volts through it.&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;E&#39;s&quot;</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="s2">&quot;!&quot;</span><span class="p">)</span>
@@ -1582,7 +1125,7 @@ For instance, the built-in range() function is called with the *-operator to unp
 </div>
 </section>
 <section id="exercise-time-converter">
-<h2>Exercise: Time converter<a class="headerlink" href="#exercise-time-converter" title="Permalink to this headline">#</a></h2>
+<h2>Exercise: Time converter<a class="headerlink" href="#exercise-time-converter" title="Link to this heading">#</a></h2>
 <p>Write 3 functions to manipulate hours and minutes :</p>
 <ul class="simple">
 <li><p>Function minutes return minutes from (hours, minutes).</p></li>
@@ -1597,7 +1140,7 @@ tuples of length 2 as input arguments and return the tuple (hh,mm).</p></li>
 </div>
 </section>
 <section id="functions-scope">
-<h2>Functions Scope<a class="headerlink" href="#functions-scope" title="Permalink to this headline">#</a></h2>
+<h2>Functions Scope<a class="headerlink" href="#functions-scope" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>All variable assignments in a function store the value in the local symbol table.</p></li>
 <li><p>Global variables cannot be directly assigned a value within a function (unless named in a global statement).</p></li>
@@ -1606,7 +1149,7 @@ tuples of length 2 as input arguments and return the tuple (hh,mm).</p></li>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">1.</span>
-<span class="k">def</span> <span class="nf">deg2rad</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">deg2rad</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
     <span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>
     <span class="k">return</span> <span class="n">theta</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mf">180.</span>
 
@@ -1624,7 +1167,7 @@ tuples of length 2 as input arguments and return the tuple (hh,mm).</p></li>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rad2deg</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">rad2deg</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">theta</span><span class="o">*</span><span class="mf">180.</span><span class="o">/</span><span class="n">pi</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">rad2deg</span><span class="p">(</span><span class="mf">0.785</span><span class="p">))</span>
@@ -1642,7 +1185,7 @@ tuples of length 2 as input arguments and return the tuple (hh,mm).</p></li>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">deg2rad</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">deg2rad</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">pi</span>
     <span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>
     <span class="k">return</span> <span class="n">theta</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span>
@@ -1672,7 +1215,7 @@ tuples of length 2 as input arguments and return the tuple (hh,mm).</p></li>
 </div>
 </section>
 <section id="enumerate-function">
-<h2><code class="docutils literal notranslate"><span class="pre">enumerate</span></code> Function<a class="headerlink" href="#enumerate-function" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">enumerate</span></code> Function<a class="headerlink" href="#enumerate-function" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">primes</span> <span class="o">=</span>  <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">13</span><span class="p">]</span>
@@ -1694,7 +1237,7 @@ tuples of length 2 as input arguments and return the tuple (hh,mm).</p></li>
 </div>
 </div>
 <section id="exercise-caesar-cipher">
-<h3>Exercise: Caesar cipher<a class="headerlink" href="#exercise-caesar-cipher" title="Permalink to this headline">#</a></h3>
+<h3>Exercise: Caesar cipher<a class="headerlink" href="#exercise-caesar-cipher" title="Link to this heading">#</a></h3>
 <p>In cryptography, a Caesar cipher, is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A, E would become B, and so on.</p>
 <ul class="simple">
 <li><p>Create a function <code class="docutils literal notranslate"><span class="pre">cipher</span></code> that take the plain text and the key value as arguments and return the encrypted text.</p></li>
@@ -1703,7 +1246,7 @@ tuples of length 2 as input arguments and return the tuple (hh,mm).</p></li>
 </section>
 </section>
 <section id="zip-builtin-function">
-<h2><code class="docutils literal notranslate"><span class="pre">zip</span></code> Builtin Function<a class="headerlink" href="#zip-builtin-function" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">zip</span></code> Builtin Function<a class="headerlink" href="#zip-builtin-function" title="Link to this heading">#</a></h2>
 <p>Loop over sequences simultaneously.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1725,7 +1268,7 @@ tuples of length 2 as input arguments and return the tuple (hh,mm).</p></li>
 </div>
 <!-- #endregion --></section>
 <section id="list-comprehension">
-<h2>List comprehension<a class="headerlink" href="#list-comprehension" title="Permalink to this headline">#</a></h2>
+<h2>List comprehension<a class="headerlink" href="#list-comprehension" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Set or change values inside a list</p></li>
 <li><p>Create list from function</p></li>
@@ -1790,7 +1333,7 @@ tuples of length 2 as input arguments and return the tuple (hh,mm).</p></li>
 </div>
 </div>
 <section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>Code a new version of cypher function using list comprehension.</p>
 <p>Hints:</p>
 <ul class="simple">
@@ -1801,7 +1344,7 @@ tuples of length 2 as input arguments and return the tuple (hh,mm).</p></li>
 </section>
 </section>
 <section id="map-built-in-function">
-<h2><code class="docutils literal notranslate"><span class="pre">map</span></code> built-in function<a class="headerlink" href="#map-built-in-function" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">map</span></code> built-in function<a class="headerlink" href="#map-built-in-function" title="Link to this heading">#</a></h2>
 <p>Apply a function over a sequence.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1811,7 +1354,7 @@ tuples of length 2 as input arguments and return the tuple (hh,mm).</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map object at 0x7fc24c398c70&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map object at 0x7f31e8fe2080&gt;
 </pre></div>
 </div>
 </div>
@@ -1832,10 +1375,10 @@ Display result by using unpacking operator.</p>
 </div>
 </section>
 <section id="map-with-user-defined-function">
-<h2><code class="docutils literal notranslate"><span class="pre">map</span></code> with user-defined function<a class="headerlink" href="#map-with-user-defined-function" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">map</span></code> with user-defined function<a class="headerlink" href="#map-with-user-defined-function" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
 
 <span class="n">L1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -1862,7 +1405,7 @@ Display result by using unpacking operator.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.76 ms ± 5.58 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>690 μs ± 11.8 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1876,14 +1419,14 @@ Display result by using unpacking operator.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.05 ms ± 9.26 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>698 μs ± 1.61 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="filter">
-<h2>filter<a class="headerlink" href="#filter" title="Permalink to this headline">#</a></h2>
+<h2>filter<a class="headerlink" href="#filter" title="Link to this heading">#</a></h2>
 <p>creates a iterator of elements for which a function returns <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1911,7 +1454,7 @@ Display result by using unpacking operator.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>111 ns ± 0.0322 ns per loop (mean ± std. dev. of 7 runs, 10,000,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>62.2 ns ± 0.989 ns per loop (mean ± std. dev. of 7 runs, 10,000,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1924,14 +1467,14 @@ Display result by using unpacking operator.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>286 ns ± 0.789 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>132 ns ± 1.02 ns per loop (mean ± std. dev. of 7 runs, 10,000,000 loops each)
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="exercise-with-map">
-<h2>Exercise with map:<a class="headerlink" href="#exercise-with-map" title="Permalink to this headline">#</a></h2>
+<h2>Exercise with map:<a class="headerlink" href="#exercise-with-map" title="Link to this heading">#</a></h2>
 <p>Code a new version of your cypher function using map.</p>
 <p>Hints:</p>
 <ul class="simple">
@@ -1939,7 +1482,7 @@ Display result by using unpacking operator.</p>
 </ul>
 </section>
 <section id="exercise-with-filter">
-<h2>Exercise with filter:<a class="headerlink" href="#exercise-with-filter" title="Permalink to this headline">#</a></h2>
+<h2>Exercise with filter:<a class="headerlink" href="#exercise-with-filter" title="Link to this heading">#</a></h2>
 <p>Create a function with a number n as single argument that returns True if n is a <a class="reference external" href="https://en.wikipedia.org/wiki/Kaprekar_number">Kaprekar number</a>. For example 45 is a Kaprekar number, because
 $<span class="math notranslate nohighlight">\(45^2 = 2025\)</span><span class="math notranslate nohighlight">\( 
 and 
@@ -1950,8 +1493,8 @@ and
 </div>
 </section>
 <section id="recursive-call">
-<h2>Recursive Call<a class="headerlink" href="#recursive-call" title="Permalink to this headline">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> 
+<h2>Recursive Call<a class="headerlink" href="#recursive-call" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">gcd</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> 
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; returns the greatest common divisor.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> 
         <span class="k">return</span> <span class="n">y</span>
@@ -1963,16 +1506,16 @@ and
 </div>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <section id="factorial">
-<h3>Factorial<a class="headerlink" href="#factorial" title="Permalink to this headline">#</a></h3>
+<h3>Factorial<a class="headerlink" href="#factorial" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Write the function <code class="docutils literal notranslate"><span class="pre">factorial</span></code> with a recursive call</p></li>
 </ul>
 <p>NB: Recursion is not recommended by <a class="reference external" href="http://neopythonic.blogspot.co.uk/2009/04/tail-recursion-elimination.html">Guido</a>.</p>
 </section>
 <section id="minimum-number-of-rooms-required-for-lectures">
-<h3>Minimum number of rooms required for lectures.<a class="headerlink" href="#minimum-number-of-rooms-required-for-lectures" title="Permalink to this headline">#</a></h3>
+<h3>Minimum number of rooms required for lectures.<a class="headerlink" href="#minimum-number-of-rooms-required-for-lectures" title="Link to this heading">#</a></h3>
 <p>Given an array of time intervals (start, end) for classroom lectures (possibly overlapping), find the minimum number of rooms required.</p>
 <p>For example, given Input:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lectures</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;9:00-10:30&quot;</span><span class="p">,</span> <span class="s2">&quot;9:30-11:30&quot;</span><span class="p">,</span><span class="s2">&quot;11:00-12:00&quot;</span><span class="p">,</span><span class="s2">&quot;14:00-18:00&quot;</span><span class="p">,</span> <span class="s2">&quot;15:00-16:00&quot;</span><span class="p">,</span> <span class="s2">&quot;15:30-17:30&quot;</span><span class="p">,</span> <span class="s2">&quot;16:00-18:00&quot;</span><span class="p">]</span>
@@ -1981,7 +1524,7 @@ and
 <p>should output 3.</p>
 </section>
 <section id="non-palindromic-skinny-numbers">
-<h3><a class="reference external" href="https://oeis.org/A035123">Non-palindromic skinny numbers</a><a class="headerlink" href="#non-palindromic-skinny-numbers" title="Permalink to this headline">#</a></h3>
+<h3><a class="reference external" href="https://oeis.org/A035123">Non-palindromic skinny numbers</a><a class="headerlink" href="#non-palindromic-skinny-numbers" title="Link to this heading">#</a></h3>
 <p>non-palindromic squares remaining square when written backwards</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1993,13 +1536,13 @@ and
 \end{split}\]</div>
 </section>
 <section id="narcissistic-number">
-<h3>Narcissistic number<a class="headerlink" href="#narcissistic-number" title="Permalink to this headline">#</a></h3>
+<h3>Narcissistic number<a class="headerlink" href="#narcissistic-number" title="Link to this heading">#</a></h3>
 <p>A  number is narcissistic if the sum of its own digits each raised to the power of the number of digits.</p>
 <p>Example : <span class="math notranslate nohighlight">\(4150 = 4^5 + 1^5 + 5^5 + 0^5\)</span> or <span class="math notranslate nohighlight">\(153 = 1^3 + 5^3 + 3^3\)</span></p>
 <p>Find narcissitic numbers with 3 digits</p>
 </section>
 <section id="happy-number">
-<h3>Happy number<a class="headerlink" href="#happy-number" title="Permalink to this headline">#</a></h3>
+<h3>Happy number<a class="headerlink" href="#happy-number" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Given a number <span class="math notranslate nohighlight">\(n = n_0\)</span>, define a sequence <span class="math notranslate nohighlight">\(n_1, n_2,\ldots\)</span> where
 <span class="math notranslate nohighlight">\(n_{{i+1}}\)</span> is the sum of the squares of the digits of <span class="math notranslate nohighlight">\(n_{i}\)</span>.
@@ -2023,7 +1566,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </section>
 <section id="longuest-increasing-subsequence">
-<h3>Longuest increasing subsequence<a class="headerlink" href="#longuest-increasing-subsequence" title="Permalink to this headline">#</a></h3>
+<h3>Longuest increasing subsequence<a class="headerlink" href="#longuest-increasing-subsequence" title="Link to this heading">#</a></h3>
 <p>Given N elements, write a program that prints the length of the longuest increasing subsequence whose adjacent element difference is one.</p>
 <p>Examples:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
@@ -2038,7 +1581,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </section>
 <section id="polynomial-derivative">
-<h3>Polynomial derivative<a class="headerlink" href="#polynomial-derivative" title="Permalink to this headline">#</a></h3>
+<h3>Polynomial derivative<a class="headerlink" href="#polynomial-derivative" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>A Polynomial is represented by a Python list of its coefficients.
 [1,5,-4] =&gt; <span class="math notranslate nohighlight">\(1+5x-4x^2\)</span></p></li>
@@ -2065,7 +1608,7 @@ $<span class="math notranslate nohighlight">\(
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -2073,50 +1616,154 @@ $<span class="math notranslate nohighlight">\(
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="03-Lists.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Python lists and tuples</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="03-Lists.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Python lists and tuples</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="05-Modules.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="05-Modules.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Modules</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop">While loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statements"><code class="docutils literal notranslate"><span class="pre">if</span></code> Statements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-collatz-conjecture">Exercise Collatz conjecture</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-over-an-iterable-object">Loop over an iterable object</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-anagram">Exercise: Anagram</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-with-range-function">Loop with range function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-exponential">Exercise Exponential</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break-statement"><code class="docutils literal notranslate"><span class="pre">break</span></code> Statement.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iter-function"><code class="docutils literal notranslate"><span class="pre">iter</span></code> Function</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-function-def-statement">Defining Function: <code class="docutils literal notranslate"><span class="pre">def</span></code> statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-string">Documentation string</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#default-argument-values">Default Argument Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-annotations">Function Annotations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arbitrary-argument-lists">Arbitrary Argument Lists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keyword-arguments-dictionary">Keyword Arguments Dictionary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-expressions">Lambda Expressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unpacking-argument-lists">Unpacking Argument Lists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-time-converter">Exercise: Time converter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-scope">Functions Scope</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enumerate-function"><code class="docutils literal notranslate"><span class="pre">enumerate</span></code> Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-caesar-cipher">Exercise: Caesar cipher</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zip-builtin-function"><code class="docutils literal notranslate"><span class="pre">zip</span></code> Builtin Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehension">List comprehension</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#map-built-in-function"><code class="docutils literal notranslate"><span class="pre">map</span></code> built-in function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#map-with-user-defined-function"><code class="docutils literal notranslate"><span class="pre">map</span></code> with user-defined function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filter">filter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-with-map">Exercise with map:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-with-filter">Exercise with filter:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursive-call">Recursive Call</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factorial">Factorial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-number-of-rooms-required-for-lectures">Minimum number of rooms required for lectures.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-palindromic-skinny-numbers">Non-palindromic skinny numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#narcissistic-number">Narcissistic number</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#happy-number">Happy number</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#longuest-increasing-subsequence">Longuest increasing subsequence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-derivative">Polynomial derivative</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Pierre Navaro<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Pierre Navaro
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

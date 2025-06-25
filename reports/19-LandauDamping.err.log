@@ -1,0 +1,153 @@
+Traceback (most recent call last):
+  File "/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 154, in wrapped
+    asyncio.get_running_loop()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+RuntimeError: no running event loop
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 158, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/share/miniconda3/envs/runenv/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+%%fortran
+recursive function bspline_fortran(p, j, x) result(res)
+    integer :: p, j
+    real(8) :: x, w, w1
+    real(8) :: res
+
+    if (p == 0) then
+        if (j == 0) then
+            res = 1.0
+            return
+        else
+            res = 0.0
+            return
+        end if
+    else
+        w = (x - j) / p
+        w1 = (x - j - 1) / p
+    end if
+    
+    res = w * bspline_fortran(p-1,j,x) &
+    +(1-w1)*bspline_fortran(p-1,j+1,x)
+
+end function bspline_fortran
+------------------
+
+----- stderr -----
+Traceback (most recent call last):
+  File [35m"<frozen runpy>"[0m, line [35m198[0m, in [35m_run_module_as_main[0m
+  File [35m"<frozen runpy>"[0m, line [35m88[0m, in [35m_run_code[0m
+  File [35m"/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/f2py/__main__.py"[0m, line [35m5[0m, in [35m<module>[0m
+    [31mmain[0m[1;31m()[0m
+    [31m~~~~[0m[1;31m^^[0m
+  File [35m"/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/f2py/f2py2e.py"[0m, line [35m781[0m, in [35mmain[0m
+    [31mrun_compile[0m[1;31m()[0m
+    [31m~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/f2py/f2py2e.py"[0m, line [35m753[0m, in [35mrun_compile[0m
+    [31mbuilder.compile[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/f2py/_backends/_meson.py"[0m, line [35m192[0m, in [35mcompile[0m
+    [31mself.run_meson[0m[1;31m(self.build_dir)[0m
+    [31m~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^[0m
+  File [35m"/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/f2py/_backends/_meson.py"[0m, line [35m185[0m, in [35mrun_meson[0m
+    [31mself._run_subprocess_command[0m[1;31m(setup_command, build_dir)[0m
+    [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/f2py/_backends/_meson.py"[0m, line [35m181[0m, in [35m_run_subprocess_command[0m
+    [31msubprocess.run[0m[1;31m(command, cwd=cwd, check=True)[0m
+    [31m~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/usr/share/miniconda3/envs/runenv/lib/python3.13/subprocess.py"[0m, line [35m554[0m, in [35mrun[0m
+    with [31mPopen[0m[1;31m(*popenargs, **kwargs)[0m as process:
+         [31m~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/usr/share/miniconda3/envs/runenv/lib/python3.13/subprocess.py"[0m, line [35m1039[0m, in [35m__init__[0m
+    [31mself._execute_child[0m[1;31m(args, executable, preexec_fn, close_fds,[0m
+    [31m~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+                        [1;31mpass_fds, cwd, env,[0m
+                        [1;31m^^^^^^^^^^^^^^^^^^^[0m
+    ...<5 lines>...
+                        [1;31mgid, gids, uid, umask,[0m
+                        [1;31m^^^^^^^^^^^^^^^^^^^^^^[0m
+                        [1;31mstart_new_session, process_group)[0m
+                        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/usr/share/miniconda3/envs/runenv/lib/python3.13/subprocess.py"[0m, line [35m1972[0m, in [35m_execute_child[0m
+    raise child_exception_type(errno_num, err_msg, err_filename)
+[1;35mFileNotFoundError[0m: [35m[Errno 2] No such file or directory: 'meson'[0m
+----- stdout -----
+Cannot use distutils backend with Python>=3.12, using meson backend instead.
+Using meson backend
+Will pass --lower to f2py
+See https://numpy.org/doc/stable/f2py/buildtools/meson.html
+Reading fortran codes...
+	Reading file '/home/runner/.cache/ipython/fortranmagic/d694754d/_fortran_magic_465d9886feeeb1eab306e2fc31692805.f90' (format:free)
+Post-processing...
+	Block: _fortran_magic_465d9886feeeb1eab306e2fc31692805
+			Block: bspline_fortran
+In: :_fortran_magic_465d9886feeeb1eab306e2fc31692805:/home/runner/.cache/ipython/fortranmagic/d694754d/_fortran_magic_465d9886feeeb1eab306e2fc31692805.f90:bspline_fortran
+analyzevars: prefix ('recursive') were not used
+Applying post-processing hooks...
+  character_backward_compatibility_hook
+Post-processing (stage 2)...
+Building modules...
+    Building module "_fortran_magic_465d9886feeeb1eab306e2fc31692805"...
+    Generating possibly empty wrappers"
+    Maybe empty "_fortran_magic_465d9886feeeb1eab306e2fc31692805-f2pywrappers.f"
+		Creating wrapper for Fortran function "bspline_fortran"("bspline_fortran")...
+        Constructing wrapper function "bspline_fortran"...
+          res = bspline_fortran(p,j,x)
+    Wrote C/API module "_fortran_magic_465d9886feeeb1eab306e2fc31692805" to file "./_fortran_magic_465d9886feeeb1eab306e2fc31692805module.c"
+    Fortran 77 wrappers are saved to "./_fortran_magic_465d9886feeeb1eab306e2fc31692805-f2pywrappers.f"
+------------------
+
+[31m---------------------------------------------------------------------------[39m
+[31mRuntimeError[39m                              Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[10][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m [43mget_ipython[49m[43m([49m[43m)[49m[43m.[49m[43mrun_cell_magic[49m[43m([49m[33;43m'[39;49m[33;43mfortran[39;49m[33;43m'[39;49m[43m,[49m[43m [49m[33;43m'[39;49m[33;43m'[39;49m[43m,[49m[43m [49m[33;43m'[39;49m[33;43mrecursive function bspline_fortran(p, j, x) result(res)[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m    integer :: p, j[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m    real(8) :: x, w, w1[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m    real(8) :: res[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[33;43m    if (p == 0) then[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m        if (j == 0) then[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m            res = 1.0[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m            return[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m        else[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m            res = 0.0[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m            return[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m        end if[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m    else[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m        w = (x - j) / p[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m        w1 = (x - j - 1) / p[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m    end if[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[33;43m    res = w * bspline_fortran(p-1,j,x) &[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m    +(1-w1)*bspline_fortran(p-1,j+1,x)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[33;43mend function bspline_fortran[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m'[39;49m[43m)[49m
+
+[36mFile [39m[32m/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/IPython/core/interactiveshell.py:2549[39m, in [36mInteractiveShell.run_cell_magic[39m[34m(self, magic_name, line, cell)[39m
+[32m   2547[39m [38;5;28;01mwith[39;00m [38;5;28mself[39m.builtin_trap:
+[32m   2548[39m     args = (magic_arg_s, cell)
+[32m-> [39m[32m2549[39m     result = [43mfn[49m[43m([49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[32m   2551[39m [38;5;66;03m# The code below prevents the output from being displayed[39;00m
+[32m   2552[39m [38;5;66;03m# when using magics with decorator @output_can_be_silenced[39;00m
+[32m   2553[39m [38;5;66;03m# when the last Python token in the expression is a ';'.[39;00m
+[32m   2554[39m [38;5;28;01mif[39;00m [38;5;28mgetattr[39m(fn, magic.MAGIC_OUTPUT_CAN_BE_SILENCED, [38;5;28;01mFalse[39;00m):
+
+[36mFile [39m[32m/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/fortranmagic.py:516[39m, in [36mFortranMagics.fortran[39m[34m(self, line, cell)[39m
+[32m    511[39m res = [38;5;28mself[39m._run_f2py(f2py_args + [[33m'[39m[33m-m[39m[33m'[39m, module_name, [33m'[39m[33m-c[39m[33m'[39m,
+[32m    512[39m                                   f_f90_file],
+[32m    513[39m                      verbosity=args.verbosity,
+[32m    514[39m                      fflags=fflags)
+[32m    515[39m [38;5;28;01mif[39;00m res != [32m0[39m:
+[32m--> [39m[32m516[39m     [38;5;28;01mraise[39;00m [38;5;167;01mRuntimeError[39;00m([33m"[39m[33mf2py failed, see output[39m[33m"[39m)
+[32m    518[39m [38;5;28mself[39m._code_cache[key] = module_name
+[32m    519[39m module = _imp_load_dynamic(module_name, module_path)
+
+[31mRuntimeError[39m: f2py failed, see output
+

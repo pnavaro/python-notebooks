@@ -1,775 +1,540 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="./" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Call fortran from Python &#8212; Python notebooks</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '16-Fortran';</script>
     <link rel="canonical" href="https://pnavaro.github.io/python-notebooks/16-Fortran.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Cython" href="17-Cython.html" />
     <link rel="prev" title="Sympy" href="15-Sympy.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="01-Introduction.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Python notebooks</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Python notebooks - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python notebooks - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="02-Strings.html">
-   Strings
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03-Lists.html">
-   Python lists and tuples
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04-Control.Flow.Tools.html">
-   Control Flow Tools
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="05-Modules.html">
-   Modules
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06-Input.And.Output.html">
-   Input and Output
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="07-Errors.and.Exceptions.html">
-   Errors and Exceptions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="08-Classes.html">
-   Classes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="09-Iterators.html">
-   Iterators
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="10-Multiprocessing.html">
-   Multiprocessing
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="11-Standard.Library.html">
-   Standard Library
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="12-Matplotlib.html">
-   Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="13-Numpy.html">
-   Numpy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="14-SciPy.html">
-   Scipy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="15-Sympy.html">
-   Sympy
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Call fortran from Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="17-Cython.html">
-   Cython
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="18-Numba.html">
-   Numba
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="19-LandauDamping.html">
-   Semi-Lagrangian method
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="20-Maxwell.2D.html">
-   Maxwell solver in two dimensions with FDTD scheme
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="21-Gray.Scott.Model.html">
-   Gray-Scott Model
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="22-Matplotlib.Animation.html">
-   Animation with matplotlib
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="02-Strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-Lists.html">Python lists and tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-Control.Flow.Tools.html">Control Flow Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-Modules.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-Input.And.Output.html">Input and Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-Errors.and.Exceptions.html">Errors and Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-Classes.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-Iterators.html">Iterators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-Multiprocessing.html">Multiprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-Standard.Library.html">Standard Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-Matplotlib.html">Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13-Numpy.html">Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14-SciPy.html">Scipy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15-Sympy.html">Sympy</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Call fortran from Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17-Cython.html">Cython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18-Numba.html">Numba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19-LandauDamping.html">Semi-Lagrangian method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20-Maxwell.2D.html">Maxwell solver in two dimensions with FDTD scheme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21-Gray.Scott.Model.html">Gray-Scott Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22-Matplotlib.Animation.html">Animation with matplotlib</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/pnavaro/python-notebooks/master?urlpath=tree/notebooks/16-Fortran.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/pnavaro/python-notebooks/master?urlpath=tree/notebooks/16-Fortran.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
-    <img src="_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-      <li>
-        <a href="https://colab.research.google.com/github/pnavaro/python-notebooks/blob/master/notebooks/16-Fortran.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/pnavaro/python-notebooks/blob/master/notebooks/16-Fortran.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
 <button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-play"></i>
   </span>
-<span class="headerbtn__text-container">Live Code</span>
+<span class="btn__text-container">Live Code</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/pnavaro/python-notebooks" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/pnavaro/python-notebooks/edit/master/notebooks/16-Fortran.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/pnavaro/python-notebooks/issues/new?title=Issue%20on%20page%20%2F16-Fortran.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/16-Fortran.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/pnavaro/python-notebooks"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/pnavaro/python-notebooks/issues/new?title=Issue%20on%20page%20%2F16-Fortran.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/pnavaro/python-notebooks/edit/master/notebooks/16-Fortran.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/16-Fortran.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </button>
-
-      </li>
+</div></div>
       
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
+    </div>
   
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#f2py">
-   f2py
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simple-fortran-subroutine-to-compute-norm">
-   Simple Fortran subroutine to compute norm
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fortran-90-95-free-format">
-     Fortran 90/95 free format
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fortran-77-fixed-format">
-     Fortran 77 fixed format
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#build-extension-module-with-f2py-program">
-   Build extension module with f2py program
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-the-extension-module-in-python">
-     Use the extension module in Python
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fortran-magic">
-   Fortran magic
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#f2py-directives">
-   F2py directives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   F2py directives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#callback">
-   Callback
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fortran-arrays-and-numpy-arrays">
-   Fortran arrays and Numpy arrays
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#signature-file">
-   Signature file
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#wrap-lapack-function-dgemm-with-f2py">
-   Wrap lapack function dgemm  with f2py
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise">
-     Exercise
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#check-performance-between-numpy-and-mylapack">
-   Check performance between numpy and mylapack
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#f2py-openmp">
-   f2py + OpenMP
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conclusions">
-   Conclusions
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pros">
-     pros
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cons">
-     cons
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#distutils">
-   distutils
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#setup-py">
-     setup.py
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercice-laplace-problem">
-   Exercice: Laplace problem
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Call fortran from Python</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#f2py">
-   f2py
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simple-fortran-subroutine-to-compute-norm">
-   Simple Fortran subroutine to compute norm
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fortran-90-95-free-format">
-     Fortran 90/95 free format
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fortran-77-fixed-format">
-     Fortran 77 fixed format
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#build-extension-module-with-f2py-program">
-   Build extension module with f2py program
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-the-extension-module-in-python">
-     Use the extension module in Python
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fortran-magic">
-   Fortran magic
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#f2py-directives">
-   F2py directives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   F2py directives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#callback">
-   Callback
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fortran-arrays-and-numpy-arrays">
-   Fortran arrays and Numpy arrays
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#signature-file">
-   Signature file
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#wrap-lapack-function-dgemm-with-f2py">
-   Wrap lapack function dgemm  with f2py
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise">
-     Exercise
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#check-performance-between-numpy-and-mylapack">
-   Check performance between numpy and mylapack
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#f2py-openmp">
-   f2py + OpenMP
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conclusions">
-   Conclusions
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pros">
-     pros
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cons">
-     cons
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#distutils">
-   distutils
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#setup-py">
-     setup.py
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercice-laplace-problem">
-   Exercice: Laplace problem
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Call fortran from Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f2py">f2py</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-fortran-subroutine-to-compute-norm">Simple Fortran subroutine to compute norm</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fortran-90-95-free-format">Fortran 90/95 free format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fortran-77-fixed-format">Fortran 77 fixed format</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-extension-module-with-f2py-program">Build extension module with f2py program</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-extension-module-in-python">Use the extension module in Python</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fortran-magic">Fortran magic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f2py-directives">F2py directives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">F2py directives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#callback">Callback</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fortran-arrays-and-numpy-arrays">Fortran arrays and Numpy arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signature-file">Signature file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wrap-lapack-function-dgemm-with-f2py">Wrap lapack function dgemm  with f2py</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-performance-between-numpy-and-mylapack">Check performance between numpy and mylapack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f2py-openmp">f2py + OpenMP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions">Conclusions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pros">pros</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cons">cons</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distutils">distutils</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-py">setup.py</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-laplace-problem">Exercice: Laplace problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="call-fortran-from-python">
-<h1>Call fortran from Python<a class="headerlink" href="#call-fortran-from-python" title="Permalink to this headline">#</a></h1>
+<h1>Call fortran from Python<a class="headerlink" href="#call-fortran-from-python" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">scipy.fftpack</span> <span class="k">as</span> <span class="nn">sf</span>
-<span class="kn">import</span> <span class="nn">scipy.linalg</span> <span class="k">as</span> <span class="nn">sl</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.fftpack</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sf</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.linalg</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sl</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <section id="f2py">
-<h2>f2py<a class="headerlink" href="#f2py" title="Permalink to this headline">#</a></h2>
+<h2>f2py<a class="headerlink" href="#f2py" title="Link to this heading">#</a></h2>
 <p>f2py is a part of Numpy and there are three ways to wrap Fortran with Python :</p>
 <ul class="simple">
 <li><p>Write some fortran subroutines and just run f2py to create Python modules.</p></li>
@@ -778,9 +543,9 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="simple-fortran-subroutine-to-compute-norm">
-<h2>Simple Fortran subroutine to compute norm<a class="headerlink" href="#simple-fortran-subroutine-to-compute-norm" title="Permalink to this headline">#</a></h2>
+<h2>Simple Fortran subroutine to compute norm<a class="headerlink" href="#simple-fortran-subroutine-to-compute-norm" title="Link to this heading">#</a></h2>
 <section id="fortran-90-95-free-format">
-<h3>Fortran 90/95 free format<a class="headerlink" href="#fortran-90-95-free-format" title="Permalink to this headline">#</a></h3>
+<h3>Fortran 90/95 free format<a class="headerlink" href="#fortran-90-95-free-format" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%file</span> euclidian_norm.f90
@@ -800,7 +565,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="fortran-77-fixed-format">
-<h3>Fortran 77 fixed format<a class="headerlink" href="#fortran-77-fixed-format" title="Permalink to this headline">#</a></h3>
+<h3>Fortran 77 fixed format<a class="headerlink" href="#fortran-77-fixed-format" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%file</span> euclidian_norm.f
@@ -821,33 +586,80 @@ title="Print to PDF"
 </section>
 </section>
 <section id="build-extension-module-with-f2py-program">
-<h2>Build extension module with f2py program<a class="headerlink" href="#build-extension-module-with-f2py-program" title="Permalink to this headline">#</a></h2>
+<h2>Build extension module with f2py program<a class="headerlink" href="#build-extension-module-with-f2py-program" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 <span class="o">!{</span>sys.executable<span class="o">}</span><span class="w"> </span>-m<span class="w"> </span>numpy.f2py<span class="w"> </span>--quiet<span class="w"> </span>-c<span class="w"> </span>euclidian_norm.f90<span class="w"> </span>-m<span class="w"> </span>vect<span class="w">  </span>--fcompiler<span class="o">=</span>gnu95<span class="w"> </span>--f90flags<span class="o">=</span>-O3
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
-  warnings.warn(
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cannot use distutils backend with Python&gt;=3.12, using meson backend instead.
+--fcompiler cannot be used with meson,set compiler with the FC environment variable
+Using meson backend
+Will pass --lower to f2py
+See https://numpy.org/doc/stable/f2py/buildtools/meson.html
+Traceback (most recent call last):
+  File <span class=" -Color -Color-Magenta">&quot;&lt;frozen runpy&gt;&quot;</span>, line <span class=" -Color -Color-Magenta">198</span>, in <span class=" -Color -Color-Magenta">_run_module_as_main</span>
+  File <span class=" -Color -Color-Magenta">&quot;&lt;frozen runpy&gt;&quot;</span>, line <span class=" -Color -Color-Magenta">88</span>, in <span class=" -Color -Color-Magenta">_run_code</span>
+  File <span class=" -Color -Color-Magenta">&quot;/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/f2py/__main__.py&quot;</span>, line <span class=" -Color -Color-Magenta">5</span>, in <span class=" -Color -Color-Magenta">&lt;module&gt;</span>
+    <span class=" -Color -Color-Red">main</span><span class=" -Color -Color-Bold -Color-Bold-Red">()</span>
+    <span class=" -Color -Color-Red">~~~~</span><span class=" -Color -Color-Bold -Color-Bold-Red">^^</span>
+  File <span class=" -Color -Color-Magenta">&quot;/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/f2py/f2py2e.py&quot;</span>, line <span class=" -Color -Color-Magenta">781</span>, in <span class=" -Color -Color-Magenta">main</span>
+    <span class=" -Color -Color-Red">run_compile</span><span class=" -Color -Color-Bold -Color-Bold-Red">()</span>
+    <span class=" -Color -Color-Red">~~~~~~~~~~~</span><span class=" -Color -Color-Bold -Color-Bold-Red">^^</span>
+  File <span class=" -Color -Color-Magenta">&quot;/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/f2py/f2py2e.py&quot;</span>, line <span class=" -Color -Color-Magenta">753</span>, in <span class=" -Color -Color-Magenta">run_compile</span>
+    <span class=" -Color -Color-Red">builder.compile</span><span class=" -Color -Color-Bold -Color-Bold-Red">()</span>
+    <span class=" -Color -Color-Red">~~~~~~~~~~~~~~~</span><span class=" -Color -Color-Bold -Color-Bold-Red">^^</span>
+  File <span class=" -Color -Color-Magenta">&quot;/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/f2py/_backends/_meson.py&quot;</span>, line <span class=" -Color -Color-Magenta">192</span>, in <span class=" -Color -Color-Magenta">compile</span>
+    <span class=" -Color -Color-Red">self.run_meson</span><span class=" -Color -Color-Bold -Color-Bold-Red">(self.build_dir)</span>
+    <span class=" -Color -Color-Red">~~~~~~~~~~~~~~</span><span class=" -Color -Color-Bold -Color-Bold-Red">^^^^^^^^^^^^^^^^</span>
+  File <span class=" -Color -Color-Magenta">&quot;/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/f2py/_backends/_meson.py&quot;</span>, line <span class=" -Color -Color-Magenta">185</span>, in <span class=" -Color -Color-Magenta">run_meson</span>
+    <span class=" -Color -Color-Red">self._run_subprocess_command</span><span class=" -Color -Color-Bold -Color-Bold-Red">(setup_command, build_dir)</span>
+    <span class=" -Color -Color-Red">~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span><span class=" -Color -Color-Bold -Color-Bold-Red">^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
+  File <span class=" -Color -Color-Magenta">&quot;/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/f2py/_backends/_meson.py&quot;</span>, line <span class=" -Color -Color-Magenta">181</span>, in <span class=" -Color -Color-Magenta">_run_subprocess_command</span>
+    <span class=" -Color -Color-Red">subprocess.run</span><span class=" -Color -Color-Bold -Color-Bold-Red">(command, cwd=cwd, check=True)</span>
+    <span class=" -Color -Color-Red">~~~~~~~~~~~~~~</span><span class=" -Color -Color-Bold -Color-Bold-Red">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
+  File <span class=" -Color -Color-Magenta">&quot;/usr/share/miniconda3/envs/runenv/lib/python3.13/subprocess.py&quot;</span>, line <span class=" -Color -Color-Magenta">554</span>, in <span class=" -Color -Color-Magenta">run</span>
+    with <span class=" -Color -Color-Red">Popen</span><span class=" -Color -Color-Bold -Color-Bold-Red">(*popenargs, **kwargs)</span> as process:
+         <span class=" -Color -Color-Red">~~~~~</span><span class=" -Color -Color-Bold -Color-Bold-Red">^^^^^^^^^^^^^^^^^^^^^^</span>
+  File <span class=" -Color -Color-Magenta">&quot;/usr/share/miniconda3/envs/runenv/lib/python3.13/subprocess.py&quot;</span>, line <span class=" -Color -Color-Magenta">1039</span>, in <span class=" -Color -Color-Magenta">__init__</span>
+    <span class=" -Color -Color-Red">self._execute_child</span><span class=" -Color -Color-Bold -Color-Bold-Red">(args, executable, preexec_fn, close_fds,</span>
+    <span class=" -Color -Color-Red">~~~~~~~~~~~~~~~~~~~</span><span class=" -Color -Color-Bold -Color-Bold-Red">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
+                        <span class=" -Color -Color-Bold -Color-Bold-Red">pass_fds, cwd, env,</span>
+                        <span class=" -Color -Color-Bold -Color-Bold-Red">^^^^^^^^^^^^^^^^^^^</span>
+    ...&lt;5 lines&gt;...
+                        <span class=" -Color -Color-Bold -Color-Bold-Red">gid, gids, uid, umask,</span>
+                        <span class=" -Color -Color-Bold -Color-Bold-Red">^^^^^^^^^^^^^^^^^^^^^^</span>
+                        <span class=" -Color -Color-Bold -Color-Bold-Red">start_new_session, process_group)</span>
+                        <span class=" -Color -Color-Bold -Color-Bold-Red">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
+  File <span class=" -Color -Color-Magenta">&quot;/usr/share/miniconda3/envs/runenv/lib/python3.13/subprocess.py&quot;</span>, line <span class=" -Color -Color-Magenta">1972</span>, in <span class=" -Color -Color-Magenta">_execute_child</span>
+    raise child_exception_type(errno_num, err_msg, err_filename)
+<span class=" -Color -Color-Bold -Color-Bold-Magenta">FileNotFoundError</span>: <span class=" -Color -Color-Magenta">[Errno 2] No such file or directory: &#39;meson&#39;</span>
 </pre></div>
 </div>
 </div>
 </div>
 <section id="use-the-extension-module-in-python">
-<h3>Use the extension module in Python<a class="headerlink" href="#use-the-extension-module-in-python" title="Permalink to this headline">#</a></h3>
+<h3>Use the extension module in Python<a class="headerlink" href="#use-the-extension-module-in-python" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">vect</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">vect</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">vect</span><span class="o">.</span><span class="n">euclidian_norm</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">c</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.0
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">vect</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">c</span> <span class="o">=</span> <span class="n">vect</span><span class="o">.</span><span class="n">euclidian_norm</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">c</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;vect&#39;
 </pre></div>
 </div>
 </div>
@@ -878,7 +690,7 @@ c : float
 </section>
 </section>
 <section id="fortran-magic">
-<h2>Fortran magic<a class="headerlink" href="#fortran-magic" title="Permalink to this headline">#</a></h2>
+<h2>Fortran magic<a class="headerlink" href="#fortran-magic" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Jupyter extension that help to use fortran code in an interactive session.</p></li>
 <li><p>It adds a %%fortran cell magic that compile and import the Fortran code in the cell, using F2py.</p></li>
@@ -892,75 +704,19 @@ c : float
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;load_ext&#39;</span><span class="p">,</span> <span class="s1">&#39;fortranmagic&#39;</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2369,</span> in <span class="ni">InteractiveShell.run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2367</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2368</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2369</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2370</span> <span class="k">return</span> <span class="n">result</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/magics/extension.py:33,</span> in <span class="ni">ExtensionMagics.load_ext</span><span class="nt">(self, module_str)</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">module_str</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span>     <span class="k">raise</span> <span class="n">UsageError</span><span class="p">(</span><span class="s1">&#39;Missing module name.&#39;</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">33</span> <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">extension_manager</span><span class="o">.</span><span class="n">load_extension</span><span class="p">(</span><span class="n">module_str</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="k">if</span> <span class="n">res</span> <span class="o">==</span> <span class="s1">&#39;already loaded&#39;</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The </span><span class="si">%s</span><span class="s2"> extension is already loaded. To reload it, use:&quot;</span> <span class="o">%</span> <span class="n">module_str</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/extensions.py:76,</span> in <span class="ni">ExtensionManager.load_extension</span><span class="nt">(self, module_str)</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Load an IPython extension by its module name.</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span><span class="sd"> Returns the string &quot;already loaded&quot; if the extension is already loaded,</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span><span class="sd"> &quot;no load function&quot; if the module doesn&#39;t have a load_ipython_extension</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span><span class="sd"> function, or None if it succeeded.</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">76</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_extension</span><span class="p">(</span><span class="n">module_str</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">77</span> <span class="k">except</span> <span class="ne">ModuleNotFoundError</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">78</span>     <span class="k">if</span> <span class="n">module_str</span> <span class="ow">in</span> <span class="n">BUILTINS_EXTS</span><span class="p">:</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/core/extensions.py:91,</span> in <span class="ni">ExtensionManager._load_extension</span><span class="nt">(self, module_str)</span>
-<span class="g g-Whitespace">     </span><span class="mi">89</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">90</span>     <span class="k">if</span> <span class="n">module_str</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">91</span>         <span class="n">mod</span> <span class="o">=</span> <span class="n">import_module</span><span class="p">(</span><span class="n">module_str</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">92</span>     <span class="n">mod</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="n">module_str</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">93</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_load_ipython_extension</span><span class="p">(</span><span class="n">mod</span><span class="p">):</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/importlib/__init__.py:126,</span> in <span class="ni">import_module</span><span class="nt">(name, package)</span>
-<span class="g g-Whitespace">    </span><span class="mi">124</span>             <span class="k">break</span>
-<span class="g g-Whitespace">    </span><span class="mi">125</span>         <span class="n">level</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="ne">--&gt; </span><span class="mi">126</span> <span class="k">return</span> <span class="n">_bootstrap</span><span class="o">.</span><span class="n">_gcd_import</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="n">level</span><span class="p">:],</span> <span class="n">package</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
-
-<span class="nn">File &lt;frozen importlib._bootstrap&gt;:1050,</span> in <span class="ni">_gcd_import</span><span class="nt">(name, package, level)</span>
-
-<span class="nn">File &lt;frozen importlib._bootstrap&gt;:1027,</span> in <span class="ni">_find_and_load</span><span class="nt">(name, import_)</span>
-
-<span class="nn">File &lt;frozen importlib._bootstrap&gt;:1006,</span> in <span class="ni">_find_and_load_unlocked</span><span class="nt">(name, import_)</span>
-
-<span class="nn">File &lt;frozen importlib._bootstrap&gt;:688,</span> in <span class="ni">_load_unlocked</span><span class="nt">(spec)</span>
-
-<span class="nn">File &lt;frozen importlib._bootstrap_external&gt;:883,</span> in <span class="ni">exec_module</span><span class="nt">(self, module)</span>
-
-<span class="nn">File &lt;frozen importlib._bootstrap&gt;:241,</span> in <span class="ni">_call_with_frames_removed</span><span class="nt">(f, *args, **kwds)</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">runenv</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">fortranmagic</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">36</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="kn">from</span> <span class="nn">IPython.utils</span> <span class="kn">import</span> <span class="n">py3compat</span>
-<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="kn">from</span> <span class="nn">IPython.utils.io</span> <span class="kn">import</span> <span class="n">capture_output</span>
-<span class="ne">---&gt; </span><span class="mi">36</span> <span class="kn">from</span> <span class="nn">IPython.utils.path</span> <span class="kn">import</span> <span class="n">get_ipython_cache_dir</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">     </span><span class="mi">38</span> <span class="kn">from</span> <span class="nn">numpy.f2py</span> <span class="kn">import</span> <span class="n">f2py2e</span>
-
-<span class="ne">ImportError</span>: cannot import name &#39;get_ipython_cache_dir&#39; from &#39;IPython.utils.path&#39; (/usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/IPython/utils/path.py)
-</pre></div>
-</div>
-</div>
+<script type="application/javascript">new Promise(function(resolve, reject) {
+	var script = document.createElement("script");
+	script.onload = resolve;
+	script.onerror = reject;
+	script.src = "https://raw.github.com/marijnh/CodeMirror/master/mode/fortran/fortran.js";
+	document.head.appendChild(script);
+}).then(() => {
+IPython.config.cell_magic_highlight['magic_fortran'] = {'reg':[/^%%fortran/]};
+});</script></div>
 </div>
 </section>
 <section id="f2py-directives">
-<h2>F2py directives<a class="headerlink" href="#f2py-directives" title="Permalink to this headline">#</a></h2>
+<h2>F2py directives<a class="headerlink" href="#f2py-directives" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>F2PY introduces also some extensions to Fortran 90/95 language specification that help designing Fortran to Python interface, make it more “Pythonic”.</p></li>
 <li><p>If editing Fortran codes is acceptable, these specific attributes can be inserted directly to Fortran source codes. Special comment lines are ignored by Fortran compilers but F2PY interprets them as normal lines.</p></li>
@@ -1064,7 +820,7 @@ c : float
 </div>
 </section>
 <section id="id1">
-<h2>F2py directives<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<h2>F2py directives<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">optional</span></code>: The corresponding argument is moved to the end.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">required</span></code>: This is default. Use it to disable automatic optional setting.</p></li>
@@ -1080,7 +836,7 @@ c : float
 </ul>
 </section>
 <section id="callback">
-<h2>Callback<a class="headerlink" href="#callback" title="Permalink to this headline">#</a></h2>
+<h2>Callback<a class="headerlink" href="#callback" title="Link to this heading">#</a></h2>
 <p>You can call a python function inside your fortran code</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1101,7 +857,7 @@ end subroutine sum_f
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fonction</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">:</span> <span class="c1"># python function</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fonction</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">:</span> <span class="c1"># python function</span>
     <span class="k">return</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span>
 
 <span class="n">sum_f</span><span class="p">(</span><span class="n">fonction</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> 
@@ -1128,7 +884,7 @@ end subroutine sum_f
 </div>
 </section>
 <section id="fortran-arrays-and-numpy-arrays">
-<h2>Fortran arrays and Numpy arrays<a class="headerlink" href="#fortran-arrays-and-numpy-arrays" title="Permalink to this headline">#</a></h2>
+<h2>Fortran arrays and Numpy arrays<a class="headerlink" href="#fortran-arrays-and-numpy-arrays" title="Link to this heading">#</a></h2>
 <p>Let’s see how to pass numpy arrays to fortran subroutine.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1156,7 +912,7 @@ end subroutine push
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 <span class="n">push</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">velocities</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
 <span class="n">positions</span> <span class="c1"># memory is not updated because we used C memory storage</span>
 </pre></div>
@@ -1187,7 +943,7 @@ end subroutine push
 </div>
 </section>
 <section id="signature-file">
-<h2>Signature file<a class="headerlink" href="#signature-file" title="Permalink to this headline">#</a></h2>
+<h2>Signature file<a class="headerlink" href="#signature-file" title="Link to this heading">#</a></h2>
 <p>This file contains descriptions of wrappers to Fortran or C functions, also called as signatures of the functions. F2PY can create initial signature file by scanning Fortran source codes and catching all relevant information needed to create wrapper functions.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>f2py<span class="w"> </span>vector.f90<span class="w"> </span>-h<span class="w"> </span>vector.pyf
 </pre></div>
@@ -1210,7 +966,7 @@ end subroutine push
 </div>
 </section>
 <section id="wrap-lapack-function-dgemm-with-f2py">
-<h2>Wrap lapack function dgemm  with f2py<a class="headerlink" href="#wrap-lapack-function-dgemm-with-f2py" title="Permalink to this headline">#</a></h2>
+<h2>Wrap lapack function dgemm  with f2py<a class="headerlink" href="#wrap-lapack-function-dgemm-with-f2py" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Generate the signature file</p></li>
 </ul>
@@ -1277,8 +1033,8 @@ Saving signatures to file &quot;./dgemm.pyf&quot;
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">mylapack</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">mylapack</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a=&quot;</span><span class="p">,</span><span class="n">a</span><span class="p">)</span> 
@@ -1308,7 +1064,7 @@ b= [[1 2 3]
 </div>
 </div>
 <section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h3>
+<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Modify the file dgemm.pyf to set all arguments top optional and keep only the two matrices as input.</p></li>
 </ul>
@@ -1349,7 +1105,7 @@ FileNotFoundError: [Errno 2] No such file or directory: &#39;solutions/fortran/d
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mylapack2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">mylapack2</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">mylapack2</span><span class="o">.</span><span class="n">dgemm</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
@@ -1361,7 +1117,7 @@ FileNotFoundError: [Errno 2] No such file or directory: &#39;solutions/fortran/d
 </section>
 </section>
 <section id="check-performance-between-numpy-and-mylapack">
-<h2>Check performance between numpy and mylapack<a class="headerlink" href="#check-performance-between-numpy-and-mylapack" title="Permalink to this headline">#</a></h2>
+<h2>Check performance between numpy and mylapack<a class="headerlink" href="#check-performance-between-numpy-and-mylapack" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">512</span><span class="p">,</span><span class="mi">128</span><span class="p">))</span>
@@ -1438,7 +1194,7 @@ end module f90module
 </div>
 </section>
 <section id="f2py-openmp">
-<h2>f2py + OpenMP<a class="headerlink" href="#f2py-openmp" title="Permalink to this headline">#</a></h2>
+<h2>f2py + OpenMP<a class="headerlink" href="#f2py-openmp" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">env</span> OMP_NUM_THREADS=4
@@ -1495,9 +1251,9 @@ end subroutine
 </div>
 </section>
 <section id="conclusions">
-<h2>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this headline">#</a></h2>
+<h2>Conclusions<a class="headerlink" href="#conclusions" title="Link to this heading">#</a></h2>
 <section id="pros">
-<h3>pros<a class="headerlink" href="#pros" title="Permalink to this headline">#</a></h3>
+<h3>pros<a class="headerlink" href="#pros" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Easy to use, it works with modern fortran, legacy fortran and also C.</p></li>
 <li><p>Works with common and modules and arrays dynamically allocated.</p></li>
@@ -1508,7 +1264,7 @@ end subroutine
 </ul>
 </section>
 <section id="cons">
-<h3>cons<a class="headerlink" href="#cons" title="Permalink to this headline">#</a></h3>
+<h3>cons<a class="headerlink" href="#cons" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Derived types and fortran pointers are not well supported.</p></li>
 <li><p>Absolutely not compatible with fortran 2003-2008 new features (classes)</p></li>
@@ -1517,10 +1273,10 @@ end subroutine
 </section>
 </section>
 <section id="distutils">
-<h2>distutils<a class="headerlink" href="#distutils" title="Permalink to this headline">#</a></h2>
+<h2>distutils<a class="headerlink" href="#distutils" title="Link to this heading">#</a></h2>
 <section id="setup-py">
-<h3><a class="reference external" href="http://setup.py">setup.py</a><a class="headerlink" href="#setup-py" title="Permalink to this headline">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.distutils.core</span> <span class="kn">import</span> <span class="n">Extension</span><span class="p">,</span> <span class="n">setup</span>
+<h3><a class="reference external" href="http://setup.py">setup.py</a><a class="headerlink" href="#setup-py" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy.distutils.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">Extension</span><span class="p">,</span> <span class="n">setup</span>
 <span class="n">ext1</span> <span class="o">=</span> <span class="n">Extension</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;scalar&#39;</span><span class="p">,</span>
                  <span class="n">sources</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;scalar.f&#39;</span><span class="p">])</span>
 <span class="n">ext2</span> <span class="o">=</span> <span class="n">Extension</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;fib2&#39;</span><span class="p">,</span>
@@ -1536,7 +1292,7 @@ end subroutine
 </section>
 </section>
 <section id="exercice-laplace-problem">
-<h2>Exercice: Laplace problem<a class="headerlink" href="#exercice-laplace-problem" title="Permalink to this headline">#</a></h2>
+<h2>Exercice: Laplace problem<a class="headerlink" href="#exercice-laplace-problem" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Replace the <code class="docutils literal notranslate"><span class="pre">laplace</span></code> function by a fortran subroutine</p></li>
 </ul>
@@ -1545,9 +1301,9 @@ end subroutine
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 <span class="o">%</span><span class="n">config</span> <span class="n">InlineBackend</span><span class="o">.</span><span class="n">figure_format</span> <span class="o">=</span> <span class="s1">&#39;retina&#39;</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">itertools</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">itertools</span>
 <span class="c1"># Boundary conditions</span>
 <span class="n">Tnorth</span><span class="p">,</span> <span class="n">Tsouth</span><span class="p">,</span> <span class="n">Twest</span><span class="p">,</span> <span class="n">Teast</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span>
 
@@ -1562,7 +1318,7 @@ end subroutine
 <span class="n">T</span><span class="p">[:,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="n">Teast</span>
 <span class="n">T</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">Twest</span>
 
-<span class="k">def</span> <span class="nf">laplace</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">laplace</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="n">residual</span> <span class="o">=</span> <span class="mf">0.0</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
@@ -1620,9 +1376,9 @@ end subroutine laplace_fortran
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 <span class="o">%</span><span class="n">config</span> <span class="n">InlineBackend</span><span class="o">.</span><span class="n">figure_format</span> <span class="o">=</span> <span class="s1">&#39;retina&#39;</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">itertools</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">itertools</span>
 <span class="c1"># Boundary conditions</span>
 <span class="n">Tnorth</span><span class="p">,</span> <span class="n">Tsouth</span><span class="p">,</span> <span class="n">Twest</span><span class="p">,</span> <span class="n">Teast</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span>
 
@@ -1656,7 +1412,7 @@ end subroutine laplace_fortran
 </div>
 </section>
 <section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="http://calcul.math.cnrs.fr/Documents/Journees/dec2006/python-fortran.pdf">Talk by E. Sonnendrücker</a></p></li>
 <li><p><a class="reference external" href="http://www.scipy.org/F2py">SciPy</a></p></li>
@@ -1678,7 +1434,7 @@ end subroutine laplace_fortran
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -1686,50 +1442,135 @@ end subroutine laplace_fortran
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="15-Sympy.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Sympy</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="15-Sympy.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Sympy</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="17-Cython.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="17-Cython.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Cython</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f2py">f2py</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-fortran-subroutine-to-compute-norm">Simple Fortran subroutine to compute norm</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fortran-90-95-free-format">Fortran 90/95 free format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fortran-77-fixed-format">Fortran 77 fixed format</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-extension-module-with-f2py-program">Build extension module with f2py program</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-extension-module-in-python">Use the extension module in Python</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fortran-magic">Fortran magic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f2py-directives">F2py directives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">F2py directives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#callback">Callback</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fortran-arrays-and-numpy-arrays">Fortran arrays and Numpy arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signature-file">Signature file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wrap-lapack-function-dgemm-with-f2py">Wrap lapack function dgemm  with f2py</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-performance-between-numpy-and-mylapack">Check performance between numpy and mylapack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f2py-openmp">f2py + OpenMP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions">Conclusions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pros">pros</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cons">cons</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distutils">distutils</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-py">setup.py</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-laplace-problem">Exercice: Laplace problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Pierre Navaro<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Pierre Navaro
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

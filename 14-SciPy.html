@@ -1,655 +1,509 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="./" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Scipy &#8212; Python notebooks</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '14-SciPy';</script>
     <link rel="canonical" href="https://pnavaro.github.io/python-notebooks/14-SciPy.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Sympy" href="15-Sympy.html" />
     <link rel="prev" title="Numpy" href="13-Numpy.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="01-Introduction.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Python notebooks</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Python notebooks - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python notebooks - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="02-Strings.html">
-   Strings
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03-Lists.html">
-   Python lists and tuples
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04-Control.Flow.Tools.html">
-   Control Flow Tools
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="05-Modules.html">
-   Modules
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06-Input.And.Output.html">
-   Input and Output
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="07-Errors.and.Exceptions.html">
-   Errors and Exceptions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="08-Classes.html">
-   Classes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="09-Iterators.html">
-   Iterators
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="10-Multiprocessing.html">
-   Multiprocessing
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="11-Standard.Library.html">
-   Standard Library
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="12-Matplotlib.html">
-   Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="13-Numpy.html">
-   Numpy
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Scipy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="15-Sympy.html">
-   Sympy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="16-Fortran.html">
-   Call fortran from Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="17-Cython.html">
-   Cython
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="18-Numba.html">
-   Numba
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="19-LandauDamping.html">
-   Semi-Lagrangian method
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="20-Maxwell.2D.html">
-   Maxwell solver in two dimensions with FDTD scheme
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="21-Gray.Scott.Model.html">
-   Gray-Scott Model
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="22-Matplotlib.Animation.html">
-   Animation with matplotlib
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="02-Strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-Lists.html">Python lists and tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-Control.Flow.Tools.html">Control Flow Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-Modules.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-Input.And.Output.html">Input and Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-Errors.and.Exceptions.html">Errors and Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-Classes.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-Iterators.html">Iterators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-Multiprocessing.html">Multiprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-Standard.Library.html">Standard Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-Matplotlib.html">Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13-Numpy.html">Numpy</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Scipy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15-Sympy.html">Sympy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16-Fortran.html">Call fortran from Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17-Cython.html">Cython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18-Numba.html">Numba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19-LandauDamping.html">Semi-Lagrangian method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20-Maxwell.2D.html">Maxwell solver in two dimensions with FDTD scheme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21-Gray.Scott.Model.html">Gray-Scott Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22-Matplotlib.Animation.html">Animation with matplotlib</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/pnavaro/python-notebooks/master?urlpath=tree/notebooks/14-SciPy.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/pnavaro/python-notebooks/master?urlpath=tree/notebooks/14-SciPy.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
-    <img src="_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-      <li>
-        <a href="https://colab.research.google.com/github/pnavaro/python-notebooks/blob/master/notebooks/14-SciPy.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/pnavaro/python-notebooks/blob/master/notebooks/14-SciPy.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
 <button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-play"></i>
   </span>
-<span class="headerbtn__text-container">Live Code</span>
+<span class="btn__text-container">Live Code</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/pnavaro/python-notebooks" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/pnavaro/python-notebooks/edit/master/notebooks/14-SciPy.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/pnavaro/python-notebooks/issues/new?title=Issue%20on%20page%20%2F14-SciPy.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/14-SciPy.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/pnavaro/python-notebooks"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/pnavaro/python-notebooks/issues/new?title=Issue%20on%20page%20%2F14-SciPy.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/pnavaro/python-notebooks/edit/master/notebooks/14-SciPy.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/14-SciPy.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </button>
-
-      </li>
+</div></div>
       
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
+    </div>
   
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#scipy-main-packages">
-   SciPy main packages
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fft-scipy-fftpack">
-   FFT : scipy.fftpack
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#linear-algebra-scipy-linalg">
-   Linear algebra : scipy.linalg
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#csc-compressed-sparse-column">
-   CSC (Compressed Sparse Column)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dedicated-format-for-assembling">
-   Dedicated format for assembling
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sparse-matrices-scipy-sparse-linalg">
-   Sparse matrices : scipy.sparse.linalg
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#linearoperator">
-   LinearOperator
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lu-decomposition">
-   LU decomposition
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conjugate-gradient">
-   Conjugate Gradient
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#preconditioned-conjugate-gradient">
-   Preconditioned conjugate gradient
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numerical-integration">
-   Numerical integration
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#scipy-ode-solver">
-   Scipy ODE solver
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#van-der-pol-oscillator">
-     Van der Pol Oscillator
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
-   Exercise
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Scipy</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#scipy-main-packages">
-   SciPy main packages
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fft-scipy-fftpack">
-   FFT : scipy.fftpack
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#linear-algebra-scipy-linalg">
-   Linear algebra : scipy.linalg
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#csc-compressed-sparse-column">
-   CSC (Compressed Sparse Column)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dedicated-format-for-assembling">
-   Dedicated format for assembling
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sparse-matrices-scipy-sparse-linalg">
-   Sparse matrices : scipy.sparse.linalg
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#linearoperator">
-   LinearOperator
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lu-decomposition">
-   LU decomposition
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conjugate-gradient">
-   Conjugate Gradient
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#preconditioned-conjugate-gradient">
-   Preconditioned conjugate gradient
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numerical-integration">
-   Numerical integration
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#scipy-ode-solver">
-   Scipy ODE solver
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#van-der-pol-oscillator">
-     Van der Pol Oscillator
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
-   Exercise
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Scipy</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-main-packages">SciPy main packages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fft-scipy-fftpack">FFT : scipy.fftpack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra-scipy-linalg">Linear algebra : scipy.linalg</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csc-compressed-sparse-column">CSC (Compressed Sparse Column)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dedicated-format-for-assembling">Dedicated format for assembling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sparse-matrices-scipy-sparse-linalg">Sparse matrices : scipy.sparse.linalg</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearoperator">LinearOperator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lu-decomposition">LU decomposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conjugate-gradient">Conjugate Gradient</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preconditioned-conjugate-gradient">Preconditioned conjugate gradient</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-integration">Numerical integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-ode-solver">Scipy ODE solver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#van-der-pol-oscillator">Van der Pol Oscillator</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="scipy">
-<h1>Scipy<a class="headerlink" href="#scipy" title="Permalink to this headline">#</a></h1>
+<h1>Scipy<a class="headerlink" href="#scipy" title="Link to this heading">#</a></h1>
 <p><img alt="scipy" src="_images/scipyshiny_small.png" /></p>
 <p>Scipy is the scientific Python ecosystem :</p>
 <ul class="simple">
@@ -661,16 +515,16 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <section id="scipy-main-packages">
-<h2>SciPy main packages<a class="headerlink" href="#scipy-main-packages" title="Permalink to this headline">#</a></h2>
+<h2>SciPy main packages<a class="headerlink" href="#scipy-main-packages" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">constants</span></code> : Physical and mathematical constants</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">fftpack</span></code> : Fast Fourier Transform routines</p></li>
@@ -683,7 +537,7 @@ title="Print to PDF"
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="kn">import</span> <span class="n">interp1d</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.interpolate</span><span class="w"> </span><span class="kn">import</span> <span class="n">interp1d</span> 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># 5 points evenly spaced in [-1,1].</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">1.</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span>     <span class="c1"># x and y are numpy arrays</span>
 <span class="n">f0</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;zero&#39;</span><span class="p">)</span>
@@ -708,12 +562,13 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/14-SciPy_4_0.png" src="_images/14-SciPy_4_0.png" />
+<a class="reference internal image-reference" href="_images/6f42de14d15d10b5101edf7a2db665bc78d14b5142776363a339ea9f55ba7258.png"><img alt="_images/6f42de14d15d10b5101edf7a2db665bc78d14b5142776363a339ea9f55ba7258.png" src="_images/6f42de14d15d10b5101edf7a2db665bc78d14b5142776363a339ea9f55ba7258.png" style="width: 847px; height: 505px;" />
+</a>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="kn">import</span> <span class="n">interp2d</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.interpolate</span><span class="w"> </span><span class="kn">import</span> <span class="n">interp2d</span>
 <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">20</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">20</span><span class="n">j</span><span class="p">]</span>  <span class="c1">#create the grid 20x20</span>
 <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">y</span><span class="p">)</span> <span class="c1">#initialize the field</span>
 <span class="n">T1</span><span class="o">=</span><span class="n">interp2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span> 
@@ -723,51 +578,32 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_11140/3016852277.py:4: DeprecationWarning: `interp2d` is deprecated!
-`interp2d` is deprecated in SciPy 1.10 and will be removed in SciPy 1.12.0.
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/scipy/__init__.py:137,</span> in <span class="ni">__getattr__</span><span class="nt">(name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">137</span>     <span class="k">return</span> <span class="nb">globals</span><span class="p">()[</span><span class="n">name</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span> <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
 
-For legacy code, nearly bug-for-bug compatible replacements are
-`RectBivariateSpline` on regular grids, and `bisplrep`/`bisplev` for
-scattered 2D data.
+<span class="ne">KeyError</span>: &#39;mgrid&#39;
 
-In new code, for regular grids use `RegularGridInterpolator` instead.
-For scattered data, prefer `LinearNDInterpolator` or
-`CloughTocher2DInterpolator`.
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
-For more details see
-`https://gist.github.com/ev-br/8544371b40f414b7eaf3fe6217209bff`
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.interpolate</span><span class="w"> </span><span class="kn">import</span> <span class="n">interp2d</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">20</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">20</span><span class="n">j</span><span class="p">]</span>  <span class="c1">#create the grid 20x20</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">y</span><span class="p">)</span> <span class="c1">#initialize the field</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">T1</span><span class="o">=</span><span class="n">interp2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span> 
 
-  T1=interp2d(x,y,z,kind=&#39;linear&#39;)
-/tmp/ipykernel_11140/3016852277.py:5: DeprecationWarning: `interp2d` is deprecated!
-`interp2d` is deprecated in SciPy 1.10 and will be removed in SciPy 1.12.0.
+<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/scipy/__init__.py:139,</span> in <span class="ni">__getattr__</span><span class="nt">(name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">137</span>     <span class="k">return</span> <span class="nb">globals</span><span class="p">()[</span><span class="n">name</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span> <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">139</span>     <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span>         <span class="sa">f</span><span class="s2">&quot;Module &#39;scipy&#39; has no attribute &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">141</span>     <span class="p">)</span>
 
-For legacy code, nearly bug-for-bug compatible replacements are
-`RectBivariateSpline` on regular grids, and `bisplrep`/`bisplev` for
-scattered 2D data.
-
-In new code, for regular grids use `RegularGridInterpolator` instead.
-For scattered data, prefer `LinearNDInterpolator` or
-`CloughTocher2DInterpolator`.
-
-For more details see
-`https://gist.github.com/ev-br/8544371b40f414b7eaf3fe6217209bff`
-
-  T2=interp2d(x,y,z,kind=&#39;cubic&#39;)
-/tmp/ipykernel_11140/3016852277.py:6: DeprecationWarning: `interp2d` is deprecated!
-`interp2d` is deprecated in SciPy 1.10 and will be removed in SciPy 1.12.0.
-
-For legacy code, nearly bug-for-bug compatible replacements are
-`RectBivariateSpline` on regular grids, and `bisplrep`/`bisplev` for
-scattered 2D data.
-
-In new code, for regular grids use `RegularGridInterpolator` instead.
-For scattered data, prefer `LinearNDInterpolator` or
-`CloughTocher2DInterpolator`.
-
-For more details see
-`https://gist.github.com/ev-br/8544371b40f414b7eaf3fe6217209bff`
-
-  T3=interp2d(x,y,z,kind=&#39;quintic&#39;)
+<span class="ne">AttributeError</span>: Module &#39;scipy&#39; has no attribute &#39;mgrid&#39;
 </pre></div>
 </div>
 </div>
@@ -793,62 +629,16 @@ For more details see
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_11140/2191985395.py:8: DeprecationWarning:         `interp2d` is deprecated!
-        `interp2d` is deprecated in SciPy 1.10 and will be removed in SciPy 1.12.0.
-
-        For legacy code, nearly bug-for-bug compatible replacements are
-        `RectBivariateSpline` on regular grids, and `bisplrep`/`bisplev` for
-        scattered 2D data.
-
-        In new code, for regular grids use `RegularGridInterpolator` instead.
-        For scattered data, prefer `LinearNDInterpolator` or
-        `CloughTocher2DInterpolator`.
-
-        For more details see
-        `https://gist.github.com/ev-br/8544371b40f414b7eaf3fe6217209bff`
-
-  plt.contourf(X,Y,T1(X[:,0],Y[0,:]))
-/tmp/ipykernel_11140/2191985395.py:11: DeprecationWarning:         `interp2d` is deprecated!
-        `interp2d` is deprecated in SciPy 1.10 and will be removed in SciPy 1.12.0.
-
-        For legacy code, nearly bug-for-bug compatible replacements are
-        `RectBivariateSpline` on regular grids, and `bisplrep`/`bisplev` for
-        scattered 2D data.
-
-        In new code, for regular grids use `RegularGridInterpolator` instead.
-        For scattered data, prefer `LinearNDInterpolator` or
-        `CloughTocher2DInterpolator`.
-
-        For more details see
-        `https://gist.github.com/ev-br/8544371b40f414b7eaf3fe6217209bff`
-
-  plt.contourf(X,Y,T2(X[:,0],Y[0,:]))
-/tmp/ipykernel_11140/2191985395.py:14: DeprecationWarning:         `interp2d` is deprecated!
-        `interp2d` is deprecated in SciPy 1.10 and will be removed in SciPy 1.12.0.
-
-        For legacy code, nearly bug-for-bug compatible replacements are
-        `RectBivariateSpline` on regular grids, and `bisplrep`/`bisplev` for
-        scattered 2D data.
-
-        In new code, for regular grids use `RegularGridInterpolator` instead.
-        For scattered data, prefer `LinearNDInterpolator` or
-        `CloughTocher2DInterpolator`.
-
-        For more details see
-        `https://gist.github.com/ev-br/8544371b40f414b7eaf3fe6217209bff`
-
-  plt.contourf(X,Y,T3(X[:,0],Y[0,:]))
-</pre></div>
-</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;100x100 quintic&#39;)
 </pre></div>
 </div>
-<img alt="_images/14-SciPy_6_2.png" src="_images/14-SciPy_6_2.png" />
+<a class="reference internal image-reference" href="_images/520f3f641acc1603f08435b8ae7af4926c128ab2557e2a7cb3deb29d7078cd50.png"><img alt="_images/520f3f641acc1603f08435b8ae7af4926c128ab2557e2a7cb3deb29d7078cd50.png" src="_images/520f3f641acc1603f08435b8ae7af4926c128ab2557e2a7cb3deb29d7078cd50.png" style="width: 603px; height: 372px;" />
+</a>
 </div>
 </div>
 </section>
 <section id="fft-scipy-fftpack">
-<h2>FFT : scipy.fftpack<a class="headerlink" href="#fft-scipy-fftpack" title="Permalink to this headline">#</a></h2>
+<h2>FFT : scipy.fftpack<a class="headerlink" href="#fft-scipy-fftpack" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>FFT dimension 1, 2 and n : fft, ifft (inverse), rfft (real), irfft, fft2 (dimension 2), ifft2, fftn (dimension n), ifftn.</p></li>
 <li><p>Discrete cosinus transform : dct</p></li>
@@ -856,35 +646,35 @@ For more details see
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.fft</span> <span class="kn">import</span> <span class="n">fft</span><span class="p">,</span> <span class="n">ifft</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy.fft</span><span class="w"> </span><span class="kn">import</span> <span class="n">fft</span><span class="p">,</span> <span class="n">ifft</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">2048</span><span class="p">)</span>
 <span class="o">%</span><span class="k">timeit</span> ifft(fft(x))
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47.1 µs ± 28.7 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>102 µs ± 2.08 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.fftpack</span> <span class="kn">import</span> <span class="n">fft</span><span class="p">,</span> <span class="n">ifft</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.fftpack</span><span class="w"> </span><span class="kn">import</span> <span class="n">fft</span><span class="p">,</span> <span class="n">ifft</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">2048</span><span class="p">)</span>
 <span class="o">%</span><span class="k">timeit</span> ifft(fft(x))
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>45.8 µs ± 55.9 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>90 µs ± 567 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="linear-algebra-scipy-linalg">
-<h2>Linear algebra : scipy.linalg<a class="headerlink" href="#linear-algebra-scipy-linalg" title="Permalink to this headline">#</a></h2>
+<h2>Linear algebra : scipy.linalg<a class="headerlink" href="#linear-algebra-scipy-linalg" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Sovers, decompositions, eigen values. (same as numpy).</p></li>
 <li><p>Matrix functions : expm, sinm, sinhm,…</p></li>
@@ -892,7 +682,7 @@ For more details see
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.linalg</span> <span class="k">as</span> <span class="nn">spl</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy.linalg</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">spl</span> 
 <span class="n">b</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">3.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">],</span>
            <span class="p">[</span> <span class="mf">2.</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">],</span>
@@ -949,7 +739,7 @@ x= [-0.24074074  0.41358025 -0.26697531 -0.85493827  0.01851852]
 </div>
 </section>
 <section id="csc-compressed-sparse-column">
-<h2>CSC (Compressed Sparse Column)<a class="headerlink" href="#csc-compressed-sparse-column" title="Permalink to this headline">#</a></h2>
+<h2>CSC (Compressed Sparse Column)<a class="headerlink" href="#csc-compressed-sparse-column" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>All operations are optimized</p></li>
 <li><p>Efficient “slicing” along axis=1.</p></li>
@@ -958,7 +748,7 @@ x= [-0.24074074  0.41358025 -0.26697531 -0.85493827  0.01851852]
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.sparse</span> <span class="k">as</span> <span class="nn">spsp</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy.sparse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">spsp</span>
 <span class="n">row</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span> 
 <span class="n">col</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
 <span class="n">data</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span> 
@@ -995,7 +785,7 @@ x= [-0.24074074  0.41358025 -0.26697531 -0.85493827  0.01851852]
 </div>
 </section>
 <section id="dedicated-format-for-assembling">
-<h2>Dedicated format for assembling<a class="headerlink" href="#dedicated-format-for-assembling" title="Permalink to this headline">#</a></h2>
+<h2>Dedicated format for assembling<a class="headerlink" href="#dedicated-format-for-assembling" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">lil_matrix</span></code> : Row-based linked list matrix. Easy format to build your matrix and convert to other format before solving.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">dok_matrix</span></code> : A dictionary of keys based matrix. Ideal format for
@@ -1005,7 +795,7 @@ incremental matrix building. The conversion to csc/csr format is efficient.</p><
 <p><a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/sparse.html">Lien vers la documentation scipy</a></p>
 </section>
 <section id="sparse-matrices-scipy-sparse-linalg">
-<h2>Sparse matrices : <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg">scipy.sparse.linalg</a><a class="headerlink" href="#sparse-matrices-scipy-sparse-linalg" title="Permalink to this headline">#</a></h2>
+<h2>Sparse matrices : <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg">scipy.sparse.linalg</a><a class="headerlink" href="#sparse-matrices-scipy-sparse-linalg" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>speigen, speigen_symmetric, lobpcg : (ARPACK).</p></li>
 <li><p>svd : (ARPACK).</p></li>
@@ -1021,12 +811,12 @@ incremental matrix building. The conversion to csc/csr format is efficient.</p><
 </ul>
 </section>
 <section id="linearoperator">
-<h2>LinearOperator<a class="headerlink" href="#linearoperator" title="Permalink to this headline">#</a></h2>
+<h2>LinearOperator<a class="headerlink" href="#linearoperator" title="Link to this heading">#</a></h2>
 <p>The LinearOperator is used for matrix-free numerical methods.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.sparse.linalg</span> <span class="k">as</span> <span class="nn">spspl</span>
-<span class="k">def</span> <span class="nf">mv</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy.sparse.linalg</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">spspl</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mv</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">3</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
 
 <span class="n">A</span><span class="o">=</span><span class="n">spspl</span><span class="o">.</span><span class="n">LinearOperator</span><span class="p">((</span><span class="mi">2</span> <span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">matvec</span><span class="o">=</span><span class="n">mv</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span> <span class="p">)</span>
@@ -1067,7 +857,7 @@ incremental matrix building. The conversion to csc/csr format is efficient.</p><
 </div>
 </section>
 <section id="lu-decomposition">
-<h2>LU decomposition<a class="headerlink" href="#lu-decomposition" title="Permalink to this headline">#</a></h2>
+<h2>LU decomposition<a class="headerlink" href="#lu-decomposition" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">50</span>
@@ -1082,7 +872,7 @@ incremental matrix building. The conversion to csc/csr format is efficient.</p><
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;SuperLU at 0x7f7f0068a160&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;SuperLU at 0x11d8bd1e0&gt;
 </pre></div>
 </div>
 </div>
@@ -1095,19 +885,19 @@ incremental matrix building. The conversion to csc/csr format is efficient.</p><
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.456043846448818e-15
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.3208707134311084e-15
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="conjugate-gradient">
-<h2>Conjugate Gradient<a class="headerlink" href="#conjugate-gradient" title="Permalink to this headline">#</a></h2>
+<h2>Conjugate Gradient<a class="headerlink" href="#conjugate-gradient" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">global</span> <span class="n">k</span>
 <span class="n">k</span><span class="o">=</span><span class="mi">0</span>
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">xk</span><span class="p">):</span> <span class="c1"># function called at every iterations</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">xk</span><span class="p">):</span> <span class="c1"># function called at every iterations</span>
      <span class="k">global</span> <span class="n">k</span>
      <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;iteration </span><span class="si">{0:2d}</span><span class="s2"> residu = </span><span class="si">{1:7.3g}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">spl</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">xk</span><span class="o">-</span><span class="n">b</span><span class="p">)))</span>
      <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -1117,40 +907,43 @@ incremental matrix building. The conversion to csc/csr format is efficient.</p><
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iteration  0 residu =    2.54
-iteration  1 residu =   0.925
-iteration  2 residu =   0.431
-iteration  3 residu =   0.157
-iteration  4 residu =  0.0666
-iteration  5 residu =  0.0241
-iteration  6 residu = 0.00982
-iteration  7 residu = 0.00392
-iteration  8 residu = 0.00132
-iteration  9 residu = 0.000454
-iteration 10 residu = 0.000173
-iteration 11 residu = 6.04e-05
-iteration 12 residu = 2.05e-05
-iteration 13 residu = 6.08e-06
-iteration 14 residu = 2.06e-06
-iteration 15 residu = 6.83e-07
-iteration 16 residu = 2.59e-07
-iteration 17 residu = 8.2e-08
-iteration 18 residu = 3.47e-08
-iteration 19 residu = 1.01e-08
-iteration 20 residu = 3.21e-09
-iteration 21 residu = 9.91e-10
-iteration 22 residu = 3.21e-10
-iteration 23 residu = 1.03e-10
-iteration 24 residu = 3.77e-11
-iteration 25 residu = 1.16e-11
-iteration 26 residu = 3.12e-12
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iteration  0 residu =    3.29
+iteration  1 residu =    1.81
+iteration  2 residu =   0.801
+iteration  3 residu =   0.288
+iteration  4 residu =   0.155
+iteration  5 residu =  0.0755
+iteration  6 residu =  0.0329
+iteration  7 residu =  0.0126
+iteration  8 residu = 0.00509
+iteration  9 residu = 0.00211
+iteration 10 residu = 0.00121
+iteration 11 residu = 0.000495
+iteration 12 residu = 0.00028
+iteration 13 residu = 0.000105
+iteration 14 residu = 4.49e-05
+iteration 15 residu = 1.23e-05
+iteration 16 residu = 5.31e-06
+iteration 17 residu = 1.86e-06
+iteration 18 residu = 9.85e-07
+iteration 19 residu = 3.9e-07
+iteration 20 residu = 1.78e-07
+iteration 21 residu = 7.37e-08
+iteration 22 residu = 2.27e-08
+iteration 23 residu = 8.5e-09
+iteration 24 residu = 2.04e-09
+iteration 25 residu = 5.94e-10
+iteration 26 residu = 1.11e-10
+iteration 27 residu = 4.25e-11
+iteration 28 residu = 7.55e-12
+iteration 29 residu = 1.48e-12
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="preconditioned-conjugate-gradient">
-<h2>Preconditioned conjugate gradient<a class="headerlink" href="#preconditioned-conjugate-gradient" title="Permalink to this headline">#</a></h2>
+<h2>Preconditioned conjugate gradient<a class="headerlink" href="#preconditioned-conjugate-gradient" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pc</span><span class="o">=</span><span class="n">spspl</span><span class="o">.</span><span class="n">spilu</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">drop_tol</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>  <span class="c1"># pc is an ILU decomposition</span>
@@ -1160,14 +953,14 @@ iteration 26 residu = 3.12e-12
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.29015179575537214
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.40994379196249386
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mv</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">mv</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">pc</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
 <span class="n">lo</span> <span class="o">=</span> <span class="n">spspl</span><span class="o">.</span><span class="n">LinearOperator</span><span class="p">((</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">),</span><span class="n">matvec</span><span class="o">=</span><span class="n">mv</span><span class="p">)</span>
 <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1176,29 +969,32 @@ iteration 26 residu = 3.12e-12
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iteration  0 residu =   0.272
-iteration  1 residu =  0.0124
-iteration  2 residu = 0.00073
-iteration  3 residu = 2.51e-05
-iteration  4 residu = 9.88e-07
-iteration  5 residu = 4.47e-08
-iteration  6 residu = 3.29e-09
-iteration  7 residu = 1.42e-10
-iteration  8 residu = 1.04e-11
-iteration  9 residu = 6.41e-13
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iteration  0 residu =   0.392
+iteration  1 residu =  0.0151
+iteration  2 residu = 0.00122
+iteration  3 residu = 6.61e-05
+iteration  4 residu = 9.23e-06
+iteration  5 residu = 6.8e-07
+iteration  6 residu = 1.37e-07
+iteration  7 residu = 1.39e-08
+iteration  8 residu = 3.24e-09
+iteration  9 residu = 4.84e-10
+iteration 10 residu = 1.07e-10
+iteration 11 residu = 2.49e-11
+iteration 12 residu = 4.67e-12
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="numerical-integration">
-<h2>Numerical integration<a class="headerlink" href="#numerical-integration" title="Permalink to this headline">#</a></h2>
+<h2>Numerical integration<a class="headerlink" href="#numerical-integration" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>quad, dblquad, tplquad,… Fortran library QUADPACK.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.integrate</span> <span class="k">as</span> <span class="nn">spi</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">spi</span>
 
 <span class="n">x2</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 <span class="mf">4.</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span>  <span class="c1"># int(x2) in [0,4]</span>
@@ -1225,10 +1021,10 @@ iteration  9 residu = 6.41e-13
 </div>
 </section>
 <section id="scipy-ode-solver">
-<h2>Scipy ODE solver<a class="headerlink" href="#scipy-ode-solver" title="Permalink to this headline">#</a></h2>
+<h2>Scipy ODE solver<a class="headerlink" href="#scipy-ode-solver" title="Link to this heading">#</a></h2>
 <p>It uses the Fortran ODEPACK library.</p>
 <section id="van-der-pol-oscillator">
-<h3>Van der Pol Oscillator<a class="headerlink" href="#van-der-pol-oscillator" title="Permalink to this headline">#</a></h3>
+<h3>Van der Pol Oscillator<a class="headerlink" href="#van-der-pol-oscillator" title="Link to this heading">#</a></h3>
 <p>\begin{align}
 y_1’(t)	&amp; = y_2(t), \nonumber \
 y_2’(t)	&amp; = 1000(1 - y_1^2(t))y_2(t) - y_1(t) \nonumber
@@ -1237,10 +1033,10 @@ $<span class="math notranslate nohighlight">\(
 with \)</span>y_1(0) = 2 <span class="math notranslate nohighlight">\( and \)</span> y_2(0) = 0. $.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">scipy.integrate</span> <span class="k">as</span> <span class="nn">spi</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">spi</span>
 
-<span class="k">def</span> <span class="nf">vdp1000</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">t</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">vdp1000</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">t</span><span class="p">):</span>
      <span class="n">dy</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
      <span class="n">dy</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
      <span class="n">dy</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mf">1000.</span><span class="o">*</span><span class="p">(</span><span class="mf">1.</span><span class="o">-</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -1266,13 +1062,14 @@ with \)</span>y_1(0) = 2 <span class="math notranslate nohighlight">\( and \)</s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/14-SciPy_36_0.png" src="_images/14-SciPy_36_0.png" />
+<a class="reference internal image-reference" href="_images/c4142d748ee86b6caf482219982d2c38ae95ac06ac2acd830aa6c9f6c5abebe5.png"><img alt="_images/c4142d748ee86b6caf482219982d2c38ae95ac06ac2acd830aa6c9f6c5abebe5.png" src="_images/c4142d748ee86b6caf482219982d2c38ae95ac06ac2acd830aa6c9f6c5abebe5.png" style="width: 603px; height: 357px;" />
+</a>
 </div>
 </div>
 </section>
 </section>
 <section id="exercise">
-<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
+<h2>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
 <p>The following code solve the Laplace equation using a dense matrix.</p>
 <ul class="simple">
 <li><p>Modified the code to use a sparse matrix</p></li>
@@ -1281,8 +1078,8 @@ with \)</span>y_1(0) = 2 <span class="math notranslate nohighlight">\( and \)</s
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &quot;retina&quot;
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
 
 <span class="c1"># Boundary conditions</span>
@@ -1332,8 +1129,8 @@ with \)</span>y_1(0) = 2 <span class="math notranslate nohighlight">\( and \)</s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 210 ms, sys: 40.1 ms, total: 250 ms
-Wall time: 140 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 662 ms, sys: 32 ms, total: 694 ms
+Wall time: 405 ms
 </pre></div>
 </div>
 </div>
@@ -1347,16 +1144,17 @@ Wall time: 140 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f7f0019c370&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x1240d80d0&gt;
 </pre></div>
 </div>
-<img alt="_images/14-SciPy_40_1.png" src="_images/14-SciPy_40_1.png" />
+<a class="reference internal image-reference" href="_images/6c250fe1309a13afd5c7d4fe82be8be2cb628f4ab41b3d4238bf0fd2c90d3035.png"><img alt="_images/6c250fe1309a13afd5c7d4fe82be8be2cb628f4ab41b3d4238bf0fd2c90d3035.png" src="_images/6c250fe1309a13afd5c7d4fe82be8be2cb628f4ab41b3d4238bf0fd2c90d3035.png" style="width: 554px; height: 360px;" />
+</a>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.sparse</span> <span class="k">as</span> <span class="nn">spsp</span>
-<span class="kn">import</span> <span class="nn">scipy.sparse.linalg</span> <span class="k">as</span> <span class="nn">spspl</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy.sparse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">spsp</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.sparse.linalg</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">spspl</span>
 
 <span class="c1"># Boundary conditions</span>
 <span class="n">Tnorth</span><span class="p">,</span> <span class="n">Tsouth</span><span class="p">,</span> <span class="n">Twest</span><span class="p">,</span> <span class="n">Teast</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span>
@@ -1398,8 +1196,8 @@ Wall time: 140 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 395 ms, sys: 32 ms, total: 427 ms
-Wall time: 289 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 822 ms, sys: 25.1 ms, total: 847 ms
+Wall time: 529 ms
 </pre></div>
 </div>
 </div>
@@ -1412,7 +1210,8 @@ Wall time: 289 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/14-SciPy_43_0.png" src="_images/14-SciPy_43_0.png" />
+<a class="reference internal image-reference" href="_images/fd015809f469b2cd65d1f7fa5bf28f6defcea2bf4415681b5809ed15a456dd91.png"><img alt="_images/fd015809f469b2cd65d1f7fa5bf28f6defcea2bf4415681b5809ed15a456dd91.png" src="_images/fd015809f469b2cd65d1f7fa5bf28f6defcea2bf4415681b5809ed15a456dd91.png" style="width: 562px; height: 360px;" />
+</a>
 </div>
 </div>
 </section>
@@ -1430,7 +1229,7 @@ Wall time: 289 ms
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -1438,50 +1237,118 @@ Wall time: 289 ms
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="13-Numpy.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Numpy</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="13-Numpy.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Numpy</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="15-Sympy.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="15-Sympy.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Sympy</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-main-packages">SciPy main packages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fft-scipy-fftpack">FFT : scipy.fftpack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra-scipy-linalg">Linear algebra : scipy.linalg</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csc-compressed-sparse-column">CSC (Compressed Sparse Column)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dedicated-format-for-assembling">Dedicated format for assembling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sparse-matrices-scipy-sparse-linalg">Sparse matrices : scipy.sparse.linalg</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearoperator">LinearOperator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lu-decomposition">LU decomposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conjugate-gradient">Conjugate Gradient</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preconditioned-conjugate-gradient">Preconditioned conjugate gradient</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-integration">Numerical integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-ode-solver">Scipy ODE solver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#van-der-pol-oscillator">Van der Pol Oscillator</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Pierre Navaro<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Pierre Navaro
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

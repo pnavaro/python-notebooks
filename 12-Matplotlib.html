@@ -1,681 +1,509 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="./" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Matplotlib &#8212; Python notebooks</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '12-Matplotlib';</script>
     <link rel="canonical" href="https://pnavaro.github.io/python-notebooks/12-Matplotlib.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Numpy" href="13-Numpy.html" />
     <link rel="prev" title="Standard Library" href="11-Standard.Library.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="01-Introduction.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Python notebooks</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Python notebooks - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python notebooks - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="02-Strings.html">
-   Strings
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03-Lists.html">
-   Python lists and tuples
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04-Control.Flow.Tools.html">
-   Control Flow Tools
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="05-Modules.html">
-   Modules
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06-Input.And.Output.html">
-   Input and Output
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="07-Errors.and.Exceptions.html">
-   Errors and Exceptions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="08-Classes.html">
-   Classes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="09-Iterators.html">
-   Iterators
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="10-Multiprocessing.html">
-   Multiprocessing
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="11-Standard.Library.html">
-   Standard Library
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="13-Numpy.html">
-   Numpy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="14-SciPy.html">
-   Scipy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="15-Sympy.html">
-   Sympy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="16-Fortran.html">
-   Call fortran from Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="17-Cython.html">
-   Cython
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="18-Numba.html">
-   Numba
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="19-LandauDamping.html">
-   Semi-Lagrangian method
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="20-Maxwell.2D.html">
-   Maxwell solver in two dimensions with FDTD scheme
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="21-Gray.Scott.Model.html">
-   Gray-Scott Model
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="22-Matplotlib.Animation.html">
-   Animation with matplotlib
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="02-Strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-Lists.html">Python lists and tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-Control.Flow.Tools.html">Control Flow Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-Modules.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-Input.And.Output.html">Input and Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-Errors.and.Exceptions.html">Errors and Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-Classes.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-Iterators.html">Iterators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-Multiprocessing.html">Multiprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-Standard.Library.html">Standard Library</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13-Numpy.html">Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14-SciPy.html">Scipy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15-Sympy.html">Sympy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16-Fortran.html">Call fortran from Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17-Cython.html">Cython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18-Numba.html">Numba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19-LandauDamping.html">Semi-Lagrangian method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20-Maxwell.2D.html">Maxwell solver in two dimensions with FDTD scheme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21-Gray.Scott.Model.html">Gray-Scott Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22-Matplotlib.Animation.html">Animation with matplotlib</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/pnavaro/python-notebooks/master?urlpath=tree/notebooks/12-Matplotlib.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/pnavaro/python-notebooks/master?urlpath=tree/notebooks/12-Matplotlib.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
-    <img src="_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-      <li>
-        <a href="https://colab.research.google.com/github/pnavaro/python-notebooks/blob/master/notebooks/12-Matplotlib.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/pnavaro/python-notebooks/blob/master/notebooks/12-Matplotlib.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
 <button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-play"></i>
   </span>
-<span class="headerbtn__text-container">Live Code</span>
+<span class="btn__text-container">Live Code</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/pnavaro/python-notebooks" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/pnavaro/python-notebooks/edit/master/notebooks/12-Matplotlib.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/pnavaro/python-notebooks/issues/new?title=Issue%20on%20page%20%2F12-Matplotlib.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/12-Matplotlib.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/pnavaro/python-notebooks"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/pnavaro/python-notebooks/issues/new?title=Issue%20on%20page%20%2F12-Matplotlib.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/pnavaro/python-notebooks/edit/master/notebooks/12-Matplotlib.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/12-Matplotlib.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </button>
-
-      </li>
+</div></div>
       
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
+    </div>
   
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#line-plots">
-   Line Plots
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simple-scatter-plot">
-   Simple Scatter Plot
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#colormapped-scatter-plot">
-   Colormapped Scatter Plot
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#change-colormap">
-   Change Colormap
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multiple-figures">
-   Multiple Figures
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multiple-plots-using-subplot">
-   Multiple Plots Using
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     subplot
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#legends">
-   Legends
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#titles-and-axis-labels">
-   Titles and Axis Labels
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plot-grid-and-save-to-file">
-   Plot Grid and Save to File
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#histogram">
-   Histogram
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#contour-plot">
-   Contour Plot
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#image-display">
-   Image Display
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#figure-and-axis">
-   figure and axis
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#alternatives">
-   Alternatives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Matplotlib</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#line-plots">
-   Line Plots
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simple-scatter-plot">
-   Simple Scatter Plot
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#colormapped-scatter-plot">
-   Colormapped Scatter Plot
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#change-colormap">
-   Change Colormap
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multiple-figures">
-   Multiple Figures
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multiple-plots-using-subplot">
-   Multiple Plots Using
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     subplot
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#legends">
-   Legends
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#titles-and-axis-labels">
-   Titles and Axis Labels
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plot-grid-and-save-to-file">
-   Plot Grid and Save to File
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#histogram">
-   Histogram
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#contour-plot">
-   Contour Plot
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#image-display">
-   Image Display
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#figure-and-axis">
-   figure and axis
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#alternatives">
-   Alternatives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Matplotlib</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#line-plots">Line Plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-scatter-plot">Simple Scatter Plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colormapped-scatter-plot">Colormapped Scatter Plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#change-colormap">Change Colormap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-figures">Multiple Figures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-plots-using-subplot">Multiple Plots Using <code class="docutils literal notranslate"><span class="pre">subplot</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legends">Legends</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#titles-and-axis-labels">Titles and Axis Labels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-grid-and-save-to-file">Plot Grid and Save to File</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram">Histogram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contour-plot">Contour Plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-display">Image Display</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-and-axis">figure and axis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternatives">Alternatives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="matplotlib">
-<h1>Matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this headline">#</a></h1>
+<h1>Matplotlib<a class="headerlink" href="#matplotlib" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Python 2D plotting library which produces figures in many formats and interactive environments.</p></li>
 <li><p>Tries to make easy things easy and hard things possible.</p></li>
@@ -686,7 +514,7 @@ title="Print to PDF"
 </ul>
 <p><em>In this notebook we use some numpy command that will be explain more precisely later.</em></p>
 <section id="line-plots">
-<h2>Line Plots<a class="headerlink" href="#line-plots" title="Permalink to this headline">#</a></h2>
+<h2>Line Plots<a class="headerlink" href="#line-plots" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">np.linspace(0,1,10)</span></code> return 10 evenly spaced values over <span class="math notranslate nohighlight">\([0,1]\)</span>.</p></li>
 </ul>
@@ -694,8 +522,8 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="c1"># inline can be replaced by notebook to get interactive plots</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &quot;retina&quot;
 </pre></div>
@@ -711,7 +539,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/12-Matplotlib_3_0.png" src="_images/12-Matplotlib_3_0.png" />
+<a class="reference internal image-reference" href="_images/d8969b7d328f0cd7285eae07d77c40bc26e3e49c3a15d7b0ecb9dcc1ba7c00f8.png"><img alt="_images/d8969b7d328f0cd7285eae07d77c40bc26e3e49c3a15d7b0ecb9dcc1ba7c00f8.png" src="_images/d8969b7d328f0cd7285eae07d77c40bc26e3e49c3a15d7b0ecb9dcc1ba7c00f8.png" style="width: 838px; height: 505px;" />
+</a>
 </div>
 </div>
 <div class="cell docutils container">
@@ -721,7 +550,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/12-Matplotlib_4_0.png" src="_images/12-Matplotlib_4_0.png" />
+<a class="reference internal image-reference" href="_images/2825e83d0ee4a3f4e7073ef89636633b8e7208cda4fb488ad3ccc373bd52a8d4.png"><img alt="_images/2825e83d0ee4a3f4e7073ef89636633b8e7208cda4fb488ad3ccc373bd52a8d4.png" src="_images/2825e83d0ee4a3f4e7073ef89636633b8e7208cda4fb488ad3ccc373bd52a8d4.png" style="width: 838px; height: 505px;" />
+</a>
 </div>
 </div>
 <p>If you have a recent Macbook with a Retina screen, you can display high-resolution plot outputs.
@@ -742,12 +572,13 @@ Running the next cell will give you double resolution plot output for Retina scr
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/12-Matplotlib_7_0.png" src="_images/12-Matplotlib_7_0.png" />
+<a class="reference internal image-reference" href="_images/2da4b3b3628915e58ec0d552cf06549f3aee1ef08df419e0502be8925724366e.png"><img alt="_images/2da4b3b3628915e58ec0d552cf06549f3aee1ef08df419e0502be8925724366e.png" src="_images/2da4b3b3628915e58ec0d552cf06549f3aee1ef08df419e0502be8925724366e.png" style="width: 838px; height: 505px;" />
+</a>
 </div>
 </div>
 </section>
 <section id="simple-scatter-plot">
-<h2>Simple Scatter Plot<a class="headerlink" href="#simple-scatter-plot" title="Permalink to this headline">#</a></h2>
+<h2>Simple Scatter Plot<a class="headerlink" href="#simple-scatter-plot" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
@@ -757,12 +588,13 @@ Running the next cell will give you double resolution plot output for Retina scr
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/12-Matplotlib_9_0.png" src="_images/12-Matplotlib_9_0.png" />
+<a class="reference internal image-reference" href="_images/cd73286016f07199feec8f6a34a4c75dfe28e7e2908faa1b9048060a215c0ba7.png"><img alt="_images/cd73286016f07199feec8f6a34a4c75dfe28e7e2908faa1b9048060a215c0ba7.png" src="_images/cd73286016f07199feec8f6a34a4c75dfe28e7e2908faa1b9048060a215c0ba7.png" style="width: 826px; height: 505px;" />
+</a>
 </div>
 </div>
 </section>
 <section id="colormapped-scatter-plot">
-<h2>Colormapped Scatter Plot<a class="headerlink" href="#colormapped-scatter-plot" title="Permalink to this headline">#</a></h2>
+<h2>Colormapped Scatter Plot<a class="headerlink" href="#colormapped-scatter-plot" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span> <span class="c1"># 50 steps from 0 to 6 PI</span>
@@ -776,12 +608,13 @@ Running the next cell will give you double resolution plot output for Retina scr
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/12-Matplotlib_11_0.png" src="_images/12-Matplotlib_11_0.png" />
+<a class="reference internal image-reference" href="_images/c4447e5edae2ecfd767ca37fb7b204335fc02048bee7ef383edfdd626b5024fa.png"><img alt="_images/c4447e5edae2ecfd767ca37fb7b204335fc02048bee7ef383edfdd626b5024fa.png" src="_images/c4447e5edae2ecfd767ca37fb7b204335fc02048bee7ef383edfdd626b5024fa.png" style="width: 772px; height: 505px;" />
+</a>
 </div>
 </div>
 </section>
 <section id="change-colormap">
-<h2>Change Colormap<a class="headerlink" href="#change-colormap" title="Permalink to this headline">#</a></h2>
+<h2>Change Colormap<a class="headerlink" href="#change-colormap" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span> <span class="c1"># create a figure</span>
@@ -792,13 +625,14 @@ Running the next cell will give you double resolution plot output for Retina scr
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/12-Matplotlib_13_0.png" src="_images/12-Matplotlib_13_0.png" />
+<a class="reference internal image-reference" href="_images/20a20f6c6997ccd7accadbc7bb8b33ebb6e48c14a1c24805d6e1ce69519cd54d.png"><img alt="_images/20a20f6c6997ccd7accadbc7bb8b33ebb6e48c14a1c24805d6e1ce69519cd54d.png" src="_images/20a20f6c6997ccd7accadbc7bb8b33ebb6e48c14a1c24805d6e1ce69519cd54d.png" style="width: 834px; height: 505px;" />
+</a>
 </div>
 </div>
 <p><a class="reference external" href="http://matplotlib.org/api/pyplot_summary.html?highlight=colormaps#matplotlib.pyplot.colormaps">colormaps</a> in matplotlib documentation.</p>
 </section>
 <section id="multiple-figures">
-<h2>Multiple Figures<a class="headerlink" href="#multiple-figures" title="Permalink to this headline">#</a></h2>
+<h2>Multiple Figures<a class="headerlink" href="#multiple-figures" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
@@ -809,13 +643,15 @@ Running the next cell will give you double resolution plot output for Retina scr
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/12-Matplotlib_16_0.png" src="_images/12-Matplotlib_16_0.png" />
-<img alt="_images/12-Matplotlib_16_1.png" src="_images/12-Matplotlib_16_1.png" />
+<a class="reference internal image-reference" href="_images/0765bcf44523d373c204aecc4eddf658eb4170ff58f6eec8c1a6cc06969dc881.png"><img alt="_images/0765bcf44523d373c204aecc4eddf658eb4170ff58f6eec8c1a6cc06969dc881.png" src="_images/0765bcf44523d373c204aecc4eddf658eb4170ff58f6eec8c1a6cc06969dc881.png" style="width: 833px; height: 505px;" />
+</a>
+<a class="reference internal image-reference" href="_images/b0a7f2ca8acc61c9b1e7f9730567918f313b9d2b8efbad46034a0c6f6d7ddb3c.png"><img alt="_images/b0a7f2ca8acc61c9b1e7f9730567918f313b9d2b8efbad46034a0c6f6d7ddb3c.png" src="_images/b0a7f2ca8acc61c9b1e7f9730567918f313b9d2b8efbad46034a0c6f6d7ddb3c.png" style="width: 826px; height: 505px;" />
+</a>
 </div>
 </div>
 </section>
 <section id="multiple-plots-using-subplot">
-<h2>Multiple Plots Using <code class="docutils literal notranslate"><span class="pre">subplot</span></code><a class="headerlink" href="#multiple-plots-using-subplot" title="Permalink to this headline">#</a></h2>
+<h2>Multiple Plots Using <code class="docutils literal notranslate"><span class="pre">subplot</span></code><a class="headerlink" href="#multiple-plots-using-subplot" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 1 row 1, 2 columns, active plot number 1</span>
@@ -826,12 +662,13 @@ Running the next cell will give you double resolution plot output for Retina scr
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/12-Matplotlib_18_0.png" src="_images/12-Matplotlib_18_0.png" />
+<a class="reference internal image-reference" href="_images/10f12d69333ee00dd1b7d6bdb4da902613ece72d3bf31c8e27ea8da24176a1d7.png"><img alt="_images/10f12d69333ee00dd1b7d6bdb4da902613ece72d3bf31c8e27ea8da24176a1d7.png" src="_images/10f12d69333ee00dd1b7d6bdb4da902613ece72d3bf31c8e27ea8da24176a1d7.png" style="width: 833px; height: 505px;" />
+</a>
 </div>
 </div>
 </section>
 <section id="legends">
-<h2>Legends<a class="headerlink" href="#legends" title="Permalink to this headline">#</a></h2>
+<h2>Legends<a class="headerlink" href="#legends" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Legends labels with plot</p></li>
 </ul>
@@ -845,7 +682,8 @@ Running the next cell will give you double resolution plot output for Retina scr
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/12-Matplotlib_20_0.png" src="_images/12-Matplotlib_20_0.png" />
+<a class="reference internal image-reference" href="_images/e3da9d9c99918a4a179792dadd49db353ee95367bb77f86d254cdada72ffd2eb.png"><img alt="_images/e3da9d9c99918a4a179792dadd49db353ee95367bb77f86d254cdada72ffd2eb.png" src="_images/e3da9d9c99918a4a179792dadd49db353ee95367bb77f86d254cdada72ffd2eb.png" style="width: 847px; height: 505px;" />
+</a>
 </div>
 </div>
 <ul class="simple">
@@ -860,12 +698,19 @@ Running the next cell will give you double resolution plot output for Retina scr
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/12-Matplotlib_22_0.png" src="_images/12-Matplotlib_22_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\c&#39;
+&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\c&#39;
+/tmp/ipykernel_7355/3878772437.py:3: SyntaxWarning: invalid escape sequence &#39;\c&#39;
+  plt.legend([&#39;sin&#39;,&#39;$\cos^2$&#39;]);
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/3c2df7097048392efaa20e480678ffde1ff758c96031fcebfab2988c66489afa.png"><img alt="_images/3c2df7097048392efaa20e480678ffde1ff758c96031fcebfab2988c66489afa.png" src="_images/3c2df7097048392efaa20e480678ffde1ff758c96031fcebfab2988c66489afa.png" style="width: 847px; height: 505px;" />
+</a>
 </div>
 </div>
 </section>
 <section id="titles-and-axis-labels">
-<h2>Titles and Axis Labels<a class="headerlink" href="#titles-and-axis-labels" title="Permalink to this headline">#</a></h2>
+<h2>Titles and Axis Labels<a class="headerlink" href="#titles-and-axis-labels" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
@@ -875,7 +720,14 @@ Running the next cell will give you double resolution plot output for Retina scr
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/12-Matplotlib_24_0.png" src="_images/12-Matplotlib_24_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+/tmp/ipykernel_7355/2475386458.py:2: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  plt.xlabel(&#39;radians from 0 to $4\pi$&#39;)
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/5f008d5a549a42612a5b0ad3c3e3fce537c1da338219f568a7112204de64e137.png"><img alt="_images/5f008d5a549a42612a5b0ad3c3e3fce537c1da338219f568a7112204de64e137.png" src="_images/5f008d5a549a42612a5b0ad3c3e3fce537c1da338219f568a7112204de64e137.png" style="width: 866px; height: 525px;" />
+</a>
 </div>
 </div>
 <div class="cell docutils container">
@@ -895,12 +747,13 @@ Running the next cell will give you double resolution plot output for Retina scr
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/12-Matplotlib_25_0.png" src="_images/12-Matplotlib_25_0.png" />
+<a class="reference internal image-reference" href="_images/2d2237f6baf9cad6d72ac763f0809f5bfe44986481c3a2cd2cd8f2dcff369aec.png"><img alt="_images/2d2237f6baf9cad6d72ac763f0809f5bfe44986481c3a2cd2cd8f2dcff369aec.png" src="_images/2d2237f6baf9cad6d72ac763f0809f5bfe44986481c3a2cd2cd8f2dcff369aec.png" style="width: 836px; height: 528px;" />
+</a>
 </div>
 </div>
 </section>
 <section id="plot-grid-and-save-to-file">
-<h2>Plot Grid and Save to File<a class="headerlink" href="#plot-grid-and-save-to-file" title="Permalink to this headline">#</a></h2>
+<h2>Plot Grid and Save to File<a class="headerlink" href="#plot-grid-and-save-to-file" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
@@ -910,7 +763,8 @@ Running the next cell will give you double resolution plot output for Retina scr
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/12-Matplotlib_27_0.png" src="_images/12-Matplotlib_27_0.png" />
+<a class="reference internal image-reference" href="_images/2053a0952686bac8912972a496d7d76f2204e416f26a60ada4b72ab265d1fcc0.png"><img alt="_images/2053a0952686bac8912972a496d7d76f2204e416f26a60ada4b72ab265d1fcc0.png" src="_images/2053a0952686bac8912972a496d7d76f2204e416f26a60ada4b72ab265d1fcc0.png" style="width: 847px; height: 505px;" />
+</a>
 </div>
 </div>
 <div class="cell docutils container">
@@ -931,16 +785,17 @@ Running the next cell will give you double resolution plot output for Retina scr
 </div>
 </section>
 <section id="histogram">
-<h2>Histogram<a class="headerlink" href="#histogram" title="Permalink to this headline">#</a></h2>
+<h2>Histogram<a class="headerlink" href="#histogram" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">randn</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy.random</span><span class="w"> </span><span class="kn">import</span> <span class="n">randn</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/12-Matplotlib_30_0.png" src="_images/12-Matplotlib_30_0.png" />
+<a class="reference internal image-reference" href="_images/888705890b558ee36a4b8cb2cbef192135b670e76a8695f493533e9d490d3c8d.png"><img alt="_images/888705890b558ee36a4b8cb2cbef192135b670e76a8695f493533e9d490d3c8d.png" src="_images/888705890b558ee36a4b8cb2cbef192135b670e76a8695f493533e9d490d3c8d.png" style="width: 831px; height: 505px;" />
+</a>
 </div>
 </div>
 <p>Change the number of bins and supress display of returned array with ;</p>
@@ -951,12 +806,13 @@ Running the next cell will give you double resolution plot output for Retina scr
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/12-Matplotlib_32_0.png" src="_images/12-Matplotlib_32_0.png" />
+<a class="reference internal image-reference" href="_images/8f234e7aa62065eeb995f0049d7f81ff9a55c369acaeeee95678c59678a1f4fd.png"><img alt="_images/8f234e7aa62065eeb995f0049d7f81ff9a55c369acaeeee95678c59678a1f4fd.png" src="_images/8f234e7aa62065eeb995f0049d7f81ff9a55c369acaeeee95678c59678a1f4fd.png" style="width: 822px; height: 505px;" />
+</a>
 </div>
 </div>
 </section>
 <section id="contour-plot">
-<h2>Contour Plot<a class="headerlink" href="#contour-plot" title="Permalink to this headline">#</a></h2>
+<h2>Contour Plot<a class="headerlink" href="#contour-plot" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">+</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
@@ -968,12 +824,13 @@ Running the next cell will give you double resolution plot output for Retina scr
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/12-Matplotlib_34_0.png" src="_images/12-Matplotlib_34_0.png" />
+<a class="reference internal image-reference" href="_images/12d9200881be73ec64f52fd1f80e78d44e23e8131ccedef9bc635acfbed89b96.png"><img alt="_images/12d9200881be73ec64f52fd1f80e78d44e23e8131ccedef9bc635acfbed89b96.png" src="_images/12d9200881be73ec64f52fd1f80e78d44e23e8131ccedef9bc635acfbed89b96.png" style="width: 825px; height: 505px;" />
+</a>
 </div>
 </div>
 </section>
 <section id="image-display">
-<h2>Image Display<a class="headerlink" href="#image-display" title="Permalink to this headline">#</a></h2>
+<h2>Image Display<a class="headerlink" href="#image-display" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&quot;https://hackage.haskell.org/package/JuicyPixels-extra-0.1.0/src/data-examples/lenna.png&quot;</span><span class="p">)</span>
@@ -988,25 +845,27 @@ Running the next cell will give you double resolution plot output for Retina scr
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">img</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&quot;https://hackage.haskell.org/package/JuicyPixels-extra-0.1.0/src/data-examples/lenna.png&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/matplotlib/pyplot.py:2123,</span> in <span class="ni">imread</span><span class="nt">(fname, format)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2121</span> <span class="nd">@_copy_docstring_and_deprecators</span><span class="p">(</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">imread</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2122</span> <span class="k">def</span> <span class="nf">imread</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">2123</span>     <span class="k">return</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
+<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/matplotlib/pyplot.py:2615,</span> in <span class="ni">imread</span><span class="nt">(fname, format)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2611</span> <span class="nd">@_copy_docstring_and_deprecators</span><span class="p">(</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">imread</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2612</span> <span class="k">def</span><span class="w"> </span><span class="nf">imread</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2613</span>         <span class="n">fname</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span> <span class="o">|</span> <span class="n">BinaryIO</span><span class="p">,</span> <span class="nb">format</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">2614</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2615</span>     <span class="k">return</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.10/site-packages/matplotlib/image.py:1536,</span> in <span class="ni">imread</span><span class="nt">(fname, format)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1532</span> <span class="n">img_open</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1533</span>     <span class="n">PIL</span><span class="o">.</span><span class="n">PngImagePlugin</span><span class="o">.</span><span class="n">PngImageFile</span> <span class="k">if</span> <span class="n">ext</span> <span class="o">==</span> <span class="s1">&#39;png&#39;</span> <span class="k">else</span> <span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1534</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">parse</span><span class="o">.</span><span class="n">urlparse</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span><span class="o">.</span><span class="n">scheme</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1535</span>     <span class="c1"># Pillow doesn&#39;t handle URLs directly.</span>
-<span class="ne">-&gt; </span><span class="mi">1536</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1537</span>         <span class="s2">&quot;Please open the URL for reading and pass the &quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1538</span>         <span class="s2">&quot;result to Pillow, e.g. with &quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1539</span>         <span class="s2">&quot;``np.array(PIL.Image.open(urllib.request.urlopen(url)))``.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1540</span>         <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1541</span> <span class="k">with</span> <span class="n">img_open</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span> <span class="k">as</span> <span class="n">image</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1542</span>     <span class="k">return</span> <span class="p">(</span><span class="n">_pil_png_to_float_array</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1543</span>             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">PIL</span><span class="o">.</span><span class="n">PngImagePlugin</span><span class="o">.</span><span class="n">PngImageFile</span><span class="p">)</span> <span class="k">else</span>
-<span class="g g-Whitespace">   </span><span class="mi">1544</span>             <span class="n">pil_to_array</span><span class="p">(</span><span class="n">image</span><span class="p">))</span>
+<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/matplotlib/image.py:1515,</span> in <span class="ni">imread</span><span class="nt">(fname, format)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1511</span> <span class="n">img_open</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1512</span>     <span class="n">PIL</span><span class="o">.</span><span class="n">PngImagePlugin</span><span class="o">.</span><span class="n">PngImageFile</span> <span class="k">if</span> <span class="n">ext</span> <span class="o">==</span> <span class="s1">&#39;png&#39;</span> <span class="k">else</span> <span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1513</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">parse</span><span class="o">.</span><span class="n">urlparse</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span><span class="o">.</span><span class="n">scheme</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1514</span>     <span class="c1"># Pillow doesn&#39;t handle URLs directly.</span>
+<span class="ne">-&gt; </span><span class="mi">1515</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1516</span>         <span class="s2">&quot;Please open the URL for reading and pass the &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1517</span>         <span class="s2">&quot;result to Pillow, e.g. with &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1518</span>         <span class="s2">&quot;``np.array(PIL.Image.open(urllib.request.urlopen(url)))``.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1519</span>         <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1520</span> <span class="k">with</span> <span class="n">img_open</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span> <span class="k">as</span> <span class="n">image</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1521</span>     <span class="k">return</span> <span class="p">(</span><span class="n">_pil_png_to_float_array</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1522</span>             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">PIL</span><span class="o">.</span><span class="n">PngImagePlugin</span><span class="o">.</span><span class="n">PngImageFile</span><span class="p">)</span> <span class="k">else</span>
+<span class="g g-Whitespace">   </span><span class="mi">1523</span>             <span class="n">pil_to_array</span><span class="p">(</span><span class="n">image</span><span class="p">))</span>
 
 <span class="ne">ValueError</span>: Please open the URL for reading and pass the result to Pillow, e.g. with ``np.array(PIL.Image.open(urllib.request.urlopen(url)))``.
 </pre></div>
@@ -1015,7 +874,7 @@ Running the next cell will give you double resolution plot output for Retina scr
 </div>
 </section>
 <section id="figure-and-axis">
-<h2>figure and axis<a class="headerlink" href="#figure-and-axis" title="Permalink to this headline">#</a></h2>
+<h2>figure and axis<a class="headerlink" href="#figure-and-axis" title="Link to this heading">#</a></h2>
 <p>Best method to create a plot with many components</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1042,16 +901,17 @@ Running the next cell will give you double resolution plot output for Retina scr
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(-0.5, 1.1, &#39;BOX&#39;)
 </pre></div>
 </div>
-<img alt="_images/12-Matplotlib_38_1.png" src="_images/12-Matplotlib_38_1.png" />
+<a class="reference internal image-reference" href="_images/2a269549f0325e49102f2e242b2a0d7371fbe58cada0db1aa5d410c233b00a8b.png"><img alt="_images/2a269549f0325e49102f2e242b2a0d7371fbe58cada0db1aa5d410c233b00a8b.png" src="_images/2a269549f0325e49102f2e242b2a0d7371fbe58cada0db1aa5d410c233b00a8b.png" style="width: 379px; height: 360px;" />
+</a>
 </div>
 </div>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <p>Recreate the image my_plots.png using the <em>delicate_arch.png</em> file in <em>images</em> directory.</p>
 </section>
 <section id="alternatives">
-<h2>Alternatives<a class="headerlink" href="#alternatives" title="Permalink to this headline">#</a></h2>
+<h2>Alternatives<a class="headerlink" href="#alternatives" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/bloomberg/bqplot/blob/master/README.md">bqplot</a> : Jupyter Notebooks, Interactive.</p></li>
 <li><p><a class="reference external" href="https://seaborn.pydata.org">seaborn</a> : Statistics build on top of matplotlib.</p></li>
@@ -1072,9 +932,9 @@ Running the next cell will give you double resolution plot output for Retina scr
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#example from Filipe Fernandes</span>
 <span class="c1">#http://nbviewer.jupyter.org/gist/ocefpaf/9730c697819e91b99f1d694983e39a8f</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">animation</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">animation</span>
 
 <span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>
 <span class="n">denw</span> <span class="o">=</span> <span class="mf">1025.0</span>  <span class="c1"># Seawater density [kg/m**3].</span>
@@ -1092,7 +952,7 @@ Running the next cell will give you double resolution plot output for Retina scr
 <span class="n">u</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">compute_vel</span><span class="p">(</span><span class="n">phase</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_vel</span><span class="p">(</span><span class="n">phase</span><span class="p">):</span>
     <span class="n">u</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">omega</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cosh</span><span class="p">(</span><span class="n">k</span> <span class="o">*</span> <span class="p">(</span><span class="n">z</span><span class="o">+</span><span class="n">h</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sinh</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">h</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="n">phase</span><span class="p">)</span>
     <span class="n">w</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">omega</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sinh</span><span class="p">(</span><span class="n">k</span> <span class="o">*</span> <span class="p">(</span><span class="n">z</span><span class="o">+</span><span class="n">h</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sinh</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">h</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="n">phase</span><span class="p">)</span>
     <span class="n">mask</span> <span class="o">=</span> <span class="o">-</span><span class="n">z</span> <span class="o">&gt;</span> <span class="n">h</span>
@@ -1101,7 +961,7 @@ Running the next cell will give you double resolution plot output for Retina scr
     <span class="k">return</span> <span class="n">u</span><span class="p">,</span> <span class="n">w</span>
 
 
-<span class="k">def</span> <span class="nf">basic_animation</span><span class="p">(</span><span class="n">frames</span><span class="o">=</span><span class="mi">91</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.3</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">basic_animation</span><span class="p">(</span><span class="n">frames</span><span class="o">=</span><span class="mi">91</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.3</span><span class="p">):</span>
     <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">70</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 
@@ -1122,10 +982,10 @@ Running the next cell will give you double resolution plot output for Retina scr
     <span class="n">time_step</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">58</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
     <span class="n">line</span><span class="o">.</span><span class="n">set_data</span><span class="p">([],</span> <span class="p">[])</span>
 
-    <span class="k">def</span> <span class="nf">init</span><span class="p">():</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">init</span><span class="p">():</span>
         <span class="k">return</span> <span class="n">line</span><span class="p">,</span> <span class="n">quiver</span><span class="p">,</span> <span class="n">time_step</span>
 
-    <span class="k">def</span> <span class="nf">animate</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">animate</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
         <span class="n">time</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">dt</span>
         <span class="n">phase</span> <span class="o">=</span> <span class="n">omega</span> <span class="o">*</span> <span class="n">time</span>
         <span class="n">eta</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">k</span> <span class="o">-</span> <span class="n">phase</span><span class="p">)</span>
@@ -1143,7 +1003,7 @@ Running the next cell will give you double resolution plot output for Retina scr
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span>
 
 <span class="n">HTML</span><span class="p">(</span><span class="n">basic_animation</span><span class="p">(</span><span class="n">dt</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span><span class="o">.</span><span class="n">to_jshtml</span><span class="p">())</span>
 </pre></div>
@@ -1384,7 +1244,7 @@ input[type=range].anim-slider {
     var slider_id = "_anim_sliderf44b00dd864c4804aa4e00958d9a5e42";
     var loop_select_id = "_anim_loop_selectf44b00dd864c4804aa4e00958d9a5e42";
     var frames = new Array(91);
-
+    
   frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAkAAAAGwCAYAAABB4NqyAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
 bGliIHZlcnNpb24zLjMuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/d3fzzAAAACXBIWXMAAAsT\
 AAALEwEAmpwYAABu50lEQVR4nO3dd3gUZdcG8PtJJfQECC1SQieEGkBECEUElKKAAtKkSFEU0PdT\
@@ -47001,12 +46861,13 @@ KAAAAABJRU5ErkJggg==\
     }, 0);
   })()
 </script>
-</div><img alt="_images/12-Matplotlib_42_1.png" src="_images/12-Matplotlib_42_1.png" />
+</div><a class="reference internal image-reference" href="_images/e4ea76825692c4d74f2b74a4767021295981c9004aae804f0ebddbe59c4fb582.png"><img alt="_images/e4ea76825692c4d74f2b74a4767021295981c9004aae804f0ebddbe59c4fb582.png" src="_images/e4ea76825692c4d74f2b74a4767021295981c9004aae804f0ebddbe59c4fb582.png" style="width: 502px; height: 374px;" />
+</a>
 </div>
 </div>
 </section>
 <section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Simple examples with increasing difficulty <a class="reference external" href="https://matplotlib.org/examples/index.html">https://matplotlib.org/examples/index.html</a></p></li>
 <li><p>Gallery <a class="reference external" href="https://matplotlib.org/gallery.html">https://matplotlib.org/gallery.html</a></p></li>
@@ -47030,7 +46891,7 @@ KAAAAABJRU5ErkJggg==\
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -47038,50 +46899,118 @@ KAAAAABJRU5ErkJggg==\
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="11-Standard.Library.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Standard Library</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="11-Standard.Library.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Standard Library</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="13-Numpy.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="13-Numpy.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Numpy</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#line-plots">Line Plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-scatter-plot">Simple Scatter Plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colormapped-scatter-plot">Colormapped Scatter Plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#change-colormap">Change Colormap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-figures">Multiple Figures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-plots-using-subplot">Multiple Plots Using <code class="docutils literal notranslate"><span class="pre">subplot</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legends">Legends</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#titles-and-axis-labels">Titles and Axis Labels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-grid-and-save-to-file">Plot Grid and Save to File</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram">Histogram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contour-plot">Contour Plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-display">Image Display</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-and-axis">figure and axis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternatives">Alternatives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Pierre Navaro<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Pierre Navaro
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

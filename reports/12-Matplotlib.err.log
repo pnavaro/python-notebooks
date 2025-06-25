@@ -1,0 +1,73 @@
+Traceback (most recent call last):
+  File "/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 154, in wrapped
+    asyncio.get_running_loop()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+RuntimeError: no running event loop
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 158, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/share/miniconda3/envs/runenv/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+img = plt.imread("https://hackage.haskell.org/package/JuicyPixels-extra-0.1.0/src/data-examples/lenna.png")
+plt.imshow(img)
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mValueError[39m                                Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[20][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m img = [43mplt[49m[43m.[49m[43mimread[49m[43m([49m[33;43m"[39;49m[33;43mhttps://hackage.haskell.org/package/JuicyPixels-extra-0.1.0/src/data-examples/lenna.png[39;49m[33;43m"[39;49m[43m)[49m
+[32m      2[39m plt.imshow(img)
+
+[36mFile [39m[32m/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/matplotlib/pyplot.py:2615[39m, in [36mimread[39m[34m(fname, format)[39m
+[32m   2611[39m [38;5;129m@_copy_docstring_and_deprecators[39m(matplotlib.image.imread)
+[32m   2612[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mimread[39m(
+[32m   2613[39m         fname: [38;5;28mstr[39m | pathlib.Path | BinaryIO, [38;5;28mformat[39m: [38;5;28mstr[39m | [38;5;28;01mNone[39;00m = [38;5;28;01mNone[39;00m
+[32m   2614[39m ) -> np.ndarray:
+[32m-> [39m[32m2615[39m     [38;5;28;01mreturn[39;00m [43mmatplotlib[49m[43m.[49m[43mimage[49m[43m.[49m[43mimread[49m[43m([49m[43mfname[49m[43m,[49m[43m [49m[38;5;28;43mformat[39;49m[43m)[49m
+
+[36mFile [39m[32m/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/matplotlib/image.py:1515[39m, in [36mimread[39m[34m(fname, format)[39m
+[32m   1511[39m img_open = (
+[32m   1512[39m     PIL.PngImagePlugin.PngImageFile [38;5;28;01mif[39;00m ext == [33m'[39m[33mpng[39m[33m'[39m [38;5;28;01melse[39;00m PIL.Image.open)
+[32m   1513[39m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(fname, [38;5;28mstr[39m) [38;5;129;01mand[39;00m [38;5;28mlen[39m(parse.urlparse(fname).scheme) > [32m1[39m:
+[32m   1514[39m     [38;5;66;03m# Pillow doesn't handle URLs directly.[39;00m
+[32m-> [39m[32m1515[39m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[32m   1516[39m         [33m"[39m[33mPlease open the URL for reading and pass the [39m[33m"[39m
+[32m   1517[39m         [33m"[39m[33mresult to Pillow, e.g. with [39m[33m"[39m
+[32m   1518[39m         [33m"[39m[33m``np.array(PIL.Image.open(urllib.request.urlopen(url)))``.[39m[33m"[39m
+[32m   1519[39m         )
+[32m   1520[39m [38;5;28;01mwith[39;00m img_open(fname) [38;5;28;01mas[39;00m image:
+[32m   1521[39m     [38;5;28;01mreturn[39;00m (_pil_png_to_float_array(image)
+[32m   1522[39m             [38;5;28;01mif[39;00m [38;5;28misinstance[39m(image, PIL.PngImagePlugin.PngImageFile) [38;5;28;01melse[39;00m
+[32m   1523[39m             pil_to_array(image))
+
+[31mValueError[39m: Please open the URL for reading and pass the result to Pillow, e.g. with ``np.array(PIL.Image.open(urllib.request.urlopen(url)))``.
+
