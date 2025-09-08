@@ -1,0 +1,6 @@
+s = input(" Input a new word ?")
+print(" The string length is " + str(len(s)))
+print(" The first character is equal to the last", s[0] == s[-1])
+print(" String " + s + " contains only letters : ", s.isalpha())
+print(" String " + s + " is lower case :", s.islower())
+print(" String " + s + " is a plalindrome :", s == s[::-1])

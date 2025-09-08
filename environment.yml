@@ -1,0 +1,33 @@
+channels:
+  - sympy
+  - conda-forge
+  - defaults
+dependencies:
+  - cython
+  - fortran-magic
+  - h5py
+  - imageio
+  - ipykernel
+  - ipywidgets
+  - joblib
+  - jupytext
+  - line_profiler
+  - lorem
+  - matplotlib
+  - memory_profiler
+  - numba
+  - numexpr
+  - numpy
+  - pillow
+  - progressbar2
+  - pythran
+  - scipy
+  - seaborn
+  - setuptools
+  - sympy
+  - tqdm
+  - ujson
+  - pip
+  - pip:
+    - py-heat-magic
+    - jupyter-book
