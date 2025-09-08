@@ -591,8 +591,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.38312687, 0.74233623, 0.9581529 , 1.18219798, 1.19653302,
-       0.78024366, 0.4640026 , 1.48154016, 1.33451142, 0.7930851 ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.41694317, 1.23230362, 0.65364942, 1.05842208, 1.89479035,
+       1.63853706, 1.00931413, 0.91613403, 1.14731072, 1.45286116])
 </pre></div>
 </div>
 </div>
@@ -614,7 +614,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.6 ms ± 27.6 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.75 ms ± 17.6 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -638,7 +638,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.4 ms ± 3.82 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.41 ms ± 2.04 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -672,7 +672,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jit_sum (int64, int64)
 --------------------------------------------------------------------------------
-# File: /tmp/ipykernel_7727/2799832006.py
+# File: /tmp/ipykernel_7826/2799832006.py
 # --- LINE 1 --- 
 # label 0
 #   a = arg(0, name=a)  :: int64
@@ -710,7 +710,7 @@ def jit_sum(a, b):
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jit_sum (int64, int64)
 --------------------------------------------------------------------------------
-# File: /tmp/ipykernel_7727/2799832006.py
+# File: /tmp/ipykernel_7826/2799832006.py
 # --- LINE 1 --- 
 # label 0
 #   a = arg(0, name=a)  :: int64
@@ -736,7 +736,7 @@ def jit_sum(a, b):
 ================================================================================
 jit_sum (float64, float64)
 --------------------------------------------------------------------------------
-# File: /tmp/ipykernel_7727/2799832006.py
+# File: /tmp/ipykernel_7826/2799832006.py
 # --- LINE 1 --- 
 # label 0
 #   a = arg(0, name=a)  :: float64
@@ -975,7 +975,7 @@ def jit_sum(a, b):
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="n">j</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/numba/np/ufunc/dufunc.py:288,</span> in <span class="ni">DUFunc.__call__</span><span class="nt">(self, *args, **kws)</span>
+<span class="nn">File ~/miniconda3/envs/runenv/lib/python3.13/site-packages/numba/np/ufunc/dufunc.py:288,</span> in <span class="ni">DUFunc.__call__</span><span class="nt">(self, *args, **kws)</span>
 <span class="g g-Whitespace">    </span><span class="mi">286</span>             <span class="k">return</span> <span class="n">output</span>
 <span class="g g-Whitespace">    </span><span class="mi">287</span> <span class="k">else</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">288</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kws</span><span class="p">)</span>

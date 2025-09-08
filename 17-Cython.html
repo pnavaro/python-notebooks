@@ -589,7 +589,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>457 μs ± 748 ns per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>456 μs ± 1.7 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 2.0000040080120174
 </pre></div>
 </div>
@@ -620,7 +620,7 @@ integrate_f(0, 10, 1000)
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="_images/db9fa25974f9da6b7a91a0d6216963acc29a96df5d3d1a334c6960781a00d76f.png"><img alt="_images/db9fa25974f9da6b7a91a0d6216963acc29a96df5d3d1a334c6960781a00d76f.png" src="_images/db9fa25974f9da6b7a91a0d6216963acc29a96df5d3d1a334c6960781a00d76f.png" style="width: 420px; height: 277px;" />
+<a class="reference internal image-reference" href="_images/4a4707087fcd2b182c6a1e543c8e5306181d4707c0708bf8c8daa509ee84a3e9.png"><img alt="_images/4a4707087fcd2b182c6a1e543c8e5306181d4707c0708bf8c8daa509ee84a3e9.png" src="_images/4a4707087fcd2b182c6a1e543c8e5306181d4707c0708bf8c8daa509ee84a3e9.png" style="width: 420px; height: 277px;" />
 </a>
 </div>
 </div>
@@ -688,7 +688,7 @@ integrate_f(0, 10, 1000)
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>integral_f(-1.0, 1.0, 1000) = 2.000004 
-time = 1.452000e-03 ms 
+time = 1.443000e-03 ms 
 </pre></div>
 </div>
 </div>
@@ -1098,15 +1098,15 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     Click on a line that starts with a "<code>+</code>" to see the C code that Cython generated for it.
 </p>
 <div class="cython"><pre class="cython line score-8" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">01</span>: <span class="k">cdef</span><span class="w"> </span><span class="kt">int</span> <span class="nf">i</span><span class="p">,</span> <span class="nf">j</span><span class="w"> </span><span class="o">=</span> <span class="mf">2</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mf">3</span>      <span class="c"># assigning values at declaration</span></pre>
-<pre class='cython code score-8 '>  __pyx_v_78_cython_magic_6427b4f083e1570cd38f7a9cd06dfe92ca9f273b605f5ef4689eceb137a5f9e5_j = 2;
-  __pyx_v_78_cython_magic_6427b4f083e1570cd38f7a9cd06dfe92ca9f273b605f5ef4689eceb137a5f9e5_k = 3;
+<pre class='cython code score-8 '>  __pyx_v_78_cython_magic_9c069ec345b2765442cd655fd2d8007e8a508dbdf1d35ab3a29dfd7307c644fb_j = 2;
+  __pyx_v_78_cython_magic_9c069ec345b2765442cd655fd2d8007e8a508dbdf1d35ab3a29dfd7307c644fb_k = 3;
 /* … */
   __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyDict_NewPresized</span>(0);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_mstate_global-&gt;__pyx_d, __pyx_mstate_global-&gt;__pyx_n_u_test, __pyx_t_2) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 1, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">02</span>: <span class="n">i</span> <span class="o">=</span> <span class="mf">1</span>                         <span class="c"># assigning values afterwards</span></pre>
-<pre class='cython code score-0 '>  __pyx_v_78_cython_magic_6427b4f083e1570cd38f7a9cd06dfe92ca9f273b605f5ef4689eceb137a5f9e5_i = 1;
+<pre class='cython code score-0 '>  __pyx_v_78_cython_magic_9c069ec345b2765442cd655fd2d8007e8a508dbdf1d35ab3a29dfd7307c644fb_i = 1;
 </pre><pre class="cython line score-0">&#xA0;<span class="">03</span>: <span class="c"># avoid Python-C conversion! It&#39;s expensive:</span></pre>
 <pre class="cython line score-5" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">04</span>: <span class="n">a</span> <span class="o">=</span> <span class="mf">5</span></pre>
 <pre class='cython code score-5 '>  if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_mstate_global-&gt;__pyx_d, __pyx_mstate_global-&gt;__pyx_n_u_a, __pyx_mstate_global-&gt;__pyx_int_5) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 4, __pyx_L1_error)</span>
@@ -1115,10 +1115,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
   __pyx_t_3 = <span class='pyx_c_api'>__Pyx_PyLong_As_int</span>(__pyx_t_2); if (unlikely((__pyx_t_3 == (int)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 5, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_v_78_cython_magic_6427b4f083e1570cd38f7a9cd06dfe92ca9f273b605f5ef4689eceb137a5f9e5_i = __pyx_t_3;
+  __pyx_v_78_cython_magic_9c069ec345b2765442cd655fd2d8007e8a508dbdf1d35ab3a29dfd7307c644fb_i = __pyx_t_3;
 </pre><pre class="cython line score-0">&#xA0;<span class="">06</span>: <span class="c"># same with C-Python conversion:</span></pre>
 <pre class="cython line score-8" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">07</span>: <span class="n">b</span> <span class="o">=</span> <span class="n">j</span></pre>
-<pre class='cython code score-8 '>  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyLong_From_int</span>(__pyx_v_78_cython_magic_6427b4f083e1570cd38f7a9cd06dfe92ca9f273b605f5ef4689eceb137a5f9e5_j);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 7, __pyx_L1_error)</span>
+<pre class='cython code score-8 '>  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyLong_From_int</span>(__pyx_v_78_cython_magic_9c069ec345b2765442cd655fd2d8007e8a508dbdf1d35ab3a29dfd7307c644fb_j);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 7, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_mstate_global-&gt;__pyx_d, __pyx_mstate_global-&gt;__pyx_n_u_b, __pyx_t_2) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 7, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
@@ -1146,7 +1146,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <pre class='cython code score-15 '>  __pyx_t_5 = NULL;
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_builtin_print);
   __pyx_t_7 = __pyx_builtin_print; 
-  __pyx_t_4 = <span class='pyx_c_api'>__Pyx_PyLong_From_int</span>(__pyx_v_78_cython_magic_6427b4f083e1570cd38f7a9cd06dfe92ca9f273b605f5ef4689eceb137a5f9e5_i);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 9, __pyx_L1_error)</span>
+  __pyx_t_4 = <span class='pyx_c_api'>__Pyx_PyLong_From_int</span>(__pyx_v_78_cython_magic_9c069ec345b2765442cd655fd2d8007e8a508dbdf1d35ab3a29dfd7307c644fb_i);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 9, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
   __pyx_t_6 = <span class='py_c_api'>PyUnicode_Format</span>(__pyx_mstate_global-&gt;__pyx_kp_u_i_d, __pyx_t_4);<span class='error_goto'> if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 9, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_6);
@@ -1578,14 +1578,14 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_mstate_global-&gt;__pyx_d, __pyx_mstate_global-&gt;__pyx_n_u_test, __pyx_t_6) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 1, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_6); __pyx_t_6 = 0;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">02</span>: <span class="k">cdef</span><span class="w"> </span><span class="kt">double</span> <span class="nf">cy_total</span><span class="w"> </span><span class="o">=</span> <span class="mf">0.0</span></pre>
-<pre class='cython code score-0 '>  __pyx_v_78_cython_magic_58a10b7baf7d9ff83d814573fe177c5eb8b05307bb2a66c72877fe7aca1f0414_cy_total = 0.0;
+<pre class='cython code score-0 '>  __pyx_v_78_cython_magic_aff7a646bcbe78962cdde206a6e973a5a0d848c7fff020d1801fc2af7a9ab7bb_cy_total = 0.0;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">03</span>: <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mf">10</span><span class="p">):</span></pre>
 <pre class='cython code score-0 '>  for (__pyx_t_2 = 0; __pyx_t_2 &lt; 10; __pyx_t_2+=1) {
-    __pyx_v_78_cython_magic_58a10b7baf7d9ff83d814573fe177c5eb8b05307bb2a66c72877fe7aca1f0414_m = __pyx_t_2;
+    __pyx_v_78_cython_magic_aff7a646bcbe78962cdde206a6e973a5a0d848c7fff020d1801fc2af7a9ab7bb_m = __pyx_t_2;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">04</span>:     <span class="n">n</span> <span class="o">=</span> <span class="mf">2</span><span class="o">*</span><span class="n">m</span></pre>
-<pre class='cython code score-0 '>    __pyx_v_78_cython_magic_58a10b7baf7d9ff83d814573fe177c5eb8b05307bb2a66c72877fe7aca1f0414_n = (2 * __pyx_v_78_cython_magic_58a10b7baf7d9ff83d814573fe177c5eb8b05307bb2a66c72877fe7aca1f0414_m);
+<pre class='cython code score-0 '>    __pyx_v_78_cython_magic_aff7a646bcbe78962cdde206a6e973a5a0d848c7fff020d1801fc2af7a9ab7bb_n = (2 * __pyx_v_78_cython_magic_aff7a646bcbe78962cdde206a6e973a5a0d848c7fff020d1801fc2af7a9ab7bb_m);
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">05</span>:     <span class="n">cy_total</span> <span class="o">+=</span> <span class="n">n</span></pre>
-<pre class='cython code score-0 '>    __pyx_v_78_cython_magic_58a10b7baf7d9ff83d814573fe177c5eb8b05307bb2a66c72877fe7aca1f0414_cy_total = (__pyx_v_78_cython_magic_58a10b7baf7d9ff83d814573fe177c5eb8b05307bb2a66c72877fe7aca1f0414_cy_total + __pyx_v_78_cython_magic_58a10b7baf7d9ff83d814573fe177c5eb8b05307bb2a66c72877fe7aca1f0414_n);
+<pre class='cython code score-0 '>    __pyx_v_78_cython_magic_aff7a646bcbe78962cdde206a6e973a5a0d848c7fff020d1801fc2af7a9ab7bb_cy_total = (__pyx_v_78_cython_magic_aff7a646bcbe78962cdde206a6e973a5a0d848c7fff020d1801fc2af7a9ab7bb_cy_total + __pyx_v_78_cython_magic_aff7a646bcbe78962cdde206a6e973a5a0d848c7fff020d1801fc2af7a9ab7bb_n);
   }
 </pre><pre class="cython line score-14" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">06</span>: <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">0</span></pre>
 <pre class='cython code score-14 '>  __pyx_t_3 = __pyx_mstate_global-&gt;__pyx_int_0;
@@ -1628,7 +1628,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <pre class='cython code score-15 '>  __pyx_t_4 = NULL;
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_builtin_print);
   __pyx_t_3 = __pyx_builtin_print; 
-  __pyx_t_7 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_v_78_cython_magic_58a10b7baf7d9ff83d814573fe177c5eb8b05307bb2a66c72877fe7aca1f0414_cy_total);<span class='error_goto'> if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 11, __pyx_L1_error)</span>
+  __pyx_t_7 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_v_78_cython_magic_aff7a646bcbe78962cdde206a6e973a5a0d848c7fff020d1801fc2af7a9ab7bb_cy_total);<span class='error_goto'> if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 11, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_7);
   <span class='pyx_c_api'>__Pyx_GetModuleGlobalName</span>(__pyx_t_8, __pyx_mstate_global-&gt;__pyx_n_u_py_total);<span class='error_goto'> if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 11, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_8);
@@ -2043,7 +2043,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_mstate_global-&gt;__pyx_d, __pyx_mstate_global-&gt;__pyx_n_u_test, __pyx_t_2) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 1, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
 /* … */
-struct __pyx_t_78_cython_magic_13f507282d6853b0c4fd74c5404af45827a41aaa4c4815890364a5c235f4e68a_Grail {
+struct __pyx_t_78_cython_magic_0d8a21f63911c4403fdaa9bcd3509858aceb1377309aebb778cba83f17d0a5e4_Grail {
   int age;
   float volume;
 };
@@ -2053,34 +2053,34 @@ struct __pyx_t_78_cython_magic_13f507282d6853b0c4fd74c5404af45827a41aaa4c4815890
 <pre class="cython line score-0">&#xA0;<span class="">05</span>:     <span class="n">char</span> <span class="o">*</span><span class="n">spam</span></pre>
 <pre class="cython line score-0">&#xA0;<span class="">06</span>:     <span class="nb">float</span> <span class="o">*</span><span class="n">eggs</span></pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">07</span>: <span class="k">cdef</span><span class="w"> </span><span class="k">enum</span> <span class="nf">CheeseType</span><span class="p">:</span></pre>
-<pre class='cython code score-0 '>enum __pyx_t_78_cython_magic_13f507282d6853b0c4fd74c5404af45827a41aaa4c4815890364a5c235f4e68a_CheeseType {
-  __pyx_e_78_cython_magic_13f507282d6853b0c4fd74c5404af45827a41aaa4c4815890364a5c235f4e68a_cheddar,
-  __pyx_e_78_cython_magic_13f507282d6853b0c4fd74c5404af45827a41aaa4c4815890364a5c235f4e68a_edam,
-  __pyx_e_78_cython_magic_13f507282d6853b0c4fd74c5404af45827a41aaa4c4815890364a5c235f4e68a_camembert
+<pre class='cython code score-0 '>enum __pyx_t_78_cython_magic_0d8a21f63911c4403fdaa9bcd3509858aceb1377309aebb778cba83f17d0a5e4_CheeseType {
+  __pyx_e_78_cython_magic_0d8a21f63911c4403fdaa9bcd3509858aceb1377309aebb778cba83f17d0a5e4_cheddar,
+  __pyx_e_78_cython_magic_0d8a21f63911c4403fdaa9bcd3509858aceb1377309aebb778cba83f17d0a5e4_edam,
+  __pyx_e_78_cython_magic_0d8a21f63911c4403fdaa9bcd3509858aceb1377309aebb778cba83f17d0a5e4_camembert
 };
 </pre><pre class="cython line score-0">&#xA0;<span class="">08</span>:     <span class="n">cheddar</span><span class="p">,</span> <span class="n">edam</span><span class="p">,</span></pre>
 <pre class="cython line score-0">&#xA0;<span class="">09</span>:     <span class="n">camembert</span></pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">10</span>: <span class="k">cdef</span><span class="w"> </span><span class="k">enum</span> <span class="nf">CheeseState</span><span class="p">:</span></pre>
-<pre class='cython code score-0 '>enum __pyx_t_78_cython_magic_13f507282d6853b0c4fd74c5404af45827a41aaa4c4815890364a5c235f4e68a_CheeseState {
-  __pyx_e_78_cython_magic_13f507282d6853b0c4fd74c5404af45827a41aaa4c4815890364a5c235f4e68a_hard = 1,
-  __pyx_e_78_cython_magic_13f507282d6853b0c4fd74c5404af45827a41aaa4c4815890364a5c235f4e68a_soft = 2,
-  __pyx_e_78_cython_magic_13f507282d6853b0c4fd74c5404af45827a41aaa4c4815890364a5c235f4e68a_runny = 3
+<pre class='cython code score-0 '>enum __pyx_t_78_cython_magic_0d8a21f63911c4403fdaa9bcd3509858aceb1377309aebb778cba83f17d0a5e4_CheeseState {
+  __pyx_e_78_cython_magic_0d8a21f63911c4403fdaa9bcd3509858aceb1377309aebb778cba83f17d0a5e4_hard = 1,
+  __pyx_e_78_cython_magic_0d8a21f63911c4403fdaa9bcd3509858aceb1377309aebb778cba83f17d0a5e4_soft = 2,
+  __pyx_e_78_cython_magic_0d8a21f63911c4403fdaa9bcd3509858aceb1377309aebb778cba83f17d0a5e4_runny = 3
 };
 </pre><pre class="cython line score-0">&#xA0;<span class="">11</span>:     <span class="n">hard</span> <span class="o">=</span> <span class="mf">1</span></pre>
 <pre class="cython line score-0">&#xA0;<span class="">12</span>:     <span class="n">soft</span> <span class="o">=</span> <span class="mf">2</span></pre>
 <pre class="cython line score-0">&#xA0;<span class="">13</span>:     <span class="n">runny</span> <span class="o">=</span> <span class="mf">3</span></pre>
 <pre class="cython line score-0">&#xA0;<span class="">14</span>: <span class="k">cdef</span><span class="w"> </span><span class="kt">Grail</span> <span class="nf">holy</span></pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">15</span>: <span class="n">holy</span><span class="o">.</span><span class="n">age</span>    <span class="o">=</span> <span class="mf">500</span></pre>
-<pre class='cython code score-0 '>  __pyx_v_78_cython_magic_13f507282d6853b0c4fd74c5404af45827a41aaa4c4815890364a5c235f4e68a_holy.age = 0x1F4;
+<pre class='cython code score-0 '>  __pyx_v_78_cython_magic_0d8a21f63911c4403fdaa9bcd3509858aceb1377309aebb778cba83f17d0a5e4_holy.age = 0x1F4;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">16</span>: <span class="n">holy</span><span class="o">.</span><span class="n">volume</span> <span class="o">=</span> <span class="mf">10.0</span></pre>
-<pre class='cython code score-0 '>  __pyx_v_78_cython_magic_13f507282d6853b0c4fd74c5404af45827a41aaa4c4815890364a5c235f4e68a_holy.volume = 10.0;
+<pre class='cython code score-0 '>  __pyx_v_78_cython_magic_0d8a21f63911c4403fdaa9bcd3509858aceb1377309aebb778cba83f17d0a5e4_holy.volume = 10.0;
 </pre><pre class="cython line score-15" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">17</span>: <span class="k">print</span> <span class="p">(</span><span class="n">holy</span><span class="o">.</span><span class="n">age</span><span class="p">,</span> <span class="n">holy</span><span class="o">.</span><span class="n">volume</span><span class="p">)</span></pre>
 <pre class='cython code score-15 '>  __pyx_t_3 = NULL;
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_builtin_print);
   __pyx_t_4 = __pyx_builtin_print; 
-  __pyx_t_5 = <span class='pyx_c_api'>__Pyx_PyLong_From_int</span>(__pyx_v_78_cython_magic_13f507282d6853b0c4fd74c5404af45827a41aaa4c4815890364a5c235f4e68a_holy.age);<span class='error_goto'> if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 17, __pyx_L1_error)</span>
+  __pyx_t_5 = <span class='pyx_c_api'>__Pyx_PyLong_From_int</span>(__pyx_v_78_cython_magic_0d8a21f63911c4403fdaa9bcd3509858aceb1377309aebb778cba83f17d0a5e4_holy.age);<span class='error_goto'> if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 17, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_5);
-  __pyx_t_6 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_v_78_cython_magic_13f507282d6853b0c4fd74c5404af45827a41aaa4c4815890364a5c235f4e68a_holy.volume);<span class='error_goto'> if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 17, __pyx_L1_error)</span>
+  __pyx_t_6 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_v_78_cython_magic_0d8a21f63911c4403fdaa9bcd3509858aceb1377309aebb778cba83f17d0a5e4_holy.volume);<span class='error_goto'> if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 17, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_6);
   __pyx_t_7 = 1;
   {
@@ -2185,7 +2185,7 @@ cython<span class="w"> </span>-3<span class="w"> </span>--cplus<span class="w"> 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>389 μs ± 564 ns per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>396 μs ± 1.22 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 2.0000040080120174
 </pre></div>
 </div>
@@ -2239,7 +2239,7 @@ cython<span class="w"> </span>-3<span class="w"> </span>--cplus<span class="w"> 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>391 μs ± 1.32 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>396 μs ± 3.7 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0000040080120174
@@ -2293,7 +2293,7 @@ def cy_integrate_f(double a, double b, int N):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>339 μs ± 849 ns per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>344 μs ± 927 ns per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 2.0000040080120174
 </pre></div>
 </div>
@@ -2330,7 +2330,7 @@ def cycy_integrate_f(double a, double b, int N):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>34 μs ± 15.8 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>34 μs ± 26.5 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 2.0000040080120174
 </pre></div>
 </div>
@@ -2721,15 +2721,15 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </p>
 <div class="cython"><pre class="cython line score-48" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">1</span>: <span class="k">def</span><span class="w"> </span><span class="nf">exp_python</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">terms</span><span class="o">=</span><span class="mf">50</span><span class="p">):</span></pre>
 <pre class='cython code score-48 '>/* Python wrapper */
-static PyObject *__pyx_pw_78_cython_magic_8b9e68ecfa87971f03aa6e49bebd2dfd0f5eed41605f269be221e572b744ed9e_1exp_python(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_78_cython_magic_8b465f382b3ed9d6d11c2dc17fe48dec0611a19715d5cb058693c8fcb0156f39_1exp_python(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_78_cython_magic_8b9e68ecfa87971f03aa6e49bebd2dfd0f5eed41605f269be221e572b744ed9e_1exp_python = {"exp_python", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_78_cython_magic_8b9e68ecfa87971f03aa6e49bebd2dfd0f5eed41605f269be221e572b744ed9e_1exp_python, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_78_cython_magic_8b9e68ecfa87971f03aa6e49bebd2dfd0f5eed41605f269be221e572b744ed9e_1exp_python(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_78_cython_magic_8b465f382b3ed9d6d11c2dc17fe48dec0611a19715d5cb058693c8fcb0156f39_1exp_python = {"exp_python", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_78_cython_magic_8b465f382b3ed9d6d11c2dc17fe48dec0611a19715d5cb058693c8fcb0156f39_1exp_python, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_78_cython_magic_8b465f382b3ed9d6d11c2dc17fe48dec0611a19715d5cb058693c8fcb0156f39_1exp_python(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -2803,11 +2803,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   for (Py_ssize_t __pyx_temp=0; __pyx_temp &lt; (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("_cython_magic_8b9e68ecfa87971f03aa6e49bebd2dfd0f5eed41605f269be221e572b744ed9e.exp_python", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("_cython_magic_8b465f382b3ed9d6d11c2dc17fe48dec0611a19715d5cb058693c8fcb0156f39.exp_python", __pyx_clineno, __pyx_lineno, __pyx_filename);
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_78_cython_magic_8b9e68ecfa87971f03aa6e49bebd2dfd0f5eed41605f269be221e572b744ed9e_exp_python(__pyx_self, __pyx_v_x, __pyx_v_terms);
+  __pyx_r = __pyx_pf_78_cython_magic_8b465f382b3ed9d6d11c2dc17fe48dec0611a19715d5cb058693c8fcb0156f39_exp_python(__pyx_self, __pyx_v_x, __pyx_v_terms);
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -2820,14 +2820,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_78_cython_magic_8b9e68ecfa87971f03aa6e49bebd2dfd0f5eed41605f269be221e572b744ed9e_exp_python(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_x, PyObject *__pyx_v_terms) {
+static PyObject *__pyx_pf_78_cython_magic_8b465f382b3ed9d6d11c2dc17fe48dec0611a19715d5cb058693c8fcb0156f39_exp_python(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_x, PyObject *__pyx_v_terms) {
   PyObject *__pyx_v_sum = NULL;
   PyObject *__pyx_v_power = NULL;
   PyObject *__pyx_v_fact = NULL;
   PyObject *__pyx_v_i = NULL;
   PyObject *__pyx_r = NULL;
 /* … */
-  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_CyFunction_New</span>(&amp;__pyx_mdef_78_cython_magic_8b9e68ecfa87971f03aa6e49bebd2dfd0f5eed41605f269be221e572b744ed9e_1exp_python, 0, __pyx_mstate_global-&gt;__pyx_n_u_exp_python, NULL, __pyx_mstate_global-&gt;__pyx_n_u_cython_magic_8b9e68ecfa87971f03, __pyx_mstate_global-&gt;__pyx_d, ((PyObject *)__pyx_mstate_global-&gt;__pyx_codeobj_tab[0]));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)</span>
+  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_CyFunction_New</span>(&amp;__pyx_mdef_78_cython_magic_8b465f382b3ed9d6d11c2dc17fe48dec0611a19715d5cb058693c8fcb0156f39_1exp_python, 0, __pyx_mstate_global-&gt;__pyx_n_u_exp_python, NULL, __pyx_mstate_global-&gt;__pyx_n_u_cython_magic_8b465f382b3ed9d6d1, __pyx_mstate_global-&gt;__pyx_d, ((PyObject *)__pyx_mstate_global-&gt;__pyx_codeobj_tab[0]));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
   <span class='pyx_c_api'>__Pyx_CyFunction_SetDefaultsTuple</span>(__pyx_t_2, __pyx_mstate_global-&gt;__pyx_tuple[0]);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_mstate_global-&gt;__pyx_d, __pyx_mstate_global-&gt;__pyx_n_u_exp_python, __pyx_t_2) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 1, __pyx_L1_error)</span>
@@ -2948,7 +2948,7 @@ static PyObject *__pyx_pf_78_cython_magic_8b9e68ecfa87971f03aa6e49bebd2dfd0f5eed
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.05 μs ± 1.37 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.08 μs ± 45.5 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -2984,7 +2984,7 @@ def exp_cython(double x, int terms = 50):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>108 ns ± 0.291 ns per loop (mean ± std. dev. of 7 runs, 10,000,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>109 ns ± 1.13 ns per loop (mean ± std. dev. of 7 runs, 10,000,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -3052,11 +3052,11 @@ def matmul2(np.ndarray[dtype_t, ndim=2] A,
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Content of stderr:
-In file included from /usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/_core/include/numpy/ndarraytypes.h:1913,
-                 from /usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/_core/include/numpy/ndarrayobject.h:12,
-                 from /usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/_core/include/numpy/arrayobject.h:5,
-                 from /home/runner/.cache/ipython/cython/_cython_magic_ec63243ee066821b6e5a6d50286fee9105868ca76c1ebe28d34d126ad86dbe60.c:1149:
-/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/_core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: #warning &quot;Using deprecated NumPy API, disable it with &quot; &quot;#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION&quot; [-Wcpp]
+In file included from /home/runner/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/_core/include/numpy/ndarraytypes.h:1913,
+                 from /home/runner/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/_core/include/numpy/ndarrayobject.h:12,
+                 from /home/runner/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/_core/include/numpy/arrayobject.h:5,
+                 from /home/runner/.cache/ipython/cython/_cython_magic_b8fb140bf941deb06cc24b20cedcdcce62a1e12900f2c4ce165dc9f687e19e01.c:1149:
+/home/runner/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/_core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: #warning &quot;Using deprecated NumPy API, disable it with &quot; &quot;#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION&quot; [-Wcpp]
    17 | #warning &quot;Using deprecated NumPy API, disable it with &quot; \
       |  ^~~~~~~
 </pre></div>
@@ -3081,7 +3081,7 @@ In file included from /usr/share/miniconda3/envs/runenv/lib/python3.13/site-pack
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>63.2 ms ± 61.2 μs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>62.9 ms ± 103 μs per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -3093,7 +3093,7 @@ In file included from /usr/share/miniconda3/envs/runenv/lib/python3.13/site-pack
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>275 μs ± 1.72 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>274 μs ± 907 ns per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -3134,11 +3134,11 @@ def matmul3(np.ndarray[dtype_t, ndim=2] A,
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Content of stderr:
-In file included from /usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/_core/include/numpy/ndarraytypes.h:1913,
-                 from /usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/_core/include/numpy/ndarrayobject.h:12,
-                 from /usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/_core/include/numpy/arrayobject.h:5,
-                 from /home/runner/.cache/ipython/cython/_cython_magic_4e1875ea775aae8fbd47297e4bc2dba1cf0ce4e80120405e6fbc12df5eff78b7.c:1150:
-/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/_core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: #warning &quot;Using deprecated NumPy API, disable it with &quot; &quot;#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION&quot; [-Wcpp]
+In file included from /home/runner/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/_core/include/numpy/ndarraytypes.h:1913,
+                 from /home/runner/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/_core/include/numpy/ndarrayobject.h:12,
+                 from /home/runner/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/_core/include/numpy/arrayobject.h:5,
+                 from /home/runner/.cache/ipython/cython/_cython_magic_47b859b5a1396d8f275daf537de9047e018dc954643bc399a90d0054e6d06724.c:1150:
+/home/runner/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/_core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: #warning &quot;Using deprecated NumPy API, disable it with &quot; &quot;#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION&quot; [-Wcpp]
    17 | #warning &quot;Using deprecated NumPy API, disable it with &quot; \
       |  ^~~~~~~
 </pre></div>
@@ -3152,7 +3152,7 @@ In file included from /usr/share/miniconda3/envs/runenv/lib/python3.13/site-pack
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>181 μs ± 29.8 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>182 μs ± 42.5 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -3244,37 +3244,37 @@ def matmul4(np.ndarray[dtype_t, ndim=2, mode=&quot;c&quot;] A,
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Content of stderr:
-In file included from /usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/_core/include/numpy/ndarraytypes.h:1913,
-                 from /usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/_core/include/numpy/ndarrayobject.h:12,
-                 from /usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/_core/include/numpy/arrayobject.h:5,
-                 from /home/runner/.cache/ipython/cython/_cython_magic_e8f89f476ba164c82f2d38303996284fa22f0538589f467fee745b7f3d5661d7.c:1154:
-/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/_core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: #warning &quot;Using deprecated NumPy API, disable it with &quot; &quot;#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION&quot; [-Wcpp]
+In file included from /home/runner/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/_core/include/numpy/ndarraytypes.h:1913,
+                 from /home/runner/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/_core/include/numpy/ndarrayobject.h:12,
+                 from /home/runner/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/_core/include/numpy/arrayobject.h:5,
+                 from /home/runner/.cache/ipython/cython/_cython_magic_b4a53c5b6a5915356e5414c9fab0ed3d1b7b1814401b718393262325aa017abd.c:1154:
+/home/runner/miniconda3/envs/runenv/lib/python3.13/site-packages/numpy/_core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: #warning &quot;Using deprecated NumPy API, disable it with &quot; &quot;#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION&quot; [-Wcpp]
    17 | #warning &quot;Using deprecated NumPy API, disable it with &quot; \
       |  ^~~~~~~
-/home/runner/.cache/ipython/cython/_cython_magic_e8f89f476ba164c82f2d38303996284fa22f0538589f467fee745b7f3d5661d7.c: In function &#39;__pyx_pf_78_cython_magic_e8f89f476ba164c82f2d38303996284fa22f0538589f467fee745b7f3d5661d7_matmul4&#39;:
-/home/runner/.cache/ipython/cython/_cython_magic_e8f89f476ba164c82f2d38303996284fa22f0538589f467fee745b7f3d5661d7.c:4912:46: error: passing argument 4 of &#39;my_dgemm&#39; from incompatible pointer type [-Wincompatible-pointer-types]
- 4912 |   my_dgemm(__pyx_v_m, __pyx_v_n, __pyx_v_k, (&amp;(*__Pyx_BufPtrCContig2d(__pyx_t_78_cython_magic_e8f89f476ba164c82f2d38303996284fa22f0538589f467fee745b7f3d5661d7_dtype_t *, __pyx_pybuffernd_A.rcbuffer-&gt;pybuffer.buf, __pyx_t_1, __pyx_pybuffernd_A.diminfo[0].strides, __pyx_t_2, __pyx_pybuffernd_A.diminfo[1].strides))), (&amp;(*__Pyx_BufPtrCContig2d(__pyx_t_78_cython_magic_e8f89f476ba164c82f2d38303996284fa22f0538589f467fee745b7f3d5661d7_dtype_t *, __pyx_pybuffernd_B.rcbuffer-&gt;pybuffer.buf, __pyx_t_3, __pyx_pybuffernd_B.diminfo[0].strides, __pyx_t_4, __pyx_pybuffernd_B.diminfo[1].strides))), (&amp;(*__Pyx_BufPtrCContig2d(__pyx_t_78_cython_magic_e8f89f476ba164c82f2d38303996284fa22f0538589f467fee745b7f3d5661d7_dtype_t *, __pyx_pybuffernd_C.rcbuffer-&gt;pybuffer.buf, __pyx_t_5, __pyx_pybuffernd_C.diminfo[0].strides, __pyx_t_6, __pyx_pybuffernd_C.diminfo[1].strides))));
+/home/runner/.cache/ipython/cython/_cython_magic_b4a53c5b6a5915356e5414c9fab0ed3d1b7b1814401b718393262325aa017abd.c: In function &#39;__pyx_pf_78_cython_magic_b4a53c5b6a5915356e5414c9fab0ed3d1b7b1814401b718393262325aa017abd_matmul4&#39;:
+/home/runner/.cache/ipython/cython/_cython_magic_b4a53c5b6a5915356e5414c9fab0ed3d1b7b1814401b718393262325aa017abd.c:4912:46: error: passing argument 4 of &#39;my_dgemm&#39; from incompatible pointer type [-Wincompatible-pointer-types]
+ 4912 |   my_dgemm(__pyx_v_m, __pyx_v_n, __pyx_v_k, (&amp;(*__Pyx_BufPtrCContig2d(__pyx_t_78_cython_magic_b4a53c5b6a5915356e5414c9fab0ed3d1b7b1814401b718393262325aa017abd_dtype_t *, __pyx_pybuffernd_A.rcbuffer-&gt;pybuffer.buf, __pyx_t_1, __pyx_pybuffernd_A.diminfo[0].strides, __pyx_t_2, __pyx_pybuffernd_A.diminfo[1].strides))), (&amp;(*__Pyx_BufPtrCContig2d(__pyx_t_78_cython_magic_b4a53c5b6a5915356e5414c9fab0ed3d1b7b1814401b718393262325aa017abd_dtype_t *, __pyx_pybuffernd_B.rcbuffer-&gt;pybuffer.buf, __pyx_t_3, __pyx_pybuffernd_B.diminfo[0].strides, __pyx_t_4, __pyx_pybuffernd_B.diminfo[1].strides))), (&amp;(*__Pyx_BufPtrCContig2d(__pyx_t_78_cython_magic_b4a53c5b6a5915356e5414c9fab0ed3d1b7b1814401b718393262325aa017abd_dtype_t *, __pyx_pybuffernd_C.rcbuffer-&gt;pybuffer.buf, __pyx_t_5, __pyx_pybuffernd_C.diminfo[0].strides, __pyx_t_6, __pyx_pybuffernd_C.diminfo[1].strides))));
       |                                             ~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       |                                              |
-      |                                              __pyx_t_78_cython_magic_e8f89f476ba164c82f2d38303996284fa22f0538589f467fee745b7f3d5661d7_dtype_t * {aka double *}
-In file included from /home/runner/.cache/ipython/cython/_cython_magic_e8f89f476ba164c82f2d38303996284fa22f0538589f467fee745b7f3d5661d7.c:1148:
-/home/runner/work/python-notebooks/python-notebooks/notebooks/mydgemm.c:2:22: note: expected &#39;double (*)[n]&#39; but argument is of type &#39;__pyx_t_78_cython_magic_e8f89f476ba164c82f2d38303996284fa22f0538589f467fee745b7f3d5661d7_dtype_t *&#39; {aka &#39;double *&#39;}
+      |                                              __pyx_t_78_cython_magic_b4a53c5b6a5915356e5414c9fab0ed3d1b7b1814401b718393262325aa017abd_dtype_t * {aka double *}
+In file included from /home/runner/.cache/ipython/cython/_cython_magic_b4a53c5b6a5915356e5414c9fab0ed3d1b7b1814401b718393262325aa017abd.c:1148:
+/home/runner/work/python-notebooks/python-notebooks/notebooks/mydgemm.c:2:22: note: expected &#39;double (*)[n]&#39; but argument is of type &#39;__pyx_t_78_cython_magic_b4a53c5b6a5915356e5414c9fab0ed3d1b7b1814401b718393262325aa017abd_dtype_t *&#39; {aka &#39;double *&#39;}
     2 |               double a[m][n], double b[n][k], float c[m][k] )
       |               ~~~~~~~^~~~~~~
-/home/runner/.cache/ipython/cython/_cython_magic_e8f89f476ba164c82f2d38303996284fa22f0538589f467fee745b7f3d5661d7.c:4912:318: error: passing argument 5 of &#39;my_dgemm&#39; from incompatible pointer type [-Wincompatible-pointer-types]
- 4912 |   my_dgemm(__pyx_v_m, __pyx_v_n, __pyx_v_k, (&amp;(*__Pyx_BufPtrCContig2d(__pyx_t_78_cython_magic_e8f89f476ba164c82f2d38303996284fa22f0538589f467fee745b7f3d5661d7_dtype_t *, __pyx_pybuffernd_A.rcbuffer-&gt;pybuffer.buf, __pyx_t_1, __pyx_pybuffernd_A.diminfo[0].strides, __pyx_t_2, __pyx_pybuffernd_A.diminfo[1].strides))), (&amp;(*__Pyx_BufPtrCContig2d(__pyx_t_78_cython_magic_e8f89f476ba164c82f2d38303996284fa22f0538589f467fee745b7f3d5661d7_dtype_t *, __pyx_pybuffernd_B.rcbuffer-&gt;pybuffer.buf, __pyx_t_3, __pyx_pybuffernd_B.diminfo[0].strides, __pyx_t_4, __pyx_pybuffernd_B.diminfo[1].strides))), (&amp;(*__Pyx_BufPtrCContig2d(__pyx_t_78_cython_magic_e8f89f476ba164c82f2d38303996284fa22f0538589f467fee745b7f3d5661d7_dtype_t *, __pyx_pybuffernd_C.rcbuffer-&gt;pybuffer.buf, __pyx_t_5, __pyx_pybuffernd_C.diminfo[0].strides, __pyx_t_6, __pyx_pybuffernd_C.diminfo[1].strides))));
+/home/runner/.cache/ipython/cython/_cython_magic_b4a53c5b6a5915356e5414c9fab0ed3d1b7b1814401b718393262325aa017abd.c:4912:318: error: passing argument 5 of &#39;my_dgemm&#39; from incompatible pointer type [-Wincompatible-pointer-types]
+ 4912 |   my_dgemm(__pyx_v_m, __pyx_v_n, __pyx_v_k, (&amp;(*__Pyx_BufPtrCContig2d(__pyx_t_78_cython_magic_b4a53c5b6a5915356e5414c9fab0ed3d1b7b1814401b718393262325aa017abd_dtype_t *, __pyx_pybuffernd_A.rcbuffer-&gt;pybuffer.buf, __pyx_t_1, __pyx_pybuffernd_A.diminfo[0].strides, __pyx_t_2, __pyx_pybuffernd_A.diminfo[1].strides))), (&amp;(*__Pyx_BufPtrCContig2d(__pyx_t_78_cython_magic_b4a53c5b6a5915356e5414c9fab0ed3d1b7b1814401b718393262325aa017abd_dtype_t *, __pyx_pybuffernd_B.rcbuffer-&gt;pybuffer.buf, __pyx_t_3, __pyx_pybuffernd_B.diminfo[0].strides, __pyx_t_4, __pyx_pybuffernd_B.diminfo[1].strides))), (&amp;(*__Pyx_BufPtrCContig2d(__pyx_t_78_cython_magic_b4a53c5b6a5915356e5414c9fab0ed3d1b7b1814401b718393262325aa017abd_dtype_t *, __pyx_pybuffernd_C.rcbuffer-&gt;pybuffer.buf, __pyx_t_5, __pyx_pybuffernd_C.diminfo[0].strides, __pyx_t_6, __pyx_pybuffernd_C.diminfo[1].strides))));
       |                                                                                                                                                                                                                                                                                                                             ~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       |                                                                                                                                                                                                                                                                                                                              |
-      |                                                                                                                                                                                                                                                                                                                              __pyx_t_78_cython_magic_e8f89f476ba164c82f2d38303996284fa22f0538589f467fee745b7f3d5661d7_dtype_t * {aka double *}
-/home/runner/work/python-notebooks/python-notebooks/notebooks/mydgemm.c:2:38: note: expected &#39;double (*)[k]&#39; but argument is of type &#39;__pyx_t_78_cython_magic_e8f89f476ba164c82f2d38303996284fa22f0538589f467fee745b7f3d5661d7_dtype_t *&#39; {aka &#39;double *&#39;}
+      |                                                                                                                                                                                                                                                                                                                              __pyx_t_78_cython_magic_b4a53c5b6a5915356e5414c9fab0ed3d1b7b1814401b718393262325aa017abd_dtype_t * {aka double *}
+/home/runner/work/python-notebooks/python-notebooks/notebooks/mydgemm.c:2:38: note: expected &#39;double (*)[k]&#39; but argument is of type &#39;__pyx_t_78_cython_magic_b4a53c5b6a5915356e5414c9fab0ed3d1b7b1814401b718393262325aa017abd_dtype_t *&#39; {aka &#39;double *&#39;}
     2 |               double a[m][n], double b[n][k], float c[m][k] )
       |                               ~~~~~~~^~~~~~~
-/home/runner/.cache/ipython/cython/_cython_magic_e8f89f476ba164c82f2d38303996284fa22f0538589f467fee745b7f3d5661d7.c:4912:590: error: passing argument 6 of &#39;my_dgemm&#39; from incompatible pointer type [-Wincompatible-pointer-types]
- 4912 |   my_dgemm(__pyx_v_m, __pyx_v_n, __pyx_v_k, (&amp;(*__Pyx_BufPtrCContig2d(__pyx_t_78_cython_magic_e8f89f476ba164c82f2d38303996284fa22f0538589f467fee745b7f3d5661d7_dtype_t *, __pyx_pybuffernd_A.rcbuffer-&gt;pybuffer.buf, __pyx_t_1, __pyx_pybuffernd_A.diminfo[0].strides, __pyx_t_2, __pyx_pybuffernd_A.diminfo[1].strides))), (&amp;(*__Pyx_BufPtrCContig2d(__pyx_t_78_cython_magic_e8f89f476ba164c82f2d38303996284fa22f0538589f467fee745b7f3d5661d7_dtype_t *, __pyx_pybuffernd_B.rcbuffer-&gt;pybuffer.buf, __pyx_t_3, __pyx_pybuffernd_B.diminfo[0].strides, __pyx_t_4, __pyx_pybuffernd_B.diminfo[1].strides))), (&amp;(*__Pyx_BufPtrCContig2d(__pyx_t_78_cython_magic_e8f89f476ba164c82f2d38303996284fa22f0538589f467fee745b7f3d5661d7_dtype_t *, __pyx_pybuffernd_C.rcbuffer-&gt;pybuffer.buf, __pyx_t_5, __pyx_pybuffernd_C.diminfo[0].strides, __pyx_t_6, __pyx_pybuffernd_C.diminfo[1].strides))));
+/home/runner/.cache/ipython/cython/_cython_magic_b4a53c5b6a5915356e5414c9fab0ed3d1b7b1814401b718393262325aa017abd.c:4912:590: error: passing argument 6 of &#39;my_dgemm&#39; from incompatible pointer type [-Wincompatible-pointer-types]
+ 4912 |   my_dgemm(__pyx_v_m, __pyx_v_n, __pyx_v_k, (&amp;(*__Pyx_BufPtrCContig2d(__pyx_t_78_cython_magic_b4a53c5b6a5915356e5414c9fab0ed3d1b7b1814401b718393262325aa017abd_dtype_t *, __pyx_pybuffernd_A.rcbuffer-&gt;pybuffer.buf, __pyx_t_1, __pyx_pybuffernd_A.diminfo[0].strides, __pyx_t_2, __pyx_pybuffernd_A.diminfo[1].strides))), (&amp;(*__Pyx_BufPtrCContig2d(__pyx_t_78_cython_magic_b4a53c5b6a5915356e5414c9fab0ed3d1b7b1814401b718393262325aa017abd_dtype_t *, __pyx_pybuffernd_B.rcbuffer-&gt;pybuffer.buf, __pyx_t_3, __pyx_pybuffernd_B.diminfo[0].strides, __pyx_t_4, __pyx_pybuffernd_B.diminfo[1].strides))), (&amp;(*__Pyx_BufPtrCContig2d(__pyx_t_78_cython_magic_b4a53c5b6a5915356e5414c9fab0ed3d1b7b1814401b718393262325aa017abd_dtype_t *, __pyx_pybuffernd_C.rcbuffer-&gt;pybuffer.buf, __pyx_t_5, __pyx_pybuffernd_C.diminfo[0].strides, __pyx_t_6, __pyx_pybuffernd_C.diminfo[1].strides))));
       |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              __pyx_t_78_cython_magic_e8f89f476ba164c82f2d38303996284fa22f0538589f467fee745b7f3d5661d7_dtype_t * {aka double *}
-/home/runner/work/python-notebooks/python-notebooks/notebooks/mydgemm.c:2:53: note: expected &#39;float (*)[k]&#39; but argument is of type &#39;__pyx_t_78_cython_magic_e8f89f476ba164c82f2d38303996284fa22f0538589f467fee745b7f3d5661d7_dtype_t *&#39; {aka &#39;double *&#39;}
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              __pyx_t_78_cython_magic_b4a53c5b6a5915356e5414c9fab0ed3d1b7b1814401b718393262325aa017abd_dtype_t * {aka double *}
+/home/runner/work/python-notebooks/python-notebooks/notebooks/mydgemm.c:2:53: note: expected &#39;float (*)[k]&#39; but argument is of type &#39;__pyx_t_78_cython_magic_b4a53c5b6a5915356e5414c9fab0ed3d1b7b1814401b718393262325aa017abd_dtype_t *&#39; {aka &#39;double *&#39;}
     2 |               double a[m][n], double b[n][k], float c[m][k] )
       |                                               ~~~~~~^~~~~~~
 </pre></div>
@@ -3293,7 +3293,7 @@ In file included from /home/runner/.cache/ipython/cython/_cython_magic_e8f89f476
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">37</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;timeit&#39;</span><span class="p">,</span> <span class="s1">&#39;matmul4(A,B,C)&#39;</span><span class="p">)</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/IPython/core/interactiveshell.py:2504,</span> in <span class="ni">InteractiveShell.run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
+<span class="nn">File ~/miniconda3/envs/runenv/lib/python3.13/site-packages/IPython/core/interactiveshell.py:2504,</span> in <span class="ni">InteractiveShell.run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
 <span class="g g-Whitespace">   </span><span class="mi">2502</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">2503</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
 <span class="ne">-&gt; </span><span class="mi">2504</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -3302,14 +3302,14 @@ In file included from /home/runner/.cache/ipython/cython/_cython_magic_e8f89f476
 <span class="g g-Whitespace">   </span><span class="mi">2508</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
 <span class="g g-Whitespace">   </span><span class="mi">2509</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/IPython/core/magics/execution.py:1226,</span> in <span class="ni">ExecutionMagics.timeit</span><span class="nt">(self, line, cell, local_ns)</span>
+<span class="nn">File ~/miniconda3/envs/runenv/lib/python3.13/site-packages/IPython/core/magics/execution.py:1226,</span> in <span class="ni">ExecutionMagics.timeit</span><span class="nt">(self, line, cell, local_ns)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1224</span> <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
 <span class="g g-Whitespace">   </span><span class="mi">1225</span>     <span class="n">number</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="n">index</span>
 <span class="ne">-&gt; </span><span class="mi">1226</span>     <span class="n">time_number</span> <span class="o">=</span> <span class="n">timer</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1227</span>     <span class="k">if</span> <span class="n">time_number</span> <span class="o">&gt;=</span> <span class="mf">0.2</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">1228</span>         <span class="k">break</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/IPython/core/magics/execution.py:184,</span> in <span class="ni">Timer.timeit</span><span class="nt">(self, number)</span>
+<span class="nn">File ~/miniconda3/envs/runenv/lib/python3.13/site-packages/IPython/core/magics/execution.py:184,</span> in <span class="ni">Timer.timeit</span><span class="nt">(self, number)</span>
 <span class="g g-Whitespace">    </span><span class="mi">182</span> <span class="n">gc</span><span class="o">.</span><span class="n">disable</span><span class="p">()</span>
 <span class="g g-Whitespace">    </span><span class="mi">183</span> <span class="k">try</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">184</span>     <span class="n">timing</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inner</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">timer</span><span class="p">)</span>
