@@ -105,24 +105,24 @@ Using meson backend
 Will pass --lower to f2py
 See https://numpy.org/doc/stable/f2py/buildtools/meson.html
 Reading fortran codes...
-	Reading file '/home/runner/.cache/ipython/fortranmagic/28308e0f/_fortran_magic_488b2c2fdc741e394fc600de2f7ce0a3.f90' (format:free)
+	Reading file '/home/runner/.cache/ipython/fortranmagic/544d248f/_fortran_magic_1665e9c894d6192dacc90d74ada2d345.f90' (format:free)
 Post-processing...
-	Block: _fortran_magic_488b2c2fdc741e394fc600de2f7ce0a3
+	Block: _fortran_magic_1665e9c894d6192dacc90d74ada2d345
 			Block: bspline_fortran
-In: :_fortran_magic_488b2c2fdc741e394fc600de2f7ce0a3:/home/runner/.cache/ipython/fortranmagic/28308e0f/_fortran_magic_488b2c2fdc741e394fc600de2f7ce0a3.f90:bspline_fortran
+In: :_fortran_magic_1665e9c894d6192dacc90d74ada2d345:/home/runner/.cache/ipython/fortranmagic/544d248f/_fortran_magic_1665e9c894d6192dacc90d74ada2d345.f90:bspline_fortran
 analyzevars: prefix ('recursive') were not used
 Applying post-processing hooks...
   character_backward_compatibility_hook
 Post-processing (stage 2)...
 Building modules...
-    Building module "_fortran_magic_488b2c2fdc741e394fc600de2f7ce0a3"...
+    Building module "_fortran_magic_1665e9c894d6192dacc90d74ada2d345"...
     Generating possibly empty wrappers"
-    Maybe empty "_fortran_magic_488b2c2fdc741e394fc600de2f7ce0a3-f2pywrappers.f"
+    Maybe empty "_fortran_magic_1665e9c894d6192dacc90d74ada2d345-f2pywrappers.f"
 		Creating wrapper for Fortran function "bspline_fortran"("bspline_fortran")...
         Constructing wrapper function "bspline_fortran"...
           res = bspline_fortran(p,j,x)
-    Wrote C/API module "_fortran_magic_488b2c2fdc741e394fc600de2f7ce0a3" to file "./_fortran_magic_488b2c2fdc741e394fc600de2f7ce0a3module.c"
-    Fortran 77 wrappers are saved to "./_fortran_magic_488b2c2fdc741e394fc600de2f7ce0a3-f2pywrappers.f"
+    Wrote C/API module "_fortran_magic_1665e9c894d6192dacc90d74ada2d345" to file "./_fortran_magic_1665e9c894d6192dacc90d74ada2d345module.c"
+    Fortran 77 wrappers are saved to "./_fortran_magic_1665e9c894d6192dacc90d74ada2d345-f2pywrappers.f"
 ------------------
 
 [31m---------------------------------------------------------------------------[39m
