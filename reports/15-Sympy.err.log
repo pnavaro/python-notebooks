@@ -185,7 +185,7 @@ Building modules...
     Generating possibly empty wrappers"
     Maybe empty "wrapper_module_0-f2pywrappers.f"
         Constructing wrapper function "autofunc"...
-          y_3625019 = autofunc(x_3625023,[m_3625020])
+          y_3713364 = autofunc(x_3713368,[m_3713365])
     Wrote C/API module "wrapper_module_0" to file "./wrapper_module_0module.c"
 
 

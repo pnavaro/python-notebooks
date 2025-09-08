@@ -45,28 +45,28 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 [36mCell[39m[36m [39m[32mIn[37][39m[32m, line 1[39m
 [32m----> [39m[32m1[39m [43mget_ipython[49m[43m([49m[43m)[49m[43m.[49m[43mrun_line_magic[49m[43m([49m[33;43m'[39;49m[33;43mtimeit[39;49m[33;43m'[39;49m[43m,[49m[43m [49m[33;43m'[39;49m[33;43mmatmul4(A,B,C)[39;49m[33;43m'[39;49m[43m)[49m
 
-[36mFile [39m[32m/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/IPython/core/interactiveshell.py:2488[39m, in [36mInteractiveShell.run_line_magic[39m[34m(self, magic_name, line, _stack_depth)[39m
-[32m   2486[39m     kwargs[[33m'[39m[33mlocal_ns[39m[33m'[39m] = [38;5;28mself[39m.get_local_scope(stack_depth)
-[32m   2487[39m [38;5;28;01mwith[39;00m [38;5;28mself[39m.builtin_trap:
-[32m-> [39m[32m2488[39m     result = [43mfn[49m[43m([49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
-[32m   2490[39m [38;5;66;03m# The code below prevents the output from being displayed[39;00m
-[32m   2491[39m [38;5;66;03m# when using magics with decorator @output_can_be_silenced[39;00m
-[32m   2492[39m [38;5;66;03m# when the last Python token in the expression is a ';'.[39;00m
-[32m   2493[39m [38;5;28;01mif[39;00m [38;5;28mgetattr[39m(fn, magic.MAGIC_OUTPUT_CAN_BE_SILENCED, [38;5;28;01mFalse[39;00m):
+[36mFile [39m[32m/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/IPython/core/interactiveshell.py:2504[39m, in [36mInteractiveShell.run_line_magic[39m[34m(self, magic_name, line, _stack_depth)[39m
+[32m   2502[39m     kwargs[[33m'[39m[33mlocal_ns[39m[33m'[39m] = [38;5;28mself[39m.get_local_scope(stack_depth)
+[32m   2503[39m [38;5;28;01mwith[39;00m [38;5;28mself[39m.builtin_trap:
+[32m-> [39m[32m2504[39m     result = [43mfn[49m[43m([49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[32m   2506[39m [38;5;66;03m# The code below prevents the output from being displayed[39;00m
+[32m   2507[39m [38;5;66;03m# when using magics with decorator @output_can_be_silenced[39;00m
+[32m   2508[39m [38;5;66;03m# when the last Python token in the expression is a ';'.[39;00m
+[32m   2509[39m [38;5;28;01mif[39;00m [38;5;28mgetattr[39m(fn, magic.MAGIC_OUTPUT_CAN_BE_SILENCED, [38;5;28;01mFalse[39;00m):
 
-[36mFile [39m[32m/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/IPython/core/magics/execution.py:1225[39m, in [36mExecutionMagics.timeit[39m[34m(self, line, cell, local_ns)[39m
-[32m   1223[39m [38;5;28;01mfor[39;00m index [38;5;129;01min[39;00m [38;5;28mrange[39m([32m0[39m, [32m10[39m):
-[32m   1224[39m     number = [32m10[39m ** index
-[32m-> [39m[32m1225[39m     time_number = [43mtimer[49m[43m.[49m[43mtimeit[49m[43m([49m[43mnumber[49m[43m)[49m
-[32m   1226[39m     [38;5;28;01mif[39;00m time_number >= [32m0.2[39m:
-[32m   1227[39m         [38;5;28;01mbreak[39;00m
+[36mFile [39m[32m/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/IPython/core/magics/execution.py:1226[39m, in [36mExecutionMagics.timeit[39m[34m(self, line, cell, local_ns)[39m
+[32m   1224[39m [38;5;28;01mfor[39;00m index [38;5;129;01min[39;00m [38;5;28mrange[39m([32m0[39m, [32m10[39m):
+[32m   1225[39m     number = [32m10[39m ** index
+[32m-> [39m[32m1226[39m     time_number = [43mtimer[49m[43m.[49m[43mtimeit[49m[43m([49m[43mnumber[49m[43m)[49m
+[32m   1227[39m     [38;5;28;01mif[39;00m time_number >= [32m0.2[39m:
+[32m   1228[39m         [38;5;28;01mbreak[39;00m
 
-[36mFile [39m[32m/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/IPython/core/magics/execution.py:183[39m, in [36mTimer.timeit[39m[34m(self, number)[39m
-[32m    181[39m gc.disable()
-[32m    182[39m [38;5;28;01mtry[39;00m:
-[32m--> [39m[32m183[39m     timing = [38;5;28;43mself[39;49m[43m.[49m[43minner[49m[43m([49m[43mit[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[43m.[49m[43mtimer[49m[43m)[49m
-[32m    184[39m [38;5;28;01mfinally[39;00m:
-[32m    185[39m     [38;5;28;01mif[39;00m gcold:
+[36mFile [39m[32m/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/IPython/core/magics/execution.py:184[39m, in [36mTimer.timeit[39m[34m(self, number)[39m
+[32m    182[39m gc.disable()
+[32m    183[39m [38;5;28;01mtry[39;00m:
+[32m--> [39m[32m184[39m     timing = [38;5;28;43mself[39;49m[43m.[49m[43minner[49m[43m([49m[43mit[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[43m.[49m[43mtimer[49m[43m)[49m
+[32m    185[39m [38;5;28;01mfinally[39;00m:
+[32m    186[39m     [38;5;28;01mif[39;00m gcold:
 
 [36mFile [39m[32m<magic-timeit>:1[39m, in [36minner[39m[34m(_it, _timer)[39m
 

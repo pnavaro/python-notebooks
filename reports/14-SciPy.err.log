@@ -47,10 +47,10 @@ T3=interp2d(x,y,z,kind='quintic')
 
 [31m---------------------------------------------------------------------------[39m
 [31mKeyError[39m                                  Traceback (most recent call last)
-[36mFile [39m[32m/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/scipy/__init__.py:137[39m, in [36m__getattr__[39m[34m(name)[39m
-[32m    136[39m [38;5;28;01mtry[39;00m:
-[32m--> [39m[32m137[39m     [38;5;28;01mreturn[39;00m [38;5;28;43mglobals[39;49m[43m([49m[43m)[49m[43m[[49m[43mname[49m[43m][49m
-[32m    138[39m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m:
+[36mFile [39m[32m/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/scipy/__init__.py:134[39m, in [36m__getattr__[39m[34m(name)[39m
+[32m    133[39m [38;5;28;01mtry[39;00m:
+[32m--> [39m[32m134[39m     [38;5;28;01mreturn[39;00m [38;5;28;43mglobals[39;49m[43m([49m[43m)[49m[43m[[49m[43mname[49m[43m][49m
+[32m    135[39m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m:
 
 [31mKeyError[39m: 'mgrid'
 
@@ -63,12 +63,12 @@ During handling of the above exception, another exception occurred:
 [32m      3[39m z = np.cos([32m4[39m*sp.pi*x)*np.sin([32m4[39m*sp.pi*y) [38;5;66;03m#initialize the field[39;00m
 [32m      4[39m T1=interp2d(x,y,z,kind=[33m'[39m[33mlinear[39m[33m'[39m) 
 
-[36mFile [39m[32m/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/scipy/__init__.py:139[39m, in [36m__getattr__[39m[34m(name)[39m
-[32m    137[39m     [38;5;28;01mreturn[39;00m [38;5;28mglobals[39m()[name]
-[32m    138[39m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m:
-[32m--> [39m[32m139[39m     [38;5;28;01mraise[39;00m [38;5;167;01mAttributeError[39;00m(
-[32m    140[39m         [33mf[39m[33m"[39m[33mModule [39m[33m'[39m[33mscipy[39m[33m'[39m[33m has no attribute [39m[33m'[39m[38;5;132;01m{[39;00mname[38;5;132;01m}[39;00m[33m'[39m[33m"[39m
-[32m    141[39m     )
+[36mFile [39m[32m/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/scipy/__init__.py:136[39m, in [36m__getattr__[39m[34m(name)[39m
+[32m    134[39m     [38;5;28;01mreturn[39;00m [38;5;28mglobals[39m()[name]
+[32m    135[39m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m:
+[32m--> [39m[32m136[39m     [38;5;28;01mraise[39;00m [38;5;167;01mAttributeError[39;00m(
+[32m    137[39m         [33mf[39m[33m"[39m[33mModule [39m[33m'[39m[33mscipy[39m[33m'[39m[33m has no attribute [39m[33m'[39m[38;5;132;01m{[39;00mname[38;5;132;01m}[39;00m[33m'[39m[33m"[39m
+[32m    138[39m     )
 
 [31mAttributeError[39m: Module 'scipy' has no attribute 'mgrid'
 

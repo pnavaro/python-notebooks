@@ -55,16 +55,16 @@ print(" String " + s + " is a plalindrome :", s == s[::-1])
 [32m      3[39m [38;5;28mprint[39m([33m"[39m[33m The string length is [39m[33m"[39m + [38;5;28mstr[39m([38;5;28mlen[39m(s)))
 [32m      4[39m [38;5;28mprint[39m([33m"[39m[33m The first character is equal to the last[39m[33m"[39m, s[[32m0[39m] == s[-[32m1[39m])
 
-[36mFile [39m[32m/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/ipykernel/kernelbase.py:1281[39m, in [36mKernel.raw_input[39m[34m(self, prompt)[39m
-[32m   1279[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m._allow_stdin:
-[32m   1280[39m     msg = [33m"[39m[33mraw_input was called, but this frontend does not support input requests.[39m[33m"[39m
-[32m-> [39m[32m1281[39m     [38;5;28;01mraise[39;00m StdinNotImplementedError(msg)
-[32m   1282[39m [38;5;28;01mreturn[39;00m [38;5;28mself[39m._input_request(
-[32m   1283[39m     [38;5;28mstr[39m(prompt),
-[32m   1284[39m     [38;5;28mself[39m._parent_ident[[33m"[39m[33mshell[39m[33m"[39m],
-[32m   1285[39m     [38;5;28mself[39m.get_parent([33m"[39m[33mshell[39m[33m"[39m),
-[32m   1286[39m     password=[38;5;28;01mFalse[39;00m,
-[32m   1287[39m )
+[36mFile [39m[32m/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/ipykernel/kernelbase.py:1274[39m, in [36mKernel.raw_input[39m[34m(self, prompt)[39m
+[32m   1272[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m._allow_stdin:
+[32m   1273[39m     msg = [33m"[39m[33mraw_input was called, but this frontend does not support input requests.[39m[33m"[39m
+[32m-> [39m[32m1274[39m     [38;5;28;01mraise[39;00m StdinNotImplementedError(msg)
+[32m   1275[39m [38;5;28;01mreturn[39;00m [38;5;28mself[39m._input_request(
+[32m   1276[39m     [38;5;28mstr[39m(prompt),
+[32m   1277[39m     [38;5;28mself[39m._parent_ident[[33m"[39m[33mshell[39m[33m"[39m],
+[32m   1278[39m     [38;5;28mself[39m.get_parent([33m"[39m[33mshell[39m[33m"[39m),
+[32m   1279[39m     password=[38;5;28;01mFalse[39;00m,
+[32m   1280[39m )
 
 [31mStdinNotImplementedError[39m: raw_input was called, but this frontend does not support input requests.
 

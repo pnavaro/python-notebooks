@@ -106,20 +106,20 @@ Using meson backend
 Will pass --lower to f2py
 See https://numpy.org/doc/stable/f2py/buildtools/meson.html
 Reading fortran codes...
-	Reading file '/home/runner/.cache/ipython/fortranmagic/d694754d/_fortran_magic_348c2b611ed5c55864f30bdb3f0d267a.f90' (format:free)
+	Reading file '/home/runner/.cache/ipython/fortranmagic/82fe9aee/_fortran_magic_194a18d22626fa3d78b691ea5b85386d.f90' (format:free)
 Post-processing...
-	Block: _fortran_magic_348c2b611ed5c55864f30bdb3f0d267a
+	Block: _fortran_magic_194a18d22626fa3d78b691ea5b85386d
 			Block: faraday_fortran
 Applying post-processing hooks...
   character_backward_compatibility_hook
 Post-processing (stage 2)...
 Building modules...
-    Building module "_fortran_magic_348c2b611ed5c55864f30bdb3f0d267a"...
+    Building module "_fortran_magic_194a18d22626fa3d78b691ea5b85386d"...
     Generating possibly empty wrappers"
-    Maybe empty "_fortran_magic_348c2b611ed5c55864f30bdb3f0d267a-f2pywrappers.f"
+    Maybe empty "_fortran_magic_194a18d22626fa3d78b691ea5b85386d-f2pywrappers.f"
         Constructing wrapper function "faraday_fortran"...
           faraday_fortran(ex,ey,bz,dx,dy,dt,[nx,ny])
-    Wrote C/API module "_fortran_magic_348c2b611ed5c55864f30bdb3f0d267a" to file "./_fortran_magic_348c2b611ed5c55864f30bdb3f0d267amodule.c"
+    Wrote C/API module "_fortran_magic_194a18d22626fa3d78b691ea5b85386d" to file "./_fortran_magic_194a18d22626fa3d78b691ea5b85386dmodule.c"
 ------------------
 
 [31m---------------------------------------------------------------------------[39m
@@ -127,14 +127,14 @@ Building modules...
 [36mCell[39m[36m [39m[32mIn[10][39m[32m, line 1[39m
 [32m----> [39m[32m1[39m [43mget_ipython[49m[43m([49m[43m)[49m[43m.[49m[43mrun_cell_magic[49m[43m([49m[33;43m'[39;49m[33;43mfortran[39;49m[33;43m'[39;49m[43m,[49m[43m [49m[33;43m'[39;49m[33;43m'[39;49m[43m,[49m[43m [49m[33;43m'[39;49m[38;5;130;43;01m\n[39;49;00m[33;43msubroutine faraday_fortran( ex, ey, bz, dx, dy, dt, nx, ny)[39;49m[38;5;130;43;01m\n[39;49;00m[33;43mimplicit none[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[33;43mreal(8), intent(in) :: ex(nx-1,ny)[39;49m[38;5;130;43;01m\n[39;49;00m[33;43mreal(8), intent(in) :: ey(nx,ny-1)[39;49m[38;5;130;43;01m\n[39;49;00m[33;43mreal(8), intent(inout) :: bz(nx-1,ny-1)[39;49m[38;5;130;43;01m\n[39;49;00m[33;43minteger, intent(in) :: nx, ny[39;49m[38;5;130;43;01m\n[39;49;00m[33;43mreal(8), intent(in) :: dx, dy, dt[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[33;43minteger :: i, j[39;49m[38;5;130;43;01m\n[39;49;00m[33;43mreal(8) :: dex_dx, dey_dy[39;49m[38;5;130;43;01m\n[39;49;00m[33;43mreal(8) :: dex_dy, dey_dx[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[33;43mdo j=1,ny-1[39;49m[38;5;130;43;01m\n[39;49;00m[33;43mdo i=1,nx-1[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m   dex_dy  = (ex(i,j+1)-ex(i,j)) / dy[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m   dey_dx  = (ey(i+1,j)-ey(i,j)) / dx[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m   bz(i,j) = bz(i,j) +  dt * (dex_dy - dey_dx)[39;49m[38;5;130;43;01m\n[39;49;00m[33;43mend do[39;49m[38;5;130;43;01m\n[39;49;00m[33;43mend do[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[33;43mend subroutine faraday_fortran[39;49m[38;5;130;43;01m\n[39;49;00m[33;43m'[39;49m[43m)[49m
 
-[36mFile [39m[32m/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/IPython/core/interactiveshell.py:2549[39m, in [36mInteractiveShell.run_cell_magic[39m[34m(self, magic_name, line, cell)[39m
-[32m   2547[39m [38;5;28;01mwith[39;00m [38;5;28mself[39m.builtin_trap:
-[32m   2548[39m     args = (magic_arg_s, cell)
-[32m-> [39m[32m2549[39m     result = [43mfn[49m[43m([49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
-[32m   2551[39m [38;5;66;03m# The code below prevents the output from being displayed[39;00m
-[32m   2552[39m [38;5;66;03m# when using magics with decorator @output_can_be_silenced[39;00m
-[32m   2553[39m [38;5;66;03m# when the last Python token in the expression is a ';'.[39;00m
-[32m   2554[39m [38;5;28;01mif[39;00m [38;5;28mgetattr[39m(fn, magic.MAGIC_OUTPUT_CAN_BE_SILENCED, [38;5;28;01mFalse[39;00m):
+[36mFile [39m[32m/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/IPython/core/interactiveshell.py:2565[39m, in [36mInteractiveShell.run_cell_magic[39m[34m(self, magic_name, line, cell)[39m
+[32m   2563[39m [38;5;28;01mwith[39;00m [38;5;28mself[39m.builtin_trap:
+[32m   2564[39m     args = (magic_arg_s, cell)
+[32m-> [39m[32m2565[39m     result = [43mfn[49m[43m([49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[32m   2567[39m [38;5;66;03m# The code below prevents the output from being displayed[39;00m
+[32m   2568[39m [38;5;66;03m# when using magics with decorator @output_can_be_silenced[39;00m
+[32m   2569[39m [38;5;66;03m# when the last Python token in the expression is a ';'.[39;00m
+[32m   2570[39m [38;5;28;01mif[39;00m [38;5;28mgetattr[39m(fn, magic.MAGIC_OUTPUT_CAN_BE_SILENCED, [38;5;28;01mFalse[39;00m):
 
 [36mFile [39m[32m/usr/share/miniconda3/envs/runenv/lib/python3.13/site-packages/fortranmagic.py:516[39m, in [36mFortranMagics.fortran[39m[34m(self, line, cell)[39m
 [32m    511[39m res = [38;5;28mself[39m._run_f2py(f2py_args + [[33m'[39m[33m-m[39m[33m'[39m, module_name, [33m'[39m[33m-c[39m[33m'[39m,
