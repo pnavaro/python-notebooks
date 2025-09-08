@@ -666,8 +666,8 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timer unit: 1e-09 s
 
-Total time: 0.00143465 s
-File: /tmp/ipykernel_7848/78781500.py
+Total time: 0.00161642 s
+File: /tmp/ipykernel_7809/78781500.py
 Function: BSplineNumpy.interpolate_disp at line 22
 
 Line #      Hits         Time  Per Hit   % Time  Line Contents
@@ -676,17 +676,17 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     23                                                   &quot;&quot;&quot;compute the interpolating spline of degree p of odd degree 
     24                                                   of a function f on a periodic uniform mesh, at
     25                                                   all points xi-alpha&quot;&quot;&quot;
-    26         1       1593.0   1593.0      0.1          p = self.p
-    27         1      11221.0  11221.0      0.8          assert (np.size(f) == self.ncells)
+    26         1       1292.0   1292.0      0.1          p = self.p
+    27         1      12213.0  12213.0      0.8          assert (np.size(f) == self.ncells)
     28                                                   # compute eigenvalues of cubic splines evaluated at displaced points
-    29         1       7604.0   7604.0      0.5          ishift = np.floor(-alpha / self.deltax)
-    30         1       1222.0   1222.0      0.1          beta = -ishift - alpha / self.deltax
-    31         1      15890.0  15890.0      1.1          self.eigalpha.fill(0.)
-    32         5       6823.0   1364.6      0.5          for j in range(-(p-1)//2, (p+1)//2 + 1):
-    33         4    1252511.0 313127.8     87.3              self.eigalpha += bspline_python(p, j-(p+1)//2, beta) * np.exp((ishift+j)*1j*self.modes)
+    29         1       7624.0   7624.0      0.5          ishift = np.floor(-alpha / self.deltax)
+    30         1       1262.0   1262.0      0.1          beta = -ishift - alpha / self.deltax
+    31         1      10640.0  10640.0      0.7          self.eigalpha.fill(0.)
+    32         5       6662.0   1332.4      0.4          for j in range(-(p-1)//2, (p+1)//2 + 1):
+    33         4    1414998.0 353749.5     87.5              self.eigalpha += bspline_python(p, j-(p+1)//2, beta) * np.exp((ishift+j)*1j*self.modes)
     34                                           
     35                                                   # compute interpolating spline using fft and properties of circulant matrices
-    36         1     137787.0 137787.0      9.6          return np.real(ifft(fft(f) * self.eigalpha / self.eig_bspl))
+    36         1     161732.0 161732.0     10.0          return np.real(ifft(fft(f) * self.eigalpha / self.eig_bspl))
 
 *** Profile printout saved to text file &#39;lp_results.txt&#39;. 
 </pre></div>
@@ -787,24 +787,24 @@ Using meson backend
 Will pass --lower to f2py
 See https://numpy.org/doc/stable/f2py/buildtools/meson.html
 Reading fortran codes...
-	Reading file &#39;/home/runner/.cache/ipython/fortranmagic/5683b124/_fortran_magic_fbd863343757ed9910fa4e78f94147f6.f90&#39; (format:free)
+	Reading file &#39;/home/runner/.cache/ipython/fortranmagic/28308e0f/_fortran_magic_488b2c2fdc741e394fc600de2f7ce0a3.f90&#39; (format:free)
 Post-processing...
-	Block: _fortran_magic_fbd863343757ed9910fa4e78f94147f6
+	Block: _fortran_magic_488b2c2fdc741e394fc600de2f7ce0a3
 			Block: bspline_fortran
-In: :_fortran_magic_fbd863343757ed9910fa4e78f94147f6:/home/runner/.cache/ipython/fortranmagic/5683b124/_fortran_magic_fbd863343757ed9910fa4e78f94147f6.f90:bspline_fortran
+In: :_fortran_magic_488b2c2fdc741e394fc600de2f7ce0a3:/home/runner/.cache/ipython/fortranmagic/28308e0f/_fortran_magic_488b2c2fdc741e394fc600de2f7ce0a3.f90:bspline_fortran
 analyzevars: prefix (&#39;recursive&#39;) were not used
 Applying post-processing hooks...
   character_backward_compatibility_hook
 Post-processing (stage 2)...
 Building modules...
-    Building module &quot;_fortran_magic_fbd863343757ed9910fa4e78f94147f6&quot;...
+    Building module &quot;_fortran_magic_488b2c2fdc741e394fc600de2f7ce0a3&quot;...
     Generating possibly empty wrappers&quot;
-    Maybe empty &quot;_fortran_magic_fbd863343757ed9910fa4e78f94147f6-f2pywrappers.f&quot;
+    Maybe empty &quot;_fortran_magic_488b2c2fdc741e394fc600de2f7ce0a3-f2pywrappers.f&quot;
 		Creating wrapper for Fortran function &quot;bspline_fortran&quot;(&quot;bspline_fortran&quot;)...
         Constructing wrapper function &quot;bspline_fortran&quot;...
           res = bspline_fortran(p,j,x)
-    Wrote C/API module &quot;_fortran_magic_fbd863343757ed9910fa4e78f94147f6&quot; to file &quot;./_fortran_magic_fbd863343757ed9910fa4e78f94147f6module.c&quot;
-    Fortran 77 wrappers are saved to &quot;./_fortran_magic_fbd863343757ed9910fa4e78f94147f6-f2pywrappers.f&quot;
+    Wrote C/API module &quot;_fortran_magic_488b2c2fdc741e394fc600de2f7ce0a3&quot; to file &quot;./_fortran_magic_488b2c2fdc741e394fc600de2f7ce0a3module.c&quot;
+    Fortran 77 wrappers are saved to &quot;./_fortran_magic_488b2c2fdc741e394fc600de2f7ce0a3-f2pywrappers.f&quot;
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
