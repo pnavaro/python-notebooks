@@ -20,11 +20,12 @@ jobs:
     - name: Install dependencies
       shell: bash -l {0}
       run: |
-        conda env create -f environment.yml -n runenv
+        conda create python=3.12 -n runenv
+        conda install -y jupyter-book jupyter
         conda run -n runenv python -m ipykernel install --user --name python3
     - name: Build the book
       shell: bash -l {0}
-      run: conda run -n runenv jupyter-book build notebooks
+      run: conda run -n runenv jupyter-book build notebooks --html
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v4
       with:
