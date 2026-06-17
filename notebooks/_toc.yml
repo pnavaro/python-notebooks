@@ -1,10 +1,6 @@
-title: Python notebooks
-author: Pierre Navaro
-github: pnavaro/python-notebooks
-logo: logo.png
-execute:
-   execute_notebooks : off
-toc:
+format: jb-book
+root: intro
+chapters:
     - file: 01-Introduction
     - file: 02-Strings
     - file: 03-Lists
@@ -27,4 +23,3 @@ toc:
     - file: 20-Maxwell.2D
     - file: 21-Gray.Scott.Model
     - file: 22-Matplotlib.Animation
-
